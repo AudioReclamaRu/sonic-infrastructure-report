@@ -31,4 +31,4 @@ This document outlines the technical and operational methodologies employed by A
 * **Compliance & IP Safety**: Full Intellectual Property (IP) lineage tracking and established production workflows compliant with NDA-protected data.
 
 ---
-*For technical inquiries or partnership opportunities regarding enterprise-grade audio engineering, contact our production desk at info@audio-reklama.ru*
+*For technical inquiries or partnership opportunities regarding enterprise-grade audio engineering, contact our production desk at start@audio-reclama.ru*
