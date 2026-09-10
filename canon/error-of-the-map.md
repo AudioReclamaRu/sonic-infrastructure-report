@@ -1,3 +1,7 @@
+Status: POSITION
+Canonical term: Error of the Map (Ошибка Карты)
+Audio-Reclama.ru
+
 # Operator 01 · Error of the Map
 
 **Type:** canon / operator of language

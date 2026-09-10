@@ -174,7 +174,7 @@ hierarchy between human and synthetic voice.
 ## Related
 
 - ../canon/right-to-be-present.md — why honesty is infrastructure of trust.
-- ../canon/voice-provenance.md — releasing voice / provenance as product.
+- ../canon/releasing-voice.md — releasing voice / provenance as product.
 - ../standards/verification-chain.md — level III build-out.
 
 CARRIER

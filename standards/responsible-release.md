@@ -62,7 +62,7 @@ released "as is".
 - ../canon/error-of-the-map.md — a metric you cannot pass without the
   experience; here: a check you cannot pass without verification.
 - ../canon/right-to-be-present.md — honesty as infrastructure.
-- ../canon/voice-provenance.md — provenance as product.
+- ../canon/releasing-voice.md — releasing voice as product and procedure.
 - ../standards/verification-chain.md — the cryptographic integrity layer.
 
 ## Product

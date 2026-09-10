@@ -1,3 +1,7 @@
+Status: POSITION
+Canonical term: Field of Belonging (Поле Принадлежности)
+Audio-Reclama.ru
+
 # Operator 02 · Field of Belonging
 
 **Type:** canon / operator of language

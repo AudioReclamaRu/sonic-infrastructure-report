@@ -1,3 +1,7 @@
+Status: POSITION
+Canonical term: Law of Ritual (Закон Обряда)
+Audio-Reclama.ru
+
 # Operator 03 · Law of Ritual
 
 **Type:** canon / operator of language

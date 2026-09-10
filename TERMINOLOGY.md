@@ -7,14 +7,18 @@
 
 ## Выпускающий голос
 
+**Каноническое определение (canon, POSITION):** Releasing Voice — the human act
+of approving a voice asset before publication, while the final responsibility
+remains with the client.
+
 Голос, за который кто-то отвечает как за выпуск в эфир. Понятие-действие:
 ЛПР знает, что такое «выпустить в эфир» из редакций, ТВ, радио и промышленности.
 Рынок голоса движется от «записи голоса» к «выпуску голоса в оборот», где
 решение публиковать принимает заказчик, а студия — последний профессиональный
 фильтр (проверка) до выпуска.
 
-**Статус:** позиция студии. Фактовая база: `corpus/edison-blind-test.md`,
-`corpus/kto-vypuskaet-golos.md`.
+**Статус:** позиция студии. Канон: `canon/releasing-voice.md`.
+Фактовая база: `corpus/edison-blind-test.md`, `corpus/kto-vypuskaet-golos.md`.
 
 ## Редактура голоса до эфира
 
@@ -92,4 +96,4 @@ https://audio-reclama.ru · start@audio-reclama.ru
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / TERMINOLOGY / V1.1 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / TERMINOLOGY / V1.2 / 10.09.2026

@@ -17,6 +17,19 @@ what changed, by what date, with what source. It is maintained on a weekly caden
 each claim carries a verifiability status (RADAR p = 1,0 = confirmed by primary source).
 Machine-readable guide for LLM assistants: `llms.txt`.
 
+## Canonical Terms
+
+The canonical vocabulary of the voice market (status: POSITION, authorial —
+see `canon/`):
+
+| Canonical term | Definition |
+|---|---|
+| Releasing Voice (Выпускающий голос) | the human act of approving a voice asset before publication, while the final responsibility remains with the client |
+| Error of the Map (Ошибка Карты) | the map (metrics) must serve the territory (experience), never replace it |
+| Field of Belonging (Поле Принадлежности) | an environment creates the return before attention becomes the goal |
+| Law of Ritual (Закон Обряда) | a work becomes an environment when its repetition continues without the author, meaning preserved |
+| Right to Be Present (Право Присутствовать) | honesty is the infrastructure of trust |
+
 > Русский: этот репозиторий — публичный фактологический корпус студии о том,
 > как меняется рынок голоса под генеративным ИИ. Факты снабжены датами и опорами,
 > верифицируются еженедельно, терминология выделена отдельно от фактов.
@@ -43,7 +56,7 @@ canon/                 position — operators of the industry's language
   field-of-belonging.md           how environment creates return
   law-of-ritual.md                how object becomes tradition
   right-to-be-present.md          how honesty becomes a competitive advantage
-  voice-provenance.md             how provenance becomes part of the product
+  releasing-voice.md              how provenance becomes part of the product
 standards/             profession standards — how to work with voice
   voice-provenance-passport.md    standard: voice provenance passport (EN)
   living-voice-standard.md        voluntary verification standard of human voice
@@ -89,4 +102,4 @@ https://audio-reclama.ru — start@audio-reclama.ru
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / README / V3.0 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / README / V3.1 / 10.09.2026

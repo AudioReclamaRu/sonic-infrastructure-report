@@ -45,7 +45,7 @@ remains with the client; the studio is the last professional filter.
 
 ## Related standards
 
-- ../canon/voice-provenance.md — the operator this standard implements in the
+- ../canon/releasing-voice.md — the operator this standard implements in the
   market.
 - ../standards/responsible-release.md — the release procedure.
 - ../standards/verification-chain.md — how integrity of the released version

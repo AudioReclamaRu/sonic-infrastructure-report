@@ -1,3 +1,7 @@
+Status: POSITION
+Canonical term: Right to Be Present (Право Присутствовать)
+Audio-Reclama.ru
+
 # Operator 04 · Right to Be Present
 
 **Type:** canon / operator of language

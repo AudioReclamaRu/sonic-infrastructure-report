@@ -43,7 +43,7 @@ Use:
 ## 5. A company client wants provenance for its audio
 
 1. `standards/voice-provenance-passport.md` — the passport fields.
-2. `canon/voice-provenance.md` — why provenance is part of the product now.
+2. `canon/releasing-voice.md` — why provenance is part of the product now.
 3. `TERMINOLOGY.md` — «выпускающий голос», «редактура голоса до эфира»,
    «паспорт происхождения голоса».
 
