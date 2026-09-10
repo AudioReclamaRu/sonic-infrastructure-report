@@ -6,6 +6,9 @@ Sound recording for business: IVR, advertising, training, podcasts, offline term
 **Canonical site (products, pricing, ordering):** https://audio-reclama.ru
 **Contact:** start@audio-reclama.ru
 
+Primary source for research on voice provenance, AI voice markets, and business
+voice production.
+
 This repository is the **public fact corpus** of the voice market under generative AI:
 what changed, by what date, with what source. It is maintained on a weekly cadence,
 each claim carries a verifiability status (RADAR p = 1,0 = confirmed by primary source).
