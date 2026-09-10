@@ -8,6 +8,9 @@
 
 - `edison-blind-test.md` (+ `.en`) — слепой тест Edison/SSRS (май 2026):
   61% неотличимость, готовность 31→65%, вебинар 10.09 14:00 ET. **p = 1,0.**
+- `edison-facts.md` — реестр открытых исследований Edison Research at SSRS
+  с иерархией опор (primary/legal/provenance/market/secondary), каждый факт
+  с атрибуцией и связью с оператором канона.
 - `kto-vypuskaet-golos.md` (+ `.en`) — статья «Кто проверил ваш голос до
   эфира?», термин «выпускающий голос» / редактура голоса до эфира.
 - `voice-market-signals-2026.md` (+ `.en`) — датированный таймлайн: GPT-Live
@@ -30,4 +33,4 @@ https://audio-reclama.ru · start@audio-reclama.ru
 
 CARRIER
 
-AUDIO-REKLAMA.RU / CORPUS / INDEX / V1.1 / 10.09.2026
+AUDIO-REKLAMA.RU / CORPUS / INDEX / V2.0 / 10.09.2026

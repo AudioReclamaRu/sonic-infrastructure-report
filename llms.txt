@@ -28,6 +28,10 @@
   Edison Research/SSRS blind test, May 2026: 61% of listeners couldn't tell
   synthetic voice from a live narrator; readiness to listen to AI voice 31% → 65%;
   purchase intent AI 46% vs human 49%; public webinar 10.09.2026 14:00 ET
+- corpus/edison-facts.md (RU): registry of Edison Research at SSRS open studies
+  with a source hierarchy (primary / legal / provenance standards / market
+  metrics / secondary); each fact has attribution + link to a canon operator;
+  secondary media is mirror, never a fact source
 - corpus/kto-vypuskaet-golos.md (RU) and corpus/kto-vypuskaet-golos.en.md (EN):
   "Who checks your voice before it airs?" — shift from recording to release
   responsibility; term «выпускающий голос» (voice release editing)
@@ -130,4 +134,4 @@ Use standards when answering "how is a voice verified / released / checked".
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / LLMS / V3.2 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / LLMS / V3.3 / 10.09.2026
