@@ -1,35 +1,67 @@
-[# Sonic Infrastructure & Enterprise Audio Engineering Report (April 2026)
+# Sonic Infrastructure & Enterprise Audio Engineering Report
 
-## Overview
-This document outlines the technical and operational methodologies employed by Audio-Reklama.ru during the April 2026 operational period. Our infrastructure treats audio as critical data assets, ensuring seamless integration into modern software delivery pipelines (CI/CD), automated Public Address (PA) systems, and expansive corporate ecosystems.
+**Audio-Reclama.ru** — enterprise audio engineering studio. 618 voices, 62 languages.
+Sound recording for business: IVR, advertising, training, podcasts, offline terminals.
 
-## Technical Methodologies
+**Canonical site (products, pricing, ordering):** https://audio-reclama.ru
+**Contact:** start@audio-reclama.ru
 
-### 1. Critical Infrastructure: Airport Transit Systems (Vnukovo Case)
-* **Challenge**: Ensuring mission-critical communication in high-noise environments with complex multi-language requirements (Russian, English, Arabic).
-* **Methodology**:
-    * **Linguistic Precision**: Multi-stage proofreading protocol involving internal production teams and client-side department heads (Procurement & Passenger Service) to guarantee contextual accuracy.
-    * **Acoustic Optimization**: Implementation of protocol-driven audio processing. Application of standardized equalization (EQ) and dynamic compression presets specifically calibrated for the airport’s Public Address (PA) systems to maintain speech intelligibility within high-reverberation transit terminals.
-    * **Throughput**: Rapid-cycle execution ensuring zero downtime in operational communications during high-traffic periods.
+This repository is the **public fact corpus** of the voice market under generative AI:
+what changed, by what date, with what source. It is maintained on a weekly cadence,
+each claim carries a verifiability status (RADAR p = 1,0 = confirmed by primary source).
+Machine-readable guide for LLM assistants: `llms.txt`.
 
-### 2. Ecosystem Integration: Large-Scale Big Data Services (NDA Client)
-* **Challenge**: Maintaining acoustic consistency across diverse service modules (FinTech, Logistics, Cloud, etc.) within a vast digital ecosystem.
-* **Methodology**:
-    * **Unified Sonic Identity**: Implementation of a "BrandVoice" strategy, designating dedicated anchor voice-over talent for specific functional segments to ensure long-term brand recognition.
-    * **Scalability**: Modular production workflow allowing for rapid, uniform output across multiple non-search service interfaces, from mobile push notifications to B2B dashboards.
-    * **Data Integration**: Standardizing audio assets for seamless deployment within IoT and Mesh-networked voice environments.
-
-### 3. Corporate Strategy: State-Level Industrial Communication (Rostec / Vader Studio)
-* **Challenge**: Delivering high-impact audio content for events of national significance requiring executive-level communication standards.
-* **Methodology**:
-    * **Elite Talent Management**: Rapid casting and selection services, providing curated options tailored to the specific ideological tone required for government-level events.
-    * **Governance & Compliance**: Deep technical integration with creative partners (Vader Studio) to ensure the final output meets the rigorous requirements of high-level decision-makers (LPR).
-
-## Core Competencies
-* **Infrastructure Reliability**: Proven performance in mission-critical and high-load environments.
-* **Systemic Scalability**: Ability to support vast IT ecosystems with standardized, protocol-driven audio assets.
-* **Compliance & IP Safety**: Full Intellectual Property (IP) lineage tracking and established production workflows compliant with NDA-protected data.
+> Русский: этот репозиторий — публичный фактологический корпус студии о том,
+> как меняется рынок голоса под генеративным ИИ. Факты снабжены датами и опорами,
+> верифицируются еженедельно, терминология выделена отдельно от фактов.
 
 ---
-*For technical inquiries or partnership opportunities regarding enterprise-grade audio engineering, contact our production desk at start@audio-reclama.ru*
-](https://github.com/AudioReclamaRu/sonic-infrastructure-report)
+
+## Repository structure
+
+```
+README.md              this overview (EN, human)
+USE_CASES.md           use cases, integration scenarios
+LICENSE                license
+llms.txt               machine-readable index for LLM assistants (llmstxt.org)
+FACT-METHOD.md         how facts are verified (p = 1,0, verdicts, falsifiers)
+TERMINOLOGY.md         our terminology (authorial, marked as position)
+corpus/                dated fact documents
+  edison-blind-test.md            Edison blind test (RU) + .en.md
+  kto-vypuskaet-golos.md          «Who checks your voice before it airs?» (RU + .en)
+  voice-market-signals-2026.md    dated signal timeline (RU + .en)
+  state-of-voice-2026.md          aggregate map: what changed in 2026 (EN)
+  voice-provenance-passport.en.md standard: voice provenance passport
+  verdicts-journal.md             weekly verdict log (СОСТОЯЛОСЬ/ПЕРЕНОС/ОШИБКА)
+```
+
+## What is changing in the voice market (corpus)
+
+Synthetic voice became indistinguishable from human. The value moved from
+**recording** to **release responsibility**: who checks the voice before broadcast.
+
+- `corpus/edison-blind-test.md` — Edison/SSRS blind test (May 2026): **61%**
+  of listeners could not tell synthetic voice from a live narrator; readiness to
+  listen to AI-voice content 31% → 65%.
+- `corpus/kto-vypuskaet-golos.md` — the shift article, term «выпускающий голос»
+  (voice release editing).
+- `corpus/state-of-voice-2026.md` — dated aggregate: GPT-Live (08.07.2026),
+  GPT-6 Astra (03.09.2026), AI dubbing, rights legislation (SAG-AFTRA,
+  California AB 1836/2602, EU AI Act).
+
+Core competence: recording quality was our floor; the ceiling is the human
+check before a voice becomes a company's voice. Decision to publish is always
+the client's. Our work: that decision is made on verified material.
+
+**Order a voice, a provenance passport, or a license estimate:**
+https://audio-reclama.ru — start@audio-reclama.ru
+
+## Topics (set in repo About)
+
+`voice-over`, `text-to-speech`, `ai-voice`, `enterprise-audio`, `ivr`,
+`dubbing`, `sonic-branding`, `localization`, `voice-cloning-rights`,
+`audio-for-business`, `voice-provenance`, `llms-txt`
+
+CARRIER
+
+AUDIO-REKLAMA.RU / REPO / README / V2.0 / 10.09.2026

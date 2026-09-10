@@ -46,6 +46,11 @@
 
 ---
 
+## Продукт и заказ на сайте
+
+Рекординг, редактура голоса до эфира, паспорт происхождения, расчёт лицензии:
+https://audio-reclama.ru · start@audio-reclama.ru
+
 CARRIER
 
 AUDIO-REKLAMA.RU / REPO / TERMINOLOGY / V1.0 / 10.09.2026
