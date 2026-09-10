@@ -89,6 +89,10 @@ Cards live in `cards/` — each carries its own `Status: POSITION` header.
 Every operator of the canon is born as a card; no term enters the canon without
 one. The five cards above close the canon's first generation.
 
+The canon's governing law, stated publicly:
+[`hutzpa.md`](hutzpa.md) — the Declaration of Hutzpa: a term enters the canon
+only if it makes the previous way of speaking about the problem impossible.
+
 Template used to admit every new term: `cards/TEMPLATE.md`.
 
 ## The layers

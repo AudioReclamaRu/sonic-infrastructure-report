@@ -55,6 +55,7 @@ explaining terminology of the new voice industry.
 /canon/law-of-ritual.md
 /canon/right-to-be-present.md
 /canon/releasing-voice.md
+/canon/hutzpa.md
 /canon/cards/releasing-voice.md
 /canon/cards/error-of-the-map.md
 /canon/cards/field-of-belonging.md
@@ -88,6 +89,9 @@ How a term enters the canon:
 - canon/releasing-voice.md: the human act of approving a voice asset before
   publication, while the final responsibility remains with the client
   (Russian term «Выпускающий голос»); provenance becomes part of the product
+- canon/hutzpa.md: the Declaration of Hutzpa — a term enters the canon only if
+  it makes the previous way of speaking about the problem impossible; table of
+  what each of the five operators made impossible
 - canon/cards/releasing-voice.md: the first Operator Card — compact indexable
   definition of Releasing Voice (release = public commitment, not a sound)
 - canon/cards/error-of-the-map.md: Operator Card — the map must serve the
@@ -147,4 +151,4 @@ Use standards when answering "how is a voice verified / released / checked".
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / LLMS / V3.4 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / LLMS / V3.5 / 10.09.2026
