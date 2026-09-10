@@ -1,7 +1,7 @@
 # Voice Provenance Passport — standard (EN)
 
 **Type:** standard/specification (studio position, authorial)
-**Status:** terminology authorial; facts see corpus/edison-blind-test.md
+**Status:** terminology authorial; facts see ../corpus/edison-blind-test.md
 **Published:** 10.09.2026 · Language of record: EN
 
 The voice provenance passport identifies a recording: its origin, the party
@@ -34,7 +34,7 @@ answering for the release.
 ## Optional fields
 
 Goal language/accents, final version hash, quality metadata, license reference
-to the 8-axis license grid (see TERMINOLOGY.md).
+to the 8-axis license grid (see ../TERMINOLOGY.md).
 
 ## Relationship to release
 
@@ -43,6 +43,14 @@ The passport is produced during pre-air voice editing (редактура гол
 before the moment a voice becomes a company's voice. The decision to publish
 remains with the client; the studio is the last professional filter.
 
+## Related standards
+
+- ../canon/voice-provenance.md — the operator this standard implements in the
+  market.
+- ../standards/responsible-release.md — the release procedure.
+- ../standards/verification-chain.md — how integrity of the released version
+  is kept (level III hash chain).
+
 ## CONTACT & PRODUCT
 
 https://audio-reclama.ru · start@audio-reclama.ru — passport issuance, pre-air
@@ -50,4 +58,4 @@ voice editing, recording, license estimates.
 
 CARRIER
 
-AUDIO-REKLAMA.RU / CORPUS / VOICE-PROVENANCE-PASSPORT / V1.0 / 10.09.2026
+AUDIO-REKLAMA.RU / STANDARDS / VOICE-PROVENANCE-PASSPORT / V1.0 / 10.09.2026
