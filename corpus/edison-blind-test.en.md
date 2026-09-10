@@ -1,6 +1,6 @@
 # Edison blind test — synthetic voice indistinguishable from human (May 2026)
 
-**Type:** fact · **Status:** p = 1,0 (source-backed)
+**Type:** fact · **Status:** p = 1,0 (source-backed — primary press release dated 14.07.2026)
 **Method:** FACT-METHOD.md · Published: 10.09.2026 · Language of record: EN
 
 ---
@@ -12,13 +12,17 @@
 2. Readiness to listen to AI-narrated audio content: **31% → 65%**.
 3. Intent to purchase AI-voiced audio content: **46%** vs **49%** for a live narrator.
 4. Public webinar "AI vs. Human Audiobook Narration" (Edison Research/SSRS):
-   **10.09.2026, 14:00 ET**.
+   **10.09.2026, 14:00 ET** — review of the already published study.
 
 ## SOURCES
 
-- Webinar registration: `ssrs.zoom.us/webinar/register/...`
-  (date and time confirmed in registration page payload).
-- Study confirmation: `spoken.press/edisonsurvey`.
+- **Primary document:** SSRS press release of 14.07.2026, "In Largest Study of Its
+  Kind, U.S. Fiction Audiobook Consumers Rate Spoken Multi-Cast Higher Than Human
+  Narration" — methodology, n=1000+, figures (61% / 65%, 31→65%, 46/49).
+- Study confirmation and audio samples: `spoken.press/edisonsurvey`.
+- Webinar registration/announcement: `ssrs.zoom.us/webinar/register/...`
+  (10.09 14:00 ET confirmed in registration page payload; announcement
+  `ssrs.com/news/ai-vs-human-audiobook-narration-...(31.08.2026)`).
 - Topic: «AI vs. Human Audiobook Narration: A Blinded Survey of 1,000 Listeners».
 
 ## SIGNIFICANCE
@@ -31,7 +35,8 @@ into circulation.
 
 ## VERDICT TRACKS
 
-- 10.09.2026 14:00 ET — webinar (verdict after the date);
+- 10.09.2026 14:00 ET — webinar: verifying the already published figures by trace
+  (matched — CONFIRMED; different figures heard — row corrected with date and reason);
 - 11.09.2026 — re-verification of facts after the webinar, row update.
 
 ## FALSIFIER
