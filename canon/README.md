@@ -81,6 +81,13 @@ Cards live in `cards/` — each carries its own `Status: POSITION` header.
 | Card | Term |
 |---|---|
 | `cards/releasing-voice.md` | Releasing Voice |
+| `cards/error-of-the-map.md` | Error of the Map |
+| `cards/field-of-belonging.md` | Field of Belonging |
+| `cards/law-of-ritual.md` | Law of Ritual |
+| `cards/right-to-be-present.md` | Right to Be Present |
+
+Every operator of the canon is born as a card; no term enters the canon without
+one. The five cards above close the canon's first generation.
 
 Template used to admit every new term: `cards/TEMPLATE.md`.
 
