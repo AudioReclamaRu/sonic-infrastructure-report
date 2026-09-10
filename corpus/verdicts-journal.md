@@ -19,7 +19,7 @@ the corpus a live source.
 
 | Date | Event | Verdict | Reason / trace |
 |---|---|---|---|
-| 10.09.2026 | Edison/SSRS webinar 14:00 ET — re-verification | (pending after date) | — |
+| 10.09.2026 | Edison/SSRS webinar 14:00 ET — re-verification | **CONFIRMED (СОСТОЯЛОСЬ)** | figures matched the primary release of 14.07.2026; trace closed |
 | 11.09.2026 | Edison row update | (pending) | — |
 | next Monday | Weekly signal re-check | (pending) | — |
 

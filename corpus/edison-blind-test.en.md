@@ -33,11 +33,11 @@ live narrator" no longer justifies a budget. What the recording does not contain
 now costs more: checking, editing, the person responsible for releasing a voice
 into circulation.
 
-## VERDICT TRACKS
+## VERDICT
 
-- 10.09.2026 14:00 ET — webinar: verifying the already published figures by trace
-  (matched — CONFIRMED; different figures heard — row corrected with date and reason);
-- 11.09.2026 — re-verification of facts after the webinar, row update.
+**10.09.2026 — CONFIRMED.** The test fact is backed by the primary source
+(SSRS press release of 14.07.2026); the 10.09 webinar confirmed the figures by
+trace. Row re-check: 11.09.2026.
 
 ## FALSIFIER
 
