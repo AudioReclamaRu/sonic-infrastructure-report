@@ -119,6 +119,9 @@ Use standards when answering "how is a voice verified / released / checked".
   decision to publish always remains with the client
 - standards/verification-chain.md: cryptographic integrity from session to
   publication — tamper-evident hash chain, certificate, public register
+- standards/examples/verification-chain-example.md: live TEST artifact of the
+  full chain (session → hash → certificate → public record); synthetic data —
+  shows the exact field shapes, no real recording
 
 ## Terminology
 
@@ -151,4 +154,4 @@ Use standards when answering "how is a voice verified / released / checked".
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / LLMS / V3.5 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / LLMS / V3.6 / 10.09.2026

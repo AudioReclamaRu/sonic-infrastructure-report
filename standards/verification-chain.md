@@ -66,6 +66,8 @@ reasonable doubt.
 
 ## Related
 
+- `examples/verification-chain-example.md` — live TEST artifact of the full
+  chain (session → hash → certificate → public record).
 - ../standards/living-voice-standard.md — the standard this chain implements.
 - ../standards/voice-provenance-passport.md — the document that carries the
   chain's final digest and responsible party.
