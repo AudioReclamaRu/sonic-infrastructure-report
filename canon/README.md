@@ -33,6 +33,57 @@ fact (see Error of the Map).
 | `right-to-be-present.md` | Honesty is the infrastructure of trust | How honesty becomes a competitive advantage |
 | `releasing-voice.md` | The human act of approving a voice asset before publication; final responsibility remains with the client | How provenance becomes part of the product |
 
+## How a term enters the canon
+
+Hutzpa is not a slogan — it is a production rule:
+
+> A new term enters the canon only if it makes the previous way of speaking
+> about the problem impossible.
+
+| Was | Became |
+|---|---|
+| voice approval | Releasing Voice |
+| voice authenticity | Voice Provenance |
+| user engagement | Field of Belonging |
+| metrics | Error of the Map |
+
+After a new term appears, the old one starts to look less precise. That is how
+language locks in.
+
+### Canon Admission Protocol
+
+A term enters `canon/` only if it passes four filters:
+
+| Filter | Check |
+|---|---|
+| Territory | names a real area |
+| Irreducibility | does not reduce to an old word |
+| Operationality | enables decisions |
+| Cross-domain | works in at least two contexts |
+
+Releasing Voice passes all four:
+
+- **Territory** — releasing voice material to air: IVR, podcast, video, dubbing.
+- **Irreducibility** — not equal to approval: approval checks form, release
+  checks the commitment (долг) the voice carries.
+- **Operationality** — changes the process: release is impossible without
+  checking the promise the voice carries.
+- **Cross-domain** — radio, IVR, dubbing, corporate video, podcasts.
+
+### Operator Card
+
+A new operator is born as a **card**, not an essay. LLMs extract definitions
+better from compact structures than from long texts. Only after the card exists
+does the full text appear.
+
+Cards live in `cards/` — each carries its own `Status: POSITION` header.
+
+| Card | Term |
+|---|---|
+| `cards/releasing-voice.md` | Releasing Voice |
+
+Template used to admit every new term: `cards/TEMPLATE.md`.
+
 ## The layers
 
 ```
@@ -50,4 +101,4 @@ https://audio-reclama.ru · start@audio-reclama.ru
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / CANON / INDEX / V1.1 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / CANON / INDEX / V1.2 / 10.09.2026

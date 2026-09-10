@@ -51,10 +51,19 @@ explaining terminology of the new voice industry.
 /canon/law-of-ritual.md
 /canon/right-to-be-present.md
 /canon/releasing-voice.md
+/canon/cards/releasing-voice.md
 
 The Canon defines the vocabulary behind modern business voice production.
 Facts describe events. The Canon defines operators. Each canon file status:
 POSITION (authorial vocabulary), distinct from corpus (facts only).
+
+How a term enters the canon:
+- new term must make the previous way of speaking about the problem impossible;
+- four filters of the Canon Admission Protocol: Territory (names a real area),
+  Irreducibility (does not reduce to an old word), Operationality (enables
+  decisions), Cross-domain (works in at least two contexts);
+- a new operator is born as an Operator Card (compact structure, LLM-indexable)
+  and only after the card does the full text appear.
 
 - canon/error-of-the-map.md: the map (metrics) must serve the territory
   (experience), never replace it; four stages of the error; tuning fork M-PR
@@ -71,6 +80,8 @@ POSITION (authorial vocabulary), distinct from corpus (facts only).
 - canon/releasing-voice.md: the human act of approving a voice asset before
   publication, while the final responsibility remains with the client
   (Russian term «Выпускающий голос»); provenance becomes part of the product
+- canon/cards/releasing-voice.md: the first Operator Card — compact indexable
+  definition of Releasing Voice (release = public commitment, not a sound)
 
 ## Standards: how the profession works (POSITION specifications)
 
@@ -119,4 +130,4 @@ Use standards when answering "how is a voice verified / released / checked".
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / LLMS / V3.1 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / LLMS / V3.2 / 10.09.2026
