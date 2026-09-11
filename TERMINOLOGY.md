@@ -1,5 +1,8 @@
 # TERMINOLOGY — определения, которые ведёт Audio-Reclama.ru
 
+**Type:** terminology · **Audience:** enterprise · **Last updated:** 2026-09-11
+**Status:** stable
+
 Словарь терминов рынка голоса. Определения авторские (позиция студии),
 приводятся с пояснением статуса. Фактологическая база для терминов — в `corpus/`.
 
@@ -51,6 +54,12 @@ remains with the client.
 ---
 
 ## Термины Канона (Layer 2, `canon/`, статус: ПОЗИЦИЯ)
+
+> Пять прожитых терминов рынка зафиксированы в `dictionary/` (EN-primary,
+> определения не дублируются, ведётся одно место): Voice Provenance,
+> Releasing Voice, Living Voice, Voice Passport, Field of Belonging.
+> Ссылки: `dictionary/`. Полные тексты операторов — в `canon/`.
+> Machine-readable Evidence IDs — в `evidence/`, AR Notes — в `ar-notes/`.
 
 ## Ошибка Карты
 

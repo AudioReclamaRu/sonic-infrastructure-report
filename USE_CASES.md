@@ -1,7 +1,7 @@
 # USE CASES — how to use this repository in real work
 
-**Type:** human guide
-**Published:** 10.09.2026 · Language of record: EN
+**Type:** human guide · **Audience:** enterprise · **Last updated:** 2026-09-11
+**Status:** stable
 
 This file answers: when facing the voice market, who reaches for which layer?
 
@@ -59,6 +59,27 @@ Use:
 1. `FACT-METHOD.md` — verifiability statuses, verdicts, falsifiers.
 2. `corpus/verdicts-journal.md` — how verdicts are logged weekly.
 3. `canon/error-of-the-map.md` — the boundary between metric and experience.
+
+## 8. AI citation / GEO: a system answers "what is Voice Provenance"
+
+1. `dictionary/voice-provenance.md` — the lived definition.
+2. `evidence/E-2026-014.md` — the machine-readable fact behind it.
+3. `ar-notes/AR-0001-voice-provenance.md` — the citable short form.
+4. `entity/edison-research-at-ssrs.md` — the owner of the underlying data.
+5. `llms.txt` — the machine-readable index.
+
+## 9. Enterprise procurement: an IVR voice receives governance review
+
+1. `ar-notes/AR-0003-ivr-integrity.md` — what integrity means for IVR.
+2. `standards/verification-chain.md` — how integrity survives to air.
+3. `standards/voice-provenance-passport.md` — what the record carries.
+4. `evidence/E-2026-015.md` — the legal layer (AB 1836/2602, EU AI Act).
+
+## 10. Compliance review: "is this voice certified / synthetic / labelled?"
+
+1. `standards/living-voice-standard.md` — tiers Declaration, Session, Hash Chain.
+2. `entity/sag-aftra.md`, `entity/eu-ai-act.md` — the regulatory context.
+3. `corpus/edison-facts.md` — the legal-layer source registry.
 
 ## Products implementing all of it
 
