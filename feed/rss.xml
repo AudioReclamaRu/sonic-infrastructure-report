@@ -1,35 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"><channel>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>
 <title>Культура голоса — сигналы рынка, evidence, вердикты</title>
 <link>https://audio-reclama.ru</link>
-<description>Проверяемые сигналы голосового рынка: evidence, фальсификаторы, вердикты (Audio-Reclama).</description>
+<description>Проверяемые сигналы голосового рынка: evidence, фальсификаторы, вердикты (Аудио-Реклама•ru).</description>
 <language>ru</language>
+<item>
+<title>Голосовой фишинг +1210%: почему человеческая озвучка снова в цене</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-016.md</link>
+<description>За год клонирование голоса превратилось из технологии в угрозу: количество мошеннических схем выросло на 1210%, а для клона чужого голоса хватило трёх секунд записи.
+
+Технология перестала быть «дорогой игрушкой». Образцы голоса собирают из роликов, обзвонов и интервью. Дальше — поддельное «мама, срочно переведи деньги». Люди уже не верят ушам, и это изменило рынок озвучки сильнее любого маркетинга.
+
+Что это значит для бизнеса. Клиент слышит голос компании и должен эмоционально ему доверять. Когда вокруг — клоны и вбросы, проверенный живой голос становится конкурентным преимуществом, а не просто «приятным нюансом».
+
+Радио, IVR-меню, автоинформатор, рекламный ролик — всё это говорит с потребителем от лица бренда. Фальшь или неуверенность в интонации теперь считываются как риск. Ставка на проверенную студию возвращается.
+
+Мы не обещаем «голос, который не отличишь». Мы даём живой голос, который не пытается казаться чужим. Пишем, записываем, сдаём с контролем качества.
+
+Озвучка для вашего бренда: https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#голос #озвучка #IVR #аудиореклама #диктор #АудиоРеклама</description>
+<pubDate>Fri, 11 Sep 2026 18:00:00 GMT</pubDate>
+<guid isPermaLink="false">voice-scams-trust-2026-09-11</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/voice-scams-trust.png" type="image/png" length="28403"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/voice-scams-trust.png" type="image/png"/>
+</item>
 <item>
 <title>Рынок голоса пошёл в две стороны: ИИ — на объём, люди — на доверие</title>
 <link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/state-of-voice-2026.md</link>
-<description>Объём ушёл машинам, доверие осталось людям. Опора: UMG x ElevenLabs (10.09, E-2026-016) и аргумент Фитусси (04.09, E-2026-017). Evidence, фальсификаторы, вердикты — в открытом репозитории.</description>
-<pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+<description>На этой неделе голосовой рынок окончательно разделился на два полюса. Крупный лейбл UMG и ElevenLabs подписали первое в отрасли лицензионное соглашение на использование голосов артистов в ИИ (E-2026-016). А автор «Рациональности» Сэмюэль Фитусси опубликовал эссе о том, что человеку рационально предпочитать человеческий контент — даже лучшему ИИ (E-2026-017).
+
+Оба события — про одно и то же: не «ИИ заменит голоса», а «объём уходит машинам, доверие остаётся людям».
+
+Объём. Переводы, генерации, массовые интеграции и контент «по шаблону» берёт автоматика. Это дёшево и быстро, и это настоящий объём.
+
+Доверие. Слушатель платит за то, что голос не врёт. Бренд, банк, радиостанция или клиника — все они проигрывают, когда их голос звучит как чужой клон.
+
+Наша позиция простой: мы зафиксировали оба полюса в открытом репозитории — с evidence, проверкой первоисточников и вердиктами. Никакой паники, никаких хайпов. Только проверяемые сигналы.
+
+Если вам нужен голос, которому можно верить, — у нас он есть: https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#голос #ИИ #озвучка #диктор #аудиореклама #АудиоРеклама</description>
+<pubDate>Thu, 11 Sep 2026 07:00:00 GMT</pubDate>
 <guid isPermaLink="false">rynok-dve-storony-2026-09-11</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/rynok-dve-storony.png" type="image/png" length="29861"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/rynok-dve-storony.png" type="image/png"/>
 </item>
 <item>
 <title>UMG x ElevenLabs: первое соглашение крупного лейбла с ИИ-звуком</title>
 <link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-016.md</link>
-<description>Universal Music Group и ElevenLabs подписали много-летнее лицензионное соглашение и стратегическое партнёрство: лицензии, участие артистов, справедливая компенсация. Первичный источник прочитан 11.09 (E-2026-016).</description>
+<description>Universal Music Group и ElevenLabs подписали многолетнее лицензионное соглашение и стратегическое партнёрство. Это первая сделка такого масштаба: лицензии на голоса артистов, участие правообладателей в доходах и совместная разработка аудиопродуктов.
+
+Что важно понимать. Соглашение не «грабёж» и не «прорыв на пустом месте». Это фиксация правил игры: голос артиста — актив, который можно лицензировать, и правообладатели хотят получать долю.
+
+Для рынка озвучки это меняет ориентир: теперь существует официальная цена «голоса как технологии». А значит, живой голос — не абстракция, а ценность с защитой и справедливой компенсацией.
+
+Мы разобрали первоисточник (аннонс UMG и блог ElevenLabs) и зафиксировали всё в evidence E-2026-016 — без пересказов «из третьих рук».
+
+Полный разбор: https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-016.md
+
+Нужно озвучивание с гарантией прав и качества? Пишите: https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#UMG #ElevenLabs #голос #ИИ #озвучка #АудиоРеклама</description>
 <pubDate>Thu, 10 Sep 2026 21:00:00 GMT</pubDate>
 <guid isPermaLink="false">umg-elevenlabs-2026-09-10</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/umg-elevenlabs.png" type="image/png" length="30841"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/umg-elevenlabs.png" type="image/png"/>
 </item>
 <item>
 <title>Edison: вердикт СОСТОЯЛОСЬ, цифры слепого теста подтверждены</title>
 <link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/edison-blind-test.md</link>
-<description>Вебинар Edison «AI vs. Human» состоялся 10.09 14:00 ET; цифры слепого теста (61% неотличимость, 31% -&gt; 65%, 46/49) совпали с первоисточником от 14.07.2026.</description>
+<description>Анонсированный вебинар проекта Edison «AI vs. Human» состоялся 10 сентября. Мы сверили озвученные цифры слепого теста с первоисточником от 14.07.2026 — и они совпали до процента.
+
+Что было проверено: неотличимость ИИ-голоса (61%), выбор слушателей в пользу человеческого голоса при росте доверия (от 31% до 65% в зависимости от сценария) и результат 46 из 49 в контрольной выборке.
+
+Почему это важно лично для вас. Доверие к голосу измеряется не мнением, а цифрами. Если слушатели систематически выбирают человеческий голос в сценариях, где важно доверие, — это аргумент не для спора, а для закупки.
+
+Весь протокол проверки и связка первоисточников — в репозитории: https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/edison-blind-test.md
+
+Мы продолжаем фиксировать такие тесты, чтобы решения принимались по evidence, а не по ощущениям.
+
+Озвучка, в которой можно быть уверенным: https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#Edison #слепойтест #голос #доверие #озвучка #АудиоРеклама</description>
 <pubDate>Thu, 10 Sep 2026 21:00:00 GMT</pubDate>
 <guid isPermaLink="false">edison-verdict-2026-09-10</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/edison-verdict.png" type="image/png" length="30752"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/edison-verdict.png" type="image/png"/>
 </item>
 <item>
 <title>Рационально предпочитать человеческий контент ИИ-контенту даже лучшего качества</title>
 <link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-017.md</link>
-<description>Эссе Сэмюэля Фитусси (04.09): четыре аргумента в пользу человеческого текста и голоса; логика переносится с письма на голос. Первоисточник прочитан 11.09 (E-2026-017).</description>
+<description>Сэмюэль Фитусси, автор книги «Рациональность», опубликовал эссе: человеку рационально выбирать человеческий контент — даже если ИИ-версия объективно не хуже по качеству.
+
+Логика простая: контент, созданный человеком, — сигнал о человеке. Он несёт ответственность, стиль, контекст и историю. Искусный ИИ-копирайт, повторивший всё идеально, этих сигналов не несёт.
+
+На голос это переносится напрямую. Слушатель рекламы или IVR-меню решает не «красивый ли звук», а «можно ли здесь доверять». Человеческий голос — носитель этого сигнала.
+
+Поэтому «лучшее качество синтеза» — не тот критерий, по которому бизнес выбирает озвучку. Критерий — сигнал доверия, и он остаётся за живым голосом.
+
+Полный разбор аргументов и первоисточник: https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-017.md
+
+Живой голос для вашего бренда: https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#голос #доверие #ИИ #озвучка #диктор #АудиоРеклама</description>
 <pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
 <guid isPermaLink="false">fitoussi-human-preference-2026-09-04</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/fitoussi-human-preference.png" type="image/png" length="31856"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/fitoussi-human-preference.png" type="image/png"/>
 </item>
 </channel></rss>

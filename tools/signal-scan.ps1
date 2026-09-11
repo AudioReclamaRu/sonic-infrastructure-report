@@ -49,8 +49,9 @@ function Parse-Web([string]$query) {
     if (-not (Test-Path $tmp)) { return }
     $o = Get-Content $tmp -Raw -Encoding UTF8 | ConvertFrom-Json
     Remove-Item $tmp -Force -ErrorAction SilentlyContinue
-    foreach ($res in $o.results) {
+foreach ($res in $o.results) {
         if (-not $res.url) { continue }
+        if ($res.url -match 'duckduckgo\.com/y\.js|bing\.com/aclick|ad_domain=') { continue }
         $it = @{ src = 'WEB'; title = $res.title; url = $res.url; points = 0; comments = 0; ts = ''; snippet = $res.snippet; query = $query }
         $script:items += $it
     }
