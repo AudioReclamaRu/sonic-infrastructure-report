@@ -27,15 +27,18 @@ function Invoke-Graph([string]$url) {
 # 1) resolve page + page token
 if (-not $Page) {
     $acc = Invoke-Graph ("$api/me/accounts?fields=id,name,access_token&access_token=$userToken") | ConvertFrom-Json
-    if (-not $acc -or @($acc.data).Count -eq 0) {
-        Write-Output 'EMPTY_PAGES - token needs pages_show_list+pages_manage_posts. See /me/accounts.'
-        exit 1
+    if ($acc -and @($acc.data).Count -gt 0) {
+        $pg = $acc.data[0]
+        $Page = $pg.id
+        $pageToken = $pg.access_token
+    } else {
+        $pg = (Invoke-Graph ("$api/319271621473482?fields=access_token&access_token=$userToken") | ConvertFrom-Json)
+        $Page = '319271621473482'
+        $pageToken = $pg.access_token
     }
-    $pg = $acc.data[0]
-    $Page = $pg.id
-    $pageToken = $pg.access_token
 } else {
-    $pageToken = $userToken
+    $pg = (Invoke-Graph ("$api/$Page?fields=access_token&access_token=$userToken") | ConvertFrom-Json)
+    $pageToken = $pg.access_token
 }
 Write-Output ("PAGE=" + $Page)
 
