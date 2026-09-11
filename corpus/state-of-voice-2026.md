@@ -52,6 +52,15 @@ the last professional filter. (corpus/kto-vypuskaet-golos.en.md)
 ## VERDICT TRACKS
 
 - 10.09.2026 14:00 ET — Edison webinar; verdict after the date (11.09.2026).
+- Reconciliation: weekly (corpus/verdicts-journal.md).
+
+## FALSIFIERS
+
+Every number in this aggregate is falsifiable at its source, not in this
+summary: see the FALSIFIER section of corpus/edison-blind-test.en.md (61%,
+31→65%, 46/49) and of corpus/voice-market-signals-2026.md (150M, OSWorld 72.6%).
+If a source row is publicly disproven, this document is corrected with a date
+and reason, never silently.
 
 ## CONTACT & PRODUCT
 
