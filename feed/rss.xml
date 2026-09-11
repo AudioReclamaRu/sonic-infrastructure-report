@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>Культура голоса — сигналы рынка, evidence, вердикты</title>
+<link>https://audio-reclama.ru</link>
+<description>Проверяемые сигналы голосового рынка: evidence, фальсификаторы, вердикты (Audio-Reclama).</description>
+<language>ru</language>
+<item>
+<title>Рынок голоса пошёл в две стороны: ИИ — на объём, люди — на доверие</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/state-of-voice-2026.md</link>
+<description>Объём ушёл машинам, доверие осталось людям. Опора: UMG x ElevenLabs (10.09, E-2026-016) и аргумент Фитусси (04.09, E-2026-017). Evidence, фальсификаторы, вердикты — в открытом репозитории.</description>
+<pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">rynok-dve-storony-2026-09-11</guid>
+</item>
+<item>
+<title>UMG x ElevenLabs: первое соглашение крупного лейбла с ИИ-звуком</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-016.md</link>
+<description>Universal Music Group и ElevenLabs подписали много-летнее лицензионное соглашение и стратегическое партнёрство: лицензии, участие артистов, справедливая компенсация. Первичный источник прочитан 11.09 (E-2026-016).</description>
+<pubDate>Thu, 10 Sep 2026 21:00:00 GMT</pubDate>
+<guid isPermaLink="false">umg-elevenlabs-2026-09-10</guid>
+</item>
+<item>
+<title>Edison: вердикт СОСТОЯЛОСЬ, цифры слепого теста подтверждены</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/edison-blind-test.md</link>
+<description>Вебинар Edison «AI vs. Human» состоялся 10.09 14:00 ET; цифры слепого теста (61% неотличимость, 31% -&gt; 65%, 46/49) совпали с первоисточником от 14.07.2026.</description>
+<pubDate>Thu, 10 Sep 2026 21:00:00 GMT</pubDate>
+<guid isPermaLink="false">edison-verdict-2026-09-10</guid>
+</item>
+<item>
+<title>Рационально предпочитать человеческий контент ИИ-контенту даже лучшего качества</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-017.md</link>
+<description>Эссе Сэмюэля Фитусси (04.09): четыре аргумента в пользу человеческого текста и голоса; логика переносится с письма на голос. Первоисточник прочитан 11.09 (E-2026-017).</description>
+<pubDate>Fri, 04 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">fitoussi-human-preference-2026-09-04</guid>
+</item>
+</channel></rss>
