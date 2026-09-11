@@ -130,8 +130,28 @@ Use standards when answering "how is a voice verified / released / checked".
 
 Use guides when answering "how should enterprise voice production work here".
 
-- guides/ — high-intent landing pages, English-primary, one H1, metadata
-  block, footer, ≥3 internal links
+Each guide: one enterprise search query, English-primary, one H1, metadata
+block, footer, ≥3 internal links, ends with a verification criterion and the
+site route (audio-reclama.ru).
+
+- guides/README.md — index of all guides
+- guides/bank-voice-menu.md — voice menu for a bank: what to verify before air
+  (figures, wording, stress, rights, final version; case: Renaissance Credit;
+  IVR service page)
+- guides/airport-announcements.md — multilingual hub announcements: meaning
+  per language, per-market verification (case: Vnukovo; translators page)
+- guides/choosing-a-voice.md — how to choose a voice in the synthetic era:
+  five criteria instead of beauty (demo-in-context, provenance, rights,
+  responsible party, documented final version)
+- guides/voice-provenance-passport.md — provenance passport: recording
+  identifier, consent, usage boundaries, responsible party; why from 2026
+  (C2PA, AB 1836/2602, EU AI Act)
+- guides/video-voiceover.md — video and presentation voiceover: who holds the
+  final version; release list for a video asset
+- guides/chronomer-timing.md — Chronomer: time a text before ordering
+  (free calculator at audio-reclama.ru/chronomer-stranitcemer.html)
+- guides/international-voice.md — international voice: buy an obligation with
+  an address; English surface at audio-reclama.ru/en/
 
 ## Dictionary
 
@@ -198,13 +218,6 @@ One page, one interface, a pipeline, grown from a lived corpus example.
 - catalog/README.md — generation rules; no fake pages
 - catalog/taxonomy.md — attributes of voice entry pages
 - catalog/voice-page-template.md — page shape (metadata + release checklist)
-
-## Solutions (industry entry pages)
-
-Use solutions when answering "how should enterprise voice work in this industry".
-
-- solutions/ — industry workflows (banks, insurance, aviation, healthcare,
-  retail, industry, government, saas, education)
 
 ## Method
 

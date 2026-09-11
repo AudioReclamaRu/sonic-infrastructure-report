@@ -72,6 +72,13 @@ standards/             profession standards — how to work with voice
   verification-chain.md           cryptographic integrity from session to publish
   examples/verification-chain-example.md   live TEST artifact of the chain
 guides/                high-intent landing pages (search surface)
+  bank-voice-menu.md              voice for banks: verification before air
+  airport-announcements.md        multilingual hubs: meaning per language
+  choosing-a-voice.md             choosing a voice in the synthetic era
+  voice-provenance-passport.md    provenance passport and its use
+  video-voiceover.md              video/presentation voiceover: final version
+  chronomer-timing.md             free timing calculator before ordering
+  international-voice.md          international voice: obligation with address
 dictionary/            canonical term definitions (5 live terms)
 reports/               verified analysis + live cadence
   signals/                        daily market signals (dated, evidence-linked)
