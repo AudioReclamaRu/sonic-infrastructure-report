@@ -64,7 +64,6 @@ canon/                 position — operators of the industry's language
   law-of-ritual.md                how object becomes tradition
   right-to-be-present.md          how honesty becomes a competitive advantage
   releasing-voice.md              how provenance becomes part of the product
-  hutzpa.md                       the Declaration of Hutzpa (law of the canon)
   cards/                          Operator Cards (compact, LLM-indexable)
 standards/             profession standards — how to work with voice
   voice-provenance-passport.md    standard: voice provenance passport (EN)
@@ -82,8 +81,6 @@ entity/                named entities of the market (canonical IDs)
 ar-notes/              Audio-Reclama Research Notes (short, evidence-bound)
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
-process/               editorial process: the content filter
-scripts/               preflight checks
 ```
 
 ## The layers
@@ -103,8 +100,7 @@ and `reports/signals/`.
 ## Guides
 
 High-intent landing pages — each answers one enterprise search query.
-English-primary, metadata block, footer, internal links. (Prepared; full set
-approved incrementally against the content filter.)
+English-primary, metadata block, footer, internal links.
 
 ## Dictionary
 
@@ -151,7 +147,3 @@ https://audio-reclama.ru — start@audio-reclama.ru
 `voice-over`, `text-to-speech`, `ai-voice`, `enterprise-audio`, `ivr`,
 `dubbing`, `sonic-branding`, `localization`, `voice-cloning-rights`,
 `audio-for-business`, `voice-provenance`, `llms-txt`
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / README / V3.1 / 10.09.2026

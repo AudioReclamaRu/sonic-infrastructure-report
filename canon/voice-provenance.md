@@ -88,7 +88,3 @@ Release editing, provenance passports, license estimates, live recording —
 the check, the paper, and the sound. 618 voices, 62 languages, one principle:
 before a voice becomes a company's voice, someone checks it.
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / VOICE-PROVENANCE / V1.0 / 10.09.2026

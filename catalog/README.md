@@ -20,8 +20,8 @@ Principles
 - This README — generation rules (whom to generate for, and when)
 
 Related: `../standards/responsible-release.md` (release check the generated
-pages must reflect), `../process/content-filter.md` (no content without an
-LPM intent).
+pages must reflect), `../dictionary/` (lived terms, the vocabulary pages exist
+to serve).
 
 ## Generation rules
 

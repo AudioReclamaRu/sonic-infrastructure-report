@@ -102,7 +102,3 @@ remains with the client.
 Рекординг, редактура голоса до эфира, паспорт происхождения, расчёт лицензии,
 сертификаты верификации «Живой Голос»:
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / TERMINOLOGY / V1.2 / 10.09.2026

@@ -57,7 +57,3 @@ the last professional filter. (corpus/kto-vypuskaet-golos.en.md)
 
 https://audio-reclama.ru · start@audio-reclama.ru — recording, pre-air voice
 editing, provenance passports, license estimates.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / STATE-OF-VOICE-2026 / V1.0 / 10.09.2026

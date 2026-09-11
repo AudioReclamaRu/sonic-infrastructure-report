@@ -33,7 +33,3 @@ To publish a term, it must pass the four filters of the Canon Admission
 Protocol (Territory, Irreducibility, Operationality, Cross-domain).
 Only after the card exists does the full text appear.
 Card index: `../README.md` (#Operator Card). Full operator text: `../<term>.md`.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / CARDS / <TERM> / V1.0 / <DATE>

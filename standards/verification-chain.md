@@ -78,7 +78,3 @@ reasonable doubt.
 
 Verification certificates, hash-locked releases, provenance passports, public
 register. https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / STANDARDS / VERIFICATION-CHAIN / V1.0 / 10.09.2026

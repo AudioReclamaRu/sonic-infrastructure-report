@@ -24,7 +24,3 @@ the corpus a live source.
 | next Monday | Weekly signal re-check | (pending) | — |
 
 ---
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / VERDICTS-JOURNAL / V1.0 / 10.09.2026

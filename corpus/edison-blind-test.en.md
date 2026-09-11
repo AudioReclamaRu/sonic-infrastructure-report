@@ -48,7 +48,3 @@ get a retrofitted story.
 ## CONTACT & PRODUCT
 
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / EDISON-BLIND-TEST.EN / V1.0 / 10.09.2026

@@ -85,7 +85,3 @@ meaningless: the orchestra is out of tune, too early to play.
 
 This operator is how the studio releases sound: verify, then publish.
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / ERROR-OF-THE-MAP / V1.0 / 10.09.2026

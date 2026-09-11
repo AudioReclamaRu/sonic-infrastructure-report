@@ -84,7 +84,3 @@ answer*.
 Presence in audio means: a verified voice with a named responsibility — or a
 clearly labelled synthetic one. Never a silent substitution.
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / RIGHT-TO-BE-PRESENT / V1.0 / 10.09.2026

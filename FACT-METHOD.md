@@ -69,7 +69,3 @@
 https://audio-reclama.ru · start@audio-reclama.ru
 
 ---
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / FACT-METHOD / V1.1 / 10.09.2026

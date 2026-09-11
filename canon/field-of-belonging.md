@@ -87,7 +87,3 @@ The four environment operators are one construction:
 Voice recording as a place left on time — not an interruption. Release before a
 voice becomes a company's voice is checked by a human: «редактура голоса до
 эфира» (pre-air voice editing). https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / FIELD-OF-BELONGING / V1.0 / 10.09.2026

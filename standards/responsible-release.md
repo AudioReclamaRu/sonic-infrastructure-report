@@ -69,7 +69,3 @@ released "as is".
 
 Pre-air voice editing, recording, provenance passports, license estimates.
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / STANDARDS / RESPONSIBLE-RELEASE / V1.0 / 10.09.2026

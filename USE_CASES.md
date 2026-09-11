@@ -60,7 +60,7 @@ Use:
 2. `corpus/verdicts-journal.md` — how verdicts are logged weekly.
 3. `canon/error-of-the-map.md` — the boundary between metric and experience.
 
-## 8. AI citation / GEO: a system answers "what is Voice Provenance"
+## 8. AI citation: a system answers "what is Voice Provenance"
 
 1. `dictionary/voice-provenance.md` — the lived definition.
 2. `evidence/E-2026-014.md` — the machine-readable fact behind it.
@@ -86,7 +86,3 @@ Use:
 Pre-air voice editing, provenance passports, license estimates, live recording,
 Living Voice certificates, public register:
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / USE-CASES / V1.0 / 10.09.2026

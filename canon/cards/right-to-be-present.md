@@ -41,7 +41,3 @@ Facts: `../../corpus/edison-blind-test.md`, `../../corpus/voice-market-signals-2
 Standards implementing: `../../standards/responsible-release.md`,
 `../../standards/voice-provenance-passport.md`.
 Product: https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / CARDS / RIGHT-TO-BE-PRESENT / V1.0 / 10.09.2026

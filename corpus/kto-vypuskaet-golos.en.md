@@ -78,7 +78,3 @@ Authorial terminology (position, not fact): «редактура голоса д
 
 https://audio-reclama.ru · start@audio-reclama.ru — pre-air voice editing,
 recording, provenance passports, license estimates.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / KTO-VYPUSKAET-GOLOS.EN / V1.0 / 10.09.2026

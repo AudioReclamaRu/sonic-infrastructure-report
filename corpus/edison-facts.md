@@ -81,7 +81,3 @@
 ## Продукт и контакт
 
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / EDISON-FACTS / V0.2 / 10.09.2026

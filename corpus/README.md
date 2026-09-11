@@ -30,7 +30,3 @@
 ## Контакт и продукт
 
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / INDEX / V2.0 / 10.09.2026

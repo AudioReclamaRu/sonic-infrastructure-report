@@ -120,7 +120,3 @@ further without the author.
 
 Return-points measured in publication rhythm. For production: the release
 ritual — check, then air. https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / LAW-OF-RITUAL / V1.0 / 10.09.2026

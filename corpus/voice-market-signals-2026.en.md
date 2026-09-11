@@ -42,7 +42,3 @@ a separate verification row.
 ## CONTACT & PRODUCT
 
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / VOICE-MARKET-SIGNALS-2026.EN / V1.0 / 10.09.2026

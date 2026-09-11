@@ -74,7 +74,3 @@ Release editing (редактура голоса до эфира), provenance pa
 estimates, live recording. 618 voices, 62 languages, one principle: before a
 voice becomes a company's voice, someone checks it.
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / RELEASING-VOICE / V1.0 / 10.09.2026

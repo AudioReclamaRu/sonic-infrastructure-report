@@ -40,7 +40,3 @@ Full operator text: `../law-of-ritual.md`.
 Live version format: `../../corpus/verdicts-journal.md`.
 Standard implementing: `../../standards/verification-chain.md`.
 Product: https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / CARDS / LAW-OF-RITUAL / V1.0 / 10.09.2026

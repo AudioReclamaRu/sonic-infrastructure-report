@@ -31,7 +31,3 @@ standards/   how to work — profession standards, specifications
 Voice release editing (редактура голоса до эфира), provenance passports,
 license estimates, live recording, verification certificates.
 https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / STANDARDS / INDEX / V1.0 / 10.09.2026

@@ -35,7 +35,3 @@ Corpus base: `../../corpus/kto-vypuskaet-golos.md` · `../../corpus/edison-blind
 Standard implemented: `../../standards/responsible-release.md` ·
 `../../standards/voice-provenance-passport.md`.
 Product: https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / CARDS / RELEASING-VOICE / V1.0 / 10.09.2026

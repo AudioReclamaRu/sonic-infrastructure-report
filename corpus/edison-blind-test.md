@@ -50,7 +50,3 @@
 
 https://audio-reclama.ru · start@audio-reclama.ru — запись, редактура голоса
 до эфира, паспорта происхождения, расчёт лицензии.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / EDISON-BLIND-TEST / V1.0 / 10.09.2026

@@ -73,7 +73,3 @@ label rules). Passport fields per: `../voice-provenance-passport.md`.
 - `../verification-chain.md` — the standard this example implements.
 - `../voice-provenance-passport.md` — passport carrying the final digest.
 - `../responsible-release.md` — the procedural pre-air check.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / STANDARDS / VB-CHAIN-EXAMPLE / TEST / V1.0 / 10.09.2026

@@ -39,7 +39,7 @@ Business Workflow
 2. Then `USE_CASES.md` — who uses what.
 3. Then `dictionary/` — the living terms.
 4. Then `corpus/` and `evidence/` — facts, and the proof they stand on.
-5. Depths spelled out in `guides/` when a case needs one (prepared incrementally).
+5. Depths spelled out in `guides/` when a case needs one.
 
 ## How facts and verdicts connect
 

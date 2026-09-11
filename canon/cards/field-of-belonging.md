@@ -38,7 +38,3 @@ Full operator text: `../field-of-belonging.md`.
 Facts: `../../corpus/kto-vypuskaet-golos.md`, `../../corpus/state-of-voice-2026.md`.
 Standard implementing: `../../standards/responsible-release.md`.
 Product: https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / CARDS / FIELD-OF-BELONGING / V1.0 / 10.09.2026

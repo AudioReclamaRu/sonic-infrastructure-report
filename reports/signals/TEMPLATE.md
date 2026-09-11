@@ -29,7 +29,7 @@ Measurement (see `interfaces/`). One line.
 
 Related
 - evidence/E-YYYY-NNN.md
-- entity/… and corpus/… (минимум 2 ссылки)
+- entity/… and corpus/…
 - reports/verdicts/verdict-index.md
 
 Footer

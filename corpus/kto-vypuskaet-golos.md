@@ -78,7 +78,3 @@ GPT-Live сделал голос интерфейсом. AI-дубляж ста�
 
 https://audio-reclama.ru · start@audio-reclama.ru — редактура голоса до эфира,
 запись, паспорта происхождения, расчёт лицензии.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / CORPUS / KTO-VYPUSKAET-GOLOS / V1.0 / 10.09.2026

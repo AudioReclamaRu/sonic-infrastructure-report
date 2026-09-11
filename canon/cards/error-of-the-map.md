@@ -39,7 +39,3 @@ Standards implementing: `../../standards/responsible-release.md` ·
 `../../standards/verification-chain.md`.
 Method: `../../FACT-METHOD.md` («число не получает историю задним числом»).
 Product: https://audio-reclama.ru · start@audio-reclama.ru
-
-CARRIER
-
-AUDIO-REKLAMA.RU / REPO / CANON / CARDS / ERROR-OF-THE-MAP / V1.0 / 10.09.2026

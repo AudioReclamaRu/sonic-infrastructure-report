@@ -176,7 +176,3 @@ hierarchy between human and synthetic voice.
 - ../canon/right-to-be-present.md — why honesty is infrastructure of trust.
 - ../canon/releasing-voice.md — releasing voice / provenance as product.
 - ../standards/verification-chain.md — level III build-out.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / STANDARDS / LIVING-VOICE-STANDARD / V1.0 / 10.09.2026

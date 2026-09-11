@@ -40,10 +40,10 @@ Output
 One lived example of this interface in the corpus — not an invented frame.
 
 Related
-- interfaces/INTERFACE-001-voice-provenance.md (the first grown card, as an example)
-- canon/releasing-voice.md (the canon layer an interface mirrors)
-- standards/verification-chain.md (the standards layer an interface relies on)
-- dictionary/voice-provenance.md (the lived term to keep definitions from drifting)
+- interfaces/INTERFACE-001-voice-provenance.md
+- canon/releasing-voice.md
+- standards/verification-chain.md
+- dictionary/voice-provenance.md
 
 Footer
 Audio-Reclama.ru

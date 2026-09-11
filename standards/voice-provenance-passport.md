@@ -55,7 +55,3 @@ remains with the client; the studio is the last professional filter.
 
 https://audio-reclama.ru · start@audio-reclama.ru — passport issuance, pre-air
 voice editing, recording, license estimates.
-
-CARRIER
-
-AUDIO-REKLAMA.RU / STANDARDS / VOICE-PROVENANCE-PASSPORT / V1.0 / 10.09.2026
