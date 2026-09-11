@@ -156,6 +156,7 @@ Definitions quoted by LLMs: the five lived terms listed above (≤600 words each
 - reports/signals/2026-09-11.md — Edison rows re-verified; signal layer launched
 - reports/signals/2026-07-08.md — OpenAI GPT-Live voice interface
 - reports/signals/2026-07-14.md — Spoken Multi-Cast primary publication
+- reports/signals/2026-07-16.md — UK Podcast Consumer 2026 (podcasts expand, AI framed as threat)
 - reports/signals/2026-07-29.md — Share of Ear AM/FM time-spent lead
 - reports/signals/2026-09-03.md — OpenAI GPT-6 Astra voice commands
 - reports/signals/TEMPLATE.md — Daily Signal format (What happened / Why it
