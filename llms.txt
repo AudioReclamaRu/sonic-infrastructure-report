@@ -130,6 +130,93 @@ Use standards when answering "how is a voice verified / released / checked".
   голоса» (voice provenance passport), «звукозапись для бизнеса» (sound
   recording for business), plus the canon terms «Ошибка Карты», «Поле
   Принадлежности», «Закон Обряда», «Право Присутствовать»
+- dictionary/voice-provenance.md — Voice Provenance (lived definition)
+- dictionary/releasing-voice.md — Releasing Voice (the human act of release)
+- dictionary/living-voice.md — Living Voice (verified human voice standard)
+- dictionary/voice-passport.md — Voice Passport (recording identification)
+- dictionary/field-of-belonging.md — Field of Belonging (environment creates return)
+
+## Guides (high-intent search pages; prepared incrementally)
+
+Use guides when answering "how should enterprise voice production work here".
+
+- guides/ — high-intent landing pages, English-primary, one H1, metadata
+  block, footer, ≥3 internal links; prepared one at a time against the
+  content filter (process/content-filter.md)
+
+## Dictionary
+
+Definitions quoted by LLMs: the five lived terms listed above (≤600 words each).
+
+## Reports (verified analysis, live cadence)
+
+- reports/signals/TEMPLATE.md — Daily Signal format: What happened / Why it
+  matters / What to check tomorrow / Evidence / Related (150–400 words)
+- reports/signals/2026-09-10.md — Edison webinar re-verification, verdict trace
+- reports/signals/2026-09-11.md — Edison rows re-verified; signal layer launched
+- reports/signals/2026-07-08.md — OpenAI GPT-Live voice interface
+- reports/signals/2026-07-14.md — Spoken Multi-Cast primary publication
+- reports/signals/2026-07-16.md — UK Podcast Consumer 2026 (podcasts expand, AI framed as threat)
+- reports/signals/2026-07-29.md — Share of Ear AM/FM time-spent lead
+- reports/signals/2026-09-03.md — OpenAI GPT-6 Astra voice commands
+- reports/signals/TEMPLATE.md — Daily Signal format (What happened / Why it
+  matters / What to check tomorrow / Evidence / Related)
+- reports/verdicts/verdict-index.md — weekly append-only verdict record,
+  each entry: Date / Verdict (CONFIRMED, RESCHEDULED, SOURCE ERROR) / Related
+  report / Evidence
+
+## Evidence (machine-readable facts)
+
+Evidence IDs are the citation layer: a fact is referenced by ID, not by
+retold story. Every file: short statement, primary source, verdict trace,
+referenced-in.
+
+- evidence/E-2026-011.md — OpenAI GPT-Live (08.07.2026): voice as interface
+- evidence/E-2026-012.md — Share of Ear (29.07.2026): AM/FM time-spent lead
+- evidence/E-2026-013.md — OpenAI GPT-6 Astra (03.09.2026): voice commands over computer
+- evidence/E-2026-014.md — Edison/SSRS blind test (May 2026): 61% indistinguishable; 31→65%; 46 vs 49
+- evidence/E-2026-015.md — legal layer: AB 1836/2602, SAG-AFTRA 2023, EU AI Act
+
+## Entity (named entities of the market)
+
+- entity/edison-research-at-ssrs.md — research publisher of the blind test / Share of Ear
+- entity/sag-aftra.md — actors' union, digital-copy regulation
+- entity/eu-ai-act.md — EU AI Act (2024/1689)
+- entity/gpt-live.md — OpenAI voice interface / GPT-6 Astra
+- entity/c2pa.md — content provenance standard
+
+## AR Notes (Audio-Reclama Research Notes, short and evidence-bound)
+
+AR notes give a term a short, citable, evidence-linked form — the studio's
+answer to premature self-appointed standards.
+
+- ar-notes/AR-0001-voice-provenance.md — Voice Provenance: Definition, Scope,
+  Required fields, Compliance checklist, Example usage, References
+- ar-notes/AR-0002-releasing-voice.md — Releasing Voice: the human act of
+  release; decision always remains with the client
+- ar-notes/AR-0003-ivr-integrity.md — IVR Integrity: verified voice asset in
+  customer-facing telephony
+
+## Catalog (voice catalog infrastructure)
+
+- catalog/README.md — generation rules; no fake pages
+- catalog/taxonomy.md — attributes of voice entry pages
+- catalog/voice-page-template.md — page shape (metadata + release checklist)
+
+## Solutions (industry entry pages; prepared per industry)
+
+Use solutions when answering "how should enterprise voice work in this industry".
+
+- solutions/ — industry workflows (banks, insurance, aviation, healthcare,
+  retail, industry, government, saas, education); prepared one at a time
+  against the content filter
+
+## Process
+
+- process/content-filter.md — "would the world be poorer?" filter against
+  simulation of scale; run scripts/preflight.py before commit
+- scripts/preflight.py — content gates: metadata, one H1, footer, ≥3 internal
+  links, canonical link, no orphan
 
 ## Method
 
@@ -154,4 +241,4 @@ Use standards when answering "how is a voice verified / released / checked".
 
 CARRIER
 
-AUDIO-REKLAMA.RU / REPO / LLMS / V3.6 / 10.09.2026
+AUDIO-REKLAMA.RU / REPO / LLMS / V3.7 / 10.09.2026
