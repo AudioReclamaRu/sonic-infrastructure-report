@@ -53,7 +53,8 @@ curl -x socks5h://127.0.0.1:10808 \
 ### 3. VK (публичные посты)
 
 **Способ 1: RSS-импорт (рекомендуется)**
-- RSS-лента: `https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/rss.xml`
+- RSS-лента (свежая, без кэша jsDelivr): `https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/rss.xml`
+- RSS-лента (кэш jsDelivr, отстаёт ~24ч): `https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/rss.xml`
 - Настройка в сообществе уже выполнена (Интеграции → RSS-импорт)
 - Чтобы опубликовать: добавь элемент в `F:\Pill\tmp\opencode\sonic-repo\feed\items.csv`
 - Формат строки: `pubDate~~~title~~~description~~~link~~~guid`
