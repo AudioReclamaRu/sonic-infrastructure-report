@@ -36,9 +36,16 @@ foreach ($l in $rows) {
     if ($p[0] -eq 'TITLE' -or $p[0] -eq 'DESC') { continue }
     if ($p.Count -lt 5) { continue }
     [void]$sb.AppendLine('<item>')
-    [void]$sb.AppendLine('<title>' + (Esc $p[1]) + '</title>')
-    [void]$sb.AppendLine('<link>' + (Esc $p[3]) + '</link>')
-    [void]$sb.AppendLine('<description>' + (Body $p[2]) + '</description>')
+    if ($p.Count -ge 6 -and $p[5]) {
+        $imgUrl = $imgBase + $p[5] + '.png'
+        [void]$sb.AppendLine('<title>' + (Esc $p[1]) + '</title>')
+        [void]$sb.AppendLine('<link>' + (Esc $p[3]) + '</link>')
+        [void]$sb.AppendLine('<description><![CDATA[<img src="' + $imgUrl + '"/><br/><br/>' + ((Esc $p[2]) -replace '\n', '<br/>') + ']]></description>')
+    } else {
+        [void]$sb.AppendLine('<title>' + (Esc $p[1]) + '</title>')
+        [void]$sb.AppendLine('<link>' + (Esc $p[3]) + '</link>')
+        [void]$sb.AppendLine('<description>' + (Body $p[2]) + '</description>')
+    }
     [void]$sb.AppendLine('<pubDate>' + $p[0] + '</pubDate>')
     [void]$sb.AppendLine('<guid isPermaLink="false">' + (Esc $p[4]) + '</guid>')
     if ($p.Count -ge 6 -and $p[5]) {
