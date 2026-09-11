@@ -109,4 +109,133 @@
 <enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/fitoussi-human-preference.png" type="image/png" length="31856"/>
 <media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/fitoussi-human-preference.png" type="image/png"/>
 </item>
+<item>
+<title>Кто проверил ваш голос до эфира?</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/kto-vypuskaet-golos.md</link>
+<description>Завтра в эфир вашей компании выходит голосовое сообщение. Оно звучит идеально. Ошибка — одна цифра. Кто проверил это до выпуска?
+
+В слепом исследовании Edison большинство слушателей не отличило синтетический голос от живого (61%). Значит, голос больше не продаётся тем, как звучит. Он продаётся тем, что человек проверил до эфира.
+
+Синтез произнесёт правильный и неправильный тариф с одинаковой уверенностью: для модели обе цифры равнозначны. Раньше ошибку ловили до записи. Теперь её ловят после синтеза — у голоса появляется момент выпуска.
+
+Это редактура, а не «прослушивание в студии». Человек, который отвечает на вопрос «это можно выпускать?». Мы перестали считать услугу минутами и считаем проверкой: цифры, формулировки, ударения, права, финальная версия записи.
+
+Решение публиковать остаётся за вами. Наша работа — чтобы оно принималось на проверенном материале.
+
+Проверьте свой материал до эфира: пришлите текст голосового сообщения на start@audio-reclama.ru — бесплатно скажем, где синтез может ошибиться.
+
+https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#голос #эфир #озвучка #IVR #диктор #АудиоРеклама</description>
+<pubDate>Sat, 12 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">kto-proveril-golos-2026-09-12</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/kto-proveril-golos.png" type="image/png" length="24005"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/kto-proveril-golos.png" type="image/png"/>
+</item>
+<item>
+<title>Голосовое меню банка: что проверять перед эфиром</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/bank-voice-menu.md</link>
+<description>Завтра звонок клиента попадает в ваше IVR. Оно звучит уверенно. Числа перепутаны: вклад, переключение оператора, ноль для меню. В IVR ошибка — это не шероховатость, а маршрут клиента в никуда: неправильный отдел, неправильный срок.
+
+Edison 2026: 61% не отличает синтез от живого голоса. Значит, меню больше не продаётся звучанием — оно продаётся проверкой до выпуска.
+
+Что проверяем до эфира:
+1. Цифры. Телефоны, тарифы, даты — синтез читает ошибку с той же уверенностью, что и правду.
+2. Формулировки. Договорные и продуктовые фразы — слово в слово.
+3. Ударения и интонация. IVR слушают, а не читают.
+4. Права. Версии, территории, срок, эксклюзивность.
+5. Финальная версия. Зафиксировать запись, которая реально вышла в эфир.
+
+Реализованный кейс — голосовое меню банка «Ренессанс Кредит»: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
+
+Бесплатно оценим риски вашего IVR-меню до эфира — напишите текст меню на start@audio-reclama.ru.
+
+https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#IVR #банк #голос #озвучка #диктор #АудиоРеклама</description>
+<pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">golos-banka-2026-09-13</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/golos-banka.png" type="image/png" length="25893"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/golos-banka.png" type="image/png"/>
+</item>
+<item>
+<title>Как выбрать диктора в эру синтетики: пять правил</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/choosing-a-voice.md</link>
+<description>Подбор голоса «по красоте звучания» устарел. Edison 2026: 61% слушателей не отличили синтез от живого диктора. Значит, диктора выбирают не по звучанию, а по тому, что переживает проверку.
+
+Пять правил вместо «красоты»:
+1. Демо в реальном контексте. Озвучить живое сообщение клиента, а не слоган — ролик, IVR, презентация.
+2. Происхождение. Может ли голос доказать, что это конкретный человек в конкретный момент?
+3. Права письменно. Срок, территория, эксклюзивность, повторное использование.
+4. Человек, который выпускает. Названа ли в договоре сторона, ответственная за финальную версию?
+5. Финальная версия задокументирована. Запись, которая вышла в эфир, заморожена и проверяема.
+
+Красота никогда не была пунктом договора. Если в договоре нет стороны, к которой можно предъявить претензию, — цена голоса не имеет содержания.
+
+Каталог голосов: https://www.audio-reclama.ru/diktoryi/
+
+Бесплатно подберём голос под вашу задачу по короткому брифу — начните с тестового фрагмента: start@audio-reclama.ru.
+
+https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#диктор #голос #озвучка #подборголоса #АудиоРеклама</description>
+<pubDate>Mon, 14 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">vybor-diktora-2026-09-14</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/vybor-diktora.png" type="image/png" length="25111"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/vybor-diktora.png" type="image/png"/>
+</item>
+<item>
+<title>Озвучка видео: кто держит финальную версию?</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/video-voiceover.md</link>
+<description>Ролик завтра уходит в рекламу. В нём звучит цифра. Она неверна. Кто держал финальную версию?
+
+Дубляж теперь делают без актёра в студии — Deepdub, Flawless, фейскэптч. Автоматизировано всё, кроме одного: человеческий выпуск. Проверка содержания и заморозка финальной версии до публикации.
+
+Пять пунктов выпуска для видео:
+1. Цифры и текст на экране совпадают с аудио.
+2. Формулировки точные — без пересказа договорных фраз.
+3. Ударения пережили монтаж: склеенная из дублей фраза читается иначе.
+4. Права покрывают каждое использование: реклама, каналы, территории, срок.
+5. Финальный микс задокументирован: опубликован именно тот файл, что прошёл проверку.
+
+Синтез произнесёт правильную и неправильную цифру с одинаковой уверенностью. У видео, провалившегося в эфире, не должно быть безымянного адреса претензии.
+
+Озвучка видео и просчёт хронометража: https://www.audio-reclama.ru/audio/ozvuchka-video.html
+
+Бесплатно посчитаем хронометраж вашего ролика и проверим текст на риски: пришлите сценарий на start@audio-reclama.ru.
+
+https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#видео #озвучка #ролик #голос #диктор #АудиоРеклама</description>
+<pubDate>Tue, 15 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">ozvuchka-video-2026-09-15</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/ozvuchka-video.png" type="image/png" length="27610"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/ozvuchka-video.png" type="image/png"/>
+</item>
+<item>
+<title>Объявления аэропорта: перевод или смысл?</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/airport-announcements.md</link>
+<description>Рейс задерживается. Номер гейта изменился. Объявление звучит на 11 языках. На одном языке цифра не та. Кто отвечает за смысл в этом языке?
+
+Перевод — это ещё не всё:
+- Ошибочно переведённая цифра меняет решение пассажира: номер, гейт, время.
+- Локализация должна отвечать законодательству страны и стилю самого хаба.
+- Каждая языковая версия — самостоятельный выпуск: цифры, формулировки, ударения, права, финальная версия.
+
+Синтез произнесёт правильный и неправильный номер рейса с одинаковой уверенностью — на всех 11 языках сразу. Раньше ошибку ловили до записи, теперь — после синтеза.
+
+У претензии должен быть адрес: сторона, которая отвечает за смысл на каждом языке до выпуска. Если она названа — можно проверять. Если нет — проверять некому.
+
+Кейс: мультиязычные объявления аэропорта «Внуково» — https://www.audio-reclama.ru/project/vnukovo.html • перевод и адаптация голоса: https://www.audio-reclama.ru/perevodchiki/
+
+Бесплатно проверим перевод одного объявления против записи — пришлите пару строк на start@audio-reclama.ru.
+
+https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru
+
+#аэропорт #перевод #голос #озвучка #мультиязычность #АудиоРеклама</description>
+<pubDate>Wed, 16 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">obyavleniya-aeroporta-2026-09-16</guid>
+<enclosure url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/obyavleniya-aeroporta.png" type="image/png" length="26944"/>
+<media:content url="https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/obyavleniya-aeroporta.png" type="image/png"/>
+</item>
 </channel></rss>
