@@ -49,6 +49,21 @@ the last professional filter. (corpus/kto-vypuskaet-golos.en.md)
 - California AB 1836/2602 (17.09.2024): voice as an object of consent.
 - EU AI Act (2024/1689): synthetic content regulatory framework.
 
+## 6. The market split into volume and trust
+
+- **10.09.2026** — UMG × ElevenLabs: first major-label AI-audio licensing
+  agreement. Value placed on licensing, artist participation, fair compensation,
+  "respect human artistry". (evidence/E-2026-016.md, read 11.09)
+- **04.09.2026** — Fitoussi: rational to prefer human content over AI content of
+  superior quality; in language we seek another mind, not a sequence.
+  (evidence/E-2026-017.md, read 11.09)
+- **05–08.09.2026** — volume-side traces: transcription price war (MSFT),
+  free in-browser voice cloning (646 languages), SOTA cloning on CPU
+  (title-level, p = 0.7).
+- Meaning: volume buys from a process; trust buys from a party with an address.
+  Falsifier: by 31.12.2026 no public case of a voice client paying a premium to
+  a live voice explicitly for "trust" → the thesis is unconfirmed, stated publicly.
+
 ## VERDICT TRACKS
 
 - 10.09.2026 14:00 ET — Edison webinar; verdict after the date (11.09.2026).
@@ -58,9 +73,9 @@ the last professional filter. (corpus/kto-vypuskaet-golos.en.md)
 
 Every number in this aggregate is falsifiable at its source, not in this
 summary: see the FALSIFIER section of corpus/edison-blind-test.en.md (61%,
-31→65%, 46/49) and of corpus/voice-market-signals-2026.md (150M, OSWorld 72.6%).
-If a source row is publicly disproven, this document is corrected with a date
-and reason, never silently.
+31→65%, 46/49) and of corpus/voice-market-signals-2026.md (150M, OSWorld 72.6%,
+and "market split" thesis falsifier, 31.12.2026). If a source row is publicly
+disproven, this document is corrected with a date and reason, never silently.
 
 ## CONTACT & PRODUCT
 
