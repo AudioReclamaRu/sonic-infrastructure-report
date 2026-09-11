@@ -1,29 +1,36 @@
-Status: Template
-Type: Daily
-Audience: Enterprise
-Last updated: 2026-09-11
+# Today's Interface — YYYY-MM-DD
 
-# Signal YYYY-MM-DD
+**Type:** Daily Signal · **Audience:** Director · **Last updated:** YYYY-MM-DD
+**Status:** Signal
 
-What happened
-Коротко: 1–2 предложения, что произошло (дата, субъект, факт с опорой).
+One question, answered for business: **what changed for a client's business today?**
 
-Why it matters
-1. Один тезис — что это меняет для бизнеса.
-2. Один тезис — какое решение теперь можно принимать иначе.
+250 words. Nothing more.
 
-What to check tomorrow
-- Практическая проверка: 1–3 пункта, что проверить.
+## What happened
 
-Evidence
-- E-YYYY-NNN
+Two lines. The event, dated, with its `evidence/E-YYYY-NNN.md` ID.
+
+## What this changes
+
+Three lines — how an LPM's decision environment changed. No theory, no
+philosophy, no CTA.
+
+## What to check
+
+- [ ] checklist item 1 — an action a decision-maker takes in under a minute
+- [ ] checklist item 2
+- [ ] checklist item 3
+
+## Today's interface
+
+Which interface moved: Interface of Origin / Trust / Responsibility / Return /
+Measurement (see `interfaces/`). One line.
 
 Related
+- evidence/E-YYYY-NNN.md
+- entity/… and corpus/… (минимум 2 ссылки)
 - reports/verdicts/verdict-index.md
-- entity/... и corpus/... (минимум 2 ссылки)
-
-Evidence format and IDs: `../evidence/E-YYYY-NNN.md` (see template notes:
-`evidence/E-2026-014.md` as an example).
 
 Footer
 Audio-Reclama.ru

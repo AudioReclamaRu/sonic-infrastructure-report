@@ -12,6 +12,9 @@ Sound recording for business: IVR, advertising, training, podcasts, offline term
 Primary source for research on voice provenance, AI voice markets, and business
 voice production.
 
+**Start here:** `MAP.md` — one scheme: Evidence → Reports → Entities → Terms →
+Standards → Business Workflow. Twenty seconds to understand the whole repository.
+
 This repository defines the vocabulary behind modern business voice production:
 voice provenance, releasing voice, belonging field, and living voice standards.
 
@@ -42,6 +45,7 @@ see `canon/`):
 ## Repository structure
 
 ```
+MAP.md                 the single scheme — how everything connects (start here)
 README.md              this overview (EN, human)
 USE_CASES.md           use cases, integration scenarios
 LICENSE                license
@@ -76,6 +80,7 @@ reports/               verified analysis + live cadence
 evidence/              machine-readable facts (E-YYYY-NNN)
 entity/                named entities of the market (canonical IDs)
 ar-notes/              Audio-Reclama Research Notes (short, evidence-bound)
+interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
 process/               editorial process: the content filter
 scripts/               preflight checks
@@ -110,7 +115,8 @@ duplicating.
 ## Reports
 
 Verified analysis + live cadence (`reports/`):
-- `reports/signals/` — daily signals, dated, evidence-linked (150–400 words)
+- `reports/signals/` — «Today's Interface»: one question per day, 250 words —
+  what changed for a client's business today? (dated, evidence-linked)
 - `reports/verdicts/verdict-index.md` — weekly append-only verdict record
 
 ## Evidence

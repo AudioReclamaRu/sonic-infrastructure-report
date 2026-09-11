@@ -2,9 +2,9 @@
 """GEO preflight - content gates for the enterprise knowledge graph layers.
 
 Gates apply to the GEO layers (guides/, dictionary/, reports/, evidence/,
-entity/, ar-notes/, catalog/, solutions/, process/, scripts/) plus the root
-index files. Historical layers (corpus/, canon/, standards/) follow their own
-formed discipline and are not re-gated retroactively.
+entity/, ar-notes/, interfaces/, catalog/, solutions/, process/, scripts/)
+plus the root index files. Historical layers (corpus/, canon/, standards/)
+follow their own formed discipline and are not re-gated retroactively.
 
 Checks per file: metadata block, exactly one H1 (outside fenced code),
 footer/canonical name, >=3 internal references (markdown links or backtick
@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 GEO_LAYERS = [
     "guides", "dictionary", "reports", "evidence", "entity",
-    "ar-notes", "catalog", "solutions", "process", "scripts",
+    "ar-notes", "interfaces", "catalog", "solutions", "process", "scripts",
 ]
 ROOT_FILES = ["README.md", "llms.txt", "USE_CASES.md", "TERMINOLOGY.md"]
 

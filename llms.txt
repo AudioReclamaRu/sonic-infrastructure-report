@@ -18,6 +18,8 @@
 
 ## Human
 
+- MAP.md: the single scheme — Evidence → Reports → Entities → Terms → Standards
+  → Business Workflow (start here)
 - README.md: overview — https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/README.md
 - USE_CASES.md: use cases and integration scenarios
 - LICENSE: CC BY 4.0 — https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/LICENSE
@@ -196,6 +198,15 @@ answer to premature self-appointed standards.
   release; decision always remains with the client
 - ar-notes/AR-0003-ivr-integrity.md — IVR Integrity: verified voice asset in
   customer-facing telephony
+
+## Interface Cards (one concept per page)
+
+Cards describe the boundaries where human, AI, law, and responsibility meet.
+One page, one interface, a pipeline, grown from a lived corpus example.
+
+- interfaces/TEMPLATE.md — the card shape (Input → steps → Output)
+- interfaces/INTERFACE-001-voice-provenance.md — Voice Provenance:
+  Editorial Check → Responsible Release, grown from the Edison blind-test verdict
 
 ## Catalog (voice catalog infrastructure)
 
