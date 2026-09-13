@@ -94,4 +94,13 @@
 <enclosure url="https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/images/obyavleniya-aeroporta.png" type="image/png" length="26944"/>
 <media:content url="https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/images/obyavleniya-aeroporta.png" type="image/png"/>
 </item>
+<item>
+<title>Голос стал пультом: ИИ выполняет команды голосом</title>
+<link>https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-013.md</link>
+<description><![CDATA[<img src="https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/images/golos-pult.png"/><br/><br/>Два события подтвердили: голос перестал быть только атрибутом контента — он стал интерфейсом управления.\n\nВ июле OpenAI заменила Advanced Voice Mode на GPT-Live: голос стал способом управлять ПО для ~150 млн платящих пользователей. В сентябре GPT-6 Astra выполняет компьютерную работу голосом: OSWorld 2.0 — 72,6%, BenchCAD — 95,9%.\n\nНе «голос звучит красиво», а «голос делает работу». Команда голосом — оформить, перевести, отправить — превращается из демо в рабочий инструмент.\n\nЧто это значит для бизнеса. Клиент уже привыкает отдавать голосовые команды. Там, где ваша компания отвечает голосом — автоинформатор, IVR, озвучка роликов, — требование становится жёстче: точность цифр, формулировок, прав и финальной версии. Интерфейс не прощает ошибку в тарифе.\n\nEvidence и первоисточники зафиксированы в репозитории (E-2026-011, E-2026-013).\n\nНужна озвучка, которая переживает проверку как интерфейс? Пишите: https://www.audio-reclama.ru • 8-800-700-46-52 • start@audio-reclama.ru\n\n#голос #ИИ #GPTLive #GPT6Astra #управление #озвучка #АудиоРеклама]]></description>
+<pubDate>Thu, 17 Sep 2026 12:00:00 GMT</pubDate>
+<guid isPermaLink="false">golos-pult-2026-09-17</guid>
+<enclosure url="https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/images/golos-pult.png" type="image/png" length="25476"/>
+<media:content url="https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/images/golos-pult.png" type="image/png"/>
+</item>
 </channel></rss>
