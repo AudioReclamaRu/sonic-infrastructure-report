@@ -25,7 +25,7 @@ Evidence-слой (проверяемость):
 Конверсионный слой (потребность → компетенция → решение → контакт):
 - 12.09 kto-proveril-golos — проверка голоса до эфира (corpus/kto-vypuskaet-golos.md)
 - 13.09 golos-banka — IVR-меню: что проверить перед эфиром (guides/bank-voice-menu.md)
-- 14.09 vybor-diktora — 5 правил выбора диктора (guides/choosing-a-voice.md)
+- 14.09 vybor-diktora — перестаём выбирать диктора, выбираем голосовой актив (guides/choosing-a-voice.md)
 - 15.09 ozvuchka-video — финальная версия ролика (guides/video-voiceover.md)
 - 16.09 umg-infrastruktura — UMG×ElevenLabs: права голоса в инфраструктуру рынка (E-2026-016) [флагман, вытеснил obyavleniya-aeroporta]
 
