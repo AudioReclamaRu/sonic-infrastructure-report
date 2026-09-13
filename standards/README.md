@@ -24,6 +24,11 @@ tiers, procedures, checks a machine or a human can apply.
 - `x11-editorial-height.md` — the flagship gate: would a good contractor write
   this? did the reader learn anything in 60 seconds? News is material, but the
   task is to show what the change makes possible / breaks / makes scarce.
+- `x12-global-monitoring.md` — the field-of-view gate: geography of an event
+  ≠ language of publication; minimal monitoring map (US, UK, EU, JP, KR, CN,
+  IN, LatAm, MENA, RU); every signal carries `event_geo` + `source_language`;
+  RU publishes only through the "what changes beyond the Russian market?"
+  gate. Source registry lives in `reports/monitoring/venues.md`.
 
 ## How layers work together
 
