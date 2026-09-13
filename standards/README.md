@@ -17,6 +17,10 @@ tiers, procedures, checks a machine or a human can apply.
 - `verification-chain.md` — the security/publishing layer: hash chains,
   certificates, register, how the "can this be published?" question is made
   checkable.
+- `x10-human-signal.md` — editorial gate before release: nothing ships without
+  a human signal (specific fact + editorial judgment + irreplaceable phrase);
+  stop-filter on filler seams. Applied to feed posts, written as an
+  operational checklist.
 
 ## How layers work together
 
