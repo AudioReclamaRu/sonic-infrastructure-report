@@ -1,18 +1,22 @@
-﻿# fb-autopublish.ps1 — publish list of feed items to FB one by one (caller passes items)
-# Usage: powershell -File fb-autopublish.ps1 -Guids "guid1,guid2"
-# For each guid: reads items.csv, builds text, publishes with image if present, marks published.
+# vk-autopublish.ps1 - publish list of feed items to VK wall one by one (caller passes guids).
+# Usage: powershell -File vk-autopublish.ps1 -Guids "guid1,guid2"
+# For each guid: reads items.csv, publishes via vk-publish.ps1, marks published, records post_id.
 param(
     [string]$Guids
 )
 $ErrorActionPreference = 'Stop'
+
 $secrets = 'F:\Pill\tmp\opencode\secrets'
-$repo = 'F:\Pill\tmp\opencode\sonic-repo'
-$feed = Join-Path $repo 'feed'
-$published = Join-Path $secrets 'fb_published.txt'
-$script = Join-Path $repo 'tools\fb-publish.ps1'
+$repo    = 'F:\Pill\tmp\opencode\sonic-repo'
+$feed    = Join-Path $repo 'feed'
+$published = Join-Path $secrets 'vk_published.txt'
+$vkstate   = Join-Path $secrets 'vk_state.txt'
+$low   = Join-Path $repo 'tools\vk-publish.ps1'
 $srcLabel = [System.IO.File]::ReadAllText((Join-Path $repo 'state\source-label.txt')).Trim()
 
-if (-not (Test-Path $published)) { [System.IO.File]::WriteAllText($published, '', (New-Object System.Text.UTF8Encoding($false))) }
+if (-not (Test-Path $published)) {
+    [System.IO.File]::WriteAllText($published, '', (New-Object System.Text.UTF8Encoding($false)))
+}
 $done = @([System.IO.File]::ReadAllLines($published) | Where-Object { $_ -ne '' })
 $targets = @($Guids -split ',' | Where-Object { $_ -ne '' })
 
@@ -32,25 +36,26 @@ foreach ($g in $targets) {
     if (-not $rowsMap.ContainsKey($g)) { Write-Output ("SKIP guid not in csv: $g"); $skip++; continue }
     $p = $rowsMap[$g]
     $title = $p[1]
-    $desc = $p[2] -replace '\\n', "`n`n"
-    $link = $p[3]
+    $desc  = $p[2] -replace '\\n', "`n`n"
+    $link  = $p[3]
     $imgName = $p[5]
 
     $postText = "$title`n`n$desc`n`n$srcLabel $link"
-    $tmp = Join-Path $env:TEMP ("fb_ap_" + [guid]::NewGuid().ToString('N') + '.txt')
+    $tmp = Join-Path $env:TEMP ("vk_" + [guid]::NewGuid().ToString('N') + '.txt')
     [System.IO.File]::WriteAllText($tmp, $postText, (New-Object System.Text.UTF8Encoding($false)))
 
     $imgFile = Join-Path (Join-Path $feed 'images') ($imgName + '.png')
-    $hasImg = (Test-Path -LiteralPath $imgFile)
+    $hasImg  = (Test-Path -LiteralPath $imgFile)
 
     $argList = @('-Text', $tmp)
     if ($hasImg) { $argList += '-Image'; $argList += $imgFile }
 
     Write-Output ("PUBLISH $g ...")
-    $out = & powershell -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File $script @argList 2>&1 | Out-String
-    if ($out -match 'FB_POSTED id=(\S+)') {
+    $out = & powershell -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File $low @argList 2>&1 | Out-String
+    if ($out -match 'VK_POSTED post_id=(\S+)') {
         $postId = $Matches[1]
         [System.IO.File]::AppendAllText($published, "$g`n", (New-Object System.Text.UTF8Encoding($false)))
+        [System.IO.File]::AppendAllText($vkstate, "$g`t$postId`n", (New-Object System.Text.UTF8Encoding($false)))
         Write-Output ("OK $g -> $postId")
         $ok++
     } else {
