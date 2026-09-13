@@ -40,7 +40,7 @@ foreach ($l in $rows) {
         $imgUrl = $imgBase + $p[5] + '.png'
         [void]$sb.AppendLine('<title>' + (Esc $p[1]) + '</title>')
         [void]$sb.AppendLine('<link>' + (Esc $p[3]) + '</link>')
-        [void]$sb.AppendLine('<description><![CDATA[<img src="' + $imgUrl + '"/><br/><br/>' + ((Esc $p[2]) -replace '\n', '<br/>') + ']]></description>')
+        [void]$sb.AppendLine('<description><![CDATA[<img src="' + $imgUrl + '"/><br/><br/>' + ((Esc $p[2]) -replace '\\n', '<br/>') + ']]></description>')
     } else {
         [void]$sb.AppendLine('<title>' + (Esc $p[1]) + '</title>')
         [void]$sb.AppendLine('<link>' + (Esc $p[3]) + '</link>')

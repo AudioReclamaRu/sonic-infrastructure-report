@@ -27,6 +27,6 @@ Evidence-слой (проверяемость):
 - 13.09 golos-banka — IVR-меню: что проверить перед эфиром (guides/bank-voice-menu.md)
 - 14.09 vybor-diktora — 5 правил выбора диктора (guides/choosing-a-voice.md)
 - 15.09 ozvuchka-video — финальная версия ролика (guides/video-voiceover.md)
-- 16.09 obyavleniya-aeroporta — перевод или смысл (guides/airport-announcements.md)
+- 16.09 umg-infrastruktura — UMG×ElevenLabs: права голоса в инфраструктуру рынка (E-2026-016) [флагман, вытеснил obyavleniya-aeroporta]
 
 Каждый конверсионный пост закрывается конкретным бесплатным действием (проверка/тест-фрагмент/хронометраж) на start@audio-reclama.ru + 8-800-700-46-52.
