@@ -3,7 +3,7 @@
 $src = Join-Path $PSScriptRoot 'items.csv'
 $dst = Join-Path $PSScriptRoot 'rss.xml'
 $imgDir = Join-Path $PSScriptRoot 'images'
-$imgBase = 'https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/images/'
+$imgBase = 'https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/images/'
 
 function Esc([string]$s) {
     $s.Replace('&', '&amp;').Replace('<', '&lt;').Replace('>', '&gt;')
