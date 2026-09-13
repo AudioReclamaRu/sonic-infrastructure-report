@@ -26,7 +26,7 @@ Evidence-слой (проверяемость):
 - 12.09 kto-proveril-golos — проверка голоса до эфира (corpus/kto-vypuskaet-golos.md)
 - 13.09 golos-banka — IVR-меню: что проверить перед эфиром (guides/bank-voice-menu.md)
 - 14.09 vybor-diktora — перестаём выбирать диктора, выбираем голосовой актив (guides/choosing-a-voice.md)
-- 15.09 ozvuchka-video — финальная версия ролика (guides/video-voiceover.md)
+- 15.09 ozvuchka-video — дефицит сдвинулся с голоса на контекст и управление смыслом (guides/video-voiceover.md)
 - 16.09 umg-infrastruktura — UMG×ElevenLabs: права голоса в инфраструктуру рынка (E-2026-016) [флагман, вытеснил obyavleniya-aeroporta]
 
 Каждый конверсионный пост закрывается конкретным бесплатным действием (проверка/тест-фрагмент/хронометраж) на start@audio-reclama.ru + 8-800-700-46-52.
