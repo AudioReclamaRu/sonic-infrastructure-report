@@ -21,6 +21,9 @@ tiers, procedures, checks a machine or a human can apply.
   a human signal (specific fact + editorial judgment + irreplaceable phrase);
   stop-filter on filler seams. Applied to feed posts, written as an
   operational checklist.
+- `x11-editorial-height.md` — the flagship gate: would a good contractor write
+  this? did the reader learn anything in 60 seconds? News is material, but the
+  task is to show what the change makes possible / breaks / makes scarce.
 
 ## How layers work together
 
