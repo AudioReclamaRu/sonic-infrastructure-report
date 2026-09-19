@@ -1,0 +1,27 @@
+BACKUP=F:\Pill\tmp\opencode\sonic-repo\feed\items.csv.bak-20260917-125443
+CHANGED=5
+VERIFY row6 | Fri, 04 Sep 2026 06:45:00 GMT | Рационально предпочитать человечес
+VERIFY row7 | Sat, 12 Sep 2026 06:45:00 GMT | Кто проверил ваш голос до эфира?
+VERIFY row8 | Sun, 13 Sep 2026 06:45:00 GMT | IVR прощает всё, кроме перепутанно
+VERIFY row9 | Mon, 14 Sep 2026 06:45:00 GMT | Мы перестаём выбирать диктора и на
+VERIFY row10 | Tue, 15 Sep 2026 06:45:00 GMT | Дороже стало не производство речи,
+VERIFY row11 | Wed, 16 Sep 2026 06:45:00 GMT | Права голоса становятся инфраструк
+VERIFY row12 | Thu, 17 Sep 2026 06:45:00 GMT | Голос стал пультом: ИИ выполняет к
+VERIFY row13 | Fri, 18 Sep 2026 06:45:00 GMT | Два года назад Калифорния сделала 
+VERIFY row14 | Sat, 19 Sep 2026 06:45:00 GMT | Радио FM не умрёт: оно обгоняет Sp
+VERIFY row15 | Sun, 20 Sep 2026 06:45:00 GMT | 61% слушателей не отличают синтети
+VERIFY row16 | Mon, 21 Sep 2026 06:45:00 GMT | Актёры требуют регулирования AI-кл
+VERIFY row17 | Tue, 22 Sep 2026 06:45:00 GMT | Open-source TTS догоняет ElevenLab
+VERIFY row18 | Fri, 18 Sep 2026 06:45:00 GMT | Компании впервые заметили, что гол
+VERIFY row19 | Fri, 18 Sep 2026 06:45:00 GMT | Голосовое меню банка слышат чаще, 
+VERIFY row20 | Fri, 18 Sep 2026 06:45:00 GMT | Первая секунда звонка страховой ил
+VERIFY row21 | Fri, 18 Sep 2026 06:45:00 GMT | Объявление в торговом зале — это н
+VERIFY row22 | Sat, 19 Sep 2026 06:45:00 GMT | Объявления аэропорта — инструкция 
+VERIFY row23 | Sat, 19 Sep 2026 06:45:00 GMT | Зритель прощает картинку и не прощ
+VERIFY row24 | Sat, 19 Sep 2026 06:45:00 GMT | Урок держится на голосе, а не на в
+VERIFY row25 | Sat, 19 Sep 2026 06:45:00 GMT | Музей молчит. Голос аудиогида — эт
+VERIFY row26 | Sun, 20 Sep 2026 06:45:00 GMT | Экспортная презентация убеждает, к
+VERIFY row27 | Sun, 20 Sep 2026 06:45:00 GMT | Персонаж запоминается голосом рань
+VERIFY row28 | Sun, 20 Sep 2026 06:45:00 GMT | Пациент судит о клинике по голосу,
+VERIFY row29 | Sun, 20 Sep 2026 06:45:00 GMT | Мероприятие помнят по голосам веду
+DONE

@@ -217,7 +217,7 @@ function Build-State {
     }
 
     $upcoming = @($postList | Where-Object { [datetime]::Parse($_.d) -gt $now }).Count
-    $posted   = @($postList | Where-Object { $_.ch.tg -or $_.ch.fb -or $_.ch.vk -or $_.ch.ig }).Count
+    $posted   = @($postList | Where-Object { $_.ch.tg }).Count
 
     return [pscustomobject]@{
         now       = $now.ToString('yyyy-MM-ddTHH:mm:ss'+'zzz')
@@ -278,6 +278,7 @@ h1{font-size:18px;color:var(--head);margin:0 0 2px}
 .pane{display:none}.pane.on{display:block}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
 .month{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:14px}
+.mt-empty{opacity:.45}
 .mtitle{color:var(--head);font-weight:600;margin-bottom:8px}
 .wd,.day{display:inline-flex;vertical-align:top;width:13.6%;min-height:64px;margin:2px 0;border:1px solid var(--line);border-radius:6px;padding:4px;position:relative;overflow:hidden}
 .wd{min-height:auto;color:var(--muted);font-size:11px;text-align:center}
@@ -371,16 +372,12 @@ function renderChips(){
   var h='';
   function chip(k,label,on){ return '<span class="chip"><span class="dot '+((S.channels[k]>0||on)?'ok':'off')+'"></span><b>'+label+'</b> '+ (+S.channels[k]||0)+'</span>'; }
   h += chip('tg','Telegram');
-  h += chip('fb','Facebook');
-  h += chip('vk','VK');
-  h += chip('ig','Instagram');
   var dz = S.dzen||{};
   h += '<span class="chip"><span class="dot '+(dz.linked?'ok':'off')+'"></span><b>Дзен</b> '+(dz.linked?('автокросс TG→Дзен активен с '+esc(dz.linkedAt)):'не связан')+'</span>';
   h += '<div class="sub" style="margin:8px 0 12px">Дзен — авто-зеркало Telegram на платформе Дзен (зеркалятся посты TG, включая подтянутые площадкой). Точные показы/CTR/дочиты — только в панели Дзен: у нас нет их API. Задержка репоста — платформенная.</div>';
   h += '<span class="chip"><span class="dot '+(S.heartbeat.alive?'ok':'bad')+'"></span><b>оркестратор</b> '+(S.heartbeat.alive?('жив '+S.heartbeat.ageSec+' c'):'МЁРТВ')+'</span>';
   h += '<span class="chip"><span class="dot '+(S.scan.todayDone?'ok':'warn')+'"></span><b>intel</b> '+esc(S.scan.lastDate||'—')+' ('+S.scan.rows+' строк)'+(S.scan.todayDone?'': '<span class="upd"> нет скана за сегодня</span>')+'</span>';
   h += '<span class="chip"><span class="dot '+(S.scan.nextScan?'ok':'off')+'"></span><b>скан</b> каждый час → '+esc(S.scan.nextScan)+' · intel '+esc(S.scan.nextIntel)+'</span>';
-  h += '<span class="chip"><span class="dot '+(S.vk&&S.vk.probe==='err-27'?'bad':(S.vk&&S.vk.probe==='ok'?'ok':'warn'))+'"></span><b>VK token</b> '+esc(S.vk?S.vk.probe:'?')+'</span>';
   h += '<span class="chip"><span class="dot ok"></span><b>всего постов</b> '+S.counts.total+' (на постинг '+S.counts.upcoming+', опубликовано '+S.counts.posted+')</span>';
   document.getElementById('chips').innerHTML = h;
 }
@@ -389,29 +386,26 @@ function calendarHtml(){
   var mono = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
   var byMonth = {};
   S.posts.forEach(function(p){ var d=new Date(p.d); var k=d.getFullYear()+'-'+(d.getMonth()+1); (byMonth[k]=byMonth[k]||[]).push(p); });
-  var keys = Object.keys(byMonth).sort();
-  var out = '';
   var today = new Date();
-  keys.forEach(function(k){
-    var parts = k.split('-'); var year=+parts[0], mon=(+parts[1])-1;
-    var first=new Date(year,mon,1); var offset=((first.getDay()+6)%7);
-    var dim=0; while(dim<40) { dim++; var tmp=new Date(year,mon,dim); if(tmp.getMonth()!==mon) break; }
-    var days = byMonth[k].slice().sort(function(a,b){return new Date(a.d)-new Date(b.d);});
+  var yr = today.getFullYear();
+  var out = '';
+  for(var mon=0; mon<12; mon++){
+    var k = yr+'-'+(mon+1);
+    var first=new Date(yr,mon,1); var offset=((first.getDay()+6)%7);
+    var dim = new Date(yr, mon+1, 0).getDate();
+    var days = (byMonth[k]||[]).slice().sort(function(a,b){return new Date(a.d)-new Date(b.d);});
     var map={}; days.forEach(function(p){ var dd=new Date(p.d).getDate(); map[dd]=map[dd]||[]; map[dd].push(p); });
-    var cur=new Date(year,mon,1);
-    out += '<div class="month"><div class="mtitle">'+mono[mon]+' '+year+'</div>';
+    var isEmpty = !days.length;
+    out += '<div class="month'+(isEmpty?' mt-empty':'')+'"><div class="mtitle">'+mono[mon]+' '+yr+'</div>';
     ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].forEach(function(w){ out += '<span class="wd">'+w+'</span>'; });
     for(var i=0;i<offset;i++){ out += '<span class="day empt"></span>'; }
-    for(var d=1; d<dim; d++){
-      var now=new Date(year,mon,d);
+    for(var d=1; d<=dim; d++){
+      var now=new Date(yr,mon,d);
       var isToday = now.toDateString()===today.toDateString();
       out += '<span class="day'+(isToday?' today':'')+'"><span class="num">'+d+'</span>';
       (map[d]||[]).forEach(function(p){
         var chans='';
         if(p.ch.tg)chans+=chWrap('ok'); else chans+=chWrap('off');
-        if(p.ch.fb)chans+=chWrap('ok'); else chans+=chWrap('off');
-        if(p.ch.vk)chans+=chWrap('ok'); else chans+=chWrap('off');
-        if(p.ch.ig)chans+=chWrap('ok'); else chans+=chWrap('off');
         if(p.ch.dz)chans+=chWrap('ok'); else chans+=chWrap('off');
         var img='';
         if(p.img){ img='<img class="th" src="/img/'+esc(p.img)+'.png" alt="">'; }
@@ -420,8 +414,7 @@ function calendarHtml(){
       out += '</span>';
     }
     out += '</div>';
-  });
-  if(!keys.length){ out='<div class="sub">постов в ленте нет</div>'; }
+  }
   return out;
 }
 
@@ -434,7 +427,7 @@ function scoreHtml(){
   var out='';
   var posted=0,toPub=0,missed=0;
   S.posts.forEach(function(p){
-    var any=p.ch.tg||p.ch.fb||p.ch.vk||p.ch.ig;
+    var any=p.ch.tg||p.ch.dz;
     if(any)posted++;
     else if(new Date(p.d)>now)toPub++;
     else missed++;
@@ -454,13 +447,13 @@ function renderMe(){
 }
 
 function renderMeTbl(){
-  var out='<table class="pubtbl"><tr><th>Дата</th><th>Пост</th><th>TG</th><th>FB</th><th>VK</th><th>IG</th><th>ДЗ</th></tr>';
+  var out='<table class="pubtbl"><tr><th>Дата</th><th>Пост</th><th>TG</th><th>ДЗ</th></tr>';
   S.posts.slice().sort(function(a,b){return new Date(a.d)-new Date(b.d);}).forEach(function(p){
     function cell(on){return '<span class="chan" style="width:10px;height:10px;background:var(--'+(on?'ok':'off')+')"></span>';}
     var now=new Date();
     var dat = new Date(p.d);
     out+= '<tr><td'+((dat>now)?' style="color:var(--acc)"':'')+'>'+esc(p.date)+'</td><td class="pst">'+esc(p.title)+'</td>';
-    out+= '<td>'+cell(p.ch.tg)+'</td><td>'+cell(p.ch.fb)+'</td><td>'+cell(p.ch.vk)+'</td><td>'+cell(p.ch.ig)+'</td><td>'+cell(p.ch.dz)+'</td>';
+    out+= '<td>'+cell(p.ch.tg)+'</td><td>'+cell(p.ch.dz)+'</td>';
     out+= '</tr>';
   });
   out+='</table>';
@@ -472,7 +465,7 @@ function renderMePrev(){
   var now=new Date();
   var next = S.posts.slice()
     .sort(function(a,b){return new Date(a.d)-new Date(b.d);})
-    .filter(function(p){ return !(p.ch.tg||p.ch.fb||p.ch.vk||p.ch.ig) && new Date(p.d)>=new Date(now.getTime()-86400000); })
+    .filter(function(p){ return !(p.ch.tg||p.ch.dz) && new Date(p.d)>=new Date(now.getTime()-86400000); })
     .slice(0,3);
   if(!next.length){ next = S.posts.slice().sort(function(a,b){return new Date(a.d)-new Date(b.d);}).slice(0,3); }
   next.forEach(function(p){
@@ -507,7 +500,7 @@ function renderPosts(){
   S.posts.slice().sort(function(a,b){return new Date(a.d)-new Date(b.d);}).forEach(function(p){
     var chans='';
     function cd(k,nm){ return '<span class="chip"><span class="dot '+((p.ch[k])?'ok':'off')+'"></span>'+nm+'</span>'; }
-    chans=cd('tg','TG')+cd('fb','FB')+cd('vk','VK')+cd('ig','IG')+cd('dz','ДЗ');
+    chans=cd('tg','TG')+cd('dz','ДЗ');
     var img='';
     if(p.img){ img='<img style="width:110px;border-radius:6px;float:left;margin-right:10px" src="/img/'+esc(p.img)+'.png" alt="">'; }
     out += '<div class="item" style="overflow:hidden">'+img+'<div class="tt">'+esc(p.title)+'</div><div style="font-size:11px;color:var(--muted);margin:2px 0 4px">'+esc(p.date)+' · '+esc(p.guid)+'</div>'+chans+'</div>';

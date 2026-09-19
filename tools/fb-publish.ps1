@@ -20,8 +20,24 @@ $api = 'https://graph.facebook.com/v21.0'
 if (-not $Text) { Write-Output 'NO_TEXT'; exit 1 }
 $message = [System.IO.File]::ReadAllText($Text)
 
-function Invoke-Graph([string]$url) {
-    return & curl.exe --max-time 30 -s -x $proxy $url 2>$null
+function Invoke-Curl([string]$curlArgs) {
+    $outF = Join-Path $env:TEMP ("curl_out_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $errF = Join-Path $env:TEMP ("curl_err_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $p = Start-Process -FilePath 'C:\WINDOWS\system32\curl.exe' `
+        -ArgumentList $curlArgs `
+        -RedirectStandardOutput $outF -RedirectStandardError $errF `
+        -WindowStyle Hidden -Wait -PassThru
+    Remove-Item $errF -Force -ErrorAction SilentlyContinue
+    if (Test-Path $outF) {
+        $data = [System.IO.File]::ReadAllText($outF)
+        Remove-Item $outF -Force -ErrorAction SilentlyContinue
+        return $data
+    }
+    return ''
+}
+
+function Invoke-Graph([string]$query) {
+    return Invoke-Curl ("--max-time 30 -s -x `"$proxy`" `"$query`"")
 }
 
 # 1) resolve page + page token
@@ -44,13 +60,12 @@ Write-Output ("PAGE=" + $Page)
 
 # 2) publish text post
 if ($Image) {
-    $resp = & curl.exe --max-time 60 -s -x $proxy -F "source=@$Image" -F "message=$message" -F "access_token=$pageToken" "$api/$Page/photos" 2>$null
+    $resp = Invoke-Curl ("--max-time 60 -s -x `"$proxy`" -F `"source=@$Image`" -F `"message=$message`" -F `"access_token=$pageToken`" `"$api/$Page/photos`"")
 } else {
     $plFile = Join-Path $env:TEMP ("fb_" + [guid]::NewGuid().ToString('N') + '.json')
-    $msgShielded = $message | ForEach-Object { $_ } # keep plain
     $payload = @{ message = $message; access_token = $pageToken } | ConvertTo-Json -Compress
     [System.IO.File]::WriteAllText($plFile, $payload, (New-Object System.Text.UTF8Encoding($false)))
-    $resp = & curl.exe --max-time 30 -s -x $proxy -H 'Content-Type: application/json' --data-binary "@$plFile" "$api/$Page/feed" 2>$null
+    $resp = Invoke-Curl ("--max-time 30 -s -x `"$proxy`" -H 'Content-Type: application/json' --data-binary `"@$plFile`" `"$api/$Page/feed`"")
     Remove-Item $plFile -Force -ErrorAction SilentlyContinue
 }
 $o = $resp | ConvertFrom-Json
@@ -68,10 +83,10 @@ if ($Ig) {
     $igId = $null
     if ($pgDet.instagram_business_account) { $igId = $pgDet.instagram_business_account.id }
     if (-not $igId) { Write-Output 'NO_IG_ACCOUNT'; exit 1 }
-    $cm = & curl.exe --max-time 60 -s -x $proxy -F "image_url=file://$Image" -F "caption=$message" -F "access_token=$pageToken" "$api/$igId/media" 2>$null
+    $cm = Invoke-Curl ("--max-time 60 -s -x `"$proxy`" -F `"image_url=file://$Image`" -F `"caption=$message`" -F `"access_token=$pageToken`" `"$api/$igId/media`"")
     $cmO = $cm | ConvertFrom-Json
     if (-not $cmO.id) { Write-Output ("IG_CONTAINER_FAIL " + $cm); exit 1 }
-    $pub = & curl.exe --max-time 60 -s -x $proxy -F "creation_id=$($cmO.id)" -F "access_token=$pageToken" "$api/$igId/media_publish" 2>$null
+    $pub = Invoke-Curl ("--max-time 60 -s -x `"$proxy`" -F `"creation_id=$($cmO.id)`" -F `"access_token=$pageToken`" `"$api/$igId/media_publish`"")
     $pubO = $pub | ConvertFrom-Json
     if ($pubO.id) { Write-Output ("IG_POSTED id=" + $pubO.id) } else { Write-Output ("IG_PUB_FAIL " + $pub) }
 }

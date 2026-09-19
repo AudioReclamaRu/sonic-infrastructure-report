@@ -16,11 +16,27 @@ function L([string]$m) { [System.IO.File]::AppendAllText($logFile, ((Get-Date -F
 Remove-Item $logFile -Force -ErrorAction SilentlyContinue
 L "start owner=$ownerId"
 
+function Invoke-Curl([string]$curlArgs) {
+    $outF = Join-Path $env:TEMP ("curl_out_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $errF = Join-Path $env:TEMP ("curl_err_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $p = Start-Process -FilePath 'C:\WINDOWS\system32\curl.exe' `
+        -ArgumentList $curlArgs `
+        -RedirectStandardOutput $outF -RedirectStandardError $errF `
+        -WindowStyle Hidden -Wait -PassThru
+    Remove-Item $errF -Force -ErrorAction SilentlyContinue
+    if (Test-Path $outF) {
+        $data = [System.IO.File]::ReadAllText($outF)
+        Remove-Item $outF -Force -ErrorAction SilentlyContinue
+        return $data
+    }
+    return ''
+}
+
 function Vk([string]$method, [hashtable]$params) {
-    $al = @('--max-time', '60', '-s', '-x', $proxy, '-G')
-    foreach ($k in $params.Keys) { $al += '--data-urlencode'; $al += ("$k=" + $params[$k]) }
-    $al += ($api + '/' + $method)
-    $raw = (& curl.exe @al 2>$null)
+    $al = "--max-time 60 -s -x `"$proxy`" -G"
+    foreach ($k in $params.Keys) { $al += " --data-urlencode `"$k=$($params[$k])`"" }
+    $al += " `"$api/$method`""
+    $raw = Invoke-Curl $al
     try { return ($raw | ConvertFrom-Json) } catch { return $null }
 }
 

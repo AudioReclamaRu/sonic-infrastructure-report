@@ -59,11 +59,55 @@ function Get-TierText([int]$score) {
     return 't0'
 }
 
+# X12: domain -> event_geo heuristic (known sources)
+$script:domainGeoMap = @{
+    'foxnews.com'='USA'; 'cnn.com'='USA'; 'latimes.com'='USA'
+    'variety.com'='USA'; 'techcrunch.com'='USA'; 'theverge.com'='USA'
+    'wired.com'='USA'; 'masslive.com'='USA'; 'business20channel.tv'='USA'
+    'pulse2.com'='USA'; 'vff.ai'='USA'; 'pondero.ai'='USA'
+    'radiofacts.media'='USA'; 'musicnews.com'='USA'
+    'ssrs.com'='USA'; 'sagaftra.org'='USA'; 'aws.amazon.com'='USA'
+    'elevenlabs.io'='USA'; 'voicecloneai.app'='USA'
+    'thebusinessresearchcompany.com'='USA'; 'grandviewresearch.com'='USA'
+    'globalgrowthinsights.com'='USA'; 'ringly.io'='USA'
+    'assemblyai.com'='USA'; 'famulor.io'='USA'; 'sitebard.com'='USA'
+    'bbc.com'='UK'; 'bbc.co.uk'='UK'; 'theguardian.com'='UK'
+    'eur-lex.europa.eu'='EU'; 'fia-actors.com'='EU'
+    'speko.ai'='GLOBAL'; 'github.com'='GLOBAL'; 'ecency.com'='GLOBAL'
+    'news.un.org'='GLOBAL'
+}
+function Get-EventGeo([string]$domain) {
+    if (-not $domain) { return 'UNDETERMINED' }
+    if ($script:domainGeoMap.ContainsKey($domain)) { return $script:domainGeoMap[$domain] }
+    return 'UNDETERMINED'
+}
+function Get-SourceLang([string]$text) {
+    if (-not $text) { return 'EN' }
+    if ($text -match '[\u0400-\u04FF]') { return 'RU' }
+    return 'EN'
+}
+
 function Get-DaysAgo([string]$ts) {
     if (-not $ts) { return -1 }
     $p = [DateTime]::MinValue
     if ([DateTime]::TryParse($ts, [ref]$p)) { return [int]((Get-Date) - $p).TotalDays }
     return -1
+}
+
+function Invoke-Curl([string]$curlArgs) {
+    $outF = Join-Path $env:TEMP ("curl_out_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $errF = Join-Path $env:TEMP ("curl_err_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $p = Start-Process -FilePath 'C:\WINDOWS\system32\curl.exe' `
+        -ArgumentList $curlArgs `
+        -RedirectStandardOutput $outF -RedirectStandardError $errF `
+        -WindowStyle Hidden -Wait -PassThru
+    Remove-Item $errF -Force -ErrorAction SilentlyContinue
+    if (Test-Path $outF) {
+        $data = [System.IO.File]::ReadAllText($outF)
+        Remove-Item $outF -Force -ErrorAction SilentlyContinue
+        return $data
+    }
+    return ''
 }
 
 function Get-Contact([string]$domain) {
@@ -76,7 +120,7 @@ function Get-Contact([string]$domain) {
     $urls = @("https://$domain/", "https://$domain/contact", "https://$domain/contacts", "https://$domain/about")
     $found = $false
     foreach ($u in $urls) {
-        $html = & curl.exe --max-time 12 -s -L -A 'Mozilla/5.0 (compatible; LeadIntent/1.0)' $u 2>$null
+        $html = Invoke-Curl ("--max-time 12 -s -L -A 'Mozilla/5.0 (compatible; LeadIntent/1.0)' `"$u`"")
         if (-not $html -or $html.Length -lt 100) { continue }
         $em = [regex]::Match($html, '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}')
         if ($em.Success) { $c.email = $em.Value; $found = $true }
@@ -115,6 +159,9 @@ foreach ($it in $scanData.items) {
         src = $it.src
         pts = $it.points
         snippet = $it.snippet
+        event_geo = Get-EventGeo $domain
+        source_language = Get-SourceLang ($it.title + ' ' + $it.snippet)
+        status = 'MONITOR_ONLY'
         svc = $svcHits
         mkt = $mktHits
         prc = $prcHits
@@ -145,6 +192,7 @@ $lines += "# Lead Intent Intel - " + $todayMark
 $lines += ("Generated: " + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + " | source scan: " + (Split-Path $Scan -Leaf))
 $lines += ''
 $lines += "Classification: EVENT (t0) / NEED (t1) / DECISION_MAKER (t2) / READY_TO_CONTACT (t3)"
+$lines += "X12: event_geo = event zone (not publication language) | source_language | status = MONITOR_ONLY / PUBLISH_CANDIDATE / PUBLISH / COMMERCIAL / REJECT"
 $lines += ''
 foreach ($t in @('t3','t2','t1','t0')) {
     $ti = $tt.tiers | Where-Object { $_.id -eq $t }
@@ -154,7 +202,7 @@ foreach ($t in @('t3','t2','t1','t0')) {
     foreach ($r in ($sel | Sort-Object score -Descending)) {
         $ce = if ($r.contact_email) { ' | CONTACT: ' + $r.contact_email } elseif ($r.tier -eq 't3') { ' | CONTACT: RESOLVE' } else { '' }
         $lines += ("- [" + $r.score + " pts] " + $r.title + $ce)
-        $lines += ("  src=" + $r.src + " url=" + $r.url + " (svc=" + $r.svc + " mkt=" + $r.mkt + " prc=" + $r.prc + " ent=" + $r.ent + ")")
+        $lines += ("  src=" + $r.src + " url=" + $r.url + " event_geo=" + $r.event_geo + " source_language=" + $r.source_language + " status=" + $r.status + " (svc=" + $r.svc + " mkt=" + $r.mkt + " prc=" + $r.prc + " ent=" + $r.ent + ")")
         if ($r.snippet) { $lines += ("  " + $r.snippet) }
     }
     $lines += ''
@@ -216,7 +264,7 @@ if ($Notify) {
     $payload = @{ chat_id = $Chat; text = $t } | ConvertTo-Json -Compress
     $pf = Join-Path $env:TEMP ("intent_" + [guid]::NewGuid().ToString('N') + '.json')
     [System.IO.File]::WriteAllText($pf, $payload, (New-Object System.Text.UTF8Encoding($false)))
-    & curl.exe --max-time 25 -s -x $proxy -H 'Content-Type: application/json' --data-binary "@$pf" ("$api/bot$token/sendMessage") 2>$null | Out-Null
+    $null = Invoke-Curl ("--max-time 25 -s -x `"$proxy`" -H 'Content-Type: application/json' --data-binary `"@$pf`" `"$api/bot$token/sendMessage`"")
     Remove-Item $pf -Force -ErrorAction SilentlyContinue
     Write-Output 'NOTIFIED_TG'
 }

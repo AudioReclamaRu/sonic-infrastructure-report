@@ -10,12 +10,28 @@ param(
 
 $script:ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
 
+function Invoke-Curl([string]$curlArgs) {
+    $outF = Join-Path $env:TEMP ("curl_out_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $errF = Join-Path $env:TEMP ("curl_err_" + [guid]::NewGuid().ToString('N') + ".txt")
+    $p = Start-Process -FilePath 'C:\WINDOWS\system32\curl.exe' `
+        -ArgumentList $curlArgs `
+        -RedirectStandardOutput $outF -RedirectStandardError $errF `
+        -WindowStyle Hidden -Wait -PassThru
+    Remove-Item $errF -Force -ErrorAction SilentlyContinue
+    if (Test-Path $outF) {
+        $data = [System.IO.File]::ReadAllText($outF)
+        Remove-Item $outF -Force -ErrorAction SilentlyContinue
+        return $data
+    }
+    return ''
+}
+
 function Invoke-DdgSearch([string]$qenc, [string]$proxy) {
     $url = 'https://html.duckduckgo.com/html/?q=' + $qenc
     if ($proxy) {
-        return & curl.exe --max-time 20 -s -x $proxy -A $script:ua $url 2>$null
+        return Invoke-Curl ("--max-time 20 -s -x `"$proxy`" -A `"$script:ua`" `"$url`"")
     }
-    return & curl.exe --max-time 20 -s -A $script:ua $url 2>$null
+    return Invoke-Curl ("--max-time 20 -s -A `"$script:ua`" `"$url`"")
 }
 
 function Get-Results([string]$html) {
