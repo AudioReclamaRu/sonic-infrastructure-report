@@ -20,7 +20,7 @@ if (Test-Path $lock) {
 if (-not $alive) {
     # belt+suspenders: scan cmdline too (lock could be stale but process kicked)
     $running = Get-CimInstance Win32_Process -Filter "Name like 'python%'" -ErrorAction SilentlyContinue |
-        Where-Object { $_.CommandLine -match 'supervisor\.py' }
+        Where-Object { $_.CommandLine -match 'science[\\/]supervisor\.py' }
     if (-not $running) {
         $env:OPENBLAS_NUM_THREADS = '1'
         $proc = Start-Process -FilePath 'C:\Python314\python.exe' `

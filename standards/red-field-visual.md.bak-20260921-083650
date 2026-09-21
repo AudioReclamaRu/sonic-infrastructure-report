@@ -145,38 +145,3 @@ RED FIELD — не «красивый стиль» и не пресет для �
 
 Footer
 Audio-Reclama.ru · https://www.audio-reclama.ru · start@audio-reclama.ru
-
-# -*- coding: utf-8 -*-
-# Version-aware asset-idempotency rule for the feed generator (RED FIELD channel).
-# Cyrippic literal file: appender reads it with importlib from disk; this tool
-# only holds cyrippic so that it survives write (unlike bash heredoc).
-
-## Архитектурное правило: version-aware idempotency ассетов (decision 13.09.2026, дополнено 19.09.2026)
-
-Определение идемпотентности (как зафиксировано в memory):
-- Идемпотентность **НЕ равна** «файл существует → пропустить повторную генерацию».
-- Идемпотентность = повторный запуск __приводит к тому же итоговому состоянию__, не «ничего не делает, потому что уже был выхлоп».
-
-Три ключа идентификации ассета обложки:
-- CONTENT_ID = guid (стабильный контентный слот), например `slepoi-test-2026-09-23`.
-- DESIGN_VERSION = версия визуального стандарта фида (RED FIELD = black field, red signal, silhouette, no text on image), например RED_FIELD_v2.
-- ASSET_HASH = SHA256(CONTENT_ID + ":" + DESIGN_VERSION + ":" + seed).
-
-Правило «skip» в генераторе должно быть version-aware:
-```
-if PNG существует И ASSET_HASH(png) == HASH(CONTENT_ID, DESIGN_VERSION):
-    skip (актуальная версия уже сгенерирована)
-else:
-    regenerate (старый дизайн/версия -> пересобрать, старое в backup)
-```
-
-Проверка наличия файла сама по себе НЕ является критерием актуальности.
-
-## Инцидент 23–30.09.2026 (зафиксирован)
-- Синие обложки пользователя были сгенерированы старым шаблоном (поле, текст на картинке).
-- Фикс-фид 23–30.09 проставил слоты, но обложки переиспользовал старые синие (file-exists skip).
-- Перевыпущено в RED FIELD версии: 8 слотов, guids:
-  slepoi-test-2026-09-23, podkast-i-radio-2026-09-24, golos-kak-povedenie-2026-09-25,
-  pervaya-sekunda-banka-2026-09-26, eksport-govorit-2026-09-27, muzej-govorit-2026-09-28,
-  meropriyatiya-govoryat-2026-09-29, itog-sentyabrya-2026-09-30.
-- Коммит: "feed: re-release covers 23-30 Sep 2026 in RED FIELD (black field, red signal, silhouette, no text on image)".
