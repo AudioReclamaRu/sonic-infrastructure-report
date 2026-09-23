@@ -206,19 +206,20 @@ def trunc_at(s: str, mx: int) -> str:
 
 
 def ensure_cover(guid: str, img_name: str, img_path: str):
-    if os.path.exists(img_path):
-        return
+    """Version-aware idempotency (standards/red-field-visual.md): a PNG is kept
+    only when its ASSET_HASH matches DESIGN_VERSION; otherwise regenerate."""
     try:
         import sys
         gen_dir = FEED
         if gen_dir not in sys.path:
             sys.path.insert(0, gen_dir)
         import image_gen
-        img = image_gen.cover(image_gen.conflict_of(guid))
-        img.save(img_path, 'PNG')
-        olog('COVER_GEN ' + img_name + ' conflict=' + image_gen.conflict_of(guid))
+        path = image_gen.ensure_asset(guid)
+        olog('COVER_ENSURED ' + img_name + ' conflict=' + image_gen.conflict_of(guid))
+        return path
     except Exception as e:
         olog('COVER_GEN_ERR ' + img_name + ' :: ' + str(e))
+        return img_path
 
 
 def tg_chat(env):
@@ -247,7 +248,7 @@ def publish_one(guid: str, item: dict, env: dict, chat: str):
     link = item['src']
     img_path = os.path.join(IMG_DIR, item['img'] + '.png')
 
-    ensure_cover(item['guid'], item['img'], img_path)
+    img_path = ensure_cover(item['guid'], item['img'], img_path)
 
     footer = '\n\nИсточник: ' + link
     max_body = 1024 - len(title) - len(footer)

@@ -8,6 +8,9 @@ state/*.log
 state/*.pid
 logs/
 
+# Cover generator backups (old designs; originals live in git history)
+feed/images/backup-red-field/
+
 # Runtime-generated registries / slots (not AI-facing content)
 state/design-cards.csv
 state/slot-*.text
