@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# Runtime state, logs, pid
+*.log
+state/*.log
+state/*.pid
+logs/
+
+# Runtime-generated registries / slots (not AI-facing content)
+state/design-cards.csv
+state/slot-*.text
+
+# Scratch / debug / probe / internal tooling (underscore = internal)
+_*
+state/_probe*
+state/_rt*
+
+# Windows scheduled-task wrappers and launch helpers (infra, not content)
+*.vbs
+*_task.xml
