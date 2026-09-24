@@ -2,18 +2,26 @@
 # Black field + red signal + human silhouette + ONE physical conflict.
 # NO text on the image. White is forbidden. Palette per standard.
 # Usage:
-#   python image_gen.py              (regenerate all in feed/items.csv)
-#   python image_gen.py --guid UID   (regenerate single post)
+#   python image_gen.py                  (rebuild stale assets only)
+#   python image_gen.py --verify         (report OK/REGEN; exit 1 if any stale)
+#   python image_gen.py --rebuild        (regenerate stale assets only)
+#   python image_gen.py --force          (full rebuild of all assets)
+#   python image_gen.py --guid UID       (limit to a single slot)
 #
 # Version-aware idempotency (standard, decision 13.09 + 19.09.2026):
-#   DESIGN_VERSION + ASSET_HASH = sha256(CONTENT_ID:DESIGN_VERSION:seed).
-#   A PNG is skipped ONLY if the file exists AND manifest hash matches.
-#   Otherwise the asset is regenerated and the old file is moved to backup.
+#   CONTENT_ID = stable slot guid.
+#   DESIGN_VERSION = explicit visual-language version; ANY visual change bumps it.
+#   ASSET_HASH = sha256(CONTENT_ID + ":" + DESIGN_VERSION).
+#   manifest.json is the single source of truth:
+#   { CONTENT_ID: {design_version, asset_hash, generated_at, path} }.
+#   A PNG is skipped ONLY if the file exists AND manifest entry matches
+#   DESIGN_VERSION + ASSET_HASH. Otherwise regenerate (old file -> backup).
 import argparse
 import hashlib
 import json
 import os
 import re
+import sys
 from datetime import datetime
 
 import numpy as np
@@ -22,9 +30,9 @@ from PIL import Image, ImageDraw, ImageFilter
 W, H = 1200, 630
 OUT_DIR = os.path.join(os.path.dirname(__file__), 'images')
 ITEMS_CSV = os.path.join(os.path.dirname(__file__), 'items.csv')
-MANIFEST = os.path.join(OUT_DIR, '.cover-manifest.json')
+MANIFEST = os.path.join(OUT_DIR, 'manifest.json')
 BACKUP_ROOT = os.path.join(OUT_DIR, 'backup-red-field')
-DESIGN_VERSION = 'RED_FIELD_v6'
+DESIGN_VERSION = 'red-field-v6'
 
 VOID = (0, 0, 0)
 DEEP_RED = (24, 0, 0)
@@ -99,13 +107,16 @@ def conflict_of(guid: str) -> str:
     return CONFLICT_MAP.get(guid, key_of(guid))
 
 
-def asset_hash(guid: str, seed: int) -> str:
+def build_asset_hash(content_id: str) -> str:
+    """ASSET_HASH = sha256(CONTENT_ID + ':' + DESIGN_VERSION)."""
     return hashlib.sha256(
-        (guid + ':' + DESIGN_VERSION + ':' + str(seed)).encode('utf-8')
+        (content_id + ':' + DESIGN_VERSION).encode('utf-8')
     ).hexdigest()
 
 
-def load_manifest():
+def load_manifest() -> dict:
+    """manifest.json is the single source of truth.
+    Format: { CONTENT_ID: {design_version, asset_hash, generated_at, path} }."""
     if os.path.exists(MANIFEST):
         try:
             with open(MANIFEST, 'r', encoding='utf-8') as f:
@@ -115,10 +126,10 @@ def load_manifest():
     return {}
 
 
-def save_manifest(m):
+def save_manifest(m: dict):
     os.makedirs(os.path.dirname(MANIFEST), exist_ok=True)
     with open(MANIFEST, 'w', encoding='utf-8') as f:
-        json.dump(m, f, ensure_ascii=False, indent=0)
+        json.dump(m, f, ensure_ascii=False, indent=2)
 
 
 def backup_old(img_path: str):
@@ -131,22 +142,59 @@ def backup_old(img_path: str):
     os.replace(img_path, os.path.join(dest_dir, name))
 
 
-def ensure_asset(guid: str) -> str:
-    """Version-aware asset idempotency. Returns the path of the current PNG."""
-    name = img_name_for(guid)
-    seed = int(re.sub(r'\D', '', guid) or 0)
+def entry_for(content_id: str, seed: int) -> dict:
+    name = img_name_for(content_id)
+    return {
+        'design_version': DESIGN_VERSION,
+        'asset_hash': build_asset_hash(content_id),
+        'generated_at': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
+        'path': '/'.join(['feed', 'images', name + '.png']),
+    }
+
+
+def render_asset(content_id: str) -> str:
+    """Render a single asset (always regenerates). Returns the PNG path."""
+    name = img_name_for(content_id)
+    seed = int(re.sub(r'\D', '', content_id) or 0)
     out = os.path.join(OUT_DIR, name + '.png')
-    want = asset_hash(guid, seed)
-    man = load_manifest()
-    if os.path.exists(out) and man.get(name) == want:
-        return out
-    conflict = conflict_of(guid)
+    conflict = conflict_of(content_id)
     img = cover(conflict, seed=seed)
     backup_old(out)
     img.save(out, 'PNG')
-    man[name] = want
-    save_manifest(man)
     print('COVER GEN ' + name + ' conflict=' + conflict)
+    return out
+
+
+def needs_regeneration(content_id: str, manifest: dict) -> bool:
+    """True if the asset must be regenerated: absent file, missing entry,
+    changed DESIGN_VERSION, or ASSET_HASH mismatch."""
+    name = img_name_for(content_id)
+    out = os.path.join(OUT_DIR, name + '.png')
+    if not os.path.exists(out):
+        return True
+    entry = manifest.get(content_id)
+    if not entry:
+        return True
+    if entry.get('design_version') != DESIGN_VERSION:
+        return True
+    if entry.get('asset_hash') != build_asset_hash(content_id):
+        return True
+    return False
+
+
+def ensure_asset(content_id: str, force: bool = False) -> str:
+    """Version-aware asset idempotency. Returns the path of the current PNG.
+
+    Contract: 'file exists -> skip' is FORBIDDEN. An asset is current only if
+    file exists AND manifest entry matches DESIGN_VERSION + ASSET_HASH.
+    """
+    man = load_manifest()
+    if not force and not needs_regeneration(content_id, man):
+        return os.path.join(OUT_DIR, img_name_for(content_id) + '.png')
+    out = render_asset(content_id)
+    seed = int(re.sub(r'\D', '', content_id) or 0)
+    man[content_id] = entry_for(content_id, seed)
+    save_manifest(man)
     return out
 
 
@@ -428,42 +476,70 @@ def guids_from_csv():
     guids = []
     if not os.path.exists(ITEMS_CSV):
         return guids
-    for row in open(ITEMS_CSV, 'r', encoding='utf-8-sig'):
-        row = row.rstrip('\r\n')
-        if not row or row.startswith('TITLE~~~') or row.startswith('DESC~~~'):
-            continue
-        p = row.split('~~~')
-        if len(p) >= 6 and p[4]:
-            guids.append(p[4])
+    with open(ITEMS_CSV, 'r', encoding='utf-8-sig') as f:
+        for row in f:
+            row = row.rstrip('\r\n')
+            if not row or row.startswith('TITLE~~~') or row.startswith('DESC~~~'):
+                continue
+            p = row.split('~~~')
+            if len(p) >= 6 and p[4]:
+                guids.append(p[4])
     return guids
 
 
 def img_name_for(guid: str):
-    for row in open(ITEMS_CSV, 'r', encoding='utf-8-sig'):
-        row = row.rstrip('\r\n')
-        if not row or row.startswith('TITLE~~~') or row.startswith('DESC~~~'):
-            continue
-        p = row.split('~~~')
-        if len(p) >= 6 and p[4] == guid:
-            return p[5]
+    with open(ITEMS_CSV, 'r', encoding='utf-8-sig') as f:
+        for row in f:
+            row = row.rstrip('\r\n')
+            if not row or row.startswith('TITLE~~~') or row.startswith('DESC~~~'):
+                continue
+            p = row.split('~~~')
+            if len(p) >= 6 and p[4] == guid:
+                return p[5]
     return guid
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--guid', default='')
+    ap = argparse.ArgumentParser(description='RED FIELD cover generator')
+    ap.add_argument('--verify', action='store_true',
+                    help='report asset state (OK/REGEN); exit 1 if anything stale')
+    ap.add_argument('--rebuild', action='store_true',
+                    help='regenerate only stale assets (default)')
+    ap.add_argument('--force', action='store_true',
+                    help='full rebuild of all assets')
+    ap.add_argument('--guid', default='', help='limit to a single slot guid')
     args = ap.parse_args()
     os.makedirs(OUT_DIR, exist_ok=True)
-    if args.guid:
-        targets = [args.guid]
-    else:
-        targets = guids_from_csv()
+    targets = [args.guid] if args.guid else guids_from_csv()
+
+    if args.verify:
+        man = load_manifest()
+        stale = 0
+        for g in targets:
+            name = img_name_for(g)
+            if needs_regeneration(g, man):
+                stale += 1
+                print('REGEN ' + name)
+            else:
+                print('OK    ' + name)
+        print('VERIFY stale=' + str(stale) + ' total=' + str(len(targets)))
+        return 1 if stale else 0
+
+    if args.force:
+        for g in targets:
+            try:
+                ensure_asset(g, force=True)
+            except Exception as e:
+                print('COVER_ERR ' + g + ' :: ' + str(e))
+        return 0
+
     for g in targets:
         try:
             ensure_asset(g)
         except Exception as e:
             print('COVER_ERR ' + g + ' :: ' + str(e))
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

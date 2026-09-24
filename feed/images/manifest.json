@@ -1,0 +1,260 @@
+{
+  "fitoussi-human-preference-2026-09-04": {
+    "design_version": "red-field-v6",
+    "asset_hash": "111a8338f8ba5f0682a83c99599fc94589ce185523ea0baf13451097d9a3592e",
+    "generated_at": "2026-09-24T08:08:18",
+    "path": "feed/images/fitoussi-human-preference.png"
+  },
+  "golos-kak-povedenie-2026-10-10": {
+    "design_version": "red-field-v6",
+    "asset_hash": "357fe88ab050cf76473f335f98f637f96865ef139b44f25e8bb00562802eb79d",
+    "generated_at": "2026-09-24T08:08:19",
+    "path": "feed/images/golos-kak-povedenie-2026-10-10.png"
+  },
+  "voice-scams-trust-2026-09-11": {
+    "design_version": "red-field-v6",
+    "asset_hash": "c94da003d1cb04f3203202c54835cd0e6df625bf2b874829f0b86e532c0def6f",
+    "generated_at": "2026-09-24T08:08:19",
+    "path": "feed/images/voice-scams-trust.png"
+  },
+  "golos-i-cifra-2026-10-16": {
+    "design_version": "red-field-v6",
+    "asset_hash": "c747bd8acab3122300f0eb99881bc45d39ab3a4c4727d23e43859554466be793",
+    "generated_at": "2026-09-24T08:08:19",
+    "path": "feed/images/golos-i-cifra-2026-10-16.png"
+  },
+  "pravovoy-sloy-golosa-2026-09-18": {
+    "design_version": "red-field-v6",
+    "asset_hash": "1ef8bcc5d4db67f58033f260cc029e1015b7f957aa7e81b842ba028f74147831",
+    "generated_at": "2026-09-24T08:08:19",
+    "path": "feed/images/pravovoy-sloy-golosa.png"
+  },
+  "golos-kak-povedenie-2026-09-25": {
+    "design_version": "red-field-v6",
+    "asset_hash": "aabc71421494b70dde37565d6589541c6afa617606c0f7ec77dd2690ddbf593c",
+    "generated_at": "2026-09-24T08:08:19",
+    "path": "feed/images/golos-kak-povedenie-2026-09-25.png"
+  },
+  "eksport-golos-2026-10-05": {
+    "design_version": "red-field-v6",
+    "asset_hash": "8927b10c3a1d4c416dd43f5ccf9e4d1a983a2570ce62cd17cb3169d3225562e5",
+    "generated_at": "2026-09-24T08:08:20",
+    "path": "feed/images/eksport-golos-2026-10-05.png"
+  },
+  "ivr-uderzhanie-2026-10-06": {
+    "design_version": "red-field-v6",
+    "asset_hash": "5f816138c757c7622ee1afd412b1435835e53bbc2116951ca6cd5b0dece43156",
+    "generated_at": "2026-09-24T08:08:20",
+    "path": "feed/images/ivr-uderzhanie-2026-10-06.png"
+  },
+  "muzej-golos-2026-10-13": {
+    "design_version": "red-field-v6",
+    "asset_hash": "e248cefff1ead7d673f70e1372f24894681880f32352212f25d56f7d43998e43",
+    "generated_at": "2026-09-24T08:08:20",
+    "path": "feed/images/muzej-golos-2026-10-13.png"
+  },
+  "vybor-diktora-2026-09-14": {
+    "design_version": "red-field-v6",
+    "asset_hash": "9c69f73d569d6bcb5ea0637f19bb9739966c53abda3253674fae3c4ef89601c9",
+    "generated_at": "2026-09-24T08:08:20",
+    "path": "feed/images/vybor-diktora.png"
+  },
+  "bank-govorit-scenarij-2026-10-19": {
+    "design_version": "red-field-v6",
+    "asset_hash": "426aeadfd3acf26dbe8957947ef0e296d5718077a2ffcfdb117fb2ee6bd230f2",
+    "generated_at": "2026-09-24T08:08:21",
+    "path": "feed/images/bank-govorit-scenarij-2026-10-19.png"
+  },
+  "aktery-protiv-klonov-2026-09-21": {
+    "design_version": "red-field-v6",
+    "asset_hash": "d9e8304826369a2ab12a595735dc098ab3b1f5bbf32456921c042b3c86cc8588",
+    "generated_at": "2026-09-24T08:08:21",
+    "path": "feed/images/aktery-protiv-klonov.png"
+  },
+  "muzej-govorit-2026-09-28": {
+    "design_version": "red-field-v6",
+    "asset_hash": "c892229fe7d58a0184d3c53d526fb512133ab0b6dfe64414bc464841c9e42ba1",
+    "generated_at": "2026-09-24T08:08:21",
+    "path": "feed/images/muzej-govorit-2026-09-28.png"
+  },
+  "doverie-intonaciya-2026-10-03": {
+    "design_version": "red-field-v6",
+    "asset_hash": "5e5165e651f940365f6e871d7678dccb0ac2b5b8b15c060722a824dbd9abc426",
+    "generated_at": "2026-09-24T08:08:21",
+    "path": "feed/images/doverie-intonaciya-2026-10-03.png"
+  },
+  "muzej-golos-2026-10-04": {
+    "design_version": "red-field-v6",
+    "asset_hash": "c0d4d5bfa371e23884f3012973dd43ee770ac462e14b2f3ccfc00c06cf9938a7",
+    "generated_at": "2026-09-24T08:08:22",
+    "path": "feed/images/muzej-golos-2026-10-04.png"
+  },
+  "pervaya-sekunda-banka-2026-10-11": {
+    "design_version": "red-field-v6",
+    "asset_hash": "11118fba1a8a512d4b997b05842b20c35915318f6c00773feafbac4c0750e8e8",
+    "generated_at": "2026-09-24T08:08:22",
+    "path": "feed/images/pervaya-sekunda-banka-2026-10-11.png"
+  },
+  "kto-proveril-golos-2026-09-12": {
+    "design_version": "red-field-v6",
+    "asset_hash": "8705fad7595a798faf7001271ed3ebb4eb65f0b77e5321b641e1dfa0e6f05360",
+    "generated_at": "2026-09-24T08:08:22",
+    "path": "feed/images/kto-proveril-golos.png"
+  },
+  "dzen-i-golos-2026-10-17": {
+    "design_version": "red-field-v6",
+    "asset_hash": "4f3cac270697f8c5522a2d69d78356cd87990c9b8e41b06e1f7af1a451f9e25d",
+    "generated_at": "2026-09-24T08:08:22",
+    "path": "feed/images/dzen-i-golos-2026-10-17.png"
+  },
+  "radio-ne-umret-2026-09-19": {
+    "design_version": "red-field-v6",
+    "asset_hash": "197a93737b3a0c6e2995dda4c15bff9ec66de38c1fe5117f05cebee9fdcc1891",
+    "generated_at": "2026-09-24T08:08:22",
+    "path": "feed/images/radio-ne-umret.png"
+  },
+  "pervaya-sekunda-banka-2026-09-26": {
+    "design_version": "red-field-v6",
+    "asset_hash": "615eaa15e10c909a402cfa0347d2dc2ab451954968b5daa0a702065c0a810d6c",
+    "generated_at": "2026-09-24T08:08:22",
+    "path": "feed/images/pervaya-sekunda-banka-2026-09-26.png"
+  },
+  "eksport-golos-2026-10-12": {
+    "design_version": "red-field-v6",
+    "asset_hash": "cc940e00fc27ed9b534eaf6ed8d400b7aa52b5b60abfaa9c4aa995b774667149",
+    "generated_at": "2026-09-24T08:08:23",
+    "path": "feed/images/eksport-golos-2026-10-12.png"
+  },
+  "golos-banka-2026-09-13": {
+    "design_version": "red-field-v6",
+    "asset_hash": "dc1edd6c31d385ca6963b10ed55d378b24cb051151a87104b6df6f6a28774e36",
+    "generated_at": "2026-09-24T08:08:23",
+    "path": "feed/images/golos-banka.png"
+  },
+  "tishina-v-efire-2026-10-18": {
+    "design_version": "red-field-v6",
+    "asset_hash": "41b12ff2a77ac313ae8b32588a305aa6668fe6e86dae6fe06af3ccbc6b654916",
+    "generated_at": "2026-09-24T08:08:23",
+    "path": "feed/images/tishina-v-efire-2026-10-18.png"
+  },
+  "slepoj-test-golosa-2026-09-20": {
+    "design_version": "red-field-v6",
+    "asset_hash": "7fd03cfd6c35a7a49d6b0266223ec1ac05c8abc40cedb03a5af5bbe47f5c403e",
+    "generated_at": "2026-09-24T08:08:23",
+    "path": "feed/images/slepoj-test-golosa.png"
+  },
+  "eksport-govorit-2026-09-27": {
+    "design_version": "red-field-v6",
+    "asset_hash": "bfcdbd0c5ad5f1fa0f9477dc07f7a54611323fbf63cef871e0421e0eeb09d8fe",
+    "generated_at": "2026-09-24T08:08:23",
+    "path": "feed/images/eksport-govorit-2026-09-27.png"
+  },
+  "doverie-intonaciya-2026-10-02": {
+    "design_version": "red-field-v6",
+    "asset_hash": "4a3570f530d636171704c6481014ea2dedf0b2552addc4f18fe44bcaaf49fef4",
+    "generated_at": "2026-09-24T08:08:23",
+    "path": "feed/images/doverie-intonaciya-2026-10-02.png"
+  },
+  "umg-elevenlabs-2026-09-10": {
+    "design_version": "red-field-v6",
+    "asset_hash": "ab0e905271dc75ce9bca3f9c7055818073f4ab44c5a117264c84f8c2d3a2df3c",
+    "generated_at": "2026-09-24T08:08:24",
+    "path": "feed/images/umg-elevenlabs.png"
+  },
+  "uderzhanie-na-linii-2026-10-15": {
+    "design_version": "red-field-v6",
+    "asset_hash": "f703783d9fd44768bca916469873e828c28a14f08930939dc43ca89733fd086f",
+    "generated_at": "2026-09-24T08:08:24",
+    "path": "feed/images/uderzhanie-na-linii-2026-10-15.png"
+  },
+  "golos-pult-2026-09-17": {
+    "design_version": "red-field-v6",
+    "asset_hash": "b50e273a766b6d01429928d67f473ad07ab6a654fcd26d876c18864980597bc4",
+    "generated_at": "2026-09-24T08:08:24",
+    "path": "feed/images/golos-pult.png"
+  },
+  "podkast-i-radio-2026-09-24": {
+    "design_version": "red-field-v6",
+    "asset_hash": "b62614e726d7544db490871cf1fda97ed9d0373536c6c444789868adf84b9038",
+    "generated_at": "2026-09-24T08:08:24",
+    "path": "feed/images/podkast-i-radio-2026-09-24.png"
+  },
+  "itog-nedeli-2026-10-07": {
+    "design_version": "red-field-v6",
+    "asset_hash": "8598f727744466827c5d53308fdb85e569af284c80ce523241acad2761bcb4ba",
+    "generated_at": "2026-09-24T08:08:25",
+    "path": "feed/images/itog-nedeli-2026-10-07.png"
+  },
+  "after-red-field-2026-10-08": {
+    "design_version": "red-field-v6",
+    "asset_hash": "0992bd5aba2de716796b8ded6b6d19b863a681bee2eee9739775f585ac07032d",
+    "generated_at": "2026-09-24T08:08:25",
+    "path": "feed/images/after-red-field-2026-10-08.png"
+  },
+  "itog-nedeli-2026-10-14": {
+    "design_version": "red-field-v6",
+    "asset_hash": "2c185ae7e9cfd63a7f3adce026c00a3800b0b039367bef4ef29735df45ed6529",
+    "generated_at": "2026-09-24T08:08:25",
+    "path": "feed/images/itog-nedeli-2026-10-14.png"
+  },
+  "ozvuchka-video-2026-09-15": {
+    "design_version": "red-field-v6",
+    "asset_hash": "dbedc0f423070ed0e8d62ceee382eeb306f8e8bc76dbca10ae056ff86fed51b3",
+    "generated_at": "2026-09-24T08:08:25",
+    "path": "feed/images/ozvuchka-video.png"
+  },
+  "eksport-i-akcent-2026-10-20": {
+    "design_version": "red-field-v6",
+    "asset_hash": "27628679a64ee01190afcca6e16c2ab8fd280a69be12569bc4c3714f013ff267",
+    "generated_at": "2026-09-24T08:08:26",
+    "path": "feed/images/eksport-i-akcent-2026-10-20.png"
+  },
+  "open-source-golos-2026-09-23": {
+    "design_version": "red-field-v6",
+    "asset_hash": "520378b1f1c3aa456ca4b3ce33579f39485bb8153f3d4847dbeaa811f1533058",
+    "generated_at": "2026-09-24T08:08:26",
+    "path": "feed/images/open-source-golos.png"
+  },
+  "meropriyatiya-govoryat-2026-09-29": {
+    "design_version": "red-field-v6",
+    "asset_hash": "733aba7dfaa14c0ae94e1ef231b86333a8e7e3f02f0f69be0623b5c5833a0eee",
+    "generated_at": "2026-09-24T08:08:26",
+    "path": "feed/images/meropriyatiya-govoryat-2026-09-29.png"
+  },
+  "golos-pervaya-sekunda-2026-10-01": {
+    "design_version": "red-field-v6",
+    "asset_hash": "10ccdb974a37372bbbef5a18579690d1bb0004d5a720018257391129ad6f299f",
+    "generated_at": "2026-09-24T08:08:26",
+    "path": "feed/images/golos-pervaya-sekunda-2026-10-01.png"
+  },
+  "podkast-i-radio-2026-10-09": {
+    "design_version": "red-field-v6",
+    "asset_hash": "3bec4a94b5a937eb9c456565eb54b0504a85ee059bd20a88c737919b1fb37506",
+    "generated_at": "2026-09-24T08:08:27",
+    "path": "feed/images/podkast-i-radio-2026-10-09.png"
+  },
+  "umg-infrastruktura-2026-09-16": {
+    "design_version": "red-field-v6",
+    "asset_hash": "79ee112bd8a9c773b60b1bde97e5538e5c57e7c6fe80b52efbe037bd94390eda",
+    "generated_at": "2026-09-24T08:08:27",
+    "path": "feed/images/umg-infrastruktura.png"
+  },
+  "itog-nedeli-2026-10-21": {
+    "design_version": "red-field-v6",
+    "asset_hash": "2be96283ed754f57247ba06599b0e2bd59965ed9e1ea0778fe4eb7445b5085e4",
+    "generated_at": "2026-09-24T08:08:27",
+    "path": "feed/images/itog-nedeli-2026-10-21.png"
+  },
+  "slepoi-test-2026-09-23": {
+    "design_version": "red-field-v6",
+    "asset_hash": "2552b256126f118cd2646ddbd1c60b3ced4a2d69f6c2852c3c29c7a1fd6af1ff",
+    "generated_at": "2026-09-24T08:08:27",
+    "path": "feed/images/slepoi-test-2026-09-23.png"
+  },
+  "itog-sentyabrya-2026-09-30": {
+    "design_version": "red-field-v6",
+    "asset_hash": "2f35557a22d1c808395b4ce3e0ec365ffc2d45a4cf8bcfb21e2c67836b37300b",
+    "generated_at": "2026-09-24T08:08:27",
+    "path": "feed/images/itog-sentyabrya-2026-09-30.png"
+  }
+}
