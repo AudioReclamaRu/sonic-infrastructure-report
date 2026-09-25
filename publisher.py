@@ -33,9 +33,11 @@ PID_FILE = os.path.join(STATE, 'orchestrator.pid')
 TG_TRACKER = os.path.join(TG_DIR, 'tg_published.txt')
 TG_STATE_FILE = os.path.join(TG_DIR, 'tg_state.txt')
 TG_LOG = os.path.join(STATE, 'tg.log')
+REJECTED_FILE = os.path.join(STATE, 'rejected.txt')
 ENV_FILE = os.path.join(TG_DIR, 'env.txt')
 CHANNEL_FILE = os.path.join(TG_DIR, 'feed_channel.txt')
 IMG_DIR = os.path.join(FEED, 'images')
+CONCEPTS_FILE = os.path.join(FEED, 'concepts.json')
 CURL = r'C:\WINDOWS\system32\curl.exe'
 CREATE_NO_WINDOW = 0x08000000
 
@@ -98,6 +100,38 @@ def load_items():
         items.append({'date': p[0].strip(), 'title': p[1], 'desc': p[2],
                       'src': p[3], 'guid': p[4], 'img': p[5]})
     return items
+
+
+REQ_CONCEPT_FIELDS = ('headline', 'win', 'visual_object', 'cover_prompt')
+
+
+def load_concepts():
+    """Editorial concepts: guid -> {headline, win, visual_object, cover_prompt}."""
+    if not os.path.exists(CONCEPTS_FILE):
+        return {}
+    try:
+        with open(CONCEPTS_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def concept_gate(guid: str, concepts: dict):
+    """Return list of REQUIRED fields missing for guid (empty = publishable)."""
+    c = concepts.get(guid) or {}
+    missing = [k for k in REQ_CONCEPT_FIELDS if not (c.get(k) or '').strip()]
+    return missing
+
+
+def unset_line(path: str, line: str):
+    """Remove `line` from a line-set file (used to release a rejected guid)."""
+    if not os.path.exists(path):
+        return
+    cur = read_lines(path)
+    nxt = [ln for ln in cur if ln != line]
+    if len(nxt) != len(cur):
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(nxt) + '\n')
 
 
 def parse_date(s: str):
@@ -234,7 +268,7 @@ def tg_chat(env):
     return chat
 
 
-def publish_one(guid: str, item: dict, env: dict, chat: str):
+def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
     token_file = env.get('BOT_TOKEN_FILE', '')
     if not token_file or not os.path.exists(token_file):
         raise RuntimeError('BOT_TOKEN_FILE missing: ' + token_file)
@@ -243,7 +277,9 @@ def publish_one(guid: str, item: dict, env: dict, chat: str):
     api = env.get('API', 'https://api.telegram.org')
     base = api + '/bot' + token
 
-    title = item['title']
+    concept = concepts.get(guid) or {}
+    title = (concept.get('headline') or item['title']).strip()
+    win = (concept.get('win') or '').strip()
     desc = item['desc'].replace('\\n', '\n\n')
     link = item['src']
     img_path = os.path.join(IMG_DIR, item['img'] + '.png')
@@ -251,8 +287,10 @@ def publish_one(guid: str, item: dict, env: dict, chat: str):
     img_path = ensure_cover(item['guid'], item['img'], img_path)
 
     footer = '\n\nИсточник: ' + link
+    # Editorial order: headline comes first, then WHY (win), then the story.
+    body_src = (win + '\n\n' + desc).strip() if win else desc
     max_body = 1024 - len(title) - len(footer)
-    body = trunc_at(desc, max_body)
+    body = trunc_at(body_src, max_body)
     caption = title + '\n\n' + body + footer
 
     if os.path.exists(img_path):
@@ -326,22 +364,37 @@ def run_cycle(tg_cap: int):
     quota = load_quota(day)
     used = int(quota.get('tg', 0))
     slots = max(0, tg_cap - used)
+    concepts = load_concepts()
+    done = set(read_lines(TG_TRACKER))
+    rejected = set(read_lines(REJECTED_FILE))
     if slots == 0:
         olog('CAP tg (' + str(used) + '/' + str(tg_cap) + ')')
         summ = ['tg=0/0']
     else:
-        done = set(read_lines(TG_TRACKER))
-        cands = [x for x in due if x['g'] not in done][:slots]
+        # 1) Editorial gate (frozen until concept filled; does NOT consume slots):
+        #    freeze due items missing concept fields, release ones now complete.
+        for it in due:
+            g = it['g']
+            miss = concept_gate(g, concepts)
+            if miss and g not in done and g not in rejected:
+                olog('REJECT ' + g + ' missing=' + ','.join(miss))
+                add_unique(REJECTED_FILE, g)
+                rejected = set(read_lines(REJECTED_FILE))
+            elif not miss and g in rejected:
+                unset_line(REJECTED_FILE, g)
+                rejected = set(read_lines(REJECTED_FILE))
+        rej_frozen = len([g for g in rejected if g in set(x['g'] for x in due)])
+        # 2) Only fully-concepted items consume the daily cap.
+        cands = [x for x in due if x['g'] not in done and x['g'] not in rejected][:slots]
         env = load_env()
         chat = tg_chat(env)
-        ok = fail = skip = 0
+        ok = fail = 0
         for c in cands:
             it = next((y for y in items if y['guid'] == c['g']), None)
             if it is None:
-                skip += 1
                 continue
             try:
-                st = publish_one(c['g'], it, env, chat)
+                st = publish_one(c['g'], it, env, chat, concepts)
             except Exception as e:
                 olog('WATCHDOG_ERR publish ' + c['g'] + ' :: ' + str(e))
                 st = 'FAIL'
@@ -349,10 +402,9 @@ def run_cycle(tg_cap: int):
                 ok += 1
             elif st == 'FAIL':
                 fail += 1
-            else:
-                skip += 1
             time.sleep(2)
-        summ = ['tg=' + str(ok) + '/' + str(fail)]
+        summ = ['tg=' + str(ok) + '/' + str(fail) +
+                ('' if rej_frozen == 0 else ' frozen=' + str(rej_frozen))]
 
     with open(HEARTBEAT, 'w', encoding='utf-8') as f:
         f.write(now.astimezone().isoformat(timespec='seconds') + '\n')

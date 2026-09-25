@@ -30,9 +30,12 @@ from PIL import Image, ImageDraw, ImageFilter
 W, H = 1200, 630
 OUT_DIR = os.path.join(os.path.dirname(__file__), 'images')
 ITEMS_CSV = os.path.join(os.path.dirname(__file__), 'items.csv')
+CONCEPTS_FILE = os.path.join(os.path.dirname(__file__), 'concepts.json')
 MANIFEST = os.path.join(OUT_DIR, 'manifest.json')
 BACKUP_ROOT = os.path.join(OUT_DIR, 'backup-red-field')
-DESIGN_VERSION = 'red-field-v6'
+# red-field-v7 = visual language change: арт-директор (объект на новость), notrinsic
+# картины-силуэты. ЛЮБАЯ смена визуального языка машины требует бампа версии.
+DESIGN_VERSION = 'red-field-v7'
 
 VOID = (0, 0, 0)
 DEEP_RED = (24, 0, 0)
@@ -144,12 +147,16 @@ def backup_old(img_path: str):
 
 def entry_for(content_id: str, seed: int) -> dict:
     name = img_name_for(content_id)
-    return {
+    entry = {
         'design_version': DESIGN_VERSION,
         'asset_hash': build_asset_hash(content_id),
         'generated_at': datetime.now().strftime('%Y-%m-%dT%H:%M:%S'),
         'path': '/'.join(['feed', 'images', name + '.png']),
     }
+    vo = object_of(content_id)
+    if vo:
+        entry['visual_object'] = vo
+    return entry
 
 
 def render_asset(content_id: str) -> str:
@@ -158,10 +165,12 @@ def render_asset(content_id: str) -> str:
     seed = int(re.sub(r'\D', '', content_id) or 0)
     out = os.path.join(OUT_DIR, name + '.png')
     conflict = conflict_of(content_id)
-    img = cover(conflict, seed=seed)
+    img = cover_auto(content_id, seed=seed)
     backup_old(out)
     img.save(out, 'PNG')
-    print('COVER GEN ' + name + ' conflict=' + conflict)
+    vo = object_of(content_id)
+    print('COVER GEN ' + name + ' conflict=' + conflict +
+          (' object="%s"' % vo if vo else ''))
     return out
 
 
@@ -286,6 +295,283 @@ def r01(seed: int, salt: int) -> float:
 
 def jitter(seed: int, spread: int, salt: int) -> int:
     return int((r01(seed, salt) - 0.5) * 2 * spread)
+
+
+# --- Арт-директор. IMAGE_CONCEPT вместо CONFLICT_MAP: у каждой новости свой
+# --- визуальный ОБЪЕКТ (один предмет), красный - акцент, а не заливка.
+# --- Правила: изъять предмет; если предмет уже похож на одну из последних
+# --- 20 обложек - твист кадра (другой объект/ракурс); один объект на кадр.
+
+CONCEPTS = None
+
+
+def load_concepts() -> dict:
+    global CONCEPTS
+    if CONCEPTS is None:
+        CONCEPTS = {}
+        if os.path.exists(CONCEPTS_FILE):
+            try:
+                with open(CONCEPTS_FILE, 'r', encoding='utf-8') as f:
+                    CONCEPTS = json.load(f)
+            except Exception:
+                CONCEPTS = {}
+    return CONCEPTS
+
+
+def dhash(img, size=17):
+    """Difference-hash of a PIL image (grayscale). size=17 -> 272 bits,
+    fine enough to tell apart objects on a black+red field."""
+    g = img.convert('L').resize((size, size + 1), Image.LANCZOS)
+    px = list(g.getdata())
+    w, h = g.size
+    bits = 0
+    for y in range(h - 1):
+        for x in range(w):
+            bits = (bits << 1) | (1 if px[y * w + x] > px[(y + 1) * w + x] else 0)
+    return bits
+
+
+def hamming(a, b):
+    return bin(a ^ b).count('1')
+
+
+# Similarity threshold for objects on a black field: 8% of bits flipped
+# ≈ same object, different arrangement. Different objects are much further.
+UNIQ_THRESHOLD = int(17 * 17 * 0.08)
+
+
+def last_20_hashes() -> list:
+    """dHash of the 20 most-recently-generated PNGs falling back to by-name order."""
+    try:
+        return load_last_20_hashes()
+    except Exception:
+        return []
+
+
+def load_last_20_hashes():
+    hashes = []
+    files = []
+    if os.path.isdir(OUT_DIR):
+        for fn in os.listdir(OUT_DIR):
+            if fn.endswith('.png'):
+                files.append(fn)
+    files.sort(key=lambda fn: os.path.getmtime(os.path.join(OUT_DIR, fn)), reverse=True)
+    for fn in files[:20]:
+        try:
+            hashes.append(dhash(Image.open(os.path.join(OUT_DIR, fn))))
+        except Exception:
+            pass
+    return hashes
+
+
+def _obj_atom(x, y, w, h):
+    return (x, y, x + w, y + h)
+
+
+def render_object(concept: dict, seed: int, attempt: int = 0):
+    """Draw ONE visual object per news. Red = accent, never the whole image."""
+    img = base_canvas()
+    cx = W / 2 + jitter(seed, 60, 101) + attempt * 7
+    cy = 415 + jitter(seed, 30, 102) + attempt * 5
+    off = jitter(seed, 60, 103) + attempt * 11
+    obj = (concept.get('visual_object') or '').lower()
+
+    if 'маск' in obj:
+        # треснувшая театральная маска с одной красной нитью
+        w, h = 340, 300
+        g = RGBA()
+        g.polygon([(cx - w / 2, cy - h / 2), (cx + w / 2, cy - h / 2),
+                   (cx + w / 2 + 90, cy + h / 2), (cx - w / 2 + 40, cy + h / 2)], fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx - 92, cy - 150, 70, 110), fill=VOID + (255,))
+        g.ellipse(_obj_atom(cx + 20, cy - 150, 70, 110), fill=VOID + (255,))
+        g.line([(cx + 40, cy - 60), (cx + 130, cy + 40), (cx + 250, cy + 60)], ACTIVE_RED + (255,), width=7)
+        g.blur(10).alpha(0.92)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.line([(cx + 250, cy + 60), (cx + 320, cy - 120), (cx + 380, cy - 40)],
+                HOT_RED + (255,), width=4)
+        g2.blur(3).alpha(1.0)
+        img.alpha_composite(g2.layer)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 220, cy - 220, 26, 26), fill=HOT_RED + (255,))
+        g3.blur(12).alpha(0.9)
+        img.alpha_composite(g3.layer)
+
+    elif 'трубк' in obj or 'секунд' in obj:
+        # телефонная трубка + циферблат с красным попаданием секунды
+        g = RGBA()
+        g.polygon([(cx - 300, cy - 140), (cx - 160, cy - 200), (cx - 120, cy - 60),
+                   (cx - 260, cy + 20), (cx - 320, cy - 40)], fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx + 60, cy - 240, 260, 260), outline=ACTIVE_RED + (255,), width=8)
+        for a in range(12):
+            import math
+            ang = a * math.pi / 6
+            x0 = cx + 190 + 115 * math.cos(ang)
+            y0 = cy - 110 + 115 * math.sin(ang)
+            x1 = cx + 190 + 130 * math.cos(ang)
+            y1 = cy - 110 + 130 * math.sin(ang)
+            g.line([(x0, y0), (x1, y1)], SIGNAL_RED + (255,), width=4)
+        g.line([(cx + 190, cy - 110), (cx + 190 + 110, cy - 110)], HOT_RED + (255,), width=6)
+        g.blur(6).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse(_obj_atom(cx + 300, cy - 130, 46, 46), fill=HOT_RED + (255,))
+        g2.blur(20).alpha(0.85)
+        img.alpha_composite(g2.layer)
+
+    elif 'компас' in obj or 'стрелк' in obj:
+        # компасная стрелка указывает на звуковую волну за линией
+        g = RGBA()
+        g.ellipse(_obj_atom(cx - 300, cy - 260, 380, 380), outline=SIGNAL_RED + (255,), width=6)
+        g.polygon([(cx - 260, cy - 20), (cx - 170, cy - 70), (cx + 220, cy - 6),
+                   (cx - 170, cy + 70)], fill=DEEP_RED + (255,))
+        g.polygon([(cx - 200, cy - 8), (cx - 120, cy - 30), (cx + 100, cy - 4),
+                   (cx - 120, cy + 50)], fill=VOID + (255,))
+        g.line([(cx + 130, cy - 4), (cx + 250, cy - 4)], HOT_RED + (255,), width=5)
+        for i in range(3):
+            g.line([(cx + 100 + i * 60, cy - 140), (cx + 100 + i * 60, cy - 40)],
+                   (ACTIVE_RED if i % 2 else SIGNAL_RED) + (255,), width=4)
+        g.blur(5).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse(_obj_atom(cx + 150, cy - 170, 40, 40), fill=HOT_RED + (255,))
+        g2.blur(24).alpha(0.9)
+        img.alpha_composite(g2.layer)
+
+    elif 'граммофон' in obj or 'раструб' in obj:
+        # граммофон: из раструба выходит красная волна
+        g = RGBA()
+        g.polygon([(cx - 300, cy - 40), (cx + 260, cy - 250), (cx + 300, cy - 150),
+                   (cx - 260, cy + 60)], fill=DEEP_RED + (255,))
+        g.polygon([(cx - 320, cy - 90), (cx - 250, cy - 70), (cx - 250, cy + 120),
+                   (cx - 320, cy + 150)], fill=ACTIVE_RED + (255,))
+        for i in range(4):
+            yy = cy - 40 + i * 70
+            g.line([(cx - 300, yy + 50), (cx + 250, yy)], (ACTIVE_RED if i % 2 else SIGNAL_RED) + (255,), width=5)
+        g.blur(6).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        for i in range(3):
+            g2.line([(cx + 240, cy - 180 - i * 40), (cx + 340, cy - 220 - i * 40)],
+                    (HOT_RED if i == 1 else ACTIVE_RED) + (255,), width=4)
+        g2.blur(4).alpha(1.0)
+        img.alpha_composite(g2.layer)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 320, cy - 280, 34, 34), fill=HOT_RED + (255,))
+        g3.blur(18).alpha(0.9)
+        img.alpha_composite(g3.layer)
+
+    elif 'микрофон' in obj or 'стойк' in obj:
+        # стоечный микрофон: один красный акцент-кольцо
+        g = RGBA()
+        g.ellipse(_obj_atom(cx - 130, cy - 200, 200, 200), fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx - 90, cy - 160, 120, 120), fill=VOID + (255,))
+        g.line([(cx + 60, cy - 20), (cx + 60, cy + 250)], ACTIVE_RED + (255,), width=16)
+        g.line([(cx + 60, cy + 250), (cx + 190, cy + 250)], DEEP_RED + (255,), width=18)
+        g.line([(cx + 190, cy + 250), (cx + 260, cy + 250)], DEEP_RED + (255,), width=18)
+        g.blur(6).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse(_obj_atom(cx - 110, cy - 180, 160, 160), outline=HOT_RED + (255,), width=7)
+        g2.blur(3).alpha(1.0)
+        img.alpha_composite(g2.layer)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 20, cy - 130, 60, 60), fill=HOT_RED + (255,))
+        g3.blur(30).alpha(0.7)
+        img.alpha_composite(g3.layer)
+
+    elif 'календар' in obj or 'лист' in obj:
+        # перевернутый лист календаря с красной датой
+        g = RGBA()
+        g.polygon([(cx - 260, cy - 200), (cx + 60, cy - 200), (cx + 40, cy + 200),
+                   (cx - 280, cy + 200)], fill=DEEP_RED + (255,))
+        g.polygon([(cx + 60, cy - 200), (cx + 260, cy - 160), (cx + 240, cy + 240),
+                   (cx + 40, cy + 200)], fill=SIGNAL_RED + (255,))
+        g.line([(cx - 100, cy - 120), (cx + 60, cy - 120)], ACTIVE_RED + (255,), width=6)
+        g.line([(cx - 100, cy - 40), (cx + 60, cy - 40)], ACTIVE_RED + (255,), width=6)
+        g.line([(cx + 100, cy - 90), (cx + 220, cy - 70)], SIGNAL_RED + (255,), width=6)
+        g.blur(6).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse(_obj_atom(cx + 120, cy - 80, 48, 48), fill=HOT_RED + (255,))
+        g2.blur(20).alpha(0.9)
+        img.alpha_composite(g2.layer)
+
+    elif 'импульс' in obj or 'волн' in obj:
+        # один импульс, вырвавшийся из тишины
+        g = RGBA()
+        g.line([(cx - 330, cy + 70), (cx + 320, cy + 70)], SIGNAL_RED + (255,), width=6)
+        g.line([(cx - 260, cy + 70), (cx + 40, cy - 280), (cx + 160, cy + 70)], ACTIVE_RED + (255,), width=12)
+        g.line([(cx + 160, cy + 70), (cx + 230, cy - 100), (cx + 320, cy + 70)], SIGNAL_RED + (255,), width=7)
+        g.line([(cx + 40, cy - 280), (cx + 10, cy - 200)], HOT_RED + (255,), width=10)
+        g.blur(5).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse(_obj_atom(cx + 30, cy - 310, 40, 40), fill=HOT_RED + (255,))
+        g2.blur(22).alpha(0.9)
+        img.alpha_composite(g2.layer)
+
+    elif 'ухо' in obj or 'интонац' in obj:
+        # ухо в профиль, внутрь входит красная линия
+        g = RGBA()
+        g.ellipse(_obj_atom(cx - 190, cy - 240, 340, 400), outline=ACTIVE_RED + (255,), width=10)
+        g.ellipse(_obj_atom(cx - 130, cy - 160, 200, 240), outline=SIGNAL_RED + (255,), width=7)
+        g.line([(cx - 270, cy - 60), (cx - 170, cy - 110), (cx - 120, cy - 60),
+                (cx - 150, cy + 40), (cx - 80, cy + 60)], ACTIVE_RED + (255,), width=6)
+        g.blur(4).alpha(0.95)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.line([(cx - 280, cy + 80), (cx - 120, cy + 60), (cx - 40, cy - 80)], HOT_RED + (255,), width=5)
+        g2.blur(3).alpha(1.0)
+        img.alpha_composite(g2.layer)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx - 300, cy + 10, 34, 34), fill=HOT_RED + (255,))
+        g3.blur(18).alpha(0.9)
+        img.alpha_composite(g3.layer)
+
+    else:
+        # запасной объект: единственный силуэт, красный контур (не заливка)
+        draw_silhouette_rgba(img, cx, cy, 1.0)
+        g = RGBA()
+        g.ellipse(_obj_atom(cx - 120, cy - 320, 240, 300), outline=ACTIVE_RED + (255,), width=4)
+        g.blur(3).alpha(0.8)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse(_obj_atom(cx - 26, cy - 46, 52, 52), fill=HOT_RED + (255,))
+        g2.blur(30).alpha(0.8)
+        img.alpha_composite(g2.layer)
+
+    out = Image.alpha_composite(img, Image.new('RGBA', (W, H), (0, 0, 0, 0)))
+    return out.convert('RGB')
+
+
+def render_object_with_uniqueness(concept: dict, seed: int):
+    """Render object; if too close to any of the last 20 covers, twist the frame."""
+    recent = last_20_hashes()
+    for attempt in range(6):
+        img = render_object(concept, seed, attempt)
+        h = dhash(img)
+        similar = any(hamming(h, x) < UNIQ_THRESHOLD for x in recent)
+        if not similar:
+            return img, attempt
+    return img, 5  # accept last attempt even if still similar
+
+
+def object_of(guid: str):
+    concepts = load_concepts()
+    if guid in concepts:
+        return concepts[guid].get('visual_object', '')
+    return ''
+
+
+def cover_auto(guid: str, seed: int = 0):
+    """Art-director dispatch: object cover if concept exists, else legacy conflict."""
+    concepts = load_concepts()
+    if guid in concepts:
+        concept = concepts[guid]
+        img, _attempt = render_object_with_uniqueness(concept, seed)
+        return img
+    return cover(conflict_of(guid), seed=seed)
 
 
 def cover(conflict: str, seed: int = 0):

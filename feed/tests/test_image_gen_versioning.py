@@ -108,6 +108,65 @@ class TestVersionAwareCoverGeneration(unittest.TestCase):
         self.assertFalse(image_gen.needs_regeneration(GUID, image_gen.load_manifest()))
 
 
+class TestArtDirector(unittest.TestCase):
+    """IMAGE_CONCEPT layer: objects render, must be pairwise distinct."""
+
+    CONCEPT_GUIDS = [
+        'golos-kak-povedenie-2026-09-25',
+        'pervaya-sekunda-banka-2026-09-26',
+        'eksport-govorit-2026-09-27',
+        'muzej-govorit-2026-09-28',
+        'meropriyatiya-govoryat-2026-09-29',
+        'itog-sentyabrya-2026-09-30',
+        'golos-pervaya-sekunda-2026-10-01',
+        'doverie-intonaciya-2026-10-02',
+    ]
+
+    def setUp(self):
+        self.prev = {}
+        for k in ('OUT_DIR', 'ITEMS_CSV', 'MANIFEST', 'BACKUP_ROOT', 'DESIGN_VERSION'):
+            self.prev[k] = getattr(image_gen, k)
+        tmp = tempfile.mkdtemp(prefix='artdir_')
+        image_gen.OUT_DIR = os.path.join(tmp, 'images')
+        os.makedirs(image_gen.OUT_DIR, exist_ok=True)
+        image_gen.MANIFEST = os.path.join(image_gen.OUT_DIR, 'manifest.json')
+        image_gen.BACKUP_ROOT = os.path.join(image_gen.OUT_DIR, 'backup-test')
+        image_gen.DESIGN_VERSION = 'test-art-v1'
+
+    def tearDown(self):
+        for k, v in self.prev.items():
+            setattr(image_gen, k, v)
+
+    def test_every_concept_has_an_object(self):
+        concepts = image_gen.load_concepts()
+        self.assertTrue(concepts)
+        for g in self.CONCEPT_GUIDS:
+            self.assertIn(g, concepts)
+            self.assertTrue((concepts[g].get('visual_object') or '').strip())
+
+    def test_deterministic_render(self):
+        import re
+        for g in self.CONCEPT_GUIDS:
+            seed = int(re.sub(r'\D', '', g) or 0)
+            c = image_gen.load_concepts()[g]
+            a = image_gen.render_object(c, seed, 0)
+            b = image_gen.render_object(c, seed, 0)
+            self.assertEqual(a.tobytes(), b.tobytes(), 'render not deterministic for ' + g)
+
+    def test_object_pairs_distinct(self):
+        import re
+        import itertools
+        hs = []
+        for g in self.CONCEPT_GUIDS:
+            seed = int(re.sub(r'\D', '', g) or 0)
+            img = image_gen.render_object(image_gen.load_concepts()[g], seed, 0)
+            hs.append(image_gen.dhash(img))
+        for a, b in itertools.combinations(hs, 2):
+            self.assertGreaterEqual(
+                image_gen.hamming(a, b), image_gen.UNIQ_THRESHOLD,
+                'two concept objects look alike: hamming ' + str(image_gen.hamming(a, b)))
+
+
 def json_load(stream):
     import json
     return json.load(stream)
