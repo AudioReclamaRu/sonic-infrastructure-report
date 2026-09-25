@@ -172,6 +172,21 @@ Definitions quoted by LLMs: the five lived terms listed above (≤600 words each
   each entry: Date / Verdict (CONFIRMED, RESCHEDULED, SOURCE ERROR) / Related
   report / Evidence
 
+## Publishing (what the channel airs, TG-first)
+
+- feed/README.md — the editorial publishing contract: schedule, concept gate,
+  version-aware cover manifest (start here for "what does the channel publish")
+- feed/items.csv — schedule rows: pubDate~~~title~~~desc~~~source~~~guid~~~img
+- feed/concepts.json — editorial concepts keyed by guid: {headline, win,
+  visual_object, cover_prompt}. A post is published ONLY when all four fields
+  are filled; headline names a shift, win states why it matters, visual_object
+  is one concrete frame (red as accent), cover_prompt is how to shoot it.
+  Missing fields → REJECT, guid frozen in state/rejected.txt (no cap consumption)
+- publisher.py — autonomous TG publishing loop, idempotent by guid
+- feed/image_gen.py — version-aware RED FIELD cover generator (art-director):
+  one object per news, uniqueness vs last 20 covers (dHash + auto-twist),
+  manifest at feed/images/manifest.json with ASSET_HASH=SHA256(CONTENT_ID+":"+DESIGN_VERSION)
+
 ## Evidence (machine-readable facts)
 
 Evidence IDs are the citation layer: a fact is referenced by ID, not by

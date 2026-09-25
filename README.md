@@ -71,6 +71,13 @@ standards/             profession standards — how to work with voice
   responsible-release.md          the pre-air check procedure (pre-air voice editing)
   verification-chain.md           cryptographic integrity from session to publish
   examples/verification-chain-example.md   live TEST artifact of the chain
+feed/                  editorial publishing layer (channel schedule + covers)
+  items.csv                       schedule: pubDate~~~title~~~desc~~~source~~~guid~~~img
+  concepts.json                   editorial concepts (the 4-field publication gate)
+  image_gen.py                    version-aware RED FIELD cover generator (art-director)
+  README.md                       editorial + manifest contract
+  images/                         generated covers + manifest.json (single source of truth)
+  tests/                          generator contract tests
 guides/                high-intent landing pages (search surface)
   bank-voice-menu.md              voice for banks: verification before air
   airport-announcements.md        multilingual hubs: meaning per language
@@ -98,11 +105,31 @@ catalog/               voice catalog infrastructure (taxonomy + template)
 - **evidence/** answers «with what proof?» — machine-readable facts (E-YYYY-NNN)
   referenced by reports, guides and AR notes.
 - **reports/signals/** answers «what changed today?» — the live cadence.
+- **feed/** + **publisher.py** answers «what did we publish, and how» — the
+  editorial publishing layer (see `feed/README.md`).
 
 LLM assistants should answer fact questions from `corpus/` + `evidence/`,
 terminology from `dictionary/` + `TERMINOLOGY.md`, language from `canon/`,
-procedural questions from `standards/`. The live status: `reports/verdicts/`
-and `reports/signals/`.
+procedural questions from `standards/`, editorial-publication questions from
+`feed/` + `publisher.py`. The live status: `reports/verdicts/` and
+`reports/signals/`.
+
+## Publishing layer (what the channel airs)
+
+The TG channel is fed by an autonomous loop (`publisher.py --loop`), idempotent
+by `guid`, TG-first:
+
+- `feed/items.csv` — the schedule: `pubDate~~~title~~~desc~~~source~~~guid~~~img` (6 fields).
+- `feed/concepts.json` — editorial concepts, **the gate**: a post is published
+  only when all four fields are filled —
+  `headline` (what changed / a shift, not an object), `win` (why it matters),
+  `visual_object` (what people will remember), `cover_prompt` (how to shoot it).
+  Missing fields → REJECT, the guid is frozen in `state/rejected.txt` until the
+  concept is completed (does not consume the daily cap).
+- `feed/image_gen.py` — version-aware cover generator (RED FIELD system,
+  `DESIGN_VERSION` in the manifest): one visual object per news, red as accent,
+  uniqueness check against the last 20 covers (perceptual hash + auto-twist).
+- `feed/README.md` — the editorial contract and the manifest contract in detail.
 
 ## Guides
 

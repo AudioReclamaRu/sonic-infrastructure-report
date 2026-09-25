@@ -1,32 +1,62 @@
-# feed/ — RSS-лента для автоимпорта в VK (и другие синдкаторы)
+# feed/ — редакционный слой публикаций (TG-first)
 
-Правило: лента генерируется из `items.csv` скриптом `rss-gen.ps1` и коммитится.
-Ничего руками в `rss.xml` не править — только `items.csv` (строки: `pubDate~~~title~~~description~~~link~~~guid~~~image`, новое сверху, RFC822-даты, `\n` = перенос абзаца, col5=имя обложки `images/<name>.png`).
-Если у поста нет обложки — пустая колонка 6, enclosure не добавляется.
+Это **издательский контур** канала: расписание, редакционные концепты, обложки.
+Публикация выполняется автономным лупом `publisher.py --loop` (TG-first,
+идемпотентность по `guid`), а не руками.
 
-Сборка: `powershell -File feed/image-gen.ps1 -ItemsCsv feed/items.csv` → `powershell -File feed/rss-gen.ps1`, затем коммит + push.
+## Файлы
 
-Доступные URL (после push):
+| Файл | Роль |
+|---|---|
+| `items.csv` | Расписание. Строка: `pubDate~~~title~~~desc~~~source~~~guid~~~img` (6 полей, RFC822-дата, `\n` = перенос абзаца, col5=guid, col6=имя обложки `images/<name>.png`) |
+| `concepts.json` | Редакционные концепты: `{guid: {headline, win, visual_object, cover_prompt}}` — **гейт публикации** (см. ниже) |
+| `image_gen.py` | Version-aware генератор обложек (RED FIELD, арт-директор). CLI: `--verify / --rebuild / --force / --guid` |
+| `images/manifest.json` | Единственный источник истины по обложкам (см. контракт ниже) |
+| `tests/` | Тесты контракта генератора (`test_image_gen_versioning.py`) |
+
+## Редакционный гейт (обязательный слой концептов)
+
+Пост публикуется **только** если в `concepts.json` заполнены все четыре поля:
+
+- `headline` — что изменилось (сдвиг, а не объект; заголовок не называет предмет)
+- `win` — почему это важно для читателя
+- `visual_object` — что запомнится через неделю (конкретный предмет кадра)
+- `cover_prompt` — как снять именно этот предмет
+
+Если поля не заполнены — REJECT: guid замораживается в
+`state/rejected.txt` (не потребляет дневной лимит TG, не спамит циклами).
+Как только концепт заполнен — заморозка снимается автоматически.
+
+Заголовок поста = `headline`. Тело начинается с `win`, дальше — текст из
+`items.csv`. Рекламных хвостов (CTA, контакты, хэштеги) в постах нет.
+
+## Обложки: version-aware RED FIELD (арт-директор)
+
+- `DESIGN_VERSION` в `image_gen.py` — текущая версия визуального языка.
+- `images/manifest.json`: `{guid: {design_version, asset_hash, generated_at, path, visual_object?}}`.
+- `path` — **POSIX-стиль** (`feed/images/<name>.png`, `/`, не `\`).
+- `ASSET_HASH = SHA256(CONTENT_ID + ":" + DESIGN_VERSION)` — без seed; изменение
+  визуального языка = bump `DESIGN_VERSION` = автоматический перевыпуск всех
+  обложек, устаревшие PNG уходят в `images/backup-red-field/`.
+- PNG не может оставаться актуальным только по факту существования файла —
+  нужен манифест (version + hash), совпадающий с кодом.
+- У каждой новости, которая прошла гейт, — **один визуальный объект**
+  (`visual_object` из концепта): красный — акцент, а не заливка.
+- Уникальность: новый кадр сравнивается dHash с последними 20 обложками; если
+  слишком похож — авто-твист кадра (до 6 попыток).
+- На картинке нет текста: чёрное поле, сигнал, предмет.
+
+CLI (проверки перед рестартом / после правок):
+```
+python feed/image_gen.py --verify     # stale=0 + exit 0 — всё актуально
+python feed/image_gen.py --rebuild    # перевыпуск только устаревших
+tools/check-covers.ps1                # unittest + --verify (CI)
+```
+
+## RSS (VK, осталось как зеркало)
+
+`rss-gen.ps1` собирает `rss.xml` из `items.csv` для VK RSS-импорта.
+Правило прежнее: руками в `rss.xml` не править — только `items.csv`,
+затем `powershell -File feed/rss-gen.ps1` + коммит + push.
 - raw: https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/rss.xml
-- jsDelivr: https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/rss.xml
-
-ВК: Управление сообществом → Интеграции → RSS-импорт → вставить URL → тип публикации.
-jsDelivr: новый коммит инвалидирует кэш автоматически (обычно в течение минут, worst case 12ч); для проверки версии — raw.githubusercontent.
-
-## Слоты ленты (на 2026-09-16)
-
-Evidence-слой (проверяемость):
-- 11.09 voice-scams-trust — голос как поверхность атаки; происхождение — инфраструктура доверия (intel-2026-09-11)
-- 11.09 rynok-dve-storony — ИИ на объём, люди на доверие (E-2026-016/017)
-- 10.09 umg-elevenlabs — UMG×ElevenLabs: первая лицензия (E-2026-016)
-- 10.09 edison-verdict — вердикт СОСТОЯЛОСЬ, цифры слепого теста (corpus/edison-blind-test.md)
-- 04.09 fitoussi-human-preference — рационально предпочитать живое (E-2026-017)
-
-Конверсионный слой (потребность → компетенция → решение → контакт):
-- 12.09 kto-proveril-golos — проверка голоса до эфира (corpus/kto-vypuskaet-golos.md)
-- 13.09 golos-banka — IVR-меню: что проверить перед эфиром (guides/bank-voice-menu.md)
-- 14.09 vybor-diktora — перестаём выбирать диктора, выбираем голосовой актив (guides/choosing-a-voice.md)
-- 15.09 ozvuchka-video — дефицит сдвинулся с голоса на контекст и управление смыслом (guides/video-voiceover.md)
-- 16.09 umg-infrastruktura — UMG×ElevenLabs: права голоса в инфраструктуру рынка (E-2026-016) [флагман, вытеснил obyavleniya-aeroporta]
-
-Каждый конверсионный пост закрывается конкретным бесплатным действием (проверка/тест-фрагмент/хронометраж) на start@audio-reclama.ru + 8-800-700-46-52.
+- jsDelivr (кэш до ~24ч): https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/rss.xml

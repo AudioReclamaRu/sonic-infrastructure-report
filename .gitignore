@@ -11,6 +11,16 @@ logs/
 # Cover generator backups (old designs; originals live in git history)
 feed/images/backup-red-field/
 
+# Any backup/scratch snapshot (originals live in git history); old generator/orchestrator
+*.bak-*
+feed/image-gen.ps1
+post-orchestrator.ps1
+feed/cover-brand.json
+feed/fb_real_test.txt
+
+# Live loop heartbeat (runtime, rewritten every cycle -> never stage by hand)
+state/heartbeat.txt
+
 # Runtime-generated registries / slots (not AI-facing content)
 state/design-cards.csv
 state/slot-*.text

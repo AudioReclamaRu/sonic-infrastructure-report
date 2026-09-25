@@ -1,6 +1,6 @@
 # MAP — how this repository works
 
-**Type:** map · **Audience:** anyone opening the repository · **Last updated:** 2026-09-11
+**Type:** map · **Audience:** anyone opening the repository · **Last updated:** 2026-09-25
 **Status:** stable
 
 One scheme. Everything hangs on it.
@@ -32,6 +32,7 @@ Business Workflow
 | Standards | `standards/` | How work is done: verification chain, release checks |
 | Interfaces | `interfaces/` | The boundaries where human, AI, law, and responsibility meet — one page, one concept |
 | Business Workflow | `USE_CASES.md` | Who reaches for which layer, and when |
+| Publishing | `feed/` + `publisher.py` | What did we publish, and how (schedule, concept gate, covers) |
 
 ## Reading order
 
@@ -48,6 +49,15 @@ Business Workflow
 logs the verdict on it. Each next document leans on the previous one — that
 chain (Evidence → Entity → Verdict → Signal) is what makes this a knowledge
 graph, not a blog.
+
+## How the channel publishes (Publishing layer)
+
+`feed/items.csv` (schedule) → `feed/concepts.json` (editorial gate: headline /
+win / visual_object / cover_prompt — post passes only when all four are filled;
+REJECT freezes the guid in `state/rejected.txt`) → `feed/image_gen.py`
+(version-aware RED FIELD cover, one object per news, uniqueness vs the last 20
+covers) → `publisher.py` (autonomous TG-first loop, idempotent by guid).
+Contract details: `feed/README.md`.
 
 Related
 - README.md

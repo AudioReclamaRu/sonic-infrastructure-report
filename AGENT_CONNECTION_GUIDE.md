@@ -23,7 +23,8 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ Comma
 
 ### 2. Telegram Bot API
 
-**Токен бота:** `F:\Pill\tmp\opencode\tg\bot_token.txt` (не светить!)
+**Токен бота (студийный, для канала):** `F:\Pill\tmp\opencode\tg\bot_token_studio.txt` (не светить!)
+Файл env (пути и прокси): `F:\Pill\tmp\opencode\tg\env.txt` — там `BOT_TOKEN_FILE` указывает на актуальный токен-файл.
 
 **Получить_updates:**
 ```bash
@@ -56,9 +57,9 @@ curl -x socks5h://127.0.0.1:10808 \
 - RSS-лента (свежая, без кэша jsDelivr): `https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/feed/rss.xml`
 - RSS-лента (кэш jsDelivr, отстаёт ~24ч): `https://cdn.jsdelivr.net/gh/AudioReclamaRu/sonic-infrastructure-report@main/feed/rss.xml`
 - Настройка в сообществе уже выполнена (Интеграции → RSS-импорт)
-- Чтобы опубликовать: добавь элемент в `F:\Pill\tmp\opencode\sonic-repo\feed\items.csv`
-- Формат строки: `pubDate~~~title~~~description~~~link~~~guid`
-- Запусти генерацию: `powershell -File F:\Pill\tmp\opencode\sonic-repo\feed\rss-gen.ps1`
+- VK — зеркало: публикацию ведёт TG-луп (`publisher.py --loop`), RSS собирается из того же `feed/items.csv`
+- Формат строки: `pubDate~~~title~~~desc~~~source~~~guid~~~img` (6 полей, RFC822-дата, `\n` = перенос абзаца)
+- Запусти генерацию RSS: `powershell -File F:\Pill\tmp\opencode\sonic-repo\feed\rss-gen.ps1`
 - Запушь в git: `git add feed; git commit -m "feed: ..."; git push`
 - VK автоматически подхватит ленту
 
@@ -102,7 +103,7 @@ curl "https://hn.algolia.com/api/v1/search?query=url:elevenlabs&tags=story"
 - `corpus/` — таймлайны и состояния рынка
 - `entity/` — сущности (компании, люди)
 - `reports/signals/` — ежедневные сигналы
-- `feed/` — RSS-лента (items.csv, rss-gen.ps1)
+- `feed/` — редакционный слой: items.csv (расписание), concepts.json (гейт), image_gen.py (обложки)
 
 **Работа с git:**
 ```bash
@@ -131,20 +132,28 @@ VK API (напрямую, нужен токен) ← Сообщество
 VK RSS (автоимпорт) ← feed/rss.xml
 ```
 
-## Автоматизация публикаций
+## Автоматизация публикаций (TG-first)
 
-### Ежедневный цикл
+### Издательский контур (живой, автономный)
+- `publisher.py --loop` публикует в Telegram сам, идемпотентно по `guid`,
+  ежедневный лимит `--tg-cap` (default 4). Живой процесс: `state/orchestrator.pid`,
+  пульс: `state/heartbeat.txt`.
+- **Гейт концептов:** пост проходит, только если в `feed/concepts.json` для его
+  guid заполнены `headline` / `win` / `visual_object` / `cover_prompt`. Иначе
+  REJECT + заморозка в `state/rejected.txt` (не тратит лимит, автоснимается,
+  когда концепт появится).
+- Обложки: `feed/image_gen.py` — арт-директор RED FIELD (один объект, красный
+  акцент, уникальность против последних 20). `feed/images/manifest.json` —
+  единственный источник истины (version + hash).
+- VK/Дзен — зеркала через RSS из `feed/items.csv`.
+
+### Ежедневная редакционная работа (для агента-редактора)
 1. Собрать сигналы (HN, GitHub, прямые URL)
 2. Проверить источники (evidence)
-3. Обновить таймлайн (corpus)
-4. Сгенерировать RSS (если есть новый сильный сигнал)
-5. Запушить в git
-6. VK автоматически опубликует
-
-### Правило публикации
-- Публиковать только сильные, полностью готовые материалы
-- Не плодить поштучно — копить и выбирать лучшее
-- Максимум 1-2 сильных поста в неделю
+3. Обновить таймлайн (corpus) — при сильном сигнале
+4. Для каждого слота: заполнить 4 поля концепта в `feed/concepts.json`
+   (headline = сдвиг, win, visual_object, cover_prompt)
+5. Убедиться, что `feed/image_gen.py --verify` даёт stale=0, и запушить
 
 ## Траблшутинг
 
@@ -162,7 +171,7 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ Comma
 
 ### Telegram API отвечает ошибкой
 1. Проверь прокси: `curl -x socks5h://127.0.0.1:10808 "https://api.telegram.org/bot<TOKEN>/getMe"`
-2. Если прокси работает, но API не отвечает — проверь токен в `tg/bot_token.txt`
+2. Если прокси работает, но API не отвечает — проверь токен: файл из `BOT_TOKEN_FILE` в `tg/env.txt` (студийный — `bot_token_studio.txt`)
 3. Если токен неверный — попроси владельца сгенерировать новый через @BotFather
 
 ### VK не публикует из RSS
@@ -184,7 +193,7 @@ Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ Comma
 
 ## Важные замечания
 
-1. **Не свети токен бота** — хранится в `tg/bot_token.txt`
+1. **Не свети токен бота** — файл указан в `tg/env.txt` (`BOT_TOKEN_FILE`), не коммить его
 2. **Для Russian-сервисов** (VK, Дзен) — отключай прокси, работай напрямую
 3. **Для заблокированных сервисов** (Telegram) — используй прокси
 4. **Коммить только готовое** — не пушь черновики в основную ветку
