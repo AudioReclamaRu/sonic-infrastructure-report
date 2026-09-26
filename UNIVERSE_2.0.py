@@ -1,4 +1,25 @@
-# -*- coding: utf-8 -*-
+"""
+UNIVERSE 2.0
+============
+
+Status: Research Prototype
+Repository: AudioReclamaRu / sonic-infrastructure-report
+
+UNIVERSE 2.0 is an experimental reference model describing how signals,
+memory, evidence and publication interact inside the Pervoistochnik
+("Primary Source") infrastructure.
+
+This file is intentionally published as source code rather than a PDF:
+the model is executable, inspectable and versioned.
+
+Stable concepts:
+- Event
+- Memory
+- Evidence
+- Shift
+- Provenance
+
+License: see repository license.
 """
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║          ASTRAEA UNIVERSE OS — ТОРВ/ТабАк Full Simulation Engine            ║
