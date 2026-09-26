@@ -102,11 +102,11 @@ def load_items():
     return items
 
 
-REQ_CONCEPT_FIELDS = ('headline', 'win', 'visual_object', 'cover_prompt')
+REQ_CONCEPT_FIELDS = ('headline', 'demo', 'explain', 'consequence', 'visual_object', 'cover_prompt')
 
 
 def load_concepts():
-    """Editorial concepts: guid -> {headline, win, visual_object, cover_prompt}."""
+    """Editorial concepts: guid -> {headline, demo, explain, consequence, visual_object, cover_prompt}."""
     if not os.path.exists(CONCEPTS_FILE):
         return {}
     try:
@@ -116,10 +116,29 @@ def load_concepts():
         return {}
 
 
-def concept_gate(guid: str, concepts: dict):
+def source_resolves(link: str) -> bool:
+    # A post's proof link must point to a file that actually exists in the repo.
+    # github blob URL of the form .../blob/<ref>/<repo-relative-path> -> local file.
+    if not link:
+        return False
+    if 'github.com/' not in link:
+        return True  # non-github: keep (external URL), no local proof to check
+    m = re.search(r'/blob/[^/]+/(.+)$', link)
+    if not m:
+        return True
+    rel = m.group(1)
+    if rel.startswith(('http://', 'https://')):
+        return True
+    local = os.path.normpath(os.path.join(REPO, rel))
+    return local.startswith(REPO) and os.path.isfile(local)
+
+
+def concept_gate(guid: str, concepts: dict, link: str = ''):
     """Return list of REQUIRED fields missing for guid (empty = publishable)."""
     c = concepts.get(guid) or {}
     missing = [k for k in REQ_CONCEPT_FIELDS if not (c.get(k) or '').strip()]
+    if not missing and not source_resolves(link):
+        missing.append('source')
     return missing
 
 
@@ -279,19 +298,23 @@ def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
 
     concept = concepts.get(guid) or {}
     title = (concept.get('headline') or item['title']).strip()
-    win = (concept.get('win') or '').strip()
+    demo = (concept.get('demo') or '').strip()
+    explain = (concept.get('explain') or '').strip()
+    consequence = (concept.get('consequence') or '').strip()
     desc = item['desc'].replace('\\n', '\n\n')
     link = item['src']
     img_path = os.path.join(IMG_DIR, item['img'] + '.png')
 
     img_path = ensure_cover(item['guid'], item['img'], img_path)
 
-    footer = '\n\nИсточник: ' + link
-    # Editorial order: headline comes first, then WHY (win), then the story.
-    body_src = (win + '\n\n' + desc).strip() if win else desc
-    max_body = 1024 - len(title) - len(footer)
+    footer = 'Источник: ' + link
+    # Editorial order (Primary Source unit): a DEMONSTRATION that opens the
+    # reader's model of the world, then WHY (explanation), then what changes.
+    parts = [p for p in (demo, explain, consequence, desc) if p]
+    body_src = '\n\n'.join(parts)
+    max_body = 1024 - len(title) - len(footer) - 2
     body = trunc_at(body_src, max_body)
-    caption = title + '\n\n' + body + footer
+    caption = title + '\n\n' + body + '\n\n' + footer
 
     if os.path.exists(img_path):
         fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_photo_')
@@ -375,7 +398,7 @@ def run_cycle(tg_cap: int):
         #    freeze due items missing concept fields, release ones now complete.
         for it in due:
             g = it['g']
-            miss = concept_gate(g, concepts)
+            miss = concept_gate(g, concepts, it['it'].get('src', ''))
             if miss and g not in done and g not in rejected:
                 olog('REJECT ' + g + ' missing=' + ','.join(miss))
                 add_unique(REJECTED_FILE, g)
