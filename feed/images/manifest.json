@@ -264,5 +264,12 @@
     "generated_at": "2026-09-25T08:51:14",
     "path": "feed/images/itog-sentyabrya-2026-09-30.png",
     "visual_object": "лист календаря, который переворачивается, красная дата на обороте"
+  },
+  "kast-kharakterov-2026-09-27": {
+    "design_version": "red-field-v7",
+    "asset_hash": "d1f2487cb2c067153ab4457b558a3d5b0ece50cf597ab3c178b1c97689fc1536",
+    "generated_at": "2026-09-26T08:11:08",
+    "path": "feed/images/kast-kharakterov.png",
+    "visual_object": "студийный микрофон с четырьмя тенями на стене"
   }
 }
