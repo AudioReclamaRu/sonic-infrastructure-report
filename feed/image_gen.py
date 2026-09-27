@@ -462,12 +462,11 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
         img.alpha_composite(g3.layer)
 
     elif 'тен' in obj:
-        # микрофон и четыре тени-характера (Production Contract v1.0):
-        # один главный объект (микрофон), четыре тени, отличающиеся ТОЛЬКО позой,
-        # одна окружена тонким красным кольцом (единственный красный акцент).
-        # Композиция: доминирующий микрофон с треногой в центре; тени — на краях.
-        # четыре тени: строгая, улыбчивая, холодная, уверенная (поза - единственная разница)
-        RING_IDX = 2  # тонкое красное кольцо - только вокруг одной тени (уверенная)
+        # Разлом (Production Contract v1.0, направление A+D): микрофон стоит,
+        # но кабель перерезан и висит обрывком — «голос есть, связи нет».
+        # Четыре тени-характера остаются НЕЙТРАЛЬНЫМИ (каст ролей Edison Multi-Cast),
+        # единственный красный акцент — тонкое кольцо на ОБРЫВЕ кабеля, не на объекте:
+        # взгляд ищет смысл там, где связь порвана.
         for i, (ox, lean) in enumerate(((-420, -28), (-265, 0), (265, 0), (420, 28))):
             sg = RGBA()
             gx = W / 2 + ox
@@ -480,31 +479,50 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
             sg.ellipse(_obj_atom(gx - 30, top, 60, 60), fill=SILH + (255,))
             sg.blur(2).alpha(0.95)
             img.alpha_composite(sg.layer)
-        # микрофон: главный доминирующий объект с треногой, БЕЗ красного акцента
+        # микрофон: главный объект, в тёмно-красной гамме — НЕ должен давать
+        # ярких красных пикселей (по контракту красный сигнал допустим только
+        # в одном акценте). Все части объекта R<120; 255-красное — только кольцо на обрыве.
         g = RGBA()
         # колпак микрофона
         g.ellipse(_obj_atom(cx - 120, cy - 220, 240, 190), fill=DEEP_RED + (255,))
         g.ellipse(_obj_atom(cx - 84, cy - 182, 168, 120), fill=VOID + (255,))
-        # держатель (кольцо карданного подвеса, нейтральное)
+        # держатель
         g.line([(cx - 128, cy - 60), (cx + 128, cy - 60)], SIGNAL_RED + (255,), width=14)
         # стойка
-        g.line([(cx, cy - 60), (cx, cy + 150)], ACTIVE_RED + (255,), width=18)
-        # тренога: три ноги от стойки к краям
+        g.line([(cx, cy - 60), (cx, cy + 150)], SIGNAL_RED + (255,), width=18)
+        # тренога
         g.line([(cx, cy + 150), (cx - 260, cy + 200)], DEEP_RED + (255,), width=12)
         g.line([(cx, cy + 150), (cx + 260, cy + 200)], DEEP_RED + (255,), width=12)
         g.line([(cx, cy + 150), (cx, cy + 230)], DEEP_RED + (255,), width=12)
         g.blur(5).alpha(0.95)
         img.alpha_composite(g.layer)
-        # единственный красный акцент: тонкое кольцо вокруг выбранной тени
-        ring_x = W / 2 + 265
-        ring_top = 150
+        # перерезанный кабель: выходит из-за правого края микрофона, извивается вниз,
+        # обрывается; с обрыва свисают два тонких конца (рваные жилы)
+        cable = (80, 62, 74)
+        cg = RGBA()
+        cg.line([(cx + 118, cy - 12), (cx + 152, cy + 22)], cable + (255,), width=9)
+        cg.line([(cx + 152, cy + 22), (cx + 188, cy + 10)], cable + (255,), width=9)
+        cg.line([(cx + 188, cy + 10), (cx + 172, cy + 76)], cable + (255,), width=9)
+        cg.line([(cx + 172, cy + 76), (cx + 196, cy + 142)], cable + (255,), width=9)
+        # обрыв: два живых конца падают ниже точки разрыва
+        cg.line([(cx + 196, cy + 142), (cx + 210, cy + 196)], cable + (255,), width=4)
+        cg.line([(cx + 196, cy + 142), (cx + 178, cy + 192)], cable + (255,), width=4)
+        cg.blur(2).alpha(0.97)
+        img.alpha_composite(cg.layer)
+        # единственный красный акцент: тонкое кольцо на точке разрыва кабеля
+        rb = (cx + 196, cy + 134)
+        # мягкое свечение-ореол вокруг разлома (красный = только здесь)
+        rg0 = RGBA()
+        rg0.ellipse(_obj_atom(rb[0] - 46, rb[1] - 46, 92, 92), fill=HOT_RED + (255,))
+        rg0.blur(16).alpha(0.5)
+        img.alpha_composite(rg0.layer)
         rg = RGBA()
-        rg.ellipse(_obj_atom(ring_x - 52, ring_top - 34, 104, 104),
-                   outline=SIGNAL_RED + (255,), width=5)
+        rg.ellipse(_obj_atom(rb[0] - 32, rb[1] - 32, 64, 64),
+                   outline=SIGNAL_RED + (255,), width=6)
         rg.blur(3).alpha(0.85)
         img.alpha_composite(rg.layer)
         rgb = RGBA()
-        rgb.ellipse(_obj_atom(ring_x - 52, ring_top - 34, 104, 104),
+        rgb.ellipse(_obj_atom(rb[0] - 32, rb[1] - 32, 64, 64),
                     outline=HOT_RED + (255,), width=2)
         img.alpha_composite(rgb.layer)
 
