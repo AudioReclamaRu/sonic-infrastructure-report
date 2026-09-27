@@ -462,40 +462,51 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
         img.alpha_composite(g3.layer)
 
     elif 'тен' in obj:
-        # один микрофон + четыре тени-характера на стене (композиционная система:
-        # один объект, N вариаций; единственный красный акцент — кольцо микрофона)
-        red_glow_bg(img, W / 2, 300, 420, 300, ACTIVE_RED, 0.16)
-        # четыре тени-характера: строгая, улыбчивая, холодная, уверенная
-        for i, (ox, lean, tall) in enumerate(((-300, -35, 1.2), (-175, 0, 1.02),
-                                              (150, 0, 0.95), (285, 35, 1.3))):
+        # микрофон и четыре тени-характера (Production Contract v1.0):
+        # один главный объект (микрофон), четыре тени, отличающиеся ТОЛЬКО позой,
+        # одна окружена тонким красным кольцом (единственный красный акцент).
+        # Композиция: доминирующий микрофон с треногой в центре; тени — на краях.
+        # четыре тени: строгая, улыбчивая, холодная, уверенная (поза - единственная разница)
+        RING_IDX = 2  # тонкое красное кольцо - только вокруг одной тени (уверенная)
+        for i, (ox, lean) in enumerate(((-420, -28), (-265, 0), (265, 0), (420, 28))):
             sg = RGBA()
             gx = W / 2 + ox
-            top = 90
-            bot = 580
-            sx = gx - 90
-            ex = gx + 90 + lean
-            sg.polygon([(sx, top + 80), (ex, top + 80),
-                        (ex + lean * 2, bot), (sx - lean * 2, bot)], fill=SILH + (255,))
-            sg.ellipse(_obj_atom(gx - 48, top, 96, 96),
-                       fill=SILH + (255,), outline=SIGNAL_RED + (255,), width=3)
-            sg.blur(4).alpha(0.95)
+            top = 150
+            bot = 480
+            sx = gx - 58
+            ex = gx + 58 + lean
+            sg.polygon([(sx, top + 52), (ex, top + 52),
+                        (ex + lean, bot), (sx - lean, bot)], fill=SILH + (255,))
+            sg.ellipse(_obj_atom(gx - 30, top, 60, 60), fill=SILH + (255,))
+            sg.blur(2).alpha(0.95)
             img.alpha_composite(sg.layer)
-        # микрофон
+        # микрофон: главный доминирующий объект с треногой, БЕЗ красного акцента
         g = RGBA()
-        g.ellipse(_obj_atom(cx - 130, cy - 200, 200, 200), fill=DEEP_RED + (255,))
-        g.ellipse(_obj_atom(cx - 90, cy - 160, 120, 120), fill=VOID + (255,))
-        g.line([(cx + 60, cy - 20), (cx + 60, cy + 250)], ACTIVE_RED + (255,), width=16)
-        g.line([(cx + 60, cy + 250), (cx + 260, cy + 250)], DEEP_RED + (255,), width=18)
-        g.blur(6).alpha(0.95)
+        # колпак микрофона
+        g.ellipse(_obj_atom(cx - 120, cy - 220, 240, 190), fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx - 84, cy - 182, 168, 120), fill=VOID + (255,))
+        # держатель (кольцо карданного подвеса, нейтральное)
+        g.line([(cx - 128, cy - 60), (cx + 128, cy - 60)], SIGNAL_RED + (255,), width=14)
+        # стойка
+        g.line([(cx, cy - 60), (cx, cy + 150)], ACTIVE_RED + (255,), width=18)
+        # тренога: три ноги от стойки к краям
+        g.line([(cx, cy + 150), (cx - 260, cy + 200)], DEEP_RED + (255,), width=12)
+        g.line([(cx, cy + 150), (cx + 260, cy + 200)], DEEP_RED + (255,), width=12)
+        g.line([(cx, cy + 150), (cx, cy + 230)], DEEP_RED + (255,), width=12)
+        g.blur(5).alpha(0.95)
         img.alpha_composite(g.layer)
-        # единственный красный акцент: кольцо на сетке микрофона
-        g2 = RGBA()
-        g2.ellipse(_obj_atom(cx - 110, cy - 180, 160, 160), outline=SIGNAL_RED + (255,), width=9)
-        g2.blur(4).alpha(0.8)
-        img.alpha_composite(g2.layer)
-        g2b = RGBA()
-        g2b.ellipse(_obj_atom(cx - 110, cy - 180, 160, 160), outline=HOT_RED + (255,), width=4)
-        img.alpha_composite(g2b.layer)
+        # единственный красный акцент: тонкое кольцо вокруг выбранной тени
+        ring_x = W / 2 + 265
+        ring_top = 150
+        rg = RGBA()
+        rg.ellipse(_obj_atom(ring_x - 52, ring_top - 34, 104, 104),
+                   outline=SIGNAL_RED + (255,), width=5)
+        rg.blur(3).alpha(0.85)
+        img.alpha_composite(rg.layer)
+        rgb = RGBA()
+        rgb.ellipse(_obj_atom(ring_x - 52, ring_top - 34, 104, 104),
+                    outline=HOT_RED + (255,), width=2)
+        img.alpha_composite(rgb.layer)
 
     elif 'микрофон' in obj or 'стойк' in obj:
         # стоечный микрофон: один красный акцент-кольцо

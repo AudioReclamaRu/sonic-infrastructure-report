@@ -104,6 +104,21 @@ def load_items():
 
 REQ_CONCEPT_FIELDS = ('headline', 'demo', 'explain', 'consequence', 'visual_object', 'cover_prompt')
 
+# RED FIELD · Production Contract v1.0 (standards/red-field-production-contract.md).
+# Машино-проверяемые правила текстового контракта. Правка без согласования с
+# контрактом невозможна: эти константы читаются concept_gate и REJECT-логом.
+HEADLINE_MIN = 35
+HEADLINE_MAX = 75
+DEMO_MAX_SENTENCES = 1   # demo = ровно одно предложение
+EXPLAIN_MAX_SENTENCES = 2  # explain = не больше двух предложений
+
+
+def _sentence_count(s: str) -> int:
+    """Count sentence-ending punctuation (., !, ?) in a non-empty string."""
+    if not s:
+        return 0
+    return sum(1 for ch in s if ch in '.!?…')
+
 
 def load_concepts():
     """Editorial concepts: guid -> {headline, demo, explain, consequence, visual_object, cover_prompt}."""
@@ -134,11 +149,28 @@ def source_resolves(link: str) -> bool:
 
 
 def concept_gate(guid: str, concepts: dict, link: str = ''):
-    """Return list of REQUIRED fields missing for guid (empty = publishable)."""
+    """Return list of FAIL reasons for guid (empty = publishable).
+
+    RED FIELD Production Contract v1.0 gates:
+      1. all REQ_CONCEPT_FIELDS present and non-empty;
+      2. source_resolves(link) = PASS;
+      3. machine-checkable text rules (headline length, sentence counts).
+    """
     c = concepts.get(guid) or {}
     missing = [k for k in REQ_CONCEPT_FIELDS if not (c.get(k) or '').strip()]
     if not missing and not source_resolves(link):
         missing.append('source')
+    if not missing:
+        hl = (c.get('headline') or '').strip()
+        ln = len(hl)
+        if ln < HEADLINE_MIN or ln > HEADLINE_MAX:
+            missing.append('qa:headline_len={}'.format(ln))
+        d = _sentence_count((c.get('demo') or '').strip())
+        if d != DEMO_MAX_SENTENCES:
+            missing.append('qa:demo_sent={}'.format(d))
+        e = _sentence_count((c.get('explain') or '').strip())
+        if e > EXPLAIN_MAX_SENTENCES:
+            missing.append('qa:explain_sent={}'.format(e))
     return missing
 
 
