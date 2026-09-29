@@ -249,6 +249,37 @@ def base_canvas():
     return vgrad_rgb()
 
 
+def vignette(img, strength=0.55):
+    """Soft dark edges to give depth; keeps the field literally black at corners."""
+    rmax = ((W / 2) ** 2 + (H / 2) ** 2) ** 0.5
+    ys, xs = np.mgrid[0:H, 0:W]
+    dist = np.sqrt((xs - W / 2) ** 2 + (ys - H / 2) ** 2) / rmax
+    alpha = np.clip((dist - 0.55) / 0.45, 0, 1) * strength
+    arr = np.zeros((H, W, 4), dtype=np.uint8)
+    arr[..., 3] = (alpha * 255).astype(np.uint8)
+    img.alpha_composite(Image.fromarray(arr, 'RGBA'))
+    return img
+
+
+def accent_glow(img, cx, cy, r, color=HOT_RED, alpha=0.5, blur=16):
+    """Single hot accent with a soft halo (the ONLY vivid red in the frame)."""
+    g = RGBA()
+    g.ellipse((cx - r, cy - r, cx + r, cy + r), fill=color + (255,))
+    g.blur(blur).alpha(alpha)
+    img.alpha_composite(g.layer)
+
+
+def feather_line(img, pts, color, width, blur=2, alpha=1.0):
+    """A crisp-but-soft line (two passes: wide soft + thin bright)."""
+    for w, b, a in ((width + 2, blur + 1, alpha * 0.5), (width, blur, alpha)):
+        g = RGBA()
+        g.line(pts, color + (255,), width=w)
+        if b:
+            g.blur(b)
+        g.alpha(a)
+        img.alpha_composite(g.layer)
+
+
 def silhouette_layer(cx, cy, scale=1.0, fill=SILH, alpha=1.0):
     g = RGBA()
     s = scale
@@ -371,31 +402,43 @@ def _obj_atom(x, y, w, h):
 def render_object(concept: dict, seed: int, attempt: int = 0):
     """Draw ONE visual object per news. Red = accent, never the whole image."""
     img = base_canvas()
+    vignette(img, 0.5)
     cx = W / 2 + jitter(seed, 60, 101) + attempt * 7
     cy = 415 + jitter(seed, 30, 102) + attempt * 5
     off = jitter(seed, 60, 103) + attempt * 11
     obj = (concept.get('visual_object') or '').lower()
 
     if 'маск' in obj:
-        # треснувшая театральная маска с одной красной нитью
-        w, h = 340, 300
+        # театральная маска-лик с острым подбородком и высоким навершием-хом
         g = RGBA()
-        g.polygon([(cx - w / 2, cy - h / 2), (cx + w / 2, cy - h / 2),
-                   (cx + w / 2 + 90, cy + h / 2), (cx - w / 2 + 40, cy + h / 2)], fill=DEEP_RED + (255,))
-        g.ellipse(_obj_atom(cx - 92, cy - 150, 70, 110), fill=VOID + (255,))
-        g.ellipse(_obj_atom(cx + 20, cy - 150, 70, 110), fill=VOID + (255,))
-        g.line([(cx + 40, cy - 60), (cx + 130, cy + 40), (cx + 250, cy + 60)], ACTIVE_RED + (255,), width=7)
-        g.blur(10).alpha(0.92)
+        # высокий хом/навершие (силуэт трагической маски)
+        g.polygon([(cx - 70, cy - 430), (cx + 70, cy - 430), (cx + 26, cy - 300),
+                   (cx - 26, cy - 300)], fill=DEEP_RED + (255,))
+        # лицо: узкая трапеция с острым подбородком
+        g.polygon([(cx - 140, cy - 300), (cx + 140, cy - 300),
+                   (cx + 56, cy + 60), (cx, cy + 120),
+                   (cx - 56, cy + 60)], fill=DEEP_RED + (255,))
+        # глазницы
+        g.ellipse(_obj_atom(cx - 74, cy - 220, 70, 92), fill=VOID + (255,))
+        g.ellipse(_obj_atom(cx + 6, cy - 220, 70, 92), fill=VOID + (255,))
+        # нос-стелаж: вертикальная тёмная линия между глазниц
+        g.line([(cx - 34, cy - 160), (cx - 34, cy - 80)], VOID + (255,), width=14)
+        # рот: широкая тёмная прорезь
+        g.polygon([(cx - 52, cy - 8), (cx + 50, cy - 8), (cx + 36, cy + 34),
+                   (cx - 36, cy + 34)], fill=VOID + (255,))
+        g.blur(6).alpha(0.96)
         img.alpha_composite(g.layer)
-        g2 = RGBA()
-        g2.line([(cx + 250, cy + 60), (cx + 320, cy - 120), (cx + 380, cy - 40)],
-                HOT_RED + (255,), width=4)
-        g2.blur(3).alpha(1.0)
-        img.alpha_composite(g2.layer)
+        # трещина от лба к рту — единственный яркий красный акцент
+        accent_glow(img, cx - 34, cy - 130, 26, HOT_RED, 0.5, 14)
         g3 = RGBA()
-        g3.ellipse(_obj_atom(cx + 220, cy - 220, 26, 26), fill=HOT_RED + (255,))
-        g3.blur(12).alpha(0.9)
+        g3.line([(cx - 10, cy - 270), (cx - 30, cy - 180), (cx - 22, cy - 90),
+                 (cx - 40, cy + 10)], HOT_RED + (255,), width=4)
+        g3.blur(2).alpha(0.95)
         img.alpha_composite(g3.layer)
+        g5 = RGBA()
+        g5.line([(cx - 10, cy - 270), (cx - 30, cy - 180), (cx - 22, cy - 90)],
+                HOT_RED + (255,), width=2)
+        img.alpha_composite(g5.layer)
 
     elif 'трубк' in obj or 'секунд' in obj:
         # телефонная трубка + циферблат с красным попаданием секунды
@@ -414,6 +457,11 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
         g.line([(cx + 190, cy - 110), (cx + 190 + 110, cy - 110)], HOT_RED + (255,), width=6)
         g.blur(6).alpha(0.95)
         img.alpha_composite(g.layer)
+        # красное попадание секунды на циферблат — единственный яркий акцент
+        accent_glow(img, cx + 300, cy - 130, 22, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 292, cy - 138, 16, 16), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
         g2 = RGBA()
         g2.ellipse(_obj_atom(cx + 300, cy - 130, 46, 46), fill=HOT_RED + (255,))
         g2.blur(20).alpha(0.85)
@@ -459,6 +507,266 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
         g3 = RGBA()
         g3.ellipse(_obj_atom(cx + 320, cy - 280, 34, 34), fill=HOT_RED + (255,))
         g3.blur(18).alpha(0.9)
+        img.alpha_composite(g3.layer)
+
+    elif 'перо' in obj or 'чернил' in obj:
+        # ПЕРО В ЧЕРНИЛЬНИЦЕ (fitoussi-human-preference): человеческий след,
+        # сигнал ответственности. Единственный красный акцент — капля чернил.
+        g = RGBA()
+        # чернильница: тёмная, с теневой глубиной
+        g.ellipse(_obj_atom(cx - 130, cy + 40, 260, 90), fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx - 110, cy + 28, 220, 70), fill=VOID + (255,))
+        # перо: чёткая линия вверх-влево от чернильницы
+        g.polygon([(cx + 40, cy + 30), (cx - 60, cy - 250), (cx - 32, cy - 262),
+                   (cx + 46, cy + 8)], fill=SIGNAL_RED + (255,))
+        g.line([(cx - 60, cy - 250), (cx - 210, cy - 120)], ACTIVE_RED + (255,), width=5)
+        g.line([(cx - 60, cy - 250), (cx - 264, cy - 60)], SIGNAL_RED + (255,), width=5)
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красная капля чернил на острие — акцент
+        accent_glow(img, cx - 242, cy - 96, 22, HOT_RED, 0.55, 14)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx - 258, cy - 108, 26, 26), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'разрыв' in obj or 'атака' in obj:
+        # РАЗОРВАННАЯ ЛЕНТА ЗАПИСИ (voice-scams-trust): голос — поверхность атаки.
+        # Диагональная лента с рваным краем; единственный красный — кромка разрыва.
+        g = RGBA()
+        # лента: диагональная полоса сверху-слева вниз-справа
+        g.polygon([(cx - 300, cy - 60), (cx - 100, cy - 250), (cx - 10, cy - 250),
+                   (cx - 210, cy - 60)], fill=DEEP_RED + (255,))
+        g.polygon([(cx - 180, cy - 20), (cx + 20, cy - 210), (cx + 100, cy - 210),
+                   (cx - 100, cy - 20)], fill=SIGNAL_RED + (255,))
+        # вторая диагональ-дублёр (смещённый след записи)
+        g.polygon([(cx - 260, cy + 60), (cx - 60, cy - 130), (cx + 40, cy - 130),
+                   (cx - 160, cy + 60)], fill=VOID + (255,))
+        # рваный излом через центр
+        g.polygon([(cx - 40, cy - 120), (cx + 30, cy - 190), (cx + 70, cy - 40),
+                   (cx - 20, cy + 30), (cx - 120, cy - 60)], fill=VOID + (255,))
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # рваные красные кромки по излому — акцент
+        g2 = RGBA()
+        g2.line([(cx - 40, cy - 120), (cx + 30, cy - 190), (cx + 70, cy - 40),
+                 (cx - 20, cy + 30)], HOT_RED + (255,), width=4)
+        g2.blur(2).alpha(0.9)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx + 30, cy - 190, 26, HOT_RED, 0.5, 12)
+        g4 = RGBA()
+        g4.line([(cx - 40, cy - 120), (cx + 30, cy - 190), (cx + 70, cy - 40)],
+                HOT_RED + (255,), width=2)
+        img.alpha_composite(g4.layer)
+
+    elif 'печать' in obj or 'штамп' in obj:
+        # ПЕЧАТЬ ПРАВОВОГО СЛОЯ (pravovoy-sloy-golosa): голос — объект согласия.
+        # Объект — печать-рельеф на пустом бланке, единственный красный — оттиск.
+        g = RGBA()
+        # бланк: развёрнутый лист
+        g.polygon([(cx - 300, cy - 170), (cx + 300, cy - 170), (cx + 220, cy + 170),
+                   (cx - 220, cy + 170)], fill=DEEP_RED + (255,))
+        g.polygon([(cx - 280, cy - 150), (cx + 280, cy - 150), (cx + 200, cy + 150),
+                   (cx - 200, cy + 150)], fill=VOID + (255,))
+        # печать: круг-рельеф
+        g.ellipse(_obj_atom(cx - 90, cy - 100, 180, 180), fill=None,
+                  outline=SIGNAL_RED + (255,), width=4)
+        g.ellipse(_obj_atom(cx - 120, cy - 280, 240, 240), fill=None,
+                  outline=ACTIVE_RED + (255,), width=3)
+        g.blur(4).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красный оттиск печати в центре бланка — акцент
+        accent_glow(img, cx, cy - 26, 30, HOT_RED, 0.5, 14)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx - 10, cy - 44, 20, 20), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'кассет' in obj or 'диктофон' in obj or 'катушк' in obj:
+        # ДИКТОРФОННАЯ КАССЕТА (vybor-diktora): диктор — актив, а не тембр.
+        # Красный акцент — наклейка на кассете.
+        g = RGBA()
+        # корпус кассеты — широкая горизонтальная плашка
+        g.rectangle((cx - 290, cy - 90, cx + 290, cy + 90), fill=SIGNAL_RED + (255,))
+        g.rectangle((cx - 270, cy - 70, cx + 270, cy + 70), fill=VOID + (255,))
+        # два отверстия катушек далеко друг от друга
+        g.ellipse(_obj_atom(cx - 180, cy - 52, 50, 104), fill=VOID + (255,),
+                  outline=SIGNAL_RED + (255,), width=3)
+        g.ellipse(_obj_atom(cx + 130, cy - 52, 50, 104), fill=VOID + (255,),
+                  outline=SIGNAL_RED + (255,), width=3)
+        # центральные оси
+        g.ellipse(_obj_atom(cx - 168, cy - 30, 16, 16), fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx + 142, cy - 30, 16, 16), fill=DEEP_RED + (255,))
+        # наклейка-ярлык — точечный красный акцент (не заливка)
+        g.rectangle((cx - 30, cy + 94, cx + 90, cy + 128), fill=DEEP_RED + (255,))
+        g.blur(2).alpha(0.97)
+        img.alpha_composite(g.layer)
+        accent_glow(img, cx + 10, cy + 112, 20, HOT_RED, 0.45, 12)
+        g3 = RGBA()
+        g3.rectangle((cx - 4, cy + 98, cx + 16, cy + 124), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'галочк' in obj or 'чек' in obj or 'лист' in obj:
+        # ЛИСТ ПРОВЕРКИ (kto-proveril-golos): перед эфиром голос кто-то проверяет.
+        # Акцент — красная галочка утверждения.
+        g = RGBA()
+        # лист-реестр (небольшой, одна строка сверху)
+        g.polygon([(cx - 240, cy - 160), (cx + 240, cy - 160), (cx + 260, cy + 100),
+                   (cx - 260, cy + 100)], fill=SIGNAL_RED + (255,))
+        g.polygon([(cx - 220, cy - 140), (cx + 220, cy - 140), (cx + 240, cy + 80),
+                   (cx - 240, cy + 80)], fill=VOID + (255,))
+        # строки проверки (тёмно-красные линии)
+        for i in range(4):
+            yy = cy - 96 + i * 42
+            g.line([(cx - 190, yy), (cx + 180, yy)], DEEP_RED + (255,), width=4)
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красная галочка на последней строке — акцент
+        g2 = RGBA()
+        g2.line([(cx - 80, cy - 40), (cx - 10, cy + 30)], HOT_RED + (255,), width=6)
+        g2.line([(cx - 10, cy + 30), (cx + 120, cy - 70)], HOT_RED + (255,), width=6)
+        g2.blur(2).alpha(1.0)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx + 6, cy + 6, 26, HOT_RED, 0.4, 12)
+
+    elif 'радио' in obj or 'приёмник' in obj or 'антенн' in obj:
+        # РАДИОПРИЁМНИК С АНТЕННОЙ (radio-ne-umret): FM обгоняет Spotify.
+        # Ретро-приёмник, красный сигнал — индикатор настройки.
+        g = RGBA()
+        # корпус радиоприёмника
+        g.rectangle((cx - 200, cy - 130, cx + 200, cy + 120), fill=SIGNAL_RED + (255,))
+        g.rectangle((cx - 180, cy - 110, cx + 180, cy + 100), fill=VOID + (255,))
+        # динамик: круги
+        g.ellipse(_obj_atom(cx - 134, cy - 88, 92, 160), fill=None,
+                  outline=DEEP_RED + (255,), width=4)
+        g.ellipse(_obj_atom(cx - 122, cy - 80, 68, 144), fill=None,
+                  outline=DEEP_RED + (255,), width=3)
+        # шкала настройки
+        g.rectangle((cx + 16, cy - 96, cx + 164, cy - 30), fill=DEEP_RED + (255,))
+        # антенна: диагональная телескопическая
+        g.line([(cx + 178, cy - 118), (cx + 320, cy - 300)], ACTIVE_RED + (255,), width=5)
+        g.line([(cx + 178, cy - 118), (cx + 240, cy - 300)], SIGNAL_RED + (255,), width=5)
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красный индикатор на шкале — акцент
+        accent_glow(img, cx + 90, cy - 66, 20, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 82, cy - 74, 16, 16), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'пластинк' in obj or 'винил' in obj:
+        # ВИНИЛОВАЯ ПЛАСТИНКА (umg-elevenlabs): голос — лицензируемый актив.
+        # Красная этикетка — сердцевина пластинки.
+        g = RGBA()
+        # пластинка: тёмный диск
+        g.ellipse(_obj_atom(cx - 250, cy - 250, 500, 500), fill=VOID + (255,),
+                  outline=SIGNAL_RED + (255,), width=3)
+        # канавки: концентрические тонкие
+        for r in (80, 130, 180, 220):
+            g.ellipse(_obj_atom(cx - r, cy - r, r * 2, r * 2), fill=None,
+                      outline=SIGNAL_RED + (255,), width=2)
+        # срез пластинки: свет отражения
+        g.polygon([(cx - 250, cy - 250), (cx + 250, cy - 250), (cx + 220, cy - 210),
+                   (cx - 250, cy - 210)], fill=DEEP_RED + (255,))
+        g.blur(2).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красный акцент на кромке пластинки — узкий штрих
+        accent_glow(img, cx - 210, cy + 120, 22, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx - 222, cy + 108, 16, 24), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'пульт' in obj or 'кнопк' in obj:
+        # ПУЛЬТ УПРАВЛЕНИЯ (golos-pult): голос — интерфейс выполнения команд.
+        # Одна красная кнопка — акцент действия.
+        g = RGBA()
+        # корпус пульта
+        g.polygon([(cx - 250, cy - 150), (cx + 250, cy - 150), (cx + 220, cy + 120),
+                   (cx - 220, cy + 120)], fill=DEEP_RED + (255,))
+        g.polygon([(cx - 235, cy - 135), (cx + 235, cy - 135), (cx + 205, cy + 105),
+                   (cx - 205, cy + 105)], fill=VOID + (255,))
+        # нейтральные клавиши
+        for i, xx in enumerate(range(-170, 170, 44)):
+            g.ellipse(_obj_atom(cx + xx, cy - 70, 28, 28), fill=DEEP_RED + (255,),
+                      outline=SIGNAL_RED + (255,), width=2)
+        # красная кнопка справа — акцент
+        g.ellipse(_obj_atom(cx + 128, cy + 10, 56, 56), fill=SIGNAL_RED + (255,),
+                  outline=ACTIVE_RED + (255,), width=4)
+        g.blur(2).alpha(0.95)
+        img.alpha_composite(g.layer)
+        accent_glow(img, cx + 156, cy + 38, 30, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 138, cy + 20, 36, 36), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'бобин' in obj or 'монтаж' in obj or 'плёнк' in obj:
+        # БОБИНА ПЛЁНКИ (ozvuchka-video): дубляж, где ошибка дороже производства.
+        # Вертикальная бобина + лента, уходящая вглубь; красный меточный кадр.
+        g = RGBA()
+        # сердцевина: два диска по краям (вид сбоку — вертикальная бобина)
+        g.ellipse(_obj_atom(cx - 200, cy - 240, 400, 400), fill=VOID + (255,),
+                  outline=SIGNAL_RED + (255,), width=3)
+        # намотка: тёмное кольцо с внутренним рельефом
+        g.ellipse(_obj_atom(cx - 150, cy - 190, 300, 300), fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(cx - 70, cy - 110, 140, 140), fill=VOID + (255,))
+        # лента: дуга от бобины вправо-вверх (уходит в кадр)
+        g.polygon([(cx + 40, cy - 240), (cx + 190, cy - 180), (cx + 260, cy + 20),
+                   (cx + 60, cy + 10)], fill=DEEP_RED + (255,))
+        # перфорация на ленте
+        for i in range(4):
+            xx = cx + 90 + i * 34
+            yy = cy - 150 + i * 40
+            g.rectangle((xx, yy, xx + 12, yy + 20), fill=VOID + (255,))
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красный меточный кадр на ленте — акцент
+        accent_glow(img, cx + 196, cy - 96, 26, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.rectangle((cx + 178, cy - 116, cx + 224, cy - 76), outline=HOT_RED + (255,), width=4)
+        img.alpha_composite(g3.layer)
+
+    elif 'сервер' in obj or 'коммодит' in obj:
+        # СЕРВЕРНАЯ СТОЙКА (open-source-golos): голос стал commodity.
+        # Стандартизированные полки, красный — индикатор ответственности.
+        g = RGBA()
+        # каркас стойки
+        g.rectangle((cx - 130, cy - 220, cx + 130, cy + 220), fill=SIGNAL_RED + (255,))
+        g.rectangle((cx - 116, cy - 206, cx + 116, cy + 206), fill=VOID + (255,))
+        # полки с серверами
+        for i in range(5):
+            yy = cy - 176 + i * 70
+            g.rectangle((cx - 104, yy, cx + 104, yy + 40), fill=DEEP_RED + (255,),
+                        outline=SIGNAL_RED + (255,), width=2)
+        # вентиляционные решётки
+        for i in range(3):
+            xx = cx - 72 + i * 30
+            g.rectangle((xx, cy + 40, xx + 16, cy + 70), fill=VOID + (255,),
+                        outline=SIGNAL_RED + (255,), width=2)
+        g.blur(2).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красный индикатор на верхнем сервере — акцент
+        accent_glow(img, cx + 120, cy - 190, 18, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.ellipse(_obj_atom(cx + 100, cy - 200, 16, 16), fill=HOT_RED + (255,))
+        img.alpha_composite(g3.layer)
+
+    elif 'стеллаж' in obj or 'полк' in obj or 'досье' in obj:
+        # СТЕЛЛАЖ ДОСЬЕ (umg-infrastruktura): права голоса становятся инфраструктурой.
+        # Ровные короба архивов, красный ярлык — одно досье.
+        g = RGBA()
+        # полки
+        for i in range(3):
+            yy = cy - 160 + i * 130
+            g.line([(cx - 300, yy), (cx + 300, yy)], SIGNAL_RED + (255,), width=5)
+        # короба и папки в два уровня
+        for lev, x0s in enumerate(((-270, -150, -30, 90, 210), (-270, -120, 30, 170))):
+            for xx in x0s:
+                g.rectangle((xx, cy - 146 + lev * 130, xx + 84, cy - 14 + lev * 130),
+                            fill=DEEP_RED + (255,), outline=SIGNAL_RED + (255,), width=2)
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        # красный ярлык на одной папке — акцент
+        accent_glow(img, cx - 20, cy - 120, 20, HOT_RED, 0.5, 12)
+        g3 = RGBA()
+        g3.rectangle((cx - 34, cy - 132, cx + 6, cy - 108), fill=HOT_RED + (255,))
         img.alpha_composite(g3.layer)
 
     elif 'тен' in obj:
@@ -589,6 +897,9 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
         g2.line([(cx - 280, cy + 80), (cx - 120, cy + 60), (cx - 40, cy - 80)], HOT_RED + (255,), width=5)
         g2.blur(3).alpha(1.0)
         img.alpha_composite(g2.layer)
+        g4 = RGBA()
+        g4.line([(cx - 280, cy + 80), (cx - 120, cy + 60), (cx - 40, cy - 80)], HOT_RED + (255,), width=2)
+        img.alpha_composite(g4.layer)
         g3 = RGBA()
         g3.ellipse(_obj_atom(cx - 300, cy + 10, 34, 34), fill=HOT_RED + (255,))
         g3.blur(18).alpha(0.9)
@@ -622,6 +933,27 @@ def render_object_with_uniqueness(concept: dict, seed: int):
     return img, 5  # accept last attempt even if still similar
 
 
+# guid -> visual_object (индивидуальная обложка по смыслу поста).
+# Здесь только ВИЗУАЛЬНЫЙ объект; текст капшона живёт в items.csv/concept,
+# чтобы не ломать build_caption publisher'а.
+RENDER_MAP = {
+    'fitoussi-human-preference-2026-09-04': 'перо и чернильница с красной каплей',
+    'voice-scams-trust-2026-09-11': 'разрыв: лента записи с рваным красным краем',
+    'pravovoy-sloy-golosa-2026-09-18': 'печать правовое досье с красным оттиском',
+    'vybor-diktora-2026-09-14': 'кассета диктофона с красной наклейкой',
+    'aktery-protiv-klonov-2026-09-21': 'треснувшая театральная маска с красной нитью',
+    'kto-proveril-golos-2026-09-12': 'лист проверки до эфира с красной галочкой',
+    'radio-ne-umret-2026-09-19': 'радиоприёмник с антенной и красным индикатором',
+    'golos-banka-2026-09-13': 'телефонная трубка и циферблат с красным попаданием секунды',
+    'slepoj-test-golosa-2026-09-20': 'ухо в профиль с красной линией входа',
+    'umg-elevenlabs-2026-09-10': 'виниловая пластинка с красной этикеткой середины',
+    'golos-pult-2026-09-17': 'пульт управления с одной красной кнопкой',
+    'ozvuchka-video-2026-09-15': 'бобина плёнки с красным меточным кадром',
+    'open-source-golos-2026-09-23': 'серверная стойка с красным индикатором',
+    'umg-infrastruktura-2026-09-16': 'стеллаж досье архивов с красным ярлыком',
+}
+
+
 def object_of(guid: str):
     concepts = load_concepts()
     if guid in concepts:
@@ -630,10 +962,18 @@ def object_of(guid: str):
 
 
 def cover_auto(guid: str, seed: int = 0):
-    """Art-director dispatch: object cover if concept exists, else legacy conflict."""
+    """Art-director dispatch:
+    - explicit concept (full post text) -> its visual_object,
+    - else RENDER_MAP (individual object per slot) -> render_object,
+    - else legacy conflict silhouette (guard).
+    """
     concepts = load_concepts()
     if guid in concepts:
         concept = concepts[guid]
+        img, _attempt = render_object_with_uniqueness(concept, seed)
+        return img
+    if guid in RENDER_MAP:
+        concept = {'visual_object': RENDER_MAP[guid]}
         img, _attempt = render_object_with_uniqueness(concept, seed)
         return img
     return cover(conflict_of(guid), seed=seed)
