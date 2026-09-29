@@ -769,69 +769,58 @@ def render_object(concept: dict, seed: int, attempt: int = 0):
         g3.rectangle((cx - 34, cy - 132, cx + 6, cy - 108), fill=HOT_RED + (255,))
         img.alpha_composite(g3.layer)
 
-    elif 'тен' in obj:
-        # Разлом (Production Contract v1.0, направление A+D): микрофон стоит,
-        # но кабель перерезан и висит обрывком — «голос есть, связи нет».
-        # Четыре тени-характера остаются НЕЙТРАЛЬНЫМИ (каст ролей Edison Multi-Cast),
-        # единственный красный акцент — тонкое кольцо на ОБРЫВЕ кабеля, не на объекте:
-        # взгляд ищет смысл там, где связь порвана.
-        for i, (ox, lean) in enumerate(((-420, -28), (-265, 0), (265, 0), (420, 28))):
-            sg = RGBA()
-            gx = W / 2 + ox
-            top = 150
-            bot = 480
-            sx = gx - 58
-            ex = gx + 58 + lean
-            sg.polygon([(sx, top + 52), (ex, top + 52),
-                        (ex + lean, bot), (sx - lean, bot)], fill=SILH + (255,))
-            sg.ellipse(_obj_atom(gx - 30, top, 60, 60), fill=SILH + (255,))
-            sg.blur(2).alpha(0.95)
-            img.alpha_composite(sg.layer)
-        # микрофон: главный объект, в тёмно-красной гамме — НЕ должен давать
-        # ярких красных пикселей (по контракту красный сигнал допустим только
-        # в одном акценте). Все части объекта R<120; 255-красное — только кольцо на обрыве.
+    elif 'тен' in obj or 'роль' in obj:
+        # Каст ролей (mode A, объект из demo Edison Multi-Cast): микрофон слева,
+        # над ним компактное кольцо света — голос делится на роли. Четыре одинаковые
+        # тени-роли по правую половину веером от микрофона; ОДНА ближе (говорит),
+        # три дальше (слушают). Единственный красный акцент — точка разделения.
+        # Микрофон (слева от центра, R<120):
+        mx, my = cx - 230, cy + 10
         g = RGBA()
-        # колпак микрофона
-        g.ellipse(_obj_atom(cx - 120, cy - 220, 240, 190), fill=DEEP_RED + (255,))
-        g.ellipse(_obj_atom(cx - 84, cy - 182, 168, 120), fill=VOID + (255,))
-        # держатель
-        g.line([(cx - 128, cy - 60), (cx + 128, cy - 60)], SIGNAL_RED + (255,), width=14)
-        # стойка
-        g.line([(cx, cy - 60), (cx, cy + 150)], SIGNAL_RED + (255,), width=18)
-        # тренога
-        g.line([(cx, cy + 150), (cx - 260, cy + 200)], DEEP_RED + (255,), width=12)
-        g.line([(cx, cy + 150), (cx + 260, cy + 200)], DEEP_RED + (255,), width=12)
-        g.line([(cx, cy + 150), (cx, cy + 230)], DEEP_RED + (255,), width=12)
-        g.blur(5).alpha(0.95)
+        g.ellipse(_obj_atom(mx - 92, my - 170, 184, 150), fill=DEEP_RED + (255,))
+        g.ellipse(_obj_atom(mx - 64, my - 144, 128, 96), fill=VOID + (255,))
+        g.line([(mx - 98, my - 46), (mx + 98, my - 46)], SIGNAL_RED + (255,), width=12)
+        g.line([(mx, my - 46), (mx, my + 90)], SIGNAL_RED + (255,), width=16)
+        g.line([(mx, my + 90), (mx - 120, my + 160)], DEEP_RED + (255,), width=10)
+        g.line([(mx, my + 90), (mx + 90, my + 180)], DEEP_RED + (255,), width=10)
+        g.blur(4).alpha(0.95)
         img.alpha_composite(g.layer)
-        # перерезанный кабель: выходит из-за правого края микрофона, извивается вниз,
-        # обрывается; с обрыва свисают два тонких конца (рваные жилы)
-        cable = (80, 62, 74)
-        cg = RGBA()
-        cg.line([(cx + 118, cy - 12), (cx + 152, cy + 22)], cable + (255,), width=9)
-        cg.line([(cx + 152, cy + 22), (cx + 188, cy + 10)], cable + (255,), width=9)
-        cg.line([(cx + 188, cy + 10), (cx + 172, cy + 76)], cable + (255,), width=9)
-        cg.line([(cx + 172, cy + 76), (cx + 196, cy + 142)], cable + (255,), width=9)
-        # обрыв: два живых конца падают ниже точки разрыва
-        cg.line([(cx + 196, cy + 142), (cx + 210, cy + 196)], cable + (255,), width=4)
-        cg.line([(cx + 196, cy + 142), (cx + 178, cy + 192)], cable + (255,), width=4)
-        cg.blur(2).alpha(0.97)
-        img.alpha_composite(cg.layer)
-        # единственный красный акцент: тонкое кольцо на точке разрыва кабеля
-        rb = (cx + 196, cy + 134)
-        # мягкое свечение-ореол вокруг разлома (красный = только здесь)
-        rg0 = RGBA()
-        rg0.ellipse(_obj_atom(rb[0] - 46, rb[1] - 46, 92, 92), fill=HOT_RED + (255,))
-        rg0.blur(16).alpha(0.5)
-        img.alpha_composite(rg0.layer)
+        # компактное кольцо света над микрофоном (широкий венок — деталь-различитель)
         rg = RGBA()
-        rg.ellipse(_obj_atom(rb[0] - 32, rb[1] - 32, 64, 64),
-                   outline=SIGNAL_RED + (255,), width=6)
+        rg.ellipse(_obj_atom(mx - 150, my - 410, 300, 190),
+                   outline=SIGNAL_RED + (255,), width=8)
         rg.blur(3).alpha(0.85)
         img.alpha_composite(rg.layer)
+        # четыре тени-роли справа, веером (одинакового размера)
+        speakers = ((-30, -60), (150, -30), (330, 0), (480, 25))
+        for i, (ox, lean) in enumerate(speakers):
+            sg = RGBA()
+            gx = cx + ox
+            top = 190 + i * 14
+            bot = 480 + i * 12
+            sx = gx - 50
+            ex = gx + 50 + lean
+            sg.polygon([(sx, top + 50), (ex, top + 50),
+                        (ex + lean, bot), (sx - lean, bot)], fill=SILH + (255,))
+            sg.ellipse(_obj_atom(gx + lean / 2 - 25, top, 50, 50), fill=SILH + (255,))
+            sg.blur(2).alpha(0.95)
+            img.alpha_composite(sg.layer)
+        # лучи-роли: от точки разделения к каждой тени (R<120)
+        g2 = RGBA()
+        for i, (ox, lean) in enumerate(speakers):
+            gx = cx + ox
+            g2.line([(mx + 30, my - 30), (gx - 20, 340 + i * 30)], DEEP_RED + (255,), width=4)
+        g2.blur(2).alpha(0.95)
+        img.alpha_composite(g2.layer)
+        # единственный красный акцент: точка, где голос разделяется на роли
+        bp = (mx + 30, my - 30)
+        rg0 = RGBA()
+        rg0.ellipse(_obj_atom(bp[0] - 26, bp[1] - 26, 52, 52), fill=HOT_RED + (255,))
+        rg0.blur(16).alpha(0.5)
+        img.alpha_composite(rg0.layer)
         rgb = RGBA()
-        rgb.ellipse(_obj_atom(rb[0] - 32, rb[1] - 32, 64, 64),
-                    outline=HOT_RED + (255,), width=2)
+        rgb.ellipse(_obj_atom(bp[0] - 14, bp[1] - 14, 28, 28),
+                    outline=HOT_RED + (255,), width=3)
         img.alpha_composite(rgb.layer)
 
     elif 'микрофон' in obj or 'стойк' in obj:

@@ -4,7 +4,10 @@
     "demo": "В слепом тесте Edison Multi-Cast более тысячи слушателей чаще предпочитали распределённый каст ролей одному универсальному голосу.",
     "explain": "Разница оказалась не в тембре, а в распределении функций: приветствие, объяснение, доверие и действие работают как разные роли.",
     "consequence": "Если голос начинает делиться на роли, бренд перестаёт выбирать «идеальный голос» и начинает проектировать собственное поведение.",
-    "visual_object": "микрофон на треноге с перерезанным кабелем и четыре тени",
-    "cover_prompt": "Black field. One studio microphone on a tripod stands centered. Its cable is severed and hangs torn. Four neutral human silhouettes cast shadows around it. The severed cable end alone is marked by a thin red ring. No text. High contrast. Quiet tension. Editorial photography, not illustration."
+    "demo_shift": "каст ролей обгоняет один универсальный голос в слепом тесте",
+    "object_type": "фон и микрофон с четырьмя ролями-тенями",
+    "cover_test": "нельзя переставить на соседний пост — только про распределение ролей голоса",
+    "visual_object": "микрофон и четыре тени-роли: одна говорю, три слушают",
+    "cover_prompt": "Black field. One studio microphone stands centered under a thin ring of light, its voice splits into four neutral human silhouettes around it: one speaks, three listen. A single red glow marks the split of the voice into roles. No text. Quiet, editorial photography."
   }
 }

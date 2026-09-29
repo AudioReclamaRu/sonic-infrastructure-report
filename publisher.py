@@ -102,7 +102,8 @@ def load_items():
     return items
 
 
-REQ_CONCEPT_FIELDS = ('headline', 'demo', 'explain', 'consequence', 'visual_object', 'cover_prompt')
+REQ_CONCEPT_FIELDS = ('headline', 'demo', 'explain', 'consequence', 'visual_object', 'cover_prompt',
+                      'demo_shift', 'object_type', 'cover_test')
 
 # RED FIELD · Production Contract v1.0 (standards/red-field-production-contract.md).
 # Машино-проверяемые правила текстового контракта. Правка без согласования с
@@ -111,6 +112,9 @@ HEADLINE_MIN = 35
 HEADLINE_MAX = 75
 DEMO_MAX_SENTENCES = 1   # demo = ровно одно предложение
 EXPLAIN_MAX_SENTENCES = 2  # explain = не больше двух предложений
+DEMO_SHIFT_WORDS_MIN = 5   # demo_shift = что изменилось в новости, 5–12 слов
+DEMO_SHIFT_WORDS_MAX = 12
+COVER_TYPE_REPEAT_SPAN = 5  # тип объекта не чаще 1 раза в 5 постов
 
 
 def _sentence_count(s: str) -> int:
@@ -154,7 +158,9 @@ def concept_gate(guid: str, concepts: dict, link: str = ''):
     RED FIELD Production Contract v1.0 gates:
       1. all REQ_CONCEPT_FIELDS present and non-empty;
       2. source_resolves(link) = PASS;
-      3. machine-checkable text rules (headline length, sentence counts).
+      3. machine-checkable text rules (headline length, sentence counts);
+      4. cover discipline: demo_shift is 5-12 words, visual_object derived from
+         it, object_type not repeated within the last 5 slots.
     """
     c = concepts.get(guid) or {}
     missing = [k for k in REQ_CONCEPT_FIELDS if not (c.get(k) or '').strip()]
@@ -171,7 +177,41 @@ def concept_gate(guid: str, concepts: dict, link: str = ''):
         e = _sentence_count((c.get('explain') or '').strip())
         if e > EXPLAIN_MAX_SENTENCES:
             missing.append('qa:explain_sent={}'.format(e))
+        # cover discipline (RED FIELD mode A)
+        ds = (c.get('demo_shift') or '').strip()
+        dw = len(ds.split())
+        if dw < DEMO_SHIFT_WORDS_MIN or dw > DEMO_SHIFT_WORDS_MAX:
+            missing.append('qa:demo_shift_words={}'.format(dw))
+        vo = (c.get('visual_object') or '').strip()
+        if not any(w.strip(' .,!?;:()')
+                   for w in ds.lower().split()
+                   if w.strip(' .,!?;:()') in vo.lower()):
+            missing.append('cover:visual_object_not_from_demo_shift')
+        otype = (c.get('object_type') or '').strip()
+        if otype in _recent_object_types(guid, concepts):
+            missing.append('cover:object_type_repeat={}'.format(otype))
     return missing
+
+
+def _recent_object_types(exclude_guid: str, concepts: dict) -> set:
+    """Set of object_type used in the last 5 feed slots before exclude_guid."""
+    items = load_items()
+    ordered = sorted(items, key=lambda it: it.get('guid', ''))
+    idx = None
+    for i, it in enumerate(ordered):
+        if it.get('guid') == exclude_guid:
+            idx = i
+            break
+    if idx is None:
+        return set()
+    start = max(0, idx - 5)
+    types = set()
+    for it in ordered[start:idx]:
+        c = concepts.get(it.get('guid')) or {}
+        t = (c.get('object_type') or '').strip()
+        if t:
+            types.add(t)
+    return types
 
 
 def unset_line(path: str, line: str):
