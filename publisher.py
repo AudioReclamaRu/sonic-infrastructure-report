@@ -8,7 +8,8 @@
 #   python publisher.py --once --tg-cap 4
 #
 # Outputs: register.csv, calendar.html, state/heartbeat.txt, state/orchestrator.log,
-#          state/quota-<date>.json, tg/tg_state.txt, state/tg.log
+#          state/quota-<date>.json, tg/tg_state.txt, state/tg.log,
+#          state/rejected.txt, state/verdicts.jsonl
 import argparse
 import json
 import os
@@ -34,6 +35,7 @@ TG_TRACKER = os.path.join(TG_DIR, 'tg_published.txt')
 TG_STATE_FILE = os.path.join(TG_DIR, 'tg_state.txt')
 TG_LOG = os.path.join(STATE, 'tg.log')
 REJECTED_FILE = os.path.join(STATE, 'rejected.txt')
+VERDICTS_FILE = os.path.join(STATE, 'verdicts.jsonl')
 ENV_FILE = os.path.join(TG_DIR, 'env.txt')
 CHANNEL_FILE = os.path.join(TG_DIR, 'feed_channel.txt')
 IMG_DIR = os.path.join(FEED, 'images')
@@ -191,6 +193,51 @@ def concept_gate(guid: str, concepts: dict, link: str = ''):
         if otype in _recent_object_types(guid, concepts):
             missing.append('cover:object_type_repeat={}'.format(otype))
     return missing
+
+
+_VERDICT_CACHE = None
+
+
+def _log_verdict(guid: str, miss: list):
+    """Append one JSONL line per concept_gate verdict on CHANGE (not every cycle).
+
+    state/verdicts.jsonl is the persistent answer to 'did the gate run and what
+    did it decide'. Dedup by (guid, verdict, codes): repeated identical audited
+    states are not re-written, so the file stays a change-history, not a loop log.
+    Cache is hydrated from the file on first call, so dedup survives restarts.
+    """
+    global _VERDICT_CACHE
+    if _VERDICT_CACHE is None:
+        _VERDICT_CACHE = {}
+        try:
+            with open(VERDICTS_FILE, 'r', encoding='utf-8') as f:
+                for ln in f:
+                    try:
+                        row = json.loads(ln)
+                    except Exception:
+                        continue
+                    if row.get('guid'):
+                        _VERDICT_CACHE[row['guid']] = {
+                            'guid': row['guid'],
+                            'verdict': row.get('verdict'),
+                            'codes': row.get('codes'),
+                        }
+        except OSError:
+            pass
+    rec = {
+        'guid': guid,
+        'verdict': 'PASS' if not miss else 'REJECT',
+        'codes': miss,
+    }
+    if _VERDICT_CACHE.get(guid) == rec:
+        return
+    _VERDICT_CACHE[guid] = rec
+    try:
+        rec['ts'] = datetime.now().astimezone().isoformat(timespec='seconds')
+        with open(VERDICTS_FILE, 'a', encoding='utf-8') as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+    except Exception as e:
+        olog('WATCHDOG_ERR verdict ' + guid + ' :: ' + str(e))
 
 
 def _recent_object_types(exclude_guid: str, concepts: dict) -> set:
@@ -462,23 +509,25 @@ def run_cycle(tg_cap: int):
     concepts = load_concepts()
     done = set(read_lines(TG_TRACKER))
     rejected = set(read_lines(REJECTED_FILE))
+    # 1) Editorial gate (frozen until concept filled; does NOT consume slots).
+    #    Audits EVERY due item each cycle regardless of quota: verdicts land in
+    #    verdicts.jsonl even when nothing will be published today.
+    for it in due:
+        g = it['g']
+        miss = concept_gate(g, concepts, it['it'].get('src', ''))
+        _log_verdict(g, miss)
+        if miss and g not in done and g not in rejected:
+            olog('REJECT ' + g + ' missing=' + ','.join(miss))
+            add_unique(REJECTED_FILE, g)
+            rejected = set(read_lines(REJECTED_FILE))
+        elif not miss and g in rejected:
+            unset_line(REJECTED_FILE, g)
+            rejected = set(read_lines(REJECTED_FILE))
+    rej_frozen = len([g for g in rejected if g in set(x['g'] for x in due)])
     if slots == 0:
         olog('CAP tg (' + str(used) + '/' + str(tg_cap) + ')')
         summ = ['tg=0/0']
     else:
-        # 1) Editorial gate (frozen until concept filled; does NOT consume slots):
-        #    freeze due items missing concept fields, release ones now complete.
-        for it in due:
-            g = it['g']
-            miss = concept_gate(g, concepts, it['it'].get('src', ''))
-            if miss and g not in done and g not in rejected:
-                olog('REJECT ' + g + ' missing=' + ','.join(miss))
-                add_unique(REJECTED_FILE, g)
-                rejected = set(read_lines(REJECTED_FILE))
-            elif not miss and g in rejected:
-                unset_line(REJECTED_FILE, g)
-                rejected = set(read_lines(REJECTED_FILE))
-        rej_frozen = len([g for g in rejected if g in set(x['g'] for x in due)])
         # 2) Only fully-concepted items consume the daily cap.
         cands = [x for x in due if x['g'] not in done and x['g'] not in rejected][:slots]
         env = load_env()
