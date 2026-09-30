@@ -399,8 +399,211 @@ def _obj_atom(x, y, w, h):
     return (x, y, x + w, y + h)
 
 
+def _render_by_object_type(c: dict, seed, attempt):
+    """Editorial Object cover: built from object_type + before/after, not title.
+
+    Covers the CHANGE, not the topic. RED FIELD discipline: black field, ONE
+    dominant object, ONE red accent marking the change point. No text.
+    Each object_type → deterministic geometry for the transition itself.
+    """
+    eo = c.get('event_object') or {}
+    ot = (eo.get('object_type') or c.get('object_type') or '').strip().upper()
+    img = base_canvas()
+    vignette(img, 0.5)
+    cx = W / 2 + jitter(seed, 60, 101) + attempt * 7
+    cy = 415 + jitter(seed, 30, 102) + attempt * 5
+    off = jitter(seed, 60, 103) + attempt * 11
+
+    if ot == 'SPLIT':
+        # одно стало несколькими: один источник, расходящиеся контуры
+        g = RGBA()
+        for k, a in enumerate((1.0, 0.82, 0.66, 0.5)):
+            wdt = int(9 - k * 2)
+            g.line([(cx, cy - 120), (cx + off * a, cy + 220)], SILH + (255,),
+                   width=wdt)
+        g.blur(3).alpha(0.95)
+        img.alpha_composite(g.layer)
+        for k, (ang, ln) in enumerate(((68, 260), (112, 260), (20, 200),
+                                       (160, 200))):
+            import math
+            x0 = cx
+            y0 = cy - 120
+            x1 = x0 + math.cos(math.radians(ang)) * ln
+            y1 = y0 - math.sin(math.radians(ang)) * ln
+            g2 = RGBA()
+            g2.line([(x0, y0), (x1, y1)], SIGNAL_RED + (255,), width=3)
+            g2.blur(1.5).alpha(0.55)
+            img.alpha_composite(g2.layer)
+        accent_glow(img, cx, cy - 120, 30, HOT_RED, 0.55, 16)
+
+    elif ot == 'CONVERGENCE':
+        # разное сошлось в одно
+        for k, ang in enumerate((30, 60, 120, 150)):
+            import math
+            x1 = cx + math.cos(math.radians(ang)) * 360
+            y1 = cy - 260 + math.sin(math.radians(ang)) * 60
+            g = RGBA()
+            g.line([(x1, y1), (cx, cy + 40)], SIGNAL_RED + (255,), width=4)
+            g.blur(1.5).alpha(0.6)
+            img.alpha_composite(g.layer)
+        accent_glow(img, cx, cy + 40, 26, HOT_RED, 0.6, 15)
+
+    elif ot == 'TRANSFORMATION':
+        # было -> стало: два состояния вокруг одного акцента
+        g = RGBA()
+        g.ellipse((cx - 300, cy - 240, cx + 300, cy + 120), fill=None,
+                  outline=ACTIVE_RED + (255,), width=4)
+        g.line([(cx - 300, cy - 40), (cx + 20, cy - 40)], SIGNAL_RED + (255,),
+               width=5)
+        g.line([(cx + 60, cy - 40), (cx + 300, cy - 40)], ACTIVE_RED + (255,),
+               width=5)
+        g.blur(2).alpha(0.9)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse((cx + 60, cy - 80, cx + 120, cy - 20), fill=None,
+                   outline=SILH + (255,), width=4)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx + 40, cy - 40, 22, HOT_RED, 0.6, 14)
+
+    elif ot == 'SHIFT':
+        # существующее сместилось: объект + его след
+        g = RGBA()
+        g.ellipse((cx - 140 - off, cy - 160, cx + 140 - off, cy + 140),
+                  fill=None, outline=ACTIVE_RED + (255,), width=5)
+        g.blur(3).alpha(0.7)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.ellipse((cx - 100 + off, cy - 120, cx + 180 + off, cy + 180),
+                   fill=None, outline=SIGNAL_RED + (255,), width=6)
+        g2.blur(2).alpha(0.9)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx + 40 + off, cy + 10, 24, HOT_RED, 0.55, 15)
+
+    elif ot == 'CONFLICT':
+        # столкновение двух сил
+        g = RGBA()
+        g.polygon([(cx - 300 - off, cy - 280), (cx - 40 + off, cy - 280),
+                   (cx - 170, cy + 200), (cx - 430, cy + 200)],
+                  fill=DEEP_RED + (255,))
+        g.polygon([(cx + 40 - off, cy - 280), (cx + 300 + off, cy - 280),
+                   (cx + 430, cy + 200), (cx + 170, cy + 200)],
+                  fill=SIGNAL_RED + (255,))
+        g.blur(20).alpha(0.85)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.line([(cx - 170, cy - 140), (cx + 170, cy - 140)], VOID + (255,),
+                width=16)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx, cy - 140, 40, HOT_RED, 0.7, 18)
+
+    elif ot == 'THRESHOLD':
+        # граница/порог пройден
+        g = RGBA()
+        g.line([(cx - 340, cy - 40), (cx + 340, cy - 40)], ACTIVE_RED + (255,),
+               width=6)
+        g.line([(cx - 340, cy + 60), (cx + 340, cy + 60)], SIGNAL_RED + (255,),
+               width=3)
+        g.blur(2).alpha(0.9)
+        img.alpha_composite(g.layer)
+        for side in (-240, -80, 80, 240):
+            g2 = RGBA()
+            g2.line([(cx + side - 60, cy + 60), (cx + side, cy - 40)],
+                    SILH + (255,), width=5)
+            g2.alpha(0.9)
+            img.alpha_composite(g2.layer)
+        accent_glow(img, cx + 240, cy - 40, 24, HOT_RED, 0.6, 14)
+
+    elif ot == 'EMERGENCE':
+        # возникло то, чего не было: форма из пустоты над чёрным
+        g = RGBA()
+        g.polygon([(cx - 90, cy + 150), (cx, cy - 260), (cx + 90, cy + 150)],
+                  fill=SILH + (255,))
+        g.blur(8).alpha(0.9)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.line([(cx - 130, cy + 150), (cx + 130, cy + 150)], VOID + (255,),
+                width=26)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx, cy - 260, 36, HOT_RED, 0.7, 20)
+
+    elif ot == 'REVERSAL':
+        # отношение перевернулось: перевёрнутая пара
+        g = RGBA()
+        g.ellipse((cx - 220, cy - 320, cx - 40, cy - 40), fill=None,
+                  outline=ACTIVE_RED + (255,), width=5)
+        g.polygon([(cx + 60, cy - 120), (cx + 260, cy - 120),
+                   (cx + 160, cy + 220), (cx - 40, cy + 220)],
+                  fill=None, outline=SIGNAL_RED + (255,))
+        g.blur(2).alpha(0.9)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.line([(cx - 130, cy + 220), (cx - 130, cy - 40), (cx + 160, cy - 40)],
+                HOT_RED + (255,), width=4)
+        g2.blur(1.5).alpha(0.8)
+        img.alpha_composite(g2.layer)
+
+    elif ot == 'INFRASTRUCTURE':
+        # новая система/слой: сетка, пронизанная акцентом
+        for k, y in enumerate((140, 240, 340, 440, 540)):
+            g = RGBA()
+            g.line([(cx - 320, y), (cx + 320, y)],
+                   ACTIVE_RED + (255,) if k % 2 else SIGNAL_RED + (255,),
+                   width=3)
+            g.alpha(0.45)
+            img.alpha_composite(g.layer)
+        for x in (cx - 200, cx, cx + 200):
+            g = RGBA()
+            g.line([(x, 100), (x, 580)], SIGNAL_RED + (255,), width=3)
+            g.alpha(0.4)
+            img.alpha_composite(g.layer)
+        accent_glow(img, cx, 240, 34, HOT_RED, 0.7, 18)
+
+    elif ot == 'ABSENCE':
+        # важно исчезновение: пустой слот на месте, где был объект
+        g = RGBA()
+        for off_x, off_y in ((-70, -120), (70, -120), (-70, 40), (70, 40)):
+            g.ellipse((cx + off_x - 30, cy + off_y - 30, cx + off_x + 30,
+                       cy + off_y + 30), fill=None,
+                      outline=SIGNAL_RED + (255,), width=3)
+        g.alpha(0.7)
+        img.alpha_composite(g.layer)
+        g2 = RGBA()
+        g2.line([(cx - 120, cy - 280), (cx + 120, cy - 280)], VOID + (255,),
+                width=20)
+        img.alpha_composite(g2.layer)
+        accent_glow(img, cx, cy - 280, 30, HOT_RED, 0.55, 16)
+
+    elif ot == 'DEMONSTRATION':
+        # конкретная демонстрация: свидетель/стрелка отсчёта
+        g = RGBA()
+        g.line([(cx - 140, cy + 120), (cx - 140, cy - 240)], SIGNAL_RED + (255,),
+               width=6)
+        g.line([(cx + 40, cy + 120), (cx + 40, cy - 240)], ACTIVE_RED + (255,),
+               width=6)
+        g.line([(cx - 140, cy - 240), (cx + 40, cy - 240)], HOT_RED + (255,),
+               width=4)
+        g.blur(2).alpha(0.9)
+        img.alpha_composite(g.layer)
+        accent_glow(img, cx, cy - 240, 24, HOT_RED, 0.6, 14)
+        g2 = RGBA()
+        g2.line([(cx - 80, cy - 100), (cx + 90, cy - 100)], SILH + (255,),
+                width=6)
+        g2.alpha(0.95)
+        img.alpha_composite(g2.layer)
+
+    else:
+        # незнакомый object_type: форма-буфер (не перерисовываем тему)
+        draw_silhouette_rgba(img, cx, cy, 1.0)
+        accent_glow(img, cx, cy - 300, 36, HOT_RED, 0.55, 16)
+
+    out = Image.alpha_composite(img, Image.new('RGBA', (W, H), (0, 0, 0, 0)))
+    return out.convert('RGB')
+
+
 def render_object(concept: dict, seed: int, attempt: int = 0):
     """Draw ONE visual object per news. Red = accent, never the whole image."""
+    if (concept.get('event_object') or {}).get('object_type'):
+        return _render_by_object_type(concept, seed, attempt)
     img = base_canvas()
     vignette(img, 0.5)
     cx = W / 2 + jitter(seed, 60, 101) + attempt * 7

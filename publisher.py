@@ -14,6 +14,7 @@ import argparse
 import json
 import os
 import re
+import editorial_object
 import subprocess
 import tempfile
 import time
@@ -36,6 +37,7 @@ TG_STATE_FILE = os.path.join(TG_DIR, 'tg_state.txt')
 TG_LOG = os.path.join(STATE, 'tg.log')
 REJECTED_FILE = os.path.join(STATE, 'rejected.txt')
 VERDICTS_FILE = os.path.join(STATE, 'verdicts.jsonl')
+EDITORIAL_FILE = os.path.join(STATE, 'editorial.jsonl')
 ENV_FILE = os.path.join(TG_DIR, 'env.txt')
 CHANNEL_FILE = os.path.join(TG_DIR, 'feed_channel.txt')
 IMG_DIR = os.path.join(FEED, 'images')
@@ -192,6 +194,17 @@ def concept_gate(guid: str, concepts: dict, link: str = ''):
         otype = (c.get('object_type') or '').strip()
         if otype in _recent_object_types(guid, concepts):
             missing.append('cover:object_type_repeat={}'.format(otype))
+        # Editorial Object System (red-field editorial-object-contract.md).
+        # Adds a SECOND editorial layer ONLY for concepts that carry event_object.
+        # Legacy slots without event_object keep the exact old gate behavior.
+        if c.get('event_object'):
+            eo = editorial_object.event_object(c)
+            for code in editorial_object.validate_event_object(eo):
+                missing.append('eo:' + code)
+            for code in editorial_object.cover_semantic(c, eo):
+                missing.append('eo-cover:' + code)
+            for code in editorial_object.text_cover_match(c, eo):
+                missing.append('eo-cover:' + code)
     return missing
 
 
@@ -238,6 +251,43 @@ def _log_verdict(guid: str, miss: list):
             f.write(json.dumps(rec, ensure_ascii=False) + '\n')
     except Exception as e:
         olog('WATCHDOG_ERR verdict ' + guid + ' :: ' + str(e))
+
+
+def _log_editorial(guid: str, concept: dict, miss: list):
+    """Persist the Editorial Object verdict to state/editorial.jsonl on CHANGE.
+
+    Mirrors verdicts.jsonl (dedup by guid+verdicts) but carries the OUTPUT
+    fields required by editorial-object-contract.md: event_object,
+    article_structure, object_type, cover_concept, cover_path, plus the three
+    editorial checks (EDITORIAL_OBJECT / COVER_SEMANTIC / TEXT_COVER_MATCH).
+    Only concepts that carry event_object produce an editorial journal entry.
+    """
+    if not concept or not concept.get('event_object'):
+        return
+    eo = editorial_object.event_object(concept)
+    codes = [m for m in miss if m.startswith(('eo:', 'eo-cover:'))]
+    rec = {
+        'event_object': eo,
+        'article_structure': [s for s in
+                              (concept.get('article_structure') or []) if s],
+        'object_type': eo.get('object_type') or concept.get('object_type') or '',
+        'cover_concept': concept.get('visual_object') or '',
+        'cover_path': concept.get('cover_path') or '',
+    }
+    eo_fail = [m for m in codes if m.startswith('eo:')]
+    cs_fail = [m for m in codes if m.startswith('eo-cover:')
+               and not m.startswith('eo-cover:TEXT')]
+    tcm_fail = [m for m in codes if m.startswith('eo-cover:TEXT')]
+    rec['editorial_object'] = 'REJECT' if eo_fail else 'PASS'
+    rec['cover_semantic'] = 'REJECT' if cs_fail else 'PASS'
+    rec['text_cover_match'] = 'REJECT' if tcm_fail else 'PASS'
+    if eo_fail:
+        rec['editorial_object_codes'] = eo_fail
+    if cs_fail:
+        rec['cover_semantic_codes'] = cs_fail
+    if tcm_fail:
+        rec['text_cover_match_codes'] = tcm_fail
+    editorial_object.log_editorial(guid, rec)
 
 
 def _recent_object_types(exclude_guid: str, concepts: dict) -> set:
@@ -507,6 +557,7 @@ def run_cycle(tg_cap: int):
     used = int(quota.get('tg', 0))
     slots = max(0, tg_cap - used)
     concepts = load_concepts()
+    editorial_object.set_editorial_file(EDITORIAL_FILE)
     done = set(read_lines(TG_TRACKER))
     rejected = set(read_lines(REJECTED_FILE))
     # 1) Editorial gate (frozen until concept filled; does NOT consume slots).
@@ -516,6 +567,7 @@ def run_cycle(tg_cap: int):
         g = it['g']
         miss = concept_gate(g, concepts, it['it'].get('src', ''))
         _log_verdict(g, miss)
+        _log_editorial(g, concepts.get(g), miss)
         if miss and g not in done and g not in rejected:
             olog('REJECT ' + g + ' missing=' + ','.join(miss))
             add_unique(REJECTED_FILE, g)
