@@ -29,6 +29,7 @@ object_type выбирается из ФАКТА изменения, а не и�
 """
 import json
 import os
+import re
 from datetime import datetime
 
 # --- Словарь типов изменения (зафиксирован, расширение - только решением редактора)
@@ -158,6 +159,69 @@ def text_cover_match(concept, eo):
     return []
 
 
+def _mechanism_nouns(eo):
+    """Ключевые существительные механизма изменения (след события).
+
+    Объект на обложке должен быть НАБЛЮДАЕМЫМ СЛЕДОМ МЕХАНИЗМА, а не символом,
+    который редактор придумал. Прокси для проверки: names/nouns в mechanism +
+    before/after (субъект изменения). Если визуальный объект не несёт ни одного
+    понятийного корня самого события — его можно заменить вазой или лампой
+    без потери смысла => слабый объект.
+    """
+    src = " ".join(str(eo.get(k) or "") for k in
+                   ("mechanism", "before", "after"))
+    # извлекаем лексемы >= 3 букв, отбрасываем стоп-слова
+    stop = {"это", "то", "на", "из", "в", "с", "к", "и", "как", "что",
+            "для", "при", "через", "была", "было", "был", "уже", "теперь",
+            "ещё", "один", "одна", "одно", "свой", "своей"}
+    words = re.findall(r"[а-яёa-z]{3,}", src.lower())
+    return {w for w in words if w not in stop}
+
+
+def _visual_nouns(concept):
+    """Лексемы visual_object, очищенные от стоп-слов и служебных банальностей."""
+    vt = _visual_terms(concept)
+    stop = {"это", "то", "на", "из", "в", "с", "к", "и", "как", "что",
+            "для", "при", "через", "без", "не", "нет", "есть", "где",
+            "когда", "чем", "его", "её", "их", "кто"}
+    return {w for w in re.findall(r"[а-яёa-z]{3,}", vt) if w not in stop}
+
+
+def object_validation(concept, eo):
+    """OBJECT VALIDATION: объект не взаимозаменяемый.
+
+    Ошибка модели: редактор придумал «дверь» → дверь попала на обложку —
+    объект выбран неверно (символ).
+
+    Правильная цепочка: событие → необратимый переход → открытое состояние →
+    объект = дверь (дверь как наблюдаемый след МЕХАНИЗМА).
+
+    Прокси: понятийный след события (mechanism/before/after) должен хоть
+    частично присутствовать в визуальном объекте обложки. Круг на салфетке
+    заменяем крестиком (слабое ядро), открытая дверь не заменяема вазой без
+    потери механизма (сильное ядро).
+
+    returns: [] если объект вытекает из механизма; иначе
+             ["OBJECT_SUBSTITUTION:no_mechanism_trace"].
+    """
+    ot = object_type_of(eo)
+    if not ot:
+        return []
+    vn = _visual_nouns(concept)
+    if not vn:
+        return ["OBJECT_SUBSTITUTION:no_visual_object"]
+    mn = _mechanism_nouns(eo)
+    overlap = vn & mn
+    if overlap:
+        return []
+    # морфологическое ядро: первые 4 символа (было -> был / было; тест -> тестые)
+    v_roots = {w[:4] for w in vn}
+    m_roots = {w[:4] for w in mn}
+    if v_roots & m_roots:
+        return []
+    return ["OBJECT_SUBSTITUTION:no_mechanism_trace"]
+
+
 # --- журнал проверки (persistent, дедуп по guid+verdict+кодам) -------------
 
 _EDITORIAL_CACHE = {}
@@ -186,6 +250,7 @@ def _hydrate():
                         "guid": g,
                         "editorial_object": row.get("editorial_object"),
                         "cover_semantic": row.get("cover_semantic"),
+                        "object_validation": row.get("object_validation"),
                         "text_cover_match": row.get("text_cover_match"),
                         "object_type": row.get("object_type"),
                         "cover_concept": row.get("cover_concept"),
@@ -205,6 +270,7 @@ def log_editorial(guid, rec):
         "guid": guid,
         "editorial_object": rec.get("editorial_object"),
         "cover_semantic": rec.get("cover_semantic"),
+        "object_validation": rec.get("object_validation"),
         "text_cover_match": rec.get("text_cover_match"),
         "object_type": rec.get("object_type"),
         "cover_concept": rec.get("cover_concept"),

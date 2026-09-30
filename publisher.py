@@ -203,6 +203,8 @@ def concept_gate(guid: str, concepts: dict, link: str = ''):
                 missing.append('eo:' + code)
             for code in editorial_object.cover_semantic(c, eo):
                 missing.append('eo-cover:' + code)
+            for code in editorial_object.object_validation(c, eo):
+                missing.append('eo-cover:' + code)
             for code in editorial_object.text_cover_match(c, eo):
                 missing.append('eo-cover:' + code)
     return missing
@@ -276,15 +278,20 @@ def _log_editorial(guid: str, concept: dict, miss: list):
     }
     eo_fail = [m for m in codes if m.startswith('eo:')]
     cs_fail = [m for m in codes if m.startswith('eo-cover:')
-               and not m.startswith('eo-cover:TEXT')]
+               and not m.startswith('eo-cover:TEXT')
+               and 'OBJECT_SUBSTITUTION' not in m]
+    ov_fail = [m for m in codes if 'OBJECT_SUBSTITUTION' in m]
     tcm_fail = [m for m in codes if m.startswith('eo-cover:TEXT')]
     rec['editorial_object'] = 'REJECT' if eo_fail else 'PASS'
     rec['cover_semantic'] = 'REJECT' if cs_fail else 'PASS'
+    rec['object_validation'] = 'REJECT' if ov_fail else 'PASS'
     rec['text_cover_match'] = 'REJECT' if tcm_fail else 'PASS'
     if eo_fail:
         rec['editorial_object_codes'] = eo_fail
     if cs_fail:
         rec['cover_semantic_codes'] = cs_fail
+    if ov_fail:
+        rec['object_validation_codes'] = ov_fail
     if tcm_fail:
         rec['text_cover_match_codes'] = tcm_fail
     editorial_object.log_editorial(guid, rec)
