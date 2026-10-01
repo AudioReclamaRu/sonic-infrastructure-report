@@ -95,6 +95,10 @@ def build():
     rows = []
     warnings = []
     for rel in sorted(tracked):
+        # The index does not list itself: adding a row for it would make the file
+        # differ from its own output the instant it is committed.
+        if rel.replace('\\', '/') == os.path.relpath(OUT, REPO).replace('\\', '/'):
+            continue
         abs_path = os.path.join(REPO, rel)
         if not os.path.isfile(abs_path):
             warnings.append('tracked but missing on disk: %s' % rel)

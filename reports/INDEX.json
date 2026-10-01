@@ -2,7 +2,7 @@
   "schema": "reports-index/1",
   "repo": "sonic-infrastructure-report",
   "generator": "tools/make_reports_index.py",
-  "tracked_files": 86,
+  "tracked_files": 85,
   "kinds": [
     "outreach_draft",
     "registry",
@@ -22,12 +22,6 @@
     "run_status": "daily run status, runtime artifact"
   },
   "files": [
-    {
-      "path": "reports/INDEX.json",
-      "kind": "run_status",
-      "date": "2026-10-09",
-      "generated": true
-    },
     {
       "path": "reports/README.md",
       "kind": "run_status",
