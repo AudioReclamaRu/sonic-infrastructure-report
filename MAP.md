@@ -1,3 +1,9 @@
+---
+type: doc
+date: 2026-10-01
+lang: en
+related: [interfaces/INTERFACE-001-voice-provenance.md, reports/verdicts/verdict-index.md]
+---
 # MAP — how this repository works
 
 **Type:** map · **Audience:** anyone opening the repository · **Last updated:** 2026-09-25

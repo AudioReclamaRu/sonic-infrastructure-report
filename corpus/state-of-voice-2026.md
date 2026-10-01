@@ -1,3 +1,8 @@
+---
+type: corpus
+date: 2026-09-11
+lang: en
+---
 # State of Voice 2026 — aggregate map (EN)
 
 **Type:** analyst aggregate · **Status:** rows sourced individually (FACT-METHOD.md)

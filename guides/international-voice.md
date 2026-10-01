@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [canon/releasing-voice.md, evidence/E-2026-015.md, guides/choosing-a-voice.md, standards/voice-provenance-passport.md]
+---
 # International voice: you buy an obligation with an address
 
 **Type:** guide · **Audience:** enterprise (global, localization) · **Last updated:** 2026-09-11

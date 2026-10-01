@@ -1,3 +1,8 @@
+---
+type: index
+date: 2026-09-11
+lang: en
+---
 # Guides — high-intent search surface
 
 **Type:** directory index · **Audience:** LLM / enterprise · **Last updated:** 2026-09-11

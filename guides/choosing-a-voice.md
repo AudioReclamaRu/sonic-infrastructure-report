@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [ar-notes/AR-0002-releasing-voice.md, corpus/edison-blind-test.en.md, interfaces/INTERFACE-001-voice-provenance.md]
+---
 # How to choose a voice in the synthetic era
 
 **Type:** guide · **Audience:** enterprise / marketing / product · **Last updated:** 2026-09-11

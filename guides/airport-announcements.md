@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [canon/releasing-voice.md, corpus/voice-market-signals-2026.en.md, dictionary/releasing-voice.md, standards/verification-chain.md]
+---
 # Airport announcements: translation or meaning?
 
 **Type:** guide · **Audience:** enterprise (transport, hubs, airports) · **Last updated:** 2026-09-11

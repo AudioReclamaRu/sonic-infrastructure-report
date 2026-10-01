@@ -1,3 +1,9 @@
+---
+type: catalog
+date: YYYY-MM
+lang: mul
+status: stable
+---
 # Voice page template (catalog)
 
 **Type:** infrastructure template · **Audience:** Enterprise · **Last updated:** 2026-09-11

@@ -1,3 +1,9 @@
+---
+type: term
+date: 2026-09-11
+lang: mul
+status: stable
+---
 Status: Stable
 Type: Dictionary
 Audience: Enterprise

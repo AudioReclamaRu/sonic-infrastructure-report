@@ -1,3 +1,8 @@
+---
+type: catalog
+date: 2026-09-11
+lang: mul
+---
 # Voice Catalog — infrastructure
 
 **Type:** infrastructure · **Status:** template-only, no generated pages yet

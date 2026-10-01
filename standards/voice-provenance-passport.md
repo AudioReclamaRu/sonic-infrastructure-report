@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-11
+lang: mul
+---
 # Voice Provenance Passport — standard (EN)
 
 **Type:** standard/specification (studio position, authorial)

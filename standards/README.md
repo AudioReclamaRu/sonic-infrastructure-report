@@ -1,3 +1,8 @@
+---
+type: index
+date: 2026-10-01
+lang: mul
+---
 # Standards — how the industry works with voice
 
 Standards are the working layer: what a professional check looks like, who

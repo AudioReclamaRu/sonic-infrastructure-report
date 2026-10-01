@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-30
+lang: ru
+---
 ﻿# CULTURE OF VOICE — EDITORIAL OBJECT CASES
 
 **Исследование одной строкой (владелец, 30.09.2026):** можно ли получить объект,

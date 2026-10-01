@@ -1,3 +1,9 @@
+---
+type: interface
+date: 2026-09-11
+lang: en
+related: [canon/releasing-voice.md, dictionary/voice-provenance.md, interfaces/INTERFACE-001-voice-provenance.md, standards/verification-chain.md]
+---
 # INTERFACE-000 — Template
 
 **Type:** Interface Card · **Audience:** anyone · **Last updated:** YYYY-MM-DD

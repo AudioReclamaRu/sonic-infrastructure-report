@@ -1,3 +1,8 @@
+---
+type: corpus
+date: 2026-09-11
+lang: en
+---
 # Who checks your voice before it airs?
 
 **Type:** article (studio position; facts inside are source-backed)

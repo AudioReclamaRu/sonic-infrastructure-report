@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [canon/releasing-voice.md, corpus/state-of-voice-2026.md, interfaces/INTERFACE-001-voice-provenance.md, standards/responsible-release.md]
+---
 # Video and presentation voiceover: who holds the final version
 
 **Type:** guide · **Audience:** product / content / marketing · **Last updated:** 2026-09-11

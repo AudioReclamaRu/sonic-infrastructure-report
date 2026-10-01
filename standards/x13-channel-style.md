@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-15
+lang: ru
+---
 # X13 — Channel Style: фирменный стиль канала
 
 **Type:** standard/specification (editorial voice)

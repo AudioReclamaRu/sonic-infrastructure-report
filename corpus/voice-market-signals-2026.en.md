@@ -1,3 +1,8 @@
+---
+type: corpus
+date: 2026-09-11
+lang: en
+---
 # Voice Market Signals — dated timeline 2026 (EN)
 
 **Type:** facts chronicle · **Status:** p = 1,0 for rows with sources

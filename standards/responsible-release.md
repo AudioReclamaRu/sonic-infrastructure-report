@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-11
+lang: mul
+---
 # Responsible Release — the pre-air check procedure
 
 **Type:** standard/specification (studio position, authorial)

@@ -1,3 +1,10 @@
+---
+id: ENTITY-EU-AI-ACT
+type: entity
+date: 2026-09-11
+lang: en
+status: stable
+---
 Status: Stable
 Type: Entity
 Audience: Research

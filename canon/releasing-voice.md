@@ -1,3 +1,9 @@
+---
+type: operator
+date: 2026-09-11
+lang: mul
+status: position
+---
 Status: POSITION
 Canonical term: Releasing Voice (Выпускающий голос)
 Audio-Reclama.ru

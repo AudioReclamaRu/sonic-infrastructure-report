@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-09-11
+lang: mul
+---
 # USE CASES — how to use this repository in real work
 
 **Type:** human guide · **Audience:** enterprise · **Last updated:** 2026-09-11

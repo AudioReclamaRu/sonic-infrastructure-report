@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-30
+lang: mul
+---
 # CULEUR OF VOICE — EDITORIAL OBJECT CONTRACT v1.0
 
 Статус: активный стандарт (implementation: editorial_object.py, feed/image_gen.py,

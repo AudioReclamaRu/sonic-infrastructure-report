@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-10-01
+lang: mul
+---
 # AGENTS.md — how to work in this repository
 
 Contract for any AI agent (or person) reading, querying or extending this repo.
@@ -60,12 +65,15 @@ terms: «выпускающий голос», «Ошибка Карты», «П�
 
 ## Do not bulk-read these
 
-- `reports/scans/` — 2.2 MB, ~35–46 unique URLs per ~170 KB file, mostly
-  repeated evergreen items. Use `reports/intel/*.json` (deduplicated, typed).
-  See `reports/README.md`.
+- `reports/scans/` — 2.2 MB (measured 2026-10-01), ~35–46 unique urls per ~170 KB
+  file, mostly repeated evergreen items. Use `reports/intel/*.json`
+  (deduplicated, typed) instead. See `reports/README.md` and
+  `python tools/make_reports_index.py --measure`.
 - `feed/` — 59 of its 69 files are PNG. Read `feed/README.md` and
   `feed/images/manifest.json` instead of listing the directory.
-- `state/` — runtime. Logs, pids, heartbeats, the live loop's scratch space.
+- `state/` — runtime, with two tracked exceptions: `state/editorial.jsonl` and
+  `state/verdicts.jsonl` are the verdict trail and are version-controlled on
+  purpose. Logs, pids, heartbeats and scratch space are not.
 
 ## The live loop is not yours
 
@@ -77,8 +85,13 @@ state.
   `news-view.html`, `feed/leads.csv` or `tg/` in a commit — they are runtime
   output, not content. `.gitignore` already lists most of them; when you add a
   runtime file, extend it.
-- `state/rejected.txt` and `state/*_jsonl` are runtime. `state/rejected.txt`
-  existing means a concept is currently frozen; its absence means nothing is.
+- `reports/` is local-first: a clone tracks it only as far as the studio has
+  published (through 2026-09-23 as of 2026-10-01) while the live loop keeps
+  writing new days. Absence of a date in git is not absence of activity.
+- `state/rejected.txt` and everything in `state/` except
+  `state/editorial.jsonl` / `state/verdicts.jsonl` (the tracked verdict trail)
+  is runtime. `state/rejected.txt` existing means a concept is currently frozen;
+  its absence means nothing is.
 
 ## Adding content
 
@@ -92,3 +105,35 @@ state.
   events and are never generated.
 - Before committing, run `python tools/make_reports_index.py --check` if you
   touched anything under `reports/`.
+
+## The frontmatter contract (all hand-authored .md)
+
+Every hand-authored `.md` starts with a YAML header. It is the only place a
+collection can be filtered on, so treat it as schema, not decoration:
+
+```yaml
+---
+id: E-2026-014          # only when the file HAS a stable id
+type: evidence          # see the type table below
+date: 2026-09-11        # filename > legacy "Last updated" > last commit
+lang: ru                # en | ru | mul (English doc carrying Russian terms)
+status: verified        # only when the file states a status
+related: [corpus/edison-blind-test.md]   # back-links, when they exist
+---
+```
+
+- `type` values in use: `evidence`, `entity`, `corpus`, `operator`, `card`,
+  `term`, `ar_note`, `interface`, `standard`, `guide`, `catalog`, `runbook`,
+  `index`, `doc`.
+- `lang: mul` is deliberate, not untidy: `AGENTS.md`, `README.md`,
+  `USE_CASES.md` and several standards are English documents that keep Russian
+  defined terms on purpose. Only `lang: en` means "no Russian at all".
+- The legacy `Status: / Type: / Audience: / Last updated:` block is **kept** as
+  the human-facing header; frontmatter is the machine surface. If you change a
+  value in one, change it in the other.
+- Generated layers (`reports/`, `state/`, everything in `feed/` except
+  `feed/README.md`) are deliberately **excluded** — they are rewritten by the
+  live loop, and a header the generator does not emit rots on the next run.
+- Enforce with `python tools/add_frontmatter.py --check`; add new files through
+  the same tool (`--apply`) so the shape stays uniform.
+

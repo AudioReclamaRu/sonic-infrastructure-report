@@ -1,3 +1,10 @@
+---
+id: AR-0002
+type: ar_note
+date: 2026-09-11
+lang: en
+status: draft
+---
 Status: Draft
 Type: Research Note
 Audience: Enterprise

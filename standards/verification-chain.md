@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-11
+lang: en
+---
 # Verification Chain — how integrity of a released voice is kept
 
 **Type:** standard/specification (studio position, authorial)

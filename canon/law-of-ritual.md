@@ -1,3 +1,9 @@
+---
+type: operator
+date: 2026-09-11
+lang: mul
+status: position
+---
 Status: POSITION
 Canonical term: Law of Ritual (Закон Обряда)
 Audio-Reclama.ru

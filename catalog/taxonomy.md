@@ -1,3 +1,8 @@
+---
+type: catalog
+date: 2026-09-11
+lang: mul
+---
 # Catalog taxonomy — voice page attributes
 
 **Type:** infrastructure · **Audience:** Enterprise · **Last updated:** 2026-09-11

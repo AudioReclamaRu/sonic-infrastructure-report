@@ -6,7 +6,16 @@ __pycache__/
 *.log
 state/*.log
 state/*.pid
+state/logs/
 logs/
+
+# Frozen-concept marker: written by publisher.py on the first REJECT, cleared
+# when the concept is unfrozen. Absence means "nothing frozen", so it carries no
+# information for a clone -> runtime, not tracked.
+state/rejected.txt
+
+# Backups of the registry, written by the live loop (originals live in git history)
+state/items_phantom_backup_*.csv
 
 # Cover generator backups (old designs; originals live in git history)
 feed/images/backup-red-field/

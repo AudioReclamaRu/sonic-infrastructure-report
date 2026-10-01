@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-11
+lang: mul
+---
 # Living Voice Standard — verification of a human voice in audio advertising
 
 **Type:** standard/specification (voluntary, publicly binding once adopted)

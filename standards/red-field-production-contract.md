@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-30
+lang: mul
+---
 # RED FIELD · Production Contract v1.0
 
 > Мы публикуем не новости. Мы публикуем моменты, когда карта реальности меняется.

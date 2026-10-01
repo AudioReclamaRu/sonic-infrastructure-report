@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """make_reports_index.py — generate reports/INDEX.json (machine index for agents).
 
 Why: reports/ held ~35% of the repo and was reachable only through Russian
@@ -17,6 +17,7 @@ Usage:
 Read-only with respect to every other file.
 """
 import argparse
+import glob
 import json
 import os
 import re
@@ -38,6 +39,14 @@ KIND = {
 }
 ROOT_KIND = 'run_status'
 
+# Kinds the live loop rewrites in place. Their byte size, url count and guid list
+# change without a commit, so indexing those numbers made the index stale the
+# moment the scanner ran - a check that cries wolf is a check that gets ignored.
+# For these the index records WHAT EXISTS, not its current measurements: the
+# measurements belong to the runtime, and prose in reports/README.md carries them
+# with a measurement date instead.
+GENERATED = {'signal_rows', 'scan_dump', 'outreach_draft', 'run_status'}
+
 GUID_RE = re.compile(r'\b([a-z0-9]+(?:-[a-z0-9]+){2,}-\d{4}-\d{2}-\d{2})\b')
 EVID_RE = re.compile(r'\bE-\d{4}-\d{3}\b')
 URL_RE = re.compile(r'https?://[^\s)\]<>"]+')
@@ -53,13 +62,21 @@ def _read(path, limit=None):
 
 
 def _intel_rows(path):
-    """Number of rows in an intel JSON (the useful measure, not file size)."""
+    """(row count, union of row keys).
+
+    The union matters: contact_email/contact_page/contact_ready appear on the
+    outreach-eligible rows only, never on the first row of a file, so a schema
+    read off row[0] reports 15 fields where the series really has 18.
+    """
     try:
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        return len(data.get('rows', [])), sorted(data.get('rows')[0].keys()) \
-            if data.get('rows') else []
-    except (OSError, ValueError, IndexError):
+        rows = data.get('rows') or []
+        keys = set()
+        for r in rows:
+            keys.update(r.keys())
+        return len(rows), sorted(keys)
+    except (OSError, ValueError, AttributeError):
         return None, []
 
 
@@ -85,27 +102,30 @@ def build():
         parts = rel.split('/')
         sub = parts[1] if len(parts) > 2 else ''
         ext = os.path.splitext(rel)[1].lower()
+        kind = KIND.get(sub, ROOT_KIND)
+        generated = kind in GENERATED
         text = _read(abs_path, 200000 if ext in ('.md', '.json') else 0)
         name = os.path.basename(rel)
         dates = DATE_RE.findall(name) or DATE_RE.findall(text[:2000])
         row = {
             'path': rel.replace('\\', '/'),
-            'kind': KIND.get(sub, ROOT_KIND),
+            'kind': kind,
             'date': max(dates) if dates else '',
-            'bytes': os.path.getsize(abs_path),
-            'guids': sorted(set(GUID_RE.findall(text))),
-            'evidence': sorted(set(EVID_RE.findall(text))),
         }
+        if generated:
+            row['generated'] = True
+        else:
+            row['bytes'] = os.path.getsize(abs_path)
+            row['guids'] = sorted(set(GUID_RE.findall(text)))
+            row['evidence'] = sorted(set(EVID_RE.findall(text)))
+            urls = set(URL_RE.findall(text))
+            if urls:
+                row['url_count'] = len(urls)
         if ext == '.json' and sub == 'intel':
-            n, keys = _intel_rows(abs_path)
-            row['rows'] = n
-            row['row_keys'] = keys
-        urls = set(URL_RE.findall(text))
-        if urls:
-            row['url_count'] = len(urls)
-        # duplication signal: the scans layer repeats the same urls every day
-        if sub == 'scans' and urls:
-            row['unique_urls'] = len(urls)
+            # Row counts live in --measure, not here: the live loop rewrites
+            # even a dated intel file in place, so a stored count goes stale
+            # within minutes and teaches everyone to ignore --check.
+            pass
         rows.append(row)
 
     idx = {
@@ -131,12 +151,45 @@ def build():
     return idx
 
 
+def measure(idx):
+    """Volume table, printed on demand and never stored: it changes whenever the
+    live loop writes, and a stored measurement would make the index stale for no
+    navigational reason."""
+    from collections import Counter
+    agg = {}
+    for r in idx['files']:
+        a = agg.setdefault(r['kind'], [0, 0, 0])
+        a[0] += 1
+        a[1] += os.path.getsize(os.path.join(REPO, r['path']))
+    print('%-16s %6s %12s' % ('kind', 'files', 'bytes'))
+    for k, v in sorted(agg.items()):
+        print('%-16s %6d %12d' % (k, v[0], v[1]))
+
+    # The intel schema is measured over EVERY file on disk, not the tracked
+    # subset: the live loop adds fields over time, and a schema report that
+    # silently shrinks to the last committed day is worse than none.
+    files = sorted(glob.glob(os.path.join(REPORTS, 'intel', '*.json')))
+    schema, rows = set(), 0
+    for p in files:
+        n, keys = _intel_rows(p)
+        rows += n or 0
+        schema.update(keys)
+    print('\nintel on disk: %d files, %d rows' % (len(files), rows))
+    if schema:
+        print('intel row fields (%d): %s' % (len(schema), ', '.join(sorted(schema))))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true',
                     help='exit 1 if INDEX.json differs from the build')
+    ap.add_argument('--measure', action='store_true',
+                    help='print the per-kind volume table and exit')
     a = ap.parse_args()
     idx = build()
+    if a.measure:
+        measure(idx)
+        return 0
     payload = json.dumps(idx, ensure_ascii=False, indent=2) + '\n'
     if a.check:
         try:
@@ -156,3 +209,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
+

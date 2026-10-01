@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-26
+lang: ru
+---
 # RED FIELD — визуальный характер канала «Культура Голоса»
 
 **Type:** standard/specification (channel visual)

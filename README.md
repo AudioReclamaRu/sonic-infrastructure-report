@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-10-01
+lang: mul
+---
 # Sonic Infrastructure & Enterprise Audio Engineering Report
 
 **Type:** overview · **Audience:** enterprise · **Last updated:** 2026-09-11

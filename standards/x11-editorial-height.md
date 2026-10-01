@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-13
+lang: ru
+---
 # X11 — Editorial Height: дверь флагмана
 
 **Type:** standard/specification (editorial gate)

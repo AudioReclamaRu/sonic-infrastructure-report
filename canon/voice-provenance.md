@@ -1,3 +1,8 @@
+---
+type: operator
+date: 2026-09-11
+lang: mul
+---
 # Operator 05 · Voice Provenance / Releasing Voice
 
 **Type:** canon / operator of language — the bridge between philosophy and market

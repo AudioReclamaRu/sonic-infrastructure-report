@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [canon/releasing-voice.md, corpus/edison-blind-test.en.md, interfaces/INTERFACE-001-voice-provenance.md, standards/responsible-release.md]
+---
 # Voice for a bank: what to verify before air
 
 **Type:** guide · **Audience:** enterprise (banks, fintech) · **Last updated:** 2026-09-11

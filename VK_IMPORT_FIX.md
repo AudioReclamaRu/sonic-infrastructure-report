@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-09-11
+lang: ru
+---
 # VK: вернуть картинки в посты сообщества vk.com/audioreclamaru
 
 ## Причина

@@ -1,3 +1,8 @@
+---
+type: corpus
+date: 2026-09-11
+lang: en
+---
 # Edison blind test — synthetic voice indistinguishable from human (May 2026)
 
 **Type:** fact · **Status:** p = 1,0 (source-backed — primary press release dated 14.07.2026)

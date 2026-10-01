@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-13
+lang: ru
+---
 # X10 — Human Signal: редактурный фильтр перед публикацией
 
 **Type:** standard/specification (editorial release procedure)

@@ -1,3 +1,8 @@
+---
+type: corpus
+date: 2026-09-11
+lang: mul
+---
 # Verdicts Journal — weekly verdict log
 
 **Type:** log · **Method:** FACT-METHOD.md · Language of record: EN + RU

@@ -1,3 +1,10 @@
+---
+id: INTERFACE-001
+type: interface
+date: 2026-09-11
+lang: en
+related: [canon/releasing-voice.md, corpus/edison-blind-test.md, dictionary/voice-provenance.md, reports/verdicts/verdict-index.md, standards/voice-provenance-passport.md]
+---
 # INTERFACE-001 — Voice Provenance
 
 **Type:** Interface Card · **Audience:** anyone · **Last updated:** 2026-09-11

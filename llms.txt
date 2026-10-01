@@ -205,8 +205,11 @@ The live operational layer under `reports/` (7 subdirectories, 84 tracked files)
 - reports/README.md — how to read this layer, per-subdirectory table, the 18-field
   `intel/` schema, and why `reports/scans/` is a trap
 - reports/INDEX.json — GENERATED machine index (one row per tracked file:
-  path, kind, date, bytes, guids, evidence, url counts, intel row counts).
-  Regenerate `python tools/make_reports_index.py`; verify with `--check`
+  path, kind, date, generated?; plus bytes, guids, evidence, url counts for the
+  stable layers and row counts for intel json). Live-loop-rewritten files are
+  flagged `generated` and carry no measurements, so the check cannot cry wolf.
+  Regenerate `python tools/make_reports_index.py`; verify with `--check`;
+  volume table with `--measure`. Full guide: reports/README.md
 - reports/intel/ — the machine-readable daily fact stream: one
   `intel-YYYY-MM-DD.{md,json}` per day. JSON top level is exactly `{date, rows}`;
   each row has 18 fields, stable across the whole series: `date` (top level) and
@@ -309,6 +312,23 @@ One page, one interface, a pipeline, grown from a lived corpus example.
 - catalog/README.md — generation rules; no fake pages
 - catalog/taxonomy.md — attributes of voice entry pages
 - catalog/voice-page-template.md — page shape (metadata + release checklist)
+
+## Machine surfaces (query these before reading prose)
+
+- reports/INDEX.json — GENERATED per-file index of the reports layer. Regenerate
+  `python tools/make_reports_index.py`; verify with `--check`
+- FRONTMATTER: every hand-authored .md opens with
+  `id? / type / date / lang / status? / related?`. `type` is one of
+  evidence|entity|corpus|operator|card|term|ar_note|interface|standard|guide|catalog|runbook|index|doc;
+  `lang` is en|ru|mul, where `mul` = English document that deliberately keeps
+  Russian defined terms. Generated layers (reports/, state/, everything in feed/
+  except feed/README.md) are excluded by design. Add/check files with
+  `python tools/add_frontmatter.py [--apply|--check]`
+- VERDICT TRAIL, now tracked in git: state/editorial.jsonl (per-concept gate
+  results: editorial_object, cover_semantic, object_validation, text_cover_match)
+  and state/verdicts.jsonl (verdict + the REJECT codes that caused it). Use them
+  to reconstruct why a concept was published or frozen. Append-only, written by
+  the live loop. Everything else in state/ is runtime
 
 ## Method
 

@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [canon/error-of-the-map.md, guides/choosing-a-voice.md, guides/video-voiceover.md]
+---
 # Chronomer: time your text before you order
 
 **Type:** guide · **Audience:** enterprise / media agencies · **Last updated:** 2026-09-11

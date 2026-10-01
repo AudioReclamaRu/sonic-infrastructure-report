@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-09-11
+lang: en
+---
 # Example — verification chain, live artifact (TEST)
 
 **Type:** example / test artifact — NOT a real recorded session.

@@ -1,3 +1,10 @@
+---
+id: ENTITY-OPENAI-VOICE
+type: entity
+date: 2026-09-11
+lang: en
+status: stable
+---
 Status: Stable
 Type: Entity
 Audience: Research

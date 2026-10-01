@@ -1,0 +1,31 @@
+name: repo-integrity
+
+# The repository's own failure mode was documented, not hypothetical: the prose
+# described a `win` field that never existed, a 4-field concept gate that was
+# actually 9, and 152 .md files with no type at all. These checks make that
+# class of drift fail loudly instead of misleading an agent.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # the date fallback in add_frontmatter reads git log
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: compile the publication gate
+        run: python -m py_compile publisher.py editorial_object.py
+
+      - name: reports/INDEX.json is current
+        run: python tools/make_reports_index.py --check
+
+      - name: every hand-authored .md has frontmatter
+        run: python tools/add_frontmatter.py --check

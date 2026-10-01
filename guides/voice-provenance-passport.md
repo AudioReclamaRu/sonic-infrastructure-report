@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-09-11
+lang: en
+related: [ar-notes/AR-0001-voice-provenance.md, corpus/edison-blind-test.en.md, evidence/E-2026-015.md, standards/voice-provenance-passport.md]
+---
 # Voice provenance passport: what it is and why it matters
 
 **Type:** guide · **Audience:** enterprise / legal / marketing · **Last updated:** 2026-09-11

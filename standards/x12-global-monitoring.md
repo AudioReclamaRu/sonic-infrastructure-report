@@ -1,3 +1,8 @@
+---
+type: standard
+date: 2026-09-13
+lang: ru
+---
 # X12 — Global Monitoring: ширина поля зрения
 
 **Type:** standard/specification (editorial gate)

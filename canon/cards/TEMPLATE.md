@@ -1,3 +1,9 @@
+---
+type: card
+date: 2026-09-11
+lang: mul
+status: position
+---
 Status: POSITION
 Operator Card
 Canonical term: <Term (Русский термин)>

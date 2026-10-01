@@ -1,3 +1,8 @@
+---
+type: index
+date: 2026-09-11
+lang: mul
+---
 # Canon — the vocabulary behind modern business voice production
 
 The Canon defines the vocabulary behind modern business voice production.
