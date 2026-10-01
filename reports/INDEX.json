@@ -1,0 +1,1118 @@
+{
+  "schema": "reports-index/1",
+  "repo": "sonic-infrastructure-report",
+  "generator": "tools/make_reports_index.py",
+  "tracked_files": 84,
+  "kinds": [
+    "outreach_draft",
+    "registry",
+    "run_status",
+    "scan_dump",
+    "signal_note",
+    "signal_rows",
+    "verdict_log"
+  ],
+  "how_to_read": {
+    "signal_rows": "machine-readable daily fact stream - SEARCH THIS",
+    "signal_note": "dated signal note (RU/EN editorial layer)",
+    "verdict_log": "verdict record (CONFIRMED / RESCHEDULED / SOURCE ERROR)",
+    "registry": "venue/source registry",
+    "outreach_draft": "outreach letters, RU operational layer",
+    "scan_dump": "raw scan dump, MOSTLY REPEATED - do not bulk-read; use signal_rows instead",
+    "run_status": "daily run status, runtime artifact"
+  },
+  "files": [
+    {
+      "path": "reports/intel/intel-2026-09-11.json",
+      "kind": "signal_rows",
+      "date": "2026-09-11",
+      "bytes": 21030,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "src",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-11.md",
+      "kind": "signal_rows",
+      "date": "2026-09-11",
+      "bytes": 9629,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-12.json",
+      "kind": "signal_rows",
+      "date": "2026-09-12",
+      "bytes": 7201,
+      "guids": [],
+      "evidence": [],
+      "rows": 12,
+      "row_keys": [
+        "domain",
+        "ent",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "src",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 12
+    },
+    {
+      "path": "reports/intel/intel-2026-09-12.md",
+      "kind": "signal_rows",
+      "date": "2026-09-12",
+      "bytes": 2386,
+      "guids": [],
+      "evidence": [],
+      "url_count": 12
+    },
+    {
+      "path": "reports/intel/intel-2026-09-13.json",
+      "kind": "signal_rows",
+      "date": "2026-09-13",
+      "bytes": 18647,
+      "guids": [],
+      "evidence": [],
+      "rows": 22,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 22
+    },
+    {
+      "path": "reports/intel/intel-2026-09-13.md",
+      "kind": "signal_rows",
+      "date": "2026-09-13",
+      "bytes": 8025,
+      "guids": [],
+      "evidence": [],
+      "url_count": 22
+    },
+    {
+      "path": "reports/intel/intel-2026-09-14.json",
+      "kind": "signal_rows",
+      "date": "2026-09-14",
+      "bytes": 17440,
+      "guids": [],
+      "evidence": [],
+      "rows": 21,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 21
+    },
+    {
+      "path": "reports/intel/intel-2026-09-14.md",
+      "kind": "signal_rows",
+      "date": "2026-09-14",
+      "bytes": 7320,
+      "guids": [],
+      "evidence": [],
+      "url_count": 21
+    },
+    {
+      "path": "reports/intel/intel-2026-09-15.json",
+      "kind": "signal_rows",
+      "date": "2026-09-15",
+      "bytes": 24110,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-15.md",
+      "kind": "signal_rows",
+      "date": "2026-09-15",
+      "bytes": 10936,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-16.json",
+      "kind": "signal_rows",
+      "date": "2026-09-16",
+      "bytes": 24167,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-16.md",
+      "kind": "signal_rows",
+      "date": "2026-09-16",
+      "bytes": 11006,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-17.json",
+      "kind": "signal_rows",
+      "date": "2026-09-17",
+      "bytes": 24097,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-17.md",
+      "kind": "signal_rows",
+      "date": "2026-09-17",
+      "bytes": 10932,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-18.json",
+      "kind": "signal_rows",
+      "date": "2026-09-18",
+      "bytes": 23818,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-18.md",
+      "kind": "signal_rows",
+      "date": "2026-09-18",
+      "bytes": 10642,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-19.json",
+      "kind": "signal_rows",
+      "date": "2026-09-19",
+      "bytes": 24163,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-19.md",
+      "kind": "signal_rows",
+      "date": "2026-09-19",
+      "bytes": 10997,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-20.json",
+      "kind": "signal_rows",
+      "date": "2026-09-20",
+      "bytes": 24371,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-20.md",
+      "kind": "signal_rows",
+      "date": "2026-09-20",
+      "bytes": 11204,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-21.json",
+      "kind": "signal_rows",
+      "date": "2026-09-21",
+      "bytes": 23810,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-21.md",
+      "kind": "signal_rows",
+      "date": "2026-09-21",
+      "bytes": 10637,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-22.json",
+      "kind": "signal_rows",
+      "date": "2026-09-22",
+      "bytes": 24740,
+      "guids": [],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-22.md",
+      "kind": "signal_rows",
+      "date": "2026-09-22",
+      "bytes": 11546,
+      "guids": [],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-23.json",
+      "kind": "signal_rows",
+      "date": "2026-09-23",
+      "bytes": 24398,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "rows": 27,
+      "row_keys": [
+        "domain",
+        "ent",
+        "event_geo",
+        "mkt",
+        "prc",
+        "pts",
+        "score",
+        "snippet",
+        "source_language",
+        "src",
+        "status",
+        "svc",
+        "tier",
+        "title",
+        "url"
+      ],
+      "url_count": 27
+    },
+    {
+      "path": "reports/intel/intel-2026-09-23.md",
+      "kind": "signal_rows",
+      "date": "2026-09-23",
+      "bytes": 11336,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 27
+    },
+    {
+      "path": "reports/monitoring/venues.md",
+      "kind": "registry",
+      "date": "2026-09-13",
+      "bytes": 5885,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-11-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-11",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-11-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-11",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-12-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-12",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-13-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-13",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-14-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-14",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-15-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-15",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-15-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-15",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-16-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-16",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-17-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-17",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-17-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-17",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-18-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-18",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-18-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-18",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-19-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-19",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-20-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-20",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-20-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-20",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-21-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-21",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-21-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-21",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-22-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-22",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-22-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-22",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-23-1.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-23",
+      "bytes": 1859,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/draft-2026-09-23-2.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-23",
+      "bytes": 1771,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/outreach/fact-cards-2026-09-18-23.md",
+      "kind": "outreach_draft",
+      "date": "2026-09-18",
+      "bytes": 8758,
+      "guids": [],
+      "evidence": [
+        "E-2026-012",
+        "E-2026-015",
+        "E-2026-016"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/scans/scans-2026-09-11.md",
+      "kind": "scan_dump",
+      "date": "2026-09-11",
+      "bytes": 39890,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 35,
+      "unique_urls": 35
+    },
+    {
+      "path": "reports/scans/scans-2026-09-12.md",
+      "kind": "scan_dump",
+      "date": "2026-09-12",
+      "bytes": 22539,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 36,
+      "unique_urls": 36
+    },
+    {
+      "path": "reports/scans/scans-2026-09-13.md",
+      "kind": "scan_dump",
+      "date": "2026-09-13",
+      "bytes": 108850,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 40,
+      "unique_urls": 40
+    },
+    {
+      "path": "reports/scans/scans-2026-09-14.md",
+      "kind": "scan_dump",
+      "date": "2026-09-14",
+      "bytes": 182710,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 43,
+      "unique_urls": 43
+    },
+    {
+      "path": "reports/scans/scans-2026-09-15.md",
+      "kind": "scan_dump",
+      "date": "2026-09-15",
+      "bytes": 201897,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 46,
+      "unique_urls": 46
+    },
+    {
+      "path": "reports/scans/scans-2026-09-16.md",
+      "kind": "scan_dump",
+      "date": "2026-09-16",
+      "bytes": 210693,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 40,
+      "unique_urls": 40
+    },
+    {
+      "path": "reports/scans/scans-2026-09-17.md",
+      "kind": "scan_dump",
+      "date": "2026-09-17",
+      "bytes": 198803,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 46,
+      "unique_urls": 46
+    },
+    {
+      "path": "reports/scans/scans-2026-09-18.md",
+      "kind": "scan_dump",
+      "date": "2026-09-18",
+      "bytes": 198814,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 46,
+      "unique_urls": 46
+    },
+    {
+      "path": "reports/scans/scans-2026-09-19.md",
+      "kind": "scan_dump",
+      "date": "2026-09-19",
+      "bytes": 201299,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 49,
+      "unique_urls": 49
+    },
+    {
+      "path": "reports/scans/scans-2026-09-20.md",
+      "kind": "scan_dump",
+      "date": "2026-09-20",
+      "bytes": 201271,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 47,
+      "unique_urls": 47
+    },
+    {
+      "path": "reports/scans/scans-2026-09-21.md",
+      "kind": "scan_dump",
+      "date": "2026-09-21",
+      "bytes": 226072,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 50,
+      "unique_urls": 50
+    },
+    {
+      "path": "reports/scans/scans-2026-09-22.md",
+      "kind": "scan_dump",
+      "date": "2026-09-22",
+      "bytes": 204829,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 45,
+      "unique_urls": 45
+    },
+    {
+      "path": "reports/scans/scans-2026-09-23.md",
+      "kind": "scan_dump",
+      "date": "2026-09-23",
+      "bytes": 210032,
+      "guids": [
+        "elevenlabs-and-universal-music-group-seal-ai-voice-licensing-pact-in-2026-10-09"
+      ],
+      "evidence": [],
+      "url_count": 49,
+      "unique_urls": 49
+    },
+    {
+      "path": "reports/signals/2026-07-08.md",
+      "kind": "signal_note",
+      "date": "2026-07-08",
+      "bytes": 1209,
+      "guids": [],
+      "evidence": [
+        "E-2026-011"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/2026-07-14.md",
+      "kind": "signal_note",
+      "date": "2026-07-14",
+      "bytes": 1166,
+      "guids": [],
+      "evidence": [
+        "E-2026-014"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/2026-07-16.md",
+      "kind": "signal_note",
+      "date": "2026-07-16",
+      "bytes": 1166,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/2026-07-29.md",
+      "kind": "signal_note",
+      "date": "2026-07-29",
+      "bytes": 1138,
+      "guids": [],
+      "evidence": [
+        "E-2026-012"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/2026-09-03.md",
+      "kind": "signal_note",
+      "date": "2026-09-03",
+      "bytes": 1236,
+      "guids": [],
+      "evidence": [
+        "E-2026-013"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/2026-09-10.md",
+      "kind": "signal_note",
+      "date": "2026-09-10",
+      "bytes": 1317,
+      "guids": [],
+      "evidence": [
+        "E-2026-014"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/2026-09-11.md",
+      "kind": "signal_note",
+      "date": "2026-09-11",
+      "bytes": 1711,
+      "guids": [],
+      "evidence": [
+        "E-2026-014",
+        "E-2026-016",
+        "E-2026-017"
+      ],
+      "url_count": 1
+    },
+    {
+      "path": "reports/signals/TEMPLATE.md",
+      "kind": "signal_note",
+      "date": "",
+      "bytes": 908,
+      "guids": [],
+      "evidence": [],
+      "url_count": 1
+    },
+    {
+      "path": "reports/status-2026-09-12.md",
+      "kind": "run_status",
+      "date": "2026-09-12",
+      "bytes": 211,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-13.md",
+      "kind": "run_status",
+      "date": "2026-09-13",
+      "bytes": 211,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-14.md",
+      "kind": "run_status",
+      "date": "2026-09-14",
+      "bytes": 212,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-15.md",
+      "kind": "run_status",
+      "date": "2026-09-15",
+      "bytes": 212,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-16.md",
+      "kind": "run_status",
+      "date": "2026-09-16",
+      "bytes": 212,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-17.md",
+      "kind": "run_status",
+      "date": "2026-09-17",
+      "bytes": 213,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-18.md",
+      "kind": "run_status",
+      "date": "2026-09-18",
+      "bytes": 214,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-19.md",
+      "kind": "run_status",
+      "date": "2026-09-19",
+      "bytes": 214,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-20.md",
+      "kind": "run_status",
+      "date": "2026-09-20",
+      "bytes": 215,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-21.md",
+      "kind": "run_status",
+      "date": "2026-09-21",
+      "bytes": 215,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-22.md",
+      "kind": "run_status",
+      "date": "2026-09-22",
+      "bytes": 215,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status-2026-09-23.md",
+      "kind": "run_status",
+      "date": "2026-09-23",
+      "bytes": 215,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/status.html",
+      "kind": "run_status",
+      "date": "",
+      "bytes": 7738,
+      "guids": [],
+      "evidence": []
+    },
+    {
+      "path": "reports/verdicts/verdict-index.md",
+      "kind": "verdict_log",
+      "date": "2026-09-11",
+      "bytes": 892,
+      "guids": [],
+      "evidence": [
+        "E-2026-014"
+      ],
+      "url_count": 1
+    }
+  ]
+}

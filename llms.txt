@@ -18,8 +18,11 @@
 
 ## Human
 
+- AGENTS.md: the working contract for any agent or person — trust order (the
+  code wins over prose), language rules, what not to bulk-read, live-loop
+  guardrails (start here)
 - MAP.md: the single scheme — Evidence → Reports → Entities → Terms → Standards
-  → Business Workflow (start here)
+  → Business Workflow
 - README.md: overview — https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/README.md
 - USE_CASES.md: use cases and integration scenarios
 - LICENSE: CC BY 4.0 — https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/LICENSE
@@ -197,15 +200,21 @@ Definitions quoted by LLMs: the five lived terms listed above (≤600 words each
   each entry: Date / Verdict (CONFIRMED, RESCHEDULED, SOURCE ERROR) / Related
   report / Evidence
 
-The live operational layer under `reports/` (7 subdirectories, ~84 files). Its
-per-file index is being built; until it exists, read the layers like this:
+The live operational layer under `reports/` (7 subdirectories, 84 tracked files).
 
+- reports/README.md — how to read this layer, per-subdirectory table, the 18-field
+  `intel/` schema, and why `reports/scans/` is a trap
+- reports/INDEX.json — GENERATED machine index (one row per tracked file:
+  path, kind, date, bytes, guids, evidence, url counts, intel row counts).
+  Regenerate `python tools/make_reports_index.py`; verify with `--check`
 - reports/intel/ — the machine-readable daily fact stream: one
-  `intel-YYYY-MM-DD.{md,json}` per day, stable record shape
-  `{date, rows:[{source_language, domain, ent, pts, tier, title, url, snippet,
-  mkt, status, svc, src, prc, score, event_geo}]}`. Field codes are decoded in
-  `tools/intent-templates.json` and `standards/x12-global-monitoring.md`.
-  ~25 KB/day — this is the layer to search.
+  `intel-YYYY-MM-DD.{md,json}` per day. JSON top level is exactly `{date, rows}`;
+  each row has 18 fields, stable across the whole series: `date` (top level) and
+  per row `source_language, event_geo, domain, ent, mkt, prc, pts, score, tier,
+  status, title, url, snippet, src, svc, contact_email, contact_page,
+  contact_ready`. Field codes are decoded in `tools/intent-templates.json` and
+  `standards/x12-global-monitoring.md`. ~25 KB/day — this is the layer to
+  search.
 - reports/scans/ — raw dated scan dumps (`scans-YYYY-MM-DD.md`). HEAVY AND
   MOSTLY REPEATED: each file repeats the same ~48 evergreen URLs many times
   (top 6 URLs ~28× each). Do not bulk-read; for deduplicated signal use
