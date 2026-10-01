@@ -52,11 +52,16 @@ graph, not a blog.
 
 ## How the channel publishes (Publishing layer)
 
-`feed/items.csv` (schedule) → `feed/concepts.json` (editorial gate: headline /
-win / visual_object / cover_prompt — post passes only when all four are filled;
-REJECT freezes the guid in `state/rejected.txt`) → `feed/image_gen.py`
-(version-aware RED FIELD cover, one object per news, uniqueness vs the last 20
-covers) → `publisher.py` (autonomous TG-first loop, idempotent by guid).
+`feed/items.csv` (schedule) → `feed/concepts.json` (editorial gate: the 9 fields
+of `publisher.py:109` `REQ_CONCEPT_FIELDS` = headline, demo, explain,
+consequence, visual_object, cover_prompt, demo_shift, object_type, cover_test;
+the post passes only when all 9 are filled; REJECT freezes the guid in
+`state/rejected.txt`, a runtime file that exists only while a concept is
+frozen) → `feed/image_gen.py` (version-aware RED FIELD cover, one object per
+news, uniqueness vs the last 20 covers) → `publisher.py` (autonomous TG-first
+loop, idempotent by guid). Concepts may additionally carry `event_object` +
+`article_structure` (Level B, Editorial Object System — see
+`standards/editorial-object-contract.md`).
 Contract details: `feed/README.md`.
 
 Related

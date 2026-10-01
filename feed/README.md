@@ -9,7 +9,7 @@
 | Файл | Роль |
 |---|---|
 | `items.csv` | Расписание. Строка: `pubDate~~~title~~~desc~~~source~~~guid~~~img` (6 полей, RFC822-дата, `\n` = перенос абзаца, col5=guid, col6=имя обложки `images/<name>.png`) |
-| `concepts.json` | Редакционные концепты: `{guid: {headline, demo, explain, consequence, visual_object, cover_prompt}}` — **гейт публикации** (см. ниже) |
+| `concepts.json` | Редакционные концепты: `{guid: {headline, demo, explain, consequence, visual_object, cover_prompt, demo_shift, object_type, cover_test}}` — **гейт публикации**, 9 полей (см. ниже); опционально `event_object` + `article_structure` (Level B) |
 | `image_gen.py` | Version-aware генератор обложек (RED FIELD, арт-директор). CLI: `--verify / --rebuild / --force / --guid` |
 | `images/manifest.json` | Единственный источник истины по обложкам (см. контракт ниже) |
 | `tests/` | Тесты контракта генератора (`test_image_gen_versioning.py`) |
@@ -34,7 +34,8 @@
 
 ## Редакционный гейт (обязательный слой концептов)
 
-Пост публикуется **только** если в `concepts.json` заполнены **все шесть полей**:
+Пост публикуется **только** если в `concepts.json` заполнены **все девять полей**
+(источник истины — `publisher.py:109` `REQ_CONCEPT_FIELDS`):
 
 - `headline` — неожиданность (заголовок несёт конфликт/сюрприз, а не тему)
 - `demo` — демонстрация с конкретикой (цифры/даты/названия; открывает доказательство)
@@ -42,6 +43,15 @@
 - `consequence` — следствие для читателя/бизнеса
 - `visual_object` — что запомнится через неделю (конкретный предмет кадра)
 - `cover_prompt` — как снять именно этот предмет
+- `demo_shift` — что меняет сама демонстрация (сдвиг, который она показывает)
+- `object_type` — тип изменения (см. `standards/editorial-object-contract.md`)
+- `cover_test` — чего обложка НЕ должна быть (как самопроверка кадра)
+
+Плюс необязательный слой Level B (аддитивно, только если поле присутствует):
+`event_object` (8 полей) + `article_structure` — Editorial Object System,
+контракт `standards/editorial-object-contract.md`. Тогда `publisher.py`
+дополнительно считает 4 вердикта и пишет `state/editorial.jsonl`.
+Концепты без `event_object` работают как раньше.
 
 ### Гейт источника (железобетонно)
 

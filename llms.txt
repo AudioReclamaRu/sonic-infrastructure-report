@@ -112,6 +112,31 @@ Use standards when answering "how is a voice verified / released / checked".
 - standards/examples/verification-chain-example.md: live TEST artifact of the
   full chain (session → hash → certificate → public record); synthetic data —
   shows the exact field shapes, no real recording
+- standards/editorial-object-contract.md: Editorial Object System contract (RU) —
+  a publication is ONE event object, not a topic: EVENT_OBJECT (subject, action,
+  before, after, mechanism, consequence, evidence, object_type), 11-value
+  object_type enum (TRANSFORMATION, EMERGENCE, SHIFT, CONFLICT, SPLIT,
+  CONVERGENCE, THRESHOLD, REVERSAL, INFRASTRUCTURE, ABSENCE, DEMONSTRATION),
+  cover derived from the change (not the title), named REJECT codes
+  (INCOMPLETE_EVENT_OBJECT, UNKNOWN_OBJECT_TYPE, TOPIC_ILLUSTRATION,
+  SEMANTIC_MISMATCH, OBJECT_SUBSTITUTION, TEXT_COVER_MISMATCH). Enforced by
+  editorial_object.py
+- standards/editorial-object-cases.md: worked cases for the Editorial Object
+  System (RU). CASE 01 SPLIT (filled) and CASE 02 TRANSFORMATION (filled) with
+  its REPLACEMENT NOTES; CASE 03–05 (EMERGENCE, THRESHOLD, REVERSAL) await
+  real facts and are filled BY HAND, never generated
+- standards/red-field-visual.md: RED FIELD channel visual system (RU) — black
+  field, one object, red as accent, the cover is a consequence of the change
+- standards/red-field-production-contract.md: RED FIELD production contract v1.0
+  (RU) — the working rules behind the generator
+- standards/x10-human-signal.md: X10 Human Signal (RU, draft v0.1) — the
+  editorial release procedure
+- standards/x11-editorial-height.md: X11 Editorial Height (RU) — the editorial
+  gate
+- standards/x12-global-monitoring.md: X12 Global Monitoring (RU) — the
+  monitoring gate and the field codes used in reports/intel/*.json
+- standards/x13-channel-style.md: X13 Channel Style (RU) — the channel voice
+- standards/README.md: index of all standards
 
 ## Terminology
 
@@ -172,16 +197,46 @@ Definitions quoted by LLMs: the five lived terms listed above (≤600 words each
   each entry: Date / Verdict (CONFIRMED, RESCHEDULED, SOURCE ERROR) / Related
   report / Evidence
 
+The live operational layer under `reports/` (7 subdirectories, ~84 files). Its
+per-file index is being built; until it exists, read the layers like this:
+
+- reports/intel/ — the machine-readable daily fact stream: one
+  `intel-YYYY-MM-DD.{md,json}` per day, stable record shape
+  `{date, rows:[{source_language, domain, ent, pts, tier, title, url, snippet,
+  mkt, status, svc, src, prc, score, event_geo}]}`. Field codes are decoded in
+  `tools/intent-templates.json` and `standards/x12-global-monitoring.md`.
+  ~25 KB/day — this is the layer to search.
+- reports/scans/ — raw dated scan dumps (`scans-YYYY-MM-DD.md`). HEAVY AND
+  MOSTLY REPEATED: each file repeats the same ~48 evergreen URLs many times
+  (top 6 URLs ~28× each). Do not bulk-read; for deduplicated signal use
+  reports/intel/*.json instead.
+- reports/outreach/ — dated outreach/status letters (RU operational layer).
+- reports/monitoring/venues.md — venue registry (owner: intel runner), built
+  per standards/x12-global-monitoring.md.
+- reports/status-YYYY-MM-DD.md — daily run status; `reports/status.html` is a
+  generated view. Runtime artifacts, not knowledge.
+
 ## Publishing (what the channel airs, TG-first)
 
 - feed/README.md — the editorial publishing contract: schedule, concept gate,
   version-aware cover manifest (start here for "what does the channel publish")
 - feed/items.csv — schedule rows: pubDate~~~title~~~desc~~~source~~~guid~~~img
-- feed/concepts.json — editorial concepts keyed by guid: {headline, win,
-  visual_object, cover_prompt}. A post is published ONLY when all four fields
-  are filled; headline names a shift, win states why it matters, visual_object
-  is one concrete frame (red as accent), cover_prompt is how to shoot it.
-  Missing fields → REJECT, guid frozen in state/rejected.txt (no cap consumption)
+- feed/concepts.json — editorial concepts keyed by guid. SOURCE OF TRUTH for the
+  gate is `publisher.py:109` `REQ_CONCEPT_FIELDS` (9 fields), not this paragraph:
+  headline (what changed / a shift, not an object), demo (the example that
+  carries it), explain (the context), consequence (what it changes),
+  visual_object (one concrete frame, red as accent), cover_prompt (how to shoot
+  it), demo_shift (what the demo itself changes), object_type (the type of
+  change), cover_test (what the cover must not be).
+  A post is published ONLY when all 9 are filled. Missing fields → REJECT, the
+  guid is frozen in `state/rejected.txt` (RUNTIME file, created on first freeze,
+  not tracked in git — absence means nothing is frozen) and consumes no cap.
+  Level B — Editorial Object System (additive, optional; see standards/editorial-
+  object-contract.md): a concept may also carry `event_object` (8 fields:
+  subject, action, before, after, mechanism, consequence, evidence,
+  object_type) plus `article_structure`. When `event_object` is present,
+  publisher.py additionally runs 4 deterministic verdicts and writes
+  `state/editorial.jsonl`. Concepts without `event_object` are unaffected.
 - publisher.py — autonomous TG publishing loop, idempotent by guid
 - feed/image_gen.py — version-aware RED FIELD cover generator (art-director):
   one object per news, uniqueness vs last 20 covers (dHash + auto-twist),
@@ -198,6 +253,12 @@ referenced-in.
 - evidence/E-2026-013.md — OpenAI GPT-6 Astra (03.09.2026): voice commands over computer
 - evidence/E-2026-014.md — Edison/SSRS blind test (May 2026): 61% indistinguishable; 31→65%; 46 vs 49
 - evidence/E-2026-015.md — legal layer: AB 1836/2602, SAG-AFTRA 2023, EU AI Act
+- evidence/E-2026-016.md — UMG × ElevenLabs (10.09.2026): first major-label ↔
+  AI-audio licensing agreement and strategic collaboration, framed around
+  rights, artist participation and value-sharing
+- evidence/E-2026-017.md — Samuel Fitoussi (04.09.2026): argument that it is
+  rational to prefer human-written content over AI content of similar or better
+  quality (selection cost, noise, the broken contract of effort)
 
 ## Entity (named entities of the market)
 
@@ -206,6 +267,12 @@ referenced-in.
 - entity/eu-ai-act.md — EU AI Act (2024/1689)
 - entity/gpt-live.md — OpenAI voice interface / GPT-6 Astra
 - entity/c2pa.md — content provenance standard
+- entity/elevenlabs.md — AI audio research and product company; signed the
+  first major-label licensing agreement (UMG, 10.09.2026)
+- entity/samuel-fitoussi.md — essayist/author; published the human-vs-AI
+  writing preference argument (04.09.2026)
+- entity/universal-music-group.md — world's largest music-based entertainment
+  company; first AI-audio licensing agreement (with ElevenLabs, 10.09.2026)
 
 ## AR Notes (Audio-Reclama Research Notes, short and evidence-bound)
 

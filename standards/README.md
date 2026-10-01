@@ -30,6 +30,28 @@ tiers, procedures, checks a machine or a human can apply.
   RU publishes only through the "what changes beyond the Russian market?"
   gate. Source registry lives in `reports/monitoring/venues.md`.
 
+- `x13-channel-style.md` - the channel voice: editorial register of the TG
+  channel and what it does not say.
+- `red-field-visual.md` - RED FIELD channel visual system: black field, one
+  object per news, red as accent; the cover is a consequence of the change,
+  not an illustration of the topic.
+- `red-field-production-contract.md` - RED FIELD production contract v1.0: the
+  working rules behind the cover generator (what a cover must carry, what it
+  must not).
+- `editorial-object-contract.md` - Editorial Object System (RU): a publication
+  is ONE event object. EVENT_OBJECT (subject, action, before, after, mechanism,
+  consequence, evidence, object_type), 11-value `object_type` enum, cover
+  derived from the change, OBJECT VALIDATION (the object must be a trace of
+  the mechanism, not an editor-made symbol), named REJECT codes. Enforced by
+  `editorial_object.py`.
+- `editorial-object-cases.md` - worked cases for the above (RU). CASE 01 SPLIT
+  and CASE 02 TRANSFORMATION filled (CASE 02 carries its REPLACEMENT NOTES);
+  CASE 03-05 (EMERGENCE, THRESHOLD, REVERSAL) await real facts and are filled
+  by hand, never generated.
+- `examples/verification-chain-example.md` - live TEST artifact of the full
+  chain (session / hash / certificate / public record); synthetic data, shows
+  the exact field shapes.
+
 ## How layers work together
 
 ```

@@ -121,11 +121,19 @@ by `guid`, TG-first:
 
 - `feed/items.csv` — the schedule: `pubDate~~~title~~~desc~~~source~~~guid~~~img` (6 fields).
 - `feed/concepts.json` — editorial concepts, **the gate**: a post is published
-  only when all four fields are filled —
-  `headline` (what changed / a shift, not an object), `win` (why it matters),
-  `visual_object` (what people will remember), `cover_prompt` (how to shoot it).
-  Missing fields → REJECT, the guid is frozen in `state/rejected.txt` until the
-  concept is completed (does not consume the daily cap).
+  only when all **9** fields of `publisher.py:109` `REQ_CONCEPT_FIELDS` are
+  filled — `headline` (what changed / a shift, not an object), `demo` (the
+  example that carries it), `explain` (the context), `consequence` (what it
+  changes), `visual_object` (what people will remember), `cover_prompt` (how to
+  shoot it), `demo_shift` (what the demo itself changes), `object_type` (the
+  type of change), `cover_test` (what the cover must not be).
+  Missing fields → REJECT, the guid is frozen in `state/rejected.txt` (a runtime
+  file, present only while a concept is frozen) until the concept is completed
+  (does not consume the daily cap).
+  A concept may additionally carry `event_object` + `article_structure` — the
+  Editorial Object System (Level B, additive; `standards/editorial-object-
+  contract.md`). When present, `publisher.py` runs 4 more verdicts and appends
+  to `state/editorial.jsonl`. Concepts without it are unaffected.
 - `feed/image_gen.py` — version-aware cover generator (RED FIELD system,
   `DESIGN_VERSION` in the manifest): one visual object per news, red as accent,
   uniqueness check against the last 20 covers (perceptual hash + auto-twist).
