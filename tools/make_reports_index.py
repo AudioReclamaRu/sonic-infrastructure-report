@@ -119,7 +119,11 @@ def build():
         if generated:
             row['generated'] = True
         else:
-            row['bytes'] = os.path.getsize(abs_path)
+            # NO `bytes` here, on purpose. Byte size is a property of the local
+            # checkout, not of the committed content: with autocrlf the same file
+            # is 5885 bytes in one clone and 5984 in another, which made --check
+            # fail on every clone but pass in the working tree. Sizes belong in
+            # --measure, which measures this checkout.
             row['guids'] = sorted(set(GUID_RE.findall(text)))
             row['evidence'] = sorted(set(EVID_RE.findall(text)))
             urls = set(URL_RE.findall(text))

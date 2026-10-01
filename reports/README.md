@@ -10,20 +10,23 @@ make it navigable by an agent that reads no Russian.
 ## Index (start here)
 
 - **`reports/INDEX.json`** — machine index, one row per tracked file:
-  `{path, kind, date, generated?}` plus, for the stable layers, `bytes`, `guids`,
-  `evidence`, `url_count`; for `intel/*.json`, `rows` and the actual `row_keys`.
-  Generated, never hand-edited.
+  `{path, kind, date, generated?}` plus, for the stable layers, `guids`,
+  `evidence` and `url_count`. Generated, never hand-edited.
   Regenerate: `python tools/make_reports_index.py`
   Verify (exit 1 if stale): `python tools/make_reports_index.py --check`
   Volume table on demand: `python tools/make_reports_index.py --measure`
   The index covers **tracked** files only, so a clone's index always matches
   what the clone actually has.
 
-  Files marked `generated: true` are rewritten in place by the live loop
-  (`intel/`, `scans/`, `outreach/`, `status-*`). Their sizes and url counts are
-  therefore **not** stored — a measurement that changes without a commit would
-  make the index permanently stale and teach everyone to ignore the check.
-  Volumes below are point-in-time figures; re-measure with `--measure`.
+  Two things are deliberately **not** in the index:
+  - measurements of `generated: true` files (`intel/`, `scans/`, `outreach/`,
+    `status-*`), which the live loop rewrites without a commit;
+  - `bytes` for any file — size is a property of the local checkout, not of the
+    committed content (with `autocrlf` the same file measures 5885 bytes in one
+    clone and 5984 in another, so a stored size made `--check` pass locally and
+    fail on every clone).
+
+  Volumes below are point-in-time figures for this checkout; re-run `--measure`.
 
 ## The layers
 

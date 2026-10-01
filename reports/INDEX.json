@@ -188,7 +188,6 @@
       "path": "reports/monitoring/venues.md",
       "kind": "registry",
       "date": "2026-09-13",
-      "bytes": 5885,
       "guids": [],
       "evidence": [],
       "url_count": 1
@@ -407,7 +406,6 @@
       "path": "reports/signals/2026-07-08.md",
       "kind": "signal_note",
       "date": "2026-07-08",
-      "bytes": 1209,
       "guids": [],
       "evidence": [
         "E-2026-011"
@@ -418,7 +416,6 @@
       "path": "reports/signals/2026-07-14.md",
       "kind": "signal_note",
       "date": "2026-07-14",
-      "bytes": 1166,
       "guids": [],
       "evidence": [
         "E-2026-014"
@@ -429,7 +426,6 @@
       "path": "reports/signals/2026-07-16.md",
       "kind": "signal_note",
       "date": "2026-07-16",
-      "bytes": 1166,
       "guids": [],
       "evidence": [],
       "url_count": 1
@@ -438,7 +434,6 @@
       "path": "reports/signals/2026-07-29.md",
       "kind": "signal_note",
       "date": "2026-07-29",
-      "bytes": 1138,
       "guids": [],
       "evidence": [
         "E-2026-012"
@@ -449,7 +444,6 @@
       "path": "reports/signals/2026-09-03.md",
       "kind": "signal_note",
       "date": "2026-09-03",
-      "bytes": 1236,
       "guids": [],
       "evidence": [
         "E-2026-013"
@@ -460,7 +454,6 @@
       "path": "reports/signals/2026-09-10.md",
       "kind": "signal_note",
       "date": "2026-09-10",
-      "bytes": 1317,
       "guids": [],
       "evidence": [
         "E-2026-014"
@@ -471,7 +464,6 @@
       "path": "reports/signals/2026-09-11.md",
       "kind": "signal_note",
       "date": "2026-09-11",
-      "bytes": 1711,
       "guids": [],
       "evidence": [
         "E-2026-014",
@@ -484,7 +476,6 @@
       "path": "reports/signals/TEMPLATE.md",
       "kind": "signal_note",
       "date": "",
-      "bytes": 908,
       "guids": [],
       "evidence": [],
       "url_count": 1
@@ -571,7 +562,6 @@
       "path": "reports/verdicts/verdict-index.md",
       "kind": "verdict_log",
       "date": "2026-09-11",
-      "bytes": 892,
       "guids": [],
       "evidence": [
         "E-2026-014"

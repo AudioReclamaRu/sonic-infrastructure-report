@@ -204,10 +204,10 @@ The live operational layer under `reports/` (7 subdirectories, 84 tracked files)
 
 - reports/README.md — how to read this layer, per-subdirectory table, the 18-field
   `intel/` schema, and why `reports/scans/` is a trap
-- reports/INDEX.json — GENERATED machine index (one row per tracked file:
-  path, kind, date, generated?; plus bytes, guids, evidence, url counts for the
-  stable layers and row counts for intel json). Live-loop-rewritten files are
-  flagged `generated` and carry no measurements, so the check cannot cry wolf.
+- reports/INDEX.json — GENERATED machine index (one row per tracked file: path,
+  kind, date, generated?; plus guids, evidence and url counts for the stable
+  layers). Deliberately stores no byte sizes and no measurements of files the
+  live loop rewrites, so the check passes identically in any clone.
   Regenerate `python tools/make_reports_index.py`; verify with `--check`;
   volume table with `--measure`. Full guide: reports/README.md
 - reports/intel/ — the machine-readable daily fact stream: one
