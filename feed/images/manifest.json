@@ -1,0 +1,337 @@
+{
+  "fitoussi-human-preference-2026-09-04": {
+    "design_version": "red-field-v7",
+    "asset_hash": "91a0b04b4acba707fd7ae1337886f28d007b5490b8ae437835efde7883cc61ba",
+    "generated_at": "2026-09-29T08:33:01",
+    "path": "feed/images/fitoussi-human-preference.png"
+  },
+  "golos-kak-povedenie-2026-10-10": {
+    "design_version": "red-field-v7",
+    "asset_hash": "1754321d69898077b69472522354c97da900a2d4b80a7c5dba352692a2c9f085",
+    "generated_at": "2026-09-25T08:51:03",
+    "path": "feed/images/golos-kak-povedenie-2026-10-10.png"
+  },
+  "voice-scams-trust-2026-09-11": {
+    "design_version": "red-field-v7",
+    "asset_hash": "c09d064c6ae0d4683ebfb15807b994612375cc0c9f921fa4c77771f24278200e",
+    "generated_at": "2026-09-29T08:35:51",
+    "path": "feed/images/voice-scams-trust.png"
+  },
+  "golos-i-cifra-2026-10-16": {
+    "design_version": "red-field-v7",
+    "asset_hash": "1bae3789dd87e2863934014619056455f4d56e4f2a833ad78d35d0c0d6ac28d9",
+    "generated_at": "2026-09-25T08:51:04",
+    "path": "feed/images/golos-i-cifra-2026-10-16.png"
+  },
+  "pravovoy-sloy-golosa-2026-09-18": {
+    "design_version": "red-field-v7",
+    "asset_hash": "39a457af5594dbd51f6dd5f3b72656a4afe9ce8e10388c7fa9fc1fb01cbd315a",
+    "generated_at": "2026-09-29T08:33:02",
+    "path": "feed/images/pravovoy-sloy-golosa.png"
+  },
+  "golos-kak-povedenie-2026-09-25": {
+    "design_version": "red-field-v7",
+    "asset_hash": "7a00a787e8b8510aacb0a6946d36f536e3b448781246c150842d1e14796957e4",
+    "generated_at": "2026-09-25T08:51:04",
+    "path": "feed/images/golos-kak-povedenie-2026-09-25.png",
+    "visual_object": "треснувшая театральная маска с одной красной нитью"
+  },
+  "eksport-golos-2026-10-05": {
+    "design_version": "red-field-v7",
+    "asset_hash": "d0f2dd517ac1af4d9f8ff75be861ba6a7729ad0bb4fd833aca39ffe7b9096a13",
+    "generated_at": "2026-09-25T08:51:04",
+    "path": "feed/images/eksport-golos-2026-10-05.png"
+  },
+  "ivr-uderzhanie-2026-10-06": {
+    "design_version": "red-field-v7",
+    "asset_hash": "b3d478ab2c01a96c9c50db82a63b052a7f25a7344635cf6fefe0121d8592925b",
+    "generated_at": "2026-09-25T08:51:05",
+    "path": "feed/images/ivr-uderzhanie-2026-10-06.png"
+  },
+  "muzej-golos-2026-10-13": {
+    "design_version": "red-field-v7",
+    "asset_hash": "164db9bc8c709541d274cde08cf98badeb99613df4a6f5930bd72717d89ff69f",
+    "generated_at": "2026-09-25T08:51:05",
+    "path": "feed/images/muzej-golos-2026-10-13.png"
+  },
+  "vybor-diktora-2026-09-14": {
+    "design_version": "red-field-v7",
+    "asset_hash": "744be88e21844bbe23df53bd783ec43bc05b753813e0c651fbbe07f30a45356a",
+    "generated_at": "2026-09-29T08:36:56",
+    "path": "feed/images/vybor-diktora.png"
+  },
+  "bank-govorit-scenarij-2026-10-19": {
+    "design_version": "red-field-v7",
+    "asset_hash": "b2ba1d99778c2c377b854a74386e37735cfe83b07cc848e538f22afc5c240ca2",
+    "generated_at": "2026-09-25T08:51:06",
+    "path": "feed/images/bank-govorit-scenarij-2026-10-19.png"
+  },
+  "aktery-protiv-klonov-2026-09-21": {
+    "design_version": "red-field-v7",
+    "asset_hash": "032de3950fd7fe036f04f0d265554dcb2663e0511bd61c4ab5998ab596d0287c",
+    "generated_at": "2026-09-29T08:37:11",
+    "path": "feed/images/aktery-protiv-klonov.png"
+  },
+  "muzej-govorit-2026-09-28": {
+    "design_version": "red-field-v7",
+    "asset_hash": "1857b98a959d0aacf9e986d850652253f35863e7cea71adc1627f88ede4cbfd0",
+    "generated_at": "2026-09-25T08:51:06",
+    "path": "feed/images/muzej-govorit-2026-09-28.png",
+    "visual_object": "граммофон, из раструба которого выходит красная звуковая волна"
+  },
+  "doverie-intonaciya-2026-10-03": {
+    "design_version": "red-field-v7",
+    "asset_hash": "2d9f8550b59e36d7e28d5be54fbeb1cb15d683523fcbc0b5aa413ad8e0aeb515",
+    "generated_at": "2026-09-25T08:51:06",
+    "path": "feed/images/doverie-intonaciya-2026-10-03.png"
+  },
+  "muzej-golos-2026-10-04": {
+    "design_version": "red-field-v7",
+    "asset_hash": "7034495c87f5b48613382a406fa87e05899758a54dadf485e35a8ae9419a5acd",
+    "generated_at": "2026-09-25T08:51:07",
+    "path": "feed/images/muzej-golos-2026-10-04.png"
+  },
+  "pervaya-sekunda-banka-2026-10-11": {
+    "design_version": "red-field-v7",
+    "asset_hash": "da2f02cad6c2ef1ffd9bcbcf7aa29f79982a3572b4d05da3772b0453dc4e859b",
+    "generated_at": "2026-09-25T08:51:07",
+    "path": "feed/images/pervaya-sekunda-banka-2026-10-11.png"
+  },
+  "kto-proveril-golos-2026-09-12": {
+    "design_version": "red-field-v7",
+    "asset_hash": "1cb9709e97bc5d6e24c1e77aeb8004be48351f873ddb0ffcacdc6048e9d7705b",
+    "generated_at": "2026-09-29T08:33:03",
+    "path": "feed/images/kto-proveril-golos.png"
+  },
+  "dzen-i-golos-2026-10-17": {
+    "design_version": "red-field-v7",
+    "asset_hash": "8ae2cc0af794aab03625f8a43707068e8e86ab585306d59fcf9e1087b1ba6fa9",
+    "generated_at": "2026-09-25T08:51:07",
+    "path": "feed/images/dzen-i-golos-2026-10-17.png"
+  },
+  "radio-ne-umret-2026-09-19": {
+    "design_version": "red-field-v7",
+    "asset_hash": "4f955b4fab0e57918c4d3c7b69b4c08a267d2dc298cbcf70c42b42a20031d33d",
+    "generated_at": "2026-09-29T08:33:03",
+    "path": "feed/images/radio-ne-umret.png"
+  },
+  "pervaya-sekunda-banka-2026-09-26": {
+    "design_version": "red-field-v7",
+    "asset_hash": "db48eb025231cb85438af206c91a75409e8974a0e02318862f87a4fc5365b860",
+    "generated_at": "2026-09-25T08:51:08",
+    "path": "feed/images/pervaya-sekunda-banka-2026-09-26.png",
+    "visual_object": "телефонная трубка, у которой секундная стрелка бьёт в красное кольцо"
+  },
+  "eksport-golos-2026-10-12": {
+    "design_version": "red-field-v7",
+    "asset_hash": "b5bf481ec9801993ebced097d6b2a06161dcaaf442d6b3a6f3d5ab729b5aa30a",
+    "generated_at": "2026-09-25T08:51:08",
+    "path": "feed/images/eksport-golos-2026-10-12.png"
+  },
+  "golos-banka-2026-09-13": {
+    "design_version": "red-field-v7",
+    "asset_hash": "67500bf11295df8ae647669ac52bd7522a10d50c57761a97c761725db443d686",
+    "generated_at": "2026-09-29T08:35:09",
+    "path": "feed/images/golos-banka.png"
+  },
+  "tishina-v-efire-2026-10-18": {
+    "design_version": "red-field-v7",
+    "asset_hash": "92c1a58ce8db508bb461d962c694003d886003be310eab462b0e9ef91106f63d",
+    "generated_at": "2026-09-25T08:51:09",
+    "path": "feed/images/tishina-v-efire-2026-10-18.png"
+  },
+  "slepoj-test-golosa-2026-09-20": {
+    "design_version": "red-field-v7",
+    "asset_hash": "49d38413f2ec3c5874317d34d4a9b439431ce6de052dcb76a06fb430f0678160",
+    "generated_at": "2026-09-29T08:35:11",
+    "path": "feed/images/slepoj-test-golosa.png"
+  },
+  "eksport-govorit-2026-09-27": {
+    "design_version": "red-field-v7",
+    "asset_hash": "8f928770b10caf529e19a926edf0deac5dbf18d283487f7d733e9e5beedc62a9",
+    "generated_at": "2026-09-25T08:51:09",
+    "path": "feed/images/eksport-govorit-2026-09-27.png",
+    "visual_object": "компасная стрелка, указывающая на звуковую волну за границей"
+  },
+  "doverie-intonaciya-2026-10-02": {
+    "design_version": "red-field-v7",
+    "asset_hash": "0bbe1c1b4d913fd6341e40bb5817992c06dc39713298d99ff2664e457564cb0c",
+    "generated_at": "2026-09-25T08:51:10",
+    "path": "feed/images/doverie-intonaciya-2026-10-02.png",
+    "visual_object": "ухо в профиль, в которое входит красная линия интонации"
+  },
+  "umg-elevenlabs-2026-09-10": {
+    "design_version": "red-field-v7",
+    "asset_hash": "7a0a886448c671777ab6b5c737f8485f8217f65db294db88df0bafa1955582c2",
+    "generated_at": "2026-09-29T08:33:56",
+    "path": "feed/images/umg-elevenlabs.png"
+  },
+  "uderzhanie-na-linii-2026-10-15": {
+    "design_version": "red-field-v7",
+    "asset_hash": "e8f6386963fd4e9aa396b8f60a3e4155997bd1316f6a524faf48fbc7d72826d0",
+    "generated_at": "2026-09-25T08:51:10",
+    "path": "feed/images/uderzhanie-na-linii-2026-10-15.png"
+  },
+  "golos-pult-2026-09-17": {
+    "design_version": "red-field-v7",
+    "asset_hash": "d827d7b303e4655eca880c21a35451f0cc1bfc1f77a4688236ea7e2818f1d0cf",
+    "generated_at": "2026-09-29T08:33:15",
+    "path": "feed/images/golos-pult.png"
+  },
+  "podkast-i-radio-2026-09-24": {
+    "design_version": "red-field-v7",
+    "asset_hash": "e2914d9e2327778f59ebe38175be088a2067a05f1e7212f2e86e1621c00072e2",
+    "generated_at": "2026-09-25T08:51:10",
+    "path": "feed/images/podkast-i-radio-2026-09-24.png"
+  },
+  "itog-nedeli-2026-10-07": {
+    "design_version": "red-field-v7",
+    "asset_hash": "2af608df2819c8b65303721c737b8e475d37eff5feddbf9d4d849eaee294236e",
+    "generated_at": "2026-09-25T08:51:11",
+    "path": "feed/images/itog-nedeli-2026-10-07.png"
+  },
+  "after-red-field-2026-10-08": {
+    "design_version": "red-field-v7",
+    "asset_hash": "73e15cf7f4ce6ed48548dcec67bb1ea84ca53faaad7c6e3f2f83654896238c0a",
+    "generated_at": "2026-09-25T08:51:11",
+    "path": "feed/images/after-red-field-2026-10-08.png"
+  },
+  "itog-nedeli-2026-10-14": {
+    "design_version": "red-field-v7",
+    "asset_hash": "d84aa793fc9cdf4a383d19fb6edc3f18d9b3f91cd8d51c6431a00343e71ec05a",
+    "generated_at": "2026-09-25T08:51:11",
+    "path": "feed/images/itog-nedeli-2026-10-14.png"
+  },
+  "ozvuchka-video-2026-09-15": {
+    "design_version": "red-field-v7",
+    "asset_hash": "2715f27e0967146a26c98f15688012a66375c9e9094c246b98456f343d99833a",
+    "generated_at": "2026-09-29T08:33:33",
+    "path": "feed/images/ozvuchka-video.png"
+  },
+  "eksport-i-akcent-2026-10-20": {
+    "design_version": "red-field-v7",
+    "asset_hash": "5bb0ee84d81b156dd3133ebc0ca51cd96adbae1d4b9358805ae24438e4d4a267",
+    "generated_at": "2026-09-25T08:51:12",
+    "path": "feed/images/eksport-i-akcent-2026-10-20.png"
+  },
+  "open-source-golos-2026-09-23": {
+    "design_version": "red-field-v7",
+    "asset_hash": "5cfeca5782a67dd6bae6bbeca6a4e51590b53fbb06927fb580bae4a2a9235388",
+    "generated_at": "2026-09-29T08:33:06",
+    "path": "feed/images/open-source-golos.png"
+  },
+  "meropriyatiya-govoryat-2026-09-29": {
+    "design_version": "red-field-v7",
+    "asset_hash": "d093642d507eaa7077ccacfa56f3602bc64fb4cd7afdddb6ad106f9d1aff801d",
+    "generated_at": "2026-09-25T08:51:13",
+    "path": "feed/images/meropriyatiya-govoryat-2026-09-29.png",
+    "visual_object": "микрофонная стойка с одним красным кольцом на сетке"
+  },
+  "golos-pervaya-sekunda-2026-10-01": {
+    "design_version": "red-field-v7",
+    "asset_hash": "673426560302023e2618c7979a6d2282dded4a526e3cbef5f7a4bf199c74a246",
+    "generated_at": "2026-09-25T08:51:13",
+    "path": "feed/images/golos-pervaya-sekunda-2026-10-01.png",
+    "visual_object": "один звуковой импульс, рванувший из молчания"
+  },
+  "podkast-i-radio-2026-10-09": {
+    "design_version": "red-field-v7",
+    "asset_hash": "effa901e70a9a246ac0cb052c859357cd01cb55213fe59db40205269e05ff0c7",
+    "generated_at": "2026-09-25T08:51:13",
+    "path": "feed/images/podkast-i-radio-2026-10-09.png"
+  },
+  "umg-infrastruktura-2026-09-16": {
+    "design_version": "red-field-v7",
+    "asset_hash": "f01fdea40db9814510ef78f1574de8e59435f2a70e3e4242e72b4daf80852a91",
+    "generated_at": "2026-09-29T08:33:06",
+    "path": "feed/images/umg-infrastruktura.png"
+  },
+  "itog-nedeli-2026-10-21": {
+    "design_version": "red-field-v7",
+    "asset_hash": "61b3f9610e9c7e78094cbdce44d41e26abfaf73d619ea3dae76a129db6d3e630",
+    "generated_at": "2026-09-25T08:51:14",
+    "path": "feed/images/itog-nedeli-2026-10-21.png"
+  },
+  "slepoi-test-2026-09-23": {
+    "design_version": "red-field-v7",
+    "asset_hash": "9eddc5290c9127862c8b365d9e96c4a26eb6be02f73ce3dc3c5a038da31e9bdc",
+    "generated_at": "2026-09-25T08:51:14",
+    "path": "feed/images/slepoi-test-2026-09-23.png"
+  },
+  "itog-sentyabrya-2026-09-30": {
+    "design_version": "red-field-v7",
+    "asset_hash": "367fece85e2ddd2d2d21c75c770bd1a67dec79be324e6d15d9408da98ca07017",
+    "generated_at": "2026-09-25T08:51:14",
+    "path": "feed/images/itog-sentyabrya-2026-09-30.png",
+    "visual_object": "лист календаря, который переворачивается, красная дата на обороте"
+  },
+  "kast-kharakterov-2026-09-27": {
+    "design_version": "red-field-v7",
+    "asset_hash": "d1f2487cb2c067153ab4457b558a3d5b0ece50cf597ab3c178b1c97689fc1536",
+    "generated_at": "2026-09-29T08:45:07",
+    "path": "feed/images/kast-kharakterov.png",
+    "visual_object": "микрофон и четыре тени-роли: одна говорю, три слушают"
+  },
+  "gpt-live-golos-2026-10-09": {
+    "design_version": "red-field-v7",
+    "asset_hash": "6e9b39d76ac033141bb969ca71ec29bdad3bd0e67f242ad78729b176d4c70679",
+    "generated_at": "2026-10-19T10:39:10",
+    "path": "feed/images/gpt-live-golos.png",
+    "visual_object": "микрофон, лежащий как тумблер на тёмной панели, его голос уходит в экран"
+  },
+  "gpt-6-astra-2026-10-11": {
+    "design_version": "red-field-v7",
+    "asset_hash": "991474a118ec137aa86ae5ae05afb5c8ab86630eb3000de7556a0dc0fd28bd1a",
+    "generated_at": "2026-10-19T10:39:15",
+    "path": "feed/images/gpt-6-astra.png",
+    "visual_object": "экран, по которому курсор ведёт голосовая команда"
+  },
+  "umg-elevenlabs-licenziya-2026-10-13": {
+    "design_version": "red-field-v7",
+    "asset_hash": "7068f8da2bfb9b89def7540fccce7df8bdd9915757abcc26ad883b6c49ed4684",
+    "generated_at": "2026-10-19T10:39:19",
+    "path": "feed/images/umg-elevenlabs-licenziya.png",
+    "visual_object": "пластинка, распиленная по правам: одна половина уходит, голос остаётся"
+  },
+  "edison-slepoj-test-2026-10-15": {
+    "design_version": "red-field-v7",
+    "asset_hash": "cc782809d1b2c4ccdab349e4b57977ac2851b8bdb789151c5cdc2144d8ca7dad",
+    "generated_at": "2026-10-19T10:39:23",
+    "path": "feed/images/edison-slepoj-test.png",
+    "visual_object": "завеса между двумя одинаковыми наушниками: слушатель не видит диктора"
+  },
+  "fitoussi-predpochtenie-2026-10-17": {
+    "design_version": "red-field-v7",
+    "asset_hash": "6121a20472a41476c9a7f3a8b1250a70a582f3b8c8a6f7136c3a3f08f363023a",
+    "generated_at": "2026-10-19T10:44:28",
+    "path": "feed/images/fitoussi-predpochtenie.png",
+    "visual_object": "страница рукописи с пометками автора рядом с корзиной отклонённого"
+  },
+  "radio-protiv-spotify-2026-10-19": {
+    "design_version": "red-field-v7",
+    "asset_hash": "3ed290338c1c78dabd9d4b111afd6bf561b04b7208e4d6c6b3b4db21e93ae0b7",
+    "generated_at": "2026-10-19T10:44:32",
+    "path": "feed/images/radio-protiv-spotify.png",
+    "visual_object": "ручка настройки, застывшая между радио и экраном"
+  },
+  "joe-rogan-re-ups-lucrative-spotify-deal-2026-10-21": {
+    "design_version": "red-field-v7",
+    "asset_hash": "3412960fc81cc5eb10ac4efe3f5376bc80c785905994b19afa4d0084d380abe7",
+    "generated_at": "2026-10-21T09:45:42",
+    "path": "feed/images/joe-rogan-re-ups-lucrative-spotify-deal.png",
+    "visual_object": "тёмный трон на пустой сцене, один микрофон в первом ряду"
+  },
+  "golos-ivr-edison-2026-10-21": {
+    "design_version": "red-field-v7",
+    "asset_hash": "b2bcd59ab07aecc7af8b0a41d9fdb7bfb9bedb705d032255aa6709de466ead60",
+    "generated_at": "2026-10-21T12:01:01",
+    "path": "feed/images/golos-ivr-edison.png",
+    "visual_object": "Телефонная трубка с четырьмя кнопками, у одной кнопки стёрта и не читается красная цифра"
+  },
+  "joe-rogan-golos-media-hub-2026-10-21": {
+    "design_version": "red-field-v7",
+    "asset_hash": "560024ec137168a976256c4bfefea0bbaf85e1020e1aafdc50ae03d3222d2edb",
+    "generated_at": "2026-10-22T11:11:20",
+    "path": "feed/images/joe-rogan-sm7b.png"
+  }
+}

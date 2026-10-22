@@ -1,0 +1,124 @@
+{
+  "day": "2026-10-04",
+  "ts": "2026-10-04T09:40:00",
+  "dry_run": false,
+  "endpoints_ok": 5,
+  "endpoints_total": 5,
+  "required_down": [],
+  "new_relevant": 0,
+  "needs_review": 0,
+  "carried_forward": 0,
+  "health_only": [
+    "leginfo-health"
+  ],
+  "legal_channels": {
+    "auto": {
+      "enabled": true,
+      "coverage": "partial",
+      "basis": "deterministic sources only: RSS, JSON, official API, public lists"
+    },
+    "manual": {
+      "enabled": true,
+      "sources": [
+        "leginfo-health"
+      ],
+      "reason": "bill search is a parameterized POST form; not deterministically pollable"
+    },
+    "signalscan": {
+      "block_on_manual_legal": false
+    }
+  },
+  "manual_review_required": [
+    "leginfo-health"
+  ],
+  "dropped_endpoints": {
+    "nielsen-feed": "0 relevant of 9 candidates",
+    "copyright-newsnet": "0 relevant of 25; newest material is 2024-2025",
+    "fedreg-title-only": "0 of 632 pass a title allowlist; full-text search is not discovery",
+    "elevenlabs-blog": "blog rss url serves an HTML FAQ, not RSS",
+    "audiopub-feed": "0 bytes on every retry",
+    "rajar-feed": "serves HTML, no feed"
+  },
+  "health": [
+    {
+      "endpoint": "ssrs-feed",
+      "klass": "RESEARCH",
+      "required": true,
+      "url": "https://ssrs.com/feed/",
+      "ok": true,
+      "bytes": 63360,
+      "ms": 2161,
+      "tries": 1,
+      "candidates": 24,
+      "relevant": 0,
+      "new_relevant": 0,
+      "needs_review": 0,
+      "carried": 0,
+      "note": ""
+    },
+    {
+      "endpoint": "ssrs-wpjson",
+      "klass": "RESEARCH",
+      "required": true,
+      "url": "https://ssrs.com/wp-json/wp/v2/posts?per_page=20",
+      "ok": true,
+      "bytes": 327602,
+      "ms": 3258,
+      "tries": 1,
+      "candidates": 20,
+      "relevant": 0,
+      "new_relevant": 0,
+      "needs_review": 0,
+      "carried": 0,
+      "note": ""
+    },
+    {
+      "endpoint": "c2pa-feed",
+      "klass": "PROVENANCE",
+      "required": true,
+      "url": "https://c2pa.org/feed/",
+      "ok": true,
+      "bytes": 56054,
+      "ms": 474,
+      "tries": 1,
+      "candidates": 10,
+      "relevant": 0,
+      "new_relevant": 0,
+      "needs_review": 0,
+      "carried": 0,
+      "note": ""
+    },
+    {
+      "endpoint": "edison-feed",
+      "klass": "RESEARCH",
+      "required": false,
+      "url": "https://www.edisonresearch.com/feed/",
+      "ok": true,
+      "bytes": 48719,
+      "ms": 467,
+      "tries": 1,
+      "candidates": 10,
+      "relevant": 0,
+      "new_relevant": 0,
+      "needs_review": 0,
+      "carried": 0,
+      "note": ""
+    },
+    {
+      "endpoint": "leginfo-health",
+      "klass": "LEGAL",
+      "required": false,
+      "url": "https://leginfo.legislature.ca.gov/faces/billSearchClient.xhtml",
+      "ok": true,
+      "bytes": 112450,
+      "ms": 1966,
+      "tries": 1,
+      "candidates": 0,
+      "relevant": 0,
+      "new_relevant": 0,
+      "needs_review": 0,
+      "carried": 0,
+      "note": "health-only: bill discovery on this site needs a manual POST search"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+==== 04.10.2026  3:00:47,39 ====  
+=== verify 2026-10-04 (2 claims) ===
+  CONFIRMED     E-2026-014-claim         https://ssrs.com/news/in-largest-study-of-its-kind-u-s-fic
+  CONFIRMED     E-2026-016-claim         https://universalmusic.com/universal-music-group-and-eleve
+
+CONFIRMED 2   SOURCE ERROR 0   UNREACHABLE 0
+written: state/verdictions.jsonl (append)
+written: reports/verdicts/verdict-index.md (+0 lines; errors always, confirmations weekly)
+==== 04.10.2026  3:04:02,16 ==== 
+=== verify 2026-10-04 (2 claims) ===
+  CONFIRMED     E-2026-014-claim         https://ssrs.com/news/in-largest-study-of-its-kind-u-s-fic
+  CONFIRMED     E-2026-016-claim         https://universalmusic.com/universal-music-group-and-eleve
+
+CONFIRMED 2   SOURCE ERROR 0   UNREACHABLE 0
+written: state/verdictions.jsonl (append)
+written: reports/verdicts/verdict-index.md (+0 lines; errors always, confirmations weekly)
+EXITCODE=0 
+==== 05.10.2026 10:00:01,10 ==== 
+=== verify 2026-10-05 (2 claims) ===
+  CONFIRMED     E-2026-014-claim         https://ssrs.com/news/in-largest-study-of-its-kind-u-s-fic
+  CONFIRMED     E-2026-016-claim         https://universalmusic.com/universal-music-group-and-eleve
+
+CONFIRMED 2   SOURCE ERROR 0   UNREACHABLE 0
+written: state/verdictions.jsonl (append)
+written: reports/verdicts/verdict-index.md (+0 lines; errors always, confirmations weekly)
+EXITCODE=0 
+==== 12.10.2026 10:00:00,37 ==== 
+=== verify 2026-10-12 (6 claims) ===
+  CONFIRMED     E-2026-014-claim         https://ssrs.com/news/in-largest-study-of-its-kind-u-s-fic
+  CONFIRMED     E-2026-016-claim         https://universalmusic.com/universal-music-group-and-eleve
+  CONFIRMED     E-2026-011-claim         https://openai.com/index/introducing-gpt-live/
+  CONFIRMED     E-2026-012-claim         https://ssrs.com/news/edison-study-reveals-am-fm-radios-hu
+  SOURCE ERROR  E-2026-013-claim         https://openai.com/index/gpt-6-astra
+        missing: 72.6, 95.9
+  CONFIRMED     E-2026-017-claim         https://samuelfitoussi.com/posts/it-is-rational-to-prefer-
+
+CONFIRMED 5   SOURCE ERROR 1   UNREACHABLE 0
+written: state/verdictions.jsonl (append)
+written: reports/verdicts/verdict-index.md (+1 lines; errors always, confirmations weekly)
+EXITCODE=1 
+==== 19.10.2026 10:00:25,20 ==== 
+=== verify 2026-10-19 (6 claims) ===
+  CONFIRMED     E-2026-014-claim         https://ssrs.com/news/in-largest-study-of-its-kind-u-s-fic
+  CONFIRMED     E-2026-016-claim         https://universalmusic.com/universal-music-group-and-eleve
+  CONFIRMED     E-2026-011-claim         https://openai.com/index/introducing-gpt-live/
+  CONFIRMED     E-2026-012-claim         https://ssrs.com/news/edison-study-reveals-am-fm-radios-hu
+  SOURCE ERROR  E-2026-013-claim         https://openai.com/index/gpt-6-astra
+        missing: 72.6, 95.9
+  CONFIRMED     E-2026-017-claim         https://samuelfitoussi.com/posts/it-is-rational-to-prefer-
+
+CONFIRMED 5   SOURCE ERROR 1   UNREACHABLE 0
+written: state/verdictions.jsonl (append)
+written: reports/verdicts/verdict-index.md (+1 lines; errors always, confirmations weekly)
+EXITCODE=1 

@@ -1,0 +1,182 @@
+{
+  "generated": "2026-10-11T09:55:01",
+  "strong_pending": 17,
+  "weak_pending": 17,
+  "weak_fresh": 7,
+  "evidence_cards": 7,
+  "claims": 6,
+  "claims_gap": [
+    "E-2026-015"
+  ],
+  "publish": {
+    "items": 21,
+    "due_unpublished": 2,
+    "upcoming": 4,
+    "tg_published": 21
+  },
+  "layers": {
+    "signals_last": "2026-09-11",
+    "verdict_index_last": "2026-10-08",
+    "verdicts_state_age": 0.0017767309953703703,
+    "editorial_state_age": 11.044046831840278,
+    "items_age": 2.287531520902778
+  },
+  "health": {
+    "heartbeat_age_min": 3,
+    "poll_exit": 0,
+    "poll_run": "08.10.2026 11:17:39,40",
+    "verify_exit": 0,
+    "verify_run": "05.10.2026 10:00:01,10",
+    "recall_pct": 25.0,
+    "intel_rows_today": 12,
+    "status_age_h": 1.4
+  },
+  "strong_titles": [
+    {
+      "date": "2026-10-11",
+      "title": "WA artist with cerebral palsy finds voice through painting",
+      "url": "https://www.abc.net.au/news/2026-10-11/wa-artist-uses-wheelchair-to-create-abstract-art/107243532",
+      "class": "LOCALIZATION"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "French students vow to keep up protests as UN voices 'concern' over violence",
+      "url": "https://www.france24.com/en/france/20261009-french-students-vow-to-keep-up-protests-as-un-voices-concern-over-violence",
+      "class": "LAW_REG"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Israel a rare dissenting voice as praise pours in for Nobel Peace Prize winner Navi Pillay",
+      "url": "https://www.france24.com/en/europe/20261009-israel-a-rare-dissenting-voice-as-praise-pours-in-for-nobel-peace-prize-winner-navi-pillay",
+      "class": "LAW_REG"
+    },
+    {
+      "date": "2026-10-08",
+      "title": "OpenAI’s EU Watermark Faces Translation Challenge",
+      "url": "https://slator.com/openai-eu-watermark-translation/",
+      "class": "LOCALIZATION"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "“Software is over”: Bold AI developer takes aim at Adobe with open source clones",
+      "url": "https://arstechnica.com/ai/2026/10/software-is-over-bold-ai-developer-takes-aim-at-adobe-with-open-source-clones/",
+      "class": "VOICE_AI"
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Voice Social Network Operator Plans U.S. IPO, Multilingual Voice AI Products",
+      "url": "https://slator.com/hacker-interstellar-ipo/",
+      "class": "LOCALIZATION"
+    },
+    {
+      "date": "2026-10-06",
+      "title": "OpenAI will watermark ChatGPT outputs by default—but only in the EU",
+      "url": "https://arstechnica.com/ai/2026/10/openai-will-watermark-chatgpt-outputs-by-default-but-only-in-the-eu/",
+      "class": "VOICE_AI"
+    },
+    {
+      "date": "2026-09-11",
+      "title": "Key Findings from the AI vs. Human Audiobook Narration Webinar",
+      "url": "https://ssrs.com/news/ai-vs-human-audiobook-narration-webinar/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-08-31",
+      "title": "AI vs. Human Audiobook Narration: A Blinded Survey of 1,000 Listeners",
+      "url": "https://ssrs.com/news/ai-vs-human-audiobook-narration-a-blinded-survey-of-1000-listeners/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-07-31",
+      "title": "A New Implementation Guide for Content Credentials",
+      "url": "https://c2pa.org/a-new-implementation-guide-for-content-credentials/",
+      "class": "PROVENANCE"
+    },
+    {
+      "date": "2026-07-28",
+      "title": "C2PA Welcomes TikTok to Steering Committee, Advancing the Adoption of Content Credentials at a Global Scale",
+      "url": "https://c2pa.org/c2pa-welcomes-tiktok-to-steering-committee/",
+      "class": "PROVENANCE"
+    },
+    {
+      "date": "2026-07-01",
+      "title": "Time Spent with On-Demand Audio Surpasses Linear Sources",
+      "url": "https://www.edisonresearch.com/time-spent-with-on-demand-audio-surpasses-linear-sources/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-06-10",
+      "title": "Audiobooks Provide Convenience and Time Away from Screens",
+      "url": "https://www.edisonresearch.com/audiobooks-provide-convenience-and-time-away-from-screens/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-06-04",
+      "title": "The Podcast Consumer 2026",
+      "url": "https://www.edisonresearch.com/the-podcast-consumer-2026/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-05-21",
+      "title": "Edison Research at SSRS Webinar: The Podcast Consumer 2026",
+      "url": "https://www.edisonresearch.com/edison-research-webinar-podcast-consumer-2026/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-02-09",
+      "title": "The C2PA Launches Content Credentials 2.3 and Celebrates 5 Years of Impact Across the Digital Ecosystem",
+      "url": "https://c2pa.org/the-c2pa-launches-content-credentials-2-3-and-celebrates-5-years-of-impact-across-the-digital-ecosystem/",
+      "class": "PROVENANCE"
+    },
+    {
+      "date": "2023-10-10",
+      "title": "Introducing Official Content Credentials Icon",
+      "url": "https://c2pa.org/introducing-official-content-credentials-icon/",
+      "class": "PROVENANCE"
+    }
+  ],
+  "weak_fresh_titles": [
+    {
+      "date": "2026-10-10",
+      "title": "Apple discloses deal to hire team and license tech from personalized podcast startup Huxe",
+      "url": "https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/",
+      "class": "VOICE_AI"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Tuning In 2026 shows how brands can capitalise on audio’s growth",
+      "url": "https://www.radiocentre.org/tuning-in-2026-shows-how-brands-can-piggyback-on-audios-booming-audiences/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=tuning-in-2026-shows-how-brands-can-piggyback-on-audios-booming-audiences",
+      "class": "AUDIO_AD"
+    },
+    {
+      "date": "2026-10-08",
+      "title": "Radiocentre’s Mark Barber to step down after 25 years",
+      "url": "https://www.radiocentre.org/radiocentres-mark-barber-to-step-down-after-25-years/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=radiocentres-mark-barber-to-step-down-after-25-years",
+      "class": "AUDIO_AD"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "Joe Lenski Joins Henry Olsen's Podcast for a Closer Look at The Voter Poll by SSRS ™",
+      "url": "https://ssrs.com/news/joe-lenski-joins-henry-olsens-podcast/",
+      "class": "RESEARCH"
+    },
+    {
+      "date": "2026-10-01",
+      "title": "UK commercial audio forecast to deliver a new era of growth",
+      "url": "https://www.radiocentre.org/uk-commercial-audio-forecast-to-deliver-a-new-era-of-growth/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=uk-commercial-audio-forecast-to-deliver-a-new-era-of-growth",
+      "class": "AUDIO_AD"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Shifting search and social budget into audio increases profit",
+      "url": "https://www.radiocentre.org/shifting-search-and-social-budget-into-audio-increases-profit/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=shifting-search-and-social-budget-into-audio-increases-profit",
+      "class": "AUDIO_AD"
+    },
+    {
+      "date": "2026-09-28",
+      "title": "Entries open for Audio Ad of the Year 2026",
+      "url": "https://www.radiocentre.org/entries-open-for-audio-ad-of-the-year-2026/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=entries-open-for-audio-ad-of-the-year-2026",
+      "class": "AUDIO_AD"
+    }
+  ]
+}

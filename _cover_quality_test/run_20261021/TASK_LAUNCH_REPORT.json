@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-10-20T23:00:07.083672+00:00",
+  "repo": "F:\\Pill\\tmp\\opencode\\sonic-repo",
+  "output_dir": "F:\\Pill\\tmp\\opencode\\sonic-repo\\_cover_quality_test\\run_20261021",
+  "status": "OPENCODE_FAILED",
+  "cli": "C:\\Users\\Muzey\\AppData\\Roaming\\npm\\opencode.CMD",
+  "returncode": 1,
+  "stdout_tail": "",
+  "stderr_tail": "\u001b[0m\n> build · google/gemini-3-pro-image-preview\n\u001b[0m\n\u001b[91m\u001b[1mError: \u001b[0mForbidden: Access denied by security policy.\n",
+  "outputs": [
+    {
+      "path": "F:\\Pill\\tmp\\opencode\\sonic-repo\\_cover_quality_test\\run_20261021\\RUN_LOG.txt",
+      "bytes": 142
+    }
+  ]
+}\n

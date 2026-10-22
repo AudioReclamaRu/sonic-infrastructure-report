@@ -1,0 +1,48 @@
+==== 08.10.2026 12:44:41,87 ==== 
+surface: 34 endpoints reachable, 964 parsed items, ledger 28, verdicts 0
+
+recall(SOURCE) 2/8 = 25.0%   STRONG 0/8 = 0.0%   published 0/8 = 0.0%
+loss stages: {"CLASSIFY": 2, "SOURCE": 6}
+  ev-001 SOURCE   ElevenLabs Eleven v4 / v4 Turbo                            -
+  ev-002 SOURCE   ElevenLabs valuation doubles to $22B                       -
+  ev-003 SOURCE   Tokyo court: human voice legal protection (AI clone)       -
+  ev-004 CLASSIFY Shifting search and social budget into audio increases pro radiocentre-news
+  ev-005 CLASSIFY UK commercial audio forecast to deliver a new era of growt radiocentre-news
+  ev-006 SOURCE   Fireflies adds dictation                                   -
+  ev-007 SOURCE   Telnyx Ultra adds Urdu and Odia voices                     -
+  ev-008 SOURCE   AssemblyAI/Exotel multilingual voice agents                -
+
+written: F:\Pill\tmp\opencode\sonic-repo\reports\missed\missed-audit-2026-10-08.{json,md}
+EXITCODE=0 
+==== 12.10.2026 10:30:00,48 ==== 
+surface: 32 endpoints reachable, 885 parsed items, ledger 36, verdicts 0
+
+recall(SOURCE) 2/8 = 25.0%   STRONG 0/8 = 0.0%   published 0/8 = 0.0%
+loss stages: {"CLASSIFY": 2, "SOURCE": 6}
+  ev-001 SOURCE   ElevenLabs Eleven v4 / v4 Turbo                            -
+  ev-002 SOURCE   ElevenLabs valuation doubles to $22B                       -
+  ev-003 SOURCE   Tokyo court: human voice legal protection (AI clone)       -
+  ev-004 CLASSIFY Shifting search and social budget into audio increases pro radiocentre-news
+  ev-005 CLASSIFY UK commercial audio forecast to deliver a new era of growt radiocentre-news
+  ev-006 SOURCE   Fireflies adds dictation                                   -
+  ev-007 SOURCE   Telnyx Ultra adds Urdu and Odia voices                     -
+  ev-008 SOURCE   AssemblyAI/Exotel multilingual voice agents                -
+
+written: F:\Pill\tmp\opencode\sonic-repo\reports\missed\missed-audit-2026-10-12.{json,md}
+EXITCODE=0 
+==== 19.10.2026 10:30:01,51 ==== 
+surface: 45 endpoints reachable, 1205 parsed items, ledger 133, verdicts 0
+
+recall(SOURCE) 2/8 = 25.0%   STRONG 0/8 = 0.0%   published 0/8 = 0.0%
+loss stages: {"CLASSIFY": 2, "SOURCE": 6}
+  ev-001 SOURCE   ElevenLabs Eleven v4 / v4 Turbo                            -
+  ev-002 SOURCE   ElevenLabs valuation doubles to $22B                       -
+  ev-003 SOURCE   Tokyo court: human voice legal protection (AI clone)       -
+  ev-004 CLASSIFY Shifting search and social budget into audio increases pro radiocentre-news
+  ev-005 CLASSIFY UK commercial audio forecast to deliver a new era of growt radiocentre-news
+  ev-006 SOURCE   Fireflies adds dictation                                   -
+  ev-007 SOURCE   Telnyx Ultra adds Urdu and Odia voices                     -
+  ev-008 SOURCE   AssemblyAI/Exotel multilingual voice agents                -
+
+written: F:\Pill\tmp\opencode\sonic-repo\reports\missed\missed-audit-2026-10-19.{json,md}
+EXITCODE=0 

@@ -1,0 +1,4 @@
+STDOUT\n\nSTDERR\n[0m
+> build · google/gemini-3-pro-image-preview
+[0m
+[91m[1mError: [0mForbidden: Access denied by security policy.

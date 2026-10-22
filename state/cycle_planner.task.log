@@ -1,0 +1,198 @@
+==== 19.10.2026 13:34:54,72 ==== 
+# ПЛАН ЦИКЛА 2026-10-19 13:34
+
+## 1. ГОРИЗОНТ
+
+- последний слот: **2026-10-19**; каденс: **2 дн.**, 06:45 GMT; горизонт: 14 дн.
+- плановых дат: **7**, verified-карточек свободно: **0**
+- добавлено слотов: **0**
+
+## 2. ЗАДАЧИ (7)
+
+- **[RED] evidence-inventory** — на горизонт 14 дн. нужно 7 слотов, verified-карточек свободно 0 (не хватает 7)
+  - действие: открыть и верифицировать 7 новых факт-карточек из STRONG-кандидатов; НЕ выдумывать слоты без подтверждённой первички
+- **[AMBER] quota-not-counting** — сегодняшние 1 публикаций сделаны ДО рестарта (inc_quota ещё не действовал); квота не записана
+  - действие: наблюдать: файл quota появится со следующей публикацией после рестарта
+- **[AMBER] verify-red** — claims_verify exit=1 (19.10.2026 10:00:25,20) — SOURCE ERROR
+  - действие: исправить первичный URL/claim в state/claims.jsonl
+- **[AMBER] recall-low** — recall KPI 25.0% (<60)
+  - действие: расширить discovery surface (reports/missed: loss stages)
+- **[AMBER] signals-stale** — reports/signals: возраст: **УСТАРЕЛО 38 дн.** (> 7)
+  - действие: опубликовать сигнал недели (редакция)
+- **[AMBER] claims-gap** — evidence без registered claim: E-2026-015
+  - действие: зарегистрировать claim (verify_claims --seed) для верификации первички
+- **[RED] horizon-empty** — последний слот 2026-10-19, будущих слотов нет
+  - действие: восстановить план публикаций (см. evidence-inventory)
+
+## 3. STRONG-КАНДИДАТЫ ДЛЯ НОВЫХ ФАКТ-КАРТОЧЕК (10, top 10)
+
+- 2026-10-18 :: ‘I felt disgusted’: MEP speaks out over nude deepfakes and urges EU action
+  - https://www.theguardian.com/society/2026/oct/18/mep-lena-schilling-nude-deepfakes-eu-action
+- 2026-10-18 :: Нейросети для озвучки голосом: ТОП нейросетей 2026 года, где можно озвучить видео в формате Text to Speech
+  - https://adpass.ru/nejroseti-dlya-ozvuchki-golosom-top-nejrosetej-2026-goda-gde-mozhno-ozvuchit-video-v-formate-text-to-speech/
+- 2026-10-18 :: GB Media to launch British music radio station
+  - https://radiotoday.co.uk/2026/10/gb-media-to-launch-british-music-radio-station/
+- 2026-10-18 :: Student Media Convention Fills Philadelphia For Radio's Future
+  - https://radioink.com/2026/10/18/student-media-convention-fills-philadelphia-for-radios-future/
+- 2026-10-16 :: Ping An Digital Bank tests AI to detect deepfake fraud
+  - https://www.techinasia.com/news/ping-an-digital-bank-tests-ai-to-detect-deepfake-fraud
+- 2026-10-16 :: Ofcom approves Horizon Radio audience wording change
+  - https://radiotoday.co.uk/2026/10/ofcom-approves-horizon-radio-audience-wording-change/
+- 2026-10-16 :: Ofcom minded to approve wider audience for B Radio
+  - https://radiotoday.co.uk/2026/10/ofcom-minded-to-approve-wider-audience-for-b-radio/
+- 2026-10-16 :: Global launches Classic FM Christmas radio station
+  - https://radiotoday.co.uk/2026/10/global-launches-classic-fm-christmas-radio-station/
+- 2026-10-16 :: Radio AIR seeks backing for Weymouth air festival
+  - https://radiotoday.co.uk/2026/10/radio-air-seeks-backing-for-weymouth-air-festival/
+- 2026-10-16 :: Chris Jones Takes Over GSM Job At CMG Radio Atlanta
+  - https://radioink.com/2026/10/16/chris-jones-takes-over-gsm-job-at-cmg-radio-atlanta/
+
+Следующий шаг: редакция/агент верифицирует факт-карточку (FACT GATE), затем концепт → concept_gate → публикация. Машина слоты без verified-карточки не создаёт.
+
+written: reports/editorial/cycle-2026-10-19.{md,json}
+EXITCODE=0 
+==== 20.10.2026  9:45:01,79 ==== 
+# ПЛАН ЦИКЛА 2026-10-20 09:45
+
+## 1. ГОРИЗОНТ
+
+- последний слот: **2026-11-02**; каденс: **2 дн.**, 06:45 GMT; горизонт: 14 дн.
+- плановых дат: **0**, verified-карточек свободно: **0**
+- добавлено слотов: **0**
+
+## 2. ЗАДАЧИ (4)
+
+- **[AMBER] verify-red** — claims_verify exit=1 (19.10.2026 10:00:25,20) — SOURCE ERROR
+  - действие: исправить первичный URL/claim в state/claims.jsonl
+- **[AMBER] recall-low** — recall KPI 25.0% (<60)
+  - действие: расширить discovery surface (reports/missed: loss stages)
+- **[AMBER] signals-stale** — reports/signals: возраст: **УСТАРЕЛО 39 дн.** (> 7)
+  - действие: опубликовать сигнал недели (редакция)
+- **[AMBER] claims-gap** — evidence без registered claim: E-2026-015, E-2026-023, E-2026-024
+  - действие: зарегистрировать claim (verify_claims --seed) для верификации первички
+
+## 3. STRONG-КАНДИДАТЫ ДЛЯ НОВЫХ ФАКТ-КАРТОЧЕК (10, top 10)
+
+- 2026-10-18 :: ‘I felt disgusted’: MEP speaks out over nude deepfakes and urges EU action
+  - https://www.theguardian.com/society/2026/oct/18/mep-lena-schilling-nude-deepfakes-eu-action
+- 2026-10-18 :: Нейросети для озвучки голосом: ТОП нейросетей 2026 года, где можно озвучить видео в формате Text to Speech
+  - https://adpass.ru/nejroseti-dlya-ozvuchki-golosom-top-nejrosetej-2026-goda-gde-mozhno-ozvuchit-video-v-formate-text-to-speech/
+- 2026-10-18 :: GB Media to launch British music radio station
+  - https://radiotoday.co.uk/2026/10/gb-media-to-launch-british-music-radio-station/
+- 2026-10-18 :: Student Media Convention Fills Philadelphia For Radio's Future
+  - https://radioink.com/2026/10/18/student-media-convention-fills-philadelphia-for-radios-future/
+- 2026-10-16 :: Ping An Digital Bank tests AI to detect deepfake fraud
+  - https://www.techinasia.com/news/ping-an-digital-bank-tests-ai-to-detect-deepfake-fraud
+- 2026-10-16 :: Ofcom approves Horizon Radio audience wording change
+  - https://radiotoday.co.uk/2026/10/ofcom-approves-horizon-radio-audience-wording-change/
+- 2026-10-16 :: Ofcom minded to approve wider audience for B Radio
+  - https://radiotoday.co.uk/2026/10/ofcom-minded-to-approve-wider-audience-for-b-radio/
+- 2026-10-16 :: Global launches Classic FM Christmas radio station
+  - https://radiotoday.co.uk/2026/10/global-launches-classic-fm-christmas-radio-station/
+- 2026-10-16 :: Radio AIR seeks backing for Weymouth air festival
+  - https://radiotoday.co.uk/2026/10/radio-air-seeks-backing-for-weymouth-air-festival/
+- 2026-10-16 :: Chris Jones Takes Over GSM Job At CMG Radio Atlanta
+  - https://radioink.com/2026/10/16/chris-jones-takes-over-gsm-job-at-cmg-radio-atlanta/
+
+Следующий шаг: редакция/агент верифицирует факт-карточку (FACT GATE), затем концепт → concept_gate → публикация. Машина слоты без verified-карточки не создаёт.
+
+written: reports/editorial/cycle-2026-10-20.{md,json}
+EXITCODE=0 
+==== 21.10.2026  9:45:01,81 ==== 
+# ПЛАН ЦИКЛА 2026-10-21 09:45
+
+## 1. ГОРИЗОНТ
+
+- последний слот: **2026-11-04**; каденс: **2 дн.**, 06:45 GMT; горизонт: 14 дн.
+- плановых дат: **0**, verified-карточек свободно: **0**
+- добавлено слотов: **0**
+
+## 2. ЗАДАЧИ (5)
+
+- **[AMBER] publish-stuck** — слоты с концептом не опубликованы: 1 (joe-rogan-re-ups-lucrative-spotify-deal-2026-10-21)
+  - действие: проверить rejected.txt / вердикты / квоту publisher
+- **[AMBER] verify-red** — claims_verify exit=1 (19.10.2026 10:00:25,20) — SOURCE ERROR
+  - действие: исправить первичный URL/claim в state/claims.jsonl
+- **[AMBER] recall-low** — recall KPI 25.0% (<60)
+  - действие: расширить discovery surface (reports/missed: loss stages)
+- **[AMBER] signals-stale** — reports/signals: возраст: **УСТАРЕЛО 40 дн.** (> 7)
+  - действие: опубликовать сигнал недели (редакция)
+- **[AMBER] claims-gap** — evidence без registered claim: E-2026-015, E-2026-023, E-2026-024, E-2026-025
+  - действие: зарегистрировать claim (verify_claims --seed) для верификации первички
+
+## 3. STRONG-КАНДИДАТЫ ДЛЯ НОВЫХ ФАКТ-КАРТОЧЕК (10, top 10)
+
+- 2026-10-19 :: YouTube обсуждает с издателями запуск аудиокниг
+  - https://www.sostav.ru/publication/youtube-obsuzhdaet-s-izdatelyami-zapusk-audioknig-87821.html
+- 2026-10-19 :: BBC Sounds adds weekly Game’s Gone bonus episodes
+  - https://radiotoday.co.uk/2026/10/bbc-sounds-adds-weekly-games-gone-bonus-episodes/
+- 2026-10-19 :: Free radio software site expands with dead air monitor
+  - https://radiotoday.co.uk/2026/10/free-radio-software-site-expands-with-dead-air-monitor/
+- 2026-10-19 :: Pride Radio secures Lumo for weather sponsorship
+  - https://radiotoday.co.uk/2026/10/pride-radio-secures-lumo-for-weather-sponsorship/
+- 2026-10-19 :: After Almost a Half Century, A Boston Radio Staple is Retiring
+  - https://radioink.com/2026/10/19/after-almost-a-half-century-a-boston-radio-staple-is-retiring/
+- 2026-10-19 :: Stingray Brings Streaming Radio Apps to Ford and Lincoln
+  - https://radioink.com/2026/10/19/stingray-brings-streaming-radio-apps-to-ford-and-lincoln/
+- 2026-10-19 :: MIW Panel Puts AI to Work for Radio Content Creators
+  - https://radioink.com/2026/10/19/miw-panel-puts-ai-to-work-for-radio-content-creators/
+- 2026-10-19 :: What Radio Sellers Should Know As AI Reshapes Black Friday
+  - https://radioink.com/2026/10/19/what-radio-sellers-should-know-as-ai-reshapes-black-friday/
+- 2026-10-19 :: Podcast Research Shows Radio How to Reach Big Spenders
+  - https://radioink.com/2026/10/19/podcast-research-shows-radio-how-to-reach-big-spenders/
+- 2026-10-18 :: ‘I felt disgusted’: MEP speaks out over nude deepfakes and urges EU action
+  - https://www.theguardian.com/society/2026/oct/18/mep-lena-schilling-nude-deepfakes-eu-action
+
+Следующий шаг: редакция/агент верифицирует факт-карточку (FACT GATE), затем концепт → concept_gate → публикация. Машина слоты без verified-карточки не создаёт.
+
+written: reports/editorial/cycle-2026-10-21.{md,json}
+EXITCODE=0 
+==== 22.10.2026  9:45:01,81 ==== 
+# ПЛАН ЦИКЛА 2026-10-22 09:45
+
+## 1. ГОРИЗОНТ
+
+- последний слот: **2026-11-04**; каденс: **2 дн.**, 06:45 GMT; горизонт: 14 дн.
+- плановых дат: **0**, verified-карточек свободно: **0**
+- добавлено слотов: **0**
+
+## 2. ЗАДАЧИ (5)
+
+- **[AMBER] poll-red** — primary_poll exit=1 (08.10.2026 11:17:39,40)
+  - действие: проверить transport/search в primary_poll
+- **[AMBER] verify-red** — claims_verify exit=1 (19.10.2026 10:00:25,20) — SOURCE ERROR
+  - действие: исправить первичный URL/claim в state/claims.jsonl
+- **[AMBER] recall-low** — recall KPI 25.0% (<60)
+  - действие: расширить discovery surface (reports/missed: loss stages)
+- **[AMBER] signals-stale** — reports/signals: возраст: **УСТАРЕЛО 41 дн.** (> 7)
+  - действие: опубликовать сигнал недели (редакция)
+- **[AMBER] claims-gap** — evidence без registered claim: E-2026-015, E-2026-023, E-2026-024, E-2026-025
+  - действие: зарегистрировать claim (verify_claims --seed) для верификации первички
+
+## 3. STRONG-КАНДИДАТЫ ДЛЯ НОВЫХ ФАКТ-КАРТОЧЕК (10, top 10)
+
+- 2026-10-21 :: NAB Names 2026 Marconi Radio Award Winners
+  - https://radioink.com/2026/10/20/2026-marconi-radio-award-winners/
+- 2026-10-20 :: Как телеканал «Ю» обновил эфирное оформление с помощью ИИ и японской эстетики
+  - https://www.sostav.ru/publication/kak-telekanal-yu-obnovil-efirnoe-oformlenie-s-pomoshchyu-ii-i-yaponskoj-estetiki-87708.html
+- 2026-10-20 :: «Радио Sostav»: Что будет с брендами, если покупать за нас начнет ИИ?
+  - https://www.sostav.ru/publication/chto-budet-s-brendami-esli-pokupat-za-nas-nachnet-ii-87842.html
+- 2026-10-20 :: Как автору книги подготовиться к подкасту без пересказа оглавления
+  - https://adpass.ru/kak-avtoru-knigi-podgotovitsya-k-podkastu-bez-pereskaza-oglavleniya/
+- 2026-10-20 :: Former Radio City home to become yellow submarine tour
+  - https://radiotoday.co.uk/2026/10/former-radio-city-home-to-become-yellow-submarine-tour/
+- 2026-10-20 :: BBC Radio 4 Extra to close as a broadcast service
+  - https://radiotoday.co.uk/2026/10/bbc-radio-4-extra-to-close-as-a-broadcast-service/
+- 2026-10-20 :: Sean Goldsmith gets Breakfast at Mansfield Radio
+  - https://radiotoday.co.uk/2026/10/sean-goldsmith-gets-breakfast-at-mansfield-radio/
+- 2026-10-20 :: Free Jacobs Media Webinar Targets Radio Digital Sales for 2027
+  - https://radioink.com/2026/10/20/free-jacobs-media-webinar-targets-radio-digital-sales/
+- 2026-10-20 :: For Radio, Women's Sports Is Turning Fans Into Customers
+  - https://radioink.com/2026/10/20/for-radio-womens-sports-is-turning-fans-into-customers/
+- 2026-10-20 :: Isaias Gives AM Act Backers a Case for Car Radio in the Storm
+  - https://radioink.com/2026/10/20/isaias-gives-am-act-backers-a-case-for-car-radio-in-the-storm/
+
+Следующий шаг: редакция/агент верифицирует факт-карточку (FACT GATE), затем концепт → concept_gate → публикация. Машина слоты без verified-карточки не создаёт.
+
+written: reports/editorial/cycle-2026-10-22.{md,json}
+EXITCODE=0 

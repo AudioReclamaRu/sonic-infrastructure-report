@@ -1,0 +1,1012 @@
+==== 04.10.2026  3:00:53,63 ====  
+=== primary poll 2026-10-04 (ledger has 17 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=63360   1567ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=327602  2632ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   587ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 carry pending filter
+  [ OK ] leginfo-health LEGAL      bytes=112450   health-only: bill discovery on this site needs a manual POST search
+
+new strong: 0   weak (human eyes only): 0   carried forward: 4   required down: none
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-04.{json,md}
+==== 04.10.2026  3:04:40,66 ==== 
+=== primary poll 2026-10-04 (ledger has 17 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=63360   1517ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=327602  2676ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   348ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 carry pending filter
+  [ OK ] leginfo-health LEGAL      bytes=112626   health-only: bill discovery on this site needs a manual POST search
+
+new strong: 0   weak (human eyes only): 0   carried forward: 4   required down: none
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-04.{json,md}
+EXITCODE=0 
+==== 04.10.2026  9:40:00,24 ==== 
+=== primary poll 2026-10-04 (ledger has 17 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=63360   2161ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=327602  3258ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   474ms cands=10   NEW strong=0 weak=0
+  [ OK ] edison-feed    RESEARCH   bytes=48719   467ms cands=10   NEW strong=0 weak=0
+  [ OK ] leginfo-health LEGAL      bytes=112450   health-only: bill discovery on this site needs a manual POST search
+
+new strong: 0   weak (human eyes only): 0   carried forward: 0   required down: none
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-04.{json,md}
+EXITCODE=0 
+==== 05.10.2026  9:40:01,29 ==== 
+EXITCODE=0 
+==== 06.10.2026  9:40:01,31 ==== 
+EXITCODE=0 
+==== 07.10.2026  9:40:01,31 ==== 
+=== primary poll 2026-10-07 (ledger has 17 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=63912   2606ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=328154  3240ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   359ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 carry pending filter
+  [ OK ] leginfo-health LEGAL      bytes=5757     health-only: bill discovery on this site needs a manual POST search
+
+new strong: 0   weak (human eyes only): 0   carried forward: 4   required down: none
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-07.{json,md}
+EXITCODE=0 
+==== 08.10.2026  9:40:01,51 ==== 
+=== primary poll 2026-10-08 (ledger has 17 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=60996   2849ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=328760  3435ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   595ms cands=10   NEW strong=0 weak=0
+  [ OK ] edison-feed    RESEARCH   bytes=48719   543ms cands=10   NEW strong=0 weak=0
+  [ OK ] leginfo-health LEGAL      bytes=5757     health-only: bill discovery on this site needs a manual POST search
+
+new strong: 0   weak (human eyes only): 0   carried forward: 0   required down: none
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-08.{json,md}
+EXITCODE=0 
+==== 08.10.2026 11:17:39,40 ==== 
+=== primary poll 2026-10-08 (ledger has 27 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=60996   2311ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=328760  3295ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   365ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=5663    tries=5 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] leginfo-health LEGAL      bytes=5757     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=61635   473ms cands=50   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=26964   259ms cands=26   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1327008 1170ms cands=105  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=80949   365ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18080   356ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25608   352ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=114576  462ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17070   347ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   213ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=26068   321ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=82774   734ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49068   2388ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16049   865ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9709    615ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=30379   183ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=37308   277ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85814   996ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=79025   427ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=50397   241ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=75699   245ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25269   397ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5072    576ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39825   16709ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=90069   15463ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=846176  763ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=633371  863ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=47111   343ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=40474   792ms cands=10   NEW strong=0 weak=1
+  [ OK ] slator         LOCALIZATION bytes=5053    15253ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=30411   311ms cands=10   NEW strong=0 weak=0
+
+new strong: 0   weak (human eyes only): 1   carried forward: 4   required down: none
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-08            Radiocentre’s Mark Barber to step down after 25 years
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-08.{json,md}
+EXITCODE=0 
+==== 09.10.2026  9:40:01,29 ==== 
+=== primary poll 2026-10-09 (ledger has 28 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=60996   2317ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=328760  3159ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   573ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5757     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=58363   478ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=31249   367ms cands=30   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1214269 1293ms cands=93   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81188   376ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18335   316ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25616   408ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=116341  477ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17314   335ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   402ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25883   385ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83533   721ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49976   2320ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16049   920ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9676    266ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=29367   249ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=43347   15246ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85732   437ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=148147  580ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=48041   330ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=76529   323ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25209   406ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=4904    1824ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39916   705ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=78264   246ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=786247  1186ms cands=100  NEW strong=0 weak=0
+  [DOWN] latercera-cl   BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] africanews     BUSINESS   bytes=47053   355ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=40474   761ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4902    15247ms cands=4    NEW strong=1 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=79954   363ms cands=10   NEW strong=0 weak=0
+
+new strong: 1   weak (human eyes only): 0   carried forward: 4   required down: none
+  NEW 2026-10-08 LOCALIZATION OpenAI’s EU Watermark Faces Translation Challenge
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-09.{json,md}
+EXITCODE=0 
+==== 10.10.2026  9:40:01,28 ==== 
+=== primary poll 2026-10-10 (ledger has 29 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=56047   2240ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=326949  3266ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   611ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=5663    tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] leginfo-health LEGAL      bytes=113057   health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=63744   471ms cands=52   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=21714   505ms cands=20   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1369465 1628ms cands=95   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81339   1590ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18317   230ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25453   355ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=112501  509ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17242   353ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   623ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25629   410ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83646   710ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=48382   2590ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16174   882ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9677    834ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=29742   248ms cands=24   NEW strong=2 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=32939   312ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=86217   541ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=180655  501ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=45742   431ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=75648   287ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25158   391ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5072    1791ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39551   478ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=71845   249ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=745236  1121ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=537787  633ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=47017   386ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=50570   1227ms cands=10   NEW strong=0 weak=1
+  [ OK ] slator         LOCALIZATION bytes=4983    244ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=29909   323ms cands=10   NEW strong=0 weak=0
+
+new strong: 2   weak (human eyes only): 1   carried forward: 4   required down: none
+  NEW 2026-10-09 LAW_REG    French students vow to keep up protests as UN voices 'concern' over vi
+  NEW 2026-10-09 LAW_REG    Israel a rare dissenting voice as praise pours in for Nobel Peace Priz
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-09            Tuning In 2026 shows how brands can capitalise on audio’s growth
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-10.{json,md}
+EXITCODE=0 
+==== 11.10.2026  9:40:01,31 ==== 
+=== primary poll 2026-10-11 (ledger has 32 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=56047   2308ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=326949  2990ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   569ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=5663    tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] leginfo-health LEGAL      bytes=5757     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=64835   489ms cands=52   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=15223   625ms cands=14   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1366138 1252ms cands=95   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81339   377ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=17420   214ms cands=20   NEW strong=0 weak=1
+  [ OK ] cnet-news      VOICE_AI   bytes=25552   389ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=111416  460ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17276   328ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   433ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25943   428ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83912   732ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=48633   2322ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16174   874ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9677    1002ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=26409   287ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=47165   244ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85339   429ms cands=25   NEW strong=1 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=180655  584ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=45248   343ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=75411   266ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25091   395ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=4933    1518ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39513   1314ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=84549   249ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=842886  573ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=592703  1170ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=46975   337ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=50570   795ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4983    287ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=29546   303ms cands=10   NEW strong=0 weak=0
+
+new strong: 1   weak (human eyes only): 1   carried forward: 4   required down: none
+  NEW 2026-10-11 LOCALIZATION WA artist with cerebral palsy finds voice through painting
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-10            Apple discloses deal to hire team and license tech from personaliz
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-11.{json,md}
+EXITCODE=0 
+==== 12.10.2026  9:40:01,36 ==== 
+=== primary poll 2026-10-12 (ledger has 34 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=53501   2362ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=327904  3644ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   560ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5757     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=53645   486ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=14413   284ms cands=13   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1234735 1451ms cands=86   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81382   468ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=17172   207ms cands=20   NEW strong=1 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25213   383ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=115889  463ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17293   509ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   377ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25939   668ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83652   741ms cands=50   NEW strong=0 weak=1
+  [ OK ] techinasia     LOCALIZATION bytes=47519   2547ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16174   871ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9847    293ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=26032   195ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=47298   257ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85067   424ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=180655  675ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=44649   345ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=76276   268ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25091   494ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=4874    1586ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=38954   1337ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=63575   289ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=737411  972ms cands=80   NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=592985  1425ms cands=100  NEW strong=0 weak=0
+  [DOWN] africanews     BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] radiocentre-news AUDIO_AD   bytes=50570   842ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4983    324ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=30345   316ms cands=10   NEW strong=0 weak=0
+
+new strong: 1   weak (human eyes only): 1   carried forward: 4   required down: none
+  NEW 2026-10-11 VOICE_AI   These execs think voice AI hasn't reached its ChatGPT moment yet
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+  CARRY 2026-06-04 RESEARCH   The Podcast Consumer 2026
+  CARRY 2026-05-21 RESEARCH   Edison Research at SSRS Webinar: The Podcast Consumer 2026
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-11            US Homeland Security chief dismisses risk from live-streaming exec
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-12.{json,md}
+EXITCODE=0 
+==== 13.10.2026  9:40:01,32 ==== 
+=== primary poll 2026-10-13 (ledger has 66 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=52120   2626ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=318403  3265ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   463ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=55779   453ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=19450   264ms cands=18   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1237281 1496ms cands=93   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81359   375ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18046   234ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=24939   430ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=113022  461ms cands=31   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17369   358ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   389ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25852   450ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83641   736ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49870   2423ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16174   867ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9924    267ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=28776   173ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=38247   280ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=83494   437ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=160197  516ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=44812   235ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=80822   327ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25092   386ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5110    1418ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39114   1323ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=62564   264ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=791452  1124ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=503299  760ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=48246   478ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=50566   848ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=92872   207ms cands=100  NEW strong=0 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=28822   731ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60567   807ms cands=20   NEW strong=0 weak=0
+  [ OK ] cableman       AUDIO_AD   bytes=20250   156ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=15106   191ms cands=20   NEW strong=0 weak=1
+  [ OK ] vc-ru          BUSINESS   bytes=22019   1270ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=93642   288ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=65449   999ms cands=10   NEW strong=0 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=19424   1187ms cands=10   NEW strong=0 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=9837    255ms cands=10   NEW strong=0 weak=0
+  [DOWN] nimdzi         LOCALIZATION bytes=178635  tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] mbw            VOICE_AI   bytes=15486   308ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=5235    250ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=29740   444ms cands=10   NEW strong=0 weak=0
+
+new strong: 0   weak (human eyes only): 1   carried forward: 2   required down: none
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-13            Платформа Звонок расширила библиотеку голосов для ИИ-робота
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-13.{json,md}
+EXITCODE=0 
+==== 14.10.2026  9:40:01,36 ==== 
+=== primary poll 2026-10-14 (ledger has 67 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=52460   2361ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=318404  3254ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   604ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=58359   572ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=20431   1075ms cands=19   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1068279 1295ms cands=98   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=80420   394ms cands=59   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18674   210ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25103   429ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=116196  506ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17242   336ms cands=25   NEW strong=0 weak=1
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   463ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25510   465ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83717   797ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49665   1824ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16400   870ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9997    255ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=28078   307ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=29414   235ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=87465   434ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=168455  545ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=44097   281ms cands=50   NEW strong=0 weak=1
+  [ OK ] arstechnica    VOICE_AI   bytes=77411   335ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=24982   444ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5052    1318ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39559   1197ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=85851   266ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=840344  1438ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=553575  2858ms cands=100  NEW strong=0 weak=0
+  [DOWN] africanews     BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] radiocentre-news AUDIO_AD   bytes=50566   987ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=93378   214ms cands=100  NEW strong=1 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=28060   738ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60567   750ms cands=20   NEW strong=0 weak=0
+  [ OK ] cableman       AUDIO_AD   bytes=20250   225ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=18110   195ms cands=20   NEW strong=0 weak=1
+  [ OK ] vc-ru          BUSINESS   bytes=21597   1383ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=102125  266ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=62162   823ms cands=10   NEW strong=1 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=18299   1217ms cands=10   NEW strong=4 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8392    241ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=14191   1463ms cands=10   NEW strong=0 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=14096   290ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4981    333ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=29312   345ms cands=10   NEW strong=0 weak=0
+
+new strong: 6   weak (human eyes only): 3   carried forward: 2   required down: none
+  NEW 2026-10-13 AUDIO_AD   «Радио Sostav»: Почему хороший креатив все чаще выглядит как плохая ид
+  NEW 2026-10-13 AUDIO_AD   Fearne Cotton's Happy Place joins Audio Always
+  NEW 2026-10-13 AUDIO_AD   Murrow Wins Give CBS News Radio Journalists The Last Word
+  NEW 2026-10-13 AUDIO_AD   Bay Area Afternoon Radio Gets An Amorous Return
+  NEW 2026-10-13 AUDIO_AD   Radio Sales Coach Puts Her Playbook In Print
+  NEW 2026-10-13 AUDIO_AD   Radio Ink Launches &#8216;Best In Syndication' Honors To Close 2026
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-14            How podcasts became political powerhouses
+  2026-10-13            The ‘Godzilla Minus Zero’ Filmmakers Terrified Bystanders With The
+  2026-10-09            От брифа до эфира: как эффективно организовать производство full A
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-14.{json,md}
+EXITCODE=0 
+==== 15.10.2026  9:40:01,35 ==== 
+=== primary poll 2026-10-15 (ledger has 76 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=52420   2755ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=317578  4174ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   608ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=112802   health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=60327   468ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=13252   925ms cands=12   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1354950 1850ms cands=115  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81834   432ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18383   200ms cands=20   NEW strong=0 weak=1
+  [ OK ] cnet-news      VOICE_AI   bytes=24751   449ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=112223  457ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17127   372ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   427ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25443   504ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=84154   874ms cands=50   NEW strong=0 weak=1
+  [ OK ] techinasia     LOCALIZATION bytes=50131   2394ms cands=36   NEW strong=1 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16474   924ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9941    2095ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=30797   438ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=22947   371ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=86530   455ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=212300  551ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=44106   283ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=77870   541ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25061   362ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5142    1309ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39529   1387ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=90072   264ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=813418  2060ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=626760  3269ms cands=100  NEW strong=0 weak=0
+  [DOWN] africanews     BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] radiocentre-news AUDIO_AD   bytes=50566   1279ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=94741   236ms cands=100  NEW strong=0 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=32225   875ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=59580   675ms cands=20   NEW strong=0 weak=12
+  [ OK ] cableman       AUDIO_AD   bytes=20250   207ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=15438   317ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=22401   1253ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=93086   265ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=48600   859ms cands=10   NEW strong=2 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=18977   1205ms cands=10   NEW strong=2 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8740    366ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=14191   1615ms cands=10   NEW strong=0 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=14293   273ms cands=10   NEW strong=0 weak=2
+  [ OK ] slator         LOCALIZATION bytes=4861    267ms cands=4    NEW strong=0 weak=1
+  [ OK ] theverge-ai    VOICE_AI   bytes=29130   319ms cands=10   NEW strong=0 weak=0
+
+new strong: 5   weak (human eyes only): 17   carried forward: 2   required down: none
+  NEW 2026-10-14 LOCALIZATION Samsung, US startup sign deal to fight deepfakes
+  NEW 2026-10-14 AUDIO_AD   Hampshire Tourist Radio to launch on local DAB
+  NEW 2026-10-14 AUDIO_AD   NLive Radio secures future without University backing
+  NEW 2026-10-14 AUDIO_AD   Native Voice One Finds A New Public Radio Distributor In PRX
+  NEW 2026-10-14 AUDIO_AD   With Radio Waiting Its Turn, NAB Defends TV Cap Repeal
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-15            Comedy Radio отмечает 14-летие
+  2026-10-15            Дмитрий Григорьев на форуме «Цифровые решения»: о роли радио, блог
+  2026-10-15            НАШЕ Радио разыграет VIP-билеты на юбилейный концерт Свердловского
+  2026-10-15            Радио и стриминг: почему их музыкальные чарты так различаются
+  2026-10-14            YouTube Music launches new labels as AI-generated music floods str
+  2026-10-14            Philippine law targeting foreign agents spurs fears of free speech
+  2026-10-14            Рынок аудиорекламы растет: какие категории выбирают радио в 2026 г
+  2026-10-14            Ваня Аладин победил в девятом сезоне «Музыкастинга» на «Новом Ради
+  2026-10-14            «Морозко» выходит в новом прочтении при поддержке «Авторадио»
+  2026-10-14            GAYAZOV$ BROTHER$ рассказали в эфире «Восток FM» о музыке, семье и
+  2026-10-14            Почему радиоведущий иногда радуется песне, которую сам терпеть не 
+  2026-10-14            Алексей Воробьев представил «Короткую юбчонку» в эфире «Авторадио»
+  2026-10-14            «Новое Радио» поддержит благотворительный фестиваль WOOF в Москве
+  2026-10-14            «Руки Вверх! 2» выходит на большие экраны при поддержке «Авторадио
+  2026-10-14            Here’s exactly what Amazon, Spotify, Apple and other streaming ser
+  2026-10-14            Taylor Swift expands voice trademark filings to the UK, EU, and Au
+  2026-10-14            AudioShake Launches AI Data Service for Audio Recordings
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-15.{json,md}
+EXITCODE=0 
+==== 16.10.2026  9:40:01,59 ==== 
+=== primary poll 2026-10-16 (ledger has 98 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=52420   2908ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=317578  3394ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   634ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=5652    tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=57353   495ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=13947   748ms cands=13   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1250669 1529ms cands=104  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=82451   365ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18319   209ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=24963   437ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=116074  434ms cands=32   NEW strong=0 weak=1
+  [ OK ] aljazeera-world BUSINESS   bytes=17269   328ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   424ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=26197   573ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83432   725ms cands=50   NEW strong=0 weak=1
+  [ OK ] techinasia     LOCALIZATION bytes=49478   2526ms cands=36   NEW strong=1 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16281   804ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9819    978ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=29494   230ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=27448   282ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85875   433ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=170652  625ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=43815   284ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=77573   373ms cands=20   NEW strong=0 weak=1
+  [ OK ] zdnet-news     VOICE_AI   bytes=24965   480ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5127    1173ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39769   1206ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=88916   426ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=759306  2492ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=607382  1218ms cands=100  NEW strong=0 weak=0
+  [DOWN] africanews     BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] radiocentre-news AUDIO_AD   bytes=47715   781ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=95139   230ms cands=100  NEW strong=1 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=28083   753ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60040   755ms cands=20   NEW strong=0 weak=3
+  [ OK ] cableman       AUDIO_AD   bytes=20236   174ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=15647   236ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=20121   1364ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=93637   265ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=48651   811ms cands=10   NEW strong=0 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=19187   985ms cands=10   NEW strong=3 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=7926    326ms cands=10   NEW strong=0 weak=0
+  [DOWN] nimdzi         LOCALIZATION bytes=178635  tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] mbw            VOICE_AI   bytes=15487   265ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4959    348ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=100180  354ms cands=10   NEW strong=0 weak=0
+
+new strong: 5   weak (human eyes only): 6   carried forward: 2   required down: none
+  NEW 2026-10-16 LOCALIZATION Ping An Digital Bank tests AI to detect deepfake fraud
+  NEW 2026-10-15 AUDIO_AD   «Радио Sostav»: Benetton — бренд, который превратил рекламу в обществе
+  NEW 2026-10-15 AUDIO_AD   Home is the Strategy: How Local Molds Radio's Top Sales Managers
+  NEW 2026-10-15 AUDIO_AD   Radio’s Political Ad Pitch Shouldn't Fall Far From the Driver's Seat
+  NEW 2026-10-15 AUDIO_AD   News Deserts Widen, Leaving An Opening For Radio
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-16            Hong Kong Apec meeting to showcase ‘China’s voice’ in stability, t
+  2026-10-15            Is your boss watching you? The rise of AI surveillance at work – p
+  2026-10-15            What did the Liberty Bell sound like? Science is on the case.
+  2026-10-15            ГПМ Радио объясняет разнонаправленную динамику сегментов
+  2026-10-15            Радио ЭНЕРДЖИ (NRG) соберёт команду на «Арена Марафон» в Петербург
+  2026-10-15            Comedy Radio поддержит концерт Гурама Амаряна в Петербурге
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-16.{json,md}
+EXITCODE=0 
+==== 17.10.2026  9:40:01,38 ==== 
+=== primary poll 2026-10-17 (ledger has 109 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=49918   2326ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=317230  3571ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   857ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=62166   481ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=16918   339ms cands=16   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1295106 1515ms cands=104  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=82358   438ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=17851   202ms cands=20   NEW strong=0 weak=1
+  [ OK ] cnet-news      VOICE_AI   bytes=24900   445ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=115889  466ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17182   337ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   601ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=26346   376ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=84219   714ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49503   2568ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16283   833ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9766    241ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=31078   184ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=28131   303ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85510   458ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=158660  470ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=46281   276ms cands=50   NEW strong=0 weak=1
+  [ OK ] arstechnica    VOICE_AI   bytes=79023   252ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=24985   435ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5187    1271ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39664   751ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=72557   404ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=722337  1192ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=562736  1337ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=48427   512ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=47715   842ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=94972   289ms cands=100  NEW strong=0 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=29049   768ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60040   755ms cands=20   NEW strong=0 weak=0
+  [ OK ] cableman       AUDIO_AD   bytes=20236   163ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=33544   249ms cands=20   NEW strong=0 weak=1
+  [ OK ] vc-ru          BUSINESS   bytes=20948   1375ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=90710   261ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=56591   813ms cands=10   NEW strong=4 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=18302   1257ms cands=10   NEW strong=3 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8790    422ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=14191   1467ms cands=10   NEW strong=0 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=15725   319ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4801    262ms cands=4    NEW strong=0 weak=1
+  [ OK ] theverge-ai    VOICE_AI   bytes=31673   411ms cands=10   NEW strong=0 weak=0
+
+new strong: 7   weak (human eyes only): 4   carried forward: 2   required down: none
+  NEW 2026-10-16 AUDIO_AD   Ofcom approves Horizon Radio audience wording change
+  NEW 2026-10-16 AUDIO_AD   Ofcom minded to approve wider audience for B Radio
+  NEW 2026-10-16 AUDIO_AD   Global launches Classic FM Christmas radio station
+  NEW 2026-10-16 AUDIO_AD   Radio AIR seeks backing for Weymouth air festival
+  NEW 2026-10-16 AUDIO_AD   Chris Jones Takes Over GSM Job At CMG Radio Atlanta
+  NEW 2026-10-16 AUDIO_AD   Podcast Ad Fatigue Findings Offer Advice for Radio
+  NEW 2026-10-16 AUDIO_AD   Nielsen To Radio: In-Car Data Isn't The Whole Story
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-16            Mark Wahlberg on using AI in film &#8216;the right way' and being 
+  2026-10-16            Katie Zacharia Was Linked to an AI Rare-Earths Startup. It’s Even 
+  2026-10-16            Дать ИИ доступ к клиентским каналам и не потерять голос бренда: 4 
+  2026-10-16            SpaceXAI Updates Speech-to-Speech Model
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-17.{json,md}
+EXITCODE=0 
+==== 18.10.2026  9:40:01,37 ==== 
+=== primary poll 2026-10-18 (ledger has 120 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=49918   2373ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=317230  3106ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   556ms cands=10   NEW strong=0 weak=0
+  [ OK ] edison-feed    RESEARCH   bytes=48719   424ms cands=10   NEW strong=0 weak=0
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=66326   686ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=13863   619ms cands=13   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1397729 1732ms cands=96   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=82358   486ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=17446   221ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25042   350ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=118742  469ms cands=32   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17251   320ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   388ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25645   404ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83542   731ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49414   1855ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16283   833ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9766    303ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=24772   349ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=40492   328ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=85792   909ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=158680  414ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=46401   333ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=77772   288ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25027   362ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5132    1312ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39275   467ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=63915   237ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=801783  887ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=609885  3493ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=48942   360ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=47715   1269ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=94757   223ms cands=100  NEW strong=0 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=29236   664ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60040   799ms cands=20   NEW strong=0 weak=0
+  [ OK ] cableman       AUDIO_AD   bytes=20236   192ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=33544   237ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=20772   1254ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=87313   439ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=56591   954ms cands=10   NEW strong=0 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=18416   1196ms cands=10   NEW strong=0 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8790    431ms cands=10   NEW strong=0 weak=0
+  [DOWN] nimdzi         LOCALIZATION bytes=178635  tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] mbw            VOICE_AI   bytes=15725   377ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4801    264ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=32200   342ms cands=10   NEW strong=0 weak=0
+
+new strong: 0   weak (human eyes only): 0   carried forward: 0   required down: none
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-18.{json,md}
+EXITCODE=0 
+==== 19.10.2026  9:40:01,44 ==== 
+=== primary poll 2026-10-19 (ledger has 120 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=49918   2562ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=317230  3479ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   569ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=59203   444ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=11935   846ms cands=11   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1250924 1570ms cands=96   NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=82358   416ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=16895   226ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25118   407ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=120139  478ms cands=32   NEW strong=1 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=16938   322ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   384ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25237   488ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=82827   1084ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=50284   1970ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16283   675ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9768    781ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=27265   185ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=50398   264ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=87092   813ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=158680  673ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=46918   348ms cands=50   NEW strong=0 weak=1
+  [ OK ] arstechnica    VOICE_AI   bytes=75956   397ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25027   428ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5153    1211ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39517   1302ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=67336   262ms cands=10   NEW strong=0 weak=1
+  [ OK ] elfinanciero-mx BUSINESS   bytes=697531  856ms cands=79   NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=565802  1105ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=48959   445ms cands=50   NEW strong=0 weak=0
+  [ OK ] radiocentre-news AUDIO_AD   bytes=47715   805ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=93792   236ms cands=100  NEW strong=0 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=31000   718ms cands=20   NEW strong=1 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60013   793ms cands=20   NEW strong=0 weak=7
+  [ OK ] cableman       AUDIO_AD   bytes=19421   200ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=33544   223ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=22022   1359ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=95806   383ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=55474   892ms cands=10   NEW strong=1 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=18347   1204ms cands=10   NEW strong=1 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8923    216ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=14191   1463ms cands=10   NEW strong=0 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=15725   335ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4801    280ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=31853   336ms cands=10   NEW strong=0 weak=0
+
+new strong: 4   weak (human eyes only): 9   carried forward: 2   required down: none
+  NEW 2026-10-18 VOICE_AI   ‘I felt disgusted’: MEP speaks out over nude deepfakes and urges EU ac
+  NEW 2026-10-18 AUDIO_AD   Нейросети для озвучки голосом: ТОП нейросетей 2026 года, где можно озв
+  NEW 2026-10-18 AUDIO_AD   GB Media to launch British music radio station
+  NEW 2026-10-18 AUDIO_AD   Student Media Convention Fills Philadelphia For Radio's Future
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-18            Valerion VisionMaster Max 4K Projector Review: Looks Great, Sounds
+  2026-10-18            Hora de renovar o som da sua sala: soundbars em promoção na Amazon
+  2026-10-18            ГПМ Радио отмечает 23-летие: новые проекты, студии и развитие цифр
+  2026-10-18            Регина Тодоренко и Влад Топалов в шоу «Назад! В будущее!» на «Ради
+  2026-10-18            Uma2rman выступит в «Живой среде» на «Новом Радио»
+  2026-10-18            «Дорожное радио» получило премию Russian Traveler Awards за развит
+  2026-10-18            Виктор Дорин представил «Трезвую Марину» в эфире «Радио Шансон»
+  2026-10-18            Детское радио поддерживает Национальную премию «Интонация»
+  2026-10-18            ELMAN рассказал о новых релизах, ИИ и семье в эфире «Восток FM»
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-19.{json,md}
+EXITCODE=0 
+==== 20.10.2026  9:40:01,80 ==== 
+=== primary poll 2026-10-20 (ledger has 133 entries) ===
+  [ OK ] ssrs-feed      RESEARCH   bytes=50435   2537ms cands=24   NEW strong=0 weak=0
+  [ OK ] ssrs-wpjson    RESEARCH   bytes=319154  3366ms cands=20   NEW strong=0 weak=0
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   920ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=62479   467ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=9285    432ms cands=8    NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1398413 1568ms cands=105  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=82358   475ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=18296   214ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=25102   422ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=118970  476ms cands=32   NEW strong=0 weak=1
+  [ OK ] aljazeera-world BUSINESS   bytes=16900   363ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   428ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25269   419ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=83446   755ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=50110   1978ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16205   769ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9791    428ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=28578   343ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=64616   258ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=86751   413ms cands=25   NEW strong=0 weak=0
+  [DOWN] technologyreview VOICE_AI   bytes=200662  tries=5 UNREACHABLE after 5 attempts
+  [ OK ] wired-feed     VOICE_AI   bytes=45350   412ms cands=50   NEW strong=0 weak=0
+  [ OK ] arstechnica    VOICE_AI   bytes=78065   371ms cands=20   NEW strong=0 weak=1
+  [ OK ] zdnet-news     VOICE_AI   bytes=25033   414ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=4971    1293ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39297   723ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=84479   258ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=658249  806ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=617728  1061ms cands=100  NEW strong=0 weak=0
+  [DOWN] africanews     BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] radiocentre-news AUDIO_AD   bytes=47718   876ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=94676   225ms cands=100  NEW strong=1 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=29584   654ms cands=20   NEW strong=0 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60042   768ms cands=20   NEW strong=0 weak=3
+  [ OK ] cableman       AUDIO_AD   bytes=20236   188ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=28482   241ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=24137   1352ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=101047  573ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=53988   849ms cands=10   NEW strong=3 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=17458   962ms cands=10   NEW strong=5 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8831    321ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=14004   1392ms cands=10   NEW strong=2 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=15658   317ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4706    339ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=90790   373ms cands=10   NEW strong=0 weak=0
+
+new strong: 11   weak (human eyes only): 5   carried forward: 2   required down: none
+  NEW 2026-10-19 AUDIO_AD   YouTube обсуждает с издателями запуск аудиокниг
+  NEW 2026-10-19 AUDIO_AD   BBC Sounds adds weekly Game’s Gone bonus episodes
+  NEW 2026-10-19 AUDIO_AD   Free radio software site expands with dead air monitor
+  NEW 2026-10-19 AUDIO_AD   Pride Radio secures Lumo for weather sponsorship
+  NEW 2026-10-19 AUDIO_AD   After Almost a Half Century, A Boston Radio Staple is Retiring
+  NEW 2026-10-19 AUDIO_AD   Stingray Brings Streaming Radio Apps to Ford and Lincoln
+  NEW 2026-10-19 AUDIO_AD   MIW Panel Puts AI to Work for Radio Content Creators
+  NEW 2026-10-19 AUDIO_AD   What Radio Sellers Should Know As AI Reshapes Black Friday
+  NEW 2026-10-19 AUDIO_AD   Podcast Research Shows Radio How to Reach Big Spenders
+  NEW 2026-09-23 LOCALIZATION The Rythmo Band: Dubbing's Best-Kept Secret (feat. Margaux Christie)
+  NEW 2026-09-16 LOCALIZATION The Human Infrastructure Behind AI Dubbing (feat. Cissy Yun)
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-20            ‘These risks are real’: the threat of AI bioweapons – podcast
+  2026-10-19            AI game clones are making indie developers afraid to show their wo
+  2026-10-19            Пара слов о радио: человек, который говорит «Никому не рассказывай
+  2026-10-19            «Голос Вьетнама» запустит музыкальный канал VOV Sonata FM 89
+  2026-10-19            Радио ЭНЕРДЖИ (NRG): DAVA и Анна Немченко в шоу «Друзья»
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-20.{json,md}
+EXITCODE=0 
+==== 21.10.2026  9:40:01,79 ==== 
+=== primary poll 2026-10-21 (ledger has 149 entries) ===
+  [DOWN] ssrs-feed      RESEARCH   bytes=2590    tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [DOWN] ssrs-wpjson    RESEARCH   bytes=1335    tries=5 UNREACHABLE after 5 attempts
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   726ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=113138   health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=53407   476ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=9320    287ms cands=8    NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1930663 1213ms cands=116  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=82199   455ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=17058   234ms cands=20   NEW strong=0 weak=1
+  [ OK ] cnet-news      VOICE_AI   bytes=24974   429ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=120219  437ms cands=34   NEW strong=0 weak=0
+  [ OK ] aljazeera-world BUSINESS   bytes=17050   320ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   474ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25836   417ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=81509   747ms cands=50   NEW strong=0 weak=0
+  [ OK ] techinasia     LOCALIZATION bytes=49904   1886ms cands=36   NEW strong=0 weak=1
+  [ OK ] restofworld    LOCALIZATION bytes=16205   891ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=10099   351ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=29804   217ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=50122   241ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=86989   965ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=30462   395ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=44084   244ms cands=50   NEW strong=0 weak=1
+  [ OK ] arstechnica    VOICE_AI   bytes=76203   241ms cands=20   NEW strong=0 weak=1
+  [ OK ] zdnet-news     VOICE_AI   bytes=25171   410ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5177    2849ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39314   1068ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=92951   255ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=803858  1174ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=646293  1355ms cands=100  NEW strong=0 weak=0
+  [DOWN] africanews     BUSINESS   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] radiocentre-news AUDIO_AD   bytes=47718   835ms cands=10   NEW strong=0 weak=0
+  [ OK ] sostav-ru      AUDIO_AD   bytes=94642   401ms cands=100  NEW strong=2 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=29327   835ms cands=20   NEW strong=1 weak=0
+  [ OK ] onair-ru       AUDIO_AD   bytes=60042   712ms cands=20   NEW strong=0 weak=0
+  [ OK ] cableman       AUDIO_AD   bytes=20236   190ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=34685   207ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=19875   2133ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=96399   695ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=49088   812ms cands=10   NEW strong=3 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=18606   1206ms cands=10   NEW strong=4 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8113    322ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=13880   1136ms cands=10   NEW strong=0 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=15500   342ms cands=10   NEW strong=0 weak=0
+  [ OK ] slator         LOCALIZATION bytes=4676    355ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=89984   504ms cands=10   NEW strong=0 weak=0
+
+new strong: 10   weak (human eyes only): 4   carried forward: 5   required down: ['ssrs-feed', 'ssrs-wpjson']
+  NEW 2026-10-21 AUDIO_AD   NAB Names 2026 Marconi Radio Award Winners
+  NEW 2026-10-20 AUDIO_AD   Как телеканал «Ю» обновил эфирное оформление с помощью ИИ и японской э
+  NEW 2026-10-20 AUDIO_AD   «Радио Sostav»: Что будет с брендами, если покупать за нас начнет ИИ?
+  NEW 2026-10-20 AUDIO_AD   Как автору книги подготовиться к подкасту без пересказа оглавления
+  NEW 2026-10-20 AUDIO_AD   Former Radio City home to become yellow submarine tour
+  NEW 2026-10-20 AUDIO_AD   BBC Radio 4 Extra to close as a broadcast service
+  NEW 2026-10-20 AUDIO_AD   Sean Goldsmith gets Breakfast at Mansfield Radio
+  NEW 2026-10-20 AUDIO_AD   Free Jacobs Media Webinar Targets Radio Digital Sales for 2027
+  NEW 2026-10-20 AUDIO_AD   For Radio, Women's Sports Is Turning Fans Into Customers
+  NEW 2026-10-20 AUDIO_AD   Isaias Gives AM Act Backers a Case for Car Radio in the Storm
+  CARRY 2026-09-11 RESEARCH   Key Findings from the AI vs. Human Audiobook Narration Webinar
+  CARRY 2026-08-31 RESEARCH   AI vs. Human Audiobook Narration: A Blinded Survey of 1,000 Listeners
+  CARRY 2026-09-11 RESEARCH   Key Findings from the AI vs. Human Audiobook Narration Webinar
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-21            Toku launches visual tool to build speech AI
+  2026-10-20            Streaming guide JustWatch becomes a streamer itself
+  2026-10-20            Sexual Assault Is a Free Speech Issue
+  2026-10-20            JustWatch, which tackles streaming fragmentation, launches own str
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-21.{json,md}
+EXITCODE=1 
+==== 22.10.2026  9:40:01,80 ==== 
+=== primary poll 2026-10-22 (ledger has 163 entries) ===
+  [DOWN] ssrs-feed      RESEARCH   bytes=2590    tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [DOWN] ssrs-wpjson    RESEARCH   bytes=1359    tries=5 UNREACHABLE after 5 attempts
+  [ OK ] c2pa-feed      PROVENANCE bytes=56054   610ms cands=10   NEW strong=0 weak=0
+  [DOWN] edison-feed    RESEARCH   bytes=0       tries=5 UNREACHABLE after 5 attempts
+  [ OK ] leginfo-health LEGAL      bytes=5746     health-only: bill discovery on this site needs a manual POST search
+  [ OK ] economictimes-in BUSINESS   bytes=58046   468ms cands=51   NEW strong=0 weak=0
+  [ OK ] hindustantimes-tech VOICE_AI   bytes=15551   560ms cands=14   NEW strong=0 weak=0
+  [ OK ] eldiario-es    LAW_REG    bytes=1338815 1158ms cands=106  NEW strong=0 weak=0
+  [ OK ] heise-de       VOICE_AI   bytes=81943   373ms cands=60   NEW strong=0 weak=0
+  [ OK ] techcrunch-ai  VOICE_AI   bytes=17288   200ms cands=20   NEW strong=0 weak=0
+  [ OK ] cnet-news      VOICE_AI   bytes=24959   416ms cands=25   NEW strong=0 weak=0
+  [ OK ] guardian-tech  VOICE_AI   bytes=123200  504ms cands=35   NEW strong=0 weak=1
+  [ OK ] aljazeera-world BUSINESS   bytes=17072   343ms cands=25   NEW strong=0 weak=0
+  [ OK ] wsj-markets    BUSINESS   bytes=12604   438ms cands=20   NEW strong=0 weak=0
+  [ OK ] nikkei-asia-tech LOCALIZATION bytes=25907   465ms cands=50   NEW strong=0 weak=0
+  [ OK ] scmp-tech      LOCALIZATION bytes=81221   760ms cands=50   NEW strong=0 weak=1
+  [ OK ] techinasia     LOCALIZATION bytes=48751   1836ms cands=36   NEW strong=0 weak=0
+  [ OK ] restofworld    LOCALIZATION bytes=16205   833ms cands=12   NEW strong=0 weak=0
+  [ OK ] sifted-eu      BUSINESS   bytes=9804    772ms cands=24   NEW strong=0 weak=0
+  [ OK ] france24-world LAW_REG    bytes=30556   312ms cands=24   NEW strong=0 weak=0
+  [ OK ] theinformation VOICE_AI   bytes=64196   351ms cands=20   NEW strong=0 weak=0
+  [ OK ] abc-aus-tech   LOCALIZATION bytes=83450   426ms cands=25   NEW strong=0 weak=0
+  [ OK ] technologyreview VOICE_AI   bytes=69122   539ms cands=10   NEW strong=0 weak=0
+  [ OK ] wired-feed     VOICE_AI   bytes=46305   369ms cands=50   NEW strong=0 weak=2
+  [ OK ] arstechnica    VOICE_AI   bytes=74088   315ms cands=20   NEW strong=0 weak=0
+  [ OK ] zdnet-news     VOICE_AI   bytes=25469   379ms cands=25   NEW strong=0 weak=0
+  [ OK ] nhk-jp         BUSINESS   bytes=5217    2489ms cands=7    NEW strong=0 weak=0
+  [ OK ] japantimes-jp  BUSINESS   bytes=39788   753ms cands=30   NEW strong=0 weak=0
+  [ OK ] olhardigital-br VOICE_AI   bytes=96404   268ms cands=10   NEW strong=0 weak=0
+  [ OK ] elfinanciero-mx BUSINESS   bytes=710666  2961ms cands=100  NEW strong=0 weak=0
+  [ OK ] latercera-cl   BUSINESS   bytes=593309  2394ms cands=100  NEW strong=0 weak=0
+  [ OK ] africanews     BUSINESS   bytes=47818   687ms cands=50   NEW strong=0 weak=0
+  [DOWN] radiocentre-news AUDIO_AD   bytes=2843    tries=1 serves HTML, not a feed (redirect/anti-bot)
+  [ OK ] sostav-ru      AUDIO_AD   bytes=94205   218ms cands=100  NEW strong=1 weak=0
+  [ OK ] adpass-ru      AUDIO_AD   bytes=29404   1324ms cands=20   NEW strong=0 weak=0
+  [DOWN] onair-ru       AUDIO_AD   bytes=559     tries=5 UNREACHABLE after 5 attempts
+  [ OK ] cableman       AUDIO_AD   bytes=20236   522ms cands=10   NEW strong=0 weak=0
+  [ OK ] cossa-ru       BUSINESS   bytes=35062   200ms cands=20   NEW strong=0 weak=0
+  [ OK ] vc-ru          BUSINESS   bytes=20165   1332ms cands=12   NEW strong=0 weak=0
+  [ OK ] habr-ru        VOICE_AI   bytes=94676   399ms cands=40   NEW strong=0 weak=0
+  [ OK ] radiotoday-uk  AUDIO_AD   bytes=48174   881ms cands=10   NEW strong=2 weak=0
+  [ OK ] radioink       AUDIO_AD   bytes=19180   1201ms cands=10   NEW strong=3 weak=0
+  [ OK ] adweek         AUDIO_AD   bytes=8444    263ms cands=10   NEW strong=0 weak=0
+  [ OK ] nimdzi         LOCALIZATION bytes=13880   1460ms cands=10   NEW strong=0 weak=0
+  [ OK ] mbw            VOICE_AI   bytes=15485   353ms cands=10   NEW strong=0 weak=1
+  [ OK ] slator         LOCALIZATION bytes=4959    287ms cands=4    NEW strong=0 weak=0
+  [ OK ] theverge-ai    VOICE_AI   bytes=27711   326ms cands=10   NEW strong=0 weak=0
+
+new strong: 6   weak (human eyes only): 5   carried forward: 5   required down: ['ssrs-feed', 'ssrs-wpjson']
+  NEW 2026-10-21 AUDIO_AD   Хватит изображать эксперта: почему профессионалам нужен собственный "T
+  NEW 2026-10-21 AUDIO_AD   John Quinn appointed chairperson of Mi-Soul Radio
+  NEW 2026-10-21 AUDIO_AD   Ashley McBryde to host show on Absolute Radio Country
+  NEW 2026-10-21 AUDIO_AD   Radio Ink Honors 2026 Radio Wayne Award Winners
+  NEW 2026-10-21 AUDIO_AD   Radio's Lapsed Listeners Aren't Lost, Podcast Data Says
+  NEW 2026-10-21 AUDIO_AD   AutoStage Portal Brings In-Car Radio Data to Small Markets
+  CARRY 2026-09-11 RESEARCH   Key Findings from the AI vs. Human Audiobook Narration Webinar
+  CARRY 2026-08-31 RESEARCH   AI vs. Human Audiobook Narration: A Blinded Survey of 1,000 Listeners
+  CARRY 2026-09-11 RESEARCH   Key Findings from the AI vs. Human Audiobook Narration Webinar
+  CARRY 2026-07-01 RESEARCH   Time Spent with On-Demand Audio Surpasses Linear Sources
+  CARRY 2026-06-10 RESEARCH   Audiobooks Provide Convenience and Time Away from Screens
+
+WEAK (not promoted; matches podcast/audio/sound but may be off-topic):
+  2026-10-22            Malaysian teen arrested after live-streaming axe attack on teacher
+  2026-10-21            ‘The audience gets to be in on it’: How narrative-led gameplay is 
+  2026-10-21            Bose Is Buying Skullcandy. It’s Not as Weird as It Sounds
+  2026-10-21            The Best Hearing Aids I’ve Tested (2026): Jabra, Resound, Apple, a
+  2026-10-21            SoundExchange’s $3.4M lawsuit against Sonos put on hold until appe
+
+written: state/primary_seen.jsonl (append), reports/primary/primary-2026-10-22.{json,md}
+EXITCODE=1 

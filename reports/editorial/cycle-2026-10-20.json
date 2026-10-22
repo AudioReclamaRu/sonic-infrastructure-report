@@ -1,0 +1,44 @@
+{
+  "generated": "2026-10-20T09:45:02",
+  "horizon_days": 14,
+  "cadence_days": 2,
+  "last_slot": "2026-11-02",
+  "dry_run": false,
+  "horizon_slots": [],
+  "planned": [],
+  "slots_appended": 0,
+  "free_verified_cards": [],
+  "strong_pending": 49,
+  "tasks": [
+    {
+      "id": "verify-red",
+      "severity": "AMBER",
+      "detail": "claims_verify exit=1 (19.10.2026 10:00:25,20) — SOURCE ERROR",
+      "action": "исправить первичный URL/claim в state/claims.jsonl"
+    },
+    {
+      "id": "recall-low",
+      "severity": "AMBER",
+      "detail": "recall KPI 25.0% (<60)",
+      "action": "расширить discovery surface (reports/missed: loss stages)"
+    },
+    {
+      "id": "signals-stale",
+      "severity": "AMBER",
+      "detail": "reports/signals: возраст: **УСТАРЕЛО 39 дн.** (> 7)",
+      "action": "опубликовать сигнал недели (редакция)"
+    },
+    {
+      "id": "claims-gap",
+      "severity": "AMBER",
+      "detail": "evidence без registered claim: E-2026-015, E-2026-023, E-2026-024",
+      "action": "зарегистрировать claim (verify_claims --seed) для верификации первички"
+    }
+  ],
+  "tasks_new_today": [
+    "verify-red",
+    "recall-low",
+    "signals-stale",
+    "claims-gap"
+  ]
+}
