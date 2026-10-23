@@ -1,0 +1,10 @@
+service,unit,price_rub,notes
+voiceover_ad_spot,per_spot,3500,голос диктора, разовый заказ (от)
+voiceover_pack_30,per_30_files,49990,пакет рекламных файлов (от 1667/файл)
+tts_neuro,per_spot,500,нейросеть TTS (от)
+ivr_greeting,per_order,1999,минимальный заказ IVR
+ivr_pack_100,per_100_files,19800,198 за файл в пакете
+dubbing_en,per_30s_spot,3500,английский язык (от)
+dubbing_kk_uz,per_30s_spot,3000,казахский/узбекский (от)
+multilingual,coefficient,1.5-3x,62 языка, множитель от базовой цены
+rush_delivery,surcharge,50-100%,срочно в день обращения
