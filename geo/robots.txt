@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://audioreclamaru.github.io/sonic-infrastructure-report/geo/sitemap.xml
