@@ -1,0 +1,18 @@
+{
+  "schema": "knowledge-pricing/1",
+  "entity_id": "audio-reclama-ru",
+  "observed_at": "2026-10-20",
+  "purpose": "Machine-readable price facts for commercial queries ('сколько стоит озвучка', 'цена IVR').",
+  "disclaimer": "The site states: 'Цены на сайте носят информационный характер и не являются публичной офертой.'",
+  "currency": "RUB",
+  "entries": [
+    {"id": "P-AUDIOPLUS-ORDER", "name": "Аудио+ — один заказ", "price": 1990, "unit": "заказ", "scope": "один заказ — один файл, текст не более 90 слов", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20", "status": "ok"},
+    {"id": "P-AUDIOPLUS-PACK10", "name": "Аудио+ — пакет 10", "price": 18990, "unit": "пакет", "per_order": 1899, "scope": "бессрочно", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20", "status": "ok"},
+    {"id": "P-AUDIOPLUS-PACK20", "name": "Аудио+ — пакет 20", "price": 35990, "unit": "пакет", "per_order": 1799, "scope": "бессрочно", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20", "status": "ok"},
+    {"id": "P-AUDIOPLUS-PACK30", "name": "Аудио+ — пакет 30", "price": 49990, "unit": "пакет", "per_order": 1667, "scope": "бессрочно", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20", "status": "ok"},
+    {"id": "P-AUDIOPLUS-EDIT", "name": "Аудио+ — правка", "price": 790, "unit": "правка", "scope": "изменения/коррекция/добавление звуков", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20", "status": "ok"},
+    {"id": "P-IVR-MIN", "name": "IVR — минимум", "price": 1999, "unit": "заказ", "scope": "нижняя граница", "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html", "observed_at": "2026-10-20", "status": "verify"},
+    {"id": "P-IVR-100", "name": "IVR — 100 файлов", "price": 21800, "unit": "проект", "composition": "2000 + 19800", "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html", "observed_at": "2026-10-20", "status": "verify"},
+    {"id": "P-IVR-500PLUS", "name": "IVR — свыше 500", "price": 69800, "unit": "база", "plus_per_file": 50, "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html", "observed_at": "2026-10-20", "status": "verify"}
+  ]
+}

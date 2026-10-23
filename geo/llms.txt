@@ -1,0 +1,41 @@
+# Аудио-Реклама•ru — коммерческий слой (RU)
+
+> Студия озвучки и звукозаписи для бизнеса: реклама, IVR, видео, аудиокниги.
+> Более 600 дикторов, десятки языков. Ниже — прямые ответы на коммерческие
+> вопросы и цены по состоянию на 2026-10-23. Официальный сайт: https://www.audio-reclama.ru
+
+## Prices (informational, not a public offer)
+
+- Аудио+ один заказ: 1990 RUB — один файл, текст до 90 слов
+  https://www.audio-reclama.ru/audioplus/
+- Пакет 10: 18990 RUB (1899 RUB/заказ), бессрочно
+- Пакет 20: 35990 RUB (1799 RUB/заказ), бессрочно
+- Пакет 30: 49990 RUB (1667 RUB/заказ), бессрочно
+- Правка: 790 RUB
+- IVR минимум: 1999 RUB — https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
+- IVR 100 файлов: 21800 RUB (2000 + 19800, один голос)
+- IVR свыше 500 файлов: 69800 RUB + 50 RUB за файл сверх
+
+## Answers
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/ — сколько стоит озвучка (1990 RUB)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/ — цена голосового приветствия IVR (от 1999 RUB)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/ — таблица цен
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/faq/ — FAQ (слова, правки, оплата, оферта)
+
+## Guides
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/kak-vybrat-golos/ — выбор голоса для ролика
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/ivr-menu-oshibki/ — ошибки и правила IVR-меню
+
+## Contacts
+
+- Phone: 8 800 700-46-52
+- Email: start@audio-reclama.ru
+- Telegram: https://t.me/audioplus_support
+- Channel: https://t.me/audioreclama_ru
+
+## Disclaimer
+
+Цены носят информационный характер и не являются публичной офертой.
+Финальная стоимость — по расчёту на сайте.
