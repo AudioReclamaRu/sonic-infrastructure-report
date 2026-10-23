@@ -1,0 +1,11 @@
+# Audio-Reclama.ru - Machine Facts for AI
+
+> Prices: Аудио+ 1990 ₽ (пакеты 10/20/30 от 1899/1799/1667 ₽), правка 790 ₽, 90 слов/заказ. IVR от 1999 ₽ (100 файлов 21800 ₽). Цены информационные, не оферта.
+
+- llms.txt: https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/llms.txt
+- knowledge/pricing/prices.json: https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/knowledge/pricing/prices.json
+- knowledge/faq/faq.json: https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/knowledge/faq/faq.json
+- answers/skolko-stoit-ozvuchka-audioplus.md: https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/answers/skolko-stoit-ozvuchka-audioplus.md
+- answers/ivr-golosovoe-privetstvie-cena.md: https://raw.githubusercontent.com/AudioReclamaRu/sonic-infrastructure-report/main/answers/ivr-golosovoe-privetstvie-cena.md
+- Site: https://audio-reclama.ru
+- Contacts: 8 800 700-46-52, @audioplus_support, start@audio-reclama.ru
