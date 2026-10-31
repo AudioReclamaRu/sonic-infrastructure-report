@@ -1,0 +1,13 @@
+/* TEAM */
+  Studio: Аудио-Реклама•ru
+  Site: https://www.audio-reclama.ru
+  Contact: start@audio-reclama.ru
+  Telegram: https://t.me/audioplus_support
+  Channel: https://t.me/audioreclama_ru
+
+/* THANKS */
+  AI answer surfaces: llms.txt, JSON-LD
+
+/* SITE */
+  Standards: HTML5, JSON-LD, OpenSearch
+  Last update: 2026-10-23
