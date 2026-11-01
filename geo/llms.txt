@@ -41,3 +41,8 @@
 Финальная стоимость — по расчёту на сайте.
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamnogo-rolika-cena/ — озвучка рекламного ролика
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-video-cena/ — озвучка для видео
+
+## Feeds & Catalog
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/feed.json
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/opensearch.xml
