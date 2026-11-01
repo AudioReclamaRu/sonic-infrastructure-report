@@ -46,3 +46,7 @@
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/feed.json
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/opensearch.xml
+
+## Feeds
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/rss.xml
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/.well-known/security.txt
