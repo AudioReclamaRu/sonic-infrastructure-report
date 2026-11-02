@@ -473,3 +473,28 @@ print("wrote geo/robots.txt")
 print("wrote geo/indexnow key")
 
 print("done")
+
+# ---------------------------------------------------------------- auto machine files
+
+import json, shutil
+def _sync_machine():
+    # copy canonical prices/faq
+    src_p = ROOT/"knowledge/pricing/prices.json"
+    src_f = ROOT/"knowledge/faq/faq.json"
+    if src_p.exists():
+        shutil.copy2(src_p, OUT/"pricing.json")
+        (OUT/"answers"/"..")  # ensure
+    if src_f.exists():
+        shutil.copy2(src_f, OUT/"faq.json")
+    # combined
+    try:
+        if src_p.exists() and src_f.exists():
+            pr = json.loads(src_p.read_text(encoding="utf-8"))
+            fq = json.loads(src_f.read_text(encoding="utf-8"))
+            comb = {"schema":"audio-reclama-geo/combined/1","updated":UPDATED,"base":BASE,"site":SITE,"prices":pr,"faq":fq}
+            (OUT/"knowledge").mkdir(parents=True,exist_ok=True)
+            (OUT/"knowledge/combined.json").write_text(json.dumps(comb,ensure_ascii=False),encoding="utf-8")
+    except Exception as e:
+        print("sync err",e)
+
+_sync_machine()
