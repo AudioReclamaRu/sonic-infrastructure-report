@@ -1,0 +1,14 @@
+{
+  "schema": "knowledge-faq/1",
+  "entity_id": "audio-reclama-ru",
+  "observed_at": "2026-10-20",
+  "lang": "ru",
+  "disclaimer": "Цены на сайте носят информационный характер и не являются публичной офертой.",
+  "items": [
+    {"id": "F1", "q": "Сколько стоит озвучка в Аудио+?", "a": "1990 ₽ за один заказ. Один заказ — один файл, не более 90 слов. Пакеты: 10 — 18990 ₽ (1899 ₽), 20 — 35990 ₽ (1799 ₽), 30 — 49990 ₽ (1667 ₽), бессрочно. Правки — 790 ₽.", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20"},
+    {"id": "F2", "q": "Сколько стоит голосовое приветствие IVR?", "a": "Минимум 1999 ₽. 100 файлов: 2000 ₽ + 19800 ₽ = 21800 ₽ при одном голосе. Свыше 500 файлов: 69800 ₽ + 50 ₽ за каждый следующий файл.", "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html", "observed_at": "2026-10-20"},
+    {"id": "F3", "q": "Сколько слов в заказе Аудио+?", "a": "Не более 90 слов. Один заказ — одна законченная мысль. Дополнительный файл — новый заказ.", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20"},
+    {"id": "F4", "q": "Это оферта?", "a": "Нет. Цены информационные и не являются публичной офертой.", "source": "https://www.audio-reclama.ru/", "observed_at": "2026-10-20"},
+    {"id": "F5", "q": "Контакты Аудио+?", "a": "Telegram @audioplus_support, 8 800 700-46-52, пн–пт 9:00–18:00 мск, start@audio-reclama.ru", "source": "https://www.audio-reclama.ru/audioplus/", "observed_at": "2026-10-20"}
+  ]
+}
