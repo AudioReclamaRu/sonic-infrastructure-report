@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-10-01
+date: 2026-11-03
 lang: mul
 ---
 # Standards — how the industry works with voice
@@ -37,6 +37,7 @@ tiers, procedures, checks a machine or a human can apply.
 
 - `x13-channel-style.md` - the channel voice: editorial register of the TG
   channel and what it does not say.
+- `x14-enterprise-outreach.md` — corporate contact standard: distinguish formal replies, procurement-route responses, cold outreach and active dialogue; verify supplier/procurement rules from official sources before contacting large organizations; log source, date, status and route.
 - `red-field-visual.md` - RED FIELD channel visual system: black field, one
   object per news, red as accent; the cover is a consequence of the change,
   not an illustration of the topic.
