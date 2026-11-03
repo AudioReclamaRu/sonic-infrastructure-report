@@ -37,6 +37,9 @@ Three question layers, and the layer you need is decided by the question:
 6. `standards/editorial-object-contract.md` (RU) — the machine-checkable
    editorial contract: 11-value `object_type` enum, 8-field `event_object`,
    cover derivation, named `REJECT` codes.
+7. For corporate outreach and supplier/procurement routing, read
+   `standards/x14-enterprise-outreach.md` before drafting or classifying a
+   B2B contact.
 
 ## Trust order (important)
 
@@ -103,6 +106,9 @@ state.
 - Editorial work is governed by `standards/editorial-object-contract.md`; the
   cases in `standards/editorial-object-cases.md` are filled **by hand** from real
   events and are never generated.
+- Corporate B2B outreach and procurement routing are governed by
+  `standards/x14-enterprise-outreach.md`. Do not infer that a supplier portal
+  prohibits direct contact unless an official source confirms exclusivity.
 - Before committing, run `python tools/make_reports_index.py --check` if you
   touched anything under `reports/`.
 
