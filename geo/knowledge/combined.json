@@ -73,7 +73,7 @@
         "scope": "Стоимость рассчитывается индивидуально (объём, структура меню, языки, условия).",
         "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "observed_at": "2026-11-06",
-        "status": "verify"
+        "status": "verify_individual"
       }
     ]
   },
@@ -128,5 +128,10 @@
     "count": 23,
     "updated": "2026-11-06",
     "schema_note": "Attributed atomic facts; statuses cited_in_blog/editorial_definition/blog_milestone."
+  },
+  "evidence_ledger": {
+    "url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json",
+    "page": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/",
+    "updated": "2026-11-06"
   }
 }

@@ -1,7 +1,7 @@
 # Аудио-Реклама•ru — коммерческий слой (RU)
 
 > Студия озвучки и звукозаписи для бизнеса: реклама, IVR, видео, аудиокниги.
-> Ниже — прямые ответы на коммерческие вопросы и цены по состоянию на 2026-11-03. Официальный сайт: https://www.audio-reclama.ru
+> Ниже — прямые ответы на коммерческие вопросы и цены по состоянию на 2026-11-06. Официальный сайт: https://www.audio-reclama.ru
 
 ## Prices (informational, not a public offer)
 
@@ -36,6 +36,11 @@
 
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/ — реестр фактологических материалов блога (атомарные факты, ссылки на статьи audio-reclama.ru/blog и названные первоисточники; статусы проверки)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json — machine-readable JSON
+
+## Evidence ledger
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/ — provenance реестр (claim → source → status → ограничения)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json
 
 ## Disclaimer
 
