@@ -42,6 +42,13 @@
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/ — provenance реестр (claim → source → status → ограничения)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json
 
+## Planning / knowledge
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/case-studies/ — публичные ссылки на кейсы (требуют верификации/разрешений)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix/ — матрица запросов (факт-безопасно)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/reports/main-domain-audit-2026-11-06.md — аудит основного домена (read-only)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/reports/visibility-benchmark-baseline-2026-11-06.md — протокол AI-видимости
+
 ## Disclaimer
 
 Цены носят информационный характер и не являются публичной офертой.

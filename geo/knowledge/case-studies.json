@@ -1,0 +1,119 @@
+{
+  "updated": "2026-11-06",
+  "policy": "Only public/verifiable facts. No invented KPIs, results, efficiency metrics, or testimonials. Separate historical/intermediate milestones from confirmed outcomes. Status public_reference_observed = named on public site; details require confirmation/permission.",
+  "cases": [
+    {
+      "id": "CS-VNUKOVO",
+      "client": "Международный аэропорт Внуково",
+      "project_url": "https://www.audio-reclama.ru/project/vnukovo.html",
+      "source_observed": "https://www.audio-reclama.ru/ (project card, observed 2026-11-06)",
+      "public_summary_observed": "Информационные объявления для аэропорта на 11 языках (формулировка карточки на главной).",
+      "blog_milestone_ref": "BF-VNUKOVO-001",
+      "status": "public_reference_observed",
+      "verified_facts": "Только публично наблюдаемая формулировка карточки; BF-VNUKOVO-001 — blog_milestone (этап, не канонический итог).",
+      "needs_confirmation": "Точная роль студии, итоговые объёмы/языки/файлы по этапам, даты, разрешённые аудиопримеры, права, KPI/результаты (не выдумывать).",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/project/vnukovo.html",
+        "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html"
+      ]
+    },
+    {
+      "id": "CS-ABBYY",
+      "client": "ABBYY",
+      "project_url": "https://www.audio-reclama.ru/project/abbyy.html",
+      "source_observed": "https://www.audio-reclama.ru/ (project card, observed 2026-11-06)",
+      "public_summary_observed": "Голосовое меню для IT компании ABBYY на 4 языках (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки проекта на главной/странице проекта — требует сверки деталей.",
+      "needs_confirmation": "Объём работ, роль, языки/версии, даты, разрешения на публикацию деталей, метрики (не выдумывать).",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/project/abbyy.html"
+      ]
+    },
+    {
+      "id": "CS-RZD",
+      "client": "РЖД",
+      "project_url": "https://www.audio-reclama.ru/ (project reference)",
+      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
+      "public_summary_observed": "Оповещения в скоростных поездах «Стриж» и «Сапсан» (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки; детали не подтверждены в этом проходе.",
+      "needs_confirmation": "Роль студии, состав работ, языки, даты, доказательства, разрешения.",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/"
+      ]
+    },
+    {
+      "id": "CS-MICROSOFT-HOLOLENS",
+      "client": "Microsoft",
+      "project_url": "https://www.audio-reclama.ru/project/microsoft.html",
+      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
+      "public_summary_observed": "Озвучивание презентационного видео Microsoft HoloLens (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
+      "needs_confirmation": "Роль, объём, версии/языки, даты, права на использование названия/примера.",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/project/microsoft.html"
+      ]
+    },
+    {
+      "id": "CS-BRAUN",
+      "client": "Braun",
+      "project_url": "https://www.audio-reclama.ru/project/braun.html",
+      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
+      "public_summary_observed": "Перевод и озвучка видеорекламы на Восточную Европу и Северную Африку (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
+      "needs_confirmation": "Конкретные рынки/языки/объёмы, роль, даты, доказательства, разрешения.",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/project/braun.html"
+      ]
+    },
+    {
+      "id": "CS-SBERBANK",
+      "client": "Сбербанк России",
+      "project_url": "https://www.audio-reclama.ru/ (project reference)",
+      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
+      "public_summary_observed": "Автоинформатор для Волго-Вятского банка Сбербанка России (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
+      "needs_confirmation": "Роль, объём, даты, подразделение/контекст, разрешения, доказательства.",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/"
+      ]
+    },
+    {
+      "id": "CS-MERCEDES-BENZ",
+      "client": "Mercedes-Benz",
+      "project_url": "https://www.audio-reclama.ru/ (project reference)",
+      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
+      "public_summary_observed": "Фирменный пэкшот (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
+      "needs_confirmation": "Роль, версия/использование, даты, права, доказательства.",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/"
+      ]
+    },
+    {
+      "id": "CS-RENAISSANCE-CREDIT",
+      "client": "Ренессанс Кредит",
+      "project_url": "https://www.audio-reclama.ru/ (project reference)",
+      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
+      "public_summary_observed": "Сложное голосовое меню для банка (формулировка карточки).",
+      "blog_milestone_ref": "",
+      "status": "public_reference_observed",
+      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
+      "needs_confirmation": "Структура IVR, языки, объём, роль, даты, разрешения, доказательства.",
+      "evidence_urls": [
+        "https://www.audio-reclama.ru/"
+      ]
+    }
+  ]
+}
