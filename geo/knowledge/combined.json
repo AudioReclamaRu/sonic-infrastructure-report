@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama-geo/combined/1",
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
   "site": "https://www.audio-reclama.ru",
   "prices": {
@@ -73,7 +73,7 @@
         "scope": "Стоимость рассчитывается индивидуально (объём, структура меню, языки, условия).",
         "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "observed_at": "2026-11-06",
-        "status": "verify_individual"
+        "status": "verify"
       }
     ]
   },

@@ -1,7 +1,8 @@
 # Аудио-Реклама•ru — коммерческий слой (RU)
 
 > Студия озвучки и звукозаписи для бизнеса: реклама, IVR, видео, аудиокниги.
-> Ниже — прямые ответы на коммерческие вопросы и цены по состоянию на 2026-11-06. Официальный сайт: https://www.audio-reclama.ru
+> Цены/условия носят информационный характер (не оферта). Актуальные условия подтверждать на https://www.audio-reclama.ru.
+> Состояние коммерческих данных в GEO-слое: 2026-11-07. Официальный сайт: https://www.audio-reclama.ru
 
 ## Prices (informational, not a public offer)
 
@@ -23,7 +24,17 @@
 ## Guides
 
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/kak-vybrat-golos/ — выбор голоса для ролика
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/ivr-menu-oshibki/ — ошибки и правила IVR-меню
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/ivr-menu-oshibki/ — ошибки в структуре IVR-меню
+
+## Knowledge / evidence (attributed, fact-safe)
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/ — реестр фактологических материалов блога (статусы cited_in_blog/editorial_definition/blog_milestone)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/ — provenance реестр (claim → source → status → ограничения)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/case-studies/ — публичные ссылки на кейсы (требуют верификации/разрешений)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix/ — матрица запросов (факт-безопасно)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/combined.json
 
 ## Contacts
 
@@ -32,24 +43,7 @@
 - Telegram: https://t.me/audioplus_support
 - Channel: https://t.me/audioreclama_ru
 
-## Knowledge / Blog facts (attributed)
-
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/ — реестр фактологических материалов блога (атомарные факты, ссылки на статьи audio-reclama.ru/blog и названные первоисточники; статусы проверки)
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json — machine-readable JSON
-
-## Evidence ledger
-
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/ — provenance реестр (claim → source → status → ограничения)
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json
-
-## Planning / knowledge
-
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/case-studies/ — публичные ссылки на кейсы (требуют верификации/разрешений)
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix/ — матрица запросов (факт-безопасно)
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/reports/main-domain-audit-2026-11-06.md — аудит основного домена (read-only)
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/reports/visibility-benchmark-baseline-2026-11-06.md — протокол AI-видимости
-
 ## Disclaimer
 
 Цены носят информационный характер и не являются публичной офертой.
-Финальная стоимость — по расчёту на сайте.
+Финальная стоимость — по расчёту на сайте. Сторонние статистики в knowledge-слое атрибутированы и не являются оригинальным исследованием Audio-Reclama.ru.
