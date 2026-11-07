@@ -1,7 +1,7 @@
 {
   "schema": "audio-reclama-geo/evidence-ledger/1",
-  "updated": "2026-11-06",
-  "purpose": "Provenance ledger for claims used in GEO/AEO layer. No claim is promoted to verified without primary confirmation.",
+  "updated": "2026-11-07",
+  "purpose": "Provenance ledger for claims used in GEO/AEO layer. No claim is promoted to verified without primary confirmation. Phase 3 adds verification classification, evidence notes, and applicability limits.",
   "status_rules": {
     "verified": "Primary source independently confirmed.",
     "cited_in_blog": "Claim reported in audio-reclama.ru blog with named source; primary not independently re-verified in this pass.",
@@ -22,9 +22,14 @@
       "source_date": "2020-05-15",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Конкретный первоисточник цифр в тексте статьи не указан; требуется подтверждение.",
+      "limitations": "Конкретный первоисточник цифр в тексте статьи не указан; требуется подтверждение. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog () → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog () → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog URL fetched 2026-11-07; article states 850,000 podcasts / 30M episodes but does not name a primary source in the cited passage.",
+      "applicability_scope": "Historical (as of Jan 2020 context in article). Not a 2026 market-state claim; primary source unavailable in article.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2020-002",
@@ -36,9 +41,14 @@
       "source_date": "2020-05-15",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Прогнозная оценка; для verified нужен первичный отчёт/публикация.",
+      "limitations": "Прогнозная оценка; для verified нужен первичный отчёт/публикация. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (Bridge Ratings) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (Bridge Ratings) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog URL fetched 2026-11-07; article attributes $500M US podcast ad forecast to Bridge Ratings. Primary report not independently re-verified.",
+      "applicability_scope": "Forecast dated to 2020 context; do not cite as current spend.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2020-003",
@@ -50,9 +60,14 @@
       "source_date": "2020-05-15",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Нужна ссылка на конкретный отчёт PwC/IAB USA для независимой проверки.",
+      "limitations": "Нужна ссылка на конкретный отчёт PwC/IAB USA для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (PricewaterhouseCoopers (PwC); IAB USA) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (PricewaterhouseCoopers (PwC); IAB USA) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 2,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog URL fetched 2026-11-07; article attributes 3 podcast ad formats to PwC/IAB USA research. Primary report not independently re-verified.",
+      "applicability_scope": "Attributed classification; verify against primary PwC/IAB USA report for verified status.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2020-004",
@@ -64,9 +79,14 @@
       "source_date": "2020-05-15",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Дата/волна исследования в статье не детализирована.",
+      "limitations": "Дата/волна исследования в статье не детализирована. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (Mediascope) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (Mediascope) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog URL fetched 2026-11-07; article attributes 51% RU audio listeners also listen to podcasts to Mediascope. Wave/date details limited.",
+      "applicability_scope": "Historical attributed figure; not 2026 state.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2019-001",
@@ -78,9 +98,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Часть значений — прогнозы на момент публикации статьи.",
+      "limitations": "Часть значений — прогнозы на момент публикации статьи. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2019-002",
@@ -92,9 +117,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Методология приведена в статье; для verified желательна ссылка на полный отчёт.",
+      "limitations": "Методология приведена в статье; для verified желательна ссылка на полный отчёт. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (Mediascope; IAB Russia) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (Mediascope; IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 2,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2019-003",
@@ -106,9 +136,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Требуется первичный источник для независимой проверки.",
+      "limitations": "Требуется первичный источник для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (Voices.com) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (Voices.com) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-VNUKOVO-001",
@@ -122,7 +157,12 @@
       "status": "blog_milestone",
       "limitations": "Промежуточный этап блога. Канонические/более поздние подтверждённые показатели могут отличаться; приоритет у актуального proof-слоя.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog case (milestone/progress) → GEO registry; canonical proof may differ"
+      "provenance": "audio-reclama.ru blog case (milestone/progress) → GEO registry; canonical proof may differ",
+      "business_priority": 1,
+      "phase3_classification": "partially_verified_milestone",
+      "phase3_evidence": "Blog case https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html fetched 2026-11-07 confirms milestone framing: project not completed at publication; >2000 audio files in 9 languages (excluding Russian/English).",
+      "applicability_scope": "Verified as blog-reported milestone only, not as canonical final project proof. Later confirmed metrics may differ.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2020-005",
@@ -134,9 +174,14 @@
       "source_date": "2020-02-18",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Прогноз на момент публикации; фактические значения могли отличаться.",
+      "limitations": "Прогноз на момент публикации; фактические значения могли отличаться. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2020-006",
@@ -148,9 +193,14 @@
       "source_date": "2020-02-18",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Нужен первичный отчёт/методология исследования для независимой проверки.",
+      "limitations": "Нужен первичный отчёт/методология исследования для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (Data Insight; People&Screens) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (Data Insight; People&Screens) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 2,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2018-001",
@@ -162,9 +212,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia.",
+      "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2018-002",
@@ -176,9 +231,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Показатель относится к периоду публикации аналитики; может меняться со временем.",
+      "limitations": "Показатель относится к периоду публикации аналитики; может меняться со временем. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (Яндекс) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (Яндекс) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-2018-003",
@@ -190,9 +250,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Требуется уточнение методологии и первичного отчёта.",
+      "limitations": "Требуется уточнение методологии и первичного отчёта. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-IVR-001",
@@ -206,7 +271,12 @@
       "status": "editorial_definition",
       "limitations": "Определение дано в практическом/редакционном контексте блога; терминология IVR может варьироваться у вендоров.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 1,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Editorial definition from audio-reclama.ru blog; consistent with common IVR terminology but not an empirical claim requiring third-party verification.",
+      "applicability_scope": "Use as practical definition with attribution to editorial source.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-HOSTREAD-001",
@@ -218,9 +288,14 @@
       "source_date": "2020-05-15",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Эффект форматов (в т.ч. host-read) требует опоры на конкретные исследования; связывать с доказательными материалами при наличии.",
+      "limitations": "Эффект форматов (в т.ч. host-read) требует опоры на конкретные исследования; связывать с доказательными материалами при наличии. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (PwC/IAB USA) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (PwC/IAB USA) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 2,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Derived from podcast article attribution (PwC/IAB USA) context; format/effect claims need primary study linkage for stronger status.",
+      "applicability_scope": "Attributed/historical; effectiveness claims require evidence.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-IVR-002",
@@ -234,7 +309,12 @@
       "status": "editorial_definition",
       "limitations": "Практическое описание процесса; конкретный состав работ и технические требования зависят от АТС/платформы заказчика. Ценовые упоминания в старых статьях блога не используются как актуальные.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 2,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-IVR-003",
@@ -248,7 +328,12 @@
       "status": "editorial_definition",
       "limitations": "Рекомендация основана на практике/редакционном опыте; оптимальный выбор зависит от аудитории и сценария.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 2,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-VOICE-001",
@@ -262,7 +347,12 @@
       "status": "editorial_definition",
       "limitations": "Практические наблюдения и обобщения из статьи; не являются клиническим/акустическим исследованием. Возможности зависят от конкретного оборудования.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 2,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-DIGITAL-001",
@@ -274,9 +364,14 @@
       "source_date": "",
       "last_verified": "2026-11-06",
       "status": "cited_in_blog",
-      "limitations": "Данные относятся к периоду публикации и могут быть устаревшими; для актуальных показателей требуется независимая проверка первоисточников.",
+      "limitations": "Данные относятся к периоду публикации и могут быть устаревшими; для актуальных показателей требуется независимая проверка первоисточников. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "primary source named in blog (TNS; VK Для бизнеса) → cited in audio-reclama.ru/blog → GEO registry"
+      "provenance": "primary source named in blog (TNS; VK Для бизнеса) → cited in audio-reclama.ru/blog → GEO registry",
+      "business_priority": 3,
+      "phase3_classification": "unverified_primary",
+      "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+      "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-DIGITAL-002",
@@ -290,7 +385,12 @@
       "status": "editorial_definition",
       "limitations": "Функциональность площадок меняется со временем; условия размещения, форматы и лимиты нужно уточнять на актуальных страницах платформ.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 3,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-PROD-001",
@@ -304,7 +404,12 @@
       "status": "editorial_definition",
       "limitations": "Обобщённые практические требования; конкретный стек оборудования и процессы зависят от студии и задачи.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 3,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-PROD-002",
@@ -318,7 +423,12 @@
       "status": "editorial_definition",
       "limitations": "Редакционный перечень типичных ошибок; не является стандартизированной таксономией.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 3,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "BF-CREATIVE-001",
@@ -332,7 +442,12 @@
       "status": "editorial_definition",
       "limitations": "Советы носят практический/креативный характер; эффективность зависит от продукта, аудитории, медиаплана и тестирования.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-      "provenance": "audio-reclama.ru blog (first-party publication)"
+      "provenance": "audio-reclama.ru blog (first-party publication)",
+      "business_priority": 3,
+      "phase3_classification": "editorial_definition",
+      "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+      "applicability_scope": "Attribute as editorial/practical guidance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "CF-AUDIOPLUS-ORDER",
@@ -346,7 +461,12 @@
       "status": "observed_verify_on_source",
       "limitations": "Информационно, не публичная оферта; подтверждать на основном сайте перед коммерческим использованием.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/",
-      "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing"
+      "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing",
+      "business_priority": 1,
+      "phase3_classification": "partially_verified",
+      "phase3_evidence": "Main service page https://www.audio-reclama.ru/audioplus/ fetched 2026-11-07 shows 1990 ₽ / up to 90 words / one file context; full current commercial terms still require owner confirmation.",
+      "applicability_scope": "Observed on official service page 2026-11-07; treat as informational, not public offer; re-verify before quoting commercially.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "CF-AUDIOPLUS-PACKS",
@@ -360,7 +480,12 @@
       "status": "observed_verify_on_source",
       "limitations": "Информационно, не публичная оферта; актуальность подтверждать на основном сайте.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/",
-      "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing"
+      "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing",
+      "business_priority": 1,
+      "phase3_classification": "partially_verified",
+      "phase3_evidence": "audioplus page accessible 2026-11-07; package figures in GEO are carried from prior observation (2026-10-20) and need direct on-page confirmation of each current pack/price.",
+      "applicability_scope": "Informational/observed; verify current pack prices and terms on main site before commercial use.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "CF-IVR-INDIVIDUAL",
@@ -374,7 +499,12 @@
       "status": "fact_safe_verify",
       "limitations": "На основной странице услуги явная формулировка «индивидуально» может отсутствовать; калькулятор описывает состав стоимости. Требуется согласование с основным сайтом.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
-      "provenance": "audio-reclama.ru IVR page/calc context → GEO fact-safe representation 2026-11-06"
+      "provenance": "audio-reclama.ru IVR page/calc context → GEO fact-safe representation 2026-11-06",
+      "business_priority": 1,
+      "phase3_classification": "partially_verified",
+      "phase3_evidence": "IVR page https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html fetched 2026-11-07; page emphasizes calculator/cost composition but not an explicit fixed public price headline. GEO representation is fact-safe (no unverified numeric claim).",
+      "applicability_scope": "Fact-safe policy representation; main-site messaging alignment still needed by owner.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "CF-CONTACTS",
@@ -388,7 +518,12 @@
       "status": "observed_verify_on_source",
       "limitations": "Подтверждать актуальность на основном сайте.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/llms.txt",
-      "provenance": "audio-reclama.ru → observed → GEO"
+      "provenance": "audio-reclama.ru → observed → GEO",
+      "business_priority": 1,
+      "phase3_classification": "partially_verified",
+      "phase3_evidence": "Contacts observed in GEO/main-site context; phone/email shown on fetched pages 2026-11-07, but full contact set requires owner confirmation.",
+      "applicability_scope": "Verify current contacts on main site before reliance.",
+      "last_reviewed": "2026-11-07"
     },
     {
       "id": "CF-MAIN-INCONSISTENCY-DICTORS",
@@ -402,7 +537,21 @@
       "status": "observed_verify_on_source",
       "limitations": "Только наблюдение из аудита; не изменять на основном сайте без доступа/подтверждения.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/",
-      "provenance": "web observation 2026-11-06 → GEO audit"
+      "provenance": "web observation 2026-11-06 → GEO audit",
+      "business_priority": 1,
+      "phase3_classification": "contradicted_observation",
+      "phase3_evidence": "Homepage fetched 2026-11-07 shows both “622 диктора” and “620 дикторов” in different blocks.",
+      "applicability_scope": "Unresolved inconsistency on main site; do not cite either number as verified until owner confirms.",
+      "last_reviewed": "2026-11-07"
     }
-  ]
+  ],
+  "phase3_classifications": {
+    "verified": "Primary source independently confirmed for the stated claim scope.",
+    "partially_verified": "Some evidence found (official/accessible source, blog text, or direct observation) but full primary/owner confirmation or scope limits remain.",
+    "partially_verified_milestone": "First-party milestone/case progress confirmed as reported; not canonical final proof.",
+    "unverified_primary": "Claim is attributed/reported but primary source not independently verified in this pass.",
+    "contradicted_observation": "Observed sources conflict; unresolved.",
+    "unavailable": "Evidence could not be accessed in this pass.",
+    "editorial_definition": "Editorial/practical definition; not an empirical third-party statistic."
+  }
 }
