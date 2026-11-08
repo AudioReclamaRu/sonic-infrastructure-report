@@ -70,9 +70,12 @@
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Нужна ссылка на конкретный отчёт PwC/IAB USA для независимой проверки.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "limitations": "Частично подтверждено (scope-limited): IAB/PwC US podcast research категоризирует и измеряет типы podcast-рекламы, включая host-read и announcer-read/pre-produced (в FY2019: host-read 66%, announcer-read/pre-produced 27%, supplied 6% по доступным summary). Формулировка блога про «три формата» является упрощённым описанием; точное соответствие таксономии конкретного издания отчёта требует проверки первичного PDF/определений. США, FY2019; не состояние рынка РФ/2026.",
       "business_priority": 2,
-      "phase3_classification": "unverified_primary"
+      "phase3_classification": "partially_verified",
+      "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020)",
+      "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
+      "source_date": "2020-07"
     },
     {
       "id": "BF-2020-004",
@@ -93,7 +96,7 @@
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Дата/волна исследования в статье не детализирована.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "limitations": "Историческая/атрибутированная цифра (51%, Mediascope) из блога; в доступных обзорах IAB Russia/Mediascope (Sostav 12.03.2019, Mediascope/Adindex 15.11.2018) точная цифра 51%/волна/дата в этом проходе не подтверждены. Не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
       "business_priority": 3,
       "phase3_classification": "unverified_primary"
     },
@@ -117,9 +120,12 @@
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Часть значений — прогнозы на момент публикации статьи.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "limitations": "Частично подтверждено (scope-limited): оценка IAB Russia 465,3 млн руб. за 2018 год (vs 155 млн в 2017) подтверждается обзором Sostav от 12.03.2019 со ссылкой на IAB Russia и указанием источников/методологии. Прогнозные цифры 2019/2022 из той же блог-формулировки требуют отдельной первичной проверки. Исторический контекст; не состояние рынка 2026; не оригинальное исследование Audio-Reclama.ru.",
       "business_priority": 3,
-      "phase3_classification": "unverified_primary"
+      "phase3_classification": "partially_verified",
+      "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
+      "source_url": "https://www.sostav.ru/publication/digital-audio-36115.html",
+      "source_date": "2019-03-12"
     },
     {
       "id": "BF-2019-002",
@@ -143,9 +149,12 @@
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Методология приведена в статье; для verified желательна ссылка на полный отчёт.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "limitations": "Частично подтверждено (scope-limited): ключевые показатели (72% замечают аудиорекламу; 85% из замечающих готовы слушать в обмен на бесплатный контент) подтверждаются новостью Mediascope/покрытием Adindex (15.11.2018). Целевая группа в доступном описании: города 100k+, онлайн-аудио без платных подписок/блокировщиков; демографическая детализация из блога (18-45, смешанная выборка) в доступном summary явно не раскрыта — учитывать как ограничение scope. Исторический контекст 2018.",
       "business_priority": 2,
-      "phase3_classification": "unverified_primary"
+      "phase3_classification": "partially_verified",
+      "primary_source_name": "Mediascope study (initiative of IAB Russia), reported 2018-11-15",
+      "source_url": "https://mediascope.net/en/news/1066607/",
+      "source_date": "2018-11-15"
     },
     {
       "id": "BF-2019-003",
@@ -348,9 +357,12 @@
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Эффект форматов (в т.ч. host-read) требует опоры на конкретные исследования; связывать с доказательными материалами при наличии.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "limitations": "Частично подтверждено различение форматов (host-read vs announcer-read/pre-produced) по IAB/PwC; утверждение об эффекте на доверие/лояльность в блоге носит качественный характер и требует отдельного доказательства. Не универсальный вывод без контекста исследования.",
       "business_priority": 2,
-      "phase3_classification": "unverified_primary"
+      "phase3_classification": "partially_verified",
+      "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020) — format taxonomy context",
+      "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
+      "source_date": "2020-07"
     },
     {
       "id": "BF-IVR-002",

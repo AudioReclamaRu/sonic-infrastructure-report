@@ -123,15 +123,1118 @@
     ]
   },
   "blog_facts": {
-    "url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-    "page": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
-    "count": 23,
-    "updated": "2026-11-06",
-    "schema_note": "Attributed atomic facts; statuses cited_in_blog/editorial_definition/blog_milestone."
+    "registry": "audio-reclama.ru blog facts (GEO knowledge layer)",
+    "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Audio-Reclama.ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
+    "registry_updated": "2026-11-07",
+    "method_notes": [
+      "Do not present third-party statistics as Audio-Reclama.ru original research unless explicitly stated.",
+      "Each entry links to the blog article (first-party publication) and names cited primary sources when available in the article.",
+      "verification_status: verified = primary source independently confirmed; cited_in_blog = claim appears in blog with named source or as reported data but primary source not independently re-verified in this pass; blog_milestone = project/progress fact reported in a blog case (may differ from later canonical proof); editorial_definition = definitional/explanatory statement from our blog article.",
+      "Limitations: figures may be dated; some articles are forecasts/estimates as of publication date. Do not use outdated price claims from blog posts as current pricing. Outdated prices mentioned inside historical blog articles are intentionally excluded from this registry.",
+      "Phase 3 (2026-11-07): added business priority/classification hints via evidence ledger; historical third-party stats must be read with source date/period and not as 2026 market state unless re-verified."
+    ],
+    "facts": [
+      {
+        "id": "BF-2020-001",
+        "claim": "К началу 2020 года в мире насчитывалось порядка 850 000 подкастов и более 30 млн выпущенных передач (по данным, приведённым в статье).",
+        "topic": [
+          "podcasts",
+          "market-size"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_title": "Как разместить рекламу в подкасте",
+        "blog_date": "2020-05-15",
+        "cited_primary_sources": [],
+        "verification_status": "cited_in_blog",
+        "limitations": "Конкретный первоисточник цифр в тексте статьи не указан; требуется подтверждение.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2020-002",
+        "claim": "По прогнозу Bridge Ratings, в 2020 году рекламодатели в США могли потратить на рекламу в подкастах не менее $500 млн (прогноз, приведённый в статье).",
+        "topic": [
+          "podcasts",
+          "forecast",
+          "us"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_title": "Как разместить рекламу в подкасте",
+        "blog_date": "2020-05-15",
+        "cited_primary_sources": [
+          {
+            "name": "Bridge Ratings",
+            "type": "forecast"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Прогнозная оценка; для verified нужен первичный отчёт/публикация.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2020-003",
+        "claim": "PwC совместно с IAB USA выделяли три основных формата рекламы в подкастах: заранее записанный диктором текст, текст, читаемый ведущим в эфире, и готовый рекламный ролик.",
+        "topic": [
+          "podcasts",
+          "ad-formats",
+          "host-read"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_title": "Как разместить рекламу в подкасте",
+        "blog_date": "2020-05-15",
+        "cited_primary_sources": [
+          {
+            "name": "PricewaterhouseCoopers (PwC)",
+            "type": "research"
+          },
+          {
+            "name": "IAB USA",
+            "type": "research"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Частично подтверждено (scope-limited): IAB/PwC US podcast research категоризирует и измеряет типы podcast-рекламы, включая host-read и announcer-read/pre-produced (в FY2019: host-read 66%, announcer-read/pre-produced 27%, supplied 6% по доступным summary). Формулировка блога про «три формата» является упрощённым описанием; точное соответствие таксономии конкретного издания отчёта требует проверки первичного PDF/определений. США, FY2019; не состояние рынка РФ/2026.",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020)",
+        "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
+        "source_date": "2020-07"
+      },
+      {
+        "id": "BF-2020-004",
+        "claim": "По данным Mediascope, 51% слушателей аудиоконтента в России слушают также и подкасты (данные, приведённые в статье).",
+        "topic": [
+          "podcasts",
+          "russia",
+          "audience"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_title": "Как разместить рекламу в подкасте",
+        "blog_date": "2020-05-15",
+        "cited_primary_sources": [
+          {
+            "name": "Mediascope",
+            "type": "research",
+            "region": "RU"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Историческая/атрибутированная цифра (51%, Mediascope) из блога; в доступных обзорах IAB Russia/Mediascope (Sostav 12.03.2019, Mediascope/Adindex 15.11.2018) точная цифра 51%/волна/дата в этом проходе не подтверждены. Не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2019-001",
+        "claim": "По информации IAB Russia, в 2018 году объём рынка онлайн-аудиорекламы в России составил 465 млн руб. (рост втрое к предыдущему году), в 2019 прогнозировался рост до 1,5 млрд руб. (в 3,2 раза), к 2022 году — до 6,1 млрд руб.",
+        "topic": [
+          "digital-audio-ads",
+          "russia",
+          "market-size",
+          "forecast"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "IAB Russia",
+            "type": "market data/forecast",
+            "region": "RU"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Частично подтверждено (scope-limited): оценка IAB Russia 465,3 млн руб. за 2018 год (vs 155 млн в 2017) подтверждается обзором Sostav от 12.03.2019 со ссылкой на IAB Russia и указанием источников/методологии. Прогнозные цифры 2019/2022 из той же блог-формулировки требуют отдельной первичной проверки. Исторический контекст; не состояние рынка 2026; не оригинальное исследование Audio-Reclama.ru.",
+        "business_priority": 3,
+        "phase3_classification": "partially_verified",
+        "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
+        "source_url": "https://www.sostav.ru/publication/digital-audio-36115.html",
+        "source_date": "2019-03-12"
+      },
+      {
+        "id": "BF-2019-002",
+        "claim": "По данным исследования Mediascope для IAB Russia (онлайн-опрос, Россия 100k+, МЖ 18-45, слушатели онлайн, 2018), 72% слушателей аудиоконтента обращают внимание на размещённую в нём аудиорекламу, а 85% готовы согласиться на рекламу в обмен на доступ к бесплатному контенту.",
+        "topic": [
+          "digital-audio-ads",
+          "russia",
+          "ad-effectiveness"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Mediascope",
+            "type": "research"
+          },
+          {
+            "name": "IAB Russia",
+            "type": "research partner"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Частично подтверждено (scope-limited): ключевые показатели (72% замечают аудиорекламу; 85% из замечающих готовы слушать в обмен на бесплатный контент) подтверждаются новостью Mediascope/покрытием Adindex (15.11.2018). Целевая группа в доступном описании: города 100k+, онлайн-аудио без платных подписок/блокировщиков; демографическая детализация из блога (18-45, смешанная выборка) в доступном summary явно не раскрыта — учитывать как ограничение scope. Исторический контекст 2018.",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "primary_source_name": "Mediascope study (initiative of IAB Russia), reported 2018-11-15",
+        "source_url": "https://mediascope.net/en/news/1066607/",
+        "source_date": "2018-11-15"
+      },
+      {
+        "id": "BF-2019-003",
+        "claim": "По данным Voices.com, в США объём рынка аудиорекламы в сети в 2018 году вырос до $2,3 млрд (+23% к 2017). В Великобритании 22,3 млн человек слушали цифровую аудиорекламу каждую неделю (рост более 40% с 2014 года).",
+        "topic": [
+          "digital-audio-ads",
+          "market-size",
+          "us",
+          "uk"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Voices.com",
+            "type": "industry data"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Требуется первичный источник для независимой проверки.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-VNUKOVO-001",
+        "claim": "В кейсе блога Audio-Reclama.ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
+        "topic": [
+          "airport-audio",
+          "transport",
+          "case-study"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html",
+        "blog_title": "Кейс: Девять языков для Внуково",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "first-party blog case"
+          }
+        ],
+        "verification_status": "blog_milestone",
+        "limitations": "Промежуточный этап блога. Канонические/более поздние подтверждённые показатели могут отличаться; приоритет у актуального proof-слоя. Phase 3: подтверждено по тексту блога 2026-11-07 как этап/милестоун; не канонический итог.",
+        "business_priority": 1,
+        "phase3_classification": "partially_verified_milestone"
+      },
+      {
+        "id": "BF-2020-005",
+        "claim": "По прогнозам IAB Russia (приведённым в статье от 18.02.2020), в 2020 году рынок онлайн-аудиорекламы в России мог вырасти в 2,5 раза по сравнению с 2019 годом до 3,7 млрд руб., а в 2021 году — ещё в 1,6 раза, превысив 6 млрд руб.",
+        "topic": [
+          "digital-audio-ads",
+          "russia",
+          "forecast"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "blog_title": "10 тенденций 2020 года в аудиорекламе",
+        "blog_date": "2020-02-18",
+        "cited_primary_sources": [
+          {
+            "name": "IAB Russia",
+            "type": "forecast",
+            "region": "RU"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Прогноз на момент публикации; фактические значения могли отличаться.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2020-006",
+        "claim": "В статье со ссылкой на исследование продаж 60 интернет-магазинов (Data Insight и People&Screens, представленное на Национальном рекламном форуме в ноябре) приводится оценка: 1 млрд руб. расходов на радиорекламу дал 17 млрд руб. роста онлайн-продаж (ROI радиорекламы уступал только онлайн-видео).",
+        "topic": [
+          "radio-ads",
+          "roi",
+          "research"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "blog_title": "10 тенденций 2020 года в аудиорекламе",
+        "blog_date": "2020-02-18",
+        "cited_primary_sources": [
+          {
+            "name": "Data Insight",
+            "type": "research"
+          },
+          {
+            "name": "People&Screens",
+            "type": "research"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Нужен первичный отчёт/методология исследования для независимой проверки.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 2,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2018-001",
+        "claim": "По данным IAB Russia (исследование воздействия онлайн-аудиорекламы, 2017, как приведено в статье), аудитория онлайн-аудиорекламы составляла около 65 млн уникальных слушателей в месяц и ~23 млн в неделю; слушатели проводили на площадках с аудиорекламой примерно 3,5 часа в неделю.",
+        "topic": [
+          "digital-audio-ads",
+          "russia",
+          "audience"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "IAB Russia",
+            "type": "research",
+            "year": "2017"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2018-002",
+        "claim": "По аналитике Яндекса (весна 2018, как приведено в статье), сервис «Яндекс.Музыка» охватывал рекламой до 8,2 млн человек ежемесячно.",
+        "topic": [
+          "digital-audio-ads",
+          "russia",
+          "platform-reach"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Яндекс",
+            "type": "platform analytics"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Показатель относится к периоду публикации аналитики; может меняться со временем.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-2018-003",
+        "claim": "В статье со ссылкой на IAB Russia приводится оценка: 97% людей дослушивают звуковой рекламный ролик в онлайн-среде до конца.",
+        "topic": [
+          "digital-audio-ads",
+          "ad-effectiveness",
+          "russia"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "IAB Russia",
+            "type": "research"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Требуется уточнение методологии и первичного отчёта.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-IVR-001",
+        "claim": "Голосовое приветствие — это записанное сообщение, выполняющее функцию приветствия звонящего (презентация компании и ожидание ответа). Голосовое меню (IVR) — система сообщений, выполняющая маршрутизацию звонков и предоставление вариантов выбора абоненту.",
+        "topic": [
+          "ivr",
+          "definitions",
+          "customer-experience"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/who-is-who.html",
+        "blog_title": "Who is who: почему голосовое приветствие и меню – это не одно и то же",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial explanation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Определение дано в практическом/редакционном контексте блога; терминология IVR может варьироваться у вендоров.",
+        "business_priority": 1,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-HOSTREAD-001",
+        "claim": "В подкаст-рекламе выделяются форматы: заранее записанный диктором текст, чтение ведущим в эфире и готовый рекламный ролик; формат влияет на подачу и восприятие сообщения.",
+        "topic": [
+          "podcasts",
+          "host-read",
+          "ad-formats"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_title": "Как разместить рекламу в подкасте",
+        "blog_date": "2020-05-15",
+        "cited_primary_sources": [
+          {
+            "name": "PwC/IAB USA",
+            "type": "research"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Частично подтверждено различение форматов (host-read vs announcer-read/pre-produced) по IAB/PwC; утверждение об эффекте на доверие/лояльность в блоге носит качественный характер и требует отдельного доказательства. Не универсальный вывод без контекста исследования.",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020) — format taxonomy context",
+        "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
+        "source_date": "2020-07"
+      },
+      {
+        "id": "BF-IVR-002",
+        "claim": "Создание голосового меню IVR в редакционном описании блога включает сценарий, выбор диктора и постпроизводство; техническая реализация может выполняться при участии специалистов студии звукозаписи. Готовое IVR поставляется как набор программируемых аудиофайлов с именами, соответствующими функциям.",
+        "topic": [
+          "ivr",
+          "production",
+          "process"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "blog_title": "Кто разговаривает с вами через голосовое меню IVR и как оно создается?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial explanation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Практическое описание процесса; конкретный состав работ и технические требования зависят от АТС/платформы заказчика. Ценовые упоминания в старых статьях блога не используются как актуальные.",
+        "business_priority": 2,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-IVR-003",
+        "claim": "Для озвучки IVR в блоге рекомендуется учитывать один голос на протяжении меню (для снижения когнитивной нагрузки), а также выбор пола/характера голоса исходя из задачи бренда и сценария маршрутизации.",
+        "topic": [
+          "ivr",
+          "voice-selection",
+          "customer-experience"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "blog_title": "Кто разговаривает с вами через голосовое меню IVR и как оно создается?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial recommendation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Рекомендация основана на практике/редакционном опыте; оптимальный выбор зависит от аудитории и сценария.",
+        "business_priority": 2,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-VOICE-001",
+        "claim": "При выборе голоса для автоответчика в блоге отмечается: из-за особенностей телефонной линии женские голоса часто передаются разборчивее, однако на современных АТС/форматах (например, MP3) различия снижаются; выбор мужского/женского голоса должен учитывать задачу, отрасль и целевую аудиторию.",
+        "topic": [
+          "ivr",
+          "voice-selection",
+          "telephony"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
+        "blog_title": "Женский или мужской голос для автоответчика: как определиться с выбором?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial explanation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Практические наблюдения и обобщения из статьи; не являются клиническим/акустическим исследованием. Возможности зависят от конкретного оборудования.",
+        "business_priority": 2,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-DIGITAL-001",
+        "claim": "По данным TNS (март 2017, как приведено в статье блога), сервисом «Яндекс.Музыка» воспользовались 8,9 млн человек, «Яндекс.Радио» — 1,2 млн человек. В статье также приведена оценка посещаемости «ВКонтакте» (95 млн пользователей в месяц) со ссылкой на страницу «VK Для бизнеса».",
+        "topic": [
+          "digital-audio-ads",
+          "russia",
+          "platform-reach"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "blog_title": "Аудиореклама в интернете: как она работает?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "TNS",
+            "type": "research",
+            "period": "2017-03"
+          },
+          {
+            "name": "VK Для бизнеса",
+            "type": "platform data"
+          }
+        ],
+        "verification_status": "cited_in_blog",
+        "limitations": "Данные относятся к периоду публикации и могут быть устаревшими; для актуальных показателей требуется независимая проверка первоисточников.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary"
+      },
+      {
+        "id": "BF-DIGITAL-002",
+        "claim": "В статье блога описаны особенности размещения аудиорекламы на музыкальных/стриминговых площадках (на примере Яндекс.Музыка/Радио и обсуждения формата ВКонтакте на момент публикации): ролик воспроизводится между треками/в очереди, возможны ограничения по длительности, таргетинг и измерение эффективности.",
+        "topic": [
+          "digital-audio-ads",
+          "ad-formats",
+          "targeting"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "blog_title": "Аудиореклама в интернете: как она работает?",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial explanation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Функциональность площадок меняется со временем; условия размещения, форматы и лимиты нужно уточнять на актуальных страницах платформ.",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-PROD-001",
+        "claim": "Качественная озвучка рекламных роликов в редакционном описании блога опирается на подготовленное помещение, корректное техническое оснащение (микрофон, усиление, звуковая карта и т.п.), работу профессионального диктора и звукорежиссёра.",
+        "topic": [
+          "production",
+          "voiceover",
+          "quality"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "blog_title": "Озвучивание рекламных роликов: особенности и основные ошибки",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial explanation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Обобщённые практические требования; конкретный стек оборудования и процессы зависят от студии и задачи.",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-PROD-002",
+        "claim": "В статье блога перечислены типичные риски при озвучке рекламы: ошибки сведения/эквализации (конфликт голоса и музыки по частотам), непрофессиональная подача диктора, а также ошибки на стороне сценария/подготовки текста (ударения, формулировки, смысл).",
+        "topic": [
+          "production",
+          "voiceover",
+          "quality",
+          "script"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "blog_title": "Озвучивание рекламных роликов: особенности и основные ошибки",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial explanation"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Редакционный перечень типичных ошибок; не является стандартизированной таксономией.",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition"
+      },
+      {
+        "id": "BF-CREATIVE-001",
+        "claim": "В блоге Audio-Reclama.ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
+        "topic": [
+          "audio-advertising",
+          "creative",
+          "ad-effectiveness"
+        ],
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
+        "blog_title": "Как сделать вашу аудиорекламу эффективнее: 9 профессиональных секретов",
+        "blog_date": null,
+        "cited_primary_sources": [
+          {
+            "name": "Audio-Reclama.ru",
+            "type": "editorial advice"
+          }
+        ],
+        "verification_status": "editorial_definition",
+        "limitations": "Советы носят практический/креативный характер; эффективность зависит от продукта, аудитории, медиаплана и тестирования.",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition"
+      }
+    ]
   },
   "evidence_ledger": {
-    "url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json",
-    "page": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/",
-    "updated": "2026-11-07"
+    "schema": "audio-reclama-geo/evidence-ledger/1",
+    "updated": "2026-11-07",
+    "purpose": "Provenance ledger for claims used in GEO/AEO layer. No claim is promoted to verified without primary confirmation. Phase 3 adds verification classification, evidence notes, and applicability limits.",
+    "status_rules": {
+      "verified": "Primary source independently confirmed.",
+      "cited_in_blog": "Claim reported in audio-reclama.ru blog with named source; primary not independently re-verified in this pass.",
+      "blog_milestone": "Progress/milestone reported in blog case; not canonical final proof.",
+      "editorial_definition": "Definitional/practical explanation from editorial content.",
+      "observed_verify_on_source": "Observed on a source page; requires re-verification before commercial reliance.",
+      "fact_safe_verify": "Represented conservatively to avoid unverified numeric claims; needs main-site confirmation.",
+      "public_reference_unverified_detail": "Publicly referenced (e.g., client/project named on site) but detailed claims not independently verified."
+    },
+    "rows": [
+      {
+        "id": "BF-2020-001",
+        "claim": "К началу 2020 года в мире насчитывалось порядка 850 000 подкастов и более 30 млн выпущенных передач (по данным, приведённым в статье).",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "supporting_source": "",
+        "source_date": "2020-05-15",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Конкретный первоисточник цифр в тексте статьи не указан; требуется подтверждение. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog () → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog URL fetched 2026-11-07; article states 850,000 podcasts / 30M episodes but does not name a primary source in the cited passage.",
+        "applicability_scope": "Historical (as of Jan 2020 context in article). Not a 2026 market-state claim; primary source unavailable in article.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2020-002",
+        "claim": "По прогнозу Bridge Ratings, в 2020 году рекламодатели в США могли потратить на рекламу в подкастах не менее $500 млн (прогноз, приведённый в статье).",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "supporting_source": "Bridge Ratings",
+        "source_date": "2020-05-15",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Прогнозная оценка; для verified нужен первичный отчёт/публикация. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (Bridge Ratings) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog URL fetched 2026-11-07; article attributes $500M US podcast ad forecast to Bridge Ratings. Primary report not independently re-verified.",
+        "applicability_scope": "Forecast dated to 2020 context; do not cite as current spend.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2020-003",
+        "claim": "PwC совместно с IAB USA выделяли три основных формата рекламы в подкастах: заранее записанный диктором текст, текст, читаемый ведущим в эфире, и готовый рекламный ролик.",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "supporting_source": "PricewaterhouseCoopers (PwC); IAB USA",
+        "source_date": "2020-07",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Нужна ссылка на конкретный отчёт PwC/IAB USA для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (PricewaterhouseCoopers (PwC); IAB USA) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "IAB/PwC U.S. Podcast Advertising Revenue Study (FY 2019, published 2020; accessible summaries/snippets and report title confirm methodology and ad-type reporting) reports ad types including host-read ads and announcer-read/pre-produced ads: host-read ads contributed 66% of podcast advertising revenues in 2019, announcer-read/pre-produced 27%, supplied 6% (per IAB/PwC FY2019 study summaries). Blog phrasing (\"ведущий озвучивает текст / текст диктора / история хоста\") is a simplified Russian description; taxonomy mapping is not exact (e.g., branded content/product placement treated separately in later IAB/PwC definitions). Primary PDF URL observed in search results: https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf (direct fetch blocked in this environment).",
+        "applicability_scope": "Scope-limited: confirms that IAB/PwC US podcast research categorizes and measures podcast ad types including host-read and announcer-read/pre-produced formats. Do not treat blog’s exact 3-format phrasing as a verbatim primary taxonomy without checking the specific report edition/definitions. US market, FY2019 context; not 2026 RU market state.",
+        "last_reviewed": "2026-11-07",
+        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020)",
+        "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf"
+      },
+      {
+        "id": "BF-2020-004",
+        "claim": "По данным Mediascope, 51% слушателей аудиоконтента в России слушают также и подкасты (данные, приведённые в статье).",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "supporting_source": "Mediascope",
+        "source_date": "2020-05-15",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Дата/волна исследования в статье не детализирована. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (Mediascope) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog URL fetched 2026-11-07 attributes 51% RU digital audio listeners also listen to podcasts to Mediascope. Accessible IAB Russia/Mediascope summaries found (e.g., Sostav 2019-03-12; Adindex/Mediascope 2018-11-15) did not confirm this exact 51% figure/wave in this pass.",
+        "applicability_scope": "Historical attributed figure; primary source/wave/date not confirmed. Not 2026 state; not original research.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2019-001",
+        "claim": "По информации IAB Russia, в 2018 году объём рынка онлайн-аудиорекламы в России составил 465 млн руб. (рост втрое к предыдущему году), в 2019 прогнозировался рост до 1,5 млрд руб. (в 3,2 раза), к 2022 году — до 6,1 млрд руб.",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "supporting_source": "IAB Russia",
+        "source_date": "2019-03-12",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Часть значений — прогнозы на момент публикации статьи. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "Sostav (2019-03-12) reports IAB Russia estimate: Russian digital audio ad market 465.3M RUB in 2018 vs 155M RUB in 2017; states data sources (Digital Box, IMHO, Unisound, Digital Audio Mail.Ru Group, Yandex, EMG) and methodology (funds received from advertisers/agencies to sellers/publishers). URL: https://www.sostav.ru/publication/digital-audio-36115.html. Primary IAB Russia report PDF not independently retrieved in this pass. Blog also includes forecasts (1.5B 2019, 6.1B 2022) that require separate primary verification.",
+        "applicability_scope": "Scope-limited: supports historical 2018 market estimate (465.3M RUB) as reported by IAB Russia and covered by Sostav; forecast figures in the same blog claim are not verified here. Not a 2026 market state; not Audio-Reclama original research.",
+        "last_reviewed": "2026-11-07",
+        "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
+        "source_url": "https://www.sostav.ru/publication/digital-audio-36115.html"
+      },
+      {
+        "id": "BF-2019-002",
+        "claim": "По данным исследования Mediascope для IAB Russia (онлайн-опрос, Россия 100k+, МЖ 18-45, слушатели онлайн, 2018), 72% слушателей аудиоконтента обращают внимание на размещённую в нём аудиорекламу, а 85% готовы согласиться на рекламу в обмен на доступ к бесплатному контенту.",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "supporting_source": "Mediascope; IAB Russia",
+        "source_date": "2018-11-15",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Методология приведена в статье; для verified желательна ссылка на полный отчёт. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (Mediascope; IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "Mediascope EN news (2018-11-15, initiative of IAB Russia) reports: 72% of listeners of online audio content pay attention to digital audio ads; target group: citizens of Russian cities with population >100k, listening to audio content online without paid subscriptions/ad blockers; 85% of those who notice ads agree to listen in exchange for free content; 68% accept discount/sales info; 53% accept ads ≤15s; 60% notice banners near player, 53% over content; 56% take action after hearing ads. URLs: https://mediascope.net/en/news/1066607/ ; https://adindex.ru/news/researches/2018/11/15/206761.phtml . Blog claim states \"18-45, смешанная выборка, 2018\" — Mediascope page text does not explicitly state 18-45; scope detail requires primary report confirmation.",
+        "applicability_scope": "Scope-limited: core findings (72% attention among online audio listeners in target group; 85% among those who notice willing for free-content exchange) supported by Mediascope/IAB Russia study coverage. Demographic scope in blog (18-45, mixed sample) not fully confirmed by accessible summary; treat as study-reported with that limitation. Historical (2018).",
+        "last_reviewed": "2026-11-07",
+        "primary_source_name": "Mediascope study (initiative of IAB Russia), as reported by Mediascope/Adindex",
+        "source_url": "https://mediascope.net/en/news/1066607/"
+      },
+      {
+        "id": "BF-2019-003",
+        "claim": "По данным Voices.com, в США объём рынка аудиорекламы в сети в 2018 году вырос до $2,3 млрд (+23% к 2017). В Великобритании 22,3 млн человек слушали цифровую аудиорекламу каждую неделю (рост более 40% с 2014 года).",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "supporting_source": "Voices.com",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Требуется первичный источник для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (Voices.com) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-VNUKOVO-001",
+        "claim": "В кейсе блога Audio-Reclama.ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
+        "claim_type": "blog_milestone",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "blog_milestone",
+        "limitations": "Промежуточный этап блога. Канонические/более поздние подтверждённые показатели могут отличаться; приоритет у актуального proof-слоя.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog case (milestone/progress) → GEO registry; canonical proof may differ",
+        "business_priority": 1,
+        "phase3_classification": "partially_verified_milestone",
+        "phase3_evidence": "Blog case https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html fetched 2026-11-07 confirms milestone framing: project not completed at publication; >2000 audio files in 9 languages (excluding Russian/English).",
+        "applicability_scope": "Verified as blog-reported milestone only, not as canonical final project proof. Later confirmed metrics may differ.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2020-005",
+        "claim": "По прогнозам IAB Russia (приведённым в статье от 18.02.2020), в 2020 году рынок онлайн-аудиорекламы в России мог вырасти в 2,5 раза по сравнению с 2019 годом до 3,7 млрд руб., а в 2021 году — ещё в 1,6 раза, превысив 6 млрд руб.",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "supporting_source": "IAB Russia",
+        "source_date": "2020-02-18",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Прогноз на момент публикации; фактические значения могли отличаться. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2020-006",
+        "claim": "В статье со ссылкой на исследование продаж 60 интернет-магазинов (Data Insight и People&Screens, представленное на Национальном рекламном форуме в ноябре) приводится оценка: 1 млрд руб. расходов на радиорекламу дал 17 млрд руб. роста онлайн-продаж (ROI радиорекламы уступал только онлайн-видео).",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "supporting_source": "Data Insight; People&Screens",
+        "source_date": "2020-02-18",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Нужен первичный отчёт/методология исследования для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (Data Insight; People&Screens) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 2,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2018-001",
+        "claim": "По данным IAB Russia (исследование воздействия онлайн-аудиорекламы, 2017, как приведено в статье), аудитория онлайн-аудиорекламы составляла около 65 млн уникальных слушателей в месяц и ~23 млн в неделю; слушатели проводили на площадках с аудиорекламой примерно 3,5 часа в неделю.",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "supporting_source": "IAB Russia",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2018-002",
+        "claim": "По аналитике Яндекса (весна 2018, как приведено в статье), сервис «Яндекс.Музыка» охватывал рекламой до 8,2 млн человек ежемесячно.",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "supporting_source": "Яндекс",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Показатель относится к периоду публикации аналитики; может меняться со временем. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (Яндекс) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-2018-003",
+        "claim": "В статье со ссылкой на IAB Russia приводится оценка: 97% людей дослушивают звуковой рекламный ролик в онлайн-среде до конца.",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "supporting_source": "IAB Russia",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Требуется уточнение методологии и первичного отчёта. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-IVR-001",
+        "claim": "Голосовое приветствие — это записанное сообщение, выполняющее функцию приветствия звонящего (презентация компании и ожидание ответа). Голосовое меню (IVR) — система сообщений, выполняющая маршрутизацию звонков и предоставление вариантов выбора абоненту.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/who-is-who.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Определение дано в практическом/редакционном контексте блога; терминология IVR может варьироваться у вендоров.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 1,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Editorial definition from audio-reclama.ru blog; consistent with common IVR terminology but not an empirical claim requiring third-party verification.",
+        "applicability_scope": "Use as practical definition with attribution to editorial source.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-HOSTREAD-001",
+        "claim": "В подкаст-рекламе выделяются форматы: заранее записанный диктором текст, чтение ведущим в эфире и готовый рекламный ролик; формат влияет на подачу и восприятие сообщения.",
+        "claim_type": "historical_blog_fact",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "supporting_source": "PwC/IAB USA",
+        "source_date": "2020-07",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Эффект форматов (в т.ч. host-read) требует опоры на конкретные исследования; связывать с доказательными материалами при наличии. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (PwC/IAB USA) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "Related to BF-2020-003. IAB/PwC US podcast studies distinguish host-read and announcer-read/pre-produced formats and report host-read as a major share (66% revenue share in FY2019 summaries). Blog’s effect claim (\"влияет на доверие и лояльность слушателей\") is a qualitative assertion not independently verified as a universal causal finding in this pass.",
+        "applicability_scope": "Scope-limited: format distinction supported by IAB/PwC taxonomy/evidence; trust/loyalty effect remains an attributed/qualitative claim requiring specific study evidence. US/historical context.",
+        "last_reviewed": "2026-11-07",
+        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020) — format taxonomy context",
+        "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf"
+      },
+      {
+        "id": "BF-IVR-002",
+        "claim": "Создание голосового меню IVR в редакционном описании блога включает сценарий, выбор диктора и постпроизводство; техническая реализация может выполняться при участии специалистов студии звукозаписи. Готовое IVR поставляется как набор программируемых аудиофайлов с именами, соответствующими функциям.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Практическое описание процесса; конкретный состав работ и технические требования зависят от АТС/платформы заказчика. Ценовые упоминания в старых статьях блога не используются как актуальные.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 2,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-IVR-003",
+        "claim": "Для озвучки IVR в блоге рекомендуется учитывать один голос на протяжении меню (для снижения когнитивной нагрузки), а также выбор пола/характера голоса исходя из задачи бренда и сценария маршрутизации.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Рекомендация основана на практике/редакционном опыте; оптимальный выбор зависит от аудитории и сценария.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 2,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-VOICE-001",
+        "claim": "При выборе голоса для автоответчика в блоге отмечается: из-за особенностей телефонной линии женские голоса часто передаются разборчивее, однако на современных АТС/форматах (например, MP3) различия снижаются; выбор мужского/женского голоса должен учитывать задачу, отрасль и целевую аудиторию.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Практические наблюдения и обобщения из статьи; не являются клиническим/акустическим исследованием. Возможности зависят от конкретного оборудования.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 2,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-DIGITAL-001",
+        "claim": "По данным TNS (март 2017, как приведено в статье блога), сервисом «Яндекс.Музыка» воспользовались 8,9 млн человек, «Яндекс.Радио» — 1,2 млн человек. В статье также приведена оценка посещаемости «ВКонтакте» (95 млн пользователей в месяц) со ссылкой на страницу «VK Для бизнеса».",
+        "claim_type": "third_party_cited_in_blog",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "supporting_source": "TNS; VK Для бизнеса",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "cited_in_blog",
+        "limitations": "Данные относятся к периоду публикации и могут быть устаревшими; для актуальных показателей требуется независимая проверка первоисточников. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "primary source named in blog (TNS; VK Для бизнеса) → cited in audio-reclama.ru/blog → GEO registry",
+        "business_priority": 3,
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-DIGITAL-002",
+        "claim": "В статье блога описаны особенности размещения аудиорекламы на музыкальных/стриминговых площадках (на примере Яндекс.Музыка/Радио и обсуждения формата ВКонтакте на момент публикации): ролик воспроизводится между треками/в очереди, возможны ограничения по длительности, таргетинг и измерение эффективности.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Функциональность площадок меняется со временем; условия размещения, форматы и лимиты нужно уточнять на актуальных страницах платформ.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-PROD-001",
+        "claim": "Качественная озвучка рекламных роликов в редакционном описании блога опирается на подготовленное помещение, корректное техническое оснащение (микрофон, усиление, звуковая карта и т.п.), работу профессионального диктора и звукорежиссёра.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Обобщённые практические требования; конкретный стек оборудования и процессы зависят от студии и задачи.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-PROD-002",
+        "claim": "В статье блога перечислены типичные риски при озвучке рекламы: ошибки сведения/эквализации (конфликт голоса и музыки по частотам), непрофессиональная подача диктора, а также ошибки на стороне сценария/подготовки текста (ударения, формулировки, смысл).",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Редакционный перечень типичных ошибок; не является стандартизированной таксономией.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "BF-CREATIVE-001",
+        "claim": "В блоге Audio-Reclama.ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
+        "claim_type": "editorial_definition",
+        "entity": "Audio-Reclama.ru / blog",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
+        "supporting_source": "Audio-Reclama.ru",
+        "source_date": "",
+        "last_verified": "2026-11-06",
+        "status": "editorial_definition",
+        "limitations": "Советы носят практический/креативный характер; эффективность зависит от продукта, аудитории, медиаплана и тестирования.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
+        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "business_priority": 3,
+        "phase3_classification": "editorial_definition",
+        "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
+        "applicability_scope": "Attribute as editorial/practical guidance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-AUDIOPLUS-ORDER",
+        "claim": "Аудио+: один заказ 1990 RUB (один файл, текст до 90 слов) — цена информационная, наблюдалась на странице услуги.",
+        "claim_type": "first_party_observed_price",
+        "entity": "Audio-Reclama.ru",
+        "primary_source_url": "https://www.audio-reclama.ru/audioplus/",
+        "supporting_source": "GEO pricing registry",
+        "source_date": "2026-10-20",
+        "last_verified": "2026-11-06",
+        "status": "observed_verify_on_source",
+        "limitations": "Информационно, не публичная оферта; подтверждать на основном сайте перед коммерческим использованием.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/",
+        "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing",
+        "business_priority": 1,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "Main service page https://www.audio-reclama.ru/audioplus/ fetched 2026-11-07 shows 1990 ₽ / up to 90 words / one file context; full current commercial terms still require owner confirmation.",
+        "applicability_scope": "Observed on official service page 2026-11-07; treat as informational, not public offer; re-verify before quoting commercially.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-AUDIOPLUS-PACKS",
+        "claim": "Аудио+ пакеты (наблюдались): 10 — 18990 RUB, 20 — 35990 RUB, 30 — 49990 RUB; правка 790 RUB. Информационно.",
+        "claim_type": "first_party_observed_price",
+        "entity": "Audio-Reclama.ru",
+        "primary_source_url": "https://www.audio-reclama.ru/audioplus/",
+        "supporting_source": "GEO pricing registry",
+        "source_date": "2026-10-20",
+        "last_verified": "2026-11-06",
+        "status": "observed_verify_on_source",
+        "limitations": "Информационно, не публичная оферта; актуальность подтверждать на основном сайте.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/",
+        "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing",
+        "business_priority": 1,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "audioplus page accessible 2026-11-07; package figures in GEO are carried from prior observation (2026-10-20) and need direct on-page confirmation of each current pack/price.",
+        "applicability_scope": "Informational/observed; verify current pack prices and terms on main site before commercial use.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-IVR-INDIVIDUAL",
+        "claim": "IVR (голосовое приветствие/меню): стоимость рассчитывается индивидуально; фиксированные цены в GEO не утверждаются без подтверждения.",
+        "claim_type": "first_party_service_policy",
+        "entity": "Audio-Reclama.ru",
+        "primary_source_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "supporting_source": "GEO FAQ/pricing/answers",
+        "source_date": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "status": "fact_safe_verify",
+        "limitations": "На основной странице услуги явная формулировка «индивидуально» может отсутствовать; калькулятор описывает состав стоимости. Требуется согласование с основным сайтом.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
+        "provenance": "audio-reclama.ru IVR page/calc context → GEO fact-safe representation 2026-11-06",
+        "business_priority": 1,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "IVR page https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html fetched 2026-11-07; page emphasizes calculator/cost composition but not an explicit fixed public price headline. GEO representation is fact-safe (no unverified numeric claim).",
+        "applicability_scope": "Fact-safe policy representation; main-site messaging alignment still needed by owner.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-CONTACTS",
+        "claim": "Контакты (наблюдались в GEO-слое): 8 800 700-46-52, start@audio-reclama.ru, Telegram @audioplus_support / канал t.me/audioreclama_ru.",
+        "claim_type": "first_party_contact",
+        "entity": "Audio-Reclama.ru",
+        "primary_source_url": "https://www.audio-reclama.ru/",
+        "supporting_source": "GEO llms/faq",
+        "source_date": "2026-10-20",
+        "last_verified": "2026-11-06",
+        "status": "observed_verify_on_source",
+        "limitations": "Подтверждать актуальность на основном сайте.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/llms.txt",
+        "provenance": "audio-reclama.ru → observed → GEO",
+        "business_priority": 1,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "Contacts observed in GEO/main-site context; phone/email shown on fetched pages 2026-11-07, but full contact set requires owner confirmation.",
+        "applicability_scope": "Verify current contacts on main site before reliance.",
+        "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-MAIN-INCONSISTENCY-DICTORS",
+        "claim": "На главной audio-reclama.ru наблюдалось несоответствие: «622 диктора» и «620 дикторов». Требует сверки с действительным значением.",
+        "claim_type": "editorial_observation",
+        "entity": "Audio-Reclama.ru",
+        "primary_source_url": "https://www.audio-reclama.ru/",
+        "supporting_source": "audit",
+        "source_date": "2026-11-06",
+        "last_verified": "2026-11-06",
+        "status": "observed_verify_on_source",
+        "limitations": "Только наблюдение из аудита; не изменять на основном сайте без доступа/подтверждения.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/",
+        "provenance": "web observation 2026-11-06 → GEO audit",
+        "business_priority": 1,
+        "phase3_classification": "contradicted_observation",
+        "phase3_evidence": "Homepage fetched 2026-11-07 shows both “622 диктора” and “620 дикторов” in different blocks.",
+        "applicability_scope": "Unresolved inconsistency on main site; do not cite either number as verified until owner confirms.",
+        "last_reviewed": "2026-11-07"
+      }
+    ],
+    "phase3_classifications": {
+      "verified": "Primary source independently confirmed for the stated claim scope.",
+      "partially_verified": "Some evidence found (official/accessible source, blog text, or direct observation) but full primary/owner confirmation or scope limits remain.",
+      "partially_verified_milestone": "First-party milestone/case progress confirmed as reported; not canonical final proof.",
+      "unverified_primary": "Claim is attributed/reported but primary source not independently verified in this pass.",
+      "contradicted_observation": "Observed sources conflict; unresolved.",
+      "unavailable": "Evidence could not be accessed in this pass.",
+      "editorial_definition": "Editorial/practical definition; not an empirical third-party statistic."
+    }
   }
 }
