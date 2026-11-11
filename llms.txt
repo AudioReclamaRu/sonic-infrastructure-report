@@ -17,6 +17,9 @@
 
 - Product site (recording, rights, license estimate, provenance passport):
   https://audio-reclama.ru
+- International (EN) storefront of the same studio: https://audio-reclama.com
+  (trimmed surface for the international audience; owner-run; the RU site above
+  is the full commercial and factual source of record)
 - Contact: https://audio-reclama.ru and start@audio-reclama.ru
 
 ## Human
