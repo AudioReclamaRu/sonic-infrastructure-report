@@ -23,10 +23,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: build GEO surface
+        run: python tools/build_geo_site.py
       - name: assemble the public surface
         run: |
           mkdir -p _site
-          cp -r geo _site/
+          cp -r geo _site/ || true
+          cp robots.txt _site/ 2>/dev/null || true
           for f in index.html privacy-policy.html terms-of-service.html data-deletion.html llms.txt llms-full.txt; do
             [ -f "$f" ] && cp "$f" _site/ || true
           done
