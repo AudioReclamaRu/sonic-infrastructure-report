@@ -397,6 +397,11 @@ def build_pages():
     """Regenerate HTML pages from knowledge sources. CAUTION: overwrites manual enrichments."""
     # ---------------------------------------------------------------- hub
 
+    # динамический блок ссылок на все ответные страницы (11.11.2026: 9→15;
+    # раньше хаб линковал только 2 — глубина краула страдала)
+    hub_answers = "\n".join(
+        f'<a href="{BASE}answers/{a["slug"]}/">{a["title"]}</a>' for a in EXTRA_ANSWERS)
+
     hub_body = f"""
     <h1>Голос для бизнеса: цены, ответы и проверенные факты</h1>
     <p class="lead">Студия <strong>Аудио-Реклама•ru</strong> — озвучка рекламы, голосовые приветствия IVR,
@@ -412,7 +417,8 @@ def build_pages():
     <h2>Ответы на частые вопросы</h2>
     <nav class="links">
     <a href="{BASE}answers/skolko-stoit-ozvuchka/">Сколько стоит озвучка в Аудио+ — 1990 ₽ за заказ</a>
-    <a href="{BASE}answers/ivr-privetstvie-cena/">Сколько стоит голосовое приветствие IVR — от 1999 ₽</a>
+    <a href="{BASE}answers/ivr-privetstvie-cena/">Сколько стоит голосовое приветствие IVR — расчёт индивидуальный</a>
+{hub_answers}
     <a href="{BASE}ceny/">Полная таблица цен на озвучку и IVR</a>
     <a href="{BASE}faq/">FAQ: слова, правки, сроки, оплата, оферта</a>
     </nav>
@@ -437,8 +443,8 @@ def build_pages():
     """
 
     page("index.html", "Озвучка для бизнеса: цены и ответы — Аудио-Реклама•ru",
-         "Цены на озвучку рекламы (Аудио+ 1990 ₽) и голосовые приветствия IVR (от 1999 ₽), "
-         "ответы на частые вопросы, руководства по выбору голоса и IVR.",
+         "Цены на озвучку рекламы (Аудио+ 1990 ₽ за заказ) и голосовые приветствия IVR "
+         "(расчёт индивидуальный), ответы на частые вопросы, руководства по выбору голоса и IVR.",
          hub_body, [ORG, faq_jsonld()])
 
     # ---------------------------------------------------------------- prices
@@ -795,8 +801,12 @@ def _check_consistency():
             errs.append(f"unverified IVR numeric claim found in {rel}")
     # geo llms fact-safety
     gl = (OUT/"llms.txt").read_text(encoding="utf-8", errors="ignore") if (OUT/"llms.txt").exists() else ""
-    if "IVR min 1999" in gl or "21800 RUB" in gl or "69800 RUB" in gl:
+    if "IVR min 1999" in gl or "21800 RUB" in gl or "69800 RUB" in gl or "от 1999" in gl:
         errs.append("unverified IVR numeric claim found in geo/llms.txt")
+    # hub fact-safety (грабля 11.11: «IVR от 1999 ₽» жил на хабе мимо чекера)
+    hub = (OUT/"index.html").read_text(encoding="utf-8", errors="ignore") if (OUT/"index.html").exists() else ""
+    if "от 1999" in hub or "21800 ₽" in hub or "69800 ₽" in hub:
+        errs.append("unverified IVR numeric claim found on hub (geo/index.html)")
     # sitemap coverage for key assets
     sm = (OUT/"sitemap.xml").read_text(encoding="utf-8", errors="ignore") if (OUT/"sitemap.xml").exists() else ""
     for need in ["/knowledge/blog-facts/", "/answers/"]:

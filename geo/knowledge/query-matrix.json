@@ -1,86 +1,126 @@
 {
-  "updated": "2026-11-06",
-  "policy": "Fact-safe only; no artificial query-variant pages; verify commercial facts on main site.",
-  "rows": [
-    {
-      "cluster": "Коммерческий: озвучка цена",
-      "intent": "commercial/price",
-      "example_queries": "сколько стоит озвучка; цена озвучки рекламы; заказать озвучку недорого; озвучка текста цена",
-      "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/",
-      "target_main_url": "https://www.audio-reclama.ru/audioplus/",
-      "supporting_facts": "CF-AUDIOPLUS-ORDER, CF-AUDIOPLUS-PACKS",
-      "gap": "Актуальность цен только по сверке с основным сайтом; добавить сроки/форматы при подтверждении.",
-      "status": "partial_fact_safe"
-    },
-    {
-      "cluster": "IVR/автоответчик цена и настройка",
-      "intent": "commercial/how-to",
-      "example_queries": "голосовое меню IVR цена; озвучка автоответчика; как сделать IVR меню; ошибки IVR",
-      "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-      "supporting_facts": "CF-IVR-INDIVIDUAL, BF-IVR-001/002/003",
-      "gap": "Согласовать формулировку на основном сайте; пакетные/типовые примеры только с подтверждением.",
-      "status": "fact_safe_needs_main_site_alignment"
-    },
-    {
-      "cluster": "Озвучка видеоролика/презентации",
-      "intent": "commercial",
-      "example_queries": "озвучка ролика цена; озвучка презентации; голос для видео",
-      "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-rolika-cena/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-prezentacii-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/ (service pages)",
-      "supporting_facts": "CF-AUDIOPLUS-ORDER (context)",
-      "gap": "Отдельные подтверждённые цены/условия по услугам видео/презентации; не экстраполировать из Аудио+ без подтверждения.",
-      "status": "partial"
-    },
-    {
-      "cluster": "Радио/аудиореклама",
-      "intent": "commercial/definition",
-      "example_queries": "озвучка рекламы на радио; аудиоролик для радио; эффективность аудиорекламы",
-      "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamy-na-radio-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/",
-      "supporting_facts": "BF-2020-006 (cited, historical/attributed), BF-CREATIVE-001, BF-PROD-*",
-      "gap": "Подтверждённые коммерческие условия/кейсы радио; исторические ROI — только с атрибуцией/датой.",
-      "status": "partial"
-    },
-    {
-      "cluster": "Многоязычная озвучка/локализация/IVR для транспорта/аэропортов",
-      "intent": "commercial/trust",
-      "example_queries": "многоязычная озвучка; озвучка объявлений для аэропорта; локализация аудиорекламы; IVR на нескольких языках",
-      "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/project/vnukovo.html; https://www.audio-reclama.ru/",
-      "supporting_facts": "BF-VNUKOVO-001 (blog_milestone), case-study refs (public, unverified detail)",
-      "gap": "Проверенные case-study cards с разрешёнными доказательствами; не путать milestone с итогом.",
-      "status": "gap_high_value"
-    },
-    {
-      "cluster": "Подкасты / host-read / аудиореклама в подкастах",
-      "intent": "definition/how-to/commercial",
-      "example_queries": "реклама в подкастах; host-read что это; форматы рекламы в подкастах",
-      "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
-      "target_main_url": "https://www.audio-reclama.ru/blog/ (source)",
-      "supporting_facts": "BF-2020-001/002/003/004, BF-HOSTREAD-001",
-      "gap": "Отдельная fact-safe answer/guide страница; исторические цифры помечать датой.",
-      "status": "gap"
-    },
-    {
-      "cluster": "Аудиокниги / дикторская запись",
-      "intent": "commercial",
-      "example_queries": "запись аудиокниги; диктор для аудиокниги цена",
-      "target_geo_url": "",
-      "target_main_url": "https://www.audio-reclama.ru/ (service)",
-      "supporting_facts": "",
-      "gap": "Подтверждённые условия/цены/процесс; нет GEO answer-страницы.",
-      "status": "gap"
-    },
-    {
-      "cluster": "Корпоративные голосовые коммуникации / торговые центры",
-      "intent": "commercial",
-      "example_queries": "аудио для торгового центра; голосовые объявления; автоинформатор",
-      "target_geo_url": "",
-      "target_main_url": "https://www.audio-reclama.ru/",
-      "supporting_facts": "BF-IVR/VOICE editorial context; public project refs",
-      "gap": "Подтверждённые кейсы/условия; answer-страницы только факт-безопасно.",
-      "status": "gap"
-    }
-  ]
+ "updated": "2026-11-11",
+ "policy": "Fact-safe only; no artificial query-variant pages; verify commercial facts on main site. Update 2026-11-11: gaps аудиокниг/объявлений закрыты fact-safe answer-страницами; +4 кластера под буст-страницы.",
+ "rows": [
+  {
+   "cluster": "Коммерческий: озвучка цена",
+   "intent": "commercial/price",
+   "example_queries": "сколько стоит озвучка; цена озвучки рекламы; заказать озвучку недорого; озвучка текста цена",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/",
+   "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+   "supporting_facts": "CF-AUDIOPLUS-ORDER, CF-AUDIOPLUS-PACKS",
+   "gap": "Актуальность цен только по сверке с основным сайтом; добавить сроки/форматы при подтверждении.",
+   "status": "partial_fact_safe"
+  },
+  {
+   "cluster": "IVR/автоответчик цена и настройка",
+   "intent": "commercial/how-to",
+   "example_queries": "голосовое меню IVR цена; озвучка автоответчика; как сделать IVR меню; ошибки IVR",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+   "supporting_facts": "CF-IVR-INDIVIDUAL, BF-IVR-001/002/003",
+   "gap": "Согласовать формулировку на основном сайте; пакетные/типовые примеры только с подтверждением.",
+   "status": "fact_safe_needs_main_site_alignment"
+  },
+  {
+   "cluster": "Озвучка видеоролика/презентации",
+   "intent": "commercial",
+   "example_queries": "озвучка ролика цена; озвучка презентации; голос для видео",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-rolika-cena/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-prezentacii-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/ (service pages)",
+   "supporting_facts": "CF-AUDIOPLUS-ORDER (context)",
+   "gap": "Отдельные подтверждённые цены/условия по услугам видео/презентации; не экстраполировать из Аудио+ без подтверждения.",
+   "status": "partial"
+  },
+  {
+   "cluster": "Радио/аудиореклама",
+   "intent": "commercial/definition",
+   "example_queries": "озвучка рекламы на радио; аудиоролик для радио; эффективность аудиорекламы",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamy-na-radio-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/",
+   "supporting_facts": "BF-2020-006 (cited, historical/attributed), BF-CREATIVE-001, BF-PROD-*",
+   "gap": "Подтверждённые коммерческие условия/кейсы радио; исторические ROI — только с атрибуцией/датой.",
+   "status": "partial"
+  },
+  {
+   "cluster": "Многоязычная озвучка/локализация/IVR для транспорта/аэропортов",
+   "intent": "commercial/trust",
+   "example_queries": "многоязычная озвучка; озвучка объявлений для аэропорта; локализация аудиорекламы; IVR на нескольких языках",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/project/vnukovo.html; https://www.audio-reclama.ru/",
+   "supporting_facts": "BF-VNUKOVO-001 (blog_milestone), case-study refs (public, unverified detail)",
+   "gap": "Проверенные case-study cards с разрешёнными доказательствами; не путать milestone с итогом.",
+   "status": "gap_high_value"
+  },
+  {
+   "cluster": "Подкасты / host-read / аудиореклама в подкастах",
+   "intent": "definition/how-to/commercial",
+   "example_queries": "реклама в подкастах; host-read что это; форматы рекламы в подкастах",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
+   "target_main_url": "https://www.audio-reclama.ru/blog/ (source)",
+   "supporting_facts": "BF-2020-001/002/003/004, BF-HOSTREAD-001",
+   "gap": "Отдельная fact-safe answer/guide страница; исторические цифры помечать датой.",
+   "status": "gap"
+  },
+  {
+   "cluster": "Аудиокниги / дикторская запись",
+   "intent": "commercial",
+   "example_queries": "запись аудиокниги; диктор для аудиокниги цена",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/ (service)",
+   "supporting_facts": "",
+   "gap": "Индивидуальный расчёт отражён; конкретные вилки цен только с подтверждением владельца.",
+   "status": "fact_safe_individual"
+  },
+  {
+   "cluster": "Корпоративные голосовые коммуникации / торговые центры",
+   "intent": "commercial",
+   "example_queries": "аудио для торгового центра; голосовые объявления; автоинформатор",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golos-dlya-navigatsii-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/",
+   "supporting_facts": "BF-IVR/VOICE editorial context; public project refs",
+   "gap": "Кейсы (Внуково и др.) — только с разрешениями и проверенными доказательствами.",
+   "status": "fact_safe_individual"
+  },
+  {
+   "cluster": "Озвучка поздравления",
+   "intent": "commercial/price",
+   "example_queries": "озвучка поздравления цена; аудио поздравление на заказ; голосовое поздравление корпоративу",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-pozdravleniya-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+   "supporting_facts": "CF-AUDIOPLUS-ORDER, CF-AUDIOPLUS-EDIT",
+   "gap": "",
+   "status": "fact_safe"
+  },
+  {
+   "cluster": "Озвучка для соцсетей (Reels/Shorts)",
+   "intent": "commercial/price",
+   "example_queries": "озвучка reels цена; озвучка для тиктока; голос для shorts; диктор для соцсетей",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-socsetey-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+   "supporting_facts": "CF-AUDIOPLUS-ORDER/PACKS",
+   "gap": "",
+   "status": "fact_safe"
+  },
+  {
+   "cluster": "Минута озвучки (unit-вопрос)",
+   "intent": "commercial/price",
+   "example_queries": "сколько стоит минута озвучки; цена минуты дикторской записи",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-minuta-ozvuchki/",
+   "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+   "supporting_facts": "CF-AUDIOPLUS-ORDER",
+   "gap": "Честная переформулировка единицы: задачи, не минуты.",
+   "status": "fact_safe"
+  },
+  {
+   "cluster": "Обучающие курсы / e-learning",
+   "intent": "commercial",
+   "example_queries": "озвучка обучающего курса цена; озвучка онлайн курса; диктор для видеоуроков",
+   "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/",
+   "target_main_url": "https://www.audio-reclama.ru/",
+   "supporting_facts": "editorial context",
+   "gap": "Вилки цен по объёму — только с подтверждением.",
+   "status": "fact_safe_individual"
+  }
+ ]
 }
