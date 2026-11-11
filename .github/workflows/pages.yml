@@ -32,8 +32,10 @@ jobs:
       - name: assemble the public surface
         run: |
           mkdir -p _site
-          cp -r geo _site/ || true
-          cp robots.txt _site/ 2>/dev/null || true
+          # geo/ — главный артефакт, собран предыдущим шагом; падаем, если его
+          # нет: раньше `|| true` глотал сбой и мог задеплоить пустой сайт.
+          cp -r geo _site/
+          cp robots.txt _site/
           for f in index.html privacy-policy.html terms-of-service.html data-deletion.html llms.txt llms-full.txt; do
             [ -f "$f" ] && cp "$f" _site/ || true
           done
