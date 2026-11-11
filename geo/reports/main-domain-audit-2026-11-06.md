@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-11-06
+lang: mul
+---
 # Main-domain technical audit (read-only): www.audio-reclama.ru
 Date: 2026-11-06
 Scope: publicly accessible checks only (no edits to main site, DNS, CDN, robots on main site). Observations are inputs for implementation by site owners.

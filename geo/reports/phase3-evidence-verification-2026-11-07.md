@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-11-07
+lang: mul
+---
 # Phase 3 — Evidence Verification & Authority Building
 Date: 2026-11-07 (pass 1 + pass 2)
 Scope: 28 entries in `geo/knowledge/evidence-ledger.*` + clarifications in `geo/knowledge/blog-facts.json`. No mass page generation. No edits to main site. Unrelated working-copy changes archived separately (`F:\Pill\tmp\opencode\geo-site-wip-*`).

@@ -1,3 +1,8 @@
+---
+type: doc
+date: 2026-11-06
+lang: en
+---
 # AI Visibility Benchmark — baseline protocol (Audio-Reclama)
 Date: 2026-11-06
 Rule: **No growth claims without baseline.** No fabricated results.
