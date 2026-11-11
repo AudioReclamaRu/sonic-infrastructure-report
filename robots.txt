@@ -1,5 +1,6 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://audioreclamaru.github.io/sonic-infrastructure-report/sitemap.xml
+# Корневой sitemap.xml не существует (404 для краулеров) — убран 11.11;
+# единственная живая карта — geo/sitemap.xml (генерируется build_geo_site.py в CI).
 Sitemap: https://audioreclamaru.github.io/sonic-infrastructure-report/geo/sitemap.xml
