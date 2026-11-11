@@ -1,0 +1,87 @@
+# Аудио-Реклама•ru — коммерческий слой (RU)
+
+> Студия озвучки и звукозаписи для бизнеса: реклама, IVR, видео, аудиокниги.
+> Цены/условия носят информационный характер (не оферта). Актуальные условия подтверждать на https://www.audio-reclama.ru.
+> Состояние коммерческих данных в GEO-слое: 2026-11-11. Официальный сайт: https://www.audio-reclama.ru
+
+## Prices (informational, not a public offer)
+
+- Аудио+ один заказ: 1990 RUB — один файл, текст до 90 слов
+  https://www.audio-reclama.ru/audioplus/
+- Пакет 10: 18990 RUB (1899 RUB/заказ), бессрочно
+- Пакет 20: 35990 RUB (1799 RUB/заказ), бессрочно
+- Пакет 30: 49990 RUB (1667 RUB/заказ), бессрочно
+- Правка: 790 RUB
+- IVR: стоимость рассчитывается индивидуально — https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
+
+## Answers
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/ — сколько стоит озвучка (1990 RUB)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/ — цена голосового приветствия IVR (расчёт индивидуальный)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-minuta-ozvuchki/ — сколько стоит минута озвучки (заказы Аудио+, длинные формы — индивидуально)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-pozdravleniya-cena/ — озвучка поздравления — 1990 RUB за заказ (до 90 слов)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-socsetey-cena/ — озвучка для соцсетей и коротких видео — заказы/пакеты Аудио+, бренд-голос индивидуально
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/ — озвучка аудиокниги — индивидуальный расчёт (объём, голоса, формат)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/ — озвучка обучающего курса — индивидуальный расчёт (объём, единый голос, обновления)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golos-dlya-navigatsii-cena/ — голос для навигации/объявлений — индивидуальный расчёт (файлы, языки, форматы)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/ — таблица цен
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/faq/ — FAQ (слова, правки, оплата, оферта)
+
+## Guides
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/kak-vybrat-golos/ — выбор голоса для ролика
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/ivr-menu-oshibki/ — ошибки в структуре IVR-меню
+
+## Knowledge / evidence (attributed, fact-safe)
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/ — реестр фактологических материалов блога (статусы cited_in_blog/editorial_definition/blog_milestone)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger/ — provenance реестр (claim → source → status → ограничения)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/case-studies/ — публичные ссылки на кейсы (требуют верификации/разрешений)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix/ — матрица запросов (факт-безопасно)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/combined.json
+
+## Contacts
+
+- Phone: 8 800 700-46-52
+- Email: start@audio-reclama.ru
+- Telegram: https://t.me/audioplus_support
+- Channel: https://t.me/audioreclama_ru
+
+## Disclaimer
+
+Цены носят информационный характер и не являются публичной офертой.
+Финальная стоимость — по расчёту на сайте. Сторонние статистики в knowledge-слое атрибутированы и не являются оригинальным исследованием Audio-Reclama.ru.
+
+
+## Full FAQ (observed 2026-11-06)
+
+- Q: Сколько стоит озвучка в Аудио+?
+  A: 1990 ₽ за один заказ. Один заказ — один файл, не более 90 слов. Пакеты: 10 — 18990 ₽ (1899 ₽), 20 — 35990 ₽ (1799 ₽), 30 — 49990 ₽ (1667 ₽), бессрочно. Правки — 790 ₽.
+- Q: Сколько стоит голосовое приветствие/меню IVR?
+  A: Стоимость рассчитывается индивидуально (зависит от объёма, структуры меню, языков и условий). Актуальный расчёт — на официальной странице услуги.
+- Q: Сколько слов в заказе Аудио+?
+  A: Не более 90 слов. Один заказ — одна законченная мысль. Дополнительный файл — новый заказ.
+- Q: Это оферта?
+  A: Нет. Цены информационные и не являются публичной офертой.
+- Q: Контакты Аудио+?
+  A: Telegram @audioplus_support, 8 800 700-46-52, пн–пт 9:00–18:00 мск, start@audio-reclama.ru
+
+## Prices raw (observed 2026-11-06)
+
+- Аудио+ — один заказ: 1990 RUB/заказ
+- Аудио+ — пакет 10: 18990 RUB/пакет
+- Аудио+ — пакет 20: 35990 RUB/пакет
+- Аудио+ — пакет 30: 49990 RUB/пакет
+- Аудио+ — правка: 790 RUB/правка
+- IVR — голосовое приветствие/меню: индивидуальный расчёт
+
+## Answers index (data-driven catalog)
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-minuta-ozvuchki/ — Сколько стоит минута озвучки — как считает студия
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-pozdravleniya-cena/ — Озвучка поздравления — цена 1990 ₽ за заказ
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-socsetey-cena/ — Голос для соцсетей (Reels, Shorts) — цена
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/ — Озвучка аудиокниги — цена и как считается
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/ — Озвучка обучающего курса — цена
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golos-dlya-navigatsii-cena/ — Голос для навигации и объявлений — цена

@@ -36,6 +36,7 @@ jobs:
           # нет: раньше `|| true` глотал сбой и мог задеплоить пустой сайт.
           cp -r geo _site/
           cp robots.txt _site/
+          cp geo/llms-full.txt _site/llms-full.txt
           for f in index.html privacy-policy.html terms-of-service.html data-deletion.html llms.txt llms-full.txt; do
             [ -f "$f" ] && cp "$f" _site/ || true
           done

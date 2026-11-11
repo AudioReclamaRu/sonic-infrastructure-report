@@ -18,6 +18,12 @@
 
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/ — сколько стоит озвучка (1990 RUB)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/ — цена голосового приветствия IVR (расчёт индивидуальный)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-minuta-ozvuchki/ — сколько стоит минута озвучки (заказы Аудио+, длинные формы — индивидуально)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-pozdravleniya-cena/ — озвучка поздравления — 1990 RUB за заказ (до 90 слов)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-socsetey-cena/ — озвучка для соцсетей и коротких видео — заказы/пакеты Аудио+, бренд-голос индивидуально
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/ — озвучка аудиокниги — индивидуальный расчёт (объём, голоса, формат)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/ — озвучка обучающего курса — индивидуальный расчёт (объём, единый голос, обновления)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golos-dlya-navigatsii-cena/ — голос для навигации/объявлений — индивидуальный расчёт (файлы, языки, форматы)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/ — таблица цен
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/faq/ — FAQ (слова, правки, оплата, оферта)
 
