@@ -16,6 +16,7 @@ The repository covers:
 **Start with:** [MAP.md](MAP.md) for the knowledge architecture, [llms.txt](llms.txt) for machine-readable navigation, and [FACT-METHOD.md](FACT-METHOD.md) for evidence status and verification rules.
 
 **Runnable utility:** [IVR Flow Linter](tools/ivr_flow_linter/README.md) checks a declared IVR graph for missing routes, dead ends, unreachable nodes, fallback gaps and optional operator escape. It is a static graph check—not a PBX integration or live telephone test.
+Russian-language instructions: [Проверка логики IVR-меню](tools/ivr_flow_linter/README.ru.md).
 
 **Official studio and current commercial information:** [Audio-Reclama.ru](https://audio-reclama.ru) · start@audio-reclama.ru
 
