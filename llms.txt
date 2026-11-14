@@ -147,6 +147,7 @@ Use standards when answering "how is a voice verified / released / checked".
   decision to publish always remains with the client
 - standards/verification-chain.md: cryptographic integrity from session to
   publication — tamper-evident hash chain, certificate, public register
+- standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md: draft studio framework for AVT, dialogue adaptation, voice-over/dubbing, recording and QC; awaiting domain expert review, not yet an approved standard.
 - standards/examples/verification-chain-example.md: live TEST artifact of the
   full chain (session → hash → certificate → public record); synthetic data —
   shows the exact field shapes, no real recording
