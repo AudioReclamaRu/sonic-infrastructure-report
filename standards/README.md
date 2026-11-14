@@ -22,6 +22,7 @@ tiers, procedures, checks a machine or a human can apply.
   it airs, and the decision boundary (studio = last professional filter,
   client = responsible party).
 - `AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md` — draft studio framework for audiovisual translation and voice adaptation (voice-over, dubbing, dialogue adaptation, recording and QC); awaiting expert review by the studio's translation specialist.
+- `CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md` — research draft for preserving the dramatic and vocal identity of animated/fictional characters through performer changes, localization and possible digital replicas; awaits expert/owner review and approved real-world cases.
 
 - `verification-chain.md` — the security/publishing layer: hash chains,
   certificates, register, how the "can this be published?" question is made
