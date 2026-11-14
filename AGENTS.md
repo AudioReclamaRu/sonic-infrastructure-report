@@ -7,14 +7,17 @@ lang: mul
 ## MANDATORY PRIORITY — AUDIO-RECLAMA EXPERT KNOWLEDGE INFRASTRUCTURE
 
 Before any research, engineering, editorial, SEO/GEO, standards, tooling or distribution task, read:
-1. strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
-2. strategy/ATTENTION_ACQUISITION_SYSTEM.md
-3. standards/X15-OPEN-SOURCE-COMMUNITY.md
-4. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
-5. problem-solutions/README.md
-6. problem-solutions/QUERY_BACKLOG.json
-7. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
-8. problem-solutions/REFERENCE_MODELS.md
+1. standards/BRAND_AND_SITE_NAMING.md — mandatory exact naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru.
+2. strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
+3. strategy/ATTENTION_ACQUISITION_SYSTEM.md
+4. standards/X15-OPEN-SOURCE-COMMUNITY.md
+5. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
+6. problem-solutions/README.md
+7. problem-solutions/QUERY_BACKLOG.json
+8. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
+9. problem-solutions/REFERENCE_MODELS.md
+
+Canonical names are mandatory everywhere: the brand is «Аудио-Реклама•ru»; the website is Audio-Reclama.ru. Never use bare “Audio-Reclama” as a name. Follow standards/BRAND_AND_SITE_NAMING.md.
 
 We are building a connected, evidence-backed expert knowledge infrastructure, not a blog or content factory. The repository is the canonical, versioned knowledge base. Develop reusable knowledge objects, relationships, diagnostics, standards, experiments, tools and verified decisions. A document or post is only one possible view of that knowledge.
 
