@@ -41,6 +41,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md — research draft for the Dzen article 26 knowledge gap; character identity, performer continuity, localization, provenance and digital-replica safeguards; not yet an approved standard.
 - standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md — fillable character identity passport and performer handover template; use UNKNOWN / REQUIRES_VERIFICATION / PENDING_APPROVAL explicitly, and keep private recordings/contracts outside public Git.
 - problem-solutions/MEASUREMENT_PROTOCOL.md — repeatable demand and AI visibility measurement.
+- research/READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — read-only technical SEO snapshot: 1,186 unique sitemap URLs, two confirmed 404 speaker profiles still listed, one redirecting sitemap URL, catalogue count reconciliation and prioritized fixes. Sample audit only; no Search Console/Yandex Webmaster performance data.
 - problem-solutions/IMPLEMENTATION_ROADMAP.md — delivery sequence.
 - problem-solutions/IVR_DESIGN_STANDARD.md — internal IVR design, recording and release checklist.
 - problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md — reproducible audio-recording and processing test protocol.
