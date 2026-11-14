@@ -1,6 +1,6 @@
 ---
 type: doc
-date: 2026-10-01
+date: 2026-11-14
 lang: en
 related: [interfaces/INTERFACE-001-voice-provenance.md, reports/verdicts/verdict-index.md]
 ---
@@ -36,9 +36,14 @@ Business Workflow
 | Entities | `entity/` | Who and what exists on the market — as stable, linkable records |
 | Terms | `dictionary/` + `TERMINOLOGY.md` | What does a term mean here — one lived definition per term |
 | Standards | `standards/` | How work is done: verification chain, release checks |
+| Problem Solutions | problem-solutions/ | Why it happens, how to diagnose, fix and verify it |
 | Interfaces | `interfaces/` | The boundaries where human, AI, law, and responsibility meet — one page, one concept |
 | Business Workflow | `USE_CASES.md` | Who reaches for which layer, and when |
 | Publishing | `feed/` + `publisher.py` | What did we publish, and how (schedule, concept gate, covers) |
+
+## Strategic priority
+
+Read strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md first. Problem-solutions/ is the user-problem diagnostic layer. It is distinct from commercial GEO answers and enterprise guides. Its backlog begins with unmeasured hypotheses, not popularity claims.
 
 ## Reading order
 
