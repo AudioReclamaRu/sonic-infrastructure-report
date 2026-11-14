@@ -377,9 +377,6 @@ def page(path: str, title: str, description: str, body: str,
         blocks += ('<script type="application/ld+json">'
                    + json.dumps(bc, ensure_ascii=False, separators=(",", ":"))
                    + "</script>\n")
-        blocks += ('<script type="application/ld+json">'
-                   + json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
-                   + "</script>\n")
     html = f"""<!DOCTYPE html>
 <html lang="ru">
 <head>
