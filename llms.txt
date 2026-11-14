@@ -24,7 +24,9 @@
 
 ## Strategic priority: problem-solving knowledge
 
-Read these before creating new Audio-Reclama content:
+Canonical naming is mandatory: brand «Аудио-Реклама•ru»; website Audio-Reclama.ru. See standards/BRAND_AND_SITE_NAMING.md.
+
+Read these before creating new knowledge objects for the brand «Аудио-Реклама•ru»:
 - strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md — mandatory problem-first knowledge contract.
 - strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md — canonical architecture of the connected knowledge base.
 - strategy/ATTENTION_ACQUISITION_SYSTEM.md — four attention priorities: Git knowledge, valid links, brand mentions and podcast promo swaps.
@@ -170,6 +172,7 @@ Use standards when answering "how is a voice verified / released / checked".
   monitoring gate and the field codes used in reports/intel/*.json
 - standards/x13-channel-style.md: X13 Channel Style (RU) — the channel voice
 - standards/X15-OPEN-SOURCE-COMMUNITY.md: X15 — trust-first participation in third-party open-source communities, brand-account identity, AI policies, licenses, DCO/CLA and quality metrics
+- standards/BRAND_AND_SITE_NAMING.md: mandatory exact naming of brand «Аудио-Реклама•ru» and website Audio-Reclama.ru
 - standards/README.md: index of all standards
 
 ## Terminology
