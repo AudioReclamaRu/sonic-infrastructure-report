@@ -4,7 +4,6 @@
 from pathlib import Path
 import re
 import subprocess
-import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".md", ".txt", ".html", ".json", ".yml", ".yaml"}
@@ -14,12 +13,12 @@ EXEMPT_PATHS = {"standards/BRAND_AND_SITE_NAMING.md"}
 
 RULES = (
     (
-        "Latin name must include the .ru site suffix or be the exact .com domain",
-        re.compile(r"(?<![A-Za-z0-9_])Audio-Reclama(?!\\.ru\\b|\\.com\\b)"),
+        "Latin website name must include .ru (or be the explicit secondary .com domain)",
+        re.compile(r"(?<![A-Za-z0-9_])Audio-Reclama(?!\.ru\b|\.com\b)"),
     ),
     (
         "Cyrillic brand must be written exactly as Аудио-Реклама•ru",
-        re.compile(r"Аудио-Реклама(?!•ru\\b)"),
+        re.compile(r"Аудио-Реклама(?!•ru\b)"),
     ),
 )
 
@@ -44,12 +43,11 @@ def main() -> int:
         path = ROOT / rel
         if path.suffix.lower() not in TEXT_SUFFIXES or not path.is_file():
             continue
-        text = path.read_text(encoding="utf-8", errors="replace")
+        content = path.read_text(encoding="utf-8", errors="replace")
         for description, pattern in RULES:
-            for match in pattern.finditer(text):
-                line = text.count("\\n", 0, match.start()) + 1
-                sample = match.group(0)
-                issues.append(f"{rel}:{line}: {description}: {sample}")
+            for match in pattern.finditer(content):
+                line = content.count("\n", 0, match.start()) + 1
+                issues.append(f"{rel}:{line}: {description}: {match.group(0)}")
 
     if issues:
         print("Canonical naming check FAILED:")
