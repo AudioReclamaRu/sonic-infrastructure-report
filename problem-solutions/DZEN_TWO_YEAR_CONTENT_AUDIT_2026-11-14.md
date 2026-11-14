@@ -2,7 +2,7 @@
 type: report
 date: 2026-11-14
 lang: ru
-related: [strategy/ATTENTION_ACQUISITION_SYSTEM.md, problem-solutions/README.md]
+related: [strategy/ATTENTION_ACQUISITION_SYSTEM.md, problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md, problem-solutions/README.md]
 ---
 
 # Аудит канала «Аудио-Реклама•ru» в Дзене за последние два года
@@ -79,6 +79,9 @@ related: [strategy/ATTENTION_ACQUISITION_SYSTEM.md, problem-solutions/README.md]
 40. [Перевод и дикторство — две гармоники одного мастерства. Рассказываю](https://dzen.ru/a/aJi_cLOUSC_OwHVH) — экспертное эссе / общая методология перевода и исполнения.
 
 ## Первичная картина редакционной системы
+Подробная карта связей каждой статьи с существующими объектами знаний и незакрытыми темами Git: `problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md`.
+
+
 
 ### 1. Четыре устойчивых потока контента
 
