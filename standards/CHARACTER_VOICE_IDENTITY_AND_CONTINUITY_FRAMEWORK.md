@@ -390,6 +390,7 @@ SAG-AFTRA формулирует свои общие AI-ограничители
 ## 14. Связанные рабочие инструменты
 
 - `CHARACTER_VOICE_PASSPORT_TEMPLATE.md` — форма паспорта персонажа и handover-записи; поля UNKNOWN / REQUIRES_VERIFICATION / PENDING_APPROVAL и стоп-правила до выпуска.
+- `../schemas/character-voice-passport.schema.json` — machine-readable schema v0.1: обязательные области прав и условные gates для запланированных способов использования и PASS.
 - `voice-provenance-passport.md` — отдельный паспорт происхождения конкретной записи или голоса.
 
 ## 15. Вопросы для экспертной проверки
