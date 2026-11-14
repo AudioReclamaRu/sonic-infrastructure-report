@@ -37,6 +37,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - problem-solutions/REFERENCE_MODELS.md — practices from Shure, RØDE, iZotope, Adobe, Frame.io, Cloudflare, Intercom, Twilio and Zapier.
 - problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md — current assets and gaps.
 - problem-solutions/DZEN_TWO_YEAR_CONTENT_AUDIT_2026-11-14.md — two-year editorial audit of the public Dzen channel: 40 article cards, all 40 full texts read; includes topic clusters and the complete reading status.
+- problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md — article-by-article map from all 40 Dzen articles to Git evidence, corpus, standards, canon and knowledge gaps; includes the studio-expert provenance of Kirill Kalinin.
 - problem-solutions/MEASUREMENT_PROTOCOL.md — repeatable demand and AI visibility measurement.
 - problem-solutions/IMPLEMENTATION_ROADMAP.md — delivery sequence.
 - problem-solutions/IVR_DESIGN_STANDARD.md — internal IVR design, recording and release checklist.
