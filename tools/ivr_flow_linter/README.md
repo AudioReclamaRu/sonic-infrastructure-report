@@ -40,7 +40,7 @@ Exit codes: `0` = no errors (warnings may remain); `1` = graph errors; `2` = inp
 
 ## Input model
 
-See `schema/ivr-flow.schema.json` and `examples/valid-flow.json`.
+See `schema/ivr-flow.schema.json` and `examples/valid-flow.json`. The JSON Schema documents the input contract; the CLI performs its own static checks with the Python standard library and does not invoke an external JSON Schema validator.
 
 - `entrypoints` lists the IDs where callers can enter the declared flow.
 - `nodes` is the set of menus, messages and terminal outcomes.
@@ -62,6 +62,16 @@ python -m unittest discover -s tools/ivr_flow_linter/tests -v
 - `examples/invalid-flow.json` is a fictional negative fixture with an undefined target, a closed loop and an unreachable node.
 
 Neither example is a client case, a recommended production flow, or evidence about a live telephony system.
+
+## Related tools and boundaries
+
+This utility is a preflight check for a vendor-neutral JSON graph. It is not a replacement for adjacent IVR tools:
+
+- [Asterisk Call Flow Builder](https://github.com/michaelnabil230/asterisk-call-flow-builder) describes itself as a visual editor for Asterisk inbound flows that validates a graph and exports an Asterisk dialplan. Use a visual editor when designing and exporting an Asterisk-specific flow; this linter checks a separate declarative JSON contract in a local script or CI.
+- [MakingChatbots/ivr-tester](https://github.com/MakingChatbots/ivr-tester) is an automated IVR testing framework that calls a real number and exercises prompts / DTMF interactions. That is a runtime test; this linter does not place calls.
+- [ossobv/asterisklint](https://github.com/ossobv/asterisklint) checks Asterisk PBX configuration and dialplan syntax. This linter does not parse Asterisk configuration; it checks the abstract graph before a vendor-specific dialplan exists.
+
+The tools can be complementary in a pipeline: declare the intended flow → lint its graph → generate or configure the PBX flow → run tests against a test number → verify the final audio through the telephone path.
 
 ## Method and license
 
