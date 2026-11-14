@@ -21,6 +21,8 @@ tiers, procedures, checks a machine or a human can apply.
 - `responsible-release.md` — the release procedure: who checks the voice before
   it airs, and the decision boundary (studio = last professional filter,
   client = responsible party).
+- `AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md` — draft studio framework for audiovisual translation and voice adaptation (voice-over, dubbing, dialogue adaptation, recording and QC); awaiting expert review by the studio's translation specialist.
+
 - `verification-chain.md` — the security/publishing layer: hash chains,
   certificates, register, how the "can this be published?" question is made
   checkable.
