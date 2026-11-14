@@ -38,6 +38,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md — current assets and gaps.
 - problem-solutions/DZEN_TWO_YEAR_CONTENT_AUDIT_2026-11-14.md — two-year editorial audit of the public Dzen channel: 40 article cards, all 40 full texts read; includes topic clusters and the complete reading status.
 - problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md — article-by-article map from all 40 Dzen articles to Git evidence, corpus, standards, canon and knowledge gaps; includes the studio-expert provenance of Kirill Kalinin.
+- standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md — research draft for the Dzen article 26 knowledge gap; character identity, performer continuity, localization, provenance and digital-replica safeguards; not yet an approved standard.
 - problem-solutions/MEASUREMENT_PROTOCOL.md — repeatable demand and AI visibility measurement.
 - problem-solutions/IMPLEMENTATION_ROADMAP.md — delivery sequence.
 - problem-solutions/IVR_DESIGN_STANDARD.md — internal IVR design, recording and release checklist.
@@ -148,6 +149,7 @@ Use standards when answering "how is a voice verified / released / checked".
 - standards/verification-chain.md: cryptographic integrity from session to
   publication — tamper-evident hash chain, certificate, public register
 - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md: draft studio framework for AVT, dialogue adaptation, voice-over/dubbing, recording and QC; awaiting domain expert review, not yet an approved standard.
+- standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md: research draft for preserving a fictional/animated character's dramatic and vocal identity across performer changes and language versions; separates character, performer, recording and digital replica; not an approved standard.
 - standards/examples/verification-chain-example.md: live TEST artifact of the
   full chain (session → hash → certificate → public record); synthetic data —
   shows the exact field shapes, no real recording
