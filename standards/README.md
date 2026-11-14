@@ -46,7 +46,9 @@ tiers, procedures, checks a machine or a human can apply.
 - `x14-enterprise-outreach.md` — corporate contact standard: distinguish formal replies, procurement-route responses, cold outreach and active dialogue; verify supplier/procurement rules from official sources before contacting large organizations; log source, date, status and route.
 - `X15-OPEN-SOURCE-COMMUNITY.md` — trust-first participation by the GitHub account AudioReclamaRu, representing the studio «Аудио-Реклама•ru», in third-party open-source communities: project selection, social conduct, AI policy, contribution cadence, DCO/CLA and reputation measurement.
 
-Related research initiative: `research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md` — proposed Russian TTS quality test suite; this is a plan, not a completed benchmark.
+Related research catalogue: `research/README.md` — status index for research plans and external cases.
+- `research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md` — sourced external examples of character voice succession (Mickey Mouse, Bugs Bunny, Kermit); not studio client cases and not a universal method.
+- `research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md` — proposed Russian TTS quality test suite; this is a plan, not a completed benchmark.
 - `red-field-visual.md` - RED FIELD channel visual system: black field, one
   object per news, red as accent; the cover is a consequence of the change,
   not an illustration of the topic.
