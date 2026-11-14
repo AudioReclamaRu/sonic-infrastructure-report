@@ -15,6 +15,7 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - QUERY_BACKLOG.json — начальные гипотезы проблем.
 - REFERENCE_MODELS.md — лучшие практики отрасли и других областей.
 - OWN_CONTENT_AUDIT_2026-11-14.md — предварительный аудит собственных активов.
+- DZEN_TWO_YEAR_CONTENT_AUDIT_2026-11-14.md — полный редакционный аудит 40 статей канала Дзена за 2024-11-14—2026-11-14; прочитано 40/40 полных текстов.
 - MEASUREMENT_PROTOCOL.md — протокол спроса и поисковой видимости.
 - VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md — технический аудит существующей статьи 2020 года.
 - VOICE_RECORDING_TEST_PROTOCOL.md — как проводить контролируемые A/B-тесты записи и обработки.
