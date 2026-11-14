@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1",
+  "passport_id": "CHAR-SYN-TYOMA-LIGHTHOUSE-001",
+  "document_status": "DRAFT",
+  "release_decision": "HOLD",
+  "project": {
+    "project_id": "PROJECT-SYN-NORTH-POST",
+    "title": "Почта Северного Ветра (вымышленный проект)",
+    "format": "animation",
+    "jurisdictions": [
+      "UNKNOWN"
+    ],
+    "episode_or_version": "Episode 02 / draft 0.1"
+  },
+  "character": {
+    "character_id": "CHAR-SYN-TYOMA-LIGHTHOUSE",
+    "working_name": "Тёма-Маяк",
+    "canon_version": "0.1",
+    "canon_ref": "SYNTHETIC-ROLE-BIBLE-001"
+  },
+  "planned_uses": [],
+  "permissions": {
+    "character_use": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "performer_consent": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "phonogram_rights": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "recording_use": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "reference_use": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "distribution": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "ai_training": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "digital_replica": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "localization": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    },
+    "data_handling": {
+      "status": "unknown",
+      "scope": "",
+      "notes": "Условие не подтверждено; учебный пример."
+    }
+  },
+  "reference_assets": [
+    {
+      "asset_id": "REF-SYN-001",
+      "asset_type": "role_bible",
+      "permitted_uses": [
+        "casting_context",
+        "creative_reference"
+      ],
+      "source_ref": "SYNTHETIC-NO-FILE-ROLE-BIBLE"
+    },
+    {
+      "asset_id": "REF-SYN-002",
+      "asset_type": "audio_recording",
+      "permitted_uses": [
+        "distribution"
+      ],
+      "source_ref": "SYNTHETIC-NO-FILE-OLD-RECORDING",
+      "restrictions": "В этом упражнении нет разрешения на новый кастинг, AI training или digital replica."
+    }
+  ],
+  "performers": [
+    {
+      "performer_id": "PER-SYN-001",
+      "role_type": "original",
+      "language_version": "ru"
+    },
+    {
+      "performer_id": "PER-SYN-002",
+      "role_type": "successor",
+      "language_version": "ru"
+    }
+  ],
+  "change_log": [
+    {
+      "version": "0.1",
+      "date": "2026-11-14",
+      "change": "Создан учебный синтетический паспорт; реальные права, исполнители и записи отсутствуют.",
+      "author_id": "SYNTHETIC-EXERCISE"
+    }
+  ],
+  "notes": "Синтетический fixture для тестирования структуры и блокировок. Не production passport."
+}
