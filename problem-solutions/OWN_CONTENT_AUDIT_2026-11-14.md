@@ -4,7 +4,7 @@ date: 2026-11-14
 lang: ru
 related: [problem-solutions/README.md, problem-solutions/QUERY_BACKLOG.json, geo/knowledge/query-matrix.json, guides/README.md]
 ---
-# Предварительный аудит активов Audio-Reclama
+# Предварительный аудит активов «Аудио-Реклама•ru»
 
 **Статус:** первичный обзор публичного сайта и Git-репозитория; не полный постраничный аудит. **Дата:** 14.11.2026.
 
