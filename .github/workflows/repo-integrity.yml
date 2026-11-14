@@ -30,5 +30,8 @@ jobs:
       - name: every hand-authored .md has frontmatter
         run: python tools/add_frontmatter.py --check
 
+      - name: character-voice passport safeguards
+        run: python tools/check_character_voice_passport.py
+
       - name: canonical brand and website naming
         run: python tools/check_brand_naming.py
