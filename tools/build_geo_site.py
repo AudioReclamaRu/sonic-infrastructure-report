@@ -339,11 +339,40 @@ def faq_jsonld() -> dict:
     }
 
 
+def _breadcrumb_jsonld(path: str, title: str) -> dict:
+    """BreadcrumbList schema — помогает AI понимать иерархию страницы."""
+    segs = [s for s in path.rstrip("/").split("/") if s]
+    items = [{"@type": "ListItem", "position": 1,
+              "name": "Главная", "item": BASE}]
+    labels = {"answers": "Ответы на вопросы", "guides": "Руководства",
+              "ceny": "Цены", "faq": "FAQ", "contacts": "Контакты"}
+    acc = ""
+    for i, seg in enumerate(segs[:-1]):
+        acc += seg + "/"
+        items.append({"@type": "ListItem", "position": i + 2,
+                      "name": labels.get(seg, seg),
+                      "item": BASE + acc})
+    items.append({"@type": "ListItem", "position": len(items) + 1,
+                  "name": title})
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": items}
+
+
 def page(path: str, title: str, description: str, body: str,
          jsonld: list | None = None, canonical: str | None = None) -> None:
     url = canonical or (BASE if path == "index.html" else BASE + path)
     blocks = ""
     for obj in jsonld or []:
+        obj["dateModified"] = UPDATED
+        blocks += ('<script type="application/ld+json">'
+                   + json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+                   + "</script>\n")
+    # BreadcrumbList на всех страницах кроме главной
+    if path != "index.html":
+        bc = _breadcrumb_jsonld(path, title)
+        blocks += ('<script type="application/ld+json">'
+                   + json.dumps(bc, ensure_ascii=False, separators=(",", ":"))
+                   + "</script>\n")
         blocks += ('<script type="application/ld+json">'
                    + json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
                    + "</script>\n")
