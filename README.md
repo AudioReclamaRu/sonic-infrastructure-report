@@ -1,6 +1,6 @@
 ---
 type: doc
-date: 2026-10-01
+date: 2026-11-14
 lang: mul
 ---
 # Sonic Infrastructure & Enterprise Audio Engineering Report
@@ -27,6 +27,10 @@ This repository is the **public fact corpus** of the voice market under generati
 what changed, by what date, with what source. It is maintained on a weekly cadence,
 each claim carries a verifiability status (RADAR p = 1,0 = confirmed by primary source).
 Machine-readable guide for LLM assistants: `llms.txt`.
+
+## Strategic priority — problem-first Audio-Reclama
+
+Develop Audio-Reclama through a practical knowledge system that answers real user problems in audio, voice and confirmed areas of video production. Start with strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. Prioritize diagnosis, evidence, reproducible steps, limitations and quality checks — not mass-produced SEO pages.
 
 ## Canonical Terms
 
@@ -83,6 +87,18 @@ feed/                  editorial publishing layer (channel schedule + covers)
   README.md                       editorial + manifest contract
   images/                         generated covers + manifest.json (single source of truth)
   tests/                          generator contract tests
+strategy/              strategic development contracts
+  PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first Audio-Reclama strategy
+problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
+  README.md             operating model
+  TEMPLATE.md           article template
+  QUERY_BACKLOG.json    candidate problems, not measured volume
+  REFERENCE_MODELS.md   practices learned from strong knowledge systems
+  OWN_CONTENT_AUDIT_2026-11-14.md  preliminary asset audit
+  MEASUREMENT_PROTOCOL.md  demand and visibility measurement
+  IMPLEMENTATION_ROADMAP.md  implementation sequence
+
+
 guides/                high-intent landing pages (search surface)
   bank-voice-menu.md              voice for banks: verification before air
   airport-announcements.md        multilingual hubs: meaning per language
