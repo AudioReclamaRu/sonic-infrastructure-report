@@ -97,8 +97,8 @@ def _source_record(node: dict[str, Any], kind: str, graph_version: int) -> dict[
         "hangup": set(),
     }
     metadata = {key: raw_meta[key] for key in allowed_fields[kind] if key in raw_meta}
-    if kind == "queue" and isinstance(node.get("queueName"), str):
-        metadata["queue_name"] = node["queueName"]
+    if kind == "queue" and isinstance(data.get("queueName"), str):
+        metadata["queue_name"] = data["queueName"]
 
     record: dict[str, Any] = {
         "application": "michaelnabil230/asterisk-call-flow-builder",
