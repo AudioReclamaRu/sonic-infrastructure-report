@@ -132,8 +132,10 @@ def build_plan(
                     "event": event,
                     "target_node_id": target,
                     "path_node_ids": list(next_path + (target,)),
-                    "reason": "The inspected IVR Tester Step API has no direct action mapping for this graph event.",
+                    "reason": "The graph event must be verified manually; it is preserved in the route but is not represented as a synthetic IVR Tester action.",
                 })
+                if node_type == "message":
+                    walk(target, entrypoint, next_visited, next_path, steps)
                 continue
 
             step = {
