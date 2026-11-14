@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "flow_id": "synthetic-broken-flow",
+  "description": "Fictional negative example; contains intentional errors.",
+  "entrypoints": ["welcome"],
+  "policy": {
+    "require_operator_escape": true,
+    "require_timeout_fallback": true,
+    "require_invalid_input_fallback": true
+  },
+  "nodes": [
+    {
+      "id": "welcome",
+      "type": "menu",
+      "transitions": {
+        "1": "missing_node",
+        "timeout": "loop",
+        "invalid_input": "loop"
+      }
+    },
+    {
+      "id": "loop",
+      "type": "message",
+      "transitions": {"continue": "loop"}
+    },
+    {
+      "id": "orphan",
+      "type": "terminal",
+      "terminal_kind": "hangup",
+      "transitions": {}
+    }
+  ]
+}
