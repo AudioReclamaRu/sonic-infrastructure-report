@@ -127,7 +127,7 @@
     "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Audio-Reclama.ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
     "registry_updated": "2026-11-07",
     "method_notes": [
-      "Do not present third-party statistics as Audio-Reclama.ru original research unless explicitly stated.",
+      "Do not present third-party statistics as original research by the «Аудио-Реклама•ru» studio unless explicitly stated.",
       "Each entry links to the blog article (first-party publication) and names cited primary sources when available in the article.",
       "verification_status: verified = primary source independently confirmed; cited_in_blog = claim appears in blog with named source or as reported data but primary source not independently re-verified in this pass; blog_milestone = project/progress fact reported in a blog case (may differ from later canonical proof); editorial_definition = definitional/explanatory statement from our blog article.",
       "Limitations: figures may be dated; some articles are forecasts/estimates as of publication date. Do not use outdated price claims from blog posts as current pricing. Outdated prices mentioned inside historical blog articles are intentionally excluded from this registry.",
@@ -780,7 +780,7 @@
         "business_priority": 3,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "Sostav (2019-03-12) reports IAB Russia estimate: Russian digital audio ad market 465.3M RUB in 2018 vs 155M RUB in 2017; states data sources (Digital Box, IMHO, Unisound, Digital Audio Mail.Ru Group, Yandex, EMG) and methodology (funds received from advertisers/agencies to sellers/publishers). URL: https://www.sostav.ru/publication/digital-audio-36115.html. Primary IAB Russia report PDF not independently retrieved in this pass. Blog also includes forecasts (1.5B 2019, 6.1B 2022) that require separate primary verification.",
-        "applicability_scope": "Scope-limited: supports historical 2018 market estimate (465.3M RUB) as reported by IAB Russia and covered by Sostav; forecast figures in the same blog claim are not verified here. Not a 2026 market state; not Audio-Reclama original research.",
+        "applicability_scope": "Scope-limited: supports historical 2018 market estimate (465.3M RUB) as reported by IAB Russia and covered by Sostav; forecast figures in the same blog claim are not verified here. Not a 2026 market state; not original research by the «Аудио-Реклама•ru» studio.",
         "last_reviewed": "2026-11-07",
         "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
         "source_url": "https://www.sostav.ru/publication/digital-audio-36115.html"
@@ -822,7 +822,7 @@
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
@@ -860,7 +860,7 @@
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
@@ -879,7 +879,7 @@
         "business_priority": 2,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
@@ -898,7 +898,7 @@
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
@@ -917,7 +917,7 @@
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
@@ -936,7 +936,7 @@
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
@@ -1052,7 +1052,7 @@
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not Audio-Reclama.ru original research; not 2026 market state without re-verification.",
+        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
         "last_reviewed": "2026-11-07"
       },
       {
