@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "flow_id": "synthetic-customer-support",
+  "description": "Fictional example for the IVR Flow Linter; not a client project.",
+  "entrypoints": ["welcome"],
+  "policy": {
+    "require_operator_escape": true,
+    "require_timeout_fallback": true,
+    "require_invalid_input_fallback": true
+  },
+  "nodes": [
+    {
+      "id": "welcome",
+      "type": "menu",
+      "prompt_asset": "welcome.wav",
+      "transitions": {
+        "1": "sales_message",
+        "2": "support_message",
+        "timeout": "operator",
+        "invalid_input": "operator"
+      }
+    },
+    {
+      "id": "sales_message",
+      "type": "message",
+      "prompt_asset": "sales.wav",
+      "transitions": {"continue": "operator"}
+    },
+    {
+      "id": "support_message",
+      "type": "message",
+      "prompt_asset": "support.wav",
+      "transitions": {"continue": "operator"}
+    },
+    {
+      "id": "operator",
+      "type": "terminal",
+      "terminal_kind": "operator",
+      "transitions": {}
+    }
+  ]
+}
