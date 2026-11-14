@@ -18,7 +18,7 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling or dist
 
 We are building a connected, evidence-backed expert knowledge infrastructure, not a blog or content factory. The repository is the canonical, versioned knowledge base. Develop reusable knowledge objects, relationships, diagnostics, standards, experiments, tools and verified decisions. A document or post is only one possible view of that knowledge.
 
-**Distribution boundary:** the canonical knowledge base is the repository. Approved external activity also includes selective, substantive participation in third-party open-source communities under standards/X15-OPEN-SOURCE-COMMUNITY.md; this is collaboration, not an advertising placement. Contributions must be useful independently of the brand, and must follow the target project's social rules, AI policy, license, attribution and DCO/CLA requirements. Do not publish or edit the Audio-Reclama website/blog; do not deploy GitHub Pages or create mirrors on Dzen, VK or other surfaces. The official website is an external reputation and company-context reference: link to it only when genuinely required by the subject, never as a compulsory CTA. The Telegram channel «Культура Голоса» remains an optional independent venue and is not the knowledge roadmap. No mass automated comments, issues, PRs, stars or follows.
+**Distribution boundary:** the canonical knowledge base is the repository. Approved external activity also includes selective, substantive participation in third-party open-source communities under standards/X15-OPEN-SOURCE-COMMUNITY.md; this is collaboration, not an advertising placement. Contributions must be useful independently of the brand, and must follow the target project's social rules, AI policy, license, attribution and DCO/CLA requirements. Do not publish or edit the Audio-Reclama.ru website/blog; do not deploy GitHub Pages or create mirrors on Dzen, VK or other surfaces. The official website is an external reputation and company-context reference: link to it only when genuinely required by the subject, never as a compulsory CTA. The Telegram channel «Культура Голоса» remains an optional independent venue and is not the knowledge roadmap. No mass automated comments, issues, PRs, stars or follows.
 
 Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance are secondary signals, not the architecture's purpose.
 
@@ -135,10 +135,10 @@ state.
 ### Expert knowledge object contract
 
 - Problem-solving records belong in problem-solutions/ and follow problem-solutions/TEMPLATE.md, but the unit of work may instead be evidence, a diagnostic protocol, standard, tool, experiment, case, entity, interface, dataset or a relationship between existing objects.
-- Before creating anything, inspect the repository's current knowledge graph and related evidence/standards/tools. Check public Audio-Reclama pages only to understand official company context, service scope or an existing public claim; those pages are not targets for editing or publication.
+- Before creating anything, inspect the repository's current knowledge graph and related evidence/standards/tools. Check public Audio-Reclama.ru pages only to understand official company context, service scope or an existing public claim; those pages are not targets for editing or publication.
 - Record provenance, status, date, limitations and links to related objects. Keep facts, observations, calculations, professional recommendations, positions and hypotheses distinct.
 - The query backlog contains hypotheses unless demand is explicitly measured with source, region, date and method. Search volume is not the primary measure of infrastructure value.
-- Do not imply that Audio-Reclama sells repair/restoration/video services unless the owner confirms the current product scope.
+- Do not imply that the «Аудио-Реклама•ru» studio sells repair/restoration/video services unless the owner confirms the current product scope.
 - The repository is canonical. A Telegram contribution is optional and must fit «Культура Голоса» on its own editorial terms. No website publishing, GitHub Pages deployment or third-party mirror is allowed by default.
 
 ## The frontmatter contract (all hand-authored .md)
