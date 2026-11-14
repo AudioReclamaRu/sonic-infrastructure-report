@@ -21,6 +21,7 @@ tiers, procedures, checks a machine or a human can apply.
 - `responsible-release.md` — the release procedure: who checks the voice before
   it airs, and the decision boundary (studio = last professional filter,
   client = responsible party).
+- `../tools/ivr_flow_linter/README.md` — runnable static checker for declared IVR graph structure; complements, but does not replace, real-number testing and telephony integration checks in the IVR design standard.
 - `AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md` — draft studio framework for audiovisual translation and voice adaptation (voice-over, dubbing, dialogue adaptation, recording and QC); awaiting expert review by the studio's translation specialist.
 - `CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md` — research draft for preserving the dramatic and vocal identity of animated/fictional characters through performer changes, localization and possible digital replicas; awaits expert/owner review and approved real-world cases.
 - `CHARACTER_VOICE_PASSPORT_TEMPLATE.md` — fillable character-voice passport and performer-handover form, including reference provenance, scope-of-use checks, localization, and PASS/FIX/HOLD release control.
