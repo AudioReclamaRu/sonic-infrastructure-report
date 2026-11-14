@@ -1,8 +1,21 @@
 ---
 type: doc
-date: 2026-10-01
+date: 2026-11-14
 lang: mul
 ---
+
+## MANDATORY STRATEGIC PRIORITY — AUDIO-RECLAMA
+
+Before any editorial, SEO, GEO or content-development task, read:
+1. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
+2. problem-solutions/README.md
+3. problem-solutions/QUERY_BACKLOG.json
+4. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
+5. problem-solutions/REFERENCE_MODELS.md
+
+Develop Audio-Reclama.ru through useful answers to real audio/voice/video problems. Diagnose before prescribing; use evidence; measure demand before calling a query popular; check existing pages before drafting; never imply an unconfirmed service. A Git commit is not a website publication.
+
+
 # AGENTS.md — how to work in this repository
 
 Contract for any AI agent (or person) reading, querying or extending this repo.
@@ -111,6 +124,13 @@ state.
   prohibits direct contact unless an official source confirms exclusivity.
 - Before committing, run `python tools/make_reports_index.py --check` if you
   touched anything under `reports/`.
+
+### Problem-solving content contract
+
+- Problem-solving articles belong in problem-solutions/ and must follow problem-solutions/TEMPLATE.md.
+- Before drafting, compare the topic with the main site, blog, guides/, geo/answers/, geo/guides/ and geo/knowledge/query-matrix.json. Improve existing canonical pages rather than create duplicate intent.
+- The initial problem backlog consists of unmeasured hypotheses. Never call a query popular until demand is measured with source, region and date.
+- Do not imply that Audio-Reclama sells repair/restoration/video services unless the owner confirms the current product scope.
 
 ## The frontmatter contract (all hand-authored .md)
 
