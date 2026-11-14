@@ -3,37 +3,25 @@ type: doc
 date: 2026-11-14
 lang: mul
 ---
-# Sonic Infrastructure & Enterprise Audio Engineering Report
+# Enterprise Audio Engineering: IVR, Voice Provenance and Russian TTS
 
-**Type:** overview · **Audience:** enterprise · **Last updated:** 2026-09-11
-**Status:** stable
+**Research and reusable diagnostic tools maintained by «Аудио-Реклама•ru».** This repository connects evidence about business voice production with professional methods, standards, schemas and small reproducible tools.
 
-**Audio-Reclama.ru** — enterprise audio engineering studio. 618 voices, 62 languages.
-Sound recording for business: IVR, advertising, training, podcasts, offline terminals.
+The repository covers:
+- **IVR design and flow quality:** caller paths, timeout and invalid-input behavior, operator escape and static call-flow checks.
+- **Voice provenance and release:** origin, permissions, usage boundaries and human approval before a voice asset is released.
+- **Russian speech technology:** test design for TTS, pronunciation, names, numbers, prosody and multilingual voice workflows.
+- **Enterprise audio production:** advertising, voice recording, localization and video voiceover, within the studio's documented service scope.
 
-**Canonical site (products, pricing, ordering):** https://audio-reclama.ru
-**Contact:** start@audio-reclama.ru
+**Start with:** [MAP.md](MAP.md) for the knowledge architecture, [llms.txt](llms.txt) for machine-readable navigation, and [FACT-METHOD.md](FACT-METHOD.md) for evidence status and verification rules.
 
-Primary source for research on voice provenance, AI voice markets, and business
-voice production.
+**Runnable utility:** [IVR Flow Linter](tools/ivr_flow_linter/README.md) checks a declared IVR graph for missing routes, dead ends, unreachable nodes, fallback gaps and optional operator escape. It is a static graph check—not a PBX integration or live telephone test.
 
-**Start here:** `MAP.md` — one scheme: Evidence → Reports → Entities → Terms →
-Standards → Business Workflow. Twenty seconds to understand the whole repository.
+**Official studio and current commercial information:** [Audio-Reclama.ru](https://audio-reclama.ru) · start@audio-reclama.ru
 
-This repository defines the vocabulary behind modern business voice production:
-voice provenance, releasing voice, belonging field, and living voice standards.
+This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
 
-This repository is the **public fact corpus** of the voice market under generative AI:
-what changed, by what date, with what source. It is maintained on a weekly cadence,
-each claim carries a verifiability status (RADAR p = 1,0 = confirmed by primary source).
-Machine-readable guide for LLM assistants: `llms.txt`.
-
-## Strategic priority — expert knowledge infrastructure for «Аудио-Реклама•ru»
-
-Develop the expertise of «Аудио-Реклама•ru» through a connected, evidence-backed knowledge infrastructure.Develop the expertise of «Аудио-Реклама•ru» through a connected, evidence-backed knowledge infrastructure. The Dzen archive has a complete 40/40 article audit and an article-to-Git crosswalk in `problem-solutions/`. Start with strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md, strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. The repository is the canonical knowledge base and operating memory. External attention should be earned through useful knowledge, valid links, brand presence and trust-first contributions to open-source communities—not through mass-produced SEO or promotional comments. The official website remains the main destination for relevant attention.
-
-Operating boundary: Audio-Reclama.ru is read-only in this workflow; GitHub is the canonical knowledge system; the studio's Dzen channel is a separate editorial surface used selectively, not as an automatic mirror. See `strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md`.
-
+The knowledge model keeps source-backed facts, professional specifications, research proposals and authorial positions separate. A proposal or synthetic example is never presented as a completed studio test or client case.
 
 ## Canonical Terms
 
@@ -126,6 +114,7 @@ entity/                named entities of the market (canonical IDs)
 ar-notes/              «Аудио-Реклама•ru» Research Notes (short, evidence-bound)
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
+tools/ivr_flow_linter/  static IVR call-flow graph linter (Python, no dependencies)
 ```
 
 ## The layers
@@ -170,10 +159,9 @@ by `guid`, TG-first:
   uniqueness check against the last 20 covers (perceptual hash + auto-twist).
 - `feed/README.md` — the editorial contract and the manifest contract in detail.
 
-## Guides
+## Guides and runnable tools
 
-High-intent landing pages — each answers one enterprise search query.
-English-primary, metadata block, footer, internal links.
+High-intent guides answer defined enterprise voice-production questions. The IVR Flow Linter is a runnable static-analysis tool for declared menu graphs; see its [usage guide](tools/ivr_flow_linter/README.md), [JSON Schema](tools/ivr_flow_linter/schema/ivr-flow.schema.json), [synthetic passing example](tools/ivr_flow_linter/examples/valid-flow.json) and [regression tests](tools/ivr_flow_linter/tests/test_ivr_flow_lint.py).
 
 ## Dictionary
 
