@@ -3,9 +3,9 @@ type: index
 date: 2026-11-03
 lang: mul
 ---
-# Standards
+# Standards — how the industry works with voice
 
-- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru. — how the industry works with voice
+- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru.
 
 Standards are the working layer: what a professional check looks like, who
 answers for a release, what a provenance passport contains, how a living voice
@@ -40,7 +40,7 @@ tiers, procedures, checks a machine or a human can apply.
 - `x13-channel-style.md` - the channel voice: editorial register of the TG
   channel and what it does not say.
 - `x14-enterprise-outreach.md` — corporate contact standard: distinguish formal replies, procurement-route responses, cold outreach and active dialogue; verify supplier/procurement rules from official sources before contacting large organizations; log source, date, status and route.
-- `X15-OPEN-SOURCE-COMMUNITY.md` — trust-first participation by «Аудио-Реклама•ru»Ru in third-party open-source communities: project selection, social conduct, AI policy, contribution cadence, DCO/CLA and reputation measurement.
+- `X15-OPEN-SOURCE-COMMUNITY.md` — trust-first participation by the GitHub account AudioReclamaRu, representing the studio «Аудио-Реклама•ru», in third-party open-source communities: project selection, social conduct, AI policy, contribution cadence, DCO/CLA and reputation measurement.
 
 Related research initiative: `research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md` — proposed Russian TTS quality test suite; this is a plan, not a completed benchmark.
 - `red-field-visual.md` - RED FIELD channel visual system: black field, one
