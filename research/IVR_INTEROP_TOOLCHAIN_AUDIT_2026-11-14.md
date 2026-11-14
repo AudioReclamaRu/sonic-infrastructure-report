@@ -105,3 +105,20 @@ Synthetic fixture и unit tests покрывают структуру преоб
 ## 9. Сохранение источника и параметров
 
 Адаптер добавляет provenance на уровне всего потока и interop_source на уровне исходных узлов. Он переносит только явно разрешённые поля по типу узла: start prompt/timeout, menu playback/retries/options, playback sound, extension/ringSeconds/playback, queue name/strategy/timeout, а также позиции canvas. Неизвестные поля исходной модели намеренно не копируются. Это ограничивает утечку секретов, но означает, что преобразование не является lossless round-trip; исходный ACFB graph JSON следует хранить отдельно. Схема канонического JSON документирует provenance/interoperability metadata.
+
+## 10. Попытка запуска реального upstream-приложения (2026-11-14)
+
+Проведён отдельный smoke test публичного upstream main в изолированном StackBlitz WebContainer — без fork, upstream write или правок исходников:
+
+- импорт публичного GitHub repository завершился; npm install успешно установил 33 packages;
+- Vite 8.0.16 сообщил ready in 9131 ms;
+- браузерный агент увидел страницу Asterisk Call Flow Builder, интерактивный React Flow canvas и предзагруженный граф Acme Support; ошибок терминала/консоли в первом сеансе не сообщил;
+- при отдельной попытке повторно открыть preview URL после завершения первого browser run сервер уже не слушал порт 5173 (Unable to connect to port 5173). Поэтому live React Fiber/useState не удалось прочитать и фактический normalizeGraph JSON не извлечён;
+- этот результат доказывает, что приложение и его зависимости запускались в одном временном WebContainer-сеансе. Он **не доказывает локальный Windows self-host, сохранение runtime между сеансами или реальную интеграцию с Asterisk**.
+
+Ограничения рабочей shell-среды этого исследования:
+- Node.js v22.16.0 и npm 10.9.2 присутствуют;
+- git ls-remote не смог разрешить github.com (DNS/network недоступен в контейнерной shell);
+- Asterisk и Docker CLI отсутствуют.
+
+Итоговый статус: **PARTIAL / NOT E2E**. Нет live graph capture, generated-dialplan runtime test, PBX или telephone call. Для следующего достоверного шага нужен один устойчивый self-host-сеанс, в котором JSON извлекается до остановки dev server, затем — отдельная совместимая Asterisk PBX.
