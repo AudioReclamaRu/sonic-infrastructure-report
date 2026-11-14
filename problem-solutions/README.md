@@ -16,6 +16,8 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - REFERENCE_MODELS.md — лучшие практики отрасли и других областей.
 - OWN_CONTENT_AUDIT_2026-11-14.md — предварительный аудит собственных активов.
 - DZEN_TWO_YEAR_CONTENT_AUDIT_2026-11-14.md — полный редакционный аудит 40 статей канала Дзена за 2024-11-14—2026-11-14; прочитано 40/40 полных текстов.
+- DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md — поштучная карта 40 статей Дзена к фактам, стандартам, канону и пробелам Git; отдельно учитывает экспертизу Кирилла Калинина как часть знания студии.
+
 - strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — роли сайта, Git и Дзена, границы редактирования и публикационная процедура.
 
 - MEASUREMENT_PROTOCOL.md — протокол спроса и поисковой видимости.
