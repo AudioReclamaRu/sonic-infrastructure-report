@@ -319,7 +319,7 @@ referenced-in.
   first major-label licensing agreement (UMG, 10.09.2026)
 - entity/samuel-fitoussi.md — essayist/author; published the human-vs-AI
   writing preference argument (04.09.2026)
-- entity/kirill-kalinin.md — NGLU associate professor and candidate of philological sciences in translation studies; documented 2023 studio visit and advertising-voice-over masterclass; owner-supplied attribution as author of several Dzen articles, exact article mapping pending.
+- entity/kirill-kalinin.md — in-house studio expert in translation and audiovisual adaptation; NGLU associate professor and candidate of philological sciences; author of several Dzen articles published by «Аудио-Реклама•ru» as the studio's own expertise; named expert profile and official university evidence.
 - entity/universal-music-group.md — world's largest music-based entertainment
   company; first AI-audio licensing agreement (with ElevenLabs, 10.09.2026)
 
