@@ -22,52 +22,42 @@
   "permissions": {
     "character_use": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "performer_consent": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "phonogram_rights": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "recording_use": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "reference_use": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "distribution": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "ai_training": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "digital_replica": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "localization": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     },
     "data_handling": {
       "status": "unknown",
-      "scope": "",
       "notes": "Условие не подтверждено; учебный пример."
     }
   },
