@@ -30,7 +30,10 @@ Machine-readable guide for LLM assistants: `llms.txt`.
 
 ## Strategic priority — expert knowledge infrastructure for «Аудио-Реклама•ru»
 
-Develop the expertise of «Аудио-Реклама•ru» through a connected, evidence-backed knowledge infrastructure. Start with strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. The repository is the canonical knowledge base and operating memory. External attention should be earned through useful knowledge, valid links, brand presence and trust-first contributions to open-source communities—not through mass-produced SEO or promotional comments. The official website remains the main destination for relevant attention.
+Develop the expertise of «Аудио-Реклама•ru» through a connected, evidence-backed knowledge infrastructure. Start with strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md, strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. The repository is the canonical knowledge base and operating memory. External attention should be earned through useful knowledge, valid links, brand presence and trust-first contributions to open-source communities—not through mass-produced SEO or promotional comments. The official website remains the main destination for relevant attention.
+
+Operating boundary: Audio-Reclama.ru is read-only in this workflow; GitHub is the canonical knowledge system; the studio's Dzen channel is a separate editorial surface used selectively, not as an automatic mirror. See `strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md`.
+
 
 ## Canonical Terms
 
@@ -92,6 +95,7 @@ feed/                  editorial publishing layer (channel schedule + covers)
 strategy/              strategic development contracts
   EXPERT_KNOWLEDGE_INFRASTRUCTURE.md      architecture of the connected knowledge base
   ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
+  STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
 research/              reproducible research plans and benchmark programmes
   RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
