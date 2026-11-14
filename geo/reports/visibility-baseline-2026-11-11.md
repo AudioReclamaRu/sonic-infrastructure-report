@@ -39,7 +39,7 @@ status: baseline_recorded
 | голосовое приветствие IVR цена | **нет** | нет | kupigolos, zvukograd, mango-office, ivr-voice.com |
 | озвучка аудиокниги цена | **нет** | нет | avito, kupigolos, profi, knigastudio |
 | озвучка поздравления цена | **нет** | нет | avito, audio-production, audiopodarok |
-| audio-reclama (бренд) | **да** | нет | audio-reclama.ru, vk, dzen, youtube, 2gis |
+| точный брендовый запрос `audio-reclama` (как введён в поиск) | **да** | нет | audio-reclama.ru, vk, dzen, youtube, 2gis |
 
 **Вывод baseline:** студия видна только по собственному бренду; по всем
 четырём коммерческим запросам топ занимают агрегаторы (profi/avito/kwork) и
@@ -82,7 +82,7 @@ Google SERP + **«Обзор от ИИ» (AI Overview) присутствует 
 
 Владелец подтвердил: **audio-reclama.com — его сайт для международной
 аудитории** (малопосещаемый, усечённый). Это свой актив, а не чужая регистрация.
-Занесён в llms.txt как EN-поверхность бренда для связки сущностей в ИИ-движках.
+Занесён в llms.txt как дополнительная англоязычная веб-поверхность; основной сайт для направления внимания — Audio-Reclama.ru.
 
 ## Внимание владельца (новая находка)
 
