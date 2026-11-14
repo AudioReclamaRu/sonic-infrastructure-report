@@ -75,6 +75,7 @@ canon/                 position — operators of the industry's language
   releasing-voice.md              how provenance becomes part of the product
   cards/                          Operator Cards (compact, LLM-indexable)
 standards/             profession standards — how to work with voice
+  BRAND_AND_SITE_NAMING.md canonical brand and website writing
   voice-provenance-passport.md    standard: voice provenance passport (EN)
   living-voice-standard.md        voluntary verification standard of human voice
   responsible-release.md          the pre-air check procedure (pre-air voice editing)
