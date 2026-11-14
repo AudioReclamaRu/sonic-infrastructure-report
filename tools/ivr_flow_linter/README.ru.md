@@ -162,3 +162,14 @@ AsteriskLint проверяет конфигурацию и dialplan Asterisk, �
 ### Происхождение и перенос параметров узлов
 
 Конвертер сохраняет provenance всего потока и interop_source для каждого перенесённого узла. В metadata попадает только whitelist полей, относящихся к типу узла: например extension/ringSeconds для добавочного номера и queue_name/strategy/timeout для очереди. Координаты canvas сохраняются отдельно. Произвольные поля, в том числе потенциально секретные, не копируются. Это не полный round-trip ACFB graph: для обратного восстановления исходной схемы нужен исходный graph JSON и будущий штатный JSON export.
+
+
+### Извлечение реального состояния запущенного ACFB
+
+После запуска upstream app локально (см. README самого Asterisk Call Flow Builder) открой DevTools → Console и вставь read-only скрипт из файла:
+
+    tools/ivr_flow_linter/interop/extract_acfb_live_graph.console.js
+
+Скрипт ищет React Fiber компонента App, идентифицирует state-массивы nodes и edges по форме объектов, воспроизводит объект normalizeGraph из upstream source и копирует JSON через штатный DevTools helper copy(). Он не меняет canvas, localStorage или проект.
+
+Если форма состояния не совпала с ожидаемой, скрипт завершится ошибкой, а не подставит initialNodes/initialEdges или синтетическую fixture. Зафиксируй commit upstream, Node/npm, дату, количество nodes/edges и сохрани полученный JSON как отдельный локальный evidence artifact перед закрытием вкладки. Не публикуй клиентские номера, персональные данные, SIP credentials или закрытые prompt тексты.
