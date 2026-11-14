@@ -127,6 +127,7 @@ state.
 - A **position** belongs in `canon/` and is labelled POSITION — it is not a fact.
 - A **specification** belongs in `standards/` and must be applicable: fields,
   tiers, checks a machine or a human can run.
+- A machine-readable data contract belongs in `schemas/` and must be linked to its human-facing standard and checked by a reproducible validator. Do not place contracts, personal data, voice files or private agreement text in public schemas or fixtures.
 - Editorial work is governed by `standards/editorial-object-contract.md`; the
   cases in `standards/editorial-object-cases.md` are filled **by hand** from real
   events and are never generated.
@@ -134,6 +135,7 @@ state.
   `standards/x14-enterprise-outreach.md`. Do not infer that a supplier portal
   prohibits direct contact unless an official source confirms exclusivity.
 - Before committing, run `python tools/check_brand_naming.py` for every change.
+- For character-voice passport/schema/template changes, run `python tools/check_character_voice_passport.py`; CI enforces the structural and release-gate regression checks. This is not a legal compliance checker or a full JSON Schema implementation.
 - Run `python tools/make_reports_index.py --check` if you touched anything under `reports/`.
 
 ### Expert knowledge object contract
