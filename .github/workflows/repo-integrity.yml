@@ -30,6 +30,23 @@ jobs:
       - name: every hand-authored .md has frontmatter
         run: python tools/add_frontmatter.py --check
 
+      - name: IVR Flow Linter regression tests
+        run: python -m unittest discover -s tools/ivr_flow_linter/tests -v
+
+      - name: IVR Flow Linter valid fixture
+        run: python tools/ivr_flow_linter/ivr_flow_lint.py tools/ivr_flow_linter/examples/valid-flow.json
+
+      - name: IVR Flow Linter rejects negative fixture
+        shell: bash
+        run: |
+          if python tools/ivr_flow_linter/ivr_flow_lint.py tools/ivr_flow_linter/examples/invalid-flow.json; then
+            echo "Expected the deliberately invalid fixture to fail."
+            exit 1
+          else
+            status=$?
+            test "$status" -eq 1
+          fi
+
       - name: character-voice passport safeguards
         run: python tools/check_character_voice_passport.py
 
