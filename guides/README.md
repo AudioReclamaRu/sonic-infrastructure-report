@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-09-11
+date: 2026-11-14
 lang: en
 ---
 # Guides — high-intent search surface
@@ -11,6 +11,8 @@ lang: en
 One guide per enterprise search query. English-primary. One H1, metadata block,
 footer, ≥3 internal links. Every guide ends with a verification criterion —
 the check a client performs before release — not with a sales pitch.
+
+Problem-diagnostic materials are governed separately by problem-solutions/README.md and problem-solutions/TEMPLATE.md. Decide whether a new topic belongs to a user-problem diagnosis or an enterprise workflow; avoid duplicate intent.
 
 Each guide couples a live site URL (verified 200) with the repo layer
 (canon / standards / evidence) that answers the same question with proof.
