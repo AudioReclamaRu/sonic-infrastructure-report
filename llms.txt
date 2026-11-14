@@ -30,6 +30,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md — mandatory problem-first knowledge contract.
 - strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md — canonical architecture of the connected knowledge base.
 - strategy/ATTENTION_ACQUISITION_SYSTEM.md — four attention priorities: Git knowledge, valid links, brand mentions and podcast promo swaps.
+- strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — operating model for the read-only website, canonical Git repository and separate Dzen editorial channel.
 - problem-solutions/README.md — workflow and scope.
 - problem-solutions/TEMPLATE.md — diagnostic article template.
 - problem-solutions/QUERY_BACKLOG.json — candidate problems; demand is not yet measured.
@@ -47,7 +48,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md — proposed reproducible Russian TTS test suite; plan only, no benchmark results yet.
 - research/OPEN_SOURCE_TARGET_AUDIT_PIPER_2026-11-14.md — preliminary social, policy, license and contribution audit of OHF-Voice/Piper; no external post or PR submitted.
 
-This library is distinct from commercial GEO answers and enterprise guides. Avoid query-variant pages at scale. A Git commit is not a website publication; verify the canonical page after deployment.
+This library is distinct from commercial GEO answers and enterprise guides. Avoid query-variant pages at scale. A Git commit updates only the repository. The Audio-Reclama.ru website is read-only in this workflow; do not deploy GitHub Pages. Dzen publication, when selected, is a separate editorial adaptation and must be verified by its public URL.
 
 ## Human
 
