@@ -107,7 +107,7 @@ The interop/flow_to_ivr_tester_plan.py adapter builds a path/action planning mat
 Mapping:
 - DTMF digit → press(digit);
 - timeout → doNothing();
-- invalid input → press the first unused key in 0123456789*#, when one remains;
+- invalid input → press the first unused key in 0123456789, when one remains;
 - message continuation → doNothing();
 - extension/queue outcomes that the inspected Step API cannot assert are recorded as manual routes.
 

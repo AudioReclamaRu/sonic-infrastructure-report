@@ -15,7 +15,7 @@ if str(HERE) not in sys.path:
 from ivr_flow_lint import lint_flow, load_flow, render_text  # noqa: E402
 
 TARGET_COMMIT = "0685d8707896264106796724b4ff29d821bac7a3"
-DTMF_KEYS = "0123456789*#"
+DTMF_KEYS = "0123456789"
 
 
 def _first_unused_dtmf(used: set[str]) -> str | None:

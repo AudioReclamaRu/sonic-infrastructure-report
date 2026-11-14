@@ -39,6 +39,18 @@ class InteropTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unsupported ACFB node kind"):
             convert_graph(graph)
 
+    def test_acfb_rejects_missing_edge_target(self):
+        graph = self.acfb_graph()
+        graph["edges"][0]["target"] = "missing-node"
+        with self.assertRaisesRegex(ValueError, "references missing target"):
+            convert_graph(graph)
+
+    def test_acfb_rejects_unsupported_graph_version(self):
+        graph = self.acfb_graph()
+        graph["version"] = 2
+        with self.assertRaisesRegex(ValueError, "unsupported ACFB graph version"):
+            convert_graph(graph)
+
     def test_acfb_rejects_duplicate_outgoing_handle(self):
         graph = self.acfb_graph()
         graph["edges"].append({
@@ -77,6 +89,7 @@ class InteropTests(unittest.TestCase):
         plan = build_plan(flow)
         self.assertFalse(plan["runtime_ready"])
         self.assertEqual(5, len(plan["scenarios"]))
+        self.assertEqual(2, len(plan["manual_routes"]))
         actions = [
             step["then"]
             for scenario in plan["scenarios"]

@@ -46,7 +46,7 @@ README показывает вызов IvrTester.run({from, to}, scenario). Scen
 Генератор делает только JSON-план:
 - DTMF digit → press(digit);
 - timeout → doNothing();
-- invalid_input → первый незанятый ключ из 0123456789*#, если он доступен;
+- invalid_input → первый незанятый ключ из 0123456789, если он доступен;
 - message continue → doNothing();
 - исходы extension/queue, которые нельзя подтвердить только через Step API, отмечаются в manual_routes.
 

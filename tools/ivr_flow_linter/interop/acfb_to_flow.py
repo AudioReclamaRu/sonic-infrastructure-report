@@ -81,7 +81,7 @@ def _event_for_handle(kind: str, handle: Any) -> str:
 
 def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
     """Return (canonical_flow, compatibility_warnings)."""
-    if graph.get("version") != 1:
+    if type(graph.get("version")) is not int or graph.get("version") != 1:
         raise ValueError("unsupported ACFB graph version; only version 1 is inspected")
     if not isinstance(graph.get("nodes"), list) or not graph["nodes"]:
         raise ValueError("ACFB graph must contain a non-empty nodes array")
@@ -120,6 +120,8 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
         if not isinstance(edge, dict):
             raise ValueError(f"edges[{index}] must be an object")
         source, target = edge.get("source"), edge.get("target")
+        if not isinstance(source, str) or not isinstance(target, str):
+            raise ValueError(f"edges[{index}] source and target must be strings")
         if source not in raw_nodes:
             raise ValueError(f"edges[{index}] references missing source {source!r}")
         if target not in raw_nodes:

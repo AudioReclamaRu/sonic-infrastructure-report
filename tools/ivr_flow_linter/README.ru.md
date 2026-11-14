@@ -134,7 +134,7 @@ python -m unittest discover -s tools/ivr_flow_linter/tests -v
 Соответствия:
 - DTMF digit → then.press(digit);
 - timeout → then.doNothing();
-- invalid_input → then.press(first unused key from 0123456789*#), если такой ключ остался;
+- invalid_input → then.press(first unused key from 0123456789), если такой ключ остался;
 - обычное сообщение / continue → then.doNothing();
 - исходы extension/queue, не представленные API IVR Tester, фиксируются как manual_routes, а не выдаются за автоматизированный тест.
 
