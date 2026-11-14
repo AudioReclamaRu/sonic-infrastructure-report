@@ -1,0 +1,781 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/schemas/character-voice-passport.schema.json",
+  "title": "Character Voice Passport",
+  "description": "Draft machine-readable contract for fictional character voice identity, performer handover, permissions and release gating. It is not a legal opinion.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "passport_id",
+    "document_status",
+    "release_decision",
+    "project",
+    "character",
+    "planned_uses",
+    "permissions",
+    "reference_assets",
+    "performers",
+    "change_log"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "passport_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9._-]{2,79}$"
+    },
+    "document_status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "IN_REVIEW",
+        "APPROVED",
+        "SUPERSEDED",
+        "RETIRED"
+      ]
+    },
+    "release_decision": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "HOLD",
+        "FIX",
+        "PASS"
+      ]
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_id",
+        "title",
+        "format",
+        "jurisdictions"
+      ],
+      "properties": {
+        "project_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "animation",
+            "film",
+            "series",
+            "game",
+            "advertising",
+            "other"
+          ]
+        },
+        "jurisdictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "episode_or_version": {
+          "type": "string"
+        }
+      }
+    },
+    "character": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "character_id",
+        "working_name",
+        "canon_version"
+      ],
+      "properties": {
+        "character_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "working_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canon_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canon_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "planned_uses": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "new_recording",
+          "distribution",
+          "reference_use",
+          "ai_training",
+          "digital_replica",
+          "localization"
+        ]
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "character_use",
+        "performer_consent",
+        "phonogram_rights",
+        "recording_use",
+        "reference_use",
+        "distribution",
+        "ai_training",
+        "digital_replica",
+        "localization",
+        "data_handling"
+      ],
+      "properties": {
+        "character_use": {
+          "$ref": "#/$defs/permission"
+        },
+        "performer_consent": {
+          "$ref": "#/$defs/permission"
+        },
+        "phonogram_rights": {
+          "$ref": "#/$defs/permission"
+        },
+        "recording_use": {
+          "$ref": "#/$defs/permission"
+        },
+        "reference_use": {
+          "$ref": "#/$defs/permission"
+        },
+        "distribution": {
+          "$ref": "#/$defs/permission"
+        },
+        "ai_training": {
+          "$ref": "#/$defs/permission"
+        },
+        "digital_replica": {
+          "$ref": "#/$defs/permission"
+        },
+        "localization": {
+          "$ref": "#/$defs/permission"
+        },
+        "data_handling": {
+          "$ref": "#/$defs/permission"
+        }
+      }
+    },
+    "reference_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id",
+          "asset_type",
+          "permitted_uses",
+          "source_ref"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "asset_type": {
+            "type": "string",
+            "enum": [
+              "role_bible",
+              "script",
+              "audio_recording",
+              "video",
+              "session_note",
+              "other"
+            ]
+          },
+          "permitted_uses": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "casting_context",
+                "creative_reference",
+                "qc_comparison",
+                "editing",
+                "distribution",
+                "ai_training",
+                "digital_replica",
+                "localization"
+              ]
+            }
+          },
+          "source_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Internal controlled-access reference; do not place the audio file or private URL in public Git."
+          },
+          "restrictions": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "performers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "performer_id",
+          "role_type",
+          "language_version"
+        ],
+        "properties": {
+          "performer_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Use an internal ID; keep personal and contract data in access-controlled storage."
+          },
+          "role_type": {
+            "type": "string",
+            "enum": [
+              "original",
+              "successor",
+              "understudy",
+              "temporary",
+              "localized",
+              "other"
+            ]
+          },
+          "language_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "agreement_ref": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "release_approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved_by",
+        "approved_at",
+        "decision_ref"
+      ],
+      "properties": {
+        "approved_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "decision_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "change_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "version",
+          "date",
+          "change",
+          "author_id"
+        ],
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "change": {
+            "type": "string",
+            "minLength": 1
+          },
+          "author_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "approved_by": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "permission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "pending",
+            "approved",
+            "denied",
+            "not_applicable"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Internal reference to a permission/contract record; never embed the contract itself."
+        },
+        "checked_by": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Internal responsible-person ID, not a public personal profile."
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "approved"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "scope",
+              "evidence_ref",
+              "checked_by",
+              "checked_at"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_applicable"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "rationale"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "release_decision": {
+            "const": "PASS"
+          }
+        },
+        "required": [
+          "release_decision"
+        ]
+      },
+      "then": {
+        "required": [
+          "release_approval"
+        ],
+        "properties": {
+          "document_status": {
+            "const": "APPROVED"
+          },
+          "permissions": {
+            "properties": {
+              "character_use": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "performer_consent": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "phonogram_rights": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "recording_use": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "reference_use": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "distribution": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "ai_training": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "digital_replica": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "localization": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              },
+              "data_handling": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "approved",
+                      "not_applicable"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "planned_uses": {
+            "contains": {
+              "const": "new_recording"
+            }
+          }
+        },
+        "required": [
+          "planned_uses"
+        ]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "character_use": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "performer_consent": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "recording_use": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "planned_uses": {
+            "contains": {
+              "const": "distribution"
+            }
+          }
+        },
+        "required": [
+          "planned_uses"
+        ]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "phonogram_rights": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "distribution": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "planned_uses": {
+            "contains": {
+              "const": "reference_use"
+            }
+          }
+        },
+        "required": [
+          "planned_uses"
+        ]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "reference_use": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "planned_uses": {
+            "contains": {
+              "const": "ai_training"
+            }
+          }
+        },
+        "required": [
+          "planned_uses"
+        ]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "ai_training": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "data_handling": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "planned_uses": {
+            "contains": {
+              "const": "digital_replica"
+            }
+          }
+        },
+        "required": [
+          "planned_uses"
+        ]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "performer_consent": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "digital_replica": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "data_handling": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "planned_uses": {
+            "contains": {
+              "const": "localization"
+            }
+          }
+        },
+        "required": [
+          "planned_uses"
+        ]
+      },
+      "then": {
+        "properties": {
+          "permissions": {
+            "properties": {
+              "character_use": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "performer_consent": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "localization": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              },
+              "distribution": {
+                "properties": {
+                  "status": {
+                    "const": "approved"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
