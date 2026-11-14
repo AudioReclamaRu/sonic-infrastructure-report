@@ -51,6 +51,8 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - research/README.md — catalogue of research plans and external case libraries, with status boundaries.
 - research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md — sourced external character voice succession cases (Mickey Mouse, Bugs Bunny, Kermit); not studio client cases and not a universal method.
 - research/CHARACTER_VOICE_PASSPORT_SYNTHETIC_WALKTHROUGH_2026-11-14.md — explicitly fictional tabletop exercise of performer handover, reference permissions and AI-use boundaries; not an empirical test or studio case.
+- research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md — proposed reproducible protocol for task-specific voice/timbre comparison; distinguishes perceptual descriptors, speech delivery, recording quality and communication outcomes. No studio test results or universal voice ranking are claimed.
+- research/VOICE_TIMBRE_CASTING_RATING_SHEET_TEMPLATE.md — blank listener questionnaire and comparison sheet; not a validated scale.
 - research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md — proposed reproducible Russian TTS test suite; plan only, no benchmark results yet.
 - research/OPEN_SOURCE_TARGET_AUDIT_PIPER_2026-11-14.md — preliminary social, policy, license and contribution audit of OHF-Voice/Piper; no external post or PR submitted.
 
