@@ -6,6 +6,8 @@ lang: en
 
 # IVR Flow Linter
 
+Русская инструкция: [README.ru.md](README.ru.md).
+
 A small, dependency-free Python tool that checks a **declared IVR call-flow graph** before a flow is handed to a telephony integrator or implemented in a PBX.
 
 It looks for:
