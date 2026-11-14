@@ -1,6 +1,6 @@
 ---
 type: doc
-date: 2026-09-11
+date: 2026-11-14
 lang: mul
 ---
 # USE CASES — how to use this repository in real work
@@ -85,6 +85,17 @@ Use:
 1. `standards/living-voice-standard.md` — tiers Declaration, Session, Hash Chain.
 2. `entity/sag-aftra.md`, `entity/eu-ai-act.md` — the regulatory context.
 3. `corpus/edison-facts.md` — the legal-layer source registry.
+
+## 11. A user needs to diagnose and solve an audio/voice/video problem
+
+1. Read strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md.
+2. Search problem-solutions/QUERY_BACKLOG.json and existing website/blog/guides/geo pages.
+3. Use problem-solutions/TEMPLATE.md to diagnose before prescribing and define a quality check.
+4. Consult REFERENCE_MODELS.md and primary vendor documentation.
+5. Use FACT-METHOD.md, evidence/ and standards/ for claims and procedures.
+6. Confirm actual Audio-Reclama competence and whether an existing page should be improved.
+7. Record demand and baseline through problem-solutions/MEASUREMENT_PROTOCOL.md.
+8. Public release requires technical review, rights clearance and owner approval. A Git authoring document is not the canonical published page.
 
 ## Products implementing all of it
 
