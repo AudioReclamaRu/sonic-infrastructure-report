@@ -1,11 +1,12 @@
 ---
-type: framework
+type: standard
 date: 2026-11-14
 lang: ru
 status: draft_for_expert_review
 related:
   - standards/voice-provenance-passport.md
   - standards/verification-chain.md
+  - standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md
   - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md
   - canon/releasing-voice.md
   - problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md
@@ -119,7 +120,7 @@ related:
 
 ## 4. Паспорт голосовой идентичности персонажа
 
-Паспорт — это редакционно-производственный объект, который дополняет, но не заменяет стандарт voice-provenance-passport.md. Он описывает роль; паспорт происхождения фиксирует конкретную запись, исполнителя/модель, согласие, границы использования и ответственную сторону.
+Паспорт — это редакционно-производственный объект, который дополняет, но не заменяет стандарт voice-provenance-passport.md. Для реального проекта используйте заполняемую форму standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md: она включает реестр референсов, разрешений, локализованных версий и запись передачи роли. Он описывает роль; паспорт происхождения фиксирует конкретную запись, исполнителя/модель, согласие, границы использования и ответственную сторону.
 
 Рекомендуемые поля:
 
@@ -381,7 +382,12 @@ SAG-AFTRA формулирует свои общие AI-ограничители
 7. **SAG-AFTRA — 2025 Interactive Media Agreement.** Контрактные условия для интерактивных медиа; используется здесь как пример детализации согласия и области использования, а не как правило для всех аудиовизуальных жанров.  
    https://www.sagaftra.org/contracts-industry-resources/interactive/2025-interactive-media-video-game-agreement
 
-## 13. Вопросы для экспертной проверки
+## 13. Связанные рабочие инструменты
+
+- `CHARACTER_VOICE_PASSPORT_TEMPLATE.md` — форма паспорта персонажа и handover-записи; поля UNKNOWN / REQUIRES_VERIFICATION / PENDING_APPROVAL и стоп-правила до выпуска.
+- `voice-provenance-passport.md` — отдельный паспорт происхождения конкретной записи или голоса.
+
+## 14. Вопросы для экспертной проверки
 
 - Достаточно ли полно разделены идентичность персонажа и индивидуальный почерк исполнителя?
 - Какие поля паспорта действительно нужны в небольшом дубляжном проекте, а какие — только для многолетней франшизы?
