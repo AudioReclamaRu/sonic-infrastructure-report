@@ -209,3 +209,10 @@ https://audio-reclama.ru — start@audio-reclama.ru
 `voice-over`, `text-to-speech`, `ai-voice`, `enterprise-audio`, `ivr`,
 `dubbing`, `sonic-branding`, `localization`, `voice-cloning-rights`,
 `audio-for-business`, `voice-provenance`, `llms-txt`
+
+
+## IVR interoperability
+
+The IVR Flow Linter includes experimental adapters for the observed Asterisk Call Flow Builder graph model and a non-executable handoff plan for MakingChatbots/ivr-tester. See tools/ivr_flow_linter/README.md and the source-reviewed audit in research/IVR_INTEROP_TOOLCHAIN_AUDIT_2026-11-14.md.
+
+The Asterisk Builder adapter is limited to a documented subset of node types. Its example is synthetic, because the inspected upstream UI does not currently expose the normalized graph JSON as a download. The IVR Tester plan keeps spoken prompt transcripts empty until they are taken from actual audio. Neither adapter has been tested against a live PBX or telephone call.

@@ -104,3 +104,56 @@ python -m unittest discover -s tools/ivr_flow_linter/tests -v
 Материалы репозитория распространяются на условиях корневой лицензии CC BY 4.0 с обязательной атрибуцией. Перед повторным использованием следует проверить лицензию и ограничения своих сторонних компонентов.
 
 Линтер реализует только часть внутреннего стандарта IVR: явные fallback-маршруты, отсутствие структурных тупиков и возможность выхода к оператору, если это требуется проекту. Статическая проверка не заменяет профессиональную проверку сценария и реальный запуск тестового вызова.
+
+
+## Интеграция с существующими IVR-инструментами (experimental)
+
+Это два отдельных адаптера, а не один универсальный коннектор.
+
+### Asterisk Call Flow Builder → IVR Flow Linter
+
+Файл interop/acfb_to_flow.py преобразует наблюдаемую в исходном коде Asterisk Call Flow Builder модель graph JSON версии 1 в канонический IVR Flow JSON версии 1. Поддерживается fail-closed подмножество узлов: start, menu, playback, extension, queue и hangup. Неизвестный тип, дублирующий выход, отсутствующая ссылка или иной version блокируют конвертацию.
+
+На проверенном commit 0ea0693df66217241f5ea62dd512d3a923e6325f модель graph строится внутри приложения, но штатная кнопка JSON-экспорта не обнаружена: публичный экспорт выдаёт extensions.conf, сериализация graph JSON в коде закомментирована. Поэтому fixture в examples — синтетическая реконструкция наблюдаемого формата, а не файл, полученный из работающей установки. Для пользовательского handoff потребуется отдельный JSON export upstream или явное получение этого объекта из приложения.
+
+Запуск из корня репозитория:
+
+    python tools/ivr_flow_linter/interop/acfb_to_flow.py tools/ivr_flow_linter/examples/asterisk-call-flow-builder.graph.synthetic.json --output /tmp/ivr-flow.json
+    python tools/ivr_flow_linter/ivr_flow_lint.py /tmp/ivr-flow.json
+
+Особая осторожность: в просмотренном ACFB exporter узел extension следует только по exits[0], а queue выбирает один target по фиксированному приоритету handle. При нескольких выходах адаптер сохраняет все рёбра объявленного графа и печатает WARNING, но это не доказывает, что сгенерированный extensions.conf сохраняет все ветви. PASS graph lint не является проверкой эквивалентности Asterisk dialplan.
+
+### IVR Flow → MakingChatbots/ivr-tester scenario plan
+
+Файл interop/flow_to_ivr_tester_plan.py превращает проверенный канонический граф в матрицу путей и действий, совместимую по смыслу с проверенным API MakingChatbots/ivr-tester: Scenario и Step.
+
+Запуск:
+
+    python tools/ivr_flow_linter/interop/flow_to_ivr_tester_plan.py /tmp/ivr-flow.json --output /tmp/ivr-tester-plan.json
+
+Соответствия:
+- DTMF digit → then.press(digit);
+- timeout → then.doNothing();
+- invalid_input → then.press(first unused key from 0123456789*#), если такой ключ остался;
+- обычное сообщение / continue → then.doNothing();
+- исходы extension/queue, не представленные API IVR Tester, фиксируются как manual_routes, а не выдаются за автоматизированный тест.
+
+План намеренно содержит expected_prompt_transcript: null и runtime_ready: false. Значение whenPrompt в реальном IVR Tester должно быть функцией, построенной по фактической распознанной реплике. Нельзя подставлять имя аудио, имя файла или Asterisk playback token вместо услышанного текста. Для запуска потребуются реальные from/to numbers, учётные данные и настройки распознавания; они в репозитории не хранятся.
+
+Параметры silence-after-prompt и timeout имеют значения по умолчанию 3000 и 6000 мс, как в проверенном примере README IVR Tester; при практическом прогоне их нужно сверить с настройками тестового номера.
+
+### AsteriskLint — следующий, отдельный слой
+
+После получения конкретного extensions.conf можно отдельно установить AsteriskLint и запустить:
+
+    asterisklint dialplan-check extensions.conf
+
+AsteriskLint проверяет конфигурацию и dialplan Asterisk, а не наш абстрактный graph. Это отдельный GPLv3+ проект, он не копируется в этот репозиторий и не становится обязательной зависимостью.
+
+### Границы совместимости
+
+- Эти адаптеры проверяются на синтетических fixture и контрактных unit tests. Живого звонка, Asterisk PBX, Twilio и реальных записей в этом change set нет.
+- Формат Asterisk Builder реконструирован по открытому исходному коду указанного commit; пока у самого приложения нет штатного JSON export, путь handoff не является кнопкой-в-кнопку.
+- Схема канонического графа остаётся независимой от Asterisk, IVR Tester и бренда.
+- Подробный аудит и решение по upstream находятся в research/IVR_INTEROP_TOOLCHAIN_AUDIT_2026-11-14.md и research/UPSTREAM_PROPOSAL_ASTERISK_CALL_FLOW_BUILDER_JSON_EXPORT_2026-11-14.md.
+- Ни один из внешних проектов не одобрял и не подтверждал эту интеграцию.
