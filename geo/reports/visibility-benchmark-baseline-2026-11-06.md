@@ -3,7 +3,7 @@ type: doc
 date: 2026-11-06
 lang: en
 ---
-# AI Visibility Benchmark — baseline protocol (Audio-Reclama)
+# AI Visibility Benchmark — baseline protocol (Audio-Reclama.ru)
 Date: 2026-11-06
 Rule: **No growth claims without baseline.** No fabricated results.
 
@@ -29,7 +29,7 @@ Rule: **No growth claims without baseline.** No fabricated results.
 | language | ru/en |
 | region | stated/observed |
 | query | exact text |
-| audio_reclama_mentioned | yes/no/unclear |
+| audio_reclama_ru_site_mentioned | yes/no/unclear |
 | cited_url | URL(s) cited, if any |
 | citation_target | main domain / GEO / other |
 | fact_accuracy | accurate / partial / incorrect / n/a |
