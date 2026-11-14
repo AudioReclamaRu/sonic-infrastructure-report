@@ -362,8 +362,12 @@ def page(path: str, title: str, description: str, body: str,
          jsonld: list | None = None, canonical: str | None = None) -> None:
     url = canonical or (BASE if path == "index.html" else BASE + path)
     blocks = ""
+    # dateModified — только на CreativeWork-объектах (FAQPage), не на
+    # Organization/BreadcrumbList (Schema.org: dateModified ∈ CreativeWork;
+    # ревью владельца 14.11: «семантическая ошибка» на Organization).
     for obj in jsonld or []:
-        obj["dateModified"] = UPDATED
+        if obj.get("@type") == "FAQPage":
+            obj["dateModified"] = UPDATED
         blocks += ('<script type="application/ld+json">'
                    + json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
                    + "</script>\n")
