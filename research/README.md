@@ -18,6 +18,8 @@ related:
 - Связанный проект: ../standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md — исследовательская рамка, не утверждённый стандарт.
 - Связанный инструмент: ../standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md — заполняемая форма, не доказательство, что процесс уже применялся в клиентских проектах.
 - CHARACTER_VOICE_PASSPORT_SYNTHETIC_WALKTHROUGH_2026-11-14.md — полностью вымышленный tabletop-проход по передаче роли. Проверяет разрешения на старую фонограмму, AI-обучение, цифровую реплику и локализацию; статус HOLD / NOT RUN, не студийный кейс и не реальный тест.
+- ../schemas/character-voice-passport.schema.json — проект JSON Schema v0.1 для цифрового паспорта и условной проверки разрешений.
+- character-voice-passport.synthetic.json — вымышленная JSON-карточка DRAFT/HOLD для тестирования; реальные голоса и права отсутствуют.
 
 ## TTS и аудиотестирование
 
