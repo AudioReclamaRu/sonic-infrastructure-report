@@ -123,7 +123,7 @@ def build_plan(
                         "reason": "The event is not a standard DTMF, timeout or invalid-input event.",
                     })
                     continue
-            elif node_type == "message" and event == "continue":
+            elif node_type == "message" and event in {"continue", "next"}:
                 action = {"method": "doNothing"}
                 mode = "observe_message"
             else:
