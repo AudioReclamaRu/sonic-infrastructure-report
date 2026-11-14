@@ -17,7 +17,7 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling or dist
 8. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
 9. problem-solutions/REFERENCE_MODELS.md
 
-Canonical names are mandatory everywhere: the brand is «Аудио-Реклама•ru»; the website is Audio-Reclama.ru. Never use bare “Audio-Reclama” as a name. Follow standards/BRAND_AND_SITE_NAMING.md.
+Canonical names are mandatory everywhere: the brand is «Аудио-Реклама•ru»; the website is Audio-Reclama.ru. Never abbreviate the Latin website name; always use the full Audio-Reclama.ru form. Follow standards/BRAND_AND_SITE_NAMING.md.
 
 We are building a connected, evidence-backed expert knowledge infrastructure, not a blog or content factory. The repository is the canonical, versioned knowledge base. Develop reusable knowledge objects, relationships, diagnostics, standards, experiments, tools and verified decisions. A document or post is only one possible view of that knowledge.
 
@@ -132,8 +132,8 @@ state.
 - Corporate B2B outreach and procurement routing are governed by
   `standards/x14-enterprise-outreach.md`. Do not infer that a supplier portal
   prohibits direct contact unless an official source confirms exclusivity.
-- Before committing, run `python tools/make_reports_index.py --check` if you
-  touched anything under `reports/`.
+- Before committing, run `python tools/check_brand_naming.py` for every change.
+- Run `python tools/make_reports_index.py --check` if you touched anything under `reports/`.
 
 ### Expert knowledge object contract
 
