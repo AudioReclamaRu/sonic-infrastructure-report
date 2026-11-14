@@ -121,4 +121,4 @@ Synthetic fixture и unit tests покрывают структуру преоб
 - git ls-remote не смог разрешить github.com (DNS/network недоступен в контейнерной shell);
 - Asterisk и Docker CLI отсутствуют.
 
-Итоговый статус: **PARTIAL / NOT E2E**. Нет live graph capture, generated-dialplan runtime test, PBX или telephone call. Для следующего достоверного шага нужен один устойчивый self-host-сеанс, в котором JSON извлекается до остановки dev server, затем — отдельная совместимая Asterisk PBX.
+Итоговый статус: **PARTIAL / NOT E2E**. Нет live graph capture, generated-dialplan runtime test, PBX или telephone call. Для следующего достоверного шага нужен один устойчивый self-host-сеанс, в котором JSON извлекается до остановки dev server, затем — отдельная совместимая Asterisk PBX. Для локального извлечения уже подготовлен read-only DevTools helper `tools/ivr_flow_linter/interop/extract_acfb_live_graph.console.js`; он структурно обнаруживает React state-массивы и копирует точный normalizeGraph object. Сам helper ещё не исполнялся в устойчивом локальном сеансе.

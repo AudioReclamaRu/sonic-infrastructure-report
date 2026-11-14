@@ -443,3 +443,6 @@ Prices are informational and not a public offer.
 - tools/ivr_flow_linter/examples/asterisk-call-flow-builder.graph.synthetic.json — synthetic fixture matching the observed source shape; not a real PBX export.
 - research/IVR_INTEROP_TOOLCHAIN_AUDIT_2026-11-14.md — source-reviewed roles, compatibility findings and non-equivalence warnings.
 - research/UPSTREAM_PROPOSAL_ASTERISK_CALL_FLOW_BUILDER_JSON_EXPORT_2026-11-14.md — draft-only upstream proposal, not submitted pending license, community and contribution-policy checks.
+
+
+- tools/ivr_flow_linter/interop/extract_acfb_live_graph.console.js — read-only DevTools helper to capture the live React nodes/edges state from a locally running Asterisk Call Flow Builder and reproduce normalizeGraph(). Prepared but not yet executed on a persistent local runtime.
