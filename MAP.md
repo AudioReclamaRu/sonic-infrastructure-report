@@ -39,6 +39,7 @@ Business Workflow
 | Terms | `dictionary/` + `TERMINOLOGY.md` | What does a term mean here — one lived definition per term |
 | Standards | `standards/` | How work is done: verification chain, release checks |
 | Data Contracts | `schemas/` | Which fields and conditional gates machine-readable records must satisfy |
+| Tools | `tools/` | Which repeatable checks can be run locally or in CI |
 | Problem Solutions | problem-solutions/ | Why it happens, how to diagnose, fix and verify it |
 | Interfaces | `interfaces/` | The boundaries where human, AI, law, and responsibility meet — one page, one concept |
 | Business Workflow | `USE_CASES.md` | Who reaches for which layer, and when |
