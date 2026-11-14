@@ -49,6 +49,8 @@ tiers, procedures, checks a machine or a human can apply.
 - `X15-OPEN-SOURCE-COMMUNITY.md` — trust-first participation by the GitHub account AudioReclamaRu, representing the studio «Аудио-Реклама•ru», in third-party open-source communities: project selection, social conduct, AI policy, contribution cadence, DCO/CLA and reputation measurement.
 
 Related research catalogue: `research/README.md` — status index for research plans and external cases.
+- `research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md` — proposed, task-specific method for comparing voice candidates; no empirical results yet.
+- `research/VOICE_TIMBRE_CASTING_RATING_SHEET_TEMPLATE.md` — blank rating sheet, not a validated scale.
 - `research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md` — sourced external examples of character voice succession (Mickey Mouse, Bugs Bunny, Kermit); not studio client cases and not a universal method.
 - `research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md` — proposed Russian TTS quality test suite; this is a plan, not a completed benchmark.
 - `red-field-visual.md` - RED FIELD channel visual system: black field, one
