@@ -1,3 +1,10 @@
+---
+type: report
+date: 2026-11-14
+lang: ru
+related: [strategy/ATTENTION_ACQUISITION_SYSTEM.md, problem-solutions/README.md]
+---
+
 # Аудит канала «Аудио-Реклама•ru» в Дзене за последние два года
 
 Дата проверки: 2026-11-14  
