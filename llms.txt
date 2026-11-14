@@ -33,6 +33,12 @@ Read these before creating new Audio-Reclama content:
 - problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md — current assets and gaps.
 - problem-solutions/MEASUREMENT_PROTOCOL.md — repeatable demand and AI visibility measurement.
 - problem-solutions/IMPLEMENTATION_ROADMAP.md — delivery sequence.
+- problem-solutions/IVR_DESIGN_STANDARD.md — internal IVR design, recording and release checklist.
+- problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md — reproducible audio-recording and processing test protocol.
+- problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md — intake brief for video voiceover projects.
+- problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md — audited claims in the 2020 article.
+- problem-solutions/drafts/VIDEO_VOICEOVER_REVISED_DRAFT.md — draft to update the existing main-site URL; not yet published.
+- problem-solutions/research/QUERY_SERP_SAMPLE_2026-11-14.md — exploratory SERP/competitor sample; not search-volume data.
 
 This library is distinct from commercial GEO answers and enterprise guides. Avoid query-variant pages at scale. A Git commit is not a website publication; verify the canonical page after deployment.
 
