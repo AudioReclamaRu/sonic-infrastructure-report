@@ -20,6 +20,8 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - `standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md` — проект внутренней рамки AVT, выросший из карты статей 35, 36 и 40; ожидает экспертной проверки и не считается утверждённым стандартом.
 - `standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md` — исследовательский проект по идентичности персонажа, смене исполнителя, локализации и цифровым репликам; создан по пробелу статьи 26, ждёт экспертной/владелецкой проверки и реальных разрешённых кейсов.
 - `standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md` — заполняемый паспорт персонажа и запись передачи роли; поля прав, происхождения референсов, локализации, QC и блокирующих статусов.
+- `research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md` — внешняя подборка источниковых кейсов Микки Мауса, Багза Банни и Кермита; не является кейсами студии.
+- `research/README.md` — каталог исследовательских проектов и ограничений их статусов.
 
 
 - strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — роли сайта, Git и Дзена, границы редактирования и публикационная процедура.
