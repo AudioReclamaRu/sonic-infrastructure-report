@@ -33,6 +33,36 @@ class InteropTests(unittest.TestCase):
         self.assertEqual("end-1", menu["transitions"]["invalid_input"])
         self.assertEqual("support-1", menu["transitions"]["2"])
 
+    def test_acfb_preserves_whitelisted_node_metadata_and_position(self):
+        graph = self.acfb_graph()
+        graph["nodes"][3]["data"]["meta"]["apiToken"] = "must-not-leak"
+        flow, _ = convert_graph(graph)
+
+        support = next(node for node in flow["nodes"] if node["id"] == "support-1")
+        source = support["interop_source"]
+        self.assertEqual("extension", source["node_kind"])
+        self.assertEqual({"x": 400, "y": 150}, source["position"])
+        self.assertEqual("1001", source["metadata"]["extension"])
+        self.assertEqual(20, source["metadata"]["ringSeconds"])
+        self.assertNotIn("apiToken", source["metadata"])
+        self.assertNotIn("must-not-leak", json.dumps(flow))
+
+        queue = next(node for node in flow["nodes"] if node["id"] == "queue-1")
+        self.assertEqual("support", queue["interop_source"]["metadata"]["queue_name"])
+        self.assertEqual("rrordered", queue["interop_source"]["metadata"]["strategy"])
+
+        start_prompt = next(node for node in flow["nodes"] if node["id"] == flow["entrypoints"][0])
+        self.assertEqual("start", start_prompt["interop_source"]["node_kind"])
+        self.assertEqual("welcome-prompt", start_prompt["interop_source"]["metadata"]["playback"])
+        self.assertEqual(1, flow["provenance"]["source_graph_version"])
+        self.assertEqual("from-internal", flow["provenance"]["asterisk_context"])
+
+    def test_interop_schema_declares_provenance_fields(self):
+        schema_path = LINTER_DIR / "schema" / "ivr-flow.schema.json"
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        self.assertIn("provenance", schema["properties"])
+        self.assertIn("interop_source", schema["properties"]["nodes"]["items"]["properties"])
+
     def test_acfb_rejects_unknown_node_kind_instead_of_dropping_it(self):
         graph = self.acfb_graph()
         graph["nodes"][1]["data"]["kind"] = "vendor-specific"

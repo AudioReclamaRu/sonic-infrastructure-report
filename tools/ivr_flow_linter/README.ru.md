@@ -157,3 +157,8 @@ AsteriskLint проверяет конфигурацию и dialplan Asterisk, �
 - Схема канонического графа остаётся независимой от Asterisk, IVR Tester и бренда.
 - Подробный аудит и решение по upstream находятся в research/IVR_INTEROP_TOOLCHAIN_AUDIT_2026-11-14.md и research/UPSTREAM_PROPOSAL_ASTERISK_CALL_FLOW_BUILDER_JSON_EXPORT_2026-11-14.md.
 - Ни один из внешних проектов не одобрял и не подтверждал эту интеграцию.
+
+
+### Происхождение и перенос параметров узлов
+
+Конвертер сохраняет provenance всего потока и interop_source для каждого перенесённого узла. В metadata попадает только whitelist полей, относящихся к типу узла: например extension/ringSeconds для добавочного номера и queue_name/strategy/timeout для очереди. Координаты canvas сохраняются отдельно. Произвольные поля, в том числе потенциально секретные, не копируются. Это не полный round-trip ACFB graph: для обратного восстановления исходной схемы нужен исходный graph JSON и будущий штатный JSON export.

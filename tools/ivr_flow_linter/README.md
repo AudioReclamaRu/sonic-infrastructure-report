@@ -122,3 +122,8 @@ After a real extensions.conf exists, AsteriskLint can be installed separately an
 It checks Asterisk configuration/dialplan, not the abstract graph. It is GPLv3+ and is not copied or added as a required dependency here.
 
 These adapters and fixtures are synthetic-contract tests only. There is no live Asterisk, PBX, Twilio or audio-call integration test in this change set, and no upstream project has endorsed this interoperability.
+
+
+### Source metadata and provenance
+
+The adapter preserves flow-level provenance and a per-node interop_source record. Only kind-specific whitelisted fields are copied into metadata (for example extension/ringSeconds or queue_name/strategy/timeout), with canvas coordinates retained separately. Arbitrary metadata is intentionally omitted to avoid accidental transfer of credentials or unrelated private fields. This is not a lossless round-trip format; retain the original graph JSON for reconstruction.

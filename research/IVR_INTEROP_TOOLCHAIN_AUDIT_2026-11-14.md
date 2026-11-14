@@ -100,3 +100,8 @@ Synthetic fixture и unit tests покрывают структуру преоб
 По Asterisk Builder публичный GitHub API на дату проверки: нет LICENSE, CONTRIBUTING, CODE_OF_CONDUCT, AI_CONTRIBUTIONS, DCO/CLA или .github в ожидаемых корневых путях; issues и PR lists пусты; виден один commit. Это не доказывает частные правила, но не позволяет подтвердить публичный путь к вкладу. Поскольку реальный запуск Builder и Asterisk также не выполнен, публичная отправка issue/PR приостановлена по X15.
 
 Для IVR Tester отдельно необходимо пройти полную социальную/AI-policy/CLA проверку и проверить его текущий rewrite/release branch, прежде чем делать contribution. Локальный handoff не требует изменения upstream API.
+
+
+## 9. Сохранение источника и параметров
+
+Адаптер добавляет provenance на уровне всего потока и interop_source на уровне исходных узлов. Он переносит только явно разрешённые поля по типу узла: start prompt/timeout, menu playback/retries/options, playback sound, extension/ringSeconds/playback, queue name/strategy/timeout, а также позиции canvas. Неизвестные поля исходной модели намеренно не копируются. Это ограничивает утечку секретов, но означает, что преобразование не является lossless round-trip; исходный ACFB graph JSON следует хранить отдельно. Схема канонического JSON документирует provenance/interoperability metadata.

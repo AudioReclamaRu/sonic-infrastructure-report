@@ -79,6 +79,55 @@ def _event_for_handle(kind: str, handle: Any) -> str:
     return handle
 
 
+def _source_record(node: dict[str, Any], kind: str, graph_version: int) -> dict[str, Any]:
+    """Preserve a safe, explicit subset of source metadata for traceability."""
+    data = node.get("data", {})
+    if not isinstance(data, dict):
+        data = {}
+    raw_meta = data.get("meta", {})
+    if not isinstance(raw_meta, dict):
+        raw_meta = {}
+
+    allowed_fields = {
+        "start": {"timeout", "playback"},
+        "menu": {"playback", "retries", "timeout", "options"},
+        "playback": {"sound"},
+        "extension": {"extension", "ringSeconds", "playback"},
+        "queue": {"strategy", "timeout"},
+        "hangup": set(),
+    }
+    metadata = {key: raw_meta[key] for key in allowed_fields[kind] if key in raw_meta}
+    if kind == "queue" and isinstance(node.get("queueName"), str):
+        metadata["queue_name"] = node["queueName"]
+
+    record: dict[str, Any] = {
+        "application": "michaelnabil230/asterisk-call-flow-builder",
+        "graph_version": graph_version,
+        "node_kind": kind,
+        "metadata_policy": "kind_whitelist_only",
+        "metadata": metadata,
+    }
+    node_type = node.get("type")
+    if isinstance(node_type, str):
+        record["node_type"] = node_type
+
+    position = node.get("position")
+    if isinstance(position, dict):
+        safe_position: dict[str, float | int] = {}
+        for axis in ("x", "y"):
+            value = position.get(axis)
+            if isinstance(value, (int, float)) and not isinstance(value, bool):
+                safe_position[axis] = value
+        if safe_position:
+            record["position"] = safe_position
+
+    for field in ("label", "title"):
+        value = data.get(field)
+        if isinstance(value, str):
+            record[field] = value
+    return record
+
+
 def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
     """Return (canonical_flow, compatibility_warnings)."""
     if type(graph.get("version")) is not int or graph.get("version") != 1:
@@ -180,6 +229,7 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
             "type": "message",
             "prompt_asset": start_playback,
             "description": f"ACFB start prompt: {_node_title(raw_nodes[start_id])}",
+            "interop_source": _source_record(raw_nodes[start_id], "start", graph["version"]),
             "transitions": {"continue": entry_target},
         })
         entrypoints = [prompt_id]
@@ -206,6 +256,7 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
                 "type": "terminal",
                 "terminal_kind": "hangup",
                 "description": title,
+                "interop_source": _source_record(node, kind, graph["version"]),
                 "transitions": {},
             })
             continue
@@ -226,6 +277,7 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
                 "type": "menu",
                 "prompt_asset": meta.get("playback") if isinstance(meta.get("playback"), str) else "",
                 "description": title,
+                "interop_source": _source_record(node, kind, graph["version"]),
                 "transitions": transitions,
             })
             continue
@@ -251,6 +303,7 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
                 "type": "message",
                 "prompt_asset": meta.get("sound") if isinstance(meta.get("sound"), str) else "",
                 "description": title,
+                "interop_source": _source_record(node, kind, graph["version"]),
                 "transitions": transitions,
             })
             continue
@@ -276,6 +329,7 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
                 "id": node_id,
                 "type": "message",
                 "description": f"{title} (ACFB extension step; topology only)",
+                "interop_source": _source_record(node, kind, graph["version"]),
                 "transitions": transitions,
             })
             continue
@@ -298,6 +352,7 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
                 "id": node_id,
                 "type": "message",
                 "description": f"{title} (ACFB queue step; topology only)",
+                "interop_source": _source_record(node, kind, graph["version"]),
                 "transitions": transitions,
             })
             continue
@@ -309,6 +364,13 @@ def convert_graph(graph: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
             "Converted from the observed Asterisk Call Flow Builder graph model. "
             "This is a static topology representation, not a PBX configuration."
         ),
+        "provenance": {
+            "source_application": "michaelnabil230/asterisk-call-flow-builder",
+            "source_graph_version": graph["version"],
+            "asterisk_context": context if isinstance(context, str) else "unknown",
+            "asterisk_trunk": trunk if isinstance(trunk, str) else "unknown",
+            "metadata_policy": "kind_whitelist_only",
+        },
         "entrypoints": entrypoints,
         "policy": {
             "require_operator_escape": False,
