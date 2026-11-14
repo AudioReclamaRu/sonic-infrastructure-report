@@ -28,9 +28,9 @@ what changed, by what date, with what source. It is maintained on a weekly caden
 each claim carries a verifiability status (RADAR p = 1,0 = confirmed by primary source).
 Machine-readable guide for LLM assistants: `llms.txt`.
 
-## Strategic priority — problem-first Audio-Reclama
+## Strategic priority — expert knowledge infrastructure for «Аудио-Реклама•ru»
 
-Develop Audio-Reclama through a connected, evidence-backed knowledge infrastructure. Start with strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. The repository is the canonical knowledge base and operating memory. External attention should be earned through useful knowledge, valid links, brand presence and trust-first contributions to open-source communities—not through mass-produced SEO or promotional comments. The official website remains the main destination for relevant attention.
+Develop the expertise of «Аудио-Реклама•ru» through a connected, evidence-backed knowledge infrastructure. Start with strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. The repository is the canonical knowledge base and operating memory. External attention should be earned through useful knowledge, valid links, brand presence and trust-first contributions to open-source communities—not through mass-produced SEO or promotional comments. The official website remains the main destination for relevant attention.
 
 ## Canonical Terms
 
@@ -91,7 +91,7 @@ feed/                  editorial publishing layer (channel schedule + covers)
 strategy/              strategic development contracts
   EXPERT_KNOWLEDGE_INFRASTRUCTURE.md      architecture of the connected knowledge base
   ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
-  PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first Audio-Reclama strategy
+  PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
 research/              reproducible research plans and benchmark programmes
   RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
 problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
@@ -118,7 +118,7 @@ reports/               verified analysis + live cadence
   verdicts/verdict-index.md       weekly append-only verdict record
 evidence/              machine-readable facts (E-YYYY-NNN)
 entity/                named entities of the market (canonical IDs)
-ar-notes/              Audio-Reclama Research Notes (short, evidence-bound)
+ar-notes/              «Аудио-Реклама•ru» Research Notes (short, evidence-bound)
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
 ```
