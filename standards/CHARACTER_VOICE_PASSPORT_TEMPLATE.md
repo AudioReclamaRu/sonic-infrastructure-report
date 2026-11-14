@@ -8,6 +8,7 @@ related:
   - standards/voice-provenance-passport.md
   - standards/verification-chain.md
   - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md
+  - research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md
 ---
 
 # Шаблон паспорта голосовой идентичности персонажа
