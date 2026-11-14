@@ -3,7 +3,9 @@ type: index
 date: 2026-11-03
 lang: mul
 ---
-# Standards — how the industry works with voice
+# Standards
+
+- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru. — how the industry works with voice
 
 Standards are the working layer: what a professional check looks like, who
 answers for a release, what a provenance passport contains, how a living voice
