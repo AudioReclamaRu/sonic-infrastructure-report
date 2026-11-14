@@ -1,3 +1,9 @@
+---
+type: guide
+date: 2026-11-14
+lang: en
+---
+
 # IVR Flow Linter
 
 A small, dependency-free Python tool that checks a **declared IVR call-flow graph** before a flow is handed to a telephony integrator or implemented in a PBX.
