@@ -23,7 +23,9 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - `research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md` — внешняя подборка источниковых кейсов Микки Мауса, Багза Банни и Кермита; не является кейсами студии.
 - `research/README.md` — каталог исследовательских проектов и ограничений их статусов.
 - `research/CHARACTER_VOICE_PASSPORT_SYNTHETIC_WALKTHROUGH_2026-11-14.md` — учебный проход по вымышленному персонажу: демонстрирует разделение допуска на новую запись, старую фонограмму, AI-обучение, цифровую реплику и локализацию; не реальный кейс.
-- `tools/check_character_voice_passport.py` — проверка предохранителей паспорта в CI.
+- `schemas/character-voice-passport.schema.json` — черновая машиночитаемая структура паспорта (v0.1) с release gates.
+- `research/character-voice-passport.synthetic.json` — синтетическая запись DRAFT/HOLD для регрессионной проверки.
+- `tools/check_character_voice_passport.py` — проверка предохранителей паспорта и логики release gate в CI.
 
 
 - strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — роли сайта, Git и Дзена, границы редактирования и публикационная процедура.
