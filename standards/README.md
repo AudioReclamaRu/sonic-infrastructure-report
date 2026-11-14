@@ -24,6 +24,7 @@ tiers, procedures, checks a machine or a human can apply.
 - `AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md` — draft studio framework for audiovisual translation and voice adaptation (voice-over, dubbing, dialogue adaptation, recording and QC); awaiting expert review by the studio's translation specialist.
 - `CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md` — research draft for preserving the dramatic and vocal identity of animated/fictional characters through performer changes, localization and possible digital replicas; awaits expert/owner review and approved real-world cases.
 - `CHARACTER_VOICE_PASSPORT_TEMPLATE.md` — fillable character-voice passport and performer-handover form, including reference provenance, scope-of-use checks, localization, and PASS/FIX/HOLD release control.
+- `../schemas/character-voice-passport.schema.json` — draft JSON Schema v0.1 for machine-readable permissions and release gates, exercised by the repository CI script.
 - `../tools/check_character_voice_passport.py` — CI regression check: UNKNOWN is not approval, unresolved permissions block release, and untouched pilot tests remain NOT RUN.
 
 - `verification-chain.md` — the security/publishing layer: hash chains,
