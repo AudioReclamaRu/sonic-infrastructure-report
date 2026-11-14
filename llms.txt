@@ -320,7 +320,7 @@ referenced-in.
 - entity/universal-music-group.md — world's largest music-based entertainment
   company; first AI-audio licensing agreement (with ElevenLabs, 10.09.2026)
 
-## AR Notes (Audio-Reclama Research Notes, short and evidence-bound)
+## AR Notes (research notes of «Аудио-Реклама•ru», short and evidence-bound)
 
 AR notes give a term a short, citable, evidence-linked form — the studio's
 answer to premature self-appointed standards.
