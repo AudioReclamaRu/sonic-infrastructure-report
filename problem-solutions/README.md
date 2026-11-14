@@ -12,6 +12,7 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md — обязательная стратегия.
 - TEMPLATE.md — стандарт диагностической статьи.
 - IVR_DESIGN_STANDARD.md — внутренний стандарт проектирования, записи, тестирования и выпуска голосового меню.
+- ../tools/ivr_flow_linter/README.md — публичная инструкция к статическому линтеру схем IVR: битые переходы, тупики, недостижимые узлы, fallback-поведение и проверка выхода к оператору по политике проекта. Не проверяет реальную АТС или аудиофайлы.
 - QUERY_BACKLOG.json — начальные гипотезы проблем.
 - REFERENCE_MODELS.md — лучшие практики отрасли и других областей.
 - OWN_CONTENT_AUDIT_2026-11-14.md — предварительный аудит собственных активов.
