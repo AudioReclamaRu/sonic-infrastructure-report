@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "asterisk": {
+    "context": "from-internal",
+    "trunk": "main"
+  },
+  "nodes": [
+    {
+      "id": "start-1",
+      "type": "flowNode",
+      "position": { "x": 0, "y": 0 },
+      "data": {
+        "kind": "start",
+        "label": "Inbound Call",
+        "title": "Main trunk",
+        "meta": { "timeout": 20, "playback": "welcome-prompt" }
+      }
+    },
+    {
+      "id": "welcome-1",
+      "type": "flowNode",
+      "position": { "x": 200, "y": 100 },
+      "data": {
+        "kind": "menu",
+        "label": "IVR Menu",
+        "title": "Welcome",
+        "meta": {
+          "playback": "main-menu-prompt",
+          "retries": 2,
+          "timeout": 10,
+          "options": { "1": "sales", "2": "support", "3": "queue" }
+        }
+      }
+    },
+    {
+      "id": "sales-1",
+      "type": "flowNode",
+      "position": { "x": 400, "y": 0 },
+      "data": { "kind": "playback", "label": "Playback", "title": "Sales information", "meta": { "sound": "sales-info" } }
+    },
+    {
+      "id": "support-1",
+      "type": "flowNode",
+      "position": { "x": 400, "y": 150 },
+      "data": { "kind": "extension", "label": "Extension", "title": "Support desk", "meta": { "extension": "1001", "ringSeconds": 20, "playback": "" } }
+    },
+    {
+      "id": "queue-1",
+      "type": "flowNode",
+      "position": { "x": 400, "y": 300 },
+      "data": { "kind": "queue", "label": "Queue", "title": "Support queue", "queueName": "support", "meta": { "strategy": "rrordered", "timeout": 30 } }
+    },
+    {
+      "id": "end-1",
+      "type": "flowNode",
+      "position": { "x": 650, "y": 180 },
+      "data": { "kind": "hangup", "label": "Hang Up", "title": "End call", "meta": {} }
+    }
+  ],
+  "edges": [
+    { "id": "e-start-welcome", "source": "start-1", "sourceHandle": "next", "target": "welcome-1" },
+    { "id": "e-menu-sales", "source": "welcome-1", "sourceHandle": "option-1", "target": "sales-1" },
+    { "id": "e-menu-support", "source": "welcome-1", "sourceHandle": "option-2", "target": "support-1" },
+    { "id": "e-menu-queue", "source": "welcome-1", "sourceHandle": "option-3", "target": "queue-1" },
+    { "id": "e-menu-invalid", "source": "welcome-1", "sourceHandle": "option-invalid", "target": "end-1" },
+    { "id": "e-menu-timeout", "source": "welcome-1", "sourceHandle": "option-timeout", "target": "end-1" },
+    { "id": "e-sales-end", "source": "sales-1", "sourceHandle": "next", "target": "end-1" },
+    { "id": "e-support-end", "source": "support-1", "sourceHandle": "answered", "target": "end-1" },
+    { "id": "e-queue-end", "source": "queue-1", "sourceHandle": "answered", "target": "end-1" }
+  ]
+}
