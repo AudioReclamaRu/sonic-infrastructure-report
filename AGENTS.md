@@ -8,15 +8,17 @@ lang: mul
 
 Before any research, engineering, editorial, SEO/GEO, standards, tooling or distribution task, read:
 1. strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
-2. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
-3. problem-solutions/README.md
-4. problem-solutions/QUERY_BACKLOG.json
-5. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
-6. problem-solutions/REFERENCE_MODELS.md
+2. strategy/ATTENTION_ACQUISITION_SYSTEM.md
+3. standards/X15-OPEN-SOURCE-COMMUNITY.md
+4. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
+5. problem-solutions/README.md
+6. problem-solutions/QUERY_BACKLOG.json
+7. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
+8. problem-solutions/REFERENCE_MODELS.md
 
 We are building a connected, evidence-backed expert knowledge infrastructure, not a blog or content factory. The repository is the canonical, versioned knowledge base. Develop reusable knowledge objects, relationships, diagnostics, standards, experiments, tools and verified decisions. A document or post is only one possible view of that knowledge.
 
-**Distribution boundary:** the only approved outputs are repository commits and, selectively, contributions from the studio to the independent Telegram channel «Культура Голоса» when they fit that channel's own aims. Do not publish or edit the Audio-Reclama website/blog; do not deploy GitHub Pages or create mirrors on Dzen, VK or other surfaces. The official website is an external reputation and company-context reference: link to it when genuinely useful, never as a compulsory CTA. The Telegram channel is not owned by the studio and does not define the knowledge roadmap.
+**Distribution boundary:** the canonical knowledge base is the repository. Approved external activity also includes selective, substantive participation in third-party open-source communities under standards/X15-OPEN-SOURCE-COMMUNITY.md; this is collaboration, not an advertising placement. Contributions must be useful independently of the brand, and must follow the target project's social rules, AI policy, license, attribution and DCO/CLA requirements. Do not publish or edit the Audio-Reclama website/blog; do not deploy GitHub Pages or create mirrors on Dzen, VK or other surfaces. The official website is an external reputation and company-context reference: link to it only when genuinely required by the subject, never as a compulsory CTA. The Telegram channel «Культура Голоса» remains an optional independent venue and is not the knowledge roadmap. No mass automated comments, issues, PRs, stars or follows.
 
 Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance are secondary signals, not the architecture's purpose.
 
