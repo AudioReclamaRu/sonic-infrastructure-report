@@ -7,6 +7,7 @@ related:
   - standards/voice-provenance-passport.md
   - standards/verification-chain.md
   - standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md
+  - research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md
   - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md
   - canon/releasing-voice.md
   - problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md
@@ -382,12 +383,16 @@ SAG-AFTRA формулирует свои общие AI-ограничители
 7. **SAG-AFTRA — 2025 Interactive Media Agreement.** Контрактные условия для интерактивных медиа; используется здесь как пример детализации согласия и области использования, а не как правило для всех аудиовизуальных жанров.  
    https://www.sagaftra.org/contracts-industry-resources/interactive/2025-interactive-media-video-game-agreement
 
-## 13. Связанные рабочие инструменты
+## 13. Внешние кейсы и пределы аналогии
+
+Подборка `research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md` содержит три внешних случая — Mickey Mouse, Bugs Bunny и Kermit. Она помогает проверить, что преемственность может быть многопоколенной, актёрски наследуемой или аудиовизуальной (голос + телесное исполнение). Это источники для сравнительного анализа, а не кейсы студии и не доказательство единой универсальной методики. Там отдельно сохранены факты, рабочие наблюдения и неизвестные.
+
+## 14. Связанные рабочие инструменты
 
 - `CHARACTER_VOICE_PASSPORT_TEMPLATE.md` — форма паспорта персонажа и handover-записи; поля UNKNOWN / REQUIRES_VERIFICATION / PENDING_APPROVAL и стоп-правила до выпуска.
 - `voice-provenance-passport.md` — отдельный паспорт происхождения конкретной записи или голоса.
 
-## 14. Вопросы для экспертной проверки
+## 15. Вопросы для экспертной проверки
 
 - Достаточно ли полно разделены идентичность персонажа и индивидуальный почерк исполнителя?
 - Какие поля паспорта действительно нужны в небольшом дубляжном проекте, а какие — только для многолетней франшизы?
