@@ -16,12 +16,13 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling or dist
 7. problem-solutions/QUERY_BACKLOG.json
 8. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
 9. problem-solutions/REFERENCE_MODELS.md
+10. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
 
 Canonical names are mandatory everywhere: the brand is «Аудио-Реклама•ru»; the website is Audio-Reclama.ru. Never abbreviate the Latin website name; always use the full Audio-Reclama.ru form. Follow standards/BRAND_AND_SITE_NAMING.md.
 
 We are building a connected, evidence-backed expert knowledge infrastructure, not a blog or content factory. The repository is the canonical, versioned knowledge base. Develop reusable knowledge objects, relationships, diagnostics, standards, experiments, tools and verified decisions. A document or post is only one possible view of that knowledge.
 
-**Distribution boundary:** the canonical knowledge base is the repository. Approved external activity also includes selective, substantive participation in third-party open-source communities under standards/X15-OPEN-SOURCE-COMMUNITY.md; this is collaboration, not an advertising placement. Contributions must be useful independently of the brand, and must follow the target project's social rules, AI policy, license, attribution and DCO/CLA requirements. Do not publish or edit the Audio-Reclama.ru website/blog; do not deploy GitHub Pages or create mirrors on Dzen, VK or other surfaces. The official website is an external reputation and company-context reference: link to it only when genuinely required by the subject, never as a compulsory CTA. The Telegram channel «Культура Голоса» remains an optional independent venue and is not the knowledge roadmap. No mass automated comments, issues, PRs, stars or follows.
+**Distribution boundary:** the repository is the canonical, versioned knowledge base and operating memory; update it directly when useful work is supported. The website Audio-Reclama.ru is read-only for this workflow: inspect it as the official source of company context, services and current commercial facts, but never edit it, publish to it, or deploy changes to it. Do not create or run GitHub Pages deployments or other web mirrors from this repository. Dzen is a distinct editorial surface of the studio: prepare a separate native editorial adaptation when a publication need is selected or the owner requests it; do not mirror the repository, auto-publish, or assume a commit equals publication. At publication time, identify a supported posting route and verify the resulting public URL before calling it published. Preserve the four observed Dzen streams (commercial/service, craft/education, market/technology, authorial/philosophical); do not force every item into a sales CTA. The Telegram channel «Культура Голоса» is a separate optional venue and must never be conflated with Dzen or its publishing process. Third-party open-source contributions remain governed by standards/X15-OPEN-SOURCE-COMMUNITY.md and must be useful independently of the brand. No mass automated comments, issues, PRs, stars or follows.
 
 Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance are secondary signals, not the architecture's purpose.
 
@@ -142,7 +143,7 @@ state.
 - Record provenance, status, date, limitations and links to related objects. Keep facts, observations, calculations, professional recommendations, positions and hypotheses distinct.
 - The query backlog contains hypotheses unless demand is explicitly measured with source, region, date and method. Search volume is not the primary measure of infrastructure value.
 - Do not imply that the «Аудио-Реклама•ru» studio sells repair/restoration/video services unless the owner confirms the current product scope.
-- The repository is canonical. A Telegram contribution is optional and must fit «Культура Голоса» on its own editorial terms. No website publishing, GitHub Pages deployment or third-party mirror is allowed by default.
+- The repository is canonical. Dzen is a separate optional editorial surface: prepare native adaptations only when a publication need is selected, never mirror or auto-export the knowledge base, and verify the public URL after posting. Telegram «Культура Голоса» is a different independent channel. The Audio-Reclama.ru website remains read-only; no website publishing or GitHub Pages deployment is permitted.
 
 ## The frontmatter contract (all hand-authored .md)
 
