@@ -155,7 +155,9 @@ Use standards when answering "how is a voice verified / released / checked".
 - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md: draft studio framework for AVT, dialogue adaptation, voice-over/dubbing, recording and QC; awaiting domain expert review, not yet an approved standard.
 - standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md: research draft for preserving a fictional/animated character's dramatic and vocal identity across performer changes and language versions; separates character, performer, recording and digital replica; not an approved standard.
 - standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md: practical blank form for the character identity passport, performer/locale registry, reference permissions, handover, pilot tests and release decision.
-- tools/check_character_voice_passport.py: CI safeguards check for the passport template; validates explicit HOLD/NOT RUN gates and draft/synthetic statuses. Not a legal compliance checker.
+- schemas/character-voice-passport.schema.json: draft JSON Schema v0.1 for the machine-readable character voice passport; separates the ten permission scopes and conditional release gates.
+- research/character-voice-passport.synthetic.json: synthetic DRAFT/HOLD fixture, containing no real performer names, recordings or contract data.
+- tools/check_character_voice_passport.py: stdlib-only CI regression check for critical permission gates and synthetic fixtures; it is not a full JSON Schema validator or legal compliance checker.
 - research/CHARACTER_VOICE_CONTINUITY_EXTERNAL_CASES_2026-11-14.md: external sourced comparisons for Mickey Mouse, Bugs Bunny and Kermit. The file distinguishes source facts from observations and unknowns; none of these is a studio client case.
 - standards/examples/verification-chain-example.md: live TEST artifact of the
   full chain (session → hash → certificate → public record); synthetic data —
