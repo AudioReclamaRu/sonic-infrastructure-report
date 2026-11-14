@@ -8,17 +8,303 @@
     "no_unverified_service_claims": "Educational advice does not imply that Audio-Reclama sells repair or restoration."
   },
   "clusters": [
-    {"id":"PS-001","priority":"P0","cluster":"Ошибки и неудобство голосового меню IVR","intent":"diagnose_and_improve","candidate_queries":["почему клиенты не могут пройти голосовое меню","как сделать понятное IVR меню","ошибки голосового меню автоответчика","как сократить IVR меню"],"business_fit":"high","existing_coverage":["geo/guides/ivr-menu-oshibki/","guides/bank-voice-menu.md"],"action":"Audit and improve the existing guide; do not create a duplicate.","proof_needed":["approved anonymized menu examples","call-flow checklist","current IVR service scope"],"demand_status":"existing_content_review","search_volume":null},
-    {"id":"PS-002","priority":"P0","cluster":"Ошибки произношения в деловых голосовых сообщениях","intent":"prevent_and_fix","candidate_queries":["как правильно озвучить цифры в автоответчике","как проверить ударения в названиях","как передать произношение иностранного имени диктору"],"business_fit":"high","existing_coverage":["standards/responsible-release.md","existing IVR pages"],"action":"Create a practical pronunciation brief and pre-release checklist.","proof_needed":["approved checklist","cleared examples","rules for numbers and abbreviations"],"demand_status":"unmeasured_candidate","search_volume":null},
-    {"id":"PS-003","priority":"P0","cluster":"Как выбрать голос для рекламы, видео, презентации или телефона","intent":"decision_support","candidate_queries":["как выбрать диктора для рекламы","какой голос выбрать для видео","диктор или нейросеть что выбрать"],"business_fit":"high","existing_coverage":["guides/choosing-a-voice.md","geo/guides/kak-vybrat-golos/"],"action":"Audit current pages; strengthen with real demos in context.","proof_needed":["dated voice catalogue snapshot","rights-cleared demos","live vs synthetic comparison"],"demand_status":"existing_content_review","search_volume":null},
-    {"id":"PS-004","priority":"P0","cluster":"Многоязычные объявления и голосовые сообщения","intent":"prevent_and_diagnose","candidate_queries":["как записать объявления на нескольких языках","как проверить перевод для аудиообъявления","многоязычное голосовое меню ошибки"],"business_fit":"high","existing_coverage":["guides/airport-announcements.md","Vnukovo public project reference"],"action":"Audit the guide, demonstrate cross-language checks, verify permissions.","proof_needed":["approved multilingual workflow","cleared samples","linguistic review procedure"],"demand_status":"existing_content_review","search_volume":null},
-    {"id":"PS-005","priority":"P0","cluster":"Как подготовить текст и рассчитать длительность озвучки","intent":"planning","candidate_queries":["сколько длится озвучка текста","как уложить дикторский текст в 30 секунд","как рассчитать хронометраж аудиоролика"],"business_fit":"high","existing_coverage":["Chronomer","guides/chronomer-timing.md"],"action":"Audit calculator and guide; record timing examples with caveats.","proof_needed":["current calculator behavior","recorded timing samples","pauses and pronunciation caveats"],"demand_status":"existing_content_review","search_volume":null},
-    {"id":"PS-006","priority":"P1","cluster":"Микрофон записывает фон, клавиатуру или вентиляцию","intent":"diagnose_and_fix","candidate_queries":["почему микрофон записывает фоновый шум","как убрать шум клавиатуры на записи","микрофон слышит вентиляцию"],"business_fit":"medium","action":"Controlled mic-placement/gain diagnostic with matched A/B samples after engineer review.","proof_needed":["distance/gain tests","room/equipment context","matched-loudness samples"],"demand_status":"unmeasured_candidate","search_volume":null},
-    {"id":"PS-007","priority":"P1","cluster":"Эхо и реверберация в записи голоса","intent":"diagnose_and_fix","candidate_queries":["как убрать эхо с записи голоса","эхо или реверберация в микрофоне","как записать голос без эха"],"business_fit":"medium","action":"Differentiate echo, reverb, monitoring loop and feedback; state rerecording limits.","proof_needed":["controlled room samples","de-reverb artifact comparison","specialist review"],"demand_status":"unmeasured_candidate","search_volume":null},
-    {"id":"PS-008","priority":"P1","cluster":"Шумоподавление портит голос","intent":"diagnose_and_repair","candidate_queries":["почему шумоподавление делает голос металлическим","как убрать шум и не испортить голос","почему после очистки звук булькает"],"business_fit":"medium","action":"Compare mild vs aggressive processing, with settings, version and matched loudness.","proof_needed":["cleared source recording","multiple processing levels","repeatable settings"],"demand_status":"unmeasured_candidate","search_volume":null},
-    {"id":"PS-009","priority":"P1","cluster":"Гул, шипение, треск и щелчки в записи","intent":"diagnose_and_fix","candidate_queries":["как убрать гул из аудиозаписи","как убрать шипение в голосе","почему трещит микрофон","как убрать щелчки в записи"],"business_fit":"medium","action":"Create a diagnostic map; split pages only when causes and methods differ.","proof_needed":["known-source test files","spectrogram examples","tool-specific validation"],"demand_status":"unmeasured_candidate","search_volume":null},
-    {"id":"PS-010","priority":"P1","cluster":"Звук отстаёт от изображения или рассинхронизируется","intent":"diagnose_and_fix","candidate_queries":["как синхронизировать звук и видео","почему звук отстаёт от видео","как исправить drift аудио видео"],"business_fit":"conditional","action":"Confirm video post-production competence before promising repair.","proof_needed":["sample project","NLE/frame-rate conditions","exported-file verification"],"demand_status":"competence_check","search_volume":null},
-    {"id":"PS-011","priority":"P1","cluster":"Голос теряется под музыкой в ролике","intent":"diagnose_and_mix","candidate_queries":["почему не слышно голос на фоне музыки","как сделать речь разборчивой в рекламном ролике","громкость музыки под диктором"],"business_fit":"high","action":"Build an audio-first comparison; do not give a universal dB preset.","proof_needed":["mix variants","matched loudness","multiple playback contexts","engineer review"],"demand_status":"unmeasured_candidate","search_volume":null},
-    {"id":"PS-012","priority":"P1","cluster":"Как проверить финальное аудио перед публикацией","intent":"quality_assurance","candidate_queries":["как проверить качество озвучки","чек лист перед публикацией аудио","как проверить голосовое приветствие перед запуском"],"business_fit":"high","existing_coverage":["standards/responsible-release.md","guides/video-voiceover.md"],"action":"Turn the existing release standard into a practical checklist.","proof_needed":["approved release checklist","client/studio responsibilities","version record"],"demand_status":"existing_content_review","search_volume":null}
+    {
+      "id": "PS-001",
+      "priority": "P0",
+      "cluster": "Ошибки и неудобство голосового меню IVR",
+      "intent": "diagnose_and_improve",
+      "candidate_queries": [
+        "почему клиенты не могут пройти голосовое меню",
+        "как сделать понятное IVR меню",
+        "ошибки голосового меню автоответчика",
+        "как сократить IVR меню"
+      ],
+      "business_fit": "high",
+      "existing_coverage": [
+        "geo/guides/ivr-menu-oshibki/",
+        "guides/bank-voice-menu.md"
+      ],
+      "action": "Audit and improve the existing guide; do not create a duplicate.",
+      "proof_needed": [
+        "approved anonymized menu examples",
+        "call-flow checklist",
+        "current IVR service scope"
+      ],
+      "demand_status": "existing_content_review",
+      "search_volume": null
+    },
+    {
+      "id": "PS-002",
+      "priority": "P0",
+      "cluster": "Ошибки произношения в деловых голосовых сообщениях",
+      "intent": "prevent_and_fix",
+      "candidate_queries": [
+        "как правильно озвучить цифры в автоответчике",
+        "как проверить ударения в названиях",
+        "как передать произношение иностранного имени диктору"
+      ],
+      "business_fit": "high",
+      "existing_coverage": [
+        "standards/responsible-release.md",
+        "existing IVR pages"
+      ],
+      "action": "Create a practical pronunciation brief and pre-release checklist.",
+      "proof_needed": [
+        "approved checklist",
+        "cleared examples",
+        "rules for numbers and abbreviations"
+      ],
+      "demand_status": "unmeasured_candidate",
+      "search_volume": null
+    },
+    {
+      "id": "PS-003",
+      "priority": "P0",
+      "cluster": "Как выбрать голос для рекламы, видео, презентации или телефона",
+      "intent": "decision_support",
+      "candidate_queries": [
+        "как выбрать диктора для рекламы",
+        "какой голос выбрать для видео",
+        "диктор или нейросеть что выбрать"
+      ],
+      "business_fit": "high",
+      "existing_coverage": [
+        "guides/choosing-a-voice.md",
+        "geo/guides/kak-vybrat-golos/"
+      ],
+      "action": "Audit current pages; strengthen with real demos in context.",
+      "proof_needed": [
+        "dated voice catalogue snapshot",
+        "rights-cleared demos",
+        "live vs synthetic comparison"
+      ],
+      "demand_status": "existing_content_review",
+      "search_volume": null
+    },
+    {
+      "id": "PS-004",
+      "priority": "P0",
+      "cluster": "Многоязычные объявления и голосовые сообщения",
+      "intent": "prevent_and_diagnose",
+      "candidate_queries": [
+        "как записать объявления на нескольких языках",
+        "как проверить перевод для аудиообъявления",
+        "многоязычное голосовое меню ошибки"
+      ],
+      "business_fit": "high",
+      "existing_coverage": [
+        "guides/airport-announcements.md",
+        "Vnukovo public project reference"
+      ],
+      "action": "Audit the guide, demonstrate cross-language checks, verify permissions.",
+      "proof_needed": [
+        "approved multilingual workflow",
+        "cleared samples",
+        "linguistic review procedure"
+      ],
+      "demand_status": "existing_content_review",
+      "search_volume": null
+    },
+    {
+      "id": "PS-005",
+      "priority": "P0",
+      "cluster": "Как подготовить текст и рассчитать длительность озвучки",
+      "intent": "planning",
+      "candidate_queries": [
+        "сколько длится озвучка текста",
+        "как уложить дикторский текст в 30 секунд",
+        "как рассчитать хронометраж аудиоролика"
+      ],
+      "business_fit": "high",
+      "existing_coverage": [
+        "Chronomer",
+        "guides/chronomer-timing.md"
+      ],
+      "action": "Audit calculator and guide; record timing examples with caveats.",
+      "proof_needed": [
+        "current calculator behavior",
+        "recorded timing samples",
+        "pauses and pronunciation caveats"
+      ],
+      "demand_status": "existing_content_review",
+      "search_volume": null
+    },
+    {
+      "id": "PS-006",
+      "priority": "P1",
+      "cluster": "Микрофон записывает фон, клавиатуру или вентиляцию",
+      "intent": "diagnose_and_fix",
+      "candidate_queries": [
+        "почему микрофон записывает фоновый шум",
+        "как убрать шум клавиатуры на записи",
+        "микрофон слышит вентиляцию"
+      ],
+      "business_fit": "medium",
+      "action": "Controlled mic-placement/gain diagnostic with matched A/B samples after engineer review.",
+      "proof_needed": [
+        "distance/gain tests",
+        "room/equipment context",
+        "matched-loudness samples"
+      ],
+      "demand_status": "unmeasured_candidate",
+      "search_volume": null
+    },
+    {
+      "id": "PS-007",
+      "priority": "P1",
+      "cluster": "Эхо и реверберация в записи голоса",
+      "intent": "diagnose_and_fix",
+      "candidate_queries": [
+        "как убрать эхо с записи голоса",
+        "эхо или реверберация в микрофоне",
+        "как записать голос без эха"
+      ],
+      "business_fit": "medium",
+      "action": "Differentiate echo, reverb, monitoring loop and feedback; state rerecording limits.",
+      "proof_needed": [
+        "controlled room samples",
+        "de-reverb artifact comparison",
+        "specialist review"
+      ],
+      "demand_status": "unmeasured_candidate",
+      "search_volume": null
+    },
+    {
+      "id": "PS-008",
+      "priority": "P1",
+      "cluster": "Шумоподавление портит голос",
+      "intent": "diagnose_and_repair",
+      "candidate_queries": [
+        "почему шумоподавление делает голос металлическим",
+        "как убрать шум и не испортить голос",
+        "почему после очистки звук булькает"
+      ],
+      "business_fit": "medium",
+      "action": "Compare mild vs aggressive processing, with settings, version and matched loudness.",
+      "proof_needed": [
+        "cleared source recording",
+        "multiple processing levels",
+        "repeatable settings"
+      ],
+      "demand_status": "unmeasured_candidate",
+      "search_volume": null
+    },
+    {
+      "id": "PS-009",
+      "priority": "P1",
+      "cluster": "Гул, шипение, треск и щелчки в записи",
+      "intent": "diagnose_and_fix",
+      "candidate_queries": [
+        "как убрать гул из аудиозаписи",
+        "как убрать шипение в голосе",
+        "почему трещит микрофон",
+        "как убрать щелчки в записи"
+      ],
+      "business_fit": "medium",
+      "action": "Create a diagnostic map; split pages only when causes and methods differ.",
+      "proof_needed": [
+        "known-source test files",
+        "spectrogram examples",
+        "tool-specific validation"
+      ],
+      "demand_status": "unmeasured_candidate",
+      "search_volume": null
+    },
+    {
+      "id": "PS-010",
+      "priority": "P1",
+      "cluster": "Звук отстаёт от изображения или рассинхронизируется",
+      "intent": "diagnose_and_fix",
+      "candidate_queries": [
+        "как синхронизировать звук и видео",
+        "почему звук отстаёт от видео",
+        "как исправить drift аудио видео"
+      ],
+      "business_fit": "conditional",
+      "action": "Confirm video post-production competence before promising repair.",
+      "proof_needed": [
+        "sample project",
+        "NLE/frame-rate conditions",
+        "exported-file verification"
+      ],
+      "demand_status": "competence_check",
+      "search_volume": null
+    },
+    {
+      "id": "PS-011",
+      "priority": "P1",
+      "cluster": "Голос теряется под музыкой в ролике",
+      "intent": "diagnose_and_mix",
+      "candidate_queries": [
+        "почему не слышно голос на фоне музыки",
+        "как сделать речь разборчивой в рекламном ролике",
+        "громкость музыки под диктором"
+      ],
+      "business_fit": "high",
+      "action": "Build an audio-first comparison; do not give a universal dB preset.",
+      "proof_needed": [
+        "mix variants",
+        "matched loudness",
+        "multiple playback contexts",
+        "engineer review"
+      ],
+      "demand_status": "unmeasured_candidate",
+      "search_volume": null
+    },
+    {
+      "id": "PS-012",
+      "priority": "P1",
+      "cluster": "Как проверить финальное аудио перед публикацией",
+      "intent": "quality_assurance",
+      "candidate_queries": [
+        "как проверить качество озвучки",
+        "чек лист перед публикацией аудио",
+        "как проверить голосовое приветствие перед запуском"
+      ],
+      "business_fit": "high",
+      "existing_coverage": [
+        "standards/responsible-release.md",
+        "guides/video-voiceover.md"
+      ],
+      "action": "Turn the existing release standard into a practical checklist.",
+      "proof_needed": [
+        "approved release checklist",
+        "client/studio responsibilities",
+        "version record"
+      ],
+      "demand_status": "existing_content_review",
+      "search_volume": null
+    },
+    {
+      "id": "PS-013",
+      "priority": "P1",
+      "cluster": "Как озвучить видео: подготовка текста, запись голоса и сведение",
+      "intent": "how_to_and_quality_assurance",
+      "candidate_queries": [
+        "как озвучить видеоролик",
+        "как записать голос для видео",
+        "как сделать закадровую озвучку",
+        "как записать чистый голос для ролика",
+        "как свести голос и музыку в видео"
+      ],
+      "business_fit": "high_for_voice_recording; video_postproduction_scope_unconfirmed",
+      "existing_coverage": [
+        "https://www.audio-reclama.ru/blog/kak-ozvuchit-videorolik-sovety-dlya-novichkov.html",
+        "guides/video-voiceover.md"
+      ],
+      "action": "Update the 2020 main-site article in place; do not create a duplicate URL. Use the audited draft and confirm the exact service scope before public release.",
+      "proof_needed": [
+        "owner approval of service boundaries",
+        "rights-cleared before/after voice sample or controlled demo",
+        "technical review of microphone/gain/loudness advice",
+        "final canonical URL and metadata verification"
+      ],
+      "demand_status": "existing_content_review",
+      "search_volume": null,
+      "search_volume_source": null,
+      "checked_at": null,
+      "draft_path": "problem-solutions/drafts/VIDEO_VOICEOVER_REVISED_DRAFT.md",
+      "audit_path": "problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md"
+    }
   ]
 }
