@@ -93,7 +93,7 @@ Use:
 3. Use problem-solutions/TEMPLATE.md to diagnose before prescribing and define a quality check.
 4. Consult REFERENCE_MODELS.md and primary vendor documentation.
 5. Use FACT-METHOD.md, evidence/ and standards/ for claims and procedures.
-6. Confirm actual Audio-Reclama competence and whether an existing page should be improved.
+6. Confirm the actual competence of the «Аудио-Реклама•ru» studio and whether an existing page should be improved.
 7. Record demand and baseline through problem-solutions/MEASUREMENT_PROTOCOL.md.
 8. Public release requires technical review, rights clearance and owner approval. A Git authoring document is not the canonical published page.
 
