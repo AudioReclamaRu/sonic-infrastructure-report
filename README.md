@@ -30,7 +30,7 @@ Machine-readable guide for LLM assistants: `llms.txt`.
 
 ## Strategic priority — problem-first Audio-Reclama
 
-Develop Audio-Reclama through a practical knowledge system that answers real user problems in audio, voice and confirmed areas of video production. Start with strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. Prioritize diagnosis, evidence, reproducible steps, limitations and quality checks — not mass-produced SEO pages.
+Develop Audio-Reclama through a connected, evidence-backed knowledge infrastructure. Start with strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md. The repository is the canonical knowledge base and operating memory. External attention should be earned through useful knowledge, valid links, brand presence and trust-first contributions to open-source communities—not through mass-produced SEO or promotional comments. The official website remains the main destination for relevant attention.
 
 ## Canonical Terms
 
@@ -79,6 +79,7 @@ standards/             profession standards — how to work with voice
   living-voice-standard.md        voluntary verification standard of human voice
   responsible-release.md          the pre-air check procedure (pre-air voice editing)
   verification-chain.md           cryptographic integrity from session to publish
+  X15-OPEN-SOURCE-COMMUNITY.md     trust-first participation in third-party OSS communities
   examples/verification-chain-example.md   live TEST artifact of the chain
 feed/                  editorial publishing layer (channel schedule + covers)
   items.csv                       schedule: pubDate~~~title~~~desc~~~source~~~guid~~~img
@@ -88,7 +89,11 @@ feed/                  editorial publishing layer (channel schedule + covers)
   images/                         generated covers + manifest.json (single source of truth)
   tests/                          generator contract tests
 strategy/              strategic development contracts
+  EXPERT_KNOWLEDGE_INFRASTRUCTURE.md      architecture of the connected knowledge base
+  ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first Audio-Reclama strategy
+research/              reproducible research plans and benchmark programmes
+  RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
 problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
   README.md             operating model
   TEMPLATE.md           article template
