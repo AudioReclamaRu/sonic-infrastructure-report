@@ -22,6 +22,8 @@ Terms
     ↓
 Standards
     ↓
+Schemas / Data Contracts
+    ↓
 Interfaces
     ↓
 Business Workflow
@@ -36,6 +38,7 @@ Business Workflow
 | Entities | `entity/` | Who and what exists on the market — as stable, linkable records |
 | Terms | `dictionary/` + `TERMINOLOGY.md` | What does a term mean here — one lived definition per term |
 | Standards | `standards/` | How work is done: verification chain, release checks |
+| Data Contracts | `schemas/` | Which fields and conditional gates machine-readable records must satisfy |
 | Problem Solutions | problem-solutions/ | Why it happens, how to diagnose, fix and verify it |
 | Interfaces | `interfaces/` | The boundaries where human, AI, law, and responsibility meet — one page, one concept |
 | Business Workflow | `USE_CASES.md` | Who reaches for which layer, and when |
