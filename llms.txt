@@ -22,6 +22,20 @@
   is the full commercial and factual source of record)
 - Contact: https://audio-reclama.ru and start@audio-reclama.ru
 
+## Strategic priority: problem-solving knowledge
+
+Read these before creating new Audio-Reclama content:
+- strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md — mandatory strategic contract.
+- problem-solutions/README.md — workflow and scope.
+- problem-solutions/TEMPLATE.md — diagnostic article template.
+- problem-solutions/QUERY_BACKLOG.json — candidate problems; demand is not yet measured.
+- problem-solutions/REFERENCE_MODELS.md — practices from Shure, RØDE, iZotope, Adobe, Frame.io, Cloudflare, Intercom, Twilio and Zapier.
+- problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md — current assets and gaps.
+- problem-solutions/MEASUREMENT_PROTOCOL.md — repeatable demand and AI visibility measurement.
+- problem-solutions/IMPLEMENTATION_ROADMAP.md — delivery sequence.
+
+This library is distinct from commercial GEO answers and enterprise guides. Avoid query-variant pages at scale. A Git commit is not a website publication; verify the canonical page after deployment.
+
 ## Human
 
 - AGENTS.md: the working contract for any agent or person — trust order (the
