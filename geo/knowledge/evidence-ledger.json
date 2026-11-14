@@ -106,7 +106,7 @@
       "business_priority": 3,
       "phase3_classification": "partially_verified",
       "phase3_evidence": "Sostav (2019-03-12) reports IAB Russia estimate: Russian digital audio ad market 465.3M RUB in 2018 vs 155M RUB in 2017; states data sources (Digital Box, IMHO, Unisound, Digital Audio Mail.Ru Group, Yandex, EMG) and methodology (funds received from advertisers/agencies to sellers/publishers). URL: https://www.sostav.ru/publication/digital-audio-36115.html. Primary IAB Russia report PDF not independently retrieved in this pass. Blog also includes forecasts (1.5B 2019, 6.1B 2022) that require separate primary verification.",
-      "applicability_scope": "Scope-limited: supports historical 2018 market estimate (465.3M RUB) as reported by IAB Russia and covered by Sostav; forecast figures in the same blog claim are not verified here. Not a 2026 market state; not Audio-Reclama original research.",
+      "applicability_scope": "Scope-limited: supports historical 2018 market estimate (465.3M RUB) as reported by IAB Russia and covered by Sostav; forecast figures in the same blog claim are not verified here. Not a 2026 market state; not original research by the «Аудио-Реклама•ru» studio.",
       "last_reviewed": "2026-11-07",
       "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
       "source_url": "https://www.sostav.ru/publication/digital-audio-36115.html"
