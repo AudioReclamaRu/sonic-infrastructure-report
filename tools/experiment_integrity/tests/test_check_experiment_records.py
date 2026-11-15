@@ -166,6 +166,43 @@ class ExperimentRecordTests(unittest.TestCase):
         errors = module.validate_record(record)
         self.assertTrue(any("requires release_approval" in x for x in errors))
 
+    def test_external_release_passes_only_with_approval_and_real_record(self):
+        record = self.valid_record()
+        record["synthetic_fixture"] = False
+        record["status"] = "COMPLETED"
+        record["started_at"] = "2026-11-15T20:10:00Z"
+        record["completed_at"] = "2026-11-15T20:11:00Z"
+        record["results"] = {
+            "run_id": "SYNTHETIC-RUN-004",
+            "observations": ["Approved synthetic validator fixture; not a studio study."],
+            "measurements": ["Six lens checks recorded."],
+            "limitations": ["Validator test only."],
+            "verdict": "SUPPORTED"
+        }
+        record["external_release"] = True
+        record["release_approval"] = {
+            "approved_by": "SYNTHETIC-TEST-APPROVER",
+            "approved_at": "2026-11-15T20:12:00Z",
+            "approval_ref": "SYNTHETIC-TEST-APPROVAL"
+        }
+        self.assertEqual([], module.validate_record(record))
+
+    def test_completed_applicable_lens_needs_evidence(self):
+        record = self.valid_record()
+        record["status"] = "COMPLETED"
+        record["started_at"] = "2026-11-15T20:10:00Z"
+        record["completed_at"] = "2026-11-15T20:11:00Z"
+        record["results"] = {
+            "run_id": "SYNTHETIC-RUN-005",
+            "observations": [],
+            "measurements": [],
+            "limitations": ["Validator only."],
+            "verdict": "INCONCLUSIVE"
+        }
+        record["six_lenses"]["semiotics"]["evidence"] = []
+        errors = module.validate_record(record)
+        self.assertTrue(any("requires evidence for APPLICABLE lens" in x for x in errors))
+
     def test_synthetic_fixture_cannot_be_externally_released(self):
         record = self.valid_record()
         record["external_release"] = True
