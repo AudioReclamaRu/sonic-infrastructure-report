@@ -9,6 +9,8 @@ related:
   - problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md
   - problem-solutions/MEASUREMENT_PROTOCOL.md
   - standards/verification-chain.md
+  - schemas/experiment-record.schema.json
+  - tools/check_experiment_records.py
 ---
 
 # Междисциплинарный протокол экспериментальной целостности
@@ -191,6 +193,8 @@ related:
 
 Статус `NOT_ASSESSED` не скрывать внутри «нет данных». Если существенный риск остаётся неоценённым, результат ограничивается или эксперимент ставится на `HOLD`.
 
+Для статусов `COMPLETED`, `REPRODUCED` и `FAILED` машинный контракт проекта требует, чтобы все шесть линз были оценены как `APPLICABLE` с evidence или `NOT_APPLICABLE` с обоснованием. Оставлять `NOT_ASSESSED` или `HOLD` в завершённой записи нельзя. Любая линза `HOLD` переводит всю запись в `HOLD`.
+
 ## 6. Ворота результата
 
 Эксперимент можно считать **воспроизводимым**, когда другой подготовленный исследователь может повторить процедуру по сохранённым данным, версиям, настройкам и командам.
@@ -219,6 +223,9 @@ related:
 Этот стандарт задаёт общий слой и не заменяет предметные методы:
 
 - `research/EXPERIMENT_TEMPLATE.md` — карточка планирования и отчёта;
+- `research/experiments/README.md` — каталог записей и статусы;
+- `schemas/experiment-record.schema.json` — машиночитаемый контракт;
+- `tools/check_experiment_records.py` и `tools/experiment_integrity/tests/` — критические проверки и регрессии;
 - `problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md` — контролируемые тесты записи и обработки голоса;
 - `problem-solutions/MEASUREMENT_PROTOCOL.md` — измерение спроса и поискового эффекта;
 - `standards/verification-chain.md` — криптографическая целостность голосового материала;
