@@ -53,6 +53,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - evidence/E-2026-045.md — verified 2026-11-15 project-case and sound-engineer interview evidence for recording coordination, editing, spatial/dynamic/frequency processing and target-system deliverables.
 - evidence/E-2026-046.md — 2026-11-15 first-party owner confirmation: almost every narrator in the database records at a local studio; these locations constitute the distributed studio network. This is qualitative owner confirmation, not a quantified node roster.
 - research/STUDIO_TECHNICAL_PASSPORT_2026-11-15.md — network-aware technical passport: distributed recording nodes, production coordination, node profiles, customer delivery and remaining network-wide engineering gaps.
+- research/STUDIO_NETWORK_NODE_PASSPORT_TEMPLATE_2026-11-15.md — draft data-collection template for one distributed studio node: location, room, signal chain, local master, remote session, processing roles, QC and file handoff. Not an approved qualification standard.
 - problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md — reproducible audio-recording and processing test protocol.
 - problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md — intake brief for video voiceover projects.
 - problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md — audited claims in the 2020 article.
