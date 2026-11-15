@@ -1,6 +1,6 @@
 ---
 type: standard
-date: 2026-11-14
+date: 2026-11-15
 lang: ru
 related: [problem-solutions/README.md, problem-solutions/QUERY_BACKLOG.json, geo/reports/visibility-baseline-2026-11-11.md, standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md, research/EXPERIMENT_TEMPLATE.md]
 ---
