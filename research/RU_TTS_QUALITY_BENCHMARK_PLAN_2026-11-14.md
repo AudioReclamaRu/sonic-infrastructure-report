@@ -1,6 +1,6 @@
 ---
 type: doc
-date: 2026-11-14
+date: 2026-11-15
 lang: ru
 status: proposal
 related: [standards/X15-OPEN-SOURCE-COMMUNITY.md, problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md, problem-solutions/README.md, FACT-METHOD.md, standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md, research/EXPERIMENT_TEMPLATE.md]
