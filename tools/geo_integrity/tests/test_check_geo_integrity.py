@@ -188,7 +188,7 @@ class GeoIntegrityTests(unittest.TestCase):
 
     def test_invalid_csv_row_width_fails(self) -> None:
         (self.geo / "knowledge" / "query-matrix.csv").write_text(
-            "id,value\\n1,test,extra\\n", encoding="utf-8"
+            "id,value\n1,test,extra\n", encoding="utf-8"
         )
         errors, _, _ = gate.audit_local(self.root, self.base)
         self.assertTrue(any(
