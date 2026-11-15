@@ -69,27 +69,27 @@ class GeoIntegrityTests(unittest.TestCase):
                 continue
             asset.parent.mkdir(parents=True, exist_ok=True)
             if filename == "knowledge/blog-facts.json":
-                sample = json.dumps(blog_fixture) + "\\n"
+                sample = json.dumps(blog_fixture) + "\n"
             elif filename == "knowledge/evidence-ledger.json":
-                sample = json.dumps(ledger_fixture) + "\\n"
+                sample = json.dumps(ledger_fixture) + "\n"
             elif filename == "knowledge/combined.json":
                 sample = json.dumps({
                     "blog_facts": blog_fixture,
                     "evidence_ledger": ledger_fixture,
-                }) + "\\n"
+                }) + "\n"
             elif filename == "knowledge/evidence-ledger.csv":
                 sample = (
-                    "id,status,phase3_classification\\n"
-                    "BF-TEST-001,verified,verified\\n"
+                    "id,status,phase3_classification\n"
+                    "BF-TEST-001,verified,verified\n"
                 )
             elif filename in gate.MACHINE_JSON_FILES:
-                sample = '{"fixture": true}\\n'
+                sample = '{"fixture": true}\n'
             elif filename in gate.MACHINE_XML_FILES:
-                sample = '<?xml version="1.0" encoding="UTF-8"?>\\n<fixture />\\n'
+                sample = '<?xml version="1.0" encoding="UTF-8"?>\n<fixture />\n'
             elif filename in gate.MACHINE_CSV_FILES:
-                sample = "id,value\\n1,test\\n"
+                sample = "id,value\n1,test\n"
             else:
-                sample = "fixture\\n"
+                sample = "fixture\n"
             asset.write_text(sample, encoding="utf-8")
 
     def _public_fixture(self):
@@ -163,7 +163,7 @@ class GeoIntegrityTests(unittest.TestCase):
         def fake_get(url, attempts, timeout, allowed_status=()):
             parsed = urllib.parse.urlsplit(url)
             if parsed.path.endswith("/pricing.json"):
-                return 200, b'{"different": true}\\n', url
+                return 200, b'{"different": true}\n', url
             return normal_get(url, attempts, timeout, allowed_status)
 
         with patch.object(gate, "_http_get", side_effect=fake_get):
@@ -239,8 +239,8 @@ class GeoIntegrityTests(unittest.TestCase):
     def test_evidence_ledger_csv_must_match_json(self) -> None:
         path = self.geo / "knowledge" / "evidence-ledger.csv"
         path.write_text(
-            "id,status,phase3_classification\\n"
-            "BF-TEST-001,cited_in_blog,verified\\n",
+            "id,status,phase3_classification\n"
+            "BF-TEST-001,cited_in_blog,verified\n",
             encoding="utf-8",
         )
         errors, _, _ = gate.audit_local(self.root, self.base)
