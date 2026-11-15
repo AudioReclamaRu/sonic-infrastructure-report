@@ -4,9 +4,9 @@ date: 2026-11-14
 lang: mul
 ---
 
-## MANDATORY PRIORITY — AUDIO-RECLAMA EXPERT KNOWLEDGE INFRASTRUCTURE
+## CURRENT OWNER MANDATE — GROW AUDIO-RECLAMA.RU SITE TRAFFIC
 
-Before any research, engineering, editorial, SEO/GEO, standards, tooling or distribution task, read:
+Before any research, engineering, editorial, SEO/GEO, standards, tooling or distribution task, read the owner-confirmed [SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md](strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md). The primary AI-agent role is active growth research and execution for Audio-Reclama.ru, not merely technical checking or document preparation. The owner is the concrete final reviewer and decision-maker here in the working dialogue. Also read:
 1. standards/BRAND_AND_SITE_NAMING.md — mandatory exact naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru.
 2. strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
 3. strategy/ATTENTION_ACQUISITION_SYSTEM.md
@@ -17,14 +17,15 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling or dist
 8. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
 9. problem-solutions/REFERENCE_MODELS.md
 10. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
+11. evidence/E-2026-047.md — owner-confirmed roles: «Аудио-Реклама•ru» is accountable for final control; the owner is the specific reviewer; the assistant's primary mandate is increasing site traffic.
 
 Canonical names are mandatory everywhere: the brand is «Аудио-Реклама•ru»; the website is Audio-Reclama.ru. Never abbreviate the Latin website name; always use the full Audio-Reclama.ru form. Follow standards/BRAND_AND_SITE_NAMING.md.
 
-We are building a connected, evidence-backed expert knowledge infrastructure, not a blog or content factory. The repository is the canonical, versioned knowledge base. Develop reusable knowledge objects, relationships, diagnostics, standards, experiments, tools and verified decisions. A document or post is only one possible view of that knowledge.
+We are building a connected, evidence-backed growth system. Its primary business outcome is an increase in relevant visits to Audio-Reclama.ru and qualified enquiries. The repository is the canonical, versioned operating memory and knowledge infrastructure that supports research, acquisition, execution and measurement; it is a means, not the traffic-growth goal itself. Develop reusable evidence, tools, experiments, campaigns and verified decisions. A document or post is only one possible asset in the growth system.
 
 **Distribution boundary:** the repository is the canonical, versioned knowledge base and operating memory; update it directly when useful work is supported. The website Audio-Reclama.ru is read-only for this workflow: inspect it as the official source of company context, services and current commercial facts, but never edit it, publish to it, or deploy changes to it. Do not create or run GitHub Pages deployments or other web mirrors from this repository. Dzen is a distinct editorial surface of the studio: prepare a separate native editorial adaptation when a publication need is selected or the owner requests it; do not mirror the repository, auto-publish, or assume a commit equals publication. At publication time, identify a supported posting route and verify the resulting public URL before calling it published. Preserve the four observed Dzen streams (commercial/service, craft/education, market/technology, authorial/philosophical); do not force every item into a sales CTA. The Telegram channel «Культура Голоса» is a separate optional venue and must never be conflated with Dzen or its publishing process. Third-party open-source contributions remain governed by standards/X15-OPEN-SOURCE-COMMUNITY.md and must be useful independently of the brand. No mass automated comments, issues, PRs, stars or follows.
 
-Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance are secondary signals, not the architecture's purpose.
+Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance, relevant site sessions and qualified enquiries are primary growth outcomes. Knowledge quality, content volume, links and channel reach are supporting inputs whose value must be tested against real visits and enquiries.
 
 
 # AGENTS.md — how to work in this repository
@@ -143,9 +144,9 @@ state.
 - Problem-solving records belong in problem-solutions/ and follow problem-solutions/TEMPLATE.md, but the unit of work may instead be evidence, a diagnostic protocol, standard, tool, experiment, case, entity, interface, dataset or a relationship between existing objects.
 - Before creating anything, inspect the repository's current knowledge graph and related evidence/standards/tools. Check public Audio-Reclama.ru pages only to understand official company context, service scope or an existing public claim; those pages are not targets for editing or publication.
 - Record provenance, status, date, limitations and links to related objects. Keep facts, observations, calculations, professional recommendations, positions and hypotheses distinct.
-- The query backlog contains hypotheses unless demand is explicitly measured with source, region, date and method. Search volume is not the primary measure of infrastructure value.
+- The query backlog contains hypotheses unless demand is explicitly measured with source, region, date and method. Search volume is an input signal, not proof of visits. The growth outcome is measured Audio-Reclama.ru traffic and qualified enquiries; never substitute keyword estimates or impressions for actual visitors.
 - Do not imply that the «Аудио-Реклама•ru» studio sells repair/restoration/video services unless the owner confirms the current product scope.
-- The repository is canonical. Dzen is a separate optional editorial surface: prepare native adaptations only when a publication need is selected, never mirror or auto-export the knowledge base, and verify the public URL after posting. Telegram «Культура Голоса» is a different independent channel. The Audio-Reclama.ru website remains read-only; no website publishing or GitHub Pages deployment is permitted.
+- The repository is canonical. Dzen is a separate editorial surface and a potential acquisition channel: proactively discover relevant publication opportunities, prepare native adaptations, respect the channel's four editorial streams, and verify the public URL after posting. Never mirror or auto-export the knowledge base. Telegram «Культура Голоса» is a different independent channel. The Audio-Reclama.ru website remains read-only under the current workflow; no website publishing or GitHub Pages deployment without separate direct authorization for the specific change. This boundary does not reduce the mandate to grow visits through other available routes.
 
 ## The frontmatter contract (all hand-authored .md)
 
