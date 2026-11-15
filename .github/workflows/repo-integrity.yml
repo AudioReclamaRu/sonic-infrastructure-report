@@ -50,6 +50,12 @@ jobs:
       - name: character-voice passport safeguards
         run: python tools/check_character_voice_passport.py
 
+      - name: six-lens experiment record gate
+        run: python tools/check_experiment_records.py
+
+      - name: experiment record validator regression tests
+        run: python -m unittest discover -s tools/experiment_integrity/tests -v
+
       - name: canonical brand and website naming
         run: python tools/check_brand_naming.py
 
