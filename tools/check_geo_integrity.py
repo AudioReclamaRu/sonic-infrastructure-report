@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import csv
 import hashlib
 import json
 import re
@@ -31,8 +32,42 @@ DEFAULT_BASE_URL = (
 SITEMAP_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 BUILD_SHA_RE = re.compile(r"^[0-9a-f]{7,40}$", re.IGNORECASE)
 # A robots.txt inside /geo/ is not the host's authoritative /robots.txt.
-# Only machine resources genuinely served from this project path are listed.
-MACHINE_FILES = ("llms.txt", "llms-full.txt", "sitemap.xml")
+# These machine-readable assets are served from this project path and are
+# compared byte-for-byte in public mode. The host-root robots policy is checked
+# separately below.
+MACHINE_FILES = (
+    "llms.txt",
+    "llms-full.txt",
+    "sitemap.xml",
+    "pricing.json",
+    "faq.json",
+    "feed.json",
+    "knowledge/combined.json",
+    "knowledge/blog-facts.json",
+    "knowledge/evidence-ledger.json",
+    "knowledge/case-studies.json",
+    "knowledge/query-matrix.json",
+    "knowledge/evidence-ledger.csv",
+    "knowledge/query-matrix.csv",
+    "rss.xml",
+    "opensearch.xml",
+    "a7f3c9d2e4b6481fa0c5d7e9b2f4a6c8.txt",
+)
+MACHINE_JSON_FILES = frozenset({
+    "pricing.json",
+    "faq.json",
+    "feed.json",
+    "knowledge/combined.json",
+    "knowledge/blog-facts.json",
+    "knowledge/evidence-ledger.json",
+    "knowledge/case-studies.json",
+    "knowledge/query-matrix.json",
+})
+MACHINE_XML_FILES = frozenset({"sitemap.xml", "rss.xml", "opensearch.xml"})
+MACHINE_CSV_FILES = frozenset({
+    "knowledge/evidence-ledger.csv",
+    "knowledge/query-matrix.csv",
+})
 # These agents are relevant to search/answer-engine discovery. A robots denial
 # for any sitemap page or machine endpoint is a public-verification failure.
 INDEXING_CRAWLERS = (
@@ -327,8 +362,37 @@ def audit_local(
         )
 
     for filename in MACHINE_FILES:
-        if not (geo_dir / filename).is_file():
+        asset_path = geo_dir / filename
+        if not asset_path.is_file():
             errors.append(f"missing machine-readable asset: geo/{filename}")
+            continue
+        try:
+            body = asset_path.read_bytes()
+            if not body.strip():
+                raise ValueError("asset is empty")
+            decoded = body.decode("utf-8")
+            if filename in MACHINE_JSON_FILES:
+                parsed = json.loads(decoded)
+                if not isinstance(parsed, (dict, list)):
+                    raise ValueError("JSON top-level value must be an object or array")
+            elif filename in MACHINE_XML_FILES:
+                ET.fromstring(body)
+            elif filename in MACHINE_CSV_FILES:
+                rows = csv.reader(decoded.splitlines())
+                headers = next(rows, None)
+                if not headers or any(not item.strip() for item in headers):
+                    raise ValueError("CSV has no valid header row")
+                for row_number, row in enumerate(rows, start=2):
+                    if len(row) != len(headers):
+                        raise ValueError(
+                            f"CSV row {row_number} has {len(row)} fields; "
+                            f"expected {len(headers)}"
+                        )
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError,
+                ET.ParseError, csv.Error, ValueError, StopIteration) as exc:
+            errors.append(
+                f"invalid machine-readable asset geo/{filename}: {exc}"
+            )
 
     if len(build_shas) > 1:
         summary = ", ".join(
@@ -467,6 +531,8 @@ def audit_public(
                 errors.append(f"{url}: public file differs from local artifact")
             if filename == "sitemap.xml":
                 remote_urls = _read_sitemap_bytes(body)
+                if len(remote_urls) != len(set(remote_urls)):
+                    errors.append(f"{url}: public sitemap contains duplicate <loc> URLs")
                 if set(remote_urls) != set(urls):
                     errors.append(f"{url}: public sitemap URL set differs from local")
         except Exception as exc:
