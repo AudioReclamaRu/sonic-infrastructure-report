@@ -35,7 +35,7 @@ LATIN_TRUNCATION_PATTERN = re.compile(
 )
 # This exact legacy schema identifier is a machine key, not a brand name.
 TECHNICAL_SCHEMA_ID_PATTERN = re.compile(
-    r"(?i)(?<![A-Za-z0-9_.-])audio-reclama-geo/combined/1(?![A-Za-z0-9_.-])"
+    r"(?i)(?<![A-Za-z0-9_.-])audio-reclama-geo/combined/1(?![A-Za-z0-9_-])"
 )
 DOMAIN_AS_ENTITY_PATTERN = re.compile(
     r"(?iu)(?:компания|студия|бренд|company|studio|brand)"
