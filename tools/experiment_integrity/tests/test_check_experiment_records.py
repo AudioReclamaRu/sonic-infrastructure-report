@@ -238,6 +238,30 @@ class ExperimentRecordTests(unittest.TestCase):
         self.assertEqual(set(module.LENSES), set(six_required))
         self.assertEqual("https://json-schema.org/draft/2020-12/schema", schema["$schema"])
 
+        lens_gates = schema["$defs"]["lens"]["allOf"]
+        expected = {
+            "APPLICABLE": "check",
+            "NOT_APPLICABLE": "rationale",
+            "NOT_ASSESSED": "rationale",
+            "HOLD": "hold_reason",
+        }
+        for gate in lens_gates:
+            state = gate["if"]["properties"]["status"]["const"]
+            self.assertIn(expected[state], gate["then"]["required"])
+
+        completed_lenses = schema["allOf"][0]["then"]["properties"]["six_lenses"]["properties"]
+        self.assertEqual(set(module.LENSES), set(completed_lenses))
+        for lens in module.LENSES:
+            self.assertEqual(
+                ["APPLICABLE", "NOT_APPLICABLE"],
+                completed_lenses[lens]["properties"]["status"]["enum"]
+            )
+            evidence_rule = completed_lenses[lens]["allOf"][0]["then"]["properties"]["evidence"]
+            self.assertEqual(1, evidence_rule["minItems"])
+
+        synthetic_condition = schema["allOf"][3]["if"]
+        self.assertIn("synthetic_fixture", synthetic_condition["required"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
