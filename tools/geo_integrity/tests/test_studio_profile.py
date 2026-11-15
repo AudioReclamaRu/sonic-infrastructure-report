@@ -42,7 +42,7 @@ class StudioProfileTests(unittest.TestCase):
 
     def test_unpublished_details_are_labeled_as_not_disclosed(self):
         self.assertGreaterEqual(len(self.profile["technical_information_not_disclosed_in_reviewed_pages"]), 5)
-        self.assertIn("не означает отсутствие", self.profile["note"])
+        self.assertIn("не следует трактовать как отсутствие", self.profile["note"])
 
     def test_profile_page_is_linked_from_machine_files(self):
         expected = "knowledge/studio-profile"
