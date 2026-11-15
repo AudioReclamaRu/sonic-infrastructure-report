@@ -89,6 +89,6 @@
     "hashes": []
   },
   "analysis_plan": "Pre-register comparisons, uncertainty, exclusions, missing-data handling and sensitivity checks.",
-  "synthetic": false,
-  "external_release": false
+  "external_release": false,
+  "synthetic_fixture": false
 }
