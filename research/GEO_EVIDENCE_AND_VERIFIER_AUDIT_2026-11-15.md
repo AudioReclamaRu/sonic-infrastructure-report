@@ -186,14 +186,16 @@ Workflow .github/workflows/geo-public-verify.yml предназначен для
 
 Ниже зафиксирован CI-срез на 2026-11-15 20:37 UTC для исходной версии ветки непосредственно перед этим дополнением отчёта:
 
-- **repo-integrity #386 — PASS** на точном head `2df44e70aeface24075af5b1979837dcfc212120` ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43763600834)). В job завершились compile, frontmatter, IVR safeguards, canonical naming, GEO machine-layer consistency, AI-Crawler Integrity Gate и GEO regression tests. Лог gate: 25 sitemap pages, 16 machine endpoints; regression suite — 36 тестов, `OK`.
-- **AI response and document naming gate #66 — PASS** на том же SHA ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43763600871)). Проверены 41 изменённый текстовый вход и отдельный self-test ответа.
+Ниже зафиксирован последний завершённый CI-срез перед этим обновлением аудиторского отчёта:
+
+- **repo-integrity #387 — PASS** на точном head `e282a7307c8df260e9cc4776ab934c5580bc9c6e` ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43763728782)). В job завершились compile, frontmatter, IVR safeguards, canonical naming, GEO machine-layer consistency, AI-Crawler Integrity Gate и GEO regression tests. Лог gate: 25 sitemap pages, 16 machine endpoints; regression suite — 36 тестов, `OK`.
+- **AI response and document naming gate #67 — PASS** на том же SHA ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43763728862)). Проверены 41 изменённый текстовый вход и отдельный self-test ответа.
 - Дополнительно CI подтвердил наличие frontmatter у всех 153 отслеживаемых hand-authored Markdown-файлов.
 - Эти проверки подтверждают структуру, внутреннюю согласованность представлений и наличие supporting IDs в известных реестрах. Они не подтверждают истинность каждого исходного коммерческого утверждения, договорные права, удобство для реальных пользователей или индексацию поисковыми системами.
-- На момент проверки PR #5 открыт, не слит и mergeable; head — `2df44e70aeface24075af5b1979837dcfc212120`, 128 коммитов, 44 изменённых файла. Сравнение с `main`: 0 коммитов позади, 128 впереди.
+- На момент этого CI-среза PR #5 открыт, не слит и mergeable; head — `e282a7307c8df260e9cc4776ab934c5580bc9c6e`, 129 коммитов, 44 изменённых файла. Сравнение с `main`: 0 коммитов позади, 129 впереди.
 - Public deployment verifier не запускался; GitHub Pages deployment, merge и внешняя публикация не выполнялись. Наличие workflow в PR не является выполнением проверки публичного deployment.
 
-Оба CI результата относятся к одному и тому же текущему head SHA. Это локальная проверка версии PR; публичное совпадение артефактов с deployment и фактическая индексация остаются непроверенными.
+Оба CI результата относятся к одному и тому же предыдущему head SHA. Последующее изменение только этого исследовательского отчёта создаст новый head и требует отдельной проверки; публичное совпадение артефактов с deployment и фактическая индексация остаются непроверенными.
 
 ### Междисциплинарная методика
 
