@@ -458,10 +458,15 @@ def audit_local(
         if not ledger_rows:
             errors.append("evidence-ledger.json contains no rows")
         else:
-            expected_headers = list(ledger_rows[0].keys())
+            expected_headers: list[str] = []
+            for ledger_row in ledger_rows:
+                for field_name in ledger_row:
+                    if field_name not in expected_headers:
+                        expected_headers.append(field_name)
             if csv_headers != expected_headers:
                 errors.append(
-                    "evidence-ledger.csv header does not match evidence-ledger.json fields"
+                    "evidence-ledger.csv header does not match the union of "
+                    "evidence-ledger.json fields"
                 )
             csv_by_id: dict[str, dict[str, str | None]] = {}
             for row in csv_rows:
