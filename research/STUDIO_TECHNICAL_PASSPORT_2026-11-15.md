@@ -12,7 +12,11 @@ related:
 
 # Технический паспорт студии «Аудио-Реклама•ru»: открытые доказательства и пробелы
 
-**Статус:** исследовательская сводка по открытым первичным страницам на 15.11.2026; не является внутренней инвентаризацией аппаратной и не заменяет подтверждение владельца/звукорежиссёра.
+Status: Research synthesis / not an approved technical standard
+Type: Research
+Audience: Studio owner, studio operations, audio engineering
+Last updated: 2026-11-15
+
 
 ## 1. Главный вывод
 
