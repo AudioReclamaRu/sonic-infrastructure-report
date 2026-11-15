@@ -440,5 +440,79 @@ class GeoIntegrityTests(unittest.TestCase):
         self.assertTrue(any("outside GEO base" in item for item in errors))
 
 
+
+class GeoEvidenceRegistryContractTests(unittest.TestCase):
+    """Protect evidence scope/status for historically sensitive GEO claims."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.root = Path(__file__).resolve().parents[3] / "geo" / "knowledge"
+        cls.blog = json.loads(
+            (cls.root / "blog-facts.json").read_text(encoding="utf-8")
+        )
+        cls.ledger = json.loads(
+            (cls.root / "evidence-ledger.json").read_text(encoding="utf-8")
+        )
+        cls.facts = {item["id"]: item for item in cls.blog["facts"]}
+        cls.rows = {item["id"]: item for item in cls.ledger["rows"]}
+
+    def test_iab_2017_reach_and_time_range_are_not_overstated(self) -> None:
+        fact = self.facts["BF-2018-001"]
+        row = self.rows["BF-2018-001"]
+        self.assertEqual(fact["phase3_classification"], "verified")
+        self.assertEqual(fact["verification_status"], "verified")
+        self.assertIn("65 млн", fact["claim"])
+        self.assertIn("23 млн", fact["claim"])
+        self.assertIn("3,5–5", fact["claim"])
+        self.assertNotIn("уникальных слушателей", fact["claim"].lower())
+        self.assertIn("не переносить", row["limitations"].lower())
+        self.assertEqual(row["status"], "verified")
+
+    def test_iab_podcast_us_taxonomy_remains_scope_limited(self) -> None:
+        fact = self.facts["BF-2020-003"]
+        row = self.rows["BF-2020-003"]
+        self.assertEqual(fact["phase3_classification"], "partially_verified")
+        self.assertEqual(row["phase3_classification"], "partially_verified")
+        evidence = row["phase3_evidence"]
+        for share in ("66%", "27%", "6%", "1%"):
+            self.assertIn(share, evidence)
+        self.assertIn("США", row["applicability_scope"])
+        self.assertIn("не переносить на Россию", row["applicability_scope"])
+        self.assertIn("не проводила аудит", evidence)
+
+    def test_iab_market_values_are_labeled_forecasts_not_actuals(self) -> None:
+        fact = self.facts["BF-2020-005"]
+        row = self.rows["BF-2020-005"]
+        self.assertEqual(fact["phase3_classification"], "partially_verified")
+        self.assertEqual(row["phase3_classification"], "partially_verified")
+        self.assertIn("прогноз", fact["claim"].lower())
+        self.assertIn("3,7 млрд", row["phase3_evidence"])
+        self.assertIn("6,1 млрд", row["phase3_evidence"])
+        self.assertIn("761,5 млн", row["phase3_evidence"])
+        self.assertIn("не являются фактическими результатами", fact["claim"])
+
+    def test_data_insight_radio_multiplier_is_not_promoted_to_verified(self) -> None:
+        fact = self.facts["BF-2020-006"]
+        row = self.rows["BF-2020-006"]
+        self.assertEqual(fact["phase3_classification"], "partially_verified")
+        self.assertEqual(row["phase3_classification"], "partially_verified")
+        self.assertIn("1 млрд", fact["claim"])
+        self.assertIn("17 млрд", fact["claim"])
+        self.assertIn("нельзя считать подтверждённой", row["phase3_evidence"])
+        self.assertIn("расходы по каналам", row["phase3_evidence"])
+        self.assertIn("ROI", row["phase3_evidence"])
+
+    def test_blog_fact_status_and_classification_match_ledger(self) -> None:
+        for fact_id, fact in self.facts.items():
+            row = self.rows.get(fact_id)
+            self.assertIsNotNone(row, f"{fact_id} has no ledger row")
+            self.assertEqual(fact["verification_status"], row["status"], fact_id)
+            self.assertEqual(
+                fact["phase3_classification"],
+                row["phase3_classification"],
+                fact_id,
+            )
+
+
 if __name__ == "__main__":
     unittest.main()
