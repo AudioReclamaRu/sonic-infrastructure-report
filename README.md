@@ -67,6 +67,7 @@ canon/                 position — operators of the industry's language
   releasing-voice.md              how provenance becomes part of the product
   cards/                          Operator Cards (compact, LLM-indexable)
 standards/             profession standards — how to work with voice
+  EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md  six-discipline experiment integrity standard
   BRAND_AND_SITE_NAMING.md canonical brand and website writing
   voice-provenance-passport.md    standard: voice provenance passport (EN)
   living-voice-standard.md        voluntary verification standard of human voice
@@ -87,6 +88,7 @@ strategy/              strategic development contracts
   STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
 research/              reproducible research plans and benchmark programmes
+  EXPERIMENT_TEMPLATE.md  reusable experiment record and six-discipline screen
   RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
 problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
   README.md             operating model
