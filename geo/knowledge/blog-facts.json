@@ -1,9 +1,9 @@
 {
-  "registry": "audio-reclama.ru blog facts (GEO knowledge layer)",
-  "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Audio-Reclama.ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
+  "registry": "www.audio-reclama.ru blog facts (GEO knowledge layer)",
+  "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Аудио-Реклама•ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
   "registry_updated": "2026-11-15",
   "method_notes": [
-    "Do not present third-party statistics as Audio-Reclama.ru original research unless explicitly stated.",
+    "Do not present third-party statistics as Аудио-Реклама•ru original research unless explicitly stated.",
     "Each entry links to the blog article (first-party publication) and names cited primary sources when available in the article.",
     "verification_status: verified = primary source independently confirmed; cited_in_blog = claim appears in blog with named source or as reported data but primary source not independently re-verified in this pass; blog_milestone = project/progress fact reported in a blog case (may differ from later canonical proof); editorial_definition = definitional/explanatory statement from our blog article.",
     "Limitations: figures may be dated; some articles are forecasts/estimates as of publication date. Do not use outdated price claims from blog posts as current pricing. Outdated prices mentioned inside historical blog articles are intentionally excluded from this registry.",
@@ -122,7 +122,7 @@
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Частично подтверждено (scope-limited): оценка IAB Russia 465,3 млн руб. за 2018 год (vs 155 млн в 2017) подтверждается обзором Sostav от 12.03.2019 со ссылкой на IAB Russia и указанием источников/методологии. Прогнозные цифры 2019/2022 из той же блог-формулировки требуют отдельной первичной проверки. Исторический контекст; не состояние рынка 2026; не оригинальное исследование Audio-Reclama.ru.",
+      "limitations": "Частично подтверждено (scope-limited): оценка IAB Russia 465,3 млн руб. за 2018 год (vs 155 млн в 2017) подтверждается обзором Sostav от 12.03.2019 со ссылкой на IAB Russia и указанием источников/методологии. Прогнозные цифры 2019/2022 из той же блог-формулировки требуют отдельной первичной проверки. Исторический контекст; не состояние рынка 2026; не оригинальное исследование Аудио-Реклама•ru.",
       "business_priority": 3,
       "phase3_classification": "partially_verified",
       "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
@@ -181,7 +181,7 @@
     },
     {
       "id": "BF-VNUKOVO-001",
-      "claim": "В кейсе блога Audio-Reclama.ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
+      "claim": "В кейсе блога Аудио-Реклама•ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
       "topic": [
         "airport-audio",
         "transport",
@@ -192,7 +192,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "first-party blog case"
         }
       ],
@@ -330,7 +330,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial explanation"
         }
       ],
@@ -377,7 +377,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial explanation"
         }
       ],
@@ -399,7 +399,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial recommendation"
         }
       ],
@@ -421,7 +421,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial explanation"
         }
       ],
@@ -470,7 +470,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial explanation"
         }
       ],
@@ -492,7 +492,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial explanation"
         }
       ],
@@ -515,7 +515,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial explanation"
         }
       ],
@@ -526,7 +526,7 @@
     },
     {
       "id": "BF-CREATIVE-001",
-      "claim": "В блоге Audio-Reclama.ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
+      "claim": "В блоге Аудио-Реклама•ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
       "topic": [
         "audio-advertising",
         "creative",
@@ -537,7 +537,7 @@
       "blog_date": null,
       "cited_primary_sources": [
         {
-          "name": "Audio-Reclama.ru",
+          "name": "Аудио-Реклама•ru",
           "type": "editorial advice"
         }
       ],
