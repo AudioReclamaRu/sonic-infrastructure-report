@@ -1269,6 +1269,48 @@
         "phase3_evidence": "Homepage fetched 2026-11-07 shows both “622 диктора” and “620 дикторов” in different blocks.",
         "applicability_scope": "Unresolved inconsistency on main site; do not cite either number as verified until owner confirms.",
         "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-AUDIOBOOKS-SERVICE",
+        "claim": "Официальная страница аудиопродакшна описывает запись аудиокниг, аудиогидов и обучающих курсов, перечисляет форматы и примеры работ. В индексированном снимке страницы также видны почасовые ставки для отдельных примеров.",
+        "claim_type": "first_party_service_observation",
+        "entity": "Аудио-Реклама•ru",
+        "primary_source_url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "supporting_source": "https://www.audio-reclama.ru",
+        "source_date": "",
+        "last_verified": "",
+        "status": "observed_verify_on_source",
+        "limitations": "Снимок отдельной страницы, доступный в ходе аудита 2026-11-15, поисковый индекс помечал как просканированный примерно тремя месяцами ранее. Главная страница в более свежем снимке (около шести дней) содержит раздел «Аудиокниги» и пример проекта. Детальные формулировки и показанные почасовые ставки не подтверждены как текущие; не переносить суммы в действующий прайс и не использовать как актуальные цены без live-проверки страницы и подтверждения владельца.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix.json",
+        "provenance": "First-party service page indexed snapshot → audit 2026-11-15; homepage snapshot independently shows the Audiobooks menu item and a 48-audiobook project example. No live fetch of the detailed service page was available in this pass.",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "The indexed service-page snapshot describes single-voice reading, role-based performance, radio-play format, audiobooks, audio guides, and e-learning. It lists example hourly rates from 3,500 to 50,000 RUB depending on the listed work/sample. The search result reported a crawl age of about three months. The homepage result reported a crawl age of about six days and shows the Audiobooks category and a Moscow Business School project described as 48 audiobooks in summary format. The service category is publicly represented; the detailed page and prices are not a live current-price check.",
+        "applicability_scope": "Supports a first-party public representation of audiobook, audio-guide and e-learning production. Does not establish the present availability or current hourly tariff. Treat displayed rates as a stale page snapshot, not current commercial facts.",
+        "last_reviewed": "2026-11-15",
+        "primary_source_name": "Озвучка аудиокниг — официальная страница аудиопродакшна",
+        "source_url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+      },
+      {
+        "id": "CF-VIDEO-VOICEOVER-SERVICE",
+        "claim": "Официальная страница «Озвучка видео» описывает публично представленный набор работ: кастинг дикторов и актёров дубляжа, атмосферу и шумы, авторскую музыку, саунд-дизайн, закадровую озвучку и lipsync; перечислены примеры роликов.",
+        "claim_type": "first_party_service_observation",
+        "entity": "Аудио-Реклама•ru",
+        "primary_source_url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "supporting_source": "https://www.audio-reclama.ru",
+        "source_date": "",
+        "last_verified": "",
+        "status": "observed_verify_on_source",
+        "limitations": "Индексированный снимок отдельной страницы, доступный в аудите 2026-11-15, поисковый индекс помечал как просканированный примерно четырьмя месяцами ранее. Более свежий снимок главной страницы (около шести дней) показывает раздел «Видеопродакшн» и направление видеороликов, но не подтверждает текущую полноту состава услуги и тарифы. Не трактовать это наблюдение как подтверждение всех видов видеопроизводства, текущих расценок или права на использование перечисленных клиентских материалов; актуальный scope требует подтверждения владельца.",
+        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix.json",
+        "provenance": "First-party video voice-over page indexed snapshot → audit 2026-11-15; homepage snapshot independently shows a Video Production menu item and video-related project examples. No live fetch of the detailed service page was available in this pass.",
+        "business_priority": 2,
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "The indexed service-page snapshot lists casting of speakers and dubbing actors, atmosphere and sound effects, original music, sound design, voice-over and lipsync, plus examples for Avansa, IGLA, JOKASAFE and SpeedFit. The search result reported a crawl age of about four months. The homepage result reported a crawl age of about six days and shows Video Production and video project examples. This is evidence of public presentation on the site, not a live confirmation of current service scope, pricing, or permissions.",
+        "applicability_scope": "Use only as an observation that the public site has represented video voice-over services. Do not infer current end-to-end video-production capacity or quote current prices from this indexed snapshot. Owner confirmation and a live page check are required before a commercial claim.",
+        "last_reviewed": "2026-11-15",
+        "primary_source_name": "Озвучка видео — официальная страница аудиопродакшна",
+        "source_url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       }
     ],
     "phase3_classifications": {
@@ -1439,11 +1481,11 @@
         "example_queries": "озвучка ролика цена; озвучка презентации; голос для видео",
         "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-rolika-cena/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-prezentacii-cena/",
         "target_main_url": "https://www.audio-reclama.ru (service pages)",
-        "supporting_facts": "CF-AUDIOPLUS-ORDER (context)",
-        "gap": "Отдельные подтверждённые цены/условия по услугам видео/презентации; не экстраполировать из Аудио+ без подтверждения.",
-        "status": "partial",
+        "supporting_facts": "CF-VIDEO-VOICEOVER-SERVICE (public page snapshot; current scope/prices require owner confirmation)",
+        "gap": "The dedicated page describes video voice-over work, but its indexed snapshot is about four months old. Current service scope and prices require a live page check and owner confirmation; do not infer prices from Audio+.",
+        "status": "public_service_scope_observed_owner_confirmation_needed",
         "supporting_fact_ids": [
-          "CF-AUDIOPLUS-ORDER"
+          "CF-VIDEO-VOICEOVER-SERVICE"
         ]
       },
       {
@@ -1499,10 +1541,12 @@
         "example_queries": "запись аудиокниги; диктор для аудиокниги цена",
         "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/",
         "target_main_url": "https://www.audio-reclama.ru (service)",
-        "supporting_facts": "",
-        "gap": "Индивидуальный расчёт отражён; конкретные вилки цен только с подтверждением владельца.",
-        "status": "fact_safe_individual",
-        "supporting_fact_ids": []
+        "supporting_facts": "CF-AUDIOBOOKS-SERVICE (first-party service page snapshot; displayed hourly rates are not confirmed current)",
+        "gap": "The page describes audiobook, audio-guide and e-learning formats and displays hourly examples, but its indexed snapshot is about three months old. Confirm current availability and rates before using any amount commercially.",
+        "status": "public_service_page_observed_rates_stale",
+        "supporting_fact_ids": [
+          "CF-AUDIOBOOKS-SERVICE"
+        ]
       },
       {
         "cluster": "Корпоративные голосовые коммуникации / торговые центры",
@@ -1571,10 +1615,12 @@
         "example_queries": "озвучка обучающего курса цена; озвучка онлайн курса; диктор для видеоуроков",
         "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/",
         "target_main_url": "https://www.audio-reclama.ru",
-        "supporting_facts": "",
-        "gap": "Вилки цен по объёму — только с подтверждением.",
-        "status": "fact_safe_individual",
-        "supporting_fact_ids": []
+        "supporting_facts": "CF-AUDIOBOOKS-SERVICE (first-party service page snapshot; course examples are not current price confirmation)",
+        "gap": "The audiobook/e-learning service page includes course examples and hourly amounts in an indexed snapshot about three months old. Refresh the page and confirm current course pricing before publishing amounts.",
+        "status": "public_service_page_observed_rates_stale",
+        "supporting_fact_ids": [
+          "CF-AUDIOBOOKS-SERVICE"
+        ]
       }
     ]
   }

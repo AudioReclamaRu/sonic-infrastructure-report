@@ -560,6 +560,19 @@ class GeoEvidenceRegistryContractTests(unittest.TestCase):
         self.assertIn("расходы по каналам", row["phase3_evidence"])
         self.assertIn("ROI", row["phase3_evidence"])
 
+    def test_service_page_snapshots_are_not_current_price_evidence(self) -> None:
+        expected = {
+            "CF-AUDIOBOOKS-SERVICE": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+            "CF-VIDEO-VOICEOVER-SERVICE": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        }
+        for evidence_id, source_url in expected.items():
+            row = self.rows[evidence_id]
+            self.assertEqual(row["status"], "observed_verify_on_source")
+            self.assertEqual(row["phase3_classification"], "partially_verified")
+            self.assertEqual(row["primary_source_url"], source_url)
+            self.assertIn("не подтверждены как текущие", row["limitations"].lower())
+            self.assertNotIn("current price verified", row["applicability_scope"].lower())
+
     def test_blog_fact_status_and_classification_match_ledger(self) -> None:
         for fact_id, fact in self.facts.items():
             row = self.rows.get(fact_id)
