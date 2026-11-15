@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama-geo/evidence-ledger/1",
-  "updated": "2026-11-07",
+  "updated": "2026-11-15",
   "purpose": "Provenance ledger for claims used in GEO/AEO layer. No claim is promoted to verified without primary confirmation. Phase 3 adds verification classification, evidence notes, and applicability limits.",
   "status_rules": {
     "verified": "Primary source independently confirmed.",
@@ -497,22 +497,22 @@
     },
     {
       "id": "CF-IVR-INDIVIDUAL",
-      "claim": "IVR (голосовое приветствие/меню): стоимость рассчитывается индивидуально; фиксированные цены в GEO не утверждаются без подтверждения.",
-      "claim_type": "first_party_service_policy",
-      "entity": "Audio-Reclama.ru",
+      "claim": "На публичной странице услуги IVR, проверенной 2026-11-15, фиксированная цена и явная формулировка о способе расчёта не указаны.",
+      "claim_type": "first_party_page_observation",
+      "entity": "Аудио-Реклама•ru",
       "primary_source_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
       "supporting_source": "GEO FAQ/pricing/answers",
-      "source_date": "2026-11-06",
-      "last_verified": "2026-11-06",
-      "status": "fact_safe_verify",
-      "limitations": "На основной странице услуги явная формулировка «индивидуально» может отсутствовать; калькулятор описывает состав стоимости. Требуется согласование с основным сайтом.",
+      "source_date": "2026-11-15",
+      "last_verified": "2026-11-15",
+      "status": "observed_verify_on_source",
+      "limitations": "Отсутствие опубликованной суммы или формулировки не доказывает, что студия рассчитывает каждый проект индивидуально; коммерческие условия уточняйте напрямую.",
       "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
-      "provenance": "audio-reclama.ru IVR page/calc context → GEO fact-safe representation 2026-11-06",
+      "provenance": "Public IVR service page fetched 2026-11-15; page text and targeted term checks reviewed. This is an observation of published content, not proof of internal pricing policy.",
       "business_priority": 1,
       "phase3_classification": "partially_verified",
-      "phase3_evidence": "IVR page https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html fetched 2026-11-07; page emphasizes calculator/cost composition but not an explicit fixed public price headline. GEO representation is fact-safe (no unverified numeric claim).",
-      "applicability_scope": "Fact-safe policy representation; main-site messaging alignment still needed by owner.",
-      "last_reviewed": "2026-11-07"
+      "phase3_evidence": "The public IVR page was fetched 2026-11-15. No fixed sum or explicit individual-calculation wording was visible in the page text; targeted checks for price/cost/ruble/individual wording returned no match.",
+      "applicability_scope": "Only the content of the public page as observed on 2026-11-15. It does not establish internal pricing policy or prove how quotations are calculated.",
+      "last_reviewed": "2026-11-15"
     },
     {
       "id": "CF-CONTACTS",
