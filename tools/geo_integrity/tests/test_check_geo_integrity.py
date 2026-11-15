@@ -444,8 +444,8 @@ class GeoIntegrityTests(unittest.TestCase):
     def test_valid_artifact_passes(self) -> None:
         errors, records, urls = gate.audit_local(self.root, self.base)
         self.assertEqual(errors, [])
-        self.assertEqual(len(records), 2)
-        self.assertEqual(len(urls), 2)
+        self.assertEqual(len(records), 3)
+        self.assertEqual(len(urls), 3)
 
     def test_missing_build_sha_fails(self) -> None:
         page = self.geo / "answers" / "index.html"
