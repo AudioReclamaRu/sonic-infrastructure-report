@@ -477,7 +477,7 @@ class GeoEvidenceRegistryContractTests(unittest.TestCase):
         for share in ("66%", "27%", "6%", "1%"):
             self.assertIn(share, evidence)
         self.assertIn("США", row["applicability_scope"])
-        self.assertIn("не переносить на Россию", row["limitations"])
+        self.assertIn("Не переносить на Россию", row["limitations"])
         self.assertIn("не проводила аудит", evidence)
 
     def test_iab_market_values_are_labeled_forecasts_not_actuals(self) -> None:
