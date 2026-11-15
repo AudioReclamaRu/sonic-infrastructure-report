@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-14
+date: 2026-11-15
 lang: ru
 related:
   - AGENTS.md
@@ -37,6 +37,8 @@ related:
 ## Поисковая видимость и качество обхода
 
 - READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный live-аудит sitemap, коммерческих страниц и каталога дикторов. Зафиксированы 1 186 уникальных URL, 2 подтверждённых 404-профиля в sitemap, один redirecting URL и несогласованные публичные счётчики каталога; это не полный crawl и не отчёт Search Console/Яндекс Вебмастера.
+- EXTERNAL_ACQUISITION_SURFACES_AUDIT_2026-11-15.md — аудит публичных карточек Яндекс Карт, 2ГИС, RUWARD, JSPRAV, LinkedIn, Дзен и SoundCloud; выявлены owner-claim маршруты, расхождения адреса/числа отзывов и приоритеты обновления. Трафик не измерен.
+- ../evidence/E-2026-049.md — p=1.0 live evidence for the above directory and social profile observations, owner-management routes and unresolved identity discrepancies.
 
 ## Правила использования
 
