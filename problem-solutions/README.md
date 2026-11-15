@@ -34,6 +34,9 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — роли сайта, Git и Дзена, границы редактирования и публикационная процедура.
 
 - MEASUREMENT_PROTOCOL.md — протокол спроса и поисковой видимости.
+- ../standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md — обязательный шестидисциплинарный слой для экспериментов.
+- ../research/EXPERIMENT_TEMPLATE.md — единый паспорт исследования и шесть линз.
+
 - ../research/READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный технический срез live-сайта: sitemap, 404 в каталоге дикторов, redirecting URL, счётчики каталога, метаданные и план полного crawl. Это наблюдения, не измерение поискового трафика.
 - VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md — технический аудит существующей статьи 2020 года.
 - VOICE_RECORDING_TEST_PROTOCOL.md — как проводить контролируемые A/B-тесты записи и обработки.
