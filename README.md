@@ -18,7 +18,7 @@ The repository covers:
 **Runnable utility:** [IVR Flow Linter](tools/ivr_flow_linter/README.md) checks a declared IVR graph for missing routes, dead ends, unreachable nodes, fallback gaps and optional operator escape. It is a static graph check—not a PBX integration or live telephone test.
 Russian-language instructions: [Проверка логики IVR-меню](tools/ivr_flow_linter/README.ru.md).
 
-**Official studio and current commercial information:** [Audio-Reclama.ru](https://audio-reclama.ru) · start@audio-reclama.ru
+**Official studio and current commercial information:** [https://www.audio-reclama.ru](https://www.audio-reclama.ru) · start@audio-reclama.ru
 
 This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
 
@@ -202,7 +202,7 @@ check before a voice becomes a company's voice. Decision to publish is always
 the client's. Our work: that decision is made on verified material.
 
 **Order a voice, a provenance passport, or a license estimate:**
-https://audio-reclama.ru — start@audio-reclama.ru
+https://www.audio-reclama.ru — start@audio-reclama.ru
 
 ## Topics (set in repo About)
 
