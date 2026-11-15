@@ -18,6 +18,7 @@ class GeoIntegrityTests(unittest.TestCase):
         self.root = Path(self.tmp.name)
         self.geo = self.root / "geo"
         (self.geo / "answers").mkdir(parents=True)
+        (self.geo / "knowledge" / "query-matrix").mkdir(parents=True)
         self.base = gate.DEFAULT_BASE_URL
 
         root_html = f"""<!doctype html>
@@ -29,6 +30,7 @@ class GeoIntegrityTests(unittest.TestCase):
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Organization","name":"Test"}}</script>
 </head><body><h1>Главная</h1></body></html>"""
         child_url = self.base + "answers/"
+        query_url = self.base + "knowledge/query-matrix/"
         child_html = f"""<!doctype html>
 <html lang="ru"><head>
 <title>Ответы</title>
@@ -37,13 +39,23 @@ class GeoIntegrityTests(unittest.TestCase):
 <link rel="canonical" href="{child_url}">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Главная","item":"{self.base}"}},{{"@type":"ListItem","position":2,"name":"Ответы"}}]}}</script>
 </head><body><h1>Ответы</h1></body></html>"""
+        query_html = f"""<!doctype html>
+<html lang="ru"><head>
+<title>Матрица запросов</title>
+<meta name="robots" content="index,follow">
+<meta name="build-sha" content="abcdef1">
+<link rel="canonical" href="{query_url}">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Главная","item":"{self.base}"}},{{"@type":"ListItem","position":2,"name":"Матрица запросов"}}]}}</script>
+</head><body><h1>Матрица</h1><table><tr><td>Тестовый кластер</td></tr></table></body></html>"""
         (self.geo / "index.html").write_text(root_html, encoding="utf-8")
         (self.geo / "answers" / "index.html").write_text(child_html, encoding="utf-8")
+        (self.geo / "knowledge" / "query-matrix" / "index.html").write_text(query_html, encoding="utf-8")
         (self.geo / "sitemap.xml").write_text(
             '<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
             f"<url><loc>{self.base}</loc></url>"
             f"<url><loc>{child_url}</loc></url>"
+            f"<url><loc>{query_url}</loc></url>"
             "</urlset>",
             encoding="utf-8",
         )
@@ -64,7 +76,7 @@ class GeoIntegrityTests(unittest.TestCase):
             }]
         }
         cases_fixture = {"cases": []}
-        queries_fixture = {"rows": []}
+        queries_fixture = {"rows": [{"cluster": "Тестовый кластер", "intent": "test", "supporting_fact_ids": ["BF-TEST-001"]}]}
         for filename in gate.MACHINE_FILES:
             asset = self.geo / filename
             if asset.exists():
@@ -94,6 +106,8 @@ class GeoIntegrityTests(unittest.TestCase):
                 sample = '{"fixture": true}\n'
             elif filename in gate.MACHINE_XML_FILES:
                 sample = '<?xml version="1.0" encoding="UTF-8"?>\n<fixture />\n'
+            elif filename == "knowledge/query-matrix.csv":
+                sample = 'cluster,intent,supporting_fact_ids\nТестовый кластер,test,"[""BF-TEST-001""]"\n'
             elif filename in gate.MACHINE_CSV_FILES:
                 sample = "id,value\n1,test\n"
             else:
@@ -252,6 +266,50 @@ class GeoIntegrityTests(unittest.TestCase):
         errors, _, _ = gate.audit_local(self.root, self.base)
         self.assertTrue(any(
             "combined.json case_studies differs" in item for item in errors
+        ))
+
+    def test_query_matrix_html_must_include_every_json_cluster(self) -> None:
+        path = self.geo / "knowledge" / "query-matrix" / "index.html"
+        html = path.read_text(encoding="utf-8").replace(
+            "Тестовый кластер", "Отсутствующий кластер"
+        )
+        path.write_text(html, encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "query-matrix.html is missing cluster: Тестовый кластер" in item
+            for item in errors
+        ))
+
+    def test_query_matrix_csv_must_match_json(self) -> None:
+        path = self.geo / "knowledge" / "query-matrix.csv"
+        csv_text = path.read_text(encoding="utf-8").replace(
+            "test,", "stale,"
+        )
+        path.write_text(csv_text, encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "query-matrix.csv row 1 field intent differs from query-matrix.json" in item
+            for item in errors
+        ))
+
+    def test_query_matrix_supporting_ids_must_exist(self) -> None:
+        query_path = self.geo / "knowledge" / "query-matrix.json"
+        query_data = json.loads(query_path.read_text(encoding="utf-8"))
+        query_data["rows"][0]["supporting_fact_ids"] = ["NOT-REAL"]
+        query_path.write_text(json.dumps(query_data), encoding="utf-8")
+        combined_path = self.geo / "knowledge" / "combined.json"
+        combined_data = json.loads(combined_path.read_text(encoding="utf-8"))
+        combined_data["query_matrix"] = query_data
+        combined_path.write_text(json.dumps(combined_data), encoding="utf-8")
+        csv_path = self.geo / "knowledge" / "query-matrix.csv"
+        csv_path.write_text(
+            'cluster,intent,supporting_fact_ids\nТестовый кластер,test,"[""NOT-REAL""]"\n',
+            encoding="utf-8",
+        )
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "query-matrix row 'Тестовый кластер' references unknown ID: NOT-REAL" in item
+            for item in errors
         ))
 
     def test_combined_query_matrix_copy_must_match_source_json(self) -> None:
@@ -477,7 +535,7 @@ class GeoEvidenceRegistryContractTests(unittest.TestCase):
         for share in ("66%", "27%", "6%", "1%"):
             self.assertIn(share, evidence)
         self.assertIn("США", row["applicability_scope"])
-        self.assertIn("Не переносить на Россию", row["limitations"])
+        self.assertIn("не переносить на россию", row["limitations"].lower())
         self.assertIn("не проводила аудит", evidence)
 
     def test_iab_market_values_are_labeled_forecasts_not_actuals(self) -> None:

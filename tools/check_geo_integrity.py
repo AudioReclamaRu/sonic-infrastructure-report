@@ -230,6 +230,93 @@ def _read_sitemap(path: Path) -> list[str]:
     return urls
 
 
+
+def query_matrix_view_errors(
+    query_rows: Any,
+    html_content: str,
+    csv_headers: list[str],
+    csv_rows: list[dict[str, str | None]],
+    known_ids: set[str],
+) -> list[str]:
+    """Keep query-matrix HTML/CSV views and evidence links aligned with JSON."""
+    errors: list[str] = []
+    if not isinstance(query_rows, list):
+        return ["query-matrix.json rows must be an array"]
+
+    clusters: set[str] = set()
+    expected_headers: list[str] = []
+    for row_number, row in enumerate(query_rows, start=1):
+        if not isinstance(row, dict):
+            errors.append(f"query-matrix.json row {row_number} is not an object")
+            continue
+        for field_name in row:
+            if field_name not in expected_headers:
+                expected_headers.append(field_name)
+
+        cluster = str(row.get("cluster") or "").strip()
+        if not cluster:
+            errors.append(f"query-matrix.json row {row_number} has no cluster")
+        elif cluster in clusters:
+            errors.append(f"query-matrix.json contains duplicate cluster: {cluster}")
+        else:
+            clusters.add(cluster)
+            if cluster not in html_content:
+                errors.append(f"query-matrix.html is missing cluster: {cluster}")
+
+        references = row.get("supporting_fact_ids")
+        if not isinstance(references, list):
+            errors.append(
+                f"query-matrix row {cluster or row_number!r} "
+                "must contain supporting_fact_ids as an array"
+            )
+            continue
+        seen_references: set[str] = set()
+        for reference in references:
+            if not isinstance(reference, str) or not reference.strip():
+                errors.append(
+                    f"query-matrix row {cluster or row_number!r} "
+                    "contains an empty or non-string supporting_fact_id"
+                )
+                continue
+            if reference in seen_references:
+                errors.append(
+                    f"query-matrix row {cluster!r} contains duplicate ID: {reference}"
+                )
+            seen_references.add(reference)
+            if reference not in known_ids:
+                errors.append(
+                    f"query-matrix row {cluster!r} references unknown ID: {reference}"
+                )
+
+    if csv_headers != expected_headers:
+        errors.append(
+            "query-matrix.csv header does not match query-matrix.json fields"
+        )
+    if len(csv_rows) != len(query_rows):
+        errors.append(
+            "query-matrix.csv row count differs from query-matrix.json "
+            f"({len(csv_rows)} != {len(query_rows)})"
+        )
+    for row_number, (expected, actual) in enumerate(
+        zip(query_rows, csv_rows), start=1
+    ):
+        if not isinstance(expected, dict):
+            continue
+        for field_name in expected:
+            value = expected[field_name]
+            expected_text = (
+                json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+                if isinstance(value, (list, dict))
+                else "" if value is None else str(value)
+            )
+            if actual.get(field_name) != expected_text:
+                errors.append(
+                    f"query-matrix.csv row {row_number} field {field_name} "
+                    "differs from query-matrix.json"
+                )
+                break
+    return errors
+
 def audit_local(
     root: Path = ROOT, base_url: str = DEFAULT_BASE_URL
 ) -> tuple[list[str], dict[str, PageRecord], list[str]]:
@@ -418,6 +505,7 @@ def audit_local(
         ledger_data = json.loads(ledger_path.read_text(encoding="utf-8"))
         cases_data = json.loads(cases_path.read_text(encoding="utf-8"))
         queries_data = json.loads(queries_path.read_text(encoding="utf-8"))
+        pricing_data = json.loads((geo_dir / "pricing.json").read_text(encoding="utf-8"))
         combined_data = json.loads(combined_path.read_text(encoding="utf-8"))
         blog_facts = blog_data.get("facts", [])
         ledger_rows = ledger_data.get("rows", [])
@@ -473,6 +561,39 @@ def audit_local(
                 errors.append(
                     f"{fact_id}: blog phase3_classification differs from evidence ledger"
                 )
+
+        price_entries = pricing_data.get("entries", [])
+        case_rows = cases_data.get("cases", [])
+        if not isinstance(price_entries, list) or not isinstance(case_rows, list):
+            raise ValueError("pricing entries and case studies must contain arrays")
+        known_ids = set(ledger_by_id)
+        known_ids.update(
+            str(row["id"]) for row in price_entries
+            if isinstance(row, dict) and row.get("id")
+        )
+        known_ids.update(
+            str(row["id"]) for row in case_rows
+            if isinstance(row, dict) and row.get("id")
+        )
+
+        query_html_path = geo_dir / "knowledge" / "query-matrix" / "index.html"
+        if not query_html_path.is_file():
+            errors.append("missing query-matrix HTML view: geo/knowledge/query-matrix/index.html")
+            query_html = ""
+        else:
+            query_html = query_html_path.read_text(encoding="utf-8")
+        query_csv_path = geo_dir / "knowledge" / "query-matrix.csv"
+        with query_csv_path.open("r", encoding="utf-8-sig", newline="") as stream:
+            query_reader = csv.DictReader(stream)
+            query_csv_rows = list(query_reader)
+            query_csv_headers = query_reader.fieldnames or []
+        errors.extend(query_matrix_view_errors(
+            queries_data.get("rows", []),
+            query_html,
+            query_csv_headers,
+            query_csv_rows,
+            known_ids,
+        ))
 
         with csv_path.open("r", encoding="utf-8-sig", newline="") as stream:
             reader = csv.DictReader(stream)
