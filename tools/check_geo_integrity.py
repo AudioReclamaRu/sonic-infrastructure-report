@@ -280,7 +280,7 @@ def query_matrix_view_errors(
         target_geo = str(row.get("target_geo_url") or "").strip()
         if target_geo:
             for target in re.split(r"\s*;\s*", target_geo):
-                if target and html.escape(target, quote=True) not in html_content:
+                if target and f'href="{html.escape(target, quote=True)}"' not in html_content:
                     errors.append(
                         f"query-matrix.html is missing target GEO URL for "
                         f"cluster {cluster!r}: {target}"
