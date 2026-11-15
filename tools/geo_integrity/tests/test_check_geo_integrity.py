@@ -46,6 +46,8 @@ class GeoIntegrityTests(unittest.TestCase):
         )
         (self.geo / "llms.txt").write_text("# Test\n", encoding="utf-8")
         (self.geo / "llms-full.txt").write_text("# Test full\n", encoding="utf-8")
+        (self.geo / "knowledge").mkdir(parents=True, exist_ok=True)
+        (self.geo / "knowledge" / "studio-profile.json").write_text("{}", encoding="utf-8")
 
     def tearDown(self) -> None:
         self.tmp.cleanup()

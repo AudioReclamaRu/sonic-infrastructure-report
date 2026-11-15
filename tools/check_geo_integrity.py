@@ -32,7 +32,7 @@ SITEMAP_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 BUILD_SHA_RE = re.compile(r"^[0-9a-f]{7,40}$", re.IGNORECASE)
 # A robots.txt inside /geo/ is not the host's authoritative /robots.txt.
 # Only machine resources genuinely served from this project path are listed.
-MACHINE_FILES = ("llms.txt", "llms-full.txt", "sitemap.xml")
+MACHINE_FILES = ("llms.txt", "llms-full.txt", "sitemap.xml", "knowledge/studio-profile.json")
 
 
 class PageParser(HTMLParser):
