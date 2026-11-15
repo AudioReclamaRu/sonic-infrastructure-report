@@ -31,7 +31,8 @@ HOST_PATTERN = re.compile(
     r"(?P<slash>/)?"
 )
 LATIN_TRUNCATION_PATTERN = re.compile(
-    r"(?i)(?<![A-Za-z0-9_.-])Audio-Reclama(?!\.ru\b)"
+    # Hyphenated technical identifiers (for example, audio-reclama-geo) are not brand names.
+    r"(?i)(?<![A-Za-z0-9_.-])Audio-Reclama(?!\.ru\b)(?![A-Za-z0-9_-])"
 )
 DOMAIN_AS_ENTITY_PATTERN = re.compile(
     r"(?iu)(?:компания|студия|бренд|company|studio|brand)"
@@ -106,7 +107,8 @@ def self_test() -> list[str]:
     good = (
         "Компания «Аудио-Реклама•ru». "
         "Официальный сайт: https://www.audio-reclama.ru. "
-        "GitHub: AudioReclamaRu. Contact: start@audio-reclama.ru."
+        "GitHub: AudioReclamaRu. Contact: start@audio-reclama.ru. "
+"Internal schema: audio-reclama-geo/combined/1."
     )
     bad = (
         "Компания Audio-Reclama.ru.\n"
