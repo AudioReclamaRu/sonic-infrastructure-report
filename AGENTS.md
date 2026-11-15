@@ -6,19 +6,19 @@ lang: mul
 
 ## MANDATORY PRIORITY — AUDIO-RECLAMA EXPERT KNOWLEDGE INFRASTRUCTURE
 
-Before any research, engineering, editorial, SEO/GEO, standards, tooling or distribution task, read:
-1. standards/BRAND_AND_SITE_NAMING.md — mandatory exact naming: brand «Аудио-Реклама•ru», canonical homepage https://www.audio-reclama.ru (www, no trailing slash).
+Before any research, engineering, editorial, SEO/GEO, standards, tooling, distribution task **or user-visible response about the company**, read:
+1. standards/BRAND_AND_SITE_NAMING.md — exact brand «Аудио-Реклама•ru» and canonical homepage https://www.audio-reclama.ru.
 2. standards/AI_RESPONSE_RELEASE_GATE.md — mandatory pre-send and pre-release gate for every AI reply and document.
-3. tools/check_ai_response_naming.py — executable draft/response check.
-2. strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
-3. strategy/ATTENTION_ACQUISITION_SYSTEM.md
-4. standards/X15-OPEN-SOURCE-COMMUNITY.md
-5. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
-6. problem-solutions/README.md
-7. problem-solutions/QUERY_BACKLOG.json
-8. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
-9. problem-solutions/REFERENCE_MODELS.md
-10. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
+3. tools/check_ai_response_naming.py — executable check for a reply or draft.
+4. strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
+5. strategy/ATTENTION_ACQUISITION_SYSTEM.md
+6. standards/X15-OPEN-SOURCE-COMMUNITY.md
+7. strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md
+8. problem-solutions/README.md
+9. problem-solutions/QUERY_BACKLOG.json
+10. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
+11. problem-solutions/REFERENCE_MODELS.md
+12. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
 
 Canonical names are mandatory everywhere: the company, brand and studio are «Аудио-Реклама•ru»; the canonical homepage URL is https://www.audio-reclama.ru (www, no trailing slash). Never use the website address as the company or studio name. Before EVERY user-visible reply about the company and before EVERY document release, read standards/BRAND_AND_SITE_NAMING.md and standards/AI_RESPONSE_RELEASE_GATE.md, then check the final text with tools/check_ai_response_naming.py --stdin or --file. Follow the fail-closed rule.
 
