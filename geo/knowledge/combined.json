@@ -6,7 +6,7 @@
   "prices": {
     "schema": "knowledge-pricing/1",
     "entity_id": "audio-reclama-ru",
-    "observed_at": "2026-11-06",
+    "observed_at": "2026-11-15",
     "purpose": "Machine-readable price facts for commercial queries ('сколько стоит озвучка', 'цена IVR').",
     "disclaimer": "Информационный характер, не публичная оферта. Для услуг с индивидуальным расчётом ориентируйтесь на официальную страницу.",
     "currency": "RUB",
@@ -18,7 +18,7 @@
         "unit": "заказ",
         "scope": "один заказ — один файл, текст не более 90 слов",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20",
+        "observed_at": "2026-11-15",
         "status": "ok"
       },
       {
@@ -29,7 +29,7 @@
         "per_order": 1899,
         "scope": "бессрочно",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20",
+        "observed_at": "2026-11-15",
         "status": "ok"
       },
       {
@@ -40,7 +40,7 @@
         "per_order": 1799,
         "scope": "бессрочно",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20",
+        "observed_at": "2026-11-15",
         "status": "ok"
       },
       {
@@ -51,7 +51,7 @@
         "per_order": 1667,
         "scope": "бессрочно",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20",
+        "observed_at": "2026-11-15",
         "status": "ok"
       },
       {
@@ -61,18 +61,17 @@
         "unit": "правка",
         "scope": "изменения/коррекция/добавление звуков",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20",
+        "observed_at": "2026-11-15",
         "status": "ok"
       },
       {
         "id": "P-IVR-INDIVIDUAL",
-        "name": "IVR — голосовое приветствие/меню",
-        "pricing_type": "individual",
+        "name": "IVR — публичная фиксированная цена не указана",
         "price": null,
-        "unit": "расчёт",
-        "scope": "Стоимость рассчитывается индивидуально (объём, структура меню, языки, условия).",
+        "unit": "не опубликована",
+        "scope": "На публичной странице услуги, проверенной 2026-11-15, фиксированная цена и явный способ расчёта не указаны.",
         "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "observed_at": "2026-11-06",
+        "observed_at": "2026-11-15",
         "status": "verify"
       }
     ]
@@ -80,7 +79,7 @@
   "faq": {
     "schema": "knowledge-faq/1",
     "entity_id": "audio-reclama-ru",
-    "observed_at": "2026-11-06",
+    "observed_at": "2026-11-15",
     "lang": "ru",
     "disclaimer": "Цены/условия носят информационный характер и не являются публичной офертой. Финальные условия — по расчёту/на официальном сайте.",
     "items": [
@@ -89,36 +88,36 @@
         "q": "Сколько стоит озвучка в Аудио+?",
         "a": "1990 ₽ за один заказ. Один заказ — один файл, не более 90 слов. Пакеты: 10 — 18990 ₽ (1899 ₽), 20 — 35990 ₽ (1799 ₽), 30 — 49990 ₽ (1667 ₽), бессрочно. Правки — 790 ₽.",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20"
+        "observed_at": "2026-11-15"
       },
       {
         "id": "F2",
         "q": "Сколько стоит голосовое приветствие/меню IVR?",
-        "a": "Стоимость рассчитывается индивидуально (зависит от объёма, структуры меню, языков и условий). Актуальный расчёт — на официальной странице услуги.",
+        "a": "На публичной странице услуги фиксированная цена не указана. Способ расчёта в опубликованном описании тоже явно не обозначен; точные условия нужно уточнить у студии.",
         "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "observed_at": "2026-11-06",
-        "status": "verify_individual"
+        "observed_at": "2026-11-15",
+        "status": "public_price_not_stated"
       },
       {
         "id": "F3",
         "q": "Сколько слов в заказе Аудио+?",
         "a": "Не более 90 слов. Один заказ — одна законченная мысль. Дополнительный файл — новый заказ.",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20"
+        "observed_at": "2026-11-15"
       },
       {
         "id": "F4",
         "q": "Это оферта?",
         "a": "Нет. Цены информационные и не являются публичной офертой.",
         "source": "https://www.audio-reclama.ru/",
-        "observed_at": "2026-10-20"
+        "observed_at": "2026-11-15"
       },
       {
         "id": "F5",
         "q": "Контакты Аудио+?",
         "a": "Telegram @audioplus_support, 8 800 700-46-52, пн–пт 9:00–18:00 мск, start@audio-reclama.ru",
         "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20"
+        "observed_at": "2026-11-15"
       }
     ]
   },
