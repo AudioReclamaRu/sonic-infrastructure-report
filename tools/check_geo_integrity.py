@@ -30,7 +30,9 @@ DEFAULT_BASE_URL = (
 )
 SITEMAP_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 BUILD_SHA_RE = re.compile(r"^[0-9a-f]{7,40}$", re.IGNORECASE)
-MACHINE_FILES = ("robots.txt", "llms.txt", "llms-full.txt", "sitemap.xml")
+# A robots.txt inside /geo/ is not the host's authoritative /robots.txt.
+# Only machine resources genuinely served from this project path are listed.
+MACHINE_FILES = ("llms.txt", "llms-full.txt", "sitemap.xml")
 
 
 class PageParser(HTMLParser):
@@ -309,17 +311,6 @@ def audit_local(
         if not (geo_dir / filename).is_file():
             errors.append(f"missing machine-readable asset: geo/{filename}")
 
-    robots_path = geo_dir / "robots.txt"
-    if robots_path.is_file():
-        robots_text = robots_path.read_text(encoding="utf-8", errors="replace")
-        expected_sitemap = base_url + "sitemap.xml"
-        if "User-agent:" not in robots_text:
-            errors.append("geo/robots.txt is missing a User-agent directive")
-        if expected_sitemap not in robots_text:
-            errors.append(
-                f"geo/robots.txt does not advertise {expected_sitemap}"
-            )
-
     if len(build_shas) > 1:
         summary = ", ".join(
             f"{sha}: {len(page_urls)} pages" for sha, page_urls in sorted(build_shas.items())
@@ -332,7 +323,8 @@ def audit_local(
 
 
 def _http_get(
-    url: str, attempts: int, timeout: float
+    url: str, attempts: int, timeout: float,
+    allowed_status: tuple[int, ...] = (),
 ) -> tuple[int, bytes, str]:
     last_error: Exception | None = None
     for attempt in range(attempts):
@@ -348,6 +340,8 @@ def _http_get(
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 return response.status, response.read(), response.geturl()
         except urllib.error.HTTPError as exc:
+            if exc.code in allowed_status:
+                return exc.code, exc.read(), exc.geturl()
             last_error = exc
             if exc.code < 500 and exc.code != 429:
                 break
@@ -364,8 +358,9 @@ def audit_public(
     base_url: str,
     attempts: int = 3,
     timeout: float = 20.0,
-) -> list[str]:
+) -> tuple[list[str], list[str]]:
     errors: list[str] = []
+    notes: list[str] = []
     geo_dir = ROOT / "geo"
 
     def fetch_page(url: str) -> tuple[str, bytes]:
@@ -431,8 +426,8 @@ def audit_public(
                     f"{original_url}: public JSON-LD differs from local artifact"
                 )
 
-    # Confirm that crawlers' machine-readable entry points are live and match
-    # this deployment, not merely that their HTML landing pages return 200.
+    # Confirm project-path machine-readable entry points. A /geo/robots.txt
+    # file is not authoritative: robots.txt is scoped to the host root.
     for filename in MACHINE_FILES:
         url = base_url + filename
         try:
@@ -451,7 +446,51 @@ def audit_public(
         except Exception as exc:
             errors.append(f"{url}: public fetch failed: {exc}")
 
-    return errors
+    # robots.txt has host-root scope, not project-subdirectory scope. Check
+    # the true host endpoint separately; a 404 means no host policy is
+    # published, not that /geo/robots.txt becomes authoritative.
+    parsed_base = urllib.parse.urlsplit(base_url)
+    root_robots_url = f"{parsed_base.scheme}://{parsed_base.netloc}/robots.txt"
+    try:
+        status, body, _ = _http_get(
+            root_robots_url, attempts, timeout, allowed_status=(404,)
+        )
+        if status == 404:
+            notes.append(
+                f"HOST ROBOTS: {root_robots_url} returns 404. "
+                "No host-level robots policy or Sitemap directive is published; "
+                "the /geo/robots.txt copy is not authoritative. "
+                "A missing robots.txt does not itself disallow crawling."
+            )
+        elif status == 200:
+            robots_text = body.decode("utf-8", errors="replace")
+            sitemap_url = base_url + "sitemap.xml"
+            if sitemap_url not in robots_text:
+                notes.append(
+                    f"HOST ROBOTS: root robots.txt does not advertise {sitemap_url}"
+                )
+            try:
+                from urllib.robotparser import RobotFileParser
+
+                robot_parser = RobotFileParser()
+                robot_parser.parse(robots_text.splitlines())
+                sample_url = base_url
+                for agent in (
+                    "Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot",
+                    "ChatGPT-User", "ClaudeBot", "PerplexityBot",
+                ):
+                    if not robot_parser.can_fetch(agent, sample_url):
+                        notes.append(
+                            f"HOST ROBOTS: {agent} is disallowed from {sample_url}"
+                        )
+            except Exception as exc:
+                notes.append(f"HOST ROBOTS: could not interpret crawler rules: {exc}")
+        else:
+            errors.append(f"{root_robots_url}: unexpected HTTP {status}")
+    except Exception as exc:
+        errors.append(f"{root_robots_url}: fetch failed: {exc}")
+
+    return errors, notes
 
 
 def _read_sitemap_bytes(body: bytes) -> list[str]:
@@ -498,10 +537,12 @@ def main() -> int:
     if not args.public:
         return 0
 
-    public_errors = audit_public(
+    public_errors, public_notes = audit_public(
         records, urls, base_url, attempts=max(1, args.attempts),
         timeout=max(1.0, args.timeout),
     )
+    for note in public_notes:
+        print(f"NOTE: {note}")
     if public_errors:
         print("GEO PUBLIC DEPLOY VERIFICATION: FAIL")
         for issue in public_errors:
