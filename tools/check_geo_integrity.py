@@ -394,6 +394,106 @@ def audit_local(
                 f"invalid machine-readable asset geo/{filename}: {exc}"
             )
 
+    # Keep the public machine representations synchronized with their canonical
+    # evidence objects. Syntax-only checks cannot catch stale but valid JSON/CSV.
+    blog_path = geo_dir / "knowledge" / "blog-facts.json"
+    ledger_path = geo_dir / "knowledge" / "evidence-ledger.json"
+    combined_path = geo_dir / "knowledge" / "combined.json"
+    csv_path = geo_dir / "knowledge" / "evidence-ledger.csv"
+    try:
+        blog_data = json.loads(blog_path.read_text(encoding="utf-8"))
+        ledger_data = json.loads(ledger_path.read_text(encoding="utf-8"))
+        combined_data = json.loads(combined_path.read_text(encoding="utf-8"))
+        blog_facts = blog_data.get("facts", [])
+        ledger_rows = ledger_data.get("rows", [])
+        if not isinstance(blog_facts, list) or not isinstance(ledger_rows, list):
+            raise ValueError("blog facts and evidence ledger must contain arrays")
+        if combined_data.get("blog_facts") != blog_data:
+            errors.append(
+                "geo/knowledge/combined.json blog_facts differs from blog-facts.json"
+            )
+        if combined_data.get("evidence_ledger") != ledger_data:
+            errors.append(
+                "geo/knowledge/combined.json evidence_ledger differs from evidence-ledger.json"
+            )
+
+        ledger_by_id: dict[str, dict[str, Any]] = {}
+        for row in ledger_rows:
+            if not isinstance(row, dict) or not row.get("id"):
+                errors.append("evidence-ledger.json contains a row without an id")
+                continue
+            row_id = str(row["id"])
+            if row_id in ledger_by_id:
+                errors.append(f"evidence-ledger.json contains duplicate id: {row_id}")
+            ledger_by_id[row_id] = row
+
+        blog_ids: set[str] = set()
+        for fact in blog_facts:
+            if not isinstance(fact, dict) or not fact.get("id"):
+                errors.append("blog-facts.json contains a fact without an id")
+                continue
+            fact_id = str(fact["id"])
+            if fact_id in blog_ids:
+                errors.append(f"blog-facts.json contains duplicate id: {fact_id}")
+            blog_ids.add(fact_id)
+            evidence = ledger_by_id.get(fact_id)
+            if evidence is None:
+                errors.append(
+                    f"blog-facts.json fact {fact_id} has no evidence-ledger row"
+                )
+                continue
+            if fact.get("verification_status") != evidence.get("status"):
+                errors.append(
+                    f"{fact_id}: blog verification_status differs from evidence-ledger status"
+                )
+            if fact.get("phase3_classification") != evidence.get("phase3_classification"):
+                errors.append(
+                    f"{fact_id}: blog phase3_classification differs from evidence ledger"
+                )
+
+        with csv_path.open("r", encoding="utf-8-sig", newline="") as stream:
+            reader = csv.DictReader(stream)
+            csv_rows = list(reader)
+            csv_headers = reader.fieldnames or []
+        if not ledger_rows:
+            errors.append("evidence-ledger.json contains no rows")
+        else:
+            expected_headers = list(ledger_rows[0].keys())
+            if csv_headers != expected_headers:
+                errors.append(
+                    "evidence-ledger.csv header does not match evidence-ledger.json fields"
+                )
+            csv_by_id: dict[str, dict[str, str | None]] = {}
+            for row in csv_rows:
+                row_id = str(row.get("id") or "")
+                if not row_id:
+                    errors.append("evidence-ledger.csv contains a row without an id")
+                    continue
+                if row_id in csv_by_id:
+                    errors.append(f"evidence-ledger.csv contains duplicate id: {row_id}")
+                csv_by_id[row_id] = row
+            if set(csv_by_id) != set(ledger_by_id):
+                errors.append(
+                    "evidence-ledger.csv ids differ from evidence-ledger.json "
+                    f"(missing={sorted(set(ledger_by_id) - set(csv_by_id))}, "
+                    f"extra={sorted(set(csv_by_id) - set(ledger_by_id))})"
+                )
+            for row_id, expected in ledger_by_id.items():
+                actual = csv_by_id.get(row_id)
+                if actual is None:
+                    continue
+                for key, value in expected.items():
+                    expected_text = "" if value is None else str(value)
+                    if actual.get(key) != expected_text:
+                        errors.append(
+                            f"evidence-ledger.csv row {row_id} field {key} "
+                            "differs from evidence-ledger.json"
+                        )
+                        break
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, csv.Error,
+            AttributeError, TypeError, ValueError) as exc:
+        errors.append(f"cannot validate GEO knowledge crosswalks: {exc}")
+
     if len(build_shas) > 1:
         summary = ", ".join(
             f"{sha}: {len(page_urls)} pages" for sha, page_urls in sorted(build_shas.items())
