@@ -398,11 +398,15 @@ def audit_local(
     # evidence objects. Syntax-only checks cannot catch stale but valid JSON/CSV.
     blog_path = geo_dir / "knowledge" / "blog-facts.json"
     ledger_path = geo_dir / "knowledge" / "evidence-ledger.json"
+    cases_path = geo_dir / "knowledge" / "case-studies.json"
+    queries_path = geo_dir / "knowledge" / "query-matrix.json"
     combined_path = geo_dir / "knowledge" / "combined.json"
     csv_path = geo_dir / "knowledge" / "evidence-ledger.csv"
     try:
         blog_data = json.loads(blog_path.read_text(encoding="utf-8"))
         ledger_data = json.loads(ledger_path.read_text(encoding="utf-8"))
+        cases_data = json.loads(cases_path.read_text(encoding="utf-8"))
+        queries_data = json.loads(queries_path.read_text(encoding="utf-8"))
         combined_data = json.loads(combined_path.read_text(encoding="utf-8"))
         blog_facts = blog_data.get("facts", [])
         ledger_rows = ledger_data.get("rows", [])
@@ -415,6 +419,14 @@ def audit_local(
         if combined_data.get("evidence_ledger") != ledger_data:
             errors.append(
                 "geo/knowledge/combined.json evidence_ledger differs from evidence-ledger.json"
+            )
+        if combined_data.get("case_studies") != cases_data:
+            errors.append(
+                "geo/knowledge/combined.json case_studies differs from case-studies.json"
+            )
+        if combined_data.get("query_matrix") != queries_data:
+            errors.append(
+                "geo/knowledge/combined.json query_matrix differs from query-matrix.json"
             )
 
         ledger_by_id: dict[str, dict[str, Any]] = {}
