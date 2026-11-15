@@ -15,6 +15,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "schemas" / "experiment-record.schema.json"
 EXPERIMENT_DIR = ROOT / "research" / "experiments"
+TEMPLATE_RECORD = EXPERIMENT_DIR / "experiment-record.template.json"
 
 LENSES = (
     "semiotics",
@@ -278,6 +279,30 @@ def main() -> int:
     if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
         print("FAIL: experiment schema must declare JSON Schema draft 2020-12")
         return 1
+    schema_lenses = (
+        schema.get("properties", {})
+        .get("six_lenses", {})
+        .get("required", [])
+    )
+    if set(schema_lenses) != set(LENSES):
+        print("FAIL: JSON Schema six_lenses.required must match the validator's six lenses")
+        return 1
+
+    if not TEMPLATE_RECORD.is_file():
+        print(f"FAIL: missing JSON experiment template: {TEMPLATE_RECORD.relative_to(ROOT)}")
+        return 1
+    try:
+        template = load_json(TEMPLATE_RECORD)
+    except (OSError, json.JSONDecodeError, DuplicateKeyError) as exc:
+        print(f"FAIL: cannot load experiment template: {exc}")
+        return 1
+    template_errors = validate_record(template, str(TEMPLATE_RECORD.relative_to(ROOT)))
+    if template_errors:
+        print("EXPERIMENT TEMPLATE GATE: FAIL")
+        for error in template_errors:
+            print(f" - {error}")
+        return 1
+    print("OK: machine-readable experiment template contains all six lens assessments.")
 
     files = sorted(
         path for path in EXPERIMENT_DIR.rglob("*.json")
