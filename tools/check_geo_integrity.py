@@ -340,6 +340,51 @@ def query_matrix_view_errors(
                 break
     return errors
 
+
+def evidence_ledger_view_errors(
+    ledger_rows: Any,
+    html_content: str,
+) -> list[str]:
+    """Keep the human-readable evidence ledger complete and correctly counted."""
+    errors: list[str] = []
+    if not isinstance(ledger_rows, list):
+        return ["evidence-ledger.json rows must be an array"]
+
+    seen_ids: set[str] = set()
+    for row_number, row in enumerate(ledger_rows, start=1):
+        if not isinstance(row, dict) or not row.get("id"):
+            errors.append(
+                f"evidence-ledger.json row {row_number} is missing an id"
+            )
+            continue
+        evidence_id = str(row["id"])
+        if evidence_id in seen_ids:
+            errors.append(f"evidence-ledger.json contains duplicate id: {evidence_id}")
+            continue
+        seen_ids.add(evidence_id)
+        code_tag = re.compile(
+            rf"<code>\s*{re.escape(evidence_id)}\s*</code>",
+            re.IGNORECASE,
+        )
+        if not code_tag.search(html_content):
+            errors.append(
+                f"evidence-ledger.html is missing record: {evidence_id}"
+            )
+
+    count_match = re.search(
+        r"Записей:\s*<strong>(\d+)</strong>",
+        html_content,
+        re.IGNORECASE,
+    )
+    if count_match is None:
+        errors.append("evidence-ledger.html is missing its record count")
+    elif int(count_match.group(1)) != len(ledger_rows):
+        errors.append(
+            "evidence-ledger.html record count differs from evidence-ledger.json "
+            f"({count_match.group(1)} != {len(ledger_rows)})"
+        )
+    return errors
+
 def audit_local(
     root: Path = ROOT, base_url: str = DEFAULT_BASE_URL
 ) -> tuple[list[str], dict[str, PageRecord], list[str]]:
@@ -534,6 +579,17 @@ def audit_local(
         ledger_rows = ledger_data.get("rows", [])
         if not isinstance(blog_facts, list) or not isinstance(ledger_rows, list):
             raise ValueError("blog facts and evidence ledger must contain arrays")
+
+        evidence_html_path = geo_dir / "knowledge" / "evidence-ledger" / "index.html"
+        if not evidence_html_path.is_file():
+            errors.append(
+                "missing evidence-ledger HTML view: "
+                "geo/knowledge/evidence-ledger/index.html"
+            )
+            evidence_html = ""
+        else:
+            evidence_html = evidence_html_path.read_text(encoding="utf-8")
+        errors.extend(evidence_ledger_view_errors(ledger_rows, evidence_html))
         if combined_data.get("blog_facts") != blog_data:
             errors.append(
                 "geo/knowledge/combined.json blog_facts differs from blog-facts.json"

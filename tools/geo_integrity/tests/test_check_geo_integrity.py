@@ -19,6 +19,7 @@ class GeoIntegrityTests(unittest.TestCase):
         self.geo = self.root / "geo"
         (self.geo / "answers").mkdir(parents=True)
         (self.geo / "knowledge" / "query-matrix").mkdir(parents=True)
+        (self.geo / "knowledge" / "evidence-ledger").mkdir(parents=True)
         self.base = gate.DEFAULT_BASE_URL
 
         root_html = f"""<!doctype html>
@@ -31,6 +32,7 @@ class GeoIntegrityTests(unittest.TestCase):
 </head><body><h1>Главная</h1></body></html>"""
         child_url = self.base + "answers/"
         query_url = self.base + "knowledge/query-matrix/"
+        evidence_url = self.base + "knowledge/evidence-ledger/"
         child_html = f"""<!doctype html>
 <html lang="ru"><head>
 <title>Ответы</title>
@@ -54,12 +56,22 @@ class GeoIntegrityTests(unittest.TestCase):
         (self.geo / "index.html").write_text(root_html, encoding="utf-8")
         (self.geo / "answers" / "index.html").write_text(child_html, encoding="utf-8")
         (self.geo / "knowledge" / "query-matrix" / "index.html").write_text(query_html, encoding="utf-8")
+        evidence_html = f"""<!doctype html>
+<html lang="ru"><head>
+<title>Реестр доказательств</title>
+<meta name="robots" content="index,follow">
+<meta name="build-sha" content="abcdef1">
+<link rel="canonical" href="{evidence_url}">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Главная","item":"{self.base}"}},{{"@type":"ListItem","position":2,"name":"Реестр доказательств"}}]}}</script>
+</head><body><p>Записей: <strong>1</strong></p><table><tr><td><code>BF-TEST-001</code></td></tr></table></body></html>"""
+        (self.geo / "knowledge" / "evidence-ledger" / "index.html").write_text(evidence_html, encoding="utf-8")
         (self.geo / "sitemap.xml").write_text(
             '<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
             f"<url><loc>{self.base}</loc></url>"
             f"<url><loc>{child_url}</loc></url>"
             f"<url><loc>{query_url}</loc></url>"
+            f"<url><loc>{evidence_url}</loc></url>"
             "</urlset>",
             encoding="utf-8",
         )
@@ -288,6 +300,30 @@ class GeoIntegrityTests(unittest.TestCase):
             "combined.json case_studies differs" in item for item in errors
         ))
 
+    def test_evidence_ledger_html_must_include_every_json_record(self) -> None:
+        path = self.geo / "knowledge" / "evidence-ledger" / "index.html"
+        html_text = path.read_text(encoding="utf-8").replace(
+            "<code>BF-TEST-001</code>", "<code>BF-OTHER-001</code>"
+        )
+        path.write_text(html_text, encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "evidence-ledger.html is missing record: BF-TEST-001" in item
+            for item in errors
+        ))
+
+    def test_evidence_ledger_html_count_must_match_json(self) -> None:
+        path = self.geo / "knowledge" / "evidence-ledger" / "index.html"
+        html_text = path.read_text(encoding="utf-8").replace(
+            "Записей: <strong>1</strong>", "Записей: <strong>99</strong>"
+        )
+        path.write_text(html_text, encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "evidence-ledger.html record count differs" in item
+            for item in errors
+        ))
+
     def test_query_matrix_html_must_include_every_json_cluster(self) -> None:
         path = self.geo / "knowledge" / "query-matrix" / "index.html"
         html = path.read_text(encoding="utf-8").replace(
@@ -483,8 +519,8 @@ class GeoIntegrityTests(unittest.TestCase):
     def test_valid_artifact_passes(self) -> None:
         errors, records, urls = gate.audit_local(self.root, self.base)
         self.assertEqual(errors, [])
-        self.assertEqual(len(records), 3)
-        self.assertEqual(len(urls), 3)
+        self.assertEqual(len(records), 4)
+        self.assertEqual(len(urls), 4)
 
     def test_missing_build_sha_fails(self) -> None:
         page = self.geo / "answers" / "index.html"
