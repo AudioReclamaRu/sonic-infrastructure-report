@@ -304,9 +304,6 @@
     "hold_reason": {
       "type": "string"
     },
-    "synthetic": {
-      "type": "boolean"
-    },
     "external_release": {
       "type": "boolean"
     },
@@ -332,6 +329,10 @@
           "minLength": 1
         }
       }
+    },
+    "synthetic_fixture": {
+      "type": "boolean",
+      "description": "True only for a synthetic fixture/example. Synthetic fixtures cannot be externally released."
     }
   },
   "$defs": {
@@ -468,7 +469,8 @@
           "status": {
             "enum": [
               "COMPLETED",
-              "REPRODUCED"
+              "REPRODUCED",
+              "FAILED"
             ]
           }
         },
@@ -515,13 +517,21 @@
       "then": {
         "required": [
           "release_approval"
-        ]
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "COMPLETED",
+              "REPRODUCED"
+            ]
+          }
+        }
       }
     },
     {
       "if": {
         "properties": {
-          "synthetic": {
+          "synthetic_fixture": {
             "const": true
           }
         },
