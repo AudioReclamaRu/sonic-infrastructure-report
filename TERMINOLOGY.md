@@ -3,7 +3,7 @@ type: doc
 date: 2026-09-11
 lang: ru
 ---
-# TERMINOLOGY — определения, которые ведёт Audio-Reclama.ru
+# TERMINOLOGY — определения, которые ведёт компания «Аудио-Реклама•ru»
 
 **Type:** terminology · **Audience:** enterprise · **Last updated:** 2026-09-11
 **Status:** stable
@@ -106,4 +106,4 @@ remains with the client.
 
 Рекординг, редактура голоса до эфира, паспорт происхождения, расчёт лицензии,
 сертификаты верификации «Живой Голос»:
-https://audio-reclama.ru · start@audio-reclama.ru
+https://www.audio-reclama.ru · start@audio-reclama.ru
