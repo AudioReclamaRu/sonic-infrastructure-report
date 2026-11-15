@@ -78,7 +78,7 @@ class GeoIntegrityTests(unittest.TestCase):
             gate.normalized_hash(b"<p>ok</p>\n"),
         )
         self.assertNotEqual(
-            gate.normalized_hash(b"<p>ok</p>\\n"),
+            gate.normalized_hash(b"<p>ok</p>\n"),
             gate.normalized_hash(b"<p>ok</p>\n "),
         )
 
@@ -170,6 +170,18 @@ class GeoIntegrityTests(unittest.TestCase):
         )
         errors, _, _ = gate.audit_local(self.root, self.base)
         self.assertTrue(any("build-sha" in item for item in errors))
+
+    def test_non_schema_org_context_fails(self) -> None:
+        page = self.geo / "answers" / "index.html"
+        page.write_text(
+            page.read_text(encoding="utf-8").replace(
+                '"@context":"https://schema.org"',
+                '"@context":"https://example.org/schema.org"',
+            ),
+            encoding="utf-8",
+        )
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any("canonical Schema.org @context" in item for item in errors))
 
     def test_duplicate_breadcrumb_fails(self) -> None:
         page = self.geo / "answers" / "index.html"
