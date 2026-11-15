@@ -154,6 +154,8 @@ def validate_record(record: Any, label: str = "<record>") -> list[str]:
             evidence = item.get("evidence")
             if not isinstance(evidence, list) or any(not isinstance(x, str) for x in evidence):
                 errors.append(f"{prefix}: evidence must be an array of strings")
+            elif status in EXECUTED_STATUSES and not any(nonempty(x) for x in evidence):
+                errors.append(f"{prefix}: executed experiment requires evidence for APPLICABLE lens")
         elif state in {"NOT_APPLICABLE", "NOT_ASSESSED"}:
             if not nonempty(item.get("rationale")):
                 errors.append(f"{prefix}: {state} requires a rationale")
@@ -175,6 +177,8 @@ def validate_record(record: Any, label: str = "<record>") -> list[str]:
         not isinstance(x, str) for x in provenance.get("sources", [])
     ):
         errors.append(f"{label}: data_provenance.sources must be an array of strings")
+    elif status in EXECUTED_STATUSES and not any(nonempty(x) for x in provenance["sources"]):
+        errors.append(f"{label}: executed experiment requires at least one provenance source")
     if not nonempty(provenance.get("collection_method")):
         errors.append(f"{label}: data_provenance.collection_method must be non-empty")
     if provenance.get("data_classification") not in {
@@ -234,6 +238,9 @@ def validate_record(record: Any, label: str = "<record>") -> list[str]:
 
     if status == "HOLD" and not nonempty(record.get("hold_reason")):
         errors.append(f"{label}: overall HOLD requires hold_reason")
+
+    if not isinstance(record.get("external_release"), bool):
+        errors.append(f"{label}: external_release must be boolean")
 
     if record.get("external_release") is True:
         if status not in {"COMPLETED", "REPRODUCED"}:
