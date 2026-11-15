@@ -92,7 +92,7 @@ def inspect_text(label: str, content: str) -> list[str]:
         # Do not misclassify the one preserved machine schema identifier.
         if TECHNICAL_SCHEMA_ID_PATTERN.match(content, match.start()):
             continue
-        line = content.count("\\n", 0, match.start()) + 1
+        line = content.count("\n", 0, match.start()) + 1
         issues.append(
             f"{label}:{line}: Latin website name must not be truncated: "
             f"{match.group(0)}"
@@ -128,7 +128,7 @@ def self_test() -> list[str]:
         "https://www.audio-reclama.ru/\n"
         "Бренд Аудио-Реклама.ru.\n"
         "Аудио Реклама.\n"
-        "Audio-Reclama.\\n"
+        "Audio-Reclama.\n"
         "Audio-Reclama-ru."
     )
     good_issues = inspect_text("self-test-good", good)
