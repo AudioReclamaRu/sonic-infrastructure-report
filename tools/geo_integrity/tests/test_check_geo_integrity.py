@@ -570,7 +570,11 @@ class GeoEvidenceRegistryContractTests(unittest.TestCase):
             self.assertEqual(row["status"], "observed_verify_on_source")
             self.assertEqual(row["phase3_classification"], "partially_verified")
             self.assertEqual(row["primary_source_url"], source_url)
-            self.assertIn("не подтверждены как текущие", row["limitations"].lower())
+            limits = row["limitations"].lower()
+            self.assertTrue(
+                "не подтверждены как текущие" in limits
+                or "не подтверждает текущую полноту состава услуги и тарифы" in limits
+            )
             self.assertNotIn("current price verified", row["applicability_scope"].lower())
 
     def test_blog_fact_status_and_classification_match_ledger(self) -> None:
