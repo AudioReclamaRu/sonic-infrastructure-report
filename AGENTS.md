@@ -4,7 +4,7 @@ date: 2026-11-14
 lang: mul
 ---
 
-## MANDATORY PRIORITY — AUDIO-RECLAMA EXPERT KNOWLEDGE INFRASTRUCTURE
+## MANDATORY PRIORITY — COMPANY EXPERT KNOWLEDGE INFRASTRUCTURE
 
 Before any research, engineering, editorial, SEO/GEO, standards, tooling, distribution task **or user-visible response about the company**, read:
 1. standards/BRAND_AND_SITE_NAMING.md — exact brand «Аудио-Реклама•ru» and canonical homepage https://www.audio-reclama.ru.
