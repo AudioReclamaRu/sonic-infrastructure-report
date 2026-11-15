@@ -1,32 +1,31 @@
 {
-  "updated": "2026-11-06",
-  "policy": "Only public/verifiable facts. No invented KPIs, results, efficiency metrics, or testimonials. Separate historical/intermediate milestones from confirmed outcomes. Status public_reference_observed = named on public site; details require confirmation/permission.",
+  "updated": "2026-11-15",
+  "policy": "Only statements visible on the linked first-party project pages are recorded as public observations. They are not independent verification of contracts, final project files, current relationships, rights or commercial results. No invented KPIs, efficiency metrics, testimonials or extrapolated outcomes. Confirm internal records and permissions before using a case as a credential or publishing audio/visual material.",
   "cases": [
     {
       "id": "CS-VNUKOVO",
       "client": "Международный аэропорт Внуково",
       "project_url": "https://www.audio-reclama.ru/project/vnukovo.html",
-      "source_observed": "https://www.audio-reclama.ru/ (project card, observed 2026-11-06)",
-      "public_summary_observed": "Информационные объявления для аэропорта на 11 языках (формулировка карточки на главной).",
+      "source_observed": "https://www.audio-reclama.ru/project/vnukovo.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает обновление системы информационных объявлений для аэропорта на 11 языках и указывает более 7 000 треков.",
       "blog_milestone_ref": "BF-VNUKOVO-001",
       "status": "public_reference_observed",
-      "verified_facts": "Только публично наблюдаемая формулировка карточки; BF-VNUKOVO-001 — blog_milestone (этап, не канонический итог).",
-      "needs_confirmation": "Точная роль студии, итоговые объёмы/языки/файлы по этапам, даты, разрешённые аудиопримеры, права, KPI/результаты (не выдумывать).",
+      "verified_facts": "На странице проекта перечислены 11 языков и указано >7 000 треков; описаны кастинг, запись, монтаж/обработка, подготовка файлов и передача прав. Это содержание публичной страницы, а не независимая проверка договора или итоговых метрик.",
+      "needs_confirmation": "Подтвердить внутри студии точную роль и этапы, даты, актуальность объёмов, права на аудиопримеры/изображения и разрешённый формат внешнего использования. Не приравнивать BF-VNUKOVO-001 к финальному доказательству.",
       "evidence_urls": [
-        "https://www.audio-reclama.ru/project/vnukovo.html",
-        "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html"
+        "https://www.audio-reclama.ru/project/vnukovo.html"
       ]
     },
     {
       "id": "CS-ABBYY",
       "client": "ABBYY",
       "project_url": "https://www.audio-reclama.ru/project/abbyy.html",
-      "source_observed": "https://www.audio-reclama.ru/ (project card, observed 2026-11-06)",
-      "public_summary_observed": "Голосовое меню для IT компании ABBYY на 4 языках (формулировка карточки).",
+      "source_observed": "https://www.audio-reclama.ru/project/abbyy.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает голосовое меню для московского офиса ABBYY на русском, французском, английском и немецком языках; указано 214 телефонных файлов MP3, 256 кбит/с.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки проекта на главной/странице проекта — требует сверки деталей.",
-      "needs_confirmation": "Объём работ, роль, языки/версии, даты, разрешения на публикацию деталей, метрики (не выдумывать).",
+      "verified_facts": "На странице проекта перечислены RU/FR/EN/DE, указано 214 файлов для телефонии в MP3 256 кбит/с; описаны перевод, кастинг, запись, монтаж и лицензионная музыка. Это публичное описание, не независимый аудит проектных материалов.",
+      "needs_confirmation": "Подтвердить внутри студии даты, объём и версии, фактическую роль участников, права на демонстрации/аудио и разрешённый формат внешнего использования.",
       "evidence_urls": [
         "https://www.audio-reclama.ru/project/abbyy.html"
       ]
@@ -34,27 +33,27 @@
     {
       "id": "CS-RZD",
       "client": "РЖД",
-      "project_url": "https://www.audio-reclama.ru/ (project reference)",
-      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
-      "public_summary_observed": "Оповещения в скоростных поездах «Стриж» и «Сапсан» (формулировка карточки).",
+      "project_url": "https://www.audio-reclama.ru/project/rzhd.html",
+      "source_observed": "https://www.audio-reclama.ru/project/rzhd.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает озвучивание оповещений для поездов «Стриж» и «Сапсан» на русском и английском языках для ряда направлений.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки; детали не подтверждены в этом проходе.",
-      "needs_confirmation": "Роль студии, состав работ, языки, даты, доказательства, разрешения.",
+      "verified_facts": "Отдельная страница проекта указывает ОАО «Российские железные дороги», два языка (русский и английский) и подготовку файлов для загрузки в систему РЖД. Объём файлов и даты на проверенной странице не указаны.",
+      "needs_confirmation": "Подтвердить даты, точный объём, направления/версии и права на внешнее использование проектных материалов.",
       "evidence_urls": [
-        "https://www.audio-reclama.ru/"
+        "https://www.audio-reclama.ru/project/rzhd.html"
       ]
     },
     {
       "id": "CS-MICROSOFT-HOLOLENS",
       "client": "Microsoft",
       "project_url": "https://www.audio-reclama.ru/project/microsoft.html",
-      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
-      "public_summary_observed": "Озвучивание презентационного видео Microsoft HoloLens (формулировка карточки).",
+      "source_observed": "https://www.audio-reclama.ru/project/microsoft.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает озвучивание на русском презентационного видео HoloLens для продвижения продукта на российском рынке.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
-      "needs_confirmation": "Роль, объём, версии/языки, даты, права на использование названия/примера.",
+      "verified_facts": "Отдельная страница проекта указывает русский язык и презентационное видео HoloLens; описаны кастинг, запись, монтаж, сведение с видео и передача прав.",
+      "needs_confirmation": "Подтвердить даты, точный объём и версии, разрешения на публичное использование названия/материалов и права на демонстрацию.",
       "evidence_urls": [
         "https://www.audio-reclama.ru/project/microsoft.html"
       ]
@@ -63,12 +62,12 @@
       "id": "CS-BRAUN",
       "client": "Braun",
       "project_url": "https://www.audio-reclama.ru/project/braun.html",
-      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
-      "public_summary_observed": "Перевод и озвучка видеорекламы на Восточную Европу и Северную Африку (формулировка карточки).",
+      "source_observed": "https://www.audio-reclama.ru/project/braun.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает адаптацию и озвучивание ролика Braun CoolTec для вещания в Восточной Европе и Северной Африке на шести языках.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
-      "needs_confirmation": "Конкретные рынки/языки/объёмы, роль, даты, доказательства, разрешения.",
+      "verified_facts": "Страница перечисляет венгерский, словацкий, польский, амхарский, латвийский и литовский языки, а также перевод, proofreading, language monitoring, кастинг, запись и сведение с видео.",
+      "needs_confirmation": "Подтвердить даты, конкретные рынки/версии и права на внешнее использование названий, видео, аудио и других материалов.",
       "evidence_urls": [
         "https://www.audio-reclama.ru/project/braun.html"
       ]
@@ -76,43 +75,43 @@
     {
       "id": "CS-SBERBANK",
       "client": "Сбербанк России",
-      "project_url": "https://www.audio-reclama.ru/ (project reference)",
-      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
-      "public_summary_observed": "Автоинформатор для Волго-Вятского банка Сбербанка России (формулировка карточки).",
+      "project_url": "https://www.audio-reclama.ru/project/sberbank.html",
+      "source_observed": "https://www.audio-reclama.ru/project/sberbank.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает автоинформатор для Волго-Вятского банка Сбербанка России на русском языке и указывает более 1 500 файлов.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
-      "needs_confirmation": "Роль, объём, даты, подразделение/контекст, разрешения, доказательства.",
+      "verified_facts": "Страница проекта указывает русский язык и >1 500 файлов; описывает запись, монтаж, подготовку файлов для системы Сбербанка и передачу прав.",
+      "needs_confirmation": "Подтвердить даты, точную структуру/объём и разрешения на внешнее использование аудио, названия и иных материалов.",
       "evidence_urls": [
-        "https://www.audio-reclama.ru/"
+        "https://www.audio-reclama.ru/project/sberbank.html"
       ]
     },
     {
       "id": "CS-MERCEDES-BENZ",
       "client": "Mercedes-Benz",
-      "project_url": "https://www.audio-reclama.ru/ (project reference)",
-      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
-      "public_summary_observed": "Фирменный пэкшот (формулировка карточки).",
+      "project_url": "https://www.audio-reclama.ru/project/mercedes-benz.html",
+      "source_observed": "https://www.audio-reclama.ru/project/mercedes-benz.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает фирменный пэкшот Mercedes-Benz на английском языке для вещания в Российской Федерации; в описании указан заказ BBDO Moscow и запись в студии BBC London.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
-      "needs_confirmation": "Роль, версия/использование, даты, права, доказательства.",
+      "verified_facts": "Страница проекта указывает английский язык, заказ BBDO Moscow и организацию звукозаписи на студии BBC London; это содержание публичной страницы, не независимое подтверждение договорных отношений.",
+      "needs_confirmation": "Подтвердить даты, точный объём и право на внешнее использование клиентского/агентского названия и аудиоматериалов.",
       "evidence_urls": [
-        "https://www.audio-reclama.ru/"
+        "https://www.audio-reclama.ru/project/mercedes-benz.html"
       ]
     },
     {
       "id": "CS-RENAISSANCE-CREDIT",
       "client": "Ренессанс Кредит",
-      "project_url": "https://www.audio-reclama.ru/ (project reference)",
-      "source_observed": "https://www.audio-reclama.ru/ (observed 2026-11-06)",
-      "public_summary_observed": "Сложное голосовое меню для банка (формулировка карточки).",
+      "project_url": "https://www.audio-reclama.ru/project/renessans-kredit.html",
+      "source_observed": "https://www.audio-reclama.ru/project/renessans-kredit.html (страница проекта открыта 2026-11-15)",
+      "public_summary_observed": "Публичная страница описывает автоинформатор для банка «Ренессанс Кредит» на русском языке и указывает более 500 треков.",
       "blog_milestone_ref": "",
       "status": "public_reference_observed",
-      "verified_facts": "Публичная формулировка карточки; детали не подтверждены.",
-      "needs_confirmation": "Структура IVR, языки, объём, роль, даты, разрешения, доказательства.",
+      "verified_facts": "Страница проекта указывает русский язык и >500 треков; описывает кастинг, запись, монтаж, подготовку файлов для системы банка и передачу прав.",
+      "needs_confirmation": "Подтвердить даты, точный объём/структуру и разрешения на внешнее использование аудио, клиентского названия и иных материалов.",
       "evidence_urls": [
-        "https://www.audio-reclama.ru/"
+        "https://www.audio-reclama.ru/project/renessans-kredit.html"
       ]
     }
   ]
