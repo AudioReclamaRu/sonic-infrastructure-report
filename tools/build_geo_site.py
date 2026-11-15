@@ -895,13 +895,25 @@ def _sync_machine():
                 except Exception:
                     existing = {}
             comb = {"schema":"audio-reclama-geo/combined/1","updated":UPDATED,"base":BASE,"site":SITE,"prices":pr,"faq":fq}
-            # preserve enriched, non-generated blocks (provenance/knowledge layers)
-            for k in ("blog_facts", "evidence_ledger", "case_studies", "query_matrix"):
-                if k in existing and k not in comb:
-                    comb[k] = existing[k]
-            (OUT/"knowledge").mkdir(parents=True,exist_ok=True)
+            # Enriched knowledge layers are canonical in their standalone JSON files.
+            # Refresh the combined view from those sources instead of preserving stale
+            # copies that can silently drift when a registry is updated.
+            knowledge_sources = {
+                "blog_facts": "blog-facts.json",
+                "evidence_ledger": "evidence-ledger.json",
+                "case_studies": "case-studies.json",
+                "query_matrix": "query-matrix.json",
+            }
+            knowledge_dir = OUT/"knowledge"
+            for key, filename in knowledge_sources.items():
+                source_path = knowledge_dir/filename
+                if source_path.is_file():
+                    comb[key] = json.loads(source_path.read_text(encoding="utf-8"))
+                elif key in existing:
+                    comb[key] = existing[key]
+            knowledge_dir.mkdir(parents=True,exist_ok=True)
             comb_path.write_text(json.dumps(comb, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            print("wrote geo/knowledge/combined.json (preserved enriched blocks)")
+            print("wrote geo/knowledge/combined.json (synced from canonical knowledge registries)")
     except Exception as e:
         print("sync err",e)
 
