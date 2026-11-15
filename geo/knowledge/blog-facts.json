@@ -9,7 +9,8 @@
     "Limitations: figures may be dated; some articles are forecasts/estimates as of publication date. Do not use outdated price claims from blog posts as current pricing. Outdated prices mentioned inside historical blog articles are intentionally excluded from this registry.",
     "Phase 3 (2026-11-07): added business priority/classification hints via evidence ledger; historical third-party stats must be read with source date/period and not as 2026 market state unless re-verified.",
     "2026-11-15: BF-2020-004 (51%) and BF-2019-002 (72%/85%) checked against the original Mediascope PDF for IAB Russia. Status 'verified' is limited to the report's 2018 sample, cohort and metric denominators; it does not indicate current 2026 market size or population-wide prevalence.",
-    "2026-11-15: BF-2018-001 checked against the official 2017 IAB Russia / ARIR Audio White Paper page; corrected the measure to 65M MAU, at least 23M WAU and 3.5–5 hours, without claiming unique listeners. BF-2020-003 and BF-HOSTREAD-001 checked against the primary IAB/PwC FY2019 U.S. report; taxonomy has four categories, not three, and the 66/27/6/1 shares are revenue shares. BF-2020-005 forecast values checked against the IAB Russia 2018 white paper and annotated with the later 2021 market update; forecast values are not actual market results."
+    "2026-11-15: BF-2018-001 checked against the official 2017 IAB Russia / ARIR Audio White Paper page; corrected the measure to 65M MAU, at least 23M WAU and 3.5–5 hours, without claiming unique listeners. BF-2020-003 and BF-HOSTREAD-001 checked against the primary IAB/PwC FY2019 U.S. report; taxonomy has four categories, not three, and the 66/27/6/1 shares are revenue shares. BF-2020-005 forecast values checked against the IAB Russia 2018 white paper and annotated with the later 2021 market update; forecast values are not actual market results.",
+    "2026-11-15: BF-2020-006 checked against the primary Data Insight + People & Screens report and a co-author methodology explanation. The study/model and radio channel are confirmed; the blog's exact '1bn RUB spend → 17bn RUB sales uplift' reading of the chart remains unresolved and is explicitly not treated as a verified multiplier."
   ],
   "facts": [
     {
@@ -249,18 +250,34 @@
       "blog_date": "2020-02-18",
       "cited_primary_sources": [
         {
-          "name": "Data Insight",
-          "type": "research"
+          "name": "Data Insight; People & Screens, Влияние медийной рекламы на продажи",
+          "type": "primary joint research report",
+          "region": "RU",
+          "date": "2019-11",
+          "url": "https://datainsight.ru/sites/default/files/2021-11/DI-PS-MediaAdvSales.pdf"
         },
         {
-          "name": "People&Screens",
-          "type": "research"
+          "name": "Data Insight research landing page",
+          "type": "official project page",
+          "region": "RU",
+          "date": "2019-11",
+          "url": "https://datainsight.ru/MediaAdvSales"
+        },
+        {
+          "name": "People & Screens methodology article (OKKAM Group)",
+          "type": "co-author methodology explanation",
+          "region": "RU",
+          "date": "2019-12-12",
+          "url": "https://habr.com/ru/companies/okkamgroup/articles/479960/"
         }
       ],
       "verification_status": "cited_in_blog",
-      "limitations": "Нужен первичный отчёт/методология исследования для независимой проверки.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "limitations": "Историческое исследование e-commerce, опубликованное в ноябре 2019 года: модели для 60 брендов/интернет-магазинов в 12 категориях; отдельные графики используют пул 12 крупнейших магазинов или 60 исследуемых магазинов. Результат зависит от товарной категории и модели; показатели бюджета, прироста продаж и ROI — разные величины. Радио отмечено среди каналов с высоким ROI, но точная трактовка «1 млрд руб. → 17 млрд руб.» и её знаменатель пока не проверены, поэтому не использовать как универсальный или гарантированный коэффициент. Модельные исторические результаты не являются текущей оценкой рынка 2026 и не доказывают причинный результат конкретной будущей кампании.",
       "business_priority": 2,
-      "phase3_classification": "unverified_primary"
+      "phase3_classification": "partially_verified",
+      "primary_source_name": "Data Insight + People & Screens — Влияние медийной рекламы на продажи (2019)",
+      "source_url": "https://datainsight.ru/sites/default/files/2021-11/DI-PS-MediaAdvSales.pdf",
+      "source_date": "2019-11"
     },
     {
       "id": "BF-2018-001",
