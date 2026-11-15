@@ -270,7 +270,7 @@ def audit_local(
             )
 
         creative_work_types = {
-            "FAQPage", "WebPage", "Article", "BlogPosting",
+            "FAQPage", "WebPage", "CollectionPage", "Dataset", "Article", "BlogPosting",
             "NewsArticle", "CreativeWork", "TechArticle", "HowTo",
         }
         for obj in parser.jsonld:
