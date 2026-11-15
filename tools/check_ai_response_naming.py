@@ -1,15 +1,28 @@
 #!/usr/bin/env python3
-"""Fail closed on incorrect brand/domain usage in a draft response or document."""
+"""Fail closed on incorrect brand/domain usage in an AI response or changed document."""
 
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 import re
+import subprocess
 import sys
 
 
-# Canonical: brand Аудио-Реклама•ru; homepage https://www.audio-reclama.ru
+ROOT = Path(__file__).resolve().parents[1]
+TEXT_SUFFIXES = {
+    ".md", ".txt", ".html", ".json", ".yml", ".yaml", ".py", ".js",
+    ".jsx", ".ts", ".tsx", ".css", ".xml", ".csv", ".toml", ".ini",
+    ".sh", ".ps1", ".bat", ".svg",
+}
+# These files intentionally contain negative examples or the checker itself.
+EXEMPT_PATHS = {
+    "standards/BRAND_AND_SITE_NAMING.md",
+    "tools/check_ai_response_naming.py",
+}
+
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
 HOST_PATTERN = re.compile(
     r"(?i)(?<![A-Za-z0-9.-])"
@@ -109,6 +122,33 @@ def self_test() -> list[str]:
     return failures
 
 
+def changed_files() -> list[Path]:
+    base = os.environ.get("GITHUB_BASE_REF")
+    if not base:
+        raise RuntimeError(
+            "--changed requires GITHUB_BASE_REF (run inside a pull_request workflow)"
+        )
+
+    result = subprocess.run(
+        ["git", "diff", "--name-only", "--diff-filter=ACMR", f"origin/{base}...HEAD"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    paths = []
+    for raw in result.stdout.splitlines():
+        rel = raw.replace("\\", "/")
+        path = Path(rel)
+        if rel in EXEMPT_PATHS or path.suffix.lower() not in TEXT_SUFFIXES:
+            continue
+        absolute = ROOT / path
+        if absolute.is_file():
+            paths.append(absolute)
+    return paths
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     source = parser.add_mutually_exclusive_group(required=True)
@@ -122,22 +162,41 @@ def main() -> int:
         type=Path,
         help="check one response/document file",
     )
+    source.add_argument(
+        "--changed",
+        action="store_true",
+        help="check changed text files in a GitHub pull request",
+    )
     args = parser.parse_args()
 
     issues = self_test()
+    checked = 0
     if args.stdin:
-        content = sys.stdin.read()
-        label = "<stdin>"
-    else:
-        assert args.file is not None
+        issues.extend(inspect_text("<stdin>", sys.stdin.read()))
+        checked = 1
+    elif args.file is not None:
         try:
             content = args.file.read_text(encoding="utf-8")
         except OSError as exc:
             print(f"Cannot read {args.file}: {exc}", file=sys.stderr)
             return 2
-        label = str(args.file)
+        issues.extend(inspect_text(str(args.file), content))
+        checked = 1
+    else:
+        try:
+            paths = changed_files()
+        except (RuntimeError, subprocess.CalledProcessError) as exc:
+            print(f"Cannot determine changed files: {exc}", file=sys.stderr)
+            return 2
+        for path in paths:
+            try:
+                content = path.read_text(encoding="utf-8", errors="replace")
+            except OSError as exc:
+                issues.append(f"{path}: cannot read file: {exc}")
+                continue
+            issues.extend(inspect_text(str(path.relative_to(ROOT)), content))
+            checked += 1
 
-    issues.extend(inspect_text(label, content))
     if issues:
         print("AI response/document naming check FAILED:")
         for issue in issues:
@@ -148,7 +207,7 @@ def main() -> int:
         )
         return 1
 
-    print("AI response/document naming check PASS.")
+    print(f"AI response/document naming check PASS. Checked {checked} text input(s).")
     return 0
 
 
