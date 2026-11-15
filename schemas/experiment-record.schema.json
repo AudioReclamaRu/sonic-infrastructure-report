@@ -281,7 +281,8 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "minItems": 1
         },
         "deviations": {
           "type": "array",
@@ -394,9 +395,16 @@
             ]
           },
           "then": {
+            "required": [
+              "check",
+              "evidence"
+            ],
             "properties": {
               "check": {
                 "minLength": 1
+              },
+              "evidence": {
+                "type": "array"
               }
             }
           }
@@ -413,6 +421,9 @@
             ]
           },
           "then": {
+            "required": [
+              "rationale"
+            ],
             "properties": {
               "rationale": {
                 "minLength": 1
@@ -432,6 +443,9 @@
             ]
           },
           "then": {
+            "required": [
+              "rationale"
+            ],
             "properties": {
               "rationale": {
                 "minLength": 1
@@ -451,6 +465,9 @@
             ]
           },
           "then": {
+            "required": [
+              "hold_reason"
+            ],
             "properties": {
               "hold_reason": {
                 "minLength": 1
@@ -482,7 +499,217 @@
           "started_at",
           "completed_at",
           "results"
-        ]
+        ],
+        "properties": {
+          "six_lenses": {
+            "properties": {
+              "semiotics": {
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "status": {
+                          "const": "APPLICABLE"
+                        }
+                      },
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "evidence"
+                      ],
+                      "properties": {
+                        "evidence": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "APPLICABLE",
+                      "NOT_APPLICABLE"
+                    ]
+                  }
+                }
+              },
+              "ethology_behavior": {
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "status": {
+                          "const": "APPLICABLE"
+                        }
+                      },
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "evidence"
+                      ],
+                      "properties": {
+                        "evidence": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "APPLICABLE",
+                      "NOT_APPLICABLE"
+                    ]
+                  }
+                }
+              },
+              "chronobiology": {
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "status": {
+                          "const": "APPLICABLE"
+                        }
+                      },
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "evidence"
+                      ],
+                      "properties": {
+                        "evidence": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "APPLICABLE",
+                      "NOT_APPLICABLE"
+                    ]
+                  }
+                }
+              },
+              "ergonomics_human_factors": {
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "status": {
+                          "const": "APPLICABLE"
+                        }
+                      },
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "evidence"
+                      ],
+                      "properties": {
+                        "evidence": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "APPLICABLE",
+                      "NOT_APPLICABLE"
+                    ]
+                  }
+                }
+              },
+              "complex_systems": {
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "status": {
+                          "const": "APPLICABLE"
+                        }
+                      },
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "evidence"
+                      ],
+                      "properties": {
+                        "evidence": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "APPLICABLE",
+                      "NOT_APPLICABLE"
+                    ]
+                  }
+                }
+              },
+              "cryptology": {
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "status": {
+                          "const": "APPLICABLE"
+                        }
+                      },
+                      "required": [
+                        "status"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "evidence"
+                      ],
+                      "properties": {
+                        "evidence": {
+                          "minItems": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "APPLICABLE",
+                      "NOT_APPLICABLE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     {
