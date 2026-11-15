@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 import tempfile
 import unittest
@@ -48,19 +49,47 @@ class GeoIntegrityTests(unittest.TestCase):
         )
         (self.geo / "llms.txt").write_text("# Test\n", encoding="utf-8")
         (self.geo / "llms-full.txt").write_text("# Test full\n", encoding="utf-8")
+        blog_fixture = {
+            "facts": [{
+                "id": "BF-TEST-001",
+                "verification_status": "verified",
+                "phase3_classification": "verified",
+            }]
+        }
+        ledger_fixture = {
+            "rows": [{
+                "id": "BF-TEST-001",
+                "status": "verified",
+                "phase3_classification": "verified",
+            }]
+        }
         for filename in gate.MACHINE_FILES:
             asset = self.geo / filename
             if asset.exists():
                 continue
             asset.parent.mkdir(parents=True, exist_ok=True)
-            if filename in gate.MACHINE_JSON_FILES:
-                sample = '{"fixture": true}\n'
+            if filename == "knowledge/blog-facts.json":
+                sample = json.dumps(blog_fixture) + "\\n"
+            elif filename == "knowledge/evidence-ledger.json":
+                sample = json.dumps(ledger_fixture) + "\\n"
+            elif filename == "knowledge/combined.json":
+                sample = json.dumps({
+                    "blog_facts": blog_fixture,
+                    "evidence_ledger": ledger_fixture,
+                }) + "\\n"
+            elif filename == "knowledge/evidence-ledger.csv":
+                sample = (
+                    "id,status,phase3_classification\\n"
+                    "BF-TEST-001,verified,verified\\n"
+                )
+            elif filename in gate.MACHINE_JSON_FILES:
+                sample = '{"fixture": true}\\n'
             elif filename in gate.MACHINE_XML_FILES:
-                sample = '<?xml version="1.0" encoding="UTF-8"?>\n<fixture />\n'
+                sample = '<?xml version="1.0" encoding="UTF-8"?>\\n<fixture />\\n'
             elif filename in gate.MACHINE_CSV_FILES:
-                sample = "id,value\n1,test\n"
+                sample = "id,value\\n1,test\\n"
             else:
-                sample = "fixture\n"
+                sample = "fixture\\n"
             asset.write_text(sample, encoding="utf-8")
 
     def _public_fixture(self):
@@ -195,6 +224,40 @@ class GeoIntegrityTests(unittest.TestCase):
             "invalid machine-readable asset geo/knowledge/query-matrix.csv" in e
             and "expected 2" in e
             for e in errors
+        ))
+
+    def test_combined_knowledge_copy_must_match_source_json(self) -> None:
+        path = self.geo / "knowledge" / "combined.json"
+        combined = json.loads(path.read_text(encoding="utf-8"))
+        combined["blog_facts"] = {"facts": []}
+        path.write_text(json.dumps(combined), encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "combined.json blog_facts differs" in item for item in errors
+        ))
+
+    def test_evidence_ledger_csv_must_match_json(self) -> None:
+        path = self.geo / "knowledge" / "evidence-ledger.csv"
+        path.write_text(
+            "id,status,phase3_classification\\n"
+            "BF-TEST-001,cited_in_blog,verified\\n",
+            encoding="utf-8",
+        )
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "evidence-ledger.csv row BF-TEST-001 field status differs" in item
+            for item in errors
+        ))
+
+    def test_blog_fact_status_and_classification_must_match_ledger(self) -> None:
+        path = self.geo / "knowledge" / "blog-facts.json"
+        blog = json.loads(path.read_text(encoding="utf-8"))
+        blog["facts"][0]["verification_status"] = "cited_in_blog"
+        path.write_text(json.dumps(blog), encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "BF-TEST-001: blog verification_status differs" in item
+            for item in errors
         ))
 
     def test_public_audit_fails_when_root_robots_redirects_off_origin(self) -> None:
