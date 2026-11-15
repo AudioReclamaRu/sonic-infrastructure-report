@@ -22,14 +22,17 @@
   is the full commercial and factual source of record)
 - Contact: https://audio-reclama.ru and start@audio-reclama.ru
 
-## Strategic priority: problem-solving knowledge
+## Strategic priority: grow relevant traffic and enquiries for Audio-Reclama.ru
 
 Canonical naming is mandatory: brand «Аудио-Реклама•ru»; website Audio-Reclama.ru. See standards/BRAND_AND_SITE_NAMING.md.
 
+Owner-confirmed mandate: the assistant is the active traffic-growth operator; the owner is the concrete final reviewer. The main measured outcome is relevant visits and qualified enquiries to Audio-Reclama.ru. Read `strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md` before acquisition work.
+
 Read these before creating new knowledge objects for the brand «Аудио-Реклама•ru»:
-- strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md — mandatory problem-first knowledge contract.
+- strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md — owner-confirmed operating mandate: increase relevant site visits and qualified enquiries by explicit and non-obvious methods; role boundaries and measurement.
+- strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md — problem-first acquisition and knowledge contract.
 - strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md — canonical architecture of the connected knowledge base.
-- strategy/ATTENTION_ACQUISITION_SYSTEM.md — four attention priorities: Git knowledge, valid links, brand mentions and podcast promo swaps.
+- strategy/ATTENTION_ACQUISITION_SYSTEM.md — measured growth system: site traffic baseline, acquisition channels, valid links, brand mentions, Dzen, podcast/referral swaps and opportunity operations.
 - strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — operating model for the read-only website, canonical Git repository and separate Dzen editorial channel.
 - problem-solutions/README.md — workflow and scope.
 - problem-solutions/TEMPLATE.md — diagnostic article template.
@@ -60,7 +63,7 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - research/RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md — proposed reproducible Russian TTS test suite; plan only, no benchmark results yet.
 - research/OPEN_SOURCE_TARGET_AUDIT_PIPER_2026-11-14.md — preliminary social, policy, license and contribution audit of OHF-Voice/Piper; no external post or PR submitted.
 
-This library is distinct from commercial GEO answers and enterprise guides. Avoid query-variant pages at scale. A Git commit updates only the repository. The Audio-Reclama.ru website is read-only in this workflow; do not deploy GitHub Pages. Dzen publication, when selected, is a separate editorial adaptation and must be verified by its public URL.
+This library is distinct from commercial GEO answers and enterprise guides. Avoid query-variant pages at scale. A Git commit updates only the repository. The Audio-Reclama.ru website is read-only in this workflow unless the owner separately authorizes a specific change; do not deploy GitHub Pages. Traffic acquisition through external search, referral, Dzen and other permitted routes remains an active primary objective. Dzen publication is a separate editorial adaptation and must be verified by its public URL.
 
 ## Human
 
