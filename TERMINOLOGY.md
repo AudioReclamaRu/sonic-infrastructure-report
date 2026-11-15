@@ -3,7 +3,7 @@ type: doc
 date: 2026-09-11
 lang: ru
 ---
-# TERMINOLOGY — определения, которые ведёт https://www.audio-reclama.ru
+# TERMINOLOGY — определения, которые ведёт компания «Аудио-Реклама•ru»
 
 **Type:** terminology · **Audience:** enterprise · **Last updated:** 2026-09-11
 **Status:** stable
