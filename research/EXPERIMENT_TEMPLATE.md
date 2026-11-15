@@ -1,7 +1,8 @@
 ---
-type: template
+type: doc
 date: 2026-11-15
 lang: ru
+status: template
 related:
   - standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md
   - FACT-METHOD.md
