@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-TOOL = Path(__file__).resolve().parents[1] / "check_experiment_records.py"
+TOOL = Path(__file__).resolve().parents[2] / "check_experiment_records.py"
 spec = importlib.util.spec_from_file_location("check_experiment_records", TOOL)
 assert spec and spec.loader
 module = importlib.util.module_from_spec(spec)
