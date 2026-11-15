@@ -923,12 +923,12 @@ def _write_llms():
 - Пакет 20: 35990 RUB (1799 RUB/заказ), бессрочно
 - Пакет 30: 49990 RUB (1667 RUB/заказ), бессрочно
 - Правка: 790 RUB
-- IVR: стоимость рассчитывается индивидуально — {SITE}/audio/golosovoe-privetstvie-menu-ivr.html
+- IVR: публичная фиксированная цена и явный способ расчёта на странице услуги не указаны — {SITE}/audio/golosovoe-privetstvie-menu-ivr.html
 
 ## Answers
 
 - {BASE}answers/skolko-stoit-ozvuchka/ — сколько стоит озвучка (1990 RUB)
-- {BASE}answers/ivr-privetstvie-cena/ — цена голосового приветствия IVR (расчёт индивидуальный)
+- {BASE}answers/ivr-privetstvie-cena/ — стоимость голосового приветствия IVR (публичная фиксированная цена не указана)
 {extra_answers_md}
 - {BASE}ceny/ — таблица цен
 - {BASE}faq/ — FAQ (слова, правки, оплата, оферта)
@@ -972,7 +972,9 @@ def _write_llms():
     def _price_line(e):
         p_ = e.get("price")
         if p_ in (None, "расчёт"):
-            return f"- {e.get('name')}: индивидуальный расчёт"
+            if e.get("id") == "P-IVR-INDIVIDUAL":
+                return f"- {e.get('name')}: публичная фиксированная цена и способ расчёта не указаны"
+            return f"- {e.get('name')}: публичная цена не указана"
         return f"- {e.get('name')}: {p_} RUB/{e.get('unit') or 'ед.'}"
 
     prices_dump = "\n".join(_price_line(e) for e in PRICES.get("entries", []))
