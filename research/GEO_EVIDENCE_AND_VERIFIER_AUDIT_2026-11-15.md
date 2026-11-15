@@ -108,12 +108,14 @@ related:
 - Host-level `robots.txt` на GitHub Pages во время проверки возвращал 404. Отсутствие файла само по себе не запрещает обход; `/sonic-infrastructure-report/geo/robots.txt` не заменяет корневой файл хоста.
 - Публичный deployment verifier в этом проходе не запускался: deployment не выполнялся. Индексация отдельно не проверялась.
 
-Workflow `.github/workflows/geo-public-verify.yml` предназначен для проверки конкретной успешной GitHub Pages deployment revision или ручного восстановления. Он не запускает deployment и не меняет источник публикации.
+Workflow `.github/workflows/geo-public-verify.yml` предназначен для проверки конкретной успешной GitHub Pages deployment revision или ручного восстановления. Он не запускает deployment и не меняет источник публикации. В текущем состоянии файл присутствует только в ветке этого PR; Actions UI не показывает branch-only workflow и не позволяет вручную dispatch-нуть его до попадания файла в default branch. Публичная сверка поэтому не запускалась. Для её включения потребуется отдельное решение о merge; здесь merge не выполнялся.
 
 ## 6. CI и границы текущего результата
 
-- `repo-integrity` — PASS на SHA `b0d64826e829eae3045cef5a71e5b84f0ace20d3` ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43749819786)). Успешно прошли compile, frontmatter, IVR checks, naming standards, GEO machine consistency, AI-Crawler Integrity Gate и GEO regression tests.
-- Naming gate на том SHA завершился FAIL, поскольку сканировал буквальные исторические источники в evidence snapshot и технические entity IDs как будто это новые редакционные названия. Обновлённые правила сохраняют исходные provenance-строки и распознают известные машинные IDs. Новый прогон на окончательном head этого audit snapshot ещё требуется.
+- `repo-integrity #341` — PASS на актуальном audit head `9a447ad3956c7a5f2653893c6d5714a97e1b8da8` ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43750545479)). Успешно прошли compile, frontmatter, IVR checks, naming standards, GEO machine consistency, AI-Crawler Integrity Gate и GEO regression tests.
+- `AI response and document naming gate #21` — PASS на том же SHA ([run](https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/43750545446)). Проверены все изменённые текстовые файлы и self-test checker.
+- Предыдущий прогон naming gate на SHA `b0d6482...` был FAIL: сканер принимал исторические provenance-строки и технический entity ID за новые редакционные названия. Правила уточнены: буквальные исторические source records сохранены, machine IDs распознаются отдельно. На актуальном head оба CI теперь PASS.
+- Публичный verifier не запущен: workflow-файл пока находится только в feature branch и отсутствует в списке default-branch workflows Actions UI. Он станет доступен для manual dispatch только после отдельного решения о merge.
 
 Ни один результат старого CI не переносится на новый SHA без повторной проверки. PR остаётся открытым; merge, Pages deployment и внешняя публикация не выполнялись.
 
