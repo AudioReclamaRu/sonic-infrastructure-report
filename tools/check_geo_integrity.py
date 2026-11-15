@@ -33,6 +33,14 @@ BUILD_SHA_RE = re.compile(r"^[0-9a-f]{7,40}$", re.IGNORECASE)
 # A robots.txt inside /geo/ is not the host's authoritative /robots.txt.
 # Only machine resources genuinely served from this project path are listed.
 MACHINE_FILES = ("llms.txt", "llms-full.txt", "sitemap.xml")
+# These agents are relevant to search/answer-engine discovery. A robots denial
+# for any sitemap page or machine endpoint is a public-verification failure.
+INDEXING_CRAWLERS = (
+    "Googlebot", "Bingbot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot",
+)
+# Training and user-triggered fetch policies are reported separately: they are
+# owner policy choices, not a direct search-indexing availability signal.
+ADDITIONAL_CRAWLERS = ("GPTBot", "ChatGPT-User")
 
 
 class PageParser(HTMLParser):
@@ -103,7 +111,7 @@ class PageRecord:
 
 def normalized_hash(data: bytes) -> str:
     """Hash the exact static body, allowing only CRLF/LF normalization."""
-    normalized = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n").strip()
+    normalized = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
     return hashlib.sha256(normalized).hexdigest()
 
 
@@ -133,6 +141,17 @@ def local_path_for_url(url: str, base_url: str, geo_dir: Path) -> Path:
     if candidate != root and root not in candidate.parents:
         raise ValueError(f"URL escapes GEO directory: {url}")
     return candidate
+
+
+def has_schema_org_context(context: Any) -> bool:
+    """Accept canonical Schema.org JSON-LD contexts, not substring lookalikes."""
+    if isinstance(context, str):
+        return context.rstrip("/") in {"https://schema.org", "http://schema.org"}
+    if isinstance(context, list):
+        return any(has_schema_org_context(item) for item in context)
+    if isinstance(context, dict):
+        return has_schema_org_context(context.get("@vocab"))
+    return False
 
 
 def jsonld_types(objects: list[Any]) -> list[str]:
@@ -251,8 +270,8 @@ def audit_local(
             if not isinstance(obj, dict):
                 errors.append(f"{url}: JSON-LD top-level value is not an object")
                 continue
-            if "schema.org" not in str(obj.get("@context", "")):
-                errors.append(f"{url}: JSON-LD object has no Schema.org @context")
+            if not has_schema_org_context(obj.get("@context")):
+                errors.append(f"{url}: JSON-LD object has no canonical Schema.org @context")
 
         types = jsonld_types(parser.jsonld)
         counts: dict[str, int] = {}
@@ -352,27 +371,33 @@ def _http_get(
     raise RuntimeError(f"GET failed after {attempts} attempt(s): {last_error}")
 
 
+def _validate_final_url(requested_url: str, final_url: str) -> None:
+    """Reject cross-origin or cross-path redirects for every public probe."""
+    requested = urllib.parse.urlsplit(requested_url)
+    final = urllib.parse.urlsplit(final_url)
+    if final.scheme != requested.scheme or final.netloc != requested.netloc:
+        raise RuntimeError(f"redirected to unexpected origin: {final_url}")
+    if final.path.rstrip("/") != requested.path.rstrip("/"):
+        raise RuntimeError(f"redirected to unexpected path: {final_url}")
+
+
 def audit_public(
     records: dict[str, PageRecord],
     urls: list[str],
     base_url: str,
     attempts: int = 3,
     timeout: float = 20.0,
+    root: Path = ROOT,
 ) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     notes: list[str] = []
-    geo_dir = ROOT / "geo"
+    geo_dir = root / "geo"
 
     def fetch_page(url: str) -> tuple[str, bytes]:
         status, body, final_url = _http_get(url, attempts, timeout)
         if status != 200:
             raise RuntimeError(f"HTTP {status}")
-        final = urllib.parse.urlsplit(final_url)
-        expected = urllib.parse.urlsplit(url)
-        if final.scheme != expected.scheme or final.netloc != expected.netloc:
-            raise RuntimeError(f"redirected to unexpected host: {final_url}")
-        if final.path.rstrip("/") != expected.path.rstrip("/"):
-            raise RuntimeError(f"redirected to unexpected path: {final_url}")
+        _validate_final_url(url, final_url)
         return url, body
 
     verify_token = str(int(time.time()))
@@ -431,7 +456,8 @@ def audit_public(
     for filename in MACHINE_FILES:
         url = base_url + filename
         try:
-            status, body, _ = _http_get(url, attempts, timeout)
+            status, body, final_url = _http_get(url, attempts, timeout)
+            _validate_final_url(url, final_url)
             if status != 200:
                 errors.append(f"{url}: HTTP {status}")
                 continue
@@ -452,9 +478,10 @@ def audit_public(
     parsed_base = urllib.parse.urlsplit(base_url)
     root_robots_url = f"{parsed_base.scheme}://{parsed_base.netloc}/robots.txt"
     try:
-        status, body, _ = _http_get(
+        status, body, final_url = _http_get(
             root_robots_url, attempts, timeout, allowed_status=(404,)
         )
+        _validate_final_url(root_robots_url, final_url)
         if status == 404:
             notes.append(
                 f"HOST ROBOTS: {root_robots_url} returns 404. "
@@ -474,15 +501,22 @@ def audit_public(
 
                 robot_parser = RobotFileParser()
                 robot_parser.parse(robots_text.splitlines())
-                sample_url = base_url
-                for agent in (
-                    "Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot",
-                    "ChatGPT-User", "ClaudeBot", "PerplexityBot",
-                ):
-                    if not robot_parser.can_fetch(agent, sample_url):
-                        notes.append(
-                            f"HOST ROBOTS: {agent} is disallowed from {sample_url}"
-                        )
+                crawl_targets = list(dict.fromkeys(
+                    urls + [base_url + filename for filename in MACHINE_FILES]
+                ))
+                for agent in INDEXING_CRAWLERS:
+                    for target in crawl_targets:
+                        if not robot_parser.can_fetch(agent, target):
+                            errors.append(
+                                f"HOST ROBOTS: {agent} is disallowed from {target}"
+                            )
+                for agent in ADDITIONAL_CRAWLERS:
+                    for target in crawl_targets:
+                        if not robot_parser.can_fetch(agent, target):
+                            notes.append(
+                                f"HOST ROBOTS: {agent} is disallowed from {target} "
+                                "(separate training/user-fetch policy)"
+                            )
             except Exception as exc:
                 notes.append(f"HOST ROBOTS: could not interpret crawler rules: {exc}")
         else:
