@@ -303,6 +303,61 @@ class GeoIntegrityTests(unittest.TestCase):
             )
         self.assertTrue(any("unexpected origin" in error for error in errors))
 
+    def test_public_audit_fails_when_claude_searchbot_is_blocked(self) -> None:
+        records, urls, normal_get = self._public_fixture()
+
+        def fake_get(url, attempts, timeout, allowed_status=()):
+            parsed = urllib.parse.urlsplit(url)
+            if parsed.path == "/robots.txt":
+                body = (
+                    "User-agent: Claude-SearchBot\\n"
+                    "Disallow: /sonic-infrastructure-report/geo/\\n"
+                ).encode("utf-8")
+                return 200, body, url
+            return normal_get(url, attempts, timeout, allowed_status)
+
+        with patch.object(gate, "_http_get", side_effect=fake_get):
+            errors, _ = gate.audit_public(
+                records, urls, self.base, root=self.root
+            )
+        self.assertTrue(any(
+            "Claude-SearchBot is disallowed" in error for error in errors
+        ))
+
+    def test_training_and_user_fetch_tokens_are_notes_not_indexing_failures(self) -> None:
+        records, urls, normal_get = self._public_fixture()
+
+        def fake_get(url, attempts, timeout, allowed_status=()):
+            parsed = urllib.parse.urlsplit(url)
+            if parsed.path == "/robots.txt":
+                body = (
+                    "User-agent: Google-Extended\\n"
+                    "Disallow: /\\n"
+                    "User-agent: GPTBot\\n"
+                    "Disallow: /\\n"
+                    "User-agent: ChatGPT-User\\n"
+                    "Disallow: /\\n"
+                    "User-agent: ClaudeBot\\n"
+                    "Disallow: /\\n"
+                    "User-agent: Claude-User\\n"
+                    "Disallow: /\\n"
+                    "User-agent: Perplexity-User\\n"
+                    "Disallow: /\\n"
+                ).encode("utf-8")
+                return 200, body, url
+            return normal_get(url, attempts, timeout, allowed_status)
+
+        with patch.object(gate, "_http_get", side_effect=fake_get):
+            errors, notes = gate.audit_public(
+                records, urls, self.base, root=self.root
+            )
+        self.assertEqual(errors, [])
+        for agent in (
+            "Google-Extended", "GPTBot", "ChatGPT-User",
+            "ClaudeBot", "Claude-User", "Perplexity-User",
+        ):
+            self.assertTrue(any(agent + " is disallowed" in note for note in notes))
+
     def test_public_audit_fails_if_indexing_bot_is_blocked_on_any_sitemap_page(self) -> None:
         records, urls, normal_get = self._public_fixture()
 
