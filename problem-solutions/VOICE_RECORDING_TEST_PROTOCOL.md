@@ -1,6 +1,6 @@
 ---
 type: standard
-date: 2026-11-14
+date: 2026-11-15
 lang: ru
 related: [problem-solutions/TEMPLATE.md, problem-solutions/REFERENCE_MODELS.md, problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md, standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md, research/EXPERIMENT_TEMPLATE.md]
 ---
