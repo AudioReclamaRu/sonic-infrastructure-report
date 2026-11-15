@@ -21,6 +21,10 @@ TEXT_SUFFIXES = {
 EXEMPT_PATHS = {
     "standards/BRAND_AND_SITE_NAMING.md",
     "tools/check_ai_response_naming.py",
+    # These are immutable provenance snapshots: literal legacy source titles and
+    # URLs must remain exact evidence rather than being silently canonicalized.
+    "geo/knowledge/evidence-ledger.json",
+    "geo/knowledge/combined.json",
 }
 
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
@@ -35,7 +39,7 @@ LATIN_TRUNCATION_PATTERN = re.compile(
 )
 # This exact legacy schema identifier is a machine key, not a brand name.
 TECHNICAL_SCHEMA_ID_PATTERN = re.compile(
-    r"(?i)(?<![A-Za-z0-9_.-])audio-reclama-geo/combined/1(?![A-Za-z0-9_-])"
+    r"(?i)(?<![A-Za-z0-9_.-])(?:audio-reclama-geo/combined/1|audio-reclama-ru)(?![A-Za-z0-9_-])"
 )
 DOMAIN_AS_ENTITY_PATTERN = re.compile(
     r"(?iu)(?:компания|студия|бренд|company|studio|brand)"
@@ -120,7 +124,8 @@ def self_test() -> list[str]:
         "Компания «Аудио-Реклама•ru». "
         "Официальный сайт: https://www.audio-reclama.ru. "
         "GitHub: AudioReclamaRu. Contact: start@audio-reclama.ru. "
-        "Internal schema: audio-reclama-geo/combined/1."
+        "Internal schema: audio-reclama-geo/combined/1. "
+        "Internal entity id: audio-reclama-ru."
     )
     bad = (
         "Компания Audio-Reclama.ru.\n"
@@ -129,7 +134,7 @@ def self_test() -> list[str]:
         "Бренд Аудио-Реклама.ru.\n"
         "Аудио Реклама.\n"
         "Audio-Reclama.\n"
-        "Audio-Reclama-ru."
+        "Audio-Reclama Studio."
     )
     good_issues = inspect_text("self-test-good", good)
     bad_issues = inspect_text("self-test-bad", bad)
