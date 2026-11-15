@@ -46,7 +46,11 @@ class GeoIntegrityTests(unittest.TestCase):
 <meta name="build-sha" content="abcdef1">
 <link rel="canonical" href="{query_url}">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Главная","item":"{self.base}"}},{{"@type":"ListItem","position":2,"name":"Матрица запросов"}}]}}</script>
-</head><body><h1>Матрица</h1><table><tr><td>Тестовый кластер</td></tr></table></body></html>"""
+</head><body><h1>Матрица</h1><table><tr>
+<td>Тестовый кластер</td><td>test</td><td>example query</td>
+<td><a href="{child_url}">{child_url}</a></td><td>https://www.audio-reclama.ru</td>
+<td>BF-TEST-001</td><td>fixture gap</td><td>fact_safe</td>
+</tr></table></body></html>"""
         (self.geo / "index.html").write_text(root_html, encoding="utf-8")
         (self.geo / "answers" / "index.html").write_text(child_html, encoding="utf-8")
         (self.geo / "knowledge" / "query-matrix" / "index.html").write_text(query_html, encoding="utf-8")
@@ -76,7 +80,17 @@ class GeoIntegrityTests(unittest.TestCase):
             }]
         }
         cases_fixture = {"cases": []}
-        queries_fixture = {"rows": [{"cluster": "Тестовый кластер", "intent": "test", "supporting_fact_ids": ["BF-TEST-001"]}]}
+        queries_fixture = {"rows": [{
+            "cluster": "Тестовый кластер",
+            "intent": "test",
+            "example_queries": "example query",
+            "target_geo_url": f"{self.base}answers/",
+            "target_main_url": "https://www.audio-reclama.ru",
+            "supporting_facts": "BF-TEST-001",
+            "gap": "fixture gap",
+            "status": "fact_safe",
+            "supporting_fact_ids": ["BF-TEST-001"],
+        }]}
         for filename in gate.MACHINE_FILES:
             asset = self.geo / filename
             if asset.exists():
@@ -107,7 +121,13 @@ class GeoIntegrityTests(unittest.TestCase):
             elif filename in gate.MACHINE_XML_FILES:
                 sample = '<?xml version="1.0" encoding="UTF-8"?>\n<fixture />\n'
             elif filename == "knowledge/query-matrix.csv":
-                sample = 'cluster,intent,supporting_fact_ids\nТестовый кластер,test,"[""BF-TEST-001""]"\n'
+                sample = (
+                    "cluster,intent,example_queries,target_geo_url,target_main_url,"
+                    "supporting_facts,gap,status,supporting_fact_ids\n"
+                    f'Тестовый кластер,test,example query,{child_url},'
+                    'https://www.audio-reclama.ru,BF-TEST-001,fixture gap,'
+                    'fact_safe,"[""BF-TEST-001""]"\n'
+                )
             elif filename in gate.MACHINE_CSV_FILES:
                 sample = "id,value\n1,test\n"
             else:
@@ -292,6 +312,25 @@ class GeoIntegrityTests(unittest.TestCase):
             for item in errors
         ))
 
+    def test_query_matrix_html_must_match_json_fields_and_target_urls(self) -> None:
+        path = self.geo / "knowledge" / "query-matrix" / "index.html"
+        html_text = path.read_text(encoding="utf-8")
+        html_text = html_text.replace(
+            f'href="{self.base}answers/"',
+            f'href="{self.base}wrong-target/"',
+        )
+        html_text = html_text.replace("fact_safe", "stale_status")
+        path.write_text(html_text, encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "query-matrix.html is missing or has stale status" in item
+            for item in errors
+        ))
+        self.assertTrue(any(
+            "query-matrix.html is missing target GEO URL" in item
+            for item in errors
+        ))
+
     def test_query_matrix_supporting_ids_must_exist(self) -> None:
         query_path = self.geo / "knowledge" / "query-matrix.json"
         query_data = json.loads(query_path.read_text(encoding="utf-8"))
@@ -303,7 +342,7 @@ class GeoIntegrityTests(unittest.TestCase):
         combined_path.write_text(json.dumps(combined_data), encoding="utf-8")
         csv_path = self.geo / "knowledge" / "query-matrix.csv"
         csv_path.write_text(
-            'cluster,intent,supporting_fact_ids\nТестовый кластер,test,"[""NOT-REAL""]"\n',
+            'cluster,intent,example_queries,target_geo_url,target_main_url,supporting_facts,gap,status,supporting_fact_ids\nТестовый кластер,test,example query,{self.base}answers/,https://www.audio-reclama.ru,BF-TEST-001,fixture gap,fact_safe,"[""NOT-REAL""]"\n',
             encoding="utf-8",
         )
         errors, _, _ = gate.audit_local(self.root, self.base)

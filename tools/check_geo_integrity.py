@@ -11,6 +11,7 @@ import argparse
 import concurrent.futures
 import csv
 import hashlib
+import html
 import json
 import re
 import sys
@@ -262,6 +263,28 @@ def query_matrix_view_errors(
             clusters.add(cluster)
             if cluster not in html_content:
                 errors.append(f"query-matrix.html is missing cluster: {cluster}")
+
+        # JSON is the source of truth: detect stale visible content, not just
+        # missing clusters. Every public row field must survive into its HTML view.
+        for field_name in (
+            "intent", "example_queries", "supporting_facts", "gap", "status",
+            "target_main_url",
+        ):
+            expected_value = str(row.get(field_name) or "").strip()
+            if expected_value and html.escape(expected_value, quote=False) not in html_content:
+                errors.append(
+                    f"query-matrix.html is missing or has stale {field_name} "
+                    f"for cluster: {cluster or row_number}"
+                )
+
+        target_geo = str(row.get("target_geo_url") or "").strip()
+        if target_geo:
+            for target in re.split(r"\\s*;\\s*", target_geo):
+                if target and html.escape(target, quote=True) not in html_content:
+                    errors.append(
+                        f"query-matrix.html is missing target GEO URL for "
+                        f"cluster {cluster!r}: {target}"
+                    )
 
         references = row.get("supporting_fact_ids")
         if not isinstance(references, list):
