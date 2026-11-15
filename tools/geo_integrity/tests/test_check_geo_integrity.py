@@ -48,6 +48,20 @@ class GeoIntegrityTests(unittest.TestCase):
         )
         (self.geo / "llms.txt").write_text("# Test\n", encoding="utf-8")
         (self.geo / "llms-full.txt").write_text("# Test full\n", encoding="utf-8")
+        for filename in gate.MACHINE_FILES:
+            asset = self.geo / filename
+            if asset.exists():
+                continue
+            asset.parent.mkdir(parents=True, exist_ok=True)
+            if filename in gate.MACHINE_JSON_FILES:
+                sample = '{"fixture": true}\n'
+            elif filename in gate.MACHINE_XML_FILES:
+                sample = '<?xml version="1.0" encoding="UTF-8"?>\n<fixture />\n'
+            elif filename in gate.MACHINE_CSV_FILES:
+                sample = "id,value\n1,test\n"
+            else:
+                sample = "fixture\n"
+            asset.write_text(sample, encoding="utf-8")
 
     def _public_fixture(self):
         errors, records, urls = gate.audit_local(self.root, self.base)
@@ -113,6 +127,75 @@ class GeoIntegrityTests(unittest.TestCase):
                 records, urls, self.base, root=self.root
             )
         self.assertTrue(any("unexpected origin" in error for error in errors))
+
+    def test_public_audit_fails_when_machine_asset_differs(self) -> None:
+        records, urls, normal_get = self._public_fixture()
+
+        def fake_get(url, attempts, timeout, allowed_status=()):
+            parsed = urllib.parse.urlsplit(url)
+            if parsed.path.endswith("/pricing.json"):
+                return 200, b'{"different": true}\\n', url
+            return normal_get(url, attempts, timeout, allowed_status)
+
+        with patch.object(gate, "_http_get", side_effect=fake_get):
+            errors, _ = gate.audit_public(
+                records, urls, self.base, root=self.root
+            )
+        self.assertTrue(any("pricing.json: public file differs from local artifact" in e
+                            for e in errors))
+
+    def test_public_sitemap_rejects_duplicate_urls(self) -> None:
+        records, urls, normal_get = self._public_fixture()
+
+        def fake_get(url, attempts, timeout, allowed_status=()):
+            parsed = urllib.parse.urlsplit(url)
+            if parsed.path.endswith("/sitemap.xml"):
+                body = (self.geo / "sitemap.xml").read_bytes()
+                duplicate = body.replace(
+                    b"</urlset>",
+                    f"<url><loc>{self.base}</loc></url></urlset>".encode("utf-8"),
+                )
+                return 200, duplicate, url
+            return normal_get(url, attempts, timeout, allowed_status)
+
+        with patch.object(gate, "_http_get", side_effect=fake_get):
+            errors, _ = gate.audit_public(
+                records, urls, self.base, root=self.root
+            )
+        self.assertTrue(any("public sitemap contains duplicate" in e for e in errors))
+
+    def test_missing_machine_asset_fails(self) -> None:
+        (self.geo / "knowledge" / "blog-facts.json").unlink()
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "missing machine-readable asset: geo/knowledge/blog-facts.json" in e
+            for e in errors
+        ))
+
+    def test_invalid_json_machine_asset_fails(self) -> None:
+        (self.geo / "pricing.json").write_text("{invalid", encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "invalid machine-readable asset geo/pricing.json" in e for e in errors
+        ))
+
+    def test_invalid_xml_machine_asset_fails(self) -> None:
+        (self.geo / "rss.xml").write_text("<rss><unclosed></rss>", encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "invalid machine-readable asset geo/rss.xml" in e for e in errors
+        ))
+
+    def test_invalid_csv_row_width_fails(self) -> None:
+        (self.geo / "knowledge" / "query-matrix.csv").write_text(
+            "id,value\\n1,test,extra\\n", encoding="utf-8"
+        )
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "invalid machine-readable asset geo/knowledge/query-matrix.csv" in e
+            and "expected 2" in e
+            for e in errors
+        ))
 
     def test_public_audit_fails_when_root_robots_redirects_off_origin(self) -> None:
         records, urls, normal_get = self._public_fixture()
