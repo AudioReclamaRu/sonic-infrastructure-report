@@ -68,14 +68,25 @@ MACHINE_CSV_FILES = frozenset({
     "knowledge/evidence-ledger.csv",
     "knowledge/query-matrix.csv",
 })
-# These agents are relevant to search/answer-engine discovery. A robots denial
-# for any sitemap page or machine endpoint is a public-verification failure.
+# Search/index discovery tokens. A denial for any sitemap URL or machine
+# endpoint is a public-verification failure.
+# Vendor references:
+# - OpenAI: https://developers.openai.com/api/docs/bots
+# - Anthropic: https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
+# - Perplexity: https://docs.perplexity.ai/docs/resources/perplexity-crawlers
+# - Google: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
 INDEXING_CRAWLERS = (
-    "Googlebot", "Bingbot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot",
+    "Googlebot", "Bingbot", "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot",
 )
-# Training and user-triggered fetch policies are reported separately: they are
-# owner policy choices, not a direct search-indexing availability signal.
-ADDITIONAL_CRAWLERS = ("GPTBot", "ChatGPT-User")
+# These product tokens do not themselves decide search-index inclusion. They
+# govern training, grounding, or user-triggered retrieval and are reported as
+# policy notes rather than indexing failures. Google-Extended is a robots token,
+# not a distinct HTTP request user-agent; ChatGPT-User and Perplexity-User may
+# not honor robots.txt for user-requested fetches.
+ADDITIONAL_CRAWLERS = (
+    "Google-Extended", "GPTBot", "ChatGPT-User",
+    "ClaudeBot", "Claude-User", "Perplexity-User",
+)
 
 
 class PageParser(HTMLParser):
@@ -698,7 +709,7 @@ def audit_public(
                         if not robot_parser.can_fetch(agent, target):
                             notes.append(
                                 f"HOST ROBOTS: {agent} is disallowed from {target} "
-                                "(separate training/user-fetch policy)"
+                                "(separate training/grounding/user-fetch policy)"
                             )
             except Exception as exc:
                 notes.append(f"HOST ROBOTS: could not interpret crawler rules: {exc}")
