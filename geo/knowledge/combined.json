@@ -131,7 +131,8 @@
       "verification_status: verified = primary source independently confirmed; cited_in_blog = claim appears in blog with named source or as reported data but primary source not independently re-verified in this pass; blog_milestone = project/progress fact reported in a blog case (may differ from later canonical proof); editorial_definition = definitional/explanatory statement from our blog article.",
       "Limitations: figures may be dated; some articles are forecasts/estimates as of publication date. Do not use outdated price claims from blog posts as current pricing. Outdated prices mentioned inside historical blog articles are intentionally excluded from this registry.",
       "Phase 3 (2026-11-07): added business priority/classification hints via evidence ledger; historical third-party stats must be read with source date/period and not as 2026 market state unless re-verified.",
-      "2026-11-15: BF-2020-004 (51%) and BF-2019-002 (72%/85%) checked against the original Mediascope PDF for IAB Russia. Status 'verified' is limited to the report's 2018 sample, cohort and metric denominators; it does not indicate current 2026 market size or population-wide prevalence."
+      "2026-11-15: BF-2020-004 (51%) and BF-2019-002 (72%/85%) checked against the original Mediascope PDF for IAB Russia. Status 'verified' is limited to the report's 2018 sample, cohort and metric denominators; it does not indicate current 2026 market size or population-wide prevalence.",
+      "2026-11-15: BF-2018-001 checked against the official 2017 IAB Russia / ARIR Audio White Paper page; corrected the measure to 65M MAU, at least 23M WAU and 3.5–5 hours, without claiming unique listeners. BF-2020-003 and BF-HOSTREAD-001 checked against the primary IAB/PwC FY2019 U.S. report; taxonomy has four categories, not three, and the 66/27/6/1 shares are revenue shares. BF-2020-005 forecast values checked against the IAB Russia 2018 white paper and annotated with the later 2021 market update; forecast values are not actual market results."
     ],
     "facts": [
       {
@@ -174,7 +175,7 @@
       },
       {
         "id": "BF-2020-003",
-        "claim": "PwC совместно с IAB USA выделяли три основных формата рекламы в подкастах: заранее записанный диктором текст, текст, читаемый ведущим в эфире, и готовый рекламный ролик.",
+        "claim": "В статье блога приведено упрощённое деление podcast-рекламы на три формата. Отчёт IAB/PwC FY2019 для США использует четыре категории ad type: host-read, announcer-/producer-read, supplied ads (client/brand/agency produced) и other publisher produced.",
         "topic": [
           "podcasts",
           "ad-formats",
@@ -185,19 +186,18 @@
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
           {
-            "name": "PricewaterhouseCoopers (PwC)",
-            "type": "research"
-          },
-          {
-            "name": "IAB USA",
-            "type": "research"
+            "name": "IAB USA / PwC, U.S. Podcast Advertising Revenue Study FY2019",
+            "type": "primary research report",
+            "region": "US",
+            "date": "2020-07",
+            "url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf"
           }
         ],
         "verification_status": "cited_in_blog",
-        "limitations": "Частично подтверждено (scope-limited): IAB/PwC US podcast research категоризирует и измеряет типы podcast-рекламы, включая host-read и announcer-read/pre-produced (в FY2019: host-read 66%, announcer-read/pre-produced 27%, supplied 6% по доступным summary). Формулировка блога про «три формата» является упрощённым описанием; точное соответствие таксономии конкретного издания отчёта требует проверки первичного PDF/определений. США, FY2019; не состояние рынка РФ/2026.",
+        "limitations": "США, финансовый год 2019, отчёт опубликован в июле 2020. 66% / 27% / 6% / 1% — доли рекламной выручки по типам рекламы, не доли количества роликов, контактов или аудитории. Отчёт содержит четыре категории; точное соответствие блоговых трёх упрощённых форматов этим категориям не доказано. Не переносить на Россию или 2026 год. Данные опираются на сведения от компаний, PwC не проводила аудит и не давала assurance.",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
-        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020)",
+        "primary_source_name": "IAB USA / PwC — U.S. Podcast Advertising Revenue Study, FY2019",
         "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
         "source_date": "2020-07"
       },
@@ -326,7 +326,7 @@
       },
       {
         "id": "BF-2020-005",
-        "claim": "По прогнозам IAB Russia (приведённым в статье от 18.02.2020), в 2020 году рынок онлайн-аудиорекламы в России мог вырасти в 2,5 раза по сравнению с 2019 годом до 3,7 млрд руб., а в 2021 году — ещё в 1,6 раза, превысив 6 млрд руб.",
+        "claim": "В статье от 18.02.2020 приведены прогнозные значения IAB Russia: 3,7 млрд руб. для рынка Digital Audio в 2020 году и 6,1 млрд руб. в 2021 году. Эти цифры присутствуют как прогноз в Digital Audio Advertising White Paper 2018; они не являются фактическими результатами 2020–2021 годов.",
         "topic": [
           "digital-audio-ads",
           "russia",
@@ -337,15 +337,27 @@
         "blog_date": "2020-02-18",
         "cited_primary_sources": [
           {
-            "name": "IAB Russia",
-            "type": "forecast",
-            "region": "RU"
+            "name": "IAB Russia, Digital Audio Advertising White Paper 2018",
+            "type": "primary industry white paper",
+            "region": "RU",
+            "date": "2018",
+            "url": "https://interactivead.ru/wp-content/uploads/2022/04/iab_aad_whitepaper_inet_2018.pdf"
+          },
+          {
+            "name": "IAB Russia / ARIR, Digital Audio market estimate, 20.11.2021",
+            "type": "industry market update",
+            "region": "RU",
+            "date": "2021-11-20",
+            "url": "https://interactivead.ru/news/obem-rynka-digital-audio-po-itogam-treh-kvartalov-2021-goda/"
           }
         ],
         "verification_status": "cited_in_blog",
-        "limitations": "Прогноз на момент публикации; фактические значения могли отличаться.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "limitations": "3,7 млрд руб. (2020) и 6,1 млрд руб. (2021) подтверждены только как прогнозы, опубликованные в IAB Russia Digital Audio Advertising White Paper 2018, а не как фактическая выручка. К 20.11.2021 комитет IAB Russia / АРИР сообщал об оценке 473,5 млн руб. за 9 месяцев 2021 и прогнозе 761,5 млн руб. за год; из подсчёта исключались YouTube/YouTube Music, расходы Spotify также не включались. Различия охвата и методологии не позволяют объявить это полностью сопоставимой проверкой факта. Не использовать прогнозы 2018 как текущий рынок или фактические результаты.",
         "business_priority": 3,
-        "phase3_classification": "unverified_primary"
+        "phase3_classification": "partially_verified",
+        "primary_source_name": "IAB Russia — Digital Audio Advertising White Paper 2018",
+        "source_url": "https://interactivead.ru/wp-content/uploads/2022/04/iab_aad_whitepaper_inet_2018.pdf",
+        "source_date": "2018"
       },
       {
         "id": "BF-2020-006",
@@ -375,7 +387,7 @@
       },
       {
         "id": "BF-2018-001",
-        "claim": "По данным IAB Russia (исследование воздействия онлайн-аудиорекламы, 2017, как приведено в статье), аудитория онлайн-аудиорекламы составляла около 65 млн уникальных слушателей в месяц и ~23 млн в неделю; слушатели проводили на площадках с аудиорекламой примерно 3,5 часа в неделю.",
+        "claim": "В белой книге IAB Russia 2017 совокупный охват аудитории онлайн-среды, доступной для маркетинговых коммуникаций в аудиоформате, оценён в 65 млн человек в месяц (MAU) и не менее 23 млн в неделю (WAU); среднее время пребывания на охваченных онлайн-аудиорекламой площадках — около 3,5–5 часов в неделю.",
         "topic": [
           "digital-audio-ads",
           "russia",
@@ -386,15 +398,20 @@
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "IAB Russia",
-            "type": "research",
-            "year": "2017"
+            "name": "IAB Russia / ARIR, 2017 Audio White Paper",
+            "type": "industry white paper",
+            "region": "RU",
+            "date": "2017-04-20",
+            "url": "https://interactivead.ru/products/2017-white-paper-audio-ad/"
           }
         ],
-        "verification_status": "cited_in_blog",
-        "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia.  Phase 3: историческая/атрибутированная цифра из блога; не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+        "verification_status": "verified",
+        "limitations": "Историческая экспертная оценка IAB Russia, опубликованная 20.04.2017. Показатель сформулирован как совокупный охват рекламно-доступной онлайн-аудиосреды (MAU/WAU), а не как перепись уникальных слушателей всей цифровой аудиосреды. Время 3,5–5 часов относится к площадкам, охваченным онлайн-аудиорекламой. Не переносить на рынок или население 2026 года; underlying methodology/sample not independently audited in this pass.",
         "business_priority": 3,
-        "phase3_classification": "unverified_primary"
+        "phase3_classification": "verified",
+        "primary_source_name": "IAB Russia / ARIR — 2017 / Audio: White Paper",
+        "source_url": "https://interactivead.ru/products/2017-white-paper-audio-ad/",
+        "source_date": "2017-04-20"
       },
       {
         "id": "BF-2018-002",
@@ -475,15 +492,18 @@
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
           {
-            "name": "PwC/IAB USA",
-            "type": "research"
+            "name": "IAB USA / PwC, U.S. Podcast Advertising Revenue Study FY2019",
+            "type": "primary research report",
+            "region": "US",
+            "date": "2020-07",
+            "url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf"
           }
         ],
         "verification_status": "cited_in_blog",
-        "limitations": "Частично подтверждено различение форматов (host-read vs announcer-read/pre-produced) по IAB/PwC; утверждение об эффекте на доверие/лояльность в блоге носит качественный характер и требует отдельного доказательства. Не универсальный вывод без контекста исследования.",
+        "limitations": "Подтверждены наличие host-read как категории и её доля 66% от podcast ad revenue в США в FY2019. Не подтверждён универсальный причинный эффект host-read на доверие/лояльность. Не переносить на рынок РФ или 2026 год; данные по выручке основаны на сообщениях участников рынка, без аудита PwC.",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
-        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020) — format taxonomy context",
+        "primary_source_name": "IAB USA / PwC — U.S. Podcast Advertising Revenue Study, FY2019",
         "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
         "source_date": "2020-07"
       },
@@ -725,23 +745,23 @@
       },
       {
         "id": "BF-2020-003",
-        "claim": "PwC совместно с IAB USA выделяли три основных формата рекламы в подкастах: заранее записанный диктором текст, текст, читаемый ведущим в эфире, и готовый рекламный ролик.",
+        "claim": "В статье блога приведено упрощённое деление podcast-рекламы на три формата. Отчёт IAB/PwC FY2019 для США использует четыре категории ad type: host-read, announcer-/producer-read, supplied ads (client/brand/agency produced) и other publisher produced.",
         "claim_type": "historical_blog_fact",
-        "entity": "Блог «Аудио-Реклама•ru»",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
-        "supporting_source": "PricewaterhouseCoopers (PwC); IAB USA",
+        "entity": "Блог и исследовательская база «Аудио-Реклама•ru»",
+        "primary_source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
+        "supporting_source": "IAB USA; PricewaterhouseCoopers LLP (PwC)",
         "source_date": "2020-07",
-        "last_verified": "2026-11-06",
+        "last_verified": "2026-11-15",
         "status": "cited_in_blog",
-        "limitations": "Нужна ссылка на конкретный отчёт PwC/IAB USA для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "limitations": "США, финансовый год 2019, отчёт опубликован в июле 2020. 66% / 27% / 6% / 1% — доли рекламной выручки по типам рекламы, не доли количества роликов, контактов или аудитории. Отчёт содержит четыре категории; точное соответствие блоговых трёх упрощённых форматов этим категориям не доказано. Не переносить на Россию или 2026 год. Данные опираются на сведения от компаний, PwC не проводила аудит и не давала assurance.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (PricewaterhouseCoopers (PwC); IAB USA) → cited in www.audio-reclama.ru/blog → GEO registry",
+        "provenance": "Primary report: IAB USA / PwC, U.S. Podcast Advertising Revenue Study, FY2019 (https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf) → simplified three-format summary in first-party blog article.",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
-        "phase3_evidence": "IAB/PwC U.S. Podcast Advertising Revenue Study (FY 2019, published 2020; accessible summaries/snippets and report title confirm methodology and ad-type reporting) reports ad types including host-read ads and announcer-read/pre-produced ads: host-read ads contributed 66% of podcast advertising revenues in 2019, announcer-read/pre-produced 27%, supplied 6% (per IAB/PwC FY2019 study summaries). Blog phrasing (\"ведущий озвучивает текст / текст диктора / история хоста\") is a simplified Russian description; taxonomy mapping is not exact (e.g., branded content/product placement treated separately in later IAB/PwC definitions). Primary PDF URL observed in search results: https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf (direct fetch blocked in this environment).",
-        "applicability_scope": "Scope-limited: confirms that IAB/PwC US podcast research categorizes and measures podcast ad types including host-read and announcer-read/pre-produced formats. Do not treat blog’s exact 3-format phrasing as a verbatim primary taxonomy without checking the specific report edition/definitions. US market, FY2019 context; not 2026 RU market state.",
-        "last_reviewed": "2026-11-07",
-        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020)",
+        "phase3_evidence": "Проверен первичный PDF IAB/PwC U.S. Podcast Advertising Revenue Study (July 2020). В разделе Ad Types/Formats для FY2019 приведены доли выручки: host-read — 66%, announcer-read / pre-produced — 27%, supplied ads (client/brand/agency produced) — 6%, other publisher produced — 1%. В определениях отчёта host-read — реклама, читаемая ведущим и нативная содержанию подкаста; announcer-/producer-read — читаемая диктором или продюсером и включённая в содержание; supplied — заранее записанная реклама клиента/бренда/агентства; other publisher produced — готовая запись от издателя/производителя контента. Методология: сведения напрямую сообщали компании, генерирующие доход на подкаст-платформах; PwC прямо указывает, что не проводила аудит данных и не даёт assurance относительно их точности.",
+        "applicability_scope": "США, финансовый год 2019, отчёт опубликован в июле 2020. 66% / 27% / 6% / 1% — доли рекламной выручки по типам рекламы, не доли количества роликов, контактов или аудитории. Отчёт содержит четыре категории; точное соответствие блоговых трёх упрощённых форматов этим категориям не доказано. Не переносить на Россию или 2026 год. Данные опираются на сведения от компаний, PwC не проводила аудит и не давала assurance.",
+        "last_reviewed": "2026-11-15",
+        "primary_source_name": "IAB USA / PwC — U.S. Podcast Advertising Revenue Study, FY2019",
         "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf"
       },
       {
@@ -847,22 +867,24 @@
       },
       {
         "id": "BF-2020-005",
-        "claim": "По прогнозам IAB Russia (приведённым в статье от 18.02.2020), в 2020 году рынок онлайн-аудиорекламы в России мог вырасти в 2,5 раза по сравнению с 2019 годом до 3,7 млрд руб., а в 2021 году — ещё в 1,6 раза, превысив 6 млрд руб.",
+        "claim": "В статье от 18.02.2020 приведены прогнозные значения IAB Russia: 3,7 млрд руб. для рынка Digital Audio в 2020 году и 6,1 млрд руб. в 2021 году. Эти цифры присутствуют как прогноз в Digital Audio Advertising White Paper 2018; они не являются фактическими результатами 2020–2021 годов.",
         "claim_type": "historical_blog_fact",
-        "entity": "Блог «Аудио-Реклама•ru»",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
-        "supporting_source": "IAB Russia",
-        "source_date": "2020-02-18",
-        "last_verified": "2026-11-06",
+        "entity": "Блог и исследовательская база «Аудио-Реклама•ru»",
+        "primary_source_url": "https://interactivead.ru/wp-content/uploads/2022/04/iab_aad_whitepaper_inet_2018.pdf",
+        "supporting_source": "IAB Russia / АРИР",
+        "source_date": "2018",
+        "last_verified": "2026-11-15",
         "status": "cited_in_blog",
-        "limitations": "Прогноз на момент публикации; фактические значения могли отличаться. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "limitations": "3,7 млрд руб. (2020) и 6,1 млрд руб. (2021) подтверждены только как прогнозы, опубликованные в IAB Russia Digital Audio Advertising White Paper 2018, а не как фактическая выручка. К 20.11.2021 комитет IAB Russia / АРИР сообщал об оценке 473,5 млн руб. за 9 месяцев 2021 и прогнозе 761,5 млн руб. за год; из подсчёта исключались YouTube/YouTube Music, расходы Spotify также не включались. Различия охвата и методологии не позволяют объявить это полностью сопоставимой проверкой факта. Не использовать прогнозы 2018 как текущий рынок или фактические результаты.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (IAB Russia) → cited in www.audio-reclama.ru/blog → GEO registry",
+        "provenance": "Primary source: IAB Russia Digital Audio Advertising White Paper 2018 (https://interactivead.ru/wp-content/uploads/2022/04/iab_aad_whitepaper_inet_2018.pdf) → forecasts repeated in first-party blog article; later committee update: https://interactivead.ru/news/obem-rynka-digital-audio-po-itogam-treh-kvartalov-2021-goda/.",
         "business_priority": 3,
-        "phase3_classification": "unverified_primary",
-        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
-        "last_reviewed": "2026-11-07"
+        "phase3_classification": "partially_verified",
+        "phase3_evidence": "Проверен первичный Digital Audio Advertising White Paper 2018 IAB Russia: на диаграмме Digital Audio Forecast значения 3,7 млрд руб. для 2020 года и 6,1 млрд руб. для 2021 года прямо обозначены как forecast; 2017 год показан как fact (155 млн руб.). Позднее, в публикации комитета IAB Russia / АРИР от 20.11.2021, указано 473,5 млн руб. за январь–сентябрь 2021 года и прогноз 761,5 млн руб. за весь 2021 год (+9% к 2020). В этой оценке отдельно исключены YouTube и YouTube Music; затраты Spotify также не включались, при этом эксперты оценивали его долю примерно в 10%. Это подтверждает существенный пересмотр оценок, но из-за различий в составе площадок и методологии эти значения не следует сравнивать как полностью однородный временной ряд.",
+        "applicability_scope": "3,7 млрд руб. (2020) и 6,1 млрд руб. (2021) подтверждены только как прогнозы, опубликованные в IAB Russia Digital Audio Advertising White Paper 2018, а не как фактическая выручка. К 20.11.2021 комитет IAB Russia / АРИР сообщал об оценке 473,5 млн руб. за 9 месяцев 2021 и прогнозе 761,5 млн руб. за год; из подсчёта исключались YouTube/YouTube Music, расходы Spotify также не включались. Различия охвата и методологии не позволяют объявить это полностью сопоставимой проверкой факта. Не использовать прогнозы 2018 как текущий рынок или фактические результаты.",
+        "last_reviewed": "2026-11-15",
+        "primary_source_name": "IAB Russia — Digital Audio Advertising White Paper 2018",
+        "source_url": "https://interactivead.ru/wp-content/uploads/2022/04/iab_aad_whitepaper_inet_2018.pdf"
       },
       {
         "id": "BF-2020-006",
@@ -885,22 +907,24 @@
       },
       {
         "id": "BF-2018-001",
-        "claim": "По данным IAB Russia (исследование воздействия онлайн-аудиорекламы, 2017, как приведено в статье), аудитория онлайн-аудиорекламы составляла около 65 млн уникальных слушателей в месяц и ~23 млн в неделю; слушатели проводили на площадках с аудиорекламой примерно 3,5 часа в неделю.",
+        "claim": "В белой книге IAB Russia 2017 совокупный охват аудитории онлайн-среды, доступной для маркетинговых коммуникаций в аудиоформате, оценён в 65 млн человек в месяц (MAU) и не менее 23 млн в неделю (WAU); среднее время пребывания на охваченных онлайн-аудиорекламой площадках — около 3,5–5 часов в неделю.",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Блог «Аудио-Реклама•ru»",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
-        "supporting_source": "IAB Russia",
-        "source_date": "",
-        "last_verified": "2026-11-06",
-        "status": "cited_in_blog",
-        "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "entity": "Блог и исследовательская база «Аудио-Реклама•ru»",
+        "primary_source_url": "https://interactivead.ru/products/2017-white-paper-audio-ad/",
+        "supporting_source": "IAB Russia / ARIR, 2017 Audio White Paper",
+        "source_date": "2017-04-20",
+        "last_verified": "2026-11-15",
+        "status": "verified",
+        "limitations": "Историческая экспертная оценка IAB Russia, опубликованная 20.04.2017. Показатель сформулирован как совокупный охват рекламно-доступной онлайн-аудиосреды (MAU/WAU), а не как перепись уникальных слушателей всей цифровой аудиосреды. Время 3,5–5 часов относится к площадкам, охваченным онлайн-аудиорекламой. Не переносить на рынок или население 2026 года; underlying methodology/sample not independently audited in this pass.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (IAB Russia) → cited in www.audio-reclama.ru/blog → GEO registry",
+        "provenance": "Primary industry source: IAB Russia / ARIR, 2017 Audio White Paper (published 2017-04-20, https://interactivead.ru/products/2017-white-paper-audio-ad/) → figure reproduced in first-party blog article.",
         "business_priority": 3,
-        "phase3_classification": "unverified_primary",
-        "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
-        "applicability_scope": "Attributed historical figure/forecast as cited in blog; not original research by the «Аудио-Реклама•ru» studio; not 2026 market state without re-verification.",
-        "last_reviewed": "2026-11-07"
+        "phase3_classification": "verified",
+        "phase3_evidence": "На официальной странице продукта АРИР «2017 / Audio: White Paper» от 20.04.2017 приведены именно эти значения: совокупный охват аудитории онлайн-среды, доступной для маркетинговых коммуникаций в аудиоформате, — 65 млн MAU и не менее 23 млн WAU; время пребывания на площадках, охваченных онлайн-аудиорекламой, — около 3,5–5 часов в неделю. Страница описывает документ как white paper, подготовленный при участии членов IAB Russia и экспертов.",
+        "applicability_scope": "Историческая экспертная оценка IAB Russia, опубликованная 20.04.2017. Показатель сформулирован как совокупный охват рекламно-доступной онлайн-аудиосреды (MAU/WAU), а не как перепись уникальных слушателей всей цифровой аудиосреды. Время 3,5–5 часов относится к площадкам, охваченным онлайн-аудиорекламой. Не переносить на рынок или население 2026 года; underlying methodology/sample not independently audited in this pass.",
+        "last_reviewed": "2026-11-15",
+        "primary_source_name": "IAB Russia / ARIR — 2017 / Audio: White Paper",
+        "source_url": "https://interactivead.ru/products/2017-white-paper-audio-ad/"
       },
       {
         "id": "BF-2018-002",
@@ -964,20 +988,20 @@
         "claim": "В подкаст-рекламе выделяются форматы: заранее записанный диктором текст, чтение ведущим в эфире и готовый рекламный ролик; формат влияет на подачу и восприятие сообщения.",
         "claim_type": "historical_blog_fact",
         "entity": "Блог «Аудио-Реклама•ru»",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
-        "supporting_source": "PwC/IAB USA",
+        "primary_source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf",
+        "supporting_source": "IAB USA; PricewaterhouseCoopers LLP (PwC)",
         "source_date": "2020-07",
-        "last_verified": "2026-11-06",
+        "last_verified": "2026-11-15",
         "status": "cited_in_blog",
-        "limitations": "Эффект форматов (в т.ч. host-read) требует опоры на конкретные исследования; связывать с доказательными материалами при наличии. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
+        "limitations": "Подтверждены наличие host-read как категории и её доля 66% от podcast ad revenue в США в FY2019. Не подтверждён универсальный причинный эффект host-read на доверие/лояльность. Не переносить на рынок РФ или 2026 год; данные по выручке основаны на сообщениях участников рынка, без аудита PwC.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (PwC/IAB USA) → cited in www.audio-reclama.ru/blog → GEO registry",
+        "provenance": "Primary report: IAB USA / PwC U.S. Podcast Advertising Revenue Study, FY2019 (https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf) → first-party blog discussion of host-read.",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
-        "phase3_evidence": "Related to BF-2020-003. IAB/PwC US podcast studies distinguish host-read and announcer-read/pre-produced formats and report host-read as a major share (66% revenue share in FY2019 summaries). Blog’s effect claim (\"влияет на доверие и лояльность слушателей\") is a qualitative assertion not independently verified as a universal causal finding in this pass.",
-        "applicability_scope": "Scope-limited: format distinction supported by IAB/PwC taxonomy/evidence; trust/loyalty effect remains an attributed/qualitative claim requiring specific study evidence. US/historical context.",
-        "last_reviewed": "2026-11-07",
-        "primary_source_name": "IAB/PwC U.S. Podcast Advertising Revenue Study, FY 2019 (2020) — format taxonomy context",
+        "phase3_evidence": "См. первичный отчёт IAB USA / PwC FY2019: host-read ads определены как реклама, которую читает ведущий и которая нативна содержанию подкаста; в FY2019 на неё пришлось 66% podcast advertising revenue США. Это подтверждает наличие и коммерческую долю формата в исследуемом рынке. Утверждение из блоговой формулировки о том, что формат сам по себе повышает доверие или лояльность слушателей, отчёт не доказывает и в этом проходе отдельно не проверено. PwC не проводила аудит поступивших данных и не давала assurance.",
+        "applicability_scope": "Подтверждены наличие host-read как категории и её доля 66% от podcast ad revenue в США в FY2019. Не подтверждён универсальный причинный эффект host-read на доверие/лояльность. Не переносить на рынок РФ или 2026 год; данные по выручке основаны на сообщениях участников рынка, без аудита PwC.",
+        "last_reviewed": "2026-11-15",
+        "primary_source_name": "IAB USA / PwC — U.S. Podcast Advertising Revenue Study, FY2019",
         "source_url": "https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf"
       },
       {
