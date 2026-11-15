@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-14
+date: 2026-11-15
 lang: ru
 related:
   - AGENTS.md
@@ -37,6 +37,7 @@ related:
 ## Поисковая видимость и качество обхода
 
 - READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный live-аудит sitemap, коммерческих страниц и каталога дикторов. Зафиксированы 1 186 уникальных URL, 2 подтверждённых 404-профиля в sitemap, один redirecting URL и несогласованные публичные счётчики каталога; это не полный crawl и не отчёт Search Console/Яндекс Вебмастера.
+- READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-15.md — повторная live-проверка sitemap/robots и ключевых страниц. Подтверждены два 404-профиля и redirecting /clients.html в sitemap; выявлен возможный crawl-block вложенных English project pages, несогласованность IVR metadata/body и слабое service-intent описание главной. Не полный crawl и не измерение Search Console/GA4.
 
 ## Правила использования
 
