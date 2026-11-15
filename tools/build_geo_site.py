@@ -18,6 +18,17 @@ OUT = ROOT / "geo"
 BASE = "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/"
 SITE = "https://www.audio-reclama.ru"
 UPDATED = date.today().isoformat()
+
+# Build SHA: инжектируется в HTML meta tag — трассируемость деплоя
+# (ревью владельца 14.11: «публичные страницы совпадают с проверенной сборкой»).
+import subprocess as _sp
+try:
+    BUILD_SHA = _sp.run(["git", "rev-parse", "--short", "HEAD"],
+                        capture_output=True, text=True,
+                        cwd=str(ROOT)).stdout.strip()[:8]
+except Exception:
+    BUILD_SHA = "unknown"
+
 INDEXNOW_KEY = "a7f3c9d2e4b6481fa0c5d7e9b2f4a6c8"
 PHONE = "8 800 700-46-52"
 EMAIL = "start@audio-reclama.ru"
@@ -385,6 +396,7 @@ def page(path: str, title: str, description: str, body: str,
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="build-sha" content="{BUILD_SHA}">
 <link rel="canonical" href="{url}">
 <link rel="alternate" hreflang="ru" href="{url}">
 <style>{CSS}</style>
