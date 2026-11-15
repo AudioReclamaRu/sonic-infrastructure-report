@@ -295,8 +295,7 @@
             "SUPPORTED",
             "NOT_SUPPORTED",
             "INCONCLUSIVE",
-            "CONTRADICTED",
-            "HOLD"
+            "CONTRADICTED"
           ]
         }
       }
@@ -536,7 +535,7 @@
           }
         },
         "required": [
-          "synthetic"
+          "synthetic_fixture"
         ]
       },
       "then": {
