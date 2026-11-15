@@ -67,7 +67,10 @@ canon/                 position — operators of the industry's language
   releasing-voice.md              how provenance becomes part of the product
   cards/                          Operator Cards (compact, LLM-indexable)
 standards/             profession standards — how to work with voice
+  EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md  six-discipline experiment integrity standard
   BRAND_AND_SITE_NAMING.md canonical brand and website writing
+schemas/               machine-readable contracts
+  experiment-record.schema.json  six-lens experiment record and release contract
   voice-provenance-passport.md    standard: voice provenance passport (EN)
   living-voice-standard.md        voluntary verification standard of human voice
   responsible-release.md          the pre-air check procedure (pre-air voice editing)
@@ -87,6 +90,8 @@ strategy/              strategic development contracts
   STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
 research/              reproducible research plans and benchmark programmes
+  EXPERIMENT_TEMPLATE.md  reusable human-readable experiment record
+  experiments/            structured JSON experiment records and registry
   RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
 problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
   README.md             operating model
@@ -116,6 +121,8 @@ ar-notes/              «Аудио-Реклама•ru» Research Notes (short,
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
 tools/ivr_flow_linter/  static IVR call-flow graph linter (Python, no dependencies)
+tools/check_experiment_records.py  six-lens experiment record gate
+tools/experiment_integrity/tests/  experiment record gate regression tests
 ```
 
 ## The layers

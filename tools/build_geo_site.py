@@ -10,6 +10,9 @@ Run: python tools/build_geo_site.py
 from __future__ import annotations
 
 import json
+import os
+import re
+import html as _html
 import pathlib
 from datetime import date
 
@@ -19,15 +22,18 @@ BASE = "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/"
 SITE = "https://www.audio-reclama.ru"
 UPDATED = date.today().isoformat()
 
-# Build SHA: инжектируется в HTML meta tag — трассируемость деплоя
-# (ревью владельца 14.11: «публичные страницы совпадают с проверенной сборкой»).
+# Build SHA marks the source revision used to assemble the complete GEO
+# artifact. GEO_BUILD_SHA/GITHUB_SHA allow reproducible CI builds; local runs
+# fall back to the checked-out Git revision.
 import subprocess as _sp
-try:
-    BUILD_SHA = _sp.run(["git", "rev-parse", "--short", "HEAD"],
-                        capture_output=True, text=True,
-                        cwd=str(ROOT)).stdout.strip()[:8]
-except Exception:
-    BUILD_SHA = "unknown"
+BUILD_SHA = (os.environ.get("GEO_BUILD_SHA") or os.environ.get("GITHUB_SHA") or "").strip()[:8]
+if not BUILD_SHA:
+    try:
+        BUILD_SHA = _sp.run(["git", "rev-parse", "--short", "HEAD"],
+                            capture_output=True, text=True,
+                            cwd=str(ROOT)).stdout.strip()[:8]
+    except Exception:
+        BUILD_SHA = "unknown"
 
 INDEXNOW_KEY = "a7f3c9d2e4b6481fa0c5d7e9b2f4a6c8"
 PHONE = "8 800 700-46-52"
@@ -137,7 +143,7 @@ EXTRA_ANSWERS = [
 <p>Объём текста; количество голосов и языков; количество и формат файлов;
 сроки; объём правок. Правка файла в модели Аудио+ — 790 ₽; пакеты заказов
 бессрочные.</p>
-""" + _answer_footer("официальный сайт студии audio-reclama.ru, раздел услуг и Аудио+"),
+""" + _answer_footer("официальный сайт студии «Аудио-Реклама•ru», раздел услуг и Аудио+"),
     },
     {
         "slug": "ozvuchka-pozdravleniya-cena",
@@ -165,7 +171,7 @@ EXTRA_ANSWERS = [
 для разных сотрудников), это несколько заказов — или выгоднее пакет
 (10 заказов — 18 990 ₽, 1899 ₽ за заказ, бессрочно).</p>
 <p>Правка файла (заменить имя, дату, одну фразу) — 790 ₽.</p>
-""" + _answer_footer("официальная страница Аудио+ (audio-reclama.ru/audioplus/)"),
+""" + _answer_footer("официальная страница Аудио+ (https://www.audio-reclama.ru/audioplus/)"),
     },
     {
         "slug": "ozvuchka-dlya-socsetey-cena",
@@ -195,7 +201,7 @@ EXTRA_ANSWERS = [
 индивидуальный проект.</p>
 <p>Один голос во всех роликах бренда делает контент узнаваемым — держите
 одного диктора, а не разных на каждый выпуск.</p>
-""" + _answer_footer("официальная страница Аудио+ (audio-reclama.ru/audioplus/)"),
+""" + _answer_footer("официальная страница Аудио+ (https://www.audio-reclama.ru/audioplus/)"),
     },
     {
         "slug": "ozvuchka-audioknigi-cena",
@@ -227,7 +233,7 @@ EXTRA_ANSWERS = [
 <h2>Процесс</h2>
 <p>Текст → подбор голоса и пробный фрагмент на вашем материале → запись по
 главам → правки → сдача в согласованном формате (по главам или единым файлом).</p>
-""" + _answer_footer("официальный сайт студии audio-reclama.ru, аудиокниги"),
+""" + _answer_footer("официальный сайт студии «Аудио-Реклама•ru», аудиокниги"),
     },
     {
         "slug": "ozvuchka-obuchayushchego-kursa-cena",
@@ -258,7 +264,7 @@ EXTRA_ANSWERS = [
 модуля — точечные перезаписи.</p>
 <p>Модель Аудио+ (1990 ₽ за заказ, до 90 слов) подходит для коротких
 промо-роликов курса, но не для самих лекций.</p>
-""" + _answer_footer("официальный сайт студии audio-reclama.ru, раздел услуг"),
+""" + _answer_footer("официальный сайт студии «Аудио-Реклама•ru», раздел услуг"),
     },
     {
         "slug": "golos-dlya-navigatsii-cena",
@@ -289,7 +295,7 @@ EXTRA_ANSWERS = [
 оборудование); объём правок при обновлении системы.</p>
 <p>Для IVR-меню и голосовых приветствий — см.
 <a href="{BASE}answers/ivr-privetstvie-cena/">страницу IVR</a>.</p>
-""" + _answer_footer("официальный сайт студии audio-reclama.ru, раздел услуг"),
+""" + _answer_footer("официальный сайт студии «Аудио-Реклама•ru», раздел услуг"),
     },
 ]
 
@@ -356,7 +362,8 @@ def _breadcrumb_jsonld(path: str, title: str) -> dict:
     items = [{"@type": "ListItem", "position": 1,
               "name": "Главная", "item": BASE}]
     labels = {"answers": "Ответы на вопросы", "guides": "Руководства",
-              "ceny": "Цены", "faq": "FAQ", "contacts": "Контакты"}
+              "ceny": "Цены", "faq": "FAQ", "contacts": "Контакты",
+              "knowledge": "База знаний"}
     acc = ""
     for i, seg in enumerate(segs[:-1]):
         acc += seg + "/"
@@ -367,6 +374,85 @@ def _breadcrumb_jsonld(path: str, title: str) -> dict:
                   "name": title})
     return {"@context": "https://schema.org", "@type": "BreadcrumbList",
             "itemListElement": items}
+
+
+def _stamp_all_site_html() -> None:
+    """Stamp every sitemap-backed HTML page, including hand-maintained pages.
+
+    The page() helper covers generated pages. This final pass closes the gap
+    for curated knowledge/answer pages that are not regenerated by page().
+    """
+    build_meta = f'<meta name="build-sha" content="{BUILD_SHA}">'
+    robots_meta = '<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">'
+
+    for dest in sorted(OUT.rglob("*.html")):
+        html = dest.read_text(encoding="utf-8")
+        original = html
+
+        # One build identifier per page. Remove duplicates rather than preserve
+        # contradictory fingerprints from earlier hand edits.
+        html = re.sub(
+            r'<meta\s+name=["\']build-sha["\'][^>]*>\s*',
+            "",
+            html,
+            flags=re.IGNORECASE,
+        )
+        if re.search(r"</head>", html, flags=re.IGNORECASE):
+            html = re.sub(
+                r"</head>",
+                build_meta + "\n</head>",
+                html,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+
+        # GEO sitemap pages should be indexable unless a page is deliberately
+        # removed from the sitemap. Do not overwrite an explicit noindex rule:
+        # the integrity gate will make that contradiction visible.
+        if not re.search(
+            r'<meta\s+name=["\']robots["\']',
+            html,
+            flags=re.IGNORECASE,
+        ):
+            html = re.sub(
+                r"</head>",
+                robots_meta + "\n</head>",
+                html,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+
+        relative_dir = dest.parent.relative_to(OUT).as_posix()
+        is_root_page = relative_dir == "."
+        if not is_root_page and not re.search(
+            r'"@type"\s*:\s*"BreadcrumbList"',
+            html,
+            flags=re.IGNORECASE,
+        ):
+            title_match = re.search(
+                r"<title[^>]*>(.*?)</title>",
+                html,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+            title = _html.unescape(title_match.group(1)).strip() if title_match else dest.parent.name
+            relative_path = relative_dir.rstrip("/") + "/"
+            breadcrumb = _breadcrumb_jsonld(relative_path, title)
+            script = (
+                '<script type="application/ld+json">'
+                + json.dumps(breadcrumb, ensure_ascii=False, separators=(",", ":"))
+                + "</script>\n"
+            )
+            html = re.sub(
+                r"</head>",
+                script + "</head>",
+                html,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+
+        if html != original:
+            dest.write_text(html, encoding="utf-8")
+            print("normalized", dest.relative_to(ROOT))
 
 
 def page(path: str, title: str, description: str, body: str,
@@ -459,7 +545,7 @@ def build_pages():
     <h2>Ответы на частые вопросы</h2>
     <nav class="links">
     <a href="{BASE}answers/skolko-stoit-ozvuchka/">Сколько стоит озвучка в Аудио+ — 1990 ₽ за заказ</a>
-    <a href="{BASE}answers/ivr-privetstvie-cena/">Сколько стоит голосовое приветствие IVR — расчёт индивидуальный</a>
+    <a href="{BASE}answers/ivr-privetstvie-cena/">Сколько стоит голосовое приветствие IVR — публичная информация о цене</a>
 {hub_answers}
     <a href="{BASE}ceny/">Полная таблица цен на озвучку и IVR</a>
     <a href="{BASE}faq/">FAQ: слова, правки, сроки, оплата, оферта</a>
@@ -486,7 +572,7 @@ def build_pages():
 
     page("index.html", "Озвучка для бизнеса: цены и ответы — Аудио-Реклама•ru",
          "Цены на озвучку рекламы (Аудио+ 1990 ₽ за заказ) и голосовые приветствия IVR "
-         "(расчёт индивидуальный), ответы на частые вопросы, руководства по выбору голоса и IVR.",
+         "(публичная фиксированная цена не указана), ответы на частые вопросы, руководства по выбору голоса и IVR.",
          hub_body, [ORG, faq_jsonld()])
 
     # ---------------------------------------------------------------- prices
@@ -506,7 +592,7 @@ def build_pages():
     <p>Пакеты бессрочные: минуты и заказы не сгорают. Правка готового файла — 790 ₽.</p>
 
     <h2>IVR — голосовое приветствие и меню</h2>
-    <p>Точные цены на голосовое меню IVR уточняются индивидуально. Актуальную информацию смотрите на официальной странице
+    <p>На публичной странице услуги IVR фиксированная цена и явный способ расчёта не указаны. Уточните актуальные условия по ссылке
     <a href="{SITE}/audio/golosovoe-privetstvie-menu-ivr.html">IVR</a>.</p>
 
     <h2>Что входит в заказ</h2>
@@ -537,7 +623,7 @@ def build_pages():
     }
     page("ceny/", "Цены на озвучку и IVR (2026) — Аудио-Реклама•ru",
          "Озвучка Аудио+ 1990 ₽ за заказ до 90 слов, пакеты 18 990–49 990 ₽. "
-         "Цены информационные, не оферта.",
+         "Цены информационные, не оферта. На публичной странице IVR фиксированная цена не указана.",
          prices_body, [ORG, service, faq_jsonld()])
 
     # ---------------------------------------------------------------- faq
@@ -586,18 +672,18 @@ def build_pages():
 
     ans2 = f"""
     <h1>Сколько стоит голосовое приветствие IVR</h1>
-    <p class="lead"><strong>Ответ:</strong> точная стоимость рассчитывается индивидуально под задачу.
-    Актуальную информацию и расчёт смотрите на официальной странице
-    <a href="{SITE}/audio/golosovoe-privetstvie-menu-ivr.html">Голосовое приветствие и меню IVR</a>.</p>
-    <p>При расчёте учитываются: количество файлов, структура меню, количество голосов,
-    языки. Один голос на весь сценарий обычно экономичнее и целостнее.</p>
+    <p class="lead"><strong>Ответ:</strong> на публичной странице услуги фиксированная цена не указана.
+    Способ расчёта в опубликованном описании явно не обозначен. Уточните актуальные условия на
+    <a href="{SITE}/audio/golosovoe-privetstvie-menu-ivr.html">официальной странице услуги IVR</a>
+    или напрямую у студии.</p>
+    <p>Отсутствие опубликованной цены не доказывает, что у студии нет внутренней модели расчёта;
+    её условия не следует додумывать по косвенным признакам.</p>
     <p><strong>Источник:</strong>
     <a href="{SITE}/audio/golosovoe-privetstvie-menu-ivr.html">{SITE}/audio/golosovoe-privetstvie-menu-ivr.html</a>,
     наблюдение от {UPDATED}. Цены информационные, не являются публичной офертой.</p>
     """
-    page("answers/ivr-privetstvie-cena/", "Сколько стоит голосовое приветствие IVR — расчёт индивидуальный",
-         "Голосовое приветствие и меню IVR: стоимость рассчитывается индивидуально. "
-         "Актуальный расчёт на официальной странице студии.",
+    page("answers/ivr-privetstvie-cena/", "Сколько стоит голосовое приветствие IVR — публичная информация о цене",
+         "На публичной странице услуги IVR фиксированная цена и явный способ расчёта не указаны. Уточните актуальные условия.",
          ans2, [ORG, faq_jsonld()])
 
     # каталог ответных страниц (data-driven, 11.11.2026): каждая — своя FAQPage-схема
@@ -809,13 +895,25 @@ def _sync_machine():
                 except Exception:
                     existing = {}
             comb = {"schema":"audio-reclama-geo/combined/1","updated":UPDATED,"base":BASE,"site":SITE,"prices":pr,"faq":fq}
-            # preserve enriched, non-generated blocks (provenance/knowledge layers)
-            for k in ("blog_facts", "evidence_ledger", "case_studies", "query_matrix"):
-                if k in existing and k not in comb:
-                    comb[k] = existing[k]
-            (OUT/"knowledge").mkdir(parents=True,exist_ok=True)
+            # Enriched knowledge layers are canonical in their standalone JSON files.
+            # Refresh the combined view from those sources instead of preserving stale
+            # copies that can silently drift when a registry is updated.
+            knowledge_sources = {
+                "blog_facts": "blog-facts.json",
+                "evidence_ledger": "evidence-ledger.json",
+                "case_studies": "case-studies.json",
+                "query_matrix": "query-matrix.json",
+            }
+            knowledge_dir = OUT/"knowledge"
+            for key, filename in knowledge_sources.items():
+                source_path = knowledge_dir/filename
+                if source_path.is_file():
+                    comb[key] = json.loads(source_path.read_text(encoding="utf-8"))
+                elif key in existing:
+                    comb[key] = existing[key]
+            knowledge_dir.mkdir(parents=True,exist_ok=True)
             comb_path.write_text(json.dumps(comb, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            print("wrote geo/knowledge/combined.json (preserved enriched blocks)")
+            print("wrote geo/knowledge/combined.json (synced from canonical knowledge registries)")
     except Exception as e:
         print("sync err",e)
 
@@ -837,12 +935,12 @@ def _write_llms():
 - Пакет 20: 35990 RUB (1799 RUB/заказ), бессрочно
 - Пакет 30: 49990 RUB (1667 RUB/заказ), бессрочно
 - Правка: 790 RUB
-- IVR: стоимость рассчитывается индивидуально — {SITE}/audio/golosovoe-privetstvie-menu-ivr.html
+- IVR: публичная фиксированная цена и явный способ расчёта на странице услуги не указаны — {SITE}/audio/golosovoe-privetstvie-menu-ivr.html
 
 ## Answers
 
 - {BASE}answers/skolko-stoit-ozvuchka/ — сколько стоит озвучка (1990 RUB)
-- {BASE}answers/ivr-privetstvie-cena/ — цена голосового приветствия IVR (расчёт индивидуальный)
+- {BASE}answers/ivr-privetstvie-cena/ — стоимость голосового приветствия IVR (публичная фиксированная цена не указана)
 {extra_answers_md}
 - {BASE}ceny/ — таблица цен
 - {BASE}faq/ — FAQ (слова, правки, оплата, оферта)
@@ -886,7 +984,9 @@ def _write_llms():
     def _price_line(e):
         p_ = e.get("price")
         if p_ in (None, "расчёт"):
-            return f"- {e.get('name')}: индивидуальный расчёт"
+            if e.get("id") == "P-IVR-INDIVIDUAL":
+                return f"- {e.get('name')}: публичная фиксированная цена и способ расчёта не указаны"
+            return f"- {e.get('name')}: публичная цена не указана"
         return f"- {e.get('name')}: {p_} RUB/{e.get('unit') or 'ед.'}"
 
     prices_dump = "\n".join(_price_line(e) for e in PRICES.get("entries", []))
@@ -960,8 +1060,9 @@ def main():
         (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n\n" + f"Sitemap: {BASE}sitemap.xml\n", encoding="utf-8")
         print("safe sync complete (HTML pages not regenerated)")
         raise SystemExit(_check_consistency())
-    # full build: regenerate pages + machine files (use with caution; may overwrite manual enrichments)
+    # full build: regenerate pages + normalize every sitemap-backed HTML page.
     build_pages()
+    _stamp_all_site_html()
     _sync_machine()
     _write_llms()
     _write_sitemap()

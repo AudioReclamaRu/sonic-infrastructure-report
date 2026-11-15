@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "record_kind": "experiment",
+  "experiment_id": "EXP-TEMPLATE",
+  "status": "PROPOSED",
+  "experiment_type": "replace with physical, acoustic, geoscientific, biological, human-subject, computational, AI, market, search-visibility or other type",
+  "protocol_version": "1.0",
+  "created_at": "2026-11-15T00:00:00Z",
+  "owner": "replace with responsible role or internal ID",
+  "question": "Replace with one concrete research question.",
+  "hypothesis": "Replace with one testable statement.",
+  "null_hypothesis": "State what absence of the predicted effect would look like.",
+  "falsifier": "State the observation that would reject or downgrade the hypothesis.",
+  "scope": "Define object, system boundaries, environment, scale and intended applicability.",
+  "variables": [
+    {
+      "name": "replace",
+      "role": "independent",
+      "operational_definition": "Define exactly how the variable is manipulated or observed.",
+      "unit": "define unit or explicit not applicable rationale",
+      "measurement_method": "Describe instrument, source or coding procedure.",
+      "uncertainty": "State precision or why not assessed."
+    }
+  ],
+  "controls": [
+    "List controls, comparison, randomization and order effects; state limitations."
+  ],
+  "six_lenses": {
+    "semiotics": {
+      "status": "NOT_ASSESSED",
+      "risk": "Unknown until reviewed.",
+      "assessment": "To be assessed before interpretation.",
+      "check": "",
+      "rationale": "Not yet assessed; do not treat as no effect.",
+      "evidence": [],
+      "hold_reason": ""
+    },
+    "ethology_behavior": {
+      "status": "NOT_ASSESSED",
+      "risk": "Unknown until reviewed.",
+      "assessment": "To be assessed where people, animals or agent behaviour can affect the result.",
+      "check": "",
+      "rationale": "Not yet assessed; do not treat as no effect.",
+      "evidence": [],
+      "hold_reason": ""
+    },
+    "chronobiology": {
+      "status": "NOT_ASSESSED",
+      "risk": "Unknown until reviewed.",
+      "assessment": "Check biological rhythms only where the object and timing make them relevant.",
+      "check": "",
+      "rationale": "Not yet assessed; do not treat as no effect.",
+      "evidence": [],
+      "hold_reason": ""
+    },
+    "ergonomics_human_factors": {
+      "status": "NOT_ASSESSED",
+      "risk": "Unknown until reviewed.",
+      "assessment": "Check workload, fatigue, operator errors, accessibility and safety.",
+      "check": "",
+      "rationale": "Not yet assessed; do not treat as no effect.",
+      "evidence": [],
+      "hold_reason": ""
+    },
+    "complex_systems": {
+      "status": "NOT_ASSESSED",
+      "risk": "Unknown until reviewed.",
+      "assessment": "Check boundaries, interactions, feedback, delays and sensitivity.",
+      "check": "",
+      "rationale": "Not yet assessed; do not treat as no effect.",
+      "evidence": [],
+      "hold_reason": ""
+    },
+    "cryptology": {
+      "status": "NOT_ASSESSED",
+      "risk": "Unknown until reviewed.",
+      "assessment": "Define provenance, integrity, confidentiality and threat model.",
+      "check": "",
+      "rationale": "Not yet assessed; do not treat as no effect.",
+      "evidence": [],
+      "hold_reason": ""
+    }
+  },
+  "data_provenance": {
+    "sources": [],
+    "collection_method": "Describe how data are obtained, transformed and retained.",
+    "raw_data_ref": "Use an access-controlled reference; never embed private source data here.",
+    "data_classification": "internal",
+    "hashes": []
+  },
+  "analysis_plan": "Pre-register comparisons, uncertainty, exclusions, missing-data handling and sensitivity checks.",
+  "external_release": false,
+  "synthetic_fixture": false
+}

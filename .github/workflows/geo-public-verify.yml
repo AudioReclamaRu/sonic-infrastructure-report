@@ -1,0 +1,39 @@
+name: GEO public deployment verification
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: geo-public-verification-${{ github.event.deployment.id || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-public-artifact:
+    # GitHub Pages deployments use the github-pages environment. Manual
+    # dispatch remains available for branch-source deployments or recovery.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event_name == 'deployment_status' &&
+        github.event.deployment_status.state == 'success' &&
+        github.event.deployment.environment == 'github-pages'
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the exact deployed revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Compare public GEO site with this deployment artifact
+        run: python tools/check_geo_integrity.py --public

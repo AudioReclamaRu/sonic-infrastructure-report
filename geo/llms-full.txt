@@ -12,12 +12,12 @@
 - Пакет 20: 35990 RUB (1799 RUB/заказ), бессрочно
 - Пакет 30: 49990 RUB (1667 RUB/заказ), бессрочно
 - Правка: 790 RUB
-- IVR: стоимость рассчитывается индивидуально — https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
+- IVR: публичная фиксированная цена и явный способ расчёта на странице услуги не указаны — https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
 
 ## Answers
 
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/ — сколько стоит озвучка (1990 RUB)
-- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/ — цена голосового приветствия IVR (расчёт индивидуальный)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/ — стоимость голосового приветствия IVR (публичная фиксированная цена не указана)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-minuta-ozvuchki/ — сколько стоит минута озвучки (заказы Аудио+, длинные формы — индивидуально)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-pozdravleniya-cena/ — озвучка поздравления — 1990 RUB за заказ (до 90 слов)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-socsetey-cena/ — озвучка для соцсетей и коротких видео — заказы/пакеты Аудио+, бренд-голос индивидуально
@@ -60,7 +60,7 @@
 - Q: Сколько стоит озвучка в Аудио+?
   A: 1990 ₽ за один заказ. Один заказ — один файл, не более 90 слов. Пакеты: 10 — 18990 ₽ (1899 ₽), 20 — 35990 ₽ (1799 ₽), 30 — 49990 ₽ (1667 ₽), бессрочно. Правки — 790 ₽.
 - Q: Сколько стоит голосовое приветствие/меню IVR?
-  A: Стоимость рассчитывается индивидуально (зависит от объёма, структуры меню, языков и условий). Актуальный расчёт — на официальной странице услуги.
+  A: На публичной странице услуги фиксированная цена не указана. Способ расчёта в опубликованном описании тоже явно не обозначен; точные условия нужно уточнить у студии.
 - Q: Сколько слов в заказе Аудио+?
   A: Не более 90 слов. Один заказ — одна законченная мысль. Дополнительный файл — новый заказ.
 - Q: Это оферта?
@@ -75,7 +75,7 @@
 - Аудио+ — пакет 20: 35990 RUB/пакет
 - Аудио+ — пакет 30: 49990 RUB/пакет
 - Аудио+ — правка: 790 RUB/правка
-- IVR — голосовое приветствие/меню: индивидуальный расчёт
+- IVR — голосовое приветствие/меню: публичная фиксированная цена и способ расчёта не указаны
 
 ## Answers index (data-driven catalog)
 

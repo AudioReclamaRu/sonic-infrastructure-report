@@ -19,6 +19,7 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling, distri
 10. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
 11. problem-solutions/REFERENCE_MODELS.md
 12. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
+13. standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md — mandatory six-discipline screen before planning, running, analysing or releasing any experiment.
 
 Canonical names are mandatory everywhere: the company, brand and studio are «Аудио-Реклама•ru»; the canonical homepage URL is https://www.audio-reclama.ru (www, no trailing slash). Never use the website address as the company or studio name. Before EVERY user-visible reply about the company and before EVERY document release, read standards/BRAND_AND_SITE_NAMING.md and standards/AI_RESPONSE_RELEASE_GATE.md, then check the final text with tools/check_ai_response_naming.py --stdin or --file. Follow the fail-closed rule.
 
@@ -129,6 +130,7 @@ state.
 - A **position** belongs in `canon/` and is labelled POSITION — it is not a fact.
 - A **specification** belongs in `standards/` and must be applicable: fields,
   tiers, checks a machine or a human can run.
+- An **experiment** must have a protocol/template record in `research/` or its domain-specific directory, including a question, falsifier, variables, provenance, limitations and a six-discipline review. Never mark a planned or synthetic fixture as a completed experiment.
 - A machine-readable data contract belongs in `schemas/` and must be linked to its human-facing standard and checked by a reproducible validator. Do not place contracts, personal data, voice files or private agreement text in public schemas or fixtures.
 - Editorial work is governed by `standards/editorial-object-contract.md`; the
   cases in `standards/editorial-object-cases.md` are filled **by hand** from real
@@ -143,6 +145,8 @@ state.
 ### Expert knowledge object contract
 
 - Problem-solving records belong in problem-solutions/ and follow problem-solutions/TEMPLATE.md, but the unit of work may instead be evidence, a diagnostic protocol, standard, tool, experiment, case, entity, interface, dataset or a relationship between existing objects.
+- Every experiment — physical, acoustic, geoscientific, biological, human-subject, computational, AI, market or search-visibility — must use standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md and research/EXPERIMENT_TEMPLATE.md. Screen all six disciplines; justify NOT_APPLICABLE; keep NOT_ASSESSED visible; put a material unresolved risk on HOLD. Domain-specific protocols remain in force and are extended by this cross-disciplinary layer.
+- Registered experiment records belong in research/experiments/*.json and must follow schemas/experiment-record.schema.json. Run python tools/check_experiment_records.py and python -m unittest discover -s tools/experiment_integrity/tests -v when changing the schema, records or validator. CI enforces the critical status and six-lens gates; it is not a full JSON Schema implementation, science review, legal/ethics approval or security audit.
 - Before creating anything, inspect the repository's current knowledge graph and related evidence/standards/tools. Check public https://www.audio-reclama.ru pages only to understand official company context, service scope or an existing public claim; those pages are not targets for editing or publication.
 - Record provenance, status, date, limitations and links to related objects. Keep facts, observations, calculations, professional recommendations, positions and hypotheses distinct.
 - The query backlog contains hypotheses unless demand is explicitly measured with source, region, date and method. Search volume is not the primary measure of infrastructure value.

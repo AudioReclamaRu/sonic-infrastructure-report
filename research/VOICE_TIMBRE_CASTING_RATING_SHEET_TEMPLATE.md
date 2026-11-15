@@ -1,23 +1,28 @@
 ---
 type: doc
-date: 2026-11-14
+date: 2026-11-15
 lang: ru
 status: template
 related:
   - research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md
   - problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md
+  - standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md
+  - research/EXPERIMENT_TEMPLATE.md
 ---
 
 # Бланк сравнения голосов для одного задания
 
 **Статус:** пустой шаблон анкеты и таблицы результатов. Это не проведённый опрос и не валидированная шкала. Перед реальным тестом адаптировать под конкретный бриф и целевую аудиторию.
 
+**Обязательное условие:** связать анкету с experiment_id и отдельной записью по `research/EXPERIMENT_TEMPLATE.md`; пройти шесть линз по `standards/EXPERIMENTAL_INTEGRITY_AND_HUMAN_FACTORS.md`. Эта анкета сама по себе не заменяет согласие участников, план выборки, контроль условий или анализ неопределённости.
+
 ## 1. Паспорт исследования
 
 | Поле | Заполнение |
 |---|---|
-| test_id | |
+| test_id / experiment_id | |
 | Дата / версия протокола | |
+| Шесть дисциплинарных линз заполнены | Да / Нет / HOLD — ссылка на запись |
 | Назначение | реклама / IVR / обучение / корпоративный рассказ / другое |
 | Рынок / язык / вариант | |
 | Целевая аудитория | |

@@ -21,6 +21,10 @@ TEXT_SUFFIXES = {
 EXEMPT_PATHS = {
     "standards/BRAND_AND_SITE_NAMING.md",
     "tools/check_ai_response_naming.py",
+    # These are immutable provenance snapshots: literal legacy source titles and
+    # URLs must remain exact evidence rather than being silently canonicalized.
+    "geo/knowledge/evidence-ledger.json",
+    "geo/knowledge/combined.json",
 }
 
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
@@ -32,6 +36,10 @@ HOST_PATTERN = re.compile(
 )
 LATIN_TRUNCATION_PATTERN = re.compile(
     r"(?i)(?<![A-Za-z0-9_.-])Audio-Reclama(?!\.ru\b)"
+)
+# This exact legacy schema identifier is a machine key, not a brand name.
+TECHNICAL_SCHEMA_ID_PATTERN = re.compile(
+    r"(?i)(?<![A-Za-z0-9_.-])(?:audio-reclama-geo/combined/1|audio-reclama-ru)(?![A-Za-z0-9_-])"
 )
 DOMAIN_AS_ENTITY_PATTERN = re.compile(
     r"(?iu)(?:компания|студия|бренд|company|studio|brand)"
@@ -84,8 +92,17 @@ def inspect_text(label: str, content: str) -> list[str]:
                     f"slash: {raw}"
                 )
 
+    for match in LATIN_TRUNCATION_PATTERN.finditer(content):
+        # Do not misclassify the one preserved machine schema identifier.
+        if TECHNICAL_SCHEMA_ID_PATTERN.match(content, match.start()):
+            continue
+        line = content.count("\n", 0, match.start()) + 1
+        issues.append(
+            f"{label}:{line}: Latin website name must not be truncated: "
+            f"{match.group(0)}"
+        )
+
     for pattern, message in (
-        (LATIN_TRUNCATION_PATTERN, "Latin website name must not be truncated"),
         (
             DOMAIN_AS_ENTITY_PATTERN,
             "website domain must not be used as company/studio/brand name",
@@ -106,7 +123,9 @@ def self_test() -> list[str]:
     good = (
         "Компания «Аудио-Реклама•ru». "
         "Официальный сайт: https://www.audio-reclama.ru. "
-        "GitHub: AudioReclamaRu. Contact: start@audio-reclama.ru."
+        "GitHub: AudioReclamaRu. Contact: start@audio-reclama.ru. "
+        "Internal schema: audio-reclama-geo/combined/1. "
+        "Internal entity id: audio-reclama-ru."
     )
     bad = (
         "Компания Audio-Reclama.ru.\n"
@@ -114,14 +133,15 @@ def self_test() -> list[str]:
         "https://www.audio-reclama.ru/\n"
         "Бренд Аудио-Реклама.ru.\n"
         "Аудио Реклама.\n"
-        "Audio-Reclama."
+        "Audio-Reclama.\n"
+        "Audio-Reclama Studio."
     )
     good_issues = inspect_text("self-test-good", good)
     bad_issues = inspect_text("self-test-bad", bad)
     failures: list[str] = []
     if good_issues:
         failures.append("self-test rejected the canonical brand/site pair")
-    if len(bad_issues) < 6:
+    if len(bad_issues) < 7:
         failures.append("self-test did not reject all known incorrect variants")
     return failures
 
