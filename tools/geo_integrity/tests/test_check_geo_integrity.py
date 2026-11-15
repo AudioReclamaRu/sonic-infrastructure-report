@@ -63,6 +63,8 @@ class GeoIntegrityTests(unittest.TestCase):
                 "phase3_classification": "verified",
             }]
         }
+        cases_fixture = {"cases": []}
+        queries_fixture = {"rows": []}
         for filename in gate.MACHINE_FILES:
             asset = self.geo / filename
             if asset.exists():
@@ -72,10 +74,16 @@ class GeoIntegrityTests(unittest.TestCase):
                 sample = json.dumps(blog_fixture) + "\n"
             elif filename == "knowledge/evidence-ledger.json":
                 sample = json.dumps(ledger_fixture) + "\n"
+            elif filename == "knowledge/case-studies.json":
+                sample = json.dumps(cases_fixture) + "\n"
+            elif filename == "knowledge/query-matrix.json":
+                sample = json.dumps(queries_fixture) + "\n"
             elif filename == "knowledge/combined.json":
                 sample = json.dumps({
                     "blog_facts": blog_fixture,
                     "evidence_ledger": ledger_fixture,
+                    "case_studies": cases_fixture,
+                    "query_matrix": queries_fixture,
                 }) + "\n"
             elif filename == "knowledge/evidence-ledger.csv":
                 sample = (
@@ -234,6 +242,26 @@ class GeoIntegrityTests(unittest.TestCase):
         errors, _, _ = gate.audit_local(self.root, self.base)
         self.assertTrue(any(
             "combined.json blog_facts differs" in item for item in errors
+        ))
+
+    def test_combined_case_studies_copy_must_match_source_json(self) -> None:
+        path = self.geo / "knowledge" / "combined.json"
+        combined = json.loads(path.read_text(encoding="utf-8"))
+        combined["case_studies"] = {"cases": [{"id": "stale"}]}
+        path.write_text(json.dumps(combined), encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "combined.json case_studies differs" in item for item in errors
+        ))
+
+    def test_combined_query_matrix_copy_must_match_source_json(self) -> None:
+        path = self.geo / "knowledge" / "combined.json"
+        combined = json.loads(path.read_text(encoding="utf-8"))
+        combined["query_matrix"] = {"rows": [{"cluster": "stale"}]}
+        path.write_text(json.dumps(combined), encoding="utf-8")
+        errors, _, _ = gate.audit_local(self.root, self.base)
+        self.assertTrue(any(
+            "combined.json query_matrix differs" in item for item in errors
         ))
 
     def test_evidence_ledger_csv_must_match_json(self) -> None:
