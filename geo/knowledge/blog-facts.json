@@ -1,13 +1,14 @@
 {
   "registry": "audio-reclama.ru blog facts (GEO knowledge layer)",
   "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Audio-Reclama.ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
-  "registry_updated": "2026-11-07",
+  "registry_updated": "2026-11-15",
   "method_notes": [
     "Do not present third-party statistics as Audio-Reclama.ru original research unless explicitly stated.",
     "Each entry links to the blog article (first-party publication) and names cited primary sources when available in the article.",
     "verification_status: verified = primary source independently confirmed; cited_in_blog = claim appears in blog with named source or as reported data but primary source not independently re-verified in this pass; blog_milestone = project/progress fact reported in a blog case (may differ from later canonical proof); editorial_definition = definitional/explanatory statement from our blog article.",
     "Limitations: figures may be dated; some articles are forecasts/estimates as of publication date. Do not use outdated price claims from blog posts as current pricing. Outdated prices mentioned inside historical blog articles are intentionally excluded from this registry.",
-    "Phase 3 (2026-11-07): added business priority/classification hints via evidence ledger; historical third-party stats must be read with source date/period and not as 2026 market state unless re-verified."
+    "Phase 3 (2026-11-07): added business priority/classification hints via evidence ledger; historical third-party stats must be read with source date/period and not as 2026 market state unless re-verified.",
+    "2026-11-15: BF-2020-004 (51%) and BF-2019-002 (72%/85%) checked against the original Mediascope PDF for IAB Russia. Status 'verified' is limited to the report's 2018 sample, cohort and metric denominators; it does not indicate current 2026 market size or population-wide prevalence."
   ],
   "facts": [
     {
@@ -79,7 +80,7 @@
     },
     {
       "id": "BF-2020-004",
-      "claim": "По данным Mediascope, 51% слушателей аудиоконтента в России слушают также и подкасты (данные, приведённые в статье).",
+      "claim": "По первичному исследованию Mediascope для IAB Russia, 51% слушателей онлайн-аудиоконтента в исследуемой аудитории также слушали подкасты. Это результат опроса онлайн-аудитории 18–45 лет в российских городах с населением более 100 тыс. человек, а не оценка всего населения России.",
       "topic": [
         "podcasts",
         "russia",
@@ -91,14 +92,15 @@
       "cited_primary_sources": [
         {
           "name": "Mediascope",
-          "type": "research",
-          "region": "RU"
+          "type": "primary research report",
+          "region": "RU",
+          "url": "https://mediascope.net/upload/iblock/77d/Online%20audio%20ad_Mediascope_141118.pdf"
         }
       ],
-      "verification_status": "cited_in_blog",
-      "limitations": "Историческая/атрибутированная цифра (51%, Mediascope) из блога; в доступных обзорах IAB Russia/Mediascope (Sostav 12.03.2019, Mediascope/Adindex 15.11.2018) точная цифра 51%/волна/дата в этом проходе не подтверждены. Не использовать как актуальное состояние рынка 2026 без независимой проверки первоисточника.",
+      "verification_status": "verified",
+      "limitations": "Исследование Mediascope для IAB Russia: онлайн-опрос примерно 850 слушателей аудиоконтента в российских городах с населением более 100 тыс. человек, возраст 18–45 лет; полевой этап — сентябрь–октябрь 2018 года. 51%, 72% и 85% относятся к этой выборке и указанным в отчёте знаменателям; не переносить их на всё население России, на все возрастные группы или на рынок 2026 года. Исторический срез 2018 года, не современная оценка потребления.",
       "business_priority": 3,
-      "phase3_classification": "unverified_primary"
+      "phase3_classification": "verified"
     },
     {
       "id": "BF-2019-001",
@@ -129,7 +131,7 @@
     },
     {
       "id": "BF-2019-002",
-      "claim": "По данным исследования Mediascope для IAB Russia (онлайн-опрос, Россия 100k+, МЖ 18-45, слушатели онлайн, 2018), 72% слушателей аудиоконтента обращают внимание на размещённую в нём аудиорекламу, а 85% готовы согласиться на рекламу в обмен на доступ к бесплатному контенту.",
+      "claim": "В исследовании Mediascope для IAB Russia 72% слушателей онлайн-аудиоконтента обращали внимание на размещённую в нём аудиорекламу; 85% респондентов, замечавших рекламу, были готовы слушать её в обмен на бесплатный контент. Исследование охватывало онлайн-аудиторию 18–45 лет в российских городах с населением более 100 тыс. человек.",
       "topic": [
         "digital-audio-ads",
         "russia",
@@ -141,17 +143,15 @@
       "cited_primary_sources": [
         {
           "name": "Mediascope",
-          "type": "research"
-        },
-        {
-          "name": "IAB Russia",
-          "type": "research partner"
+          "type": "primary research report",
+          "region": "RU",
+          "url": "https://mediascope.net/upload/iblock/77d/Online%20audio%20ad_Mediascope_141118.pdf"
         }
       ],
-      "verification_status": "cited_in_blog",
-      "limitations": "Частично подтверждено (scope-limited): ключевые показатели (72% замечают аудиорекламу; 85% из замечающих готовы слушать в обмен на бесплатный контент) подтверждаются новостью Mediascope/покрытием Adindex (15.11.2018). Целевая группа в доступном описании: города 100k+, онлайн-аудио без платных подписок/блокировщиков; демографическая детализация из блога (18-45, смешанная выборка) в доступном summary явно не раскрыта — учитывать как ограничение scope. Исторический контекст 2018.",
+      "verification_status": "verified",
+      "limitations": "Исследование Mediascope для IAB Russia: онлайн-опрос примерно 850 слушателей аудиоконтента в российских городах с населением более 100 тыс. человек, возраст 18–45 лет; полевой этап — сентябрь–октябрь 2018 года. 51%, 72% и 85% относятся к этой выборке и указанным в отчёте знаменателям; не переносить их на всё население России, на все возрастные группы или на рынок 2026 года. Для 85% знаменатель — только респонденты, которые замечают рекламу; не 85% всей выборки.",
       "business_priority": 2,
-      "phase3_classification": "partially_verified",
+      "phase3_classification": "verified",
       "primary_source_name": "Mediascope study (initiative of IAB Russia), reported 2018-11-15",
       "source_url": "https://mediascope.net/en/news/1066607/",
       "source_date": "2018-11-15"
