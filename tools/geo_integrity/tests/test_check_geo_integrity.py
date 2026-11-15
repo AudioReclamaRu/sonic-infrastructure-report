@@ -310,8 +310,8 @@ class GeoIntegrityTests(unittest.TestCase):
             parsed = urllib.parse.urlsplit(url)
             if parsed.path == "/robots.txt":
                 body = (
-                    "User-agent: Claude-SearchBot\\n"
-                    "Disallow: /sonic-infrastructure-report/geo/\\n"
+                    "User-agent: Claude-SearchBot\n"
+                    "Disallow: /sonic-infrastructure-report/geo/\n"
                 ).encode("utf-8")
                 return 200, body, url
             return normal_get(url, attempts, timeout, allowed_status)
@@ -331,18 +331,18 @@ class GeoIntegrityTests(unittest.TestCase):
             parsed = urllib.parse.urlsplit(url)
             if parsed.path == "/robots.txt":
                 body = (
-                    "User-agent: Google-Extended\\n"
-                    "Disallow: /\\n"
-                    "User-agent: GPTBot\\n"
-                    "Disallow: /\\n"
-                    "User-agent: ChatGPT-User\\n"
-                    "Disallow: /\\n"
-                    "User-agent: ClaudeBot\\n"
-                    "Disallow: /\\n"
-                    "User-agent: Claude-User\\n"
-                    "Disallow: /\\n"
-                    "User-agent: Perplexity-User\\n"
-                    "Disallow: /\\n"
+                    "User-agent: Google-Extended\n"
+                    "Disallow: /\n"
+                    "User-agent: GPTBot\n"
+                    "Disallow: /\n"
+                    "User-agent: ChatGPT-User\n"
+                    "Disallow: /\n"
+                    "User-agent: ClaudeBot\n"
+                    "Disallow: /\n"
+                    "User-agent: Claude-User\n"
+                    "Disallow: /\n"
+                    "User-agent: Perplexity-User\n"
+                    "Disallow: /\n"
                 ).encode("utf-8")
                 return 200, body, url
             return normal_get(url, attempts, timeout, allowed_status)
