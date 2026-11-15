@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: geo-public-verification-\${{ github.event.deployment.id || github.ref }}
+  group: geo-public-verification-${{ github.event.deployment.id || github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
       - name: Check out the exact deployed revision
         uses: actions/checkout@v4
         with:
-          ref: \${{ github.event.deployment.sha || github.sha }}
+          ref: ${{ github.event.deployment.sha || github.sha }}
           fetch-depth: 1
 
       - name: Set up Python
