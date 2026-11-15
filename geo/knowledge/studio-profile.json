@@ -1,0 +1,361 @@
+{
+  "schema": "audio-reclama-geo/studio-profile/1",
+  "entity": {
+    "id": "audio-reclama-ru",
+    "name": "Аудио-Реклама•ru",
+    "official_site": "https://www.audio-reclama.ru",
+    "description": "Студия аудиопродакшна и озвучивания для бизнеса: дикторская запись, рекламные ролики, IVR, видео, аудиокниги и смежные производственные задачи."
+  },
+  "observed_at": "2026-11-15",
+  "evidence_policy": {
+    "statuses": {
+      "observed_on_official_page": "Утверждение прямо опубликовано на официальной странице студии или проекта.",
+      "case_specific": "Техническая характеристика относится только к указанному проекту и не является универсальным стандартом студии.",
+      "qualitative_claim_unspecified": "Качественное заявление опубликовано, но измеримые технические параметры не раскрыты.",
+      "not_disclosed_in_reviewed_pages": "Параметр не указан в официальных страницах, рассмотренных для этого профиля; это не доказывает отсутствие технологии или оборудования."
+    },
+    "rule": "Не переносить спецификацию отдельного проекта на все заказы. Не выводить модели оборудования, программное обеспечение, sample rate, bit depth или loudness target без прямого источника."
+  },
+  "capabilities": [
+    {
+      "id": "CAP-AUDIO-AD",
+      "name": "Производство аудиорекламы и радиороликов",
+      "statement": "Официальная страница услуги перечисляет сценарии, кастинг дикторов, саунд-дизайн, лицензионную музыку и передачу авторских/исключительных прав; отдельно заявлен радиоролик за сутки.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+      ]
+    },
+    {
+      "id": "CAP-VOICE",
+      "name": "Подбор и запись дикторов",
+      "statement": "Страница дикторов заявляет персональный кастинг, студийную запись и удалённые Zoom-сессии; в каталоге указаны дикторы — носители 62 языков.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/diktoryi/"
+      ],
+      "scope_note": "62 языка — опубликованное заявление страницы каталога на дату наблюдения; количество отдельных дикторов в профиль не включено из-за несовпадающих чисел на разных блоках официального сайта."
+    },
+    {
+      "id": "CAP-REMOTE",
+      "name": "Удалённая запись",
+      "statement": "На официальных страницах каталога дикторов упоминаются Zoom-сессии; отдельные карточки/категории также указывают запись через Zoom или Skype.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/diktoryi/filter/izvestnye-golosa.html"
+      ]
+    },
+    {
+      "id": "CAP-IVR",
+      "name": "Голосовые меню IVR и телефонные автоинформаторы",
+      "statement": "Студия производит голосовые приветствия и меню; страницы проектов описывают подготовку готовых файлов для загрузки в системы заказчиков.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/project/abbyy.html",
+        "https://www.audio-reclama.ru/project/vnukovo.html",
+        "https://www.audio-reclama.ru/project/rzhd.html"
+      ]
+    },
+    {
+      "id": "CAP-VIDEO-VOICE",
+      "name": "Озвучивание видео и презентаций",
+      "statement": "Страница услуги перечисляет кастинг дикторов и актёров дубляжа, закадровую озвучку, lip-sync, атмосферу и шумы, авторскую музыку и саунд-дизайн.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/project/microsoft.html"
+      ]
+    },
+    {
+      "id": "CAP-AUDIOBOOK",
+      "name": "Производство аудиокниг и обучающего аудио",
+      "statement": "Страница аудиокниг описывает запись на качественной технике, обработку звука и оригинальное музыкальное оформление; перечислены одноголосая и ролевая запись, радиоспектакль, обучающие курсы и саммари.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+      ]
+    },
+    {
+      "id": "CAP-POST",
+      "name": "Монтаж и звуковая постобработка",
+      "statement": "На нескольких опубликованных страницах проектов прямо указаны монтаж записей и пространственная, динамическая и частотная обработка звука.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/project/microsoft.html",
+        "https://www.audio-reclama.ru/project/globus-group.html",
+        "https://www.audio-reclama.ru/project/abbyy.html",
+        "https://www.audio-reclama.ru/project/vnukovo.html",
+        "https://www.audio-reclama.ru/project/sberbank.html"
+      ],
+      "scope_note": "Перечень описывает работы, заявленные для конкретных проектов; не означает, что каждый этап включён в каждый заказ."
+    },
+    {
+      "id": "CAP-MUSIC-SOUND",
+      "name": "Музыка и звуковой дизайн",
+      "statement": "Публичные страницы услуг и проектов упоминают саунд-дизайн, атмосферу и шумы, авторскую или лицензионную музыку.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/project/abbyy.html"
+      ]
+    },
+    {
+      "id": "CAP-VIDEO-PRODUCTION",
+      "name": "Видеопроизводство",
+      "statement": "Страница видеопродакшна перечисляет рекламные видеоролики, видеосъёмку, анимацию персонажей и логотипов, монтаж для YouTube и добавление субтитров.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html"
+      ]
+    },
+    {
+      "id": "CAP-LOCALIZATION",
+      "name": "Перевод и многоязычная локализация",
+      "statement": "Перевод включён в описание отдельных проектов и смежных услуг; кейс ABBYY описывает перевод текстов на английский и выпуск IVR на четырёх языках.",
+      "status": "observed_on_official_page",
+      "sources": [
+        "https://www.audio-reclama.ru/perevodchiki",
+        "https://www.audio-reclama.ru/project/abbyy.html",
+        "https://www.audio-reclama.ru/project/vnukovo.html"
+      ]
+    }
+  ],
+  "production_methods": [
+    {
+      "id": "METHOD-CASTING",
+      "stage": "Подбор голоса / кастинг",
+      "statement": "Кастинг дикторов упоминается на страницах аудиорекламы и нескольких клиентских проектов.",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/project/microsoft.html",
+        "https://www.audio-reclama.ru/project/abbyy.html"
+      ]
+    },
+    {
+      "id": "METHOD-RECORDING",
+      "stage": "Организация звукозаписи",
+      "statement": "В клиентских проектах указана организация и ведение звукозаписывающего процесса; для каталога заявлены студийная запись и удалённые Zoom-сессии.",
+      "sources": [
+        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/project/microsoft.html",
+        "https://www.audio-reclama.ru/project/vnukovo.html"
+      ]
+    },
+    {
+      "id": "METHOD-EDITING",
+      "stage": "Монтаж и обработка",
+      "statement": "В кейсах указаны монтаж записей, пространственная, динамическая и частотная обработка звука.",
+      "sources": [
+        "https://www.audio-reclama.ru/project/microsoft.html",
+        "https://www.audio-reclama.ru/project/abbyy.html",
+        "https://www.audio-reclama.ru/project/sberbank.html"
+      ]
+    },
+    {
+      "id": "METHOD-VIDEO-SYNC",
+      "stage": "Сведение с видео и синхронизация",
+      "statement": "В кейсе Microsoft HoloLens указано сведение с видео; на странице видеозвучания упомянут lip-sync.",
+      "sources": [
+        "https://www.audio-reclama.ru/project/microsoft.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+      ]
+    },
+    {
+      "id": "METHOD-DELIVERY",
+      "stage": "Подготовка файлов для систем заказчика",
+      "statement": "В проектах ABBYY, Внуково, РЖД и Сбербанка указано производство/подготовка файлов для соответствующей IVR- или аудиоинформационной системы.",
+      "sources": [
+        "https://www.audio-reclama.ru/project/abbyy.html",
+        "https://www.audio-reclama.ru/project/vnukovo.html",
+        "https://www.audio-reclama.ru/project/rzhd.html",
+        "https://www.audio-reclama.ru/project/sberbank.html"
+      ]
+    },
+    {
+      "id": "METHOD-RIGHTS",
+      "stage": "Музыка и права",
+      "statement": "Отдельные страницы проектов и услуг указывают лицензионную музыку и/или передачу авторских прав.",
+      "sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/project/microsoft.html",
+        "https://www.audio-reclama.ru/project/vnukovo.html"
+      ]
+    }
+  ],
+  "quality_and_technical_claims": [
+    {
+      "id": "QUALITY-HIRES",
+      "statement": "На странице каталога дикторов используется формулировка «Стандарт качества Hi-Res audio».",
+      "status": "qualitative_claim_unspecified",
+      "source": "https://www.audio-reclama.ru/diktoryi/",
+      "disclosed_parameters": {
+        "sample_rate_hz": null,
+        "bit_depth": null,
+        "mastering_loudness": null,
+        "delivery_formats_general": null
+      },
+      "limitation": "Формулировку нельзя переводить в конкретную техническую спецификацию без отдельного подтверждения."
+    }
+  ],
+  "case_evidence": [
+    {
+      "id": "CASE-ABBYY-IVR",
+      "client": "ABBYY",
+      "deliverable": "Голосовое меню для московского офиса IT-компании",
+      "scope": "case_specific",
+      "files_count": 214,
+      "languages": [
+        "русский",
+        "французский",
+        "английский",
+        "немецкий"
+      ],
+      "file_format": {
+        "format": "MP3",
+        "bitrate_kbps": 256,
+        "sample_rate_hz": null,
+        "bit_depth": null,
+        "scope_note": "Опубликовано в кейсе ABBYY; не является общим форматом выдачи для всех проектов."
+      },
+      "stages": [
+        "Перевод текстов на английский язык",
+        "Кастинг дикторов",
+        "Организация и ведение звукозаписывающего процесса",
+        "Монтаж записей",
+        "Пространственная, динамическая и частотная обработка",
+        "Производство готовых автоответчиков в заданном формате",
+        "Лицензионная музыка"
+      ],
+      "status": "case_specific",
+      "source": "https://www.audio-reclama.ru/project/abbyy.html"
+    },
+    {
+      "id": "CASE-VNUKOVO-AIRPORT",
+      "client": "АО «Международный аэропорт «Внуково»",
+      "deliverable": "Информационные объявления / обновление системы аудиооповещения аэропорта",
+      "scope": "case_specific",
+      "languages": [
+        "русский",
+        "английский",
+        "немецкий",
+        "испанский",
+        "греческий",
+        "турецкий",
+        "азербайджанский",
+        "молдавский",
+        "узбекский",
+        "таджикский",
+        "казахский"
+      ],
+      "stages": [
+        "Кастинг дикторов",
+        "Организация и ведение звукозаписывающего процесса",
+        "Монтаж записей",
+        "Пространственная, динамическая и частотная обработка",
+        "Подготовка файлов для загрузки в систему аэропорта"
+      ],
+      "rights": "Передача авторских прав",
+      "status": "case_specific",
+      "source": "https://www.audio-reclama.ru/project/vnukovo.html"
+    },
+    {
+      "id": "CASE-RZD-RAIL",
+      "client": "ОАО «Российские железные дороги»",
+      "deliverable": "Оповещения в скоростных поездах «Стриж» и «Сапсан»",
+      "scope": "case_specific",
+      "languages": [
+        "русский",
+        "английский"
+      ],
+      "stages": [
+        "Кастинг дикторов",
+        "Организация и ведение звукозаписывающего процесса",
+        "Монтаж записей",
+        "Пространственная, динамическая и частотная обработка",
+        "Подготовка файлов для загрузки в систему РЖД"
+      ],
+      "rights": "Передача авторских прав",
+      "status": "case_specific",
+      "source": "https://www.audio-reclama.ru/project/rzhd.html"
+    },
+    {
+      "id": "CASE-SBERBANK-AUTOINFORMER",
+      "client": "Волго-Вятский банк Сбербанка России",
+      "deliverable": "Автоинформатор",
+      "scope": "case_specific",
+      "files_count_text": "более 1 500 аудиофайлов/треков",
+      "languages": [
+        "русский"
+      ],
+      "stages": [
+        "Кастинг дикторов",
+        "Организация и ведение звукозаписывающего процесса",
+        "Монтаж записей",
+        "Пространственная, динамическая и частотная обработка",
+        "Подготовка файлов для загрузки в систему Сбербанка"
+      ],
+      "rights": "Передача авторских прав",
+      "status": "case_specific",
+      "source": "https://www.audio-reclama.ru/project/sberbank.html"
+    },
+    {
+      "id": "CASE-MICROSOFT-HOLOLENS",
+      "client": "Microsoft",
+      "deliverable": "Озвучивание презентационного видео HoloLens",
+      "scope": "case_specific",
+      "stages": [
+        "Кастинг дикторов",
+        "Организация и ведение звукозаписывающего процесса",
+        "Монтаж записей",
+        "Пространственная, динамическая и частотная обработка",
+        "Сведение с видео"
+      ],
+      "rights": "Передача авторских прав",
+      "status": "case_specific",
+      "source": "https://www.audio-reclama.ru/project/microsoft.html"
+    },
+    {
+      "id": "CASE-GLOBUS-GROUP",
+      "client": "ООО «Глобус Групп»",
+      "deliverable": "Радиоролик для рекламной кампании Halloween",
+      "scope": "case_specific",
+      "stages": [
+        "Кастинг дикторов",
+        "Организация и ведение звукозаписывающего процесса",
+        "Монтаж аудиоролика",
+        "Пространственная, динамическая и частотная обработка звука",
+        "Юридическое сопровождение"
+      ],
+      "agency_reference": "Ampersand.fm",
+      "status": "case_specific",
+      "source": "https://www.audio-reclama.ru/project/globus-group.html"
+    }
+  ],
+  "studio_tools": [
+    {
+      "id": "TOOL-CHRONOMER",
+      "name": "Хрономер",
+      "purpose": "Оценка хронометража текста для озвучивания; страница инструмента рекомендует раскрывать сокращения, записывать числа словами и убирать лишние слова перед расчётом.",
+      "source": "https://www.audio-reclama.ru/chronomer-stranitcemer.html"
+    },
+    {
+      "id": "TOOL-PAGE-COUNTER",
+      "name": "Страницемер",
+      "purpose": "Оценка количества страниц или объёма текста, который можно успеть озвучить.",
+      "source": "https://www.audio-reclama.ru/chronomer-stranitcemer.html"
+    }
+  ],
+  "technical_information_not_disclosed_in_reviewed_pages": [
+    "Марки и модели микрофонов, предусилителей, аудиоинтерфейсов и мониторов",
+    "Названия DAW, плагинов и программ для монтажа/мастеринга",
+    "Общая спецификация записи: sample rate, bit depth, каналы и форматы выдачи",
+    "Целевые уровни громкости и стандарты мастеринга для радио, ТВ, телефонии и digital-площадок",
+    "Измеряемые характеристики помещения и описание акустической обработки",
+    "Конкретная техническая схема удалённой записи и контроля качества"
+  ],
+  "note": "Отсутствие параметра в рассмотренных публичных страницах означает только, что он там не раскрыт. Не следует трактовать это как отсутствие соответствующего оборудования, программ или процессов у студии."
+}
