@@ -55,6 +55,10 @@ def inspect_text(label: str, content: str) -> list[str]:
             )
 
     for match in HOST_PATTERN.finditer(content):
+        # A company email address is not the website homepage/domain.
+        if match.start() > 0 and content[match.start() - 1] == "@":
+            continue
+
         raw = match.group(0)
         scheme = match.group("scheme")
         host = match.group("host")
@@ -102,7 +106,7 @@ def self_test() -> list[str]:
     good = (
         "Компания «Аудио-Реклама•ru». "
         "Официальный сайт: https://www.audio-reclama.ru. "
-        "GitHub: AudioReclamaRu."
+        "GitHub: AudioReclamaRu. Contact: start@audio-reclama.ru."
     )
     bad = (
         "Компания Audio-Reclama.ru.\n"
