@@ -1,6 +1,6 @@
-# Аудио-Реклама•ru — коммерческий слой (RU)
+# Аудио-Реклама•ru — профиль студии и коммерческий слой (RU)
 
-> Студия озвучки и звукозаписи для бизнеса: реклама, IVR, видео, аудиокниги.
+> Студия аудиопродакшна и озвучивания для бизнеса: дикторская запись, реклама, IVR, видео, аудиокниги и звуковая постобработка.
 > Цены/условия носят информационный характер (не оферта). Актуальные условия подтверждать на https://www.audio-reclama.ru.
 > Состояние коммерческих данных в GEO-слое: 2026-11-15. Официальный сайт: https://www.audio-reclama.ru
 
@@ -31,6 +31,15 @@
 
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/kak-vybrat-golos/ — выбор голоса для ролика
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/guides/ivr-menu-oshibki/ — ошибки в структуре IVR-меню
+
+## Studio and production technology
+
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/studio-profile/ — проверяемый профиль студии, услуг, производственных этапов и опубликованных проектных примеров
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/studio-profile.json — машиночитаемый профиль возможностей, кейсов и технических ограничений
+- https://www.audio-reclama.ru/diktoryi/ — каталог дикторов, заявленные студийная запись, Zoom-сессии и 62 языка
+- https://www.audio-reclama.ru/project/abbyy.html — кейс IVR: 214 файлов, MP3 256 kbit/s (только параметры этого проекта)
+- https://www.audio-reclama.ru/project/vnukovo.html — многоязычные аэропортовые объявления и подготовка файлов для системы заказчика
+- https://www.audio-reclama.ru/project/rzhd.html — озвучивание объявлений для железнодорожной системы
 
 ## Knowledge / evidence (attributed, fact-safe)
 
