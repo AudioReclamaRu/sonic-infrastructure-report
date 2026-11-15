@@ -44,10 +44,6 @@ class GeoIntegrityTests(unittest.TestCase):
             "</urlset>",
             encoding="utf-8",
         )
-        (self.geo / "robots.txt").write_text(
-            f"User-agent: *\nAllow: /\nSitemap: {self.base}sitemap.xml\n",
-            encoding="utf-8",
-        )
         (self.geo / "llms.txt").write_text("# Test\n", encoding="utf-8")
         (self.geo / "llms-full.txt").write_text("# Test full\n", encoding="utf-8")
 
