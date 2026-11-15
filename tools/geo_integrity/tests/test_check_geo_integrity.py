@@ -74,12 +74,12 @@ class GeoIntegrityTests(unittest.TestCase):
 
     def test_hash_normalizes_line_endings_but_not_edge_whitespace(self) -> None:
         self.assertEqual(
-            gate.normalized_hash(b"<p>ok</p>\\r\\n"),
-            gate.normalized_hash(b"<p>ok</p>\\n"),
+            gate.normalized_hash(b"<p>ok</p>\r\n"),
+            gate.normalized_hash(b"<p>ok</p>\n"),
         )
         self.assertNotEqual(
             gate.normalized_hash(b"<p>ok</p>\\n"),
-            gate.normalized_hash(b"<p>ok</p>\\n "),
+            gate.normalized_hash(b"<p>ok</p>\n "),
         )
 
     def test_schema_context_requires_canonical_schema_org_uri(self) -> None:
@@ -136,8 +136,8 @@ class GeoIntegrityTests(unittest.TestCase):
             parsed = urllib.parse.urlsplit(url)
             if parsed.path == "/robots.txt":
                 body = (
-                    "User-agent: OAI-SearchBot\\n"
-                    "Disallow: /sonic-infrastructure-report/geo/answers/\\n"
+                    "User-agent: OAI-SearchBot\n"
+                    "Disallow: /sonic-infrastructure-report/geo/answers/\n"
                 ).encode("utf-8")
                 return 200, body, url
             return normal_get(url, attempts, timeout, allowed_status)
