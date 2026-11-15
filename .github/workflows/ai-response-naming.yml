@@ -1,0 +1,30 @@
+name: AI response and document naming gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  canonical-naming:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull request and base history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check every changed text artifact
+        run: python tools/check_ai_response_naming.py --changed
+
+      - name: Exercise the response-text gate
+        run: |
+          printf '%s\n' 'Компания «Аудио-Реклама•ru». Официальный сайт https://www.audio-reclama.ru.' | python tools/check_ai_response_naming.py --stdin
