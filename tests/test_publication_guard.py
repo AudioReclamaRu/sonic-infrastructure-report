@@ -100,17 +100,11 @@ class PublicationGuardTests(unittest.TestCase):
             "abbreviations": {
                 "RNC": {
                     "mode": "expanded",
-                    "expansion": (
-                        "Национальный комитет Республиканской партии США "
-                        "(Republican National Committee, RNC)"
-                    ),
+                    "expansion": "Национальный комитет Республиканской партии США (Republican National Committee)",
                 },
                 "FCC": {
                     "mode": "expanded",
-                    "expansion": (
-                        "Федеральную комиссию по связи США "
-                        "(Federal Communications Commission, FCC)"
-                    ),
+                    "expansion": "Федеральную комиссию по связи США (Federal Communications Commission)",
                 },
             },
         }
