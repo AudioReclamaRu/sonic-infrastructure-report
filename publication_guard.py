@@ -12,6 +12,7 @@ import hashlib
 import json
 import re
 import sqlite3
+from contextlib import contextmanager
 import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
@@ -168,7 +169,7 @@ def abbreviation_issues(text: str, concept: dict) -> list[str]:
 class PublicationLedger:
     """SQLite event ledger enforcing duplicate blocking and conservative retries."""
 
-    def __init__(self, path: str | Path, near_duplicate_threshold: float = 0.86):
+    def __init__(self, path: str | Path, near_duplicate_threshold: float = 0.84):
         self.path = str(path)
         self.near_duplicate_threshold = near_duplicate_threshold
         Path(self.path).parent.mkdir(parents=True, exist_ok=True)
@@ -180,8 +181,20 @@ class PublicationLedger:
         conn.execute("PRAGMA busy_timeout=15000")
         return conn
 
+    @contextmanager
+    def _connection(self):
+        conn = self._connect()
+        try:
+            yield conn
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            conn.close()
+
     def _initialize(self) -> None:
-        with self._connect() as conn:
+        with self._connection() as conn:
             conn.execute("PRAGMA journal_mode=WAL")
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS publications (
@@ -246,7 +259,7 @@ class PublicationLedger:
         normalized = normalize_text(content)
         canonical = canonicalize_url(canonical_url)
         fp = fingerprint or content_fingerprint(content)
-        with self._connect() as conn:
+        with self._connection() as conn:
             conn.execute("BEGIN IMMEDIATE")
             event_row = conn.execute(
                 "SELECT * FROM publications WHERE event_key=?", (event_key,)
@@ -356,6 +369,23 @@ class PublicationLedger:
                 "created_at,updated_at) VALUES(?,?,?,?,?,'SENT',?,?,1,?,?)",
                 (event_key, guid, canonicalize_url(canonical_url), fingerprint,
                  normalize_text(content), str(message_id), str(chat_id), now, now),
+            )
+
+    def resolve_pending(
+        self, event_key: str, outcome: str, message_id: str = "",
+        chat_id: str = "", note: str = "",
+    ) -> None:
+        """Human reconciliation only; never infer delivery from a timeout."""
+        outcome = outcome.upper().strip()
+        if outcome not in ("SENT", "FAILED"):
+            raise ValueError("outcome must be SENT or FAILED")
+        with self._connection() as conn:
+            conn.execute(
+                "UPDATE publications SET status=?, message_id=?, chat_id=?, "
+                "last_error=?, updated_at=? WHERE event_key=? "
+                "AND status IN ('SENDING','UNKNOWN')",
+                (outcome, str(message_id), str(chat_id), str(note)[:2000],
+                 utc_now(), event_key),
             )
 
     def has_guid(self, guid: str) -> bool:
