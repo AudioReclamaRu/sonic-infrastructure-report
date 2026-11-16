@@ -255,6 +255,15 @@ class PublicationLedger:
                 conn.commit()
                 return self._result("DUPLICATE", "event_key_already_reserved", event_row)
 
+            guid_match = conn.execute(
+                "SELECT * FROM publications WHERE guid=? AND " + self._active_clause() +
+                " ORDER BY updated_at DESC LIMIT 1",
+                (guid,),
+            ).fetchone()
+            if guid_match:
+                conn.commit()
+                return self._result("DUPLICATE", "guid_already_published_or_pending", guid_match)
+
             if canonical:
                 source_match = conn.execute(
                     "SELECT * FROM publications WHERE canonical_url=? AND "
