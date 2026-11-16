@@ -7,13 +7,13 @@ lang: ru
 
 Это **издательский контур** канала: расписание, редакционные концепты, обложки.
 Публикация выполняется автономным лупом `publisher.py --loop` (TG-first,
-идемпотентность по `guid`), а не руками.
+идемпотентность по `event_key` и каноническому событию), а не руками.
 
 ## Файлы
 
 | Файл | Роль |
 |---|---|
-| `items.csv` | Расписание. Строка: `pubDate~~~title~~~desc~~~source~~~guid~~~img` (6 полей, RFC822-дата, `\n` = перенос абзаца, col5=guid, col6=имя обложки `images/<name>.png`) |
+| `items.csv` | Расписание. Строка: `pubDate~~~title~~~desc~~~source~~~guid~~~img~~~event_key` (7 полей для новых материалов; 6 полей сохранены для legacy. `event_key` стабилен для одного события, даже если меняются заголовок, источник, `guid` или обложка) |
 | `concepts.json` | Редакционные концепты: `{guid: {headline, demo, explain, consequence, visual_object, cover_prompt, demo_shift, object_type, cover_test}}` — **гейт публикации**, 9 полей (см. ниже); опционально `event_object` + `article_structure` (Level B) |
 | `image_gen.py` | Version-aware генератор обложек (RED FIELD, арт-директор). CLI: `--verify / --rebuild / --force / --guid` |
 | `images/manifest.json` | Единственный источник истины по обложкам (см. контракт ниже) |
@@ -78,7 +78,9 @@ Legacy-строки с шестью полями сохраняются. При 
 - `object_type` — тип изменения (см. `standards/editorial-object-contract.md`)
 - `cover_test` — чего обложка НЕ должна быть (как самопроверка кадра)
 
-Для новых материалов `editorial_version: 2` дополнительно обязателен стабильный `event_key`; машинный шлюз проверяет все видимые латинские акронимы по `abbreviations` и запрещённые фонетические варианты.\n\nПлюс необязательный слой Level B (аддитивно, только если поле присутствует):
+Для новых материалов `editorial_version: 2` дополнительно обязателен стабильный `event_key`; машинный шлюз проверяет все видимые латинские акронимы по `abbreviations` и запрещённые фонетические варианты.
+
+Плюс необязательный слой Level B (аддитивно, только если поле присутствует):
 `event_object` (8 полей) + `article_structure` — Editorial Object System,
 контракт `standards/editorial-object-contract.md`. Тогда `publisher.py`
 дополнительно считает 4 вердикта и пишет `state/editorial.jsonl`.
