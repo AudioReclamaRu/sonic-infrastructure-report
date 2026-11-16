@@ -612,6 +612,156 @@ def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
     return 'UNKNOWN'
 
 
+
+def edit_existing(guid: str, item: dict, env: dict, chat: str, concepts: dict,
+                  message_id_override: str = '', chat_override: str = ''):
+    """Edit an existing Telegram message in place; this path never calls sendPhoto/sendMessage."""
+    state_record = None
+    for line in read_lines(TG_STATE_FILE):
+        fields = line.split('\t')
+        if fields and fields[0] == guid and len(fields) >= 3:
+            state_record = fields
+            break
+
+    message_id = str(message_id_override or
+                     (state_record[1] if state_record else '')).strip()
+    target_chat = str(chat_override or
+                      (state_record[2] if state_record else '') or chat).strip()
+    if not message_id:
+        raise RuntimeError('No saved Telegram message_id for guid=' + guid +
+                           '; provide --edit-message-id after verifying the channel post.')
+
+    token_file = env.get('BOT_TOKEN_FILE', '')
+    if not token_file or not os.path.exists(token_file):
+        raise RuntimeError('BOT_TOKEN_FILE missing: ' + token_file)
+    token = open(token_file, 'r', encoding='utf-8').read().strip()
+    proxy = env.get('PROXY', 'socks5h://127.0.0.1:10808')
+    api = env.get('API', 'https://api.telegram.org')
+    base = api + '/bot' + token
+
+    concept = concepts.get(guid) or {}
+    title = (concept.get('headline') or item['title']).strip()
+    parts = []
+    seen_parts = set()
+    for part in (concept.get('demo'), concept.get('explain'),
+                 concept.get('consequence'),
+                 item.get('desc', '').replace('\\n', '\n\n')):
+        part = (part or '').strip()
+        normalized = ' '.join(part.casefold().split())
+        if part and normalized not in seen_parts:
+            parts.append(part)
+            seen_parts.add(normalized)
+    footer = 'Источник: ' + item.get('src', '')
+    body_src = '\n\n'.join(parts)
+    body = trunc_at(body_src, max(0, 1024 - len(title) - len(footer) - 4))
+    caption = title + '\n\n' + body + '\n\n' + footer
+
+    cover_override = (concept.get('cover_asset_override') or '').strip()
+    if cover_override:
+        img_path = os.path.normpath(os.path.join(REPO, cover_override))
+        if not img_path.startswith(os.path.normpath(REPO) + os.sep) or not os.path.isfile(img_path):
+            raise RuntimeError('Cover override is missing or outside the repository: ' + cover_override)
+    elif concept.get('editorial_version') == 2:
+        raise RuntimeError('Editorial v2 edit requires the approved cover_asset_override')
+    else:
+        img_path = os.path.join(IMG_DIR, item.get('img', '') + '.png')
+        img_path = ensure_cover(guid, item.get('img', ''), img_path)
+
+    old_media_kind = (state_record[3].strip().lower()
+                      if state_record and len(state_record) >= 4 else '')
+    media_kind = old_media_kind or ('photo' if os.path.isfile(img_path) else 'text')
+
+    if media_kind == 'photo' and os.path.isfile(img_path):
+        media = {
+            'type': 'photo',
+            'media': 'attach://photo',
+            'caption': caption,
+        }
+        fd, payload = tempfile.mkstemp(suffix='.json', prefix='tg_edit_media_')
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
+            json.dump(media, f, ensure_ascii=False)
+        try:
+            ok, out = invoke_curl([
+                '--max-time', '60', '-s', '-x', proxy,
+                '-F', 'chat_id=' + target_chat,
+                '-F', 'message_id=' + message_id,
+                '-F', 'media=<' + payload + ';type=application/json',
+                '-F', 'photo=@' + img_path + ';type=image/png',
+                base + '/editMessageMedia'])
+        finally:
+            try:
+                os.remove(payload)
+            except OSError:
+                pass
+        saved_media_kind = 'photo'
+    elif media_kind == 'photo':
+        fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_edit_caption_')
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
+            f.write(caption)
+        try:
+            ok, out = invoke_curl([
+                '--max-time', '60', '-s', '-x', proxy,
+                '-F', 'chat_id=' + target_chat,
+                '-F', 'message_id=' + message_id,
+                '-F', 'caption=<' + payload + ';type=text/plain;charset=utf-8',
+                base + '/editMessageCaption'])
+        finally:
+            try:
+                os.remove(payload)
+            except OSError:
+                pass
+        saved_media_kind = 'photo'
+    else:
+        fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_edit_text_')
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
+            f.write(caption)
+        try:
+            ok, out = invoke_curl([
+                '--max-time', '60', '-s', '-x', proxy,
+                '-F', 'chat_id=' + target_chat,
+                '-F', 'message_id=' + message_id,
+                '-F', 'text=<' + payload + ';type=text/plain;charset=utf-8',
+                base + '/editMessageText'])
+        finally:
+            try:
+                os.remove(payload)
+            except OSError:
+                pass
+        saved_media_kind = 'text'
+
+    try:
+        response = json.loads(out)
+    except Exception:
+        response = {}
+
+    # Telegram may return "message is not modified" when the desired version
+    # is already present; that is a safe no-op, not a reason to send a new post.
+    unchanged = (isinstance(response, dict) and response.get('ok') is False and
+                 'message is not modified' in str(response.get('description', '')).lower())
+    if not (ok and response.get('ok')) and not unchanged:
+        olog('EDIT_FAIL guid=' + guid + ' msg=' + message_id + ' -> ' + str(response))
+        print('EDIT_FAIL guid=' + guid + ' msg=' + message_id + ' -> ' + str(response))
+        return 'FAIL'
+
+    event_key = event_key_for_item(item, concept)
+    ledger = PublicationLedger(PUBLICATION_LEDGER_FILE)
+    ledger.record_edited(
+        event_key, guid, item.get('src', ''), build_content_fingerprint(caption),
+        caption, message_id, target_chat, saved_media_kind,
+    )
+    add_unique(TG_TRACKER, guid)
+    new_state_line = guid + '\t' + message_id + '\t' + target_chat + '\t' + saved_media_kind
+    old_lines = [line for line in read_lines(TG_STATE_FILE)
+                 if not line.split('\t') or line.split('\t')[0] != guid]
+    os.makedirs(os.path.dirname(TG_STATE_FILE), exist_ok=True)
+    with open(TG_STATE_FILE, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(old_lines + [new_state_line]) + '\n')
+    with open(TG_LOG, 'a', encoding='utf-8') as f:
+        f.write('edited ' + guid + ' ' + datetime.now().strftime('%Y-%m-%d') + '\n')
+    print('EDITED guid=' + guid + ' msg=' + message_id + ' chat=' + target_chat)
+    return 'OK'
+
+
 def run_cycle(tg_cap: int):
     now = datetime.now().astimezone()
     items = load_items()
@@ -714,9 +864,30 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--once', action='store_true')
     ap.add_argument('--loop', action='store_true')
+    ap.add_argument('--edit-guid', default='',
+                    help='Edit the tracked Telegram message for this guid in place; never creates a new post')
+    ap.add_argument('--edit-message-id', default='',
+                    help='Existing Telegram message_id when the local state file has no mapping')
+    ap.add_argument('--edit-chat', default='',
+                    help='Existing Telegram chat id/username for an in-place edit')
     ap.add_argument('--tg-cap', type=int, default=4)
     ap.add_argument('--interval', type=int, default=300)
     args = ap.parse_args()
+
+    if args.edit_message_id and not args.edit_guid:
+        ap.error('--edit-message-id requires --edit-guid')
+    if args.edit_guid:
+        items = load_items()
+        item = next((row for row in items if row.get('guid') == args.edit_guid), None)
+        if item is None:
+            ap.error('edit-guid is not present in feed/items.csv')
+        env = load_env()
+        chat = args.edit_chat or tg_chat(env)
+        concepts = load_concepts()
+        editorial_object.set_editorial_file(EDITORIAL_FILE)
+        result = edit_existing(args.edit_guid, item, env, chat, concepts,
+                               args.edit_message_id, args.edit_chat)
+        return 0 if result == 'OK' else 1
 
     if args.loop:
         os.makedirs(STATE, exist_ok=True)
