@@ -42,6 +42,9 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - standards/CHARACTER_VOICE_PASSPORT_TEMPLATE.md — fillable character identity passport and performer handover template; use UNKNOWN / REQUIRES_VERIFICATION / PENDING_APPROVAL explicitly, and keep private recordings/contracts outside public Git.
 - problem-solutions/MEASUREMENT_PROTOCOL.md — repeatable demand and AI visibility measurement.
 - research/READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — read-only technical SEO snapshot: 1,186 unique sitemap URLs, two confirmed 404 speaker profiles still listed, one redirecting sitemap URL, catalogue count reconciliation and prioritized fixes. Sample audit only; no Search Console/Yandex Webmaster performance data.
+- research/ACQUISITION_CHANNEL_AUDIT_2026-11-15.md — action-oriented review of existing Yandex Maps / 2GIS business cards, SoundCloud, Pressfeed, Podcastbery and AllAdvertising. Main near-term opportunity: refresh free business profiles and review freshness; no external account changes or paid signup performed.
+- research/ACQUISITION_PROFILE_UPDATE_PACK_2026-11-15.md — ready-to-review profile descriptions, service entries, owner-confirmation fields, photo checklist, neutral review invitation and SoundCloud bio draft. Not published; do not copy hours or pricing without owner verification.
+- evidence/E-2026-049.md — p=1.0 live-page evidence for current profile fields, SoundCloud assets and platform-published terms; does not establish traffic or conversions.
 - problem-solutions/IMPLEMENTATION_ROADMAP.md — delivery sequence.
 - problem-solutions/IVR_DESIGN_STANDARD.md — internal IVR design, recording and release checklist.
 - tools/ivr_flow_linter/README.md — dependency-free Python utility for static IVR call-flow graph linting (undefined targets, dead ends, unreachable nodes, menu fallbacks, optional operator escape); includes JSON Schema, synthetic fixtures and tests. It does not test a live PBX or audio files.
