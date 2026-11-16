@@ -248,31 +248,31 @@ class PublicationLedger:
         fp = fingerprint or content_fingerprint(content)
         with self._connect() as conn:
             conn.execute("BEGIN IMMEDIATE")
-            existing = conn.execute(
+            event_row = conn.execute(
                 "SELECT * FROM publications WHERE event_key=?", (event_key,)
             ).fetchone()
-            if existing and existing["status"] != "FAILED":
+            if event_row and event_row["status"] != "FAILED":
                 conn.commit()
-                return self._result("DUPLICATE", "event_key_already_reserved", existing)
+                return self._result("DUPLICATE", "event_key_already_reserved", event_row)
 
             if canonical:
-                existing = conn.execute(
+                source_match = conn.execute(
                     "SELECT * FROM publications WHERE canonical_url=? AND "
                     + self._active_clause() + " ORDER BY updated_at DESC LIMIT 1",
                     (canonical,),
                 ).fetchone()
-                if existing:
+                if source_match:
                     conn.commit()
-                    return self._result("DUPLICATE", "canonical_source_already_used", existing)
+                    return self._result("DUPLICATE", "canonical_source_already_used", source_match)
 
-            existing = conn.execute(
+            fingerprint_match = conn.execute(
                 "SELECT * FROM publications WHERE fingerprint=? AND "
                 + self._active_clause() + " ORDER BY updated_at DESC LIMIT 1",
                 (fp,),
             ).fetchone()
-            if existing:
+            if fingerprint_match:
                 conn.commit()
-                return self._result("DUPLICATE", "content_fingerprint_already_used", existing)
+                return self._result("DUPLICATE", "content_fingerprint_already_used", fingerprint_match)
 
             # Conservative semantic guard: near-matches are parked for editorial
             # review rather than silently published or automatically discarded.
@@ -289,9 +289,7 @@ class PublicationLedger:
                         row, score
                     )
 
-            if existing is not None:
-                pass
-            if existing and existing["status"] == "FAILED":
+            if event_row and event_row["status"] == "FAILED":
                 conn.execute(
                     "UPDATE publications SET guid=?, canonical_url=?, fingerprint=?, "
                     "normalized_content=?, status='SENDING', attempts=attempts+1, "
