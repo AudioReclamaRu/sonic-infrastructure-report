@@ -388,6 +388,27 @@ class PublicationLedger:
                  utc_now(), event_key),
             )
 
+    def record_edited(
+        self, event_key: str, guid: str, canonical_url: str, fingerprint: str,
+        content: str, message_id: str, chat_id: str, media_kind: str,
+    ) -> None:
+        """Record an in-place edit against the original Telegram message id."""
+        now = utc_now()
+        with self._connection() as conn:
+            conn.execute(
+                "INSERT INTO publications(event_key,guid,canonical_url,fingerprint,"
+                "normalized_content,status,message_id,chat_id,media_kind,attempts,"
+                "created_at,updated_at) VALUES(?,?,?,?,?,'SENT',?,?,?,?,?,?) "
+                "ON CONFLICT(event_key) DO UPDATE SET guid=excluded.guid, "
+                "canonical_url=excluded.canonical_url, fingerprint=excluded.fingerprint, "
+                "normalized_content=excluded.normalized_content, status='SENT', "
+                "message_id=excluded.message_id, chat_id=excluded.chat_id, "
+                "media_kind=excluded.media_kind, last_error='', updated_at=excluded.updated_at",
+                (event_key, guid, canonicalize_url(canonical_url), fingerprint,
+                 normalize_text(content), str(message_id), str(chat_id), media_kind,
+                 1, now, now),
+            )
+
     def has_guid(self, guid: str) -> bool:
         with self._connection() as conn:
             row = conn.execute(
