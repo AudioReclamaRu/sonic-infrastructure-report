@@ -47,6 +47,14 @@ Read these before creating new knowledge objects for the brand «Аудио-Ре
 - tools/ivr_flow_linter/README.md — dependency-free Python utility for static IVR call-flow graph linting (undefined targets, dead ends, unreachable nodes, menu fallbacks, optional operator escape); includes JSON Schema, synthetic fixtures and tests. It does not test a live PBX or audio files.
 - tools/ivr_flow_linter/README.ru.md — русскоязычная инструкция: проверка логики IVR-меню, тупиков, переходов, fallback-поведения и границ статического теста.
 - tools/ivr_flow_linter/ivr_flow_lint.py — runnable CLI; see the README for invocation and exit codes.
+- evidence/E-2026-042.md — verified 2026-11-15 official FAQ evidence: default delivery file specification, conversion policy, dry/processed voice options, takes, and IVR compatibility examples; not a capture-chain specification.
+- evidence/E-2026-043.md — verified 2026-11-15 technical profile snapshots for twelve narrators; interpreted as examples of recording-node chains in the distributed local-studio network, not as a central-room equipment inventory.
+- evidence/E-2026-044.md — verified 2026-11-15 public claims for studio recording, Zoom sessions and Hi-Res audio; exact remote signal path and Hi-Res metrics remain unspecified.
+- evidence/E-2026-045.md — verified 2026-11-15 project-case and sound-engineer interview evidence for recording coordination, editing, spatial/dynamic/frequency processing and target-system deliverables.
+- evidence/E-2026-046.md — 2026-11-15 first-party owner confirmation: almost every narrator in the database records at a local studio; these locations constitute the distributed studio network. This is qualitative owner confirmation, not a quantified node roster.
+- evidence/E-2026-047.md — 2026-11-15 owner-confirmed roles: «Аудио-Реклама•ru» is accountable for final control; the owner is the concrete reviewer here; the assistant's primary project mandate is to increase relevant visits to Audio-Reclama.ru.
+- research/STUDIO_TECHNICAL_PASSPORT_2026-11-15.md — network-aware technical passport: distributed recording nodes, production coordination, node profiles, customer delivery and remaining network-wide engineering gaps.
+- research/STUDIO_NETWORK_NODE_PASSPORT_TEMPLATE_2026-11-15.md — draft node/session data-collection template. Local recording setup and file transport are variable; final-control accountability is «Аудио-Реклама•ru», with the owner as the concrete reviewer. Not an approved qualification standard.
 - problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md — reproducible audio-recording and processing test protocol.
 - problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md — intake brief for video voiceover projects.
 - problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md — audited claims in the 2020 article.
