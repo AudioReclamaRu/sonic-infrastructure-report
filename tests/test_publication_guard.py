@@ -80,6 +80,16 @@ class PublicationGuardTests(unittest.TestCase):
         self.assertEqual(second["decision"], "RESERVED")
         self.assertEqual(self.ledger.get_by_event_key("event:rejected")["attempts"], 2)
 
+    def test_unknown_result_can_be_resolved_after_human_reconciliation(self):
+        first = self.reserve("event:reconcile", "a", "", "reconcile story")
+        self.ledger.mark_unknown("event:reconcile", "transport timeout")
+        self.ledger.resolve_pending(
+            "event:reconcile", "FAILED", note="Operator confirmed no Telegram post exists"
+        )
+        retry = self.reserve("event:reconcile", "b", "", "reconcile story revised")
+        self.assertEqual(first["decision"], "RESERVED")
+        self.assertEqual(retry["decision"], "RESERVED")
+
     def test_legacy_sent_publication_is_imported(self):
         self.ledger.import_legacy_sent(
             "source:abc", "legacy-guid", "", content_fingerprint("legacy body"),
