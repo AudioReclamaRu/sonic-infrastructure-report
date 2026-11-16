@@ -15,6 +15,8 @@ import json
 import os
 import re
 import editorial_object
+from publication_guard import (PublicationLedger, abbreviation_issues, build_content_fingerprint,
+                               canonicalize_url, event_key_for_item)
 import subprocess
 import tempfile
 import time
@@ -96,13 +98,14 @@ def load_items():
     if not os.path.exists(ITEMS_CSV):
         return items
     for row in read_lines(ITEMS_CSV):
-        if row.startswith('TITLE~~~') or row.startswith('DESC~~~'):
+        if row.startswith('TITLE~~~') or row.startswith('DESC~~~') or row.startswith('DATE~~~'):
             continue
         p = row.split('~~~')
         if len(p) < 6:
             continue
         items.append({'date': p[0].strip(), 'title': p[1], 'desc': p[2],
-                      'src': p[3], 'guid': p[4], 'img': p[5]})
+                      'src': p[3], 'guid': p[4], 'img': p[5],
+                      'event_key': p[6].strip() if len(p) >= 7 else ''})
     return items
 
 
@@ -156,7 +159,7 @@ def source_resolves(link: str) -> bool:
     return local.startswith(REPO) and os.path.isfile(local)
 
 
-def concept_gate(guid: str, concepts: dict, link: str = ''):
+def concept_gate(guid: str, concepts: dict, link: str = '', item: dict | None = None):
     """Return list of FAIL reasons for guid (empty = publishable).
 
     RED FIELD Production Contract v1.0 gates:
@@ -170,6 +173,14 @@ def concept_gate(guid: str, concepts: dict, link: str = ''):
     missing = [k for k in REQ_CONCEPT_FIELDS if not (c.get(k) or '').strip()]
     if not missing and not source_resolves(link):
         missing.append('source')
+    if c.get('editorial_version') == 2:
+        if not ((item or {}).get('event_key') or c.get('event_key')):
+            missing.append('editorial_v2:event_key_missing')
+        visible_copy = '\n'.join((c.get(k) or '') for k in
+                                  ('headline', 'demo', 'explain', 'consequence'))
+        visible_copy += '\n' + ((item or {}).get('desc') or '')
+        for code in abbreviation_issues(visible_copy, c):
+            missing.append('editorial_v2:' + code)
     if not missing:
         hl = (c.get('headline') or '').strip()
         ln = len(hl)
@@ -479,18 +490,51 @@ def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
     consequence = (concept.get('consequence') or '').strip()
     desc = item['desc'].replace('\\n', '\n\n')
     link = item['src']
-    img_path = os.path.join(IMG_DIR, item['img'] + '.png')
 
-    img_path = ensure_cover(item['guid'], item['img'], img_path)
-
+    # Compose once, remove repeated paragraphs, and fingerprint exactly the
+    # content that is about to be sent. The event key is independent of guid.
+    parts = []
+    seen_parts = set()
+    for part in (demo, explain, consequence, desc):
+        part = (part or '').strip()
+        normalized = ' '.join(part.casefold().split())
+        if part and normalized not in seen_parts:
+            parts.append(part)
+            seen_parts.add(normalized)
     footer = 'Источник: ' + link
-    # Editorial order (Primary Source unit): a DEMONSTRATION that opens the
-    # reader's model of the world, then WHY (explanation), then what changes.
-    parts = [p for p in (demo, explain, consequence, desc) if p]
     body_src = '\n\n'.join(parts)
-    max_body = 1024 - len(title) - len(footer) - 2
+    max_body = max(0, 1024 - len(title) - len(footer) - 4)
     body = trunc_at(body_src, max_body)
     caption = title + '\n\n' + body + '\n\n' + footer
+
+    event_key = event_key_for_item(item, concept)
+    canonical_url = canonicalize_url(link)
+    fingerprint = build_content_fingerprint(caption)
+    ledger = PublicationLedger(os.path.join(STATE, 'publication-ledger.sqlite3'))
+    reservation = ledger.reserve(
+        event_key=event_key,
+        guid=guid,
+        canonical_url=canonical_url,
+        fingerprint=fingerprint,
+        content=caption,
+    )
+    if reservation.get('decision') != 'RESERVED':
+        reason = reservation.get('reason', 'publication blocked')
+        olog('PUBLICATION_BLOCKED ' + guid + ' event=' + event_key +
+             ' decision=' + str(reservation.get('decision')) + ' reason=' + reason)
+        print('BLOCKED guid=' + guid + ' event=' + event_key + ' reason=' + reason)
+        return 'BLOCKED'
+
+    # A reviewed bespoke cover may override the legacy procedural illustrator.
+    cover_override = (concept.get('cover_asset_override') or '').strip()
+    if cover_override:
+        img_path = os.path.normpath(os.path.join(REPO, cover_override))
+        if not img_path.startswith(os.path.normpath(REPO) + os.sep) or not os.path.isfile(img_path):
+            ledger.mark_failed(event_key, 'cover override missing or outside repository')
+            raise RuntimeError('Cover override is missing or outside the repository: ' + cover_override)
+    else:
+        img_path = os.path.join(IMG_DIR, item['img'] + '.png')
+        img_path = ensure_cover(item['guid'], item['img'], img_path)
 
     if os.path.exists(img_path):
         fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_photo_')
@@ -508,6 +552,7 @@ def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
                 os.remove(payload)
             except OSError:
                 pass
+        media_kind = 'photo'
     else:
         fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_msg_')
         with os.fdopen(fd, 'w', encoding='utf-8') as f:
@@ -523,24 +568,40 @@ def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
                 os.remove(payload)
             except OSError:
                 pass
+        media_kind = 'text'
 
     try:
         o = json.loads(out)
     except Exception:
         o = {}
+
     if ok and o.get('ok'):
-        mid = str(o['result']['message_id'])
-        title_s = o['result'].get('chat', {}).get('title', '')
+        result = o.get('result') or {}
+        mid = str(result.get('message_id') or '')
+        title_s = (result.get('chat') or {}).get('title', '')
+        # Persist Telegram's returned id first in the event ledger, then mirror
+        # the legacy tracker for compatibility with existing operator tools.
+        ledger.mark_sent(event_key, mid, chat, media_kind)
         print('SENT guid=' + guid + ' msg=' + mid + ' chat=' + title_s)
         add_unique(TG_TRACKER, guid)
         with open(TG_STATE_FILE, 'a', encoding='utf-8') as f:
-            f.write(guid + '\t' + mid + '\t' + chat + '\n')
+            f.write(guid + '\t' + mid + '\t' + chat + '\t' + media_kind + '\n')
         with open(TG_LOG, 'a', encoding='utf-8') as f:
             f.write('published ' + guid + ' ' + datetime.now().strftime('%Y-%m-%d') + '\n')
         return 'OK'
-    else:
+
+    # Telegram's structured ok=false response is a definite rejection and may
+    # be retried after correcting the cause. A timeout, empty or malformed
+    # response is ambiguous: Telegram may already have accepted the message.
+    if isinstance(o, dict) and o.get('ok') is False:
+        ledger.mark_failed(event_key, json.dumps(o, ensure_ascii=False))
         print('FAIL guid=' + guid + ' -> ' + str(o))
         return 'FAIL'
+
+    ledger.mark_unknown(event_key, out or 'transport outcome ambiguous')
+    olog('PUBLICATION_UNKNOWN ' + guid + ' event=' + event_key)
+    print('UNKNOWN guid=' + guid + ' event=' + event_key + ' (manual reconciliation required)')
+    return 'UNKNOWN'
 
 
 def run_cycle(tg_cap: int):
@@ -567,12 +628,34 @@ def run_cycle(tg_cap: int):
     editorial_object.set_editorial_file(EDITORIAL_FILE)
     done = set(read_lines(TG_TRACKER))
     rejected = set(read_lines(REJECTED_FILE))
+    ledger = PublicationLedger(os.path.join(STATE, 'publication-ledger.sqlite3'))
+    # One-time compatibility hydration: preserve SENT status for older posts
+    # even when the new SQLite ledger did not exist at their publication time.
+    legacy_messages = {}
+    for state_line in read_lines(TG_STATE_FILE):
+        fields = state_line.split('\t')
+        if len(fields) >= 3:
+            legacy_messages[fields[0]] = (fields[1], fields[2])
+    for legacy_item in items:
+        legacy_guid = legacy_item['guid']
+        if legacy_guid in done and not ledger.has_guid(legacy_guid):
+            legacy_concept = concepts.get(legacy_guid) or {}
+            legacy_parts = [legacy_concept.get(k, '') for k in
+                            ('headline', 'demo', 'explain', 'consequence')]
+            legacy_content = '\n'.join(legacy_parts + [legacy_item.get('desc', '')])
+            legacy_event_key = event_key_for_item(legacy_item, legacy_concept)
+            legacy_mid, legacy_chat = legacy_messages.get(legacy_guid, ('', ''))
+            ledger.import_legacy_sent(
+                legacy_event_key, legacy_guid, legacy_item.get('src', ''),
+                build_content_fingerprint(legacy_content), legacy_content,
+                legacy_mid, legacy_chat,
+            )
     # 1) Editorial gate (frozen until concept filled; does NOT consume slots).
     #    Audits EVERY due item each cycle regardless of quota: verdicts land in
     #    verdicts.jsonl even when nothing will be published today.
     for it in due:
         g = it['g']
-        miss = concept_gate(g, concepts, it['it'].get('src', ''))
+        miss = concept_gate(g, concepts, it['it'].get('src', ''), it['it'])
         _log_verdict(g, miss)
         _log_editorial(g, concepts.get(g), miss)
         if miss and g not in done and g not in rejected:
@@ -605,6 +688,9 @@ def run_cycle(tg_cap: int):
                 ok += 1
             elif st == 'FAIL':
                 fail += 1
+            elif st in ('BLOCKED', 'UNKNOWN'):
+                add_unique(REJECTED_FILE, c['g'])
+                rejected.add(c['g'])
             time.sleep(2)
         summ = ['tg=' + str(ok) + '/' + str(fail) +
                 ('' if rej_frozen == 0 else ' frozen=' + str(rej_frozen))]
