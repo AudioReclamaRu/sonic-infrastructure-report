@@ -80,3 +80,50 @@ The tools can be complementary in a pipeline: declare the intended flow → lint
 The checks operationalize a subset of the repository's IVR design/release standard: explicit timeout and invalid-input behavior, no caller dead ends, and a human route when the project policy requires it. The standard separately requires live/test-number verification and listening through a telephone path.
 
 Repository material is distributed under the terms in the root `LICENSE` (CC BY 4.0). Attribution is required; users must review the license and any third-party constraints before reuse.
+
+## Interoperability (experimental)
+
+The adapters are deliberately separate; they do not claim to be a universal IVR connector.
+
+### Asterisk Call Flow Builder graph to IVR Flow
+
+The interop/acfb_to_flow.py adapter converts the observed version 1 graph object into the canonical IVR Flow JSON format. It supports a fail-closed subset of node kinds: start, menu, playback, extension, queue and hangup. Unknown node kinds, duplicate handles, broken references and unsupported versions stop conversion.
+
+The inspected Asterisk Call Flow Builder commit 0ea0693df66217241f5ea62dd512d3a923e6325f builds a normalized graph object internally, but the UI does not expose a JSON download; the current visible export is extensions.conf and JSON serialization remains commented in the inspected source. The example fixture is synthetic and mirrors the observed object shape; it was not exported from a running installation.
+
+Run from the repository root:
+
+    python tools/ivr_flow_linter/interop/acfb_to_flow.py tools/ivr_flow_linter/examples/asterisk-call-flow-builder.graph.synthetic.json --output /tmp/ivr-flow.json
+    python tools/ivr_flow_linter/ivr_flow_lint.py /tmp/ivr-flow.json
+
+Important: the inspected exporter follows only the first outgoing edge for extension nodes and chooses one queue target in a fixed handle priority. The adapter preserves declared graph edges and prints warnings when these cases occur. A passing graph lint does not prove that the generated extensions.conf preserves all branches or behaves correctly on Asterisk.
+
+### IVR Flow to an IVR Tester scenario plan
+
+The interop/flow_to_ivr_tester_plan.py adapter builds a path/action planning matrix for the inspected MakingChatbots/ivr-tester Scenario and Step API.
+
+    python tools/ivr_flow_linter/interop/flow_to_ivr_tester_plan.py /tmp/ivr-flow.json --output /tmp/ivr-tester-plan.json
+
+Mapping:
+- DTMF digit → press(digit);
+- timeout → doNothing();
+- invalid input → press the first unused key in 0123456789, when one remains;
+- message continuation → doNothing();
+- extension/queue outcomes that the inspected Step API cannot assert are recorded as manual routes.
+
+The plan intentionally leaves expected_prompt_transcript null and runtime_ready false. A real IVR Tester whenPrompt must be a function created from the actual prompt transcription; a playback token or audio filename is not a transcript. Real from/to numbers, credentials and transcriber settings must be supplied outside the repository.
+
+### AsteriskLint is a separate downstream check
+
+After a real extensions.conf exists, AsteriskLint can be installed separately and run with:
+
+    asterisklint dialplan-check extensions.conf
+
+It checks Asterisk configuration/dialplan, not the abstract graph. It is GPLv3+ and is not copied or added as a required dependency here.
+
+These adapters and fixtures are synthetic-contract tests only. There is no live Asterisk, PBX, Twilio or audio-call integration test in this change set, and no upstream project has endorsed this interoperability.
+
+
+### Source metadata and provenance
+
+The adapter preserves flow-level provenance and a per-node interop_source record. Only kind-specific whitelisted fields are copied into metadata (for example extension/ringSeconds or queue_name/strategy/timeout), with canvas coordinates retained separately. Arbitrary metadata is intentionally omitted to avoid accidental transfer of credentials or unrelated private fields. This is not a lossless round-trip format; retain the original graph JSON for reconstruction.

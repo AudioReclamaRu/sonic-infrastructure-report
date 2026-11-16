@@ -44,3 +44,10 @@ related:
 - Не выдавать внешний случай за клиентский кейс студии.
 - Не заявлять тест или benchmark завершённым, пока не сохранены исходные данные, метод, версии, условия и результат.
 - При переходе проекта в стандарт, инструмент или эксперимент связать документы и обновить статусы, не удаляя исходную историю.
+
+
+## IVR integrations and upstream research
+
+- IVR_INTEROP_TOOLCHAIN_AUDIT_2026-11-14.md — source-reviewed interoperability audit across Asterisk Call Flow Builder, IVR Flow Linter, AsteriskLint and MakingChatbots/ivr-tester. Separates graph topology, dialplan syntax and live call testing; records exact source snapshots and limits.
+- UPSTREAM_PROPOSAL_ASTERISK_CALL_FLOW_BUILDER_JSON_EXPORT_2026-11-14.md — draft-only feature request for a separate JSON graph export. Not submitted: the public license and contribution route for the target project were not found, and the Builder has not been tested in a live setup.
+- The adapters under tools/ivr_flow_linter/interop/ convert the observed Asterisk Builder graph shape and generate a non-executable IVR Tester scenario plan. Their synthetic contract tests do not constitute a live telephony test or upstream approval.

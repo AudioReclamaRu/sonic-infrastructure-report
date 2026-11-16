@@ -13,6 +13,9 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - TEMPLATE.md — стандарт диагностической статьи.
 - IVR_DESIGN_STANDARD.md — внутренний стандарт проектирования, записи, тестирования и выпуска голосового меню.
 - ../tools/ivr_flow_linter/README.md — публичная инструкция к статическому линтеру схем IVR: битые переходы, тупики, недостижимые узлы, fallback-поведение и проверка выхода к оператору по политике проекта. Не проверяет реальную АТС или аудиофайлы.
+- ../tools/ivr_flow_linter/README.ru.md — экспериментальные адаптеры для наблюдаемого graph JSON из Asterisk Call Flow Builder и матрицы тестовых сценариев MakingChatbots/ivr-tester. JSON export в исходном приложении пока не обнаружен; план IVR Tester не исполняется без реальных текстов реплик.
+- ../research/IVR_INTEROP_TOOLCHAIN_AUDIT_2026-11-14.md — проверка совместимости, source-level limitations и границ runtime-тестирования.
+- ../research/UPSTREAM_PROPOSAL_ASTERISK_CALL_FLOW_BUILDER_JSON_EXPORT_2026-11-14.md — черновик предложения upstream, не отправлен из-за отсутствия подтверждённой лицензии/процесса вклада.
 - QUERY_BACKLOG.json — начальные гипотезы проблем.
 - REFERENCE_MODELS.md — лучшие практики отрасли и других областей.
 - OWN_CONTENT_AUDIT_2026-11-14.md — предварительный аудит собственных активов.
