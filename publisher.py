@@ -38,6 +38,7 @@ PID_FILE = os.path.join(STATE, 'orchestrator.pid')
 TG_TRACKER = os.path.join(TG_DIR, 'tg_published.txt')
 TG_STATE_FILE = os.path.join(TG_DIR, 'tg_state.txt')
 PUBLICATION_LEDGER_FILE = os.path.join(TG_DIR, 'publication-ledger.sqlite3')
+PUBLICATION_HELD_FILE = os.path.join(TG_DIR, 'publication-held.txt')
 TG_LOG = os.path.join(STATE, 'tg.log')
 REJECTED_FILE = os.path.join(STATE, 'rejected.txt')
 VERDICTS_FILE = os.path.join(STATE, 'verdicts.jsonl')
@@ -786,6 +787,7 @@ def run_cycle(tg_cap: int):
     editorial_object.set_editorial_file(EDITORIAL_FILE)
     done = set(read_lines(TG_TRACKER))
     rejected = set(read_lines(REJECTED_FILE))
+    held = set(read_lines(PUBLICATION_HELD_FILE))
     ledger = PublicationLedger(PUBLICATION_LEDGER_FILE)
     # Hydrate old successful sends from the historical guid/state files. This
     # is done before the next send, so an old post is not reissued after upgrade.
@@ -829,7 +831,8 @@ def run_cycle(tg_cap: int):
         summ = ['tg=0/0']
     else:
         # 2) Only fully-concepted items consume the daily cap.
-        cands = [x for x in due if x['g'] not in done and x['g'] not in rejected][:slots]
+        cands = [x for x in due
+                 if x['g'] not in done and x['g'] not in rejected and x['g'] not in held][:slots]
         env = load_env()
         chat = tg_chat(env)
         ok = fail = 0
@@ -847,8 +850,8 @@ def run_cycle(tg_cap: int):
             elif st == 'FAIL':
                 fail += 1
             elif st in ('BLOCKED', 'UNKNOWN'):
-                add_unique(REJECTED_FILE, c['g'])
-                rejected.add(c['g'])
+                add_unique(PUBLICATION_HELD_FILE, c['g'])
+                held.add(c['g'])
             time.sleep(2)
         summ = ['tg=' + str(ok) + '/' + str(fail) +
                 ('' if rej_frozen == 0 else ' frozen=' + str(rej_frozen))]
