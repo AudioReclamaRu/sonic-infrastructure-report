@@ -63,7 +63,7 @@ Three question layers, and the layer you need is decided by the question:
 6. `standards/editorial-object-contract.md` (RU) — the machine-checkable
    editorial contract: 11-value `object_type` enum, 8-field `event_object`,
    cover derivation, named `REJECT` codes.
-7. For corporate outreach and supplier/procurement routing, read
+7. standards/foreign-abbreviation-and-name-policy.md — mandatory treatment of foreign acronyms and proper names in new Telegram copy.\n8. For corporate outreach and supplier/procurement routing, read
    `standards/x14-enterprise-outreach.md` before drafting or classifying a
    B2B contact.
 
