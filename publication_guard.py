@@ -267,6 +267,14 @@ class PublicationLedger:
             if event_row and event_row["status"] != "FAILED":
                 conn.commit()
                 return self._result("DUPLICATE", "event_key_already_reserved", event_row)
+            if (event_row and event_row["status"] == "FAILED"
+                    and event_row["fingerprint"] == fp
+                    and not event_row["last_error"].startswith("HUMAN_CONFIRMED_NOT_SENT:")):
+                conn.commit()
+                return self._result(
+                    "DUPLICATE", "previous_api_failure_requires_content_fix_or_manual_retry",
+                    event_row
+                )
 
             guid_match = conn.execute(
                 "SELECT * FROM publications WHERE guid=? AND " + self._active_clause() +
@@ -384,7 +392,8 @@ class PublicationLedger:
                 "UPDATE publications SET status=?, message_id=?, chat_id=?, "
                 "last_error=?, updated_at=? WHERE event_key=? "
                 "AND status IN ('SENDING','UNKNOWN')",
-                (outcome, str(message_id), str(chat_id), str(note)[:2000],
+                (outcome, str(message_id), str(chat_id),
+                 (("HUMAN_CONFIRMED_NOT_SENT: " if outcome == "FAILED" else "") + str(note))[:2000],
                  utc_now(), event_key),
             )
 
