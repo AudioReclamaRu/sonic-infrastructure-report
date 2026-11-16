@@ -22,9 +22,9 @@ jobs:
           python-version: '3.12'
 
       - name: compile the publication gate
-        run: python -m py_compile publisher.py editorial_object.py
+        run: python -m py_compile publisher.py publication_guard.py editorial_object.py
 
-      - name: reports/INDEX.json is current
+      - name: Telegram publication guard regression tests\n        run: python -m unittest discover -s tests -p 'test_*.py' -v\n\n      - name: reports/INDEX.json is current
         run: python tools/make_reports_index.py --check
 
       - name: every hand-authored .md has frontmatter
