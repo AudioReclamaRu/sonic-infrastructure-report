@@ -331,7 +331,7 @@ class PublicationLedger:
     def mark_sent(
         self, event_key: str, message_id: str, chat_id: str, media_kind: str = ""
     ) -> None:
-        with self._connect() as conn:
+        with self._connection() as conn:
             conn.execute(
                 "UPDATE publications SET status='SENT', message_id=?, chat_id=?, "
                 "media_kind=?, last_error='', updated_at=? WHERE event_key=?",
@@ -340,7 +340,7 @@ class PublicationLedger:
 
     def mark_failed(self, event_key: str, error: str) -> None:
         """Only use when Telegram returned a definitive ok=false API response."""
-        with self._connect() as conn:
+        with self._connection() as conn:
             conn.execute(
                 "UPDATE publications SET status='FAILED', last_error=?, updated_at=? "
                 "WHERE event_key=?",
@@ -349,7 +349,7 @@ class PublicationLedger:
 
     def mark_unknown(self, event_key: str, error: str) -> None:
         """Park network timeouts/empty responses; never blindly send again."""
-        with self._connect() as conn:
+        with self._connection() as conn:
             conn.execute(
                 "UPDATE publications SET status='UNKNOWN', last_error=?, updated_at=? "
                 "WHERE event_key=?",
@@ -362,7 +362,7 @@ class PublicationLedger:
     ) -> None:
         """Hydrate the ledger from the historic guid tracker on first startup."""
         now = utc_now()
-        with self._connect() as conn:
+        with self._connection() as conn:
             conn.execute(
                 "INSERT OR IGNORE INTO publications(event_key,guid,canonical_url,"
                 "fingerprint,normalized_content,status,message_id,chat_id,attempts,"
@@ -389,7 +389,7 @@ class PublicationLedger:
             )
 
     def has_guid(self, guid: str) -> bool:
-        with self._connect() as conn:
+        with self._connection() as conn:
             row = conn.execute(
                 "SELECT 1 FROM publications WHERE guid=? AND status='SENT' LIMIT 1",
                 (guid,),
@@ -397,7 +397,7 @@ class PublicationLedger:
         return row is not None
 
     def get_by_guid(self, guid: str) -> dict | None:
-        with self._connect() as conn:
+        with self._connection() as conn:
             row = conn.execute(
                 "SELECT * FROM publications WHERE guid=? ORDER BY updated_at DESC LIMIT 1",
                 (guid,),
@@ -405,7 +405,7 @@ class PublicationLedger:
         return dict(row) if row else None
 
     def get_by_event_key(self, event_key: str) -> dict | None:
-        with self._connect() as conn:
+        with self._connection() as conn:
             row = conn.execute(
                 "SELECT * FROM publications WHERE event_key=?", (event_key,)
             ).fetchone()
