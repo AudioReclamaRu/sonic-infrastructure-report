@@ -1,729 +1,412 @@
-# publisher.py - autonomous TG-only publishing loop (Python remake of post-orchestrator.ps1).
-# Decision 16.09.2026: channel lives in TG; Dzen auto-posts via TG<->Dzen link; FB/VK/IG off.
-# Idempotent by guid. Daily per-platform caps. Re-reads items.csv every cycle (no restart needed).
-#
-# Usage:
-#   python publisher.py --loop                 (continuous, watchdog keeps it alive)
-#   python publisher.py --once                 (single cycle, exits)
-#   python publisher.py --once --tg-cap 4
-#
-# Outputs: register.csv, calendar.html, state/heartbeat.txt, state/orchestrator.log,
-#          state/quota-<date>.json, tg/tg_state.txt, state/tg.log,
-#          state/rejected.txt, state/verdicts.jsonl
-import argparse
+"""Durable safeguards for the Telegram editorial publishing pipeline.
+
+The Telegram Bot API has no idempotency key for sendMessage/sendPhoto.  This
+module therefore uses an at-most-once send attempt: it durably records SENDING
+before the HTTP request and parks ambiguous outcomes as UNKNOWN.  Operators
+must reconcile UNKNOWN records instead of letting the scheduler resend them.
+"""
+from __future__ import annotations
+
+import difflib
+import hashlib
 import json
-import os
 import re
-import editorial_object
-from publication_guard import (PublicationLedger, abbreviation_issues, build_content_fingerprint,
-                               canonicalize_url, event_key_for_item)
-import subprocess
-import tempfile
-import time
+import sqlite3
+from contextlib import contextmanager
+import unicodedata
 from datetime import datetime, timezone
-from email.utils import parsedate_to_datetime
-
-BASE = r'F:\Pill\tmp\opencode'
-REPO = os.path.join(BASE, 'sonic-repo')
-FEED = os.path.join(REPO, 'feed')
-STATE = os.path.join(REPO, 'state')
-TG_DIR = os.path.join(BASE, 'tg')
-ITEMS_CSV = os.path.join(FEED, 'items.csv')
-REGISTRY = os.path.join(REPO, 'register.csv')
-CALENDAR = os.path.join(REPO, 'calendar.html')
-HEARTBEAT = os.path.join(STATE, 'heartbeat.txt')
-ORQ_LOG = os.path.join(STATE, 'orchestrator.log')
-PID_FILE = os.path.join(STATE, 'orchestrator.pid')
-TG_TRACKER = os.path.join(TG_DIR, 'tg_published.txt')
-TG_STATE_FILE = os.path.join(TG_DIR, 'tg_state.txt')
-TG_LOG = os.path.join(STATE, 'tg.log')
-REJECTED_FILE = os.path.join(STATE, 'rejected.txt')
-VERDICTS_FILE = os.path.join(STATE, 'verdicts.jsonl')
-EDITORIAL_FILE = os.path.join(STATE, 'editorial.jsonl')
-ENV_FILE = os.path.join(TG_DIR, 'env.txt')
-CHANNEL_FILE = os.path.join(TG_DIR, 'feed_channel.txt')
-IMG_DIR = os.path.join(FEED, 'images')
-CONCEPTS_FILE = os.path.join(FEED, 'concepts.json')
-CURL = r'C:\WINDOWS\system32\curl.exe'
-CREATE_NO_WINDOW = 0x08000000
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 
-def invoke_curl(args: list):
-    """Run curl.exe hidden (Invoke-Curl pattern); ok=True when exit code 0."""
+ACTIVE_STATUSES = ("SENDING", "SENT", "UNKNOWN")
+TRACKING_KEYS = {
+    "fbclid", "gclid", "dclid", "msclkid", "yclid", "mc_cid", "mc_eid",
+}
+ACRONYM_RE = re.compile(r"(?<![A-Za-z])[A-Z][A-Z0-9]{1,9}(?![A-Za-z])")
+# Known harmful phonetic renderings. New source-specific forms belong in the
+# concept's abbreviations.<TOKEN>.forbidden_transliterations list.
+KNOWN_BAD_TRANSLITERATIONS = {
+    "GOP": ("гоппартия", "гоп партия", "гоп-партия"),
+}
+
+
+def utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def canonicalize_url(url: str) -> str:
+    """Normalize a source URL for identity checks, not for display."""
+    raw = (url or "").strip()
+    if not raw:
+        return ""
     try:
-        p = subprocess.run([CURL] + args, capture_output=True, timeout=90,
-                           creationflags=CREATE_NO_WINDOW)
-        out = (p.stdout or b'').decode('utf-8', errors='replace').strip()
-        return p.returncode == 0, out
-    except subprocess.TimeoutExpired:
-        return False, 'TIMEOUT'
-    except Exception as e:
-        return False, 'CURL_ERR ' + str(e)
-
-
-def olog(msg: str):
-    os.makedirs(STATE, exist_ok=True)
-    with open(ORQ_LOG, 'a', encoding='utf-8') as f:
-        f.write(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ' ' + msg + '\n')
-
-
-def read_lines(path: str):
-    if not os.path.exists(path):
-        return []
-    with open(path, 'r', encoding='utf-8-sig') as f:
-        return [ln.rstrip('\r\n') for ln in f if ln.strip()]
-
-
-def add_unique(path: str, line: str):
-    cur = set(read_lines(path))
-    if line in cur:
-        return
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, 'a', encoding='utf-8') as f:
-        f.write(line + '\n')
-
-
-def load_env():
-    env = {}
-    if os.path.exists(ENV_FILE):
-        for ln in read_lines(ENV_FILE):
-            if '=' in ln:
-                k, v = ln.split('=', 1)
-                env[k.strip()] = v.strip()
-    return env
-
-
-def load_items():
-    items = []
-    if not os.path.exists(ITEMS_CSV):
-        return items
-    for row in read_lines(ITEMS_CSV):
-        if row.startswith('TITLE~~~') or row.startswith('DESC~~~') or row.startswith('DATE~~~'):
-            continue
-        p = row.split('~~~')
-        if len(p) < 6:
-            continue
-        items.append({'date': p[0].strip(), 'title': p[1], 'desc': p[2],
-                      'src': p[3], 'guid': p[4], 'img': p[5],
-                      'event_key': p[6].strip() if len(p) >= 7 else ''})
-    return items
-
-
-REQ_CONCEPT_FIELDS = ('headline', 'demo', 'explain', 'consequence', 'visual_object', 'cover_prompt',
-                      'demo_shift', 'object_type', 'cover_test')
-
-# RED FIELD · Production Contract v1.0 (standards/red-field-production-contract.md).
-# Машино-проверяемые правила текстового контракта. Правка без согласования с
-# контрактом невозможна: эти константы читаются concept_gate и REJECT-логом.
-HEADLINE_MIN = 35
-HEADLINE_MAX = 75
-DEMO_MAX_SENTENCES = 1   # demo = ровно одно предложение
-EXPLAIN_MAX_SENTENCES = 2  # explain = не больше двух предложений
-DEMO_SHIFT_WORDS_MIN = 5   # demo_shift = что изменилось в новости, 5–12 слов
-DEMO_SHIFT_WORDS_MAX = 12
-COVER_TYPE_REPEAT_SPAN = 5  # тип объекта не чаще 1 раза в 5 постов
-
-
-def _sentence_count(s: str) -> int:
-    """Count sentence-ending punctuation (., !, ?) in a non-empty string."""
-    if not s:
-        return 0
-    return sum(1 for ch in s if ch in '.!?…')
-
-
-def load_concepts():
-    """Editorial concepts: guid -> {headline, demo, explain, consequence, visual_object, cover_prompt}."""
-    if not os.path.exists(CONCEPTS_FILE):
-        return {}
-    try:
-        with open(CONCEPTS_FILE, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception:
-        return {}
-
-
-def source_resolves(link: str) -> bool:
-    # A post's proof link must point to a file that actually exists in the repo.
-    # github blob URL of the form .../blob/<ref>/<repo-relative-path> -> local file.
-    if not link:
-        return False
-    if 'github.com/' not in link:
-        return True  # non-github: keep (external URL), no local proof to check
-    m = re.search(r'/blob/[^/]+/(.+)$', link)
-    if not m:
-        return True
-    rel = m.group(1)
-    if rel.startswith(('http://', 'https://')):
-        return True
-    local = os.path.normpath(os.path.join(REPO, rel))
-    return local.startswith(REPO) and os.path.isfile(local)
-
-
-def concept_gate(guid: str, concepts: dict, link: str = '', item: dict | None = None):
-    """Return list of FAIL reasons for guid (empty = publishable).
-
-    RED FIELD Production Contract v1.0 gates:
-      1. all REQ_CONCEPT_FIELDS present and non-empty;
-      2. source_resolves(link) = PASS;
-      3. machine-checkable text rules (headline length, sentence counts);
-      4. cover discipline: demo_shift is 5-12 words, visual_object derived from
-         it, object_type not repeated within the last 5 slots.
-    """
-    c = concepts.get(guid) or {}
-    missing = [k for k in REQ_CONCEPT_FIELDS if not (c.get(k) or '').strip()]
-    if not missing and not source_resolves(link):
-        missing.append('source')
-    if c.get('editorial_version') == 2:
-        if not ((item or {}).get('event_key') or c.get('event_key')):
-            missing.append('editorial_v2:event_key_missing')
-        visible_copy = '\n'.join((c.get(k) or '') for k in
-                                  ('headline', 'demo', 'explain', 'consequence'))
-        visible_copy += '\n' + ((item or {}).get('desc') or '')
-        for code in abbreviation_issues(visible_copy, c):
-            missing.append('editorial_v2:' + code)
-    if not missing:
-        hl = (c.get('headline') or '').strip()
-        ln = len(hl)
-        if ln < HEADLINE_MIN or ln > HEADLINE_MAX:
-            missing.append('qa:headline_len={}'.format(ln))
-        d = _sentence_count((c.get('demo') or '').strip())
-        if d != DEMO_MAX_SENTENCES:
-            missing.append('qa:demo_sent={}'.format(d))
-        e = _sentence_count((c.get('explain') or '').strip())
-        if e > EXPLAIN_MAX_SENTENCES:
-            missing.append('qa:explain_sent={}'.format(e))
-        # cover discipline (RED FIELD mode A)
-        ds = (c.get('demo_shift') or '').strip()
-        dw = len(ds.split())
-        if dw < DEMO_SHIFT_WORDS_MIN or dw > DEMO_SHIFT_WORDS_MAX:
-            missing.append('qa:demo_shift_words={}'.format(dw))
-        vo = (c.get('visual_object') or '').strip()
-        if not any(w.strip(' .,!?;:()')
-                   for w in ds.lower().split()
-                   if w.strip(' .,!?;:()') in vo.lower()):
-            missing.append('cover:visual_object_not_from_demo_shift')
-        otype = (c.get('object_type') or '').strip()
-        if otype in _recent_object_types(guid, concepts):
-            missing.append('cover:object_type_repeat={}'.format(otype))
-        # Editorial Object System (red-field editorial-object-contract.md).
-        # Adds a SECOND editorial layer ONLY for concepts that carry event_object.
-        # Legacy slots without event_object keep the exact old gate behavior.
-        if c.get('event_object'):
-            eo = editorial_object.event_object(c)
-            for code in editorial_object.validate_event_object(eo):
-                missing.append('eo:' + code)
-            for code in editorial_object.cover_semantic(c, eo):
-                missing.append('eo-cover:' + code)
-            for code in editorial_object.object_validation(c, eo):
-                missing.append('eo-cover:' + code)
-            for code in editorial_object.text_cover_match(c, eo):
-                missing.append('eo-cover:' + code)
-    return missing
-
-
-_VERDICT_CACHE = None
-
-
-def _log_verdict(guid: str, miss: list):
-    """Append one JSONL line per concept_gate verdict on CHANGE (not every cycle).
-
-    state/verdicts.jsonl is the persistent answer to 'did the gate run and what
-    did it decide'. Dedup by (guid, verdict, codes): repeated identical audited
-    states are not re-written, so the file stays a change-history, not a loop log.
-    Cache is hydrated from the file on first call, so dedup survives restarts.
-    """
-    global _VERDICT_CACHE
-    if _VERDICT_CACHE is None:
-        _VERDICT_CACHE = {}
-        try:
-            with open(VERDICTS_FILE, 'r', encoding='utf-8') as f:
-                for ln in f:
-                    try:
-                        row = json.loads(ln)
-                    except Exception:
-                        continue
-                    if row.get('guid'):
-                        _VERDICT_CACHE[row['guid']] = {
-                            'guid': row['guid'],
-                            'verdict': row.get('verdict'),
-                            'codes': row.get('codes'),
-                        }
-        except OSError:
-            pass
-    rec = {
-        'guid': guid,
-        'verdict': 'PASS' if not miss else 'REJECT',
-        'codes': miss,
-    }
-    if _VERDICT_CACHE.get(guid) == rec:
-        return
-    _VERDICT_CACHE[guid] = rec
-    try:
-        rec['ts'] = datetime.now().astimezone().isoformat(timespec='seconds')
-        with open(VERDICTS_FILE, 'a', encoding='utf-8') as f:
-            f.write(json.dumps(rec, ensure_ascii=False) + '\n')
-    except Exception as e:
-        olog('WATCHDOG_ERR verdict ' + guid + ' :: ' + str(e))
-
-
-def _log_editorial(guid: str, concept: dict, miss: list):
-    """Persist the Editorial Object verdict to state/editorial.jsonl on CHANGE.
-
-    Mirrors verdicts.jsonl (dedup by guid+verdicts) but carries the OUTPUT
-    fields required by editorial-object-contract.md: event_object,
-    article_structure, object_type, cover_concept, cover_path, plus the three
-    editorial checks (EDITORIAL_OBJECT / COVER_SEMANTIC / TEXT_COVER_MATCH).
-    Only concepts that carry event_object produce an editorial journal entry.
-    """
-    if not concept or not concept.get('event_object'):
-        return
-    eo = editorial_object.event_object(concept)
-    codes = [m for m in miss if m.startswith(('eo:', 'eo-cover:'))]
-    rec = {
-        'event_object': eo,
-        'article_structure': [s for s in
-                              (concept.get('article_structure') or []) if s],
-        'object_type': eo.get('object_type') or concept.get('object_type') or '',
-        'cover_concept': concept.get('visual_object') or '',
-        'cover_path': concept.get('cover_path') or '',
-    }
-    eo_fail = [m for m in codes if m.startswith('eo:')]
-    cs_fail = [m for m in codes if m.startswith('eo-cover:')
-               and not m.startswith('eo-cover:TEXT')
-               and 'OBJECT_SUBSTITUTION' not in m]
-    ov_fail = [m for m in codes if 'OBJECT_SUBSTITUTION' in m]
-    tcm_fail = [m for m in codes if m.startswith('eo-cover:TEXT')]
-    rec['editorial_object'] = 'REJECT' if eo_fail else 'PASS'
-    rec['cover_semantic'] = 'REJECT' if cs_fail else 'PASS'
-    rec['object_validation'] = 'REJECT' if ov_fail else 'PASS'
-    rec['text_cover_match'] = 'REJECT' if tcm_fail else 'PASS'
-    if eo_fail:
-        rec['editorial_object_codes'] = eo_fail
-    if cs_fail:
-        rec['cover_semantic_codes'] = cs_fail
-    if ov_fail:
-        rec['object_validation_codes'] = ov_fail
-    if tcm_fail:
-        rec['text_cover_match_codes'] = tcm_fail
-    editorial_object.log_editorial(guid, rec)
-
-
-def _recent_object_types(exclude_guid: str, concepts: dict) -> set:
-    """Set of object_type used in the last 5 feed slots before exclude_guid."""
-    items = load_items()
-    ordered = sorted(items, key=lambda it: it.get('guid', ''))
-    idx = None
-    for i, it in enumerate(ordered):
-        if it.get('guid') == exclude_guid:
-            idx = i
-            break
-    if idx is None:
-        return set()
-    start = max(0, idx - 5)
-    types = set()
-    for it in ordered[start:idx]:
-        c = concepts.get(it.get('guid')) or {}
-        t = (c.get('object_type') or '').strip()
-        if t:
-            types.add(t)
-    return types
-
-
-def unset_line(path: str, line: str):
-    """Remove `line` from a line-set file (used to release a rejected guid)."""
-    if not os.path.exists(path):
-        return
-    cur = read_lines(path)
-    nxt = [ln for ln in cur if ln != line]
-    if len(nxt) != len(cur):
-        with open(path, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(nxt) + '\n')
-
-
-def parse_date(s: str):
-    return parsedate_to_datetime(s)
-
-
-def quota_file(day: str):
-    return os.path.join(STATE, 'quota-' + day + '.json')
-
-
-def load_quota(day: str):
-    qf = quota_file(day)
-    if os.path.exists(qf):
-        try:
-            with open(qf, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception:
-            pass
-    return {'ts': day, 'tg': 0, 'fb': 0, 'vk': 0, 'ig': 0}
-
-
-def save_quota(day: str, q):
-    with open(quota_file(day), 'w', encoding='utf-8') as f:
-        json.dump(q, f, separators=(',', ':'))
-
-
-def inc_quota(day: str):
-    q = load_quota(day)
-    q['tg'] = int(q.get('tg', 0)) + 1
-    save_quota(day, q)
-    olog('QUOTA inc tg => tg=' + str(q['tg']) + ' fb=' + str(q.get('fb', 0)) +
-         ' vk=' + str(q.get('vk', 0)) + ' ig=' + str(q.get('ig', 0)))
-
-
-def build_registry(items):
-    tg = set(read_lines(TG_TRACKER))
-    lines = ['GUID~~~TITLE~~~DATE~~~TG~~~FB~~~IG~~~VK']
-    for it in items:
-        g = it['guid']
-        lines.append(g + '~~~' + it['title'] + '~~~' + it['date'] + '~~~' +
-                     ('DONE' if g in tg else '--') + '~~~--~~~--~~~--')
-    with open(REGISTRY, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(lines) + '\n')
-
-
-def html_escape(s: str) -> str:
-    return (s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-             .replace('"', '&quot;'))
-
-
-def build_calendar(items):
-    tg = set(read_lines(TG_TRACKER))
-    now = datetime.now().astimezone()
-    rows = []
-    for it in sorted(items, key=lambda x: parse_date(x['date'])):
-        dt = parse_date(it['date'])
-        g = it['guid']
-        is_today = (dt.date() == now.date())
-        is_future = (dt > now)
-        cls = ' class="today"' if is_today else (' class="future"' if is_future else '')
-        t1 = '<span class="tg ok">TG</span>' if g in tg else '<span class="tg no">-</span>'
-        dt_s = dt.astimezone().strftime('%d.%m.%y %H:%M')
-        rows.append('<tr{0}><td>{1}</td><td>{2}</td><td>{3}</td><td>-</td><td>-</td><td>-</td></tr>'
-                    .format(cls, dt_s, html_escape(it['title']), t1))
-    rows_html = '\n'.join(rows)
-    tpl = ('<!DOCTYPE html>\n<html lang="ru">\n<head>\n<meta charset="utf-8">\n'
-           '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
-           '<title>AudioReclama publish calendar</title>\n<style>\n'
-           'body{background:#0d1117;color:#c9d1d9;font-family:Segoe UI,Arial,sans-serif;margin:0;padding:24px}\n'
-           'h1{font-size:18px;color:#f0f6fc}\n'
-           'table{border-collapse:collapse;width:100%;margin-top:12px}\n'
-           'td,th{border:1px solid #30363d;padding:6px 10px;font-size:13px;text-align:left}\n'
-           'tr.today td{background:#1f6feb22}\ntr.future td{opacity:.55}\n'
-           '.ok{color:#3fb950;font-weight:600}\n.no{color:#484f58}\n'
-           '.fb.ok{color:#58a6ff}.ig.ok{color:#f778ba}.vk.ok{color:#e3b341}.tg.ok{color:#3fb950}\n'
-           '.foot{color:#484f58;font-size:11px;margin-top:10px}\n</style>\n</head>\n<body>\n'
-           '<h1>AudioReclama - publish calendar</h1>\n<table>\n<tr><th>Date</th><th>Post</th>'
-           '<th>TG</th><th>FB</th><th>IG</th><th>VK</th></tr>\n'
-           + rows_html + '\n</table>\n</body>\n</html>\n')
-    with open(CALENDAR, 'w', encoding='utf-8') as f:
-        f.write(tpl)
-
-
-def trunc_at(s: str, mx: int) -> str:
-    if len(s) <= mx:
-        return s
-    cut = s[:mx]
-    url_at = max(cut.rfind('http://'), cut.rfind('https://'))
-    if url_at >= 0:
-        url_end = cut.find(' ', url_at)
-        if url_end < 0 or url_end > mx - 3:
-            before = cut[:url_at]
-            sp = before.rfind(' ')
-            if sp >= 0:
-                return before[:sp]
-            return before
-    if url_at >= 0 and url_at < mx * 0.4:
-        return cut
-    last = cut.rfind('.')
-    if last > mx * 0.6:
-        return cut[:last + 1]
-    sp = cut.rfind(' ')
-    if sp > mx * 0.6:
-        return cut[:sp]
-    return cut
-
-
-def ensure_cover(guid: str, img_name: str, img_path: str):
-    """Version-aware idempotency (standards/red-field-visual.md): a PNG is kept
-    only when its ASSET_HASH matches DESIGN_VERSION; otherwise regenerate."""
-    try:
-        import sys
-        gen_dir = FEED
-        if gen_dir not in sys.path:
-            sys.path.insert(0, gen_dir)
-        import image_gen
-        path = image_gen.ensure_asset(guid)
-        olog('COVER_ENSURED ' + img_name + ' conflict=' + image_gen.conflict_of(guid))
-        return path
-    except Exception as e:
-        olog('COVER_GEN_ERR ' + img_name + ' :: ' + str(e))
-        return img_path
-
-
-def tg_chat(env):
-    chat = None
-    if os.path.exists(CHANNEL_FILE):
-        for ln in read_lines(CHANNEL_FILE):
-            if not ln.startswith('#'):
-                chat = ln.strip()
-                break
-    if not chat:
-        raise RuntimeError('No chat target: pass -Chat or write id to tg/feed_channel.txt')
-    return chat
-
-
-def publish_one(guid: str, item: dict, env: dict, chat: str, concepts: dict):
-    token_file = env.get('BOT_TOKEN_FILE', '')
-    if not token_file or not os.path.exists(token_file):
-        raise RuntimeError('BOT_TOKEN_FILE missing: ' + token_file)
-    token = open(token_file, 'r', encoding='utf-8').read().strip()
-    proxy = env.get('PROXY', 'socks5h://127.0.0.1:10808')
-    api = env.get('API', 'https://api.telegram.org')
-    base = api + '/bot' + token
-
-    concept = concepts.get(guid) or {}
-    title = (concept.get('headline') or item['title']).strip()
-    demo = (concept.get('demo') or '').strip()
-    explain = (concept.get('explain') or '').strip()
-    consequence = (concept.get('consequence') or '').strip()
-    desc = item['desc'].replace('\\n', '\n\n')
-    link = item['src']
-
-    # Compose once, remove repeated paragraphs, and fingerprint exactly the
-    # content that is about to be sent. The event key is independent of guid.
-    parts = []
-    seen_parts = set()
-    for part in (demo, explain, consequence, desc):
-        part = (part or '').strip()
-        normalized = ' '.join(part.casefold().split())
-        if part and normalized not in seen_parts:
-            parts.append(part)
-            seen_parts.add(normalized)
-    footer = 'Источник: ' + link
-    body_src = '\n\n'.join(parts)
-    max_body = max(0, 1024 - len(title) - len(footer) - 4)
-    body = trunc_at(body_src, max_body)
-    caption = title + '\n\n' + body + '\n\n' + footer
-
-    event_key = event_key_for_item(item, concept)
-    canonical_url = canonicalize_url(link)
-    fingerprint = build_content_fingerprint(caption)
-    ledger = PublicationLedger(os.path.join(STATE, 'publication-ledger.sqlite3'))
-    reservation = ledger.reserve(
-        event_key=event_key,
-        guid=guid,
-        canonical_url=canonical_url,
-        fingerprint=fingerprint,
-        content=caption,
-    )
-    if reservation.get('decision') != 'RESERVED':
-        reason = reservation.get('reason', 'publication blocked')
-        olog('PUBLICATION_BLOCKED ' + guid + ' event=' + event_key +
-             ' decision=' + str(reservation.get('decision')) + ' reason=' + reason)
-        print('BLOCKED guid=' + guid + ' event=' + event_key + ' reason=' + reason)
-        return 'BLOCKED'
-
-    # A reviewed bespoke cover may override the legacy procedural illustrator.
-    cover_override = (concept.get('cover_asset_override') or '').strip()
-    if cover_override:
-        img_path = os.path.normpath(os.path.join(REPO, cover_override))
-        if not img_path.startswith(os.path.normpath(REPO) + os.sep) or not os.path.isfile(img_path):
-            ledger.mark_failed(event_key, 'cover override missing or outside repository')
-            raise RuntimeError('Cover override is missing or outside the repository: ' + cover_override)
-    else:
-        img_path = os.path.join(IMG_DIR, item['img'] + '.png')
-        img_path = ensure_cover(item['guid'], item['img'], img_path)
-
-    if os.path.exists(img_path):
-        fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_photo_')
-        with os.fdopen(fd, 'w', encoding='utf-8') as f:
-            f.write(caption)
-        try:
-            ok, out = invoke_curl([
-                '--max-time', '60', '-s', '-x', proxy,
-                '-F', 'chat_id=' + chat,
-                '-F', 'caption=<' + payload + ';type=text/plain;charset=utf-8',
-                '-F', 'photo=@' + img_path + ';type=image/png',
-                base + '/sendPhoto'])
-        finally:
-            try:
-                os.remove(payload)
-            except OSError:
-                pass
-        media_kind = 'photo'
-    else:
-        fd, payload = tempfile.mkstemp(suffix='.txt', prefix='tg_msg_')
-        with os.fdopen(fd, 'w', encoding='utf-8') as f:
-            f.write(caption)
-        try:
-            ok, out = invoke_curl([
-                '--max-time', '60', '-s', '-x', proxy,
-                '-F', 'chat_id=' + chat,
-                '-F', 'text=<' + payload + ';type=text/plain;charset=utf-8',
-                base + '/sendMessage'])
-        finally:
-            try:
-                os.remove(payload)
-            except OSError:
-                pass
-        media_kind = 'text'
-
-    try:
-        o = json.loads(out)
-    except Exception:
-        o = {}
-
-    if ok and o.get('ok'):
-        result = o.get('result') or {}
-        mid = str(result.get('message_id') or '')
-        title_s = (result.get('chat') or {}).get('title', '')
-        # Persist Telegram's returned id first in the event ledger, then mirror
-        # the legacy tracker for compatibility with existing operator tools.
-        ledger.mark_sent(event_key, mid, chat, media_kind)
-        print('SENT guid=' + guid + ' msg=' + mid + ' chat=' + title_s)
-        add_unique(TG_TRACKER, guid)
-        with open(TG_STATE_FILE, 'a', encoding='utf-8') as f:
-            f.write(guid + '\t' + mid + '\t' + chat + '\t' + media_kind + '\n')
-        with open(TG_LOG, 'a', encoding='utf-8') as f:
-            f.write('published ' + guid + ' ' + datetime.now().strftime('%Y-%m-%d') + '\n')
-        return 'OK'
-
-    # Telegram's structured ok=false response is a definite rejection and may
-    # be retried after correcting the cause. A timeout, empty or malformed
-    # response is ambiguous: Telegram may already have accepted the message.
-    if isinstance(o, dict) and o.get('ok') is False:
-        ledger.mark_failed(event_key, json.dumps(o, ensure_ascii=False))
-        print('FAIL guid=' + guid + ' -> ' + str(o))
-        return 'FAIL'
-
-    ledger.mark_unknown(event_key, out or 'transport outcome ambiguous')
-    olog('PUBLICATION_UNKNOWN ' + guid + ' event=' + event_key)
-    print('UNKNOWN guid=' + guid + ' event=' + event_key + ' (manual reconciliation required)')
-    return 'UNKNOWN'
-
-
-def run_cycle(tg_cap: int):
-    now = datetime.now().astimezone()
-    items = load_items()
-    build_registry(items)
-    build_calendar(items)
-
-    due = []
-    for it in items:
-        try:
-            dt = parse_date(it['date'])
-        except Exception:
-            continue
-        if dt <= now:
-            due.append({'g': it['guid'], 'd': dt, 'it': it})
-    due.sort(key=lambda x: x['d'])
-
-    day = now.strftime('%Y-%m-%d')
-    quota = load_quota(day)
-    used = int(quota.get('tg', 0))
-    slots = max(0, tg_cap - used)
-    concepts = load_concepts()
-    editorial_object.set_editorial_file(EDITORIAL_FILE)
-    done = set(read_lines(TG_TRACKER))
-    rejected = set(read_lines(REJECTED_FILE))
-    ledger = PublicationLedger(os.path.join(STATE, 'publication-ledger.sqlite3'))
-    # One-time compatibility hydration: preserve SENT status for older posts
-    # even when the new SQLite ledger did not exist at their publication time.
-    legacy_messages = {}
-    for state_line in read_lines(TG_STATE_FILE):
-        fields = state_line.split('\t')
-        if len(fields) >= 3:
-            legacy_messages[fields[0]] = (fields[1], fields[2])
-    for legacy_item in items:
-        legacy_guid = legacy_item['guid']
-        if legacy_guid in done and not ledger.has_guid(legacy_guid):
-            legacy_concept = concepts.get(legacy_guid) or {}
-            legacy_parts = [legacy_concept.get(k, '') for k in
-                            ('headline', 'demo', 'explain', 'consequence')]
-            legacy_content = '\n'.join(legacy_parts + [legacy_item.get('desc', '')])
-            legacy_event_key = event_key_for_item(legacy_item, legacy_concept)
-            legacy_mid, legacy_chat = legacy_messages.get(legacy_guid, ('', ''))
-            ledger.import_legacy_sent(
-                legacy_event_key, legacy_guid, legacy_item.get('src', ''),
-                build_content_fingerprint(legacy_content), legacy_content,
-                legacy_mid, legacy_chat,
-            )
-    # 1) Editorial gate (frozen until concept filled; does NOT consume slots).
-    #    Audits EVERY due item each cycle regardless of quota: verdicts land in
-    #    verdicts.jsonl even when nothing will be published today.
-    for it in due:
-        g = it['g']
-        miss = concept_gate(g, concepts, it['it'].get('src', ''), it['it'])
-        _log_verdict(g, miss)
-        _log_editorial(g, concepts.get(g), miss)
-        if miss and g not in done and g not in rejected:
-            olog('REJECT ' + g + ' missing=' + ','.join(miss))
-            add_unique(REJECTED_FILE, g)
-            rejected = set(read_lines(REJECTED_FILE))
-        elif not miss and g in rejected:
-            unset_line(REJECTED_FILE, g)
-            rejected = set(read_lines(REJECTED_FILE))
-    rej_frozen = len([g for g in rejected if g in set(x['g'] for x in due)])
-    if slots == 0:
-        olog('CAP tg (' + str(used) + '/' + str(tg_cap) + ')')
-        summ = ['tg=0/0']
-    else:
-        # 2) Only fully-concepted items consume the daily cap.
-        cands = [x for x in due if x['g'] not in done and x['g'] not in rejected][:slots]
-        env = load_env()
-        chat = tg_chat(env)
-        ok = fail = 0
-        for c in cands:
-            it = next((y for y in items if y['guid'] == c['g']), None)
-            if it is None:
+        parsed = urlsplit(raw)
+        if parsed.scheme.lower() not in ("http", "https") or not parsed.hostname:
+            return ""
+        host = parsed.hostname.lower()
+        if host.startswith("www."):
+            host = host[4:]
+        port = parsed.port
+        netloc = host
+        if port and not ((parsed.scheme.lower() == "http" and port == 80)
+                         or (parsed.scheme.lower() == "https" and port == 443)):
+            netloc += ":" + str(port)
+        path = re.sub(r"/{2,}", "/", parsed.path or "/")
+        if path != "/":
+            path = path.rstrip("/")
+        kept = []
+        for key, value in parse_qsl(parsed.query, keep_blank_values=True):
+            key_low = key.lower()
+            if key_low.startswith("utm_") or key_low in TRACKING_KEYS:
                 continue
-            try:
-                st = publish_one(c['g'], it, env, chat, concepts)
-            except Exception as e:
-                olog('WATCHDOG_ERR publish ' + c['g'] + ' :: ' + str(e))
-                st = 'FAIL'
-            if st == 'OK':
-                ok += 1
-            elif st == 'FAIL':
-                fail += 1
-            elif st in ('BLOCKED', 'UNKNOWN'):
-                add_unique(REJECTED_FILE, c['g'])
-                rejected.add(c['g'])
-            time.sleep(2)
-        summ = ['tg=' + str(ok) + '/' + str(fail) +
-                ('' if rej_frozen == 0 else ' frozen=' + str(rej_frozen))]
-
-    with open(HEARTBEAT, 'w', encoding='utf-8') as f:
-        f.write(now.astimezone().isoformat(timespec='seconds') + '\n')
-    olog('CYCLE ' + now.strftime('%Y-%m-%d %H:%M:%S') + ' :: ' + ' '.join(summ))
-    print('CYCLE ' + now.strftime('%Y-%m-%d %H:%M:%S') + ' :: ' + ' '.join(summ))
-    print('CYCLE_DONE')
+            kept.append((key, value))
+        query = urlencode(sorted(kept))
+        return urlunsplit((parsed.scheme.lower(), netloc, path, query, ""))
+    except (TypeError, ValueError):
+        return ""
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--once', action='store_true')
-    ap.add_argument('--loop', action='store_true')
-    ap.add_argument('--tg-cap', type=int, default=4)
-    ap.add_argument('--interval', type=int, default=300)
-    args = ap.parse_args()
-
-    if args.loop:
-        os.makedirs(STATE, exist_ok=True)
-        with open(PID_FILE, 'w', encoding='utf-8') as f:
-            f.write(str(os.getpid()) + '\n')
-        while True:
-            try:
-                run_cycle(args.tg_cap)
-            except Exception as e:
-                olog('WATCHDOG_ERR ' + str(e))
-                print('WATCHDOG_ERR ' + str(e))
-            time.sleep(args.interval)
-    else:
-        run_cycle(args.tg_cap)
+def normalize_text(value: str) -> str:
+    text = unicodedata.normalize("NFKC", value or "").casefold().replace("ё", "е")
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"[^0-9a-zа-я]+", " ", text, flags=re.IGNORECASE)
+    return " ".join(text.split())
 
 
-if __name__ == '__main__':
-    main()
+def content_fingerprint(value: str) -> str:
+    normalized = normalize_text(value)
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
+def similarity_score(left: str, right: str) -> float:
+    a = normalize_text(left)
+    b = normalize_text(right)
+    if not a or not b:
+        return 0.0
+    if a == b:
+        return 1.0
+    seq = difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
+    ta, tb = set(a.split()), set(b.split())
+    union = ta | tb
+    jaccard = len(ta & tb) / len(union) if union else 0.0
+    return max(seq, jaccard)
+
+
+def event_key_for_item(item: dict, concept: dict | None = None) -> str:
+    """Prefer an explicit event key; otherwise derive a conservative stable key."""
+    concept = concept or {}
+    explicit = (item.get("event_key") or concept.get("event_key") or "").strip()
+    if explicit:
+        slug = re.sub(r"[^a-zA-Z0-9._:-]+", "-", explicit).strip("-").lower()
+        if slug:
+            return "event:" + slug
+    source = canonicalize_url(item.get("src", ""))
+    if source:
+        digest = hashlib.sha256(source.encode("utf-8")).hexdigest()[:40]
+        return "source:" + digest
+    payload = " ".join((item.get("title", ""), item.get("desc", "")))
+    return "content:" + content_fingerprint(payload)[:40]
+
+
+def abbreviation_issues(text: str, concept: dict) -> list[str]:
+    """Check editorial-v2 foreign acronyms and reject phonetic Cyrillic aliases.
+
+    Each acronym used in the visible copy must be either expanded before its
+    first occurrence or explicitly preserved in its original Latin spelling.
+    The policy is opt-in by editorial_version=2 so legacy posts remain readable.
+    """
+    if int(concept.get("editorial_version") or 1) < 2:
+        return []
+    policy = concept.get("abbreviations")
+    if not isinstance(policy, dict):
+        return ["abbreviation_policy_missing"]
+
+    issues: list[str] = []
+    found = {m.group(0) for m in ACRONYM_RE.finditer(text)}
+    unknown = sorted(found - set(policy))
+    if unknown:
+        issues.append("abbreviations_unreviewed:" + ",".join(unknown))
+
+    for token in sorted(found & set(policy)):
+        entry = policy.get(token) or {}
+        if not isinstance(entry, dict):
+            issues.append("abbreviation_policy_invalid:" + token)
+            continue
+        mode = entry.get("mode")
+        first_pos = text.find(token)
+        if mode == "expanded":
+            expansion = (entry.get("expansion") or "").strip()
+            if not expansion or expansion not in text[:first_pos]:
+                issues.append("abbreviation_not_expanded_before_first_use:" + token)
+        elif mode == "original":
+            if not re.search(r"(?<![A-Za-z])" + re.escape(token) +
+                             r"(?![A-Za-z])", text):
+                issues.append("abbreviation_not_preserved_original:" + token)
+        else:
+            issues.append("abbreviation_mode_invalid:" + token)
+
+        forbidden = list(entry.get("forbidden_transliterations") or [])
+        forbidden.extend(KNOWN_BAD_TRANSLITERATIONS.get(token, ()))
+        lowered = text.casefold()
+        for bad in forbidden:
+            bad = str(bad).strip().casefold()
+            if bad and bad in lowered:
+                issues.append("abbreviation_phonetic_transliteration:" + token)
+                break
+
+    # A known Cyrillic phonetic rendering is rejected even if the acronym was
+    # omitted from the visible text or the item was not supplied with a policy.
+    lowered = text.casefold()
+    for token, forms in KNOWN_BAD_TRANSLITERATIONS.items():
+        for bad in forms:
+            if bad in lowered:
+                issues.append("known_bad_transliteration:" + token)
+                break
+    return sorted(set(issues))
+
+
+class PublicationLedger:
+    """SQLite event ledger enforcing duplicate blocking and conservative retries."""
+
+    def __init__(self, path: str | Path, near_duplicate_threshold: float = 0.84):
+        self.path = str(path)
+        self.near_duplicate_threshold = near_duplicate_threshold
+        Path(self.path).parent.mkdir(parents=True, exist_ok=True)
+        self._initialize()
+
+    def _connect(self) -> sqlite3.Connection:
+        conn = sqlite3.connect(self.path, timeout=15)
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA busy_timeout=15000")
+        return conn
+
+    @contextmanager
+    def _connection(self):
+        conn = self._connect()
+        try:
+            yield conn
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            conn.close()
+
+    def _initialize(self) -> None:
+        with self._connection() as conn:
+            conn.execute("PRAGMA journal_mode=WAL")
+            conn.execute("""
+                CREATE TABLE IF NOT EXISTS publications (
+                    event_key TEXT PRIMARY KEY,
+                    guid TEXT NOT NULL,
+                    canonical_url TEXT NOT NULL DEFAULT '',
+                    fingerprint TEXT NOT NULL,
+                    normalized_content TEXT NOT NULL,
+                    status TEXT NOT NULL,
+                    message_id TEXT NOT NULL DEFAULT '',
+                    chat_id TEXT NOT NULL DEFAULT '',
+                    media_kind TEXT NOT NULL DEFAULT '',
+                    attempts INTEGER NOT NULL DEFAULT 1,
+                    last_error TEXT NOT NULL DEFAULT '',
+                    created_at TEXT NOT NULL,
+                    updated_at TEXT NOT NULL
+                )
+            """)
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_publications_url_status "
+                "ON publications(canonical_url, status)"
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_publications_fingerprint_status "
+                "ON publications(fingerprint, status)"
+            )
+            conn.execute(
+                "CREATE INDEX IF NOT EXISTS idx_publications_guid "
+                "ON publications(guid, status)"
+            )
+
+    @staticmethod
+    def _active_clause() -> str:
+        return "status IN ('SENDING', 'SENT', 'UNKNOWN')"
+
+    @staticmethod
+    def _result(decision: str, reason: str = "", row=None, score: float = 0.0):
+        return {
+            "decision": decision,
+            "reason": reason,
+            "event_key": row["event_key"] if row else "",
+            "status": row["status"] if row else "",
+            "message_id": row["message_id"] if row else "",
+            "similarity": round(score, 4),
+        }
+
+    def reserve(
+        self,
+        event_key: str,
+        guid: str,
+        canonical_url: str,
+        fingerprint: str,
+        content: str,
+    ) -> dict:
+        """Durably reserve a send before any network request.
+
+        Returns RESERVED, DUPLICATE, or REVIEW_REQUIRED. UNKNOWN and SENDING
+        never auto-retry: the Telegram API may have accepted a request even if
+        the client did not receive its response.
+        """
+        now = utc_now()
+        normalized = normalize_text(content)
+        canonical = canonicalize_url(canonical_url)
+        fp = fingerprint or content_fingerprint(content)
+        with self._connection() as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            event_row = conn.execute(
+                "SELECT * FROM publications WHERE event_key=?", (event_key,)
+            ).fetchone()
+            if event_row and event_row["status"] != "FAILED":
+                conn.commit()
+                return self._result("DUPLICATE", "event_key_already_reserved", event_row)
+
+            guid_match = conn.execute(
+                "SELECT * FROM publications WHERE guid=? AND " + self._active_clause() +
+                " ORDER BY updated_at DESC LIMIT 1",
+                (guid,),
+            ).fetchone()
+            if guid_match:
+                conn.commit()
+                return self._result("DUPLICATE", "guid_already_published_or_pending", guid_match)
+
+            if canonical:
+                source_match = conn.execute(
+                    "SELECT * FROM publications WHERE canonical_url=? AND "
+                    + self._active_clause() + " ORDER BY updated_at DESC LIMIT 1",
+                    (canonical,),
+                ).fetchone()
+                if source_match:
+                    conn.commit()
+                    return self._result("DUPLICATE", "canonical_source_already_used", source_match)
+
+            fingerprint_match = conn.execute(
+                "SELECT * FROM publications WHERE fingerprint=? AND "
+                + self._active_clause() + " ORDER BY updated_at DESC LIMIT 1",
+                (fp,),
+            ).fetchone()
+            if fingerprint_match:
+                conn.commit()
+                return self._result("DUPLICATE", "content_fingerprint_already_used", fingerprint_match)
+
+            # Conservative semantic guard: near-matches are parked for editorial
+            # review rather than silently published or automatically discarded.
+            rows = conn.execute(
+                "SELECT * FROM publications WHERE " + self._active_clause() +
+                " ORDER BY updated_at DESC LIMIT 500"
+            ).fetchall()
+            for row in rows:
+                score = similarity_score(normalized, row["normalized_content"])
+                if score >= self.near_duplicate_threshold:
+                    conn.commit()
+                    return self._result(
+                        "REVIEW_REQUIRED", "near_duplicate_requires_human_review",
+                        row, score
+                    )
+
+            if event_row and event_row["status"] == "FAILED":
+                conn.execute(
+                    "UPDATE publications SET guid=?, canonical_url=?, fingerprint=?, "
+                    "normalized_content=?, status='SENDING', attempts=attempts+1, "
+                    "last_error='', updated_at=? WHERE event_key=?",
+                    (guid, canonical, fp, normalized, now, event_key),
+                )
+            else:
+                conn.execute(
+                    "INSERT INTO publications(event_key,guid,canonical_url,fingerprint,"
+                    "normalized_content,status,attempts,created_at,updated_at) "
+                    "VALUES(?,?,?,?,?,'SENDING',1,?,?)",
+                    (event_key, guid, canonical, fp, normalized, now, now),
+                )
+            conn.commit()
+        return {"decision": "RESERVED", "reason": "durable_send_intent", "event_key": event_key}
+
+    def mark_sent(
+        self, event_key: str, message_id: str, chat_id: str, media_kind: str = ""
+    ) -> None:
+        with self._connect() as conn:
+            conn.execute(
+                "UPDATE publications SET status='SENT', message_id=?, chat_id=?, "
+                "media_kind=?, last_error='', updated_at=? WHERE event_key=?",
+                (str(message_id), str(chat_id), media_kind, utc_now(), event_key),
+            )
+
+    def mark_failed(self, event_key: str, error: str) -> None:
+        """Only use when Telegram returned a definitive ok=false API response."""
+        with self._connect() as conn:
+            conn.execute(
+                "UPDATE publications SET status='FAILED', last_error=?, updated_at=? "
+                "WHERE event_key=?",
+                (str(error)[:2000], utc_now(), event_key),
+            )
+
+    def mark_unknown(self, event_key: str, error: str) -> None:
+        """Park network timeouts/empty responses; never blindly send again."""
+        with self._connect() as conn:
+            conn.execute(
+                "UPDATE publications SET status='UNKNOWN', last_error=?, updated_at=? "
+                "WHERE event_key=?",
+                (str(error)[:2000], utc_now(), event_key),
+            )
+
+    def import_legacy_sent(
+        self, event_key: str, guid: str, canonical_url: str, fingerprint: str,
+        content: str, message_id: str = "", chat_id: str = "",
+    ) -> None:
+        """Hydrate the ledger from the historic guid tracker on first startup."""
+        now = utc_now()
+        with self._connect() as conn:
+            conn.execute(
+                "INSERT OR IGNORE INTO publications(event_key,guid,canonical_url,"
+                "fingerprint,normalized_content,status,message_id,chat_id,attempts,"
+                "created_at,updated_at) VALUES(?,?,?,?,?,'SENT',?,?,1,?,?)",
+                (event_key, guid, canonicalize_url(canonical_url), fingerprint,
+                 normalize_text(content), str(message_id), str(chat_id), now, now),
+            )
+
+    def resolve_pending(
+        self, event_key: str, outcome: str, message_id: str = "",
+        chat_id: str = "", note: str = "",
+    ) -> None:
+        """Human reconciliation only; never infer delivery from a timeout."""
+        outcome = outcome.upper().strip()
+        if outcome not in ("SENT", "FAILED"):
+            raise ValueError("outcome must be SENT or FAILED")
+        with self._connection() as conn:
+            conn.execute(
+                "UPDATE publications SET status=?, message_id=?, chat_id=?, "
+                "last_error=?, updated_at=? WHERE event_key=? "
+                "AND status IN ('SENDING','UNKNOWN')",
+                (outcome, str(message_id), str(chat_id), str(note)[:2000],
+                 utc_now(), event_key),
+            )
+
+    def has_guid(self, guid: str) -> bool:
+        with self._connect() as conn:
+            row = conn.execute(
+                "SELECT 1 FROM publications WHERE guid=? AND status='SENT' LIMIT 1",
+                (guid,),
+            ).fetchone()
+        return row is not None
+
+    def get_by_guid(self, guid: str) -> dict | None:
+        with self._connect() as conn:
+            row = conn.execute(
+                "SELECT * FROM publications WHERE guid=? ORDER BY updated_at DESC LIMIT 1",
+                (guid,),
+            ).fetchone()
+        return dict(row) if row else None
+
+    def get_by_event_key(self, event_key: str) -> dict | None:
+        with self._connect() as conn:
+            row = conn.execute(
+                "SELECT * FROM publications WHERE event_key=?", (event_key,)
+            ).fetchone()
+        return dict(row) if row else None
