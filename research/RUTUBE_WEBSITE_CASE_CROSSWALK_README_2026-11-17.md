@@ -34,6 +34,6 @@ These are high-confidence matches at the client + service level. They are not ve
 
 ## Sources
 
-- Official homepage portfolio: https://www.audio-reclama.ru/
-- Official video narration service and case list: https://www.audio-reclama.ru/audio/ozvuchka-video.html
+- Official homepage portfolio: https://www.audio-reclama.ru
+- Official video narration service and case list: https://www.audio-reclama.ruaudio/ozvuchka-video.html
 - RUTUBE assets: URLs in `RUTUBE_WEBSITE_CASE_CROSSWALK_2026-11-17.csv`.
