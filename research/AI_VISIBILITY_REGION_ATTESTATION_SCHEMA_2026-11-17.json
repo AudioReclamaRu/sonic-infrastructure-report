@@ -20,14 +20,14 @@
       "additionalProperties": false,
       "required": [
         "connection_type", "vpn_detected", "proxy_detected",
-        "remote_desktop_detected", "ip_fingerprint_sha256", "provider_name"
+        "remote_desktop_detected", "ip_fingerprint_hmac_sha256", "provider_name"
       ],
       "properties": {
         "connection_type": {"enum": ["residential_isp", "mobile_carrier", "business_isp", "vpn", "proxy", "cloud_hosting", "remote_desktop", "unknown"]},
         "vpn_detected": {"type": "boolean"},
         "proxy_detected": {"type": "boolean"},
         "remote_desktop_detected": {"type": "boolean"},
-        "ip_fingerprint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "ip_fingerprint_hmac_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "provider_name": {"type": "string", "minLength": 1},
         "asn": {"type": "string"}
       }
