@@ -39,6 +39,8 @@ related:
 - AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
 - ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 20 запросов с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
+- AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
+- AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
 
 ## Поисковая видимость и качество обхода
 
