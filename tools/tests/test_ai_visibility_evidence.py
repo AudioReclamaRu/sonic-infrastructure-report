@@ -59,8 +59,8 @@ class EvidenceRecordTests(unittest.TestCase):
             record = make_record()
             (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
             csv_path = root / "benchmark.csv"
-            headers = ["observation_id", "run_id", "country_code", "interface_locale", "platform", "measurement_mode", "query_id", "answer_status"]
-            row = {"observation_id": "obs-001", "run_id": "run-001", "country_code": "RU", "interface_locale": "ru-RU", "platform": "yandex_alice_ai", "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01", "answer_status": "OK"}
+            headers = ["observation_id", "run_id", "country_code", "interface_locale", "prompt_language", "answer_language", "platform", "platform_surface", "measurement_mode", "query_id", "intent", "query", "answer_status"]
+            row = {"observation_id": "obs-001", "run_id": "run-001", "country_code": "RU", "interface_locale": "ru-RU", "prompt_language": "ru", "answer_language": "ru", "platform": "yandex_alice_ai", "platform_surface": "Alice AI consumer interface", "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01", "intent": "generic_commercial", "query": "Где заказать рекламный аудиоролик?", "answer_status": "OK"}
             with csv_path.open("w", encoding="utf-8", newline="") as stream:
                 writer = csv.DictWriter(stream, fieldnames=headers)
                 writer.writeheader()
