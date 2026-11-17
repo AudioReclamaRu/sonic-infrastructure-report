@@ -62,6 +62,19 @@ def build_rows(module: dict[str, Any]) -> list[dict[str, str]]:
     seen_queries: set[str] = set()
     rows: list[dict[str, str]] = []
 
+    for query in queries:
+        if not isinstance(query, dict):
+            raise ValueError("each query entry must be an object")
+        query_id = query.get("id")
+        prompt = query.get("query")
+        if not isinstance(query_id, str) or not query_id.strip():
+            raise ValueError("each query requires a non-empty id")
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError(f"query {query_id}: prompt is empty")
+        if query_id in seen_queries:
+            raise ValueError(f"duplicate query id: {query_id}")
+        seen_queries.add(query_id)
+
     for platform in platforms:
         if not isinstance(platform, dict):
             raise ValueError("each platform entry must be an object")
@@ -76,22 +89,6 @@ def build_rows(module: dict[str, Any]) -> list[dict[str, str]]:
         if platform_id in seen_platforms:
             raise ValueError(f"duplicate platform id: {platform_id}")
         seen_platforms.add(platform_id)
-        for query in queries:
-            if not isinstance(query, dict):
-                raise ValueError("each query entry must be an object")
-            query_id = query.get("id")
-            prompt = query.get("query")
-            intent = query.get("intent") or query.get("cluster") or "unspecified"
-            if not isinstance(query_id, str) or not query_id.strip():
-                raise ValueError("each query requires a non-empty id")
-            if not isinstance(prompt, str) or not prompt.strip():
-                raise ValueError(f"query {query_id}: prompt is empty")
-            if query_id in seen_queries:
-                # Query IDs are unique across the module, not across platforms.
-                continue
-            seen_queries.add(query_id)
-
-        # Iterate again after module-level query ID validation.
         for query in queries:
             query_id = str(query["id"])
             prompt = str(query["query"])
