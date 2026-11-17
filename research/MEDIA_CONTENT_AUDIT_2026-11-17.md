@@ -25,9 +25,9 @@ Metrics are volatile and must always be stored with the capture date and source.
 ## Executive findings
 
 1. **RUTUBE has a discoverable portfolio footprint**, including service explainers, voice-over/dubbing examples, advertising videos, voice demos and short clips. Sampled public cards in this pass show low displayed counts, commonly 1–6 views, but this is platform-specific and must not be generalized to the brand's whole video footprint.
-2. **YouTube has a materially stronger historical discovery signal.** An indexed channel result for the channel at `youtube.com/@audioreclama` reports 513,155 views for the 13-year-old service explainer "Видео-Гид по услугам студии Аудио-Реклама.ru" and 91,365 for "Аудио+"; other historical voice demos show thousands of views. These are search-index snapshots (crawled last year), not current analytics. The service explainer also appears as a RUTUBE item with a displayed 3 views, suggesting platform-specific distribution differences; identity of the underlying asset is strongly indicated by title/description but a binary duplicate comparison is not yet performed.
+2. **YouTube has a materially stronger historical discovery signal.** An indexed channel result for the channel at `youtube.com/@audioreclama` reports 513,155 views for the 13-year-old service explainer "Видео-Гид по услугам студии (брендовый суффикс в названии опущен)" and 91,365 for "Аудио+"; other historical voice demos show thousands of views. These are search-index snapshots (crawled last year), not current analytics. The service explainer also appears as a RUTUBE item with a displayed 3 views, suggesting platform-specific distribution differences; identity of the underlying asset is strongly indicated by title/description but a binary duplicate comparison is not yet performed.
 3. **The content mix is broad but fragmented.** Titles range from descriptive service labels (e.g. video voice-over, advertising video, IVR/voice greeting) to generic clip labels ("Clip 1", "Clip 2", "Clip 4") and brand slogans. Generic titles are weak for search discovery because they do not identify the service, client problem, language, voice talent or use case.
-4. **Historical pricing is inconsistent and potentially stale.** One RUTUBE voice-talent description states 58,000 ₽ for a 30-second commercial and 55,000 ₽ for an IVR greeting; another states 20,000 ₽ and 17,000 ₽ respectively, both with a 72-hour turnaround. These conflicting historical values cannot be reconciled from public cards. Neither should be treated as current. Do not copy them into current price pages, AI answer prompts, profile descriptions or sales materials until checked against an approved current tariff.
+3. **Historical pricing is inconsistent and potentially stale.** One RUTUBE voice-talent description states 58,000 ₽ for a 30-second commercial and 55,000 ₽ for an IVR greeting; another states 20,000 ₽ and 17,000 ₽ respectively, both with a 72-hour turnaround. These conflicting historical values cannot be reconciled from public cards. Neither should be treated as current. Do not copy them into current price pages, AI answer prompts, profile descriptions or sales materials until checked against an approved current tariff.
 4. **Date and metadata inconsistencies need care.** Some older portfolio pages display a platform publication timestamp of 18 December 2025 while the same card also shows age labels such as "13 years ago" or "6 months ago". Use the platform's explicit created/published fields when visible, retain the raw discrepancy, and do not infer a reliable last-activity date from search snippets alone.
 5. **Cross-platform presence is wider than the verified content inventory.** LinkedIn, YouTube, VK Video and RUTUBE have previously recorded public presences. Instagram, Facebook and Dzen URLs were supplied by the user, but their pages were not independently inspected in this pass. Ownership/admin access remains unverified across these surfaces.
 
@@ -54,15 +54,15 @@ The indexed result for the public channel at https://www.youtube.com/@audiorecla
 
 | Video | Indexed publication age | Indexed views | Interpretation |
 |---|---:|---:|---|
-| Видео-Гид по услугам студии Аудио-Реклама.ru | 13 years | 513,155 | Major historical discovery asset; should be treated as a candidate cornerstone explainer |
+| Видео-Гид по услугам студии (брендовый суффикс в названии опущен) | 13 years | 513,155 | Major historical discovery asset; should be treated as a candidate cornerstone explainer |
 | Аудио+ | 8 years | 91,365 | Strong historical reach for a service/utility concept |
-| Киреев Антон. Аудио-Реклама.ru | 7 years | 6,538 | Voice/demo content with meaningful historical reach |
-| Марина Гладкая Аудио-Реклама.ru | 7 years | 2,735 | Voice/demo content |
-| Петеляев Андрей. Аудио-Реклама.ru | 7 years | 2,139 | Voice/demo content |
-| Google. Озвучка. Диктор Вячеслав Тимошенко. Закадровая начитка. Студия Audio-Reclama.ru | 10 years | 1,369 | Search-descriptive service + talent title |
-| Жуланова Ольга. Аудио-Реклама.ru | 7 years | 1,289 | Voice/demo content |
+| Киреев Антон (дикторское демо) | 7 years | 6,538 | Voice/demo content with meaningful historical reach |
+| Марина Гладкая (дикторское демо) | 7 years | 2,735 | Voice/demo content |
+| Петеляев Андрей (дикторское демо) | 7 years | 2,139 | Voice/demo content |
+| Google. Озвучка. Диктор Вячеслав Тимошенко. Закадровая начитка. студия (брендовый суффикс опущен) | 10 years | 1,369 | Search-descriptive service + talent title |
+| Жуланова Ольга (дикторское демо) | 7 years | 1,289 | Voice/demo content |
 
-These counts are historical index observations, not live page counters or owner analytics. The same service explainer exists on RUTUBE under the title "Видео-Гид по услугам студии Аудио-Реклама.ru - просим репост :)" and its indexed RUTUBE card shows 3 views. The evidence suggests a significant difference between platform distribution histories; it does not establish the reason (audience size, recommendation, embeds, external referrals, age, or cross-post timing are not isolated).
+These counts are historical index observations, not live page counters or owner analytics. The same service explainer exists on RUTUBE under the title "Видео-Гид по услугам студии (брендовый суффикс в названии опущен) - просим репост :)" and its indexed RUTUBE card shows 3 views. The evidence suggests a significant difference between platform distribution histories; it does not establish the reason (audience size, recommendation, embeds, external referrals, age, or cross-post timing are not isolated).
 
 The YouTube channel's indexed description says the studio provides advertising and presentation sound. The listed keywords include voice recording, production, voice-over, radio and online narration. This is a platform-indexed description, not a verified current services/pricing statement.
 
