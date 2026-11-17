@@ -1,6 +1,6 @@
 ---
 type: doc
-date: 2026-11-14
+date: 2026-11-17
 lang: mul
 ---
 # Enterprise Audio Engineering: IVR, Voice Provenance and Russian TTS
@@ -19,6 +19,8 @@ The repository covers:
 Russian-language instructions: [Проверка логики IVR-меню](tools/ivr_flow_linter/README.ru.md).
 
 **Official studio and current commercial information:** [https://www.audio-reclama.ru](https://www.audio-reclama.ru) · start@audio-reclama.ru
+
+**Machine-readable company identity:** [entity profile](entity/audio-reclama-studio.md) and [Schema.org JSON-LD source](entity/audio-reclama-studio.jsonld). The JSON-LD file is a repository artifact; it is not installed on the read-only website.
 
 This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
 

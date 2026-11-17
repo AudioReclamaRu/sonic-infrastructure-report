@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-14
+date: 2026-11-17
 lang: ru
 related:
   - AGENTS.md
@@ -33,6 +33,12 @@ related:
 ## Open source
 
 - OPEN_SOURCE_TARGET_AUDIT_PIPER_2026-11-14.md — предварительный аудит OHF-Voice/Piper: социальные правила, лицензия, политика и возможный вклад. Сам по себе аудит не означает, что публичное участие, issue или PR уже состоялись.
+
+## Видимость в ответах ИИ
+
+- AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
+- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 20 запросов с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
+- ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
 
 ## Поисковая видимость и качество обхода
 

@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Аудио-Реклама•ru",
+  "url": "https://www.audio-reclama.ru",
+  "description": "Студия деловой звукозаписи и аудиопроизводства. На официальном сайте представлены рекламные аудиоролики, IVR и телефонные приветствия, озвучивание видео и аудиокниг, джинглы, корпоративные песни, озвучивание презентаций, подбор дикторов, сценарии, перевод и видеопродакшн.",
+  "email": "start@audio-reclama.ru",
+  "telephone": "8 800 700-46-52",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "business inquiries",
+    "email": "start@audio-reclama.ru",
+    "telephone": "8 800 700-46-52",
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  },
+  "knowsAbout": [
+    "Рекламные аудиоролики",
+    "Деловая звукозапись",
+    "IVR и голосовые меню",
+    "Телефонные приветствия и автоинформаторы",
+    "Озвучивание видео",
+    "Запись аудиокниг",
+    "Джинглы",
+    "Корпоративные песни и гимны",
+    "Озвучивание презентаций",
+    "Подбор дикторов",
+    "Сценарии для аудиопроизводства",
+    "Перевод и языковая адаптация аудиоматериалов",
+    "Видеопродакшн"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Аудио- и видеопроизводство для бизнеса",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись рекламных аудиороликов"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись IVR, голосовых приветствий и автоинформаторов"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Озвучивание видео"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись аудиокниг"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Создание джинглов"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Создание корпоративных песен и гимнов"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Озвучивание презентаций"}}
+    ]
+  }
+}

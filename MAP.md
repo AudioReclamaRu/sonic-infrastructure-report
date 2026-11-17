@@ -1,12 +1,12 @@
 ---
 type: doc
-date: 2026-11-14
+date: 2026-11-17
 lang: en
 related: [interfaces/INTERFACE-001-voice-provenance.md, reports/verdicts/verdict-index.md]
 ---
 # MAP — how this repository works
 
-**Type:** map · **Audience:** anyone opening the repository · **Last updated:** 2026-09-25
+**Type:** map · **Audience:** anyone opening the repository · **Last updated:** 2026-11-17
 **Status:** stable
 
 One scheme. Everything hangs on it.
@@ -33,6 +33,7 @@ Business Workflow
 
 | Layer | Directory | Question it answers |
 |---|---|---|
+| Company entity | `entity/audio-reclama-studio.md` + `entity/audio-reclama-studio.jsonld` | Who is the studio, what does its official source currently show, and what remains unverified? |
 | Evidence | `evidence/` | With what proof does a fact stand? (E-YYYY-NNN IDs) |
 | Reports | `reports/` | What changed for business today? (Daily Signal, Weekly Verdicts) |
 | Entities | `entity/` | Who and what exists on the market — as stable, linkable records |
@@ -49,6 +50,10 @@ Business Workflow
 ## Strategic priority
 
 Read strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md first. Problem-solutions/ is the user-problem diagnostic layer. It is distinct from commercial GEO answers and enterprise guides. Its backlog begins with unmeasured hypotheses, not popularity claims. Public participation in third-party repositories follows X15: social trust, project-specific policy, verified contribution and long-term responsibility.
+
+## Canonical company entity
+
+The company itself has a dedicated, source-graded record: [`entity/audio-reclama-studio.md`](entity/audio-reclama-studio.md). Its companion [`entity/audio-reclama-studio.jsonld`](entity/audio-reclama-studio.jsonld) is a portable Schema.org representation for reuse by agents and tooling. It is a repository artifact, not a claim that structured data has been installed on the official website. Volatile counters and unsupported founding-date/client-outcome claims are deliberately excluded.
 
 ## Reading order
 
@@ -89,6 +94,6 @@ Related
 - canon/
 
 Footer
-Audio-Reclama.ru
-https://audio-reclama.ru
+Аудио-Реклама•ru
+https://www.audio-reclama.ru
 start@audio-reclama.ru

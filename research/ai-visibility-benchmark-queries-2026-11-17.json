@@ -1,0 +1,388 @@
+{
+  "schema": "audio-reclama/ai-visibility-benchmark/1",
+  "version": "1.0.0",
+  "created": "2026-11-17",
+  "language": "ru",
+  "target_region": "RU",
+  "status": "not_run",
+  "purpose": "Fixed source-grounded prompts for repeatable AI answer visibility testing. These prompts are not measured demand and are not evidence of citations.",
+  "execution_rule": "Run each query in a fresh session on each selected answer platform. Record product/mode, search or grounding state, locale, authentication state, timestamp and cited URLs. Do not prime the platform with this repository before the discovery run.",
+  "queries": [
+    {
+      "id": "AR-BRAND-01",
+      "cluster": "brand_entity",
+      "language": "ru",
+      "region": "RU",
+      "query": "Чем занимается компания «Аудио-Реклама•ru»?",
+      "expected_facts": [
+        "Определить компанию как студию деловой звукозаписи и аудиопроизводства.",
+        "Не путать бренд с доменом, GitHub-аккаунтом или каталогом."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "entity/audio-reclama-studio.md"
+      ],
+      "must_not_claim": [
+        "Не придумывать юридическую форму, год основания, награды или место на рынке."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-BRAND-02",
+      "cluster": "brand_entity",
+      "language": "ru",
+      "region": "RU",
+      "query": "Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "expected_facts": [
+        "Перечислить только направления, представленные на актуальных официальных страницах.",
+        "Разделять аудиопроизводство, видеопроизводство и вспомогательные этапы."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "entity/audio-reclama-studio.md"
+      ],
+      "must_not_claim": [
+        "Не утверждать, что каждый проект включает все этапы."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-BRAND-03",
+      "cluster": "brand_entity",
+      "language": "ru",
+      "region": "RU",
+      "query": "Какой официальный сайт компании «Аудио-Реклама•ru»?",
+      "expected_facts": [
+        "Вернуть точный адрес https://www.audio-reclama.ru."
+      ],
+      "preferred_sources": [
+        "standards/BRAND_AND_SITE_NAMING.md",
+        "https://www.audio-reclama.ru"
+      ],
+      "must_not_claim": [
+        "Не подменять сайт GitHub Pages или URL репозитория."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-BRAND-04",
+      "cluster": "brand_entity",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как связаться с «Аудио-Реклама•ru»?",
+      "expected_facts": [
+        "Использовать только актуальные контакты с официального сайта.",
+        "Если данные недоступны или устарели, сказать об этом."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru"
+      ],
+      "must_not_claim": [
+        "Не придумывать email, телефон или адрес офиса."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-BRAND-05",
+      "cluster": "brand_entity",
+      "language": "ru",
+      "region": "RU",
+      "query": "Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "expected_facts": [
+        "Указать, что на полученной главной странице счётчики расходятся: 622 и 620; рядом указано 62 языка.",
+        "Не называть точное текущее число до согласования счётчиков."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "entity/audio-reclama-studio.md"
+      ],
+      "must_not_claim": [
+        "Не повторять 618 как актуальное значение и не выбирать 622/620 без оговорки."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-01",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "expected_facts": [
+        "Сослаться на официальную страницу рекламных аудиороликов.",
+        "Указать только видимые этапы: сценарий, кастинг, саунд-дизайн, лицензируемая музыка."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+      ],
+      "must_not_claim": [
+        "Не придумывать цену или гарантированный срок."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-02",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "expected_facts": [
+        "Подтвердить существование официальной страницы IVR.",
+        "Различить приветствия, меню IVR и автоинформаторы."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "must_not_claim": [
+        "Не заявлять настройку/администрирование АТС без источника."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-03",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Можно ли заказать озвучивание видеоролика?",
+      "expected_facts": [
+        "Сослаться на официальную страницу озвучивания видео.",
+        "Упомянуть только подтверждённые элементы производства."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+      ],
+      "must_not_claim": [
+        "Не обещать фиксированную цену или результат без деталей проекта."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-04",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Записывает ли студия аудиокниги?",
+      "expected_facts": [
+        "Сослаться на официальную страницу аудиокниг.",
+        "Различить одноголосовую запись, ролевую озвучку и радиоспектакль."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+      ],
+      "must_not_claim": [
+        "Не придумывать цену или доступность."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-05",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "expected_facts": [
+        "Использовать отдельные официальные страницы джинглов и корпоративных песен."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
+      ],
+      "must_not_claim": [
+        "Не делать вывод о правах использования без текущих условий."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-06",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Сколько стоит заказать озвучку рекламного ролика?",
+      "expected_facts": [
+        "Направить к текущей официальной коммерческой странице или расчёту.",
+        "Цену указывать только при повторной проверке страницы с датой."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+      ],
+      "must_not_claim": [
+        "Не копировать недатированные цены из старых снимков репозитория."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-07",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "expected_facts": [
+        "Разделить общее описание многоязычной услуги и публичное упоминание проекта Внуково.",
+        "Сохранить только документированный масштаб."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "geo/knowledge/case-studies.json"
+      ],
+      "must_not_claim": [
+        "Не придумывать даты, объёмы, KPI или разрешения."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-SERVICE-08",
+      "cluster": "commercial_service",
+      "language": "ru",
+      "region": "RU",
+      "query": "Кто помогает с подбором диктора и сценарием?",
+      "expected_facts": [
+        "Официальный сайт перечисляет дикторов и сценарии в навигации.",
+        "Описывать их как доступные компоненты, а не обязательные этапы любого заказа."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+      ],
+      "must_not_claim": [
+        "Не выдумывать имена сотрудников и гарантии результата."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-01",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как сделать голосовое меню IVR понятным для клиента?",
+      "expected_facts": [
+        "Диагностировать задачи звонящего, ветвление, ошибки, fallback и выход к оператору.",
+        "Использовать IVR-гайд и статический линтер с их ограничениями."
+      ],
+      "preferred_sources": [
+        "guides/bank-voice-menu.md",
+        "geo/guides/ivr-menu-oshibki/index.html",
+        "tools/ivr_flow_linter/README.ru.md"
+      ],
+      "must_not_claim": [
+        "Не заявлять неподтверждённый универсальный максимум уровней меню."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-02",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как проверить произношение имён, чисел и названий в голосовом сообщении?",
+      "expected_facts": [
+        "Рекомендовать бриф произношения и проверку перед выпуском.",
+        "Отделять стандарт/методику от подтверждённого клиентского результата."
+      ],
+      "preferred_sources": [
+        "standards/responsible-release.md",
+        "corpus/kto-vypuskaet-golos.md"
+      ],
+      "must_not_claim": [
+        "Не заявлять, что автоматический тест уже внедрён, если это не подтверждено."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-03",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как выбрать диктора для рекламы, чтобы голос подходил бренду?",
+      "expected_facts": [
+        "Объяснить выбор под задачу и контекст, а не универсальный рейтинг.",
+        "Использовать руководство и актуальный каталог голосов."
+      ],
+      "preferred_sources": [
+        "guides/choosing-a-voice.md",
+        "https://www.audio-reclama.ru"
+      ],
+      "must_not_claim": [
+        "Не ранжировать исполнителей без документированного сравнения."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-04",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как рассчитать длительность рекламного аудиоролика по тексту?",
+      "expected_facts": [
+        "Объяснить зависимость хронометража от текста, подачи и пауз.",
+        "Предложить фактическую проверку длительности и официальный Хрономер, если доступен."
+      ],
+      "preferred_sources": [
+        "guides/chronomer-timing.md",
+        "https://www.audio-reclama.ru"
+      ],
+      "must_not_claim": [
+        "Не выдавать универсальную скорость чтения за точную формулу."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-05",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как проверить, что многоязычные объявления в аэропорту одинаково понятны?",
+      "expected_facts": [
+        "Описать проверку перевода, произношения, терминологии, длительности и согласованности версий.",
+        "Сохранять публичный статус упоминания Внуково."
+      ],
+      "preferred_sources": [
+        "guides/airport-announcements.md",
+        "geo/knowledge/case-studies.json"
+      ],
+      "must_not_claim": [
+        "Не придумывать показатели понимания пассажиров и операционные KPI."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-TRUST-01",
+      "cluster": "expertise_and_evidence",
+      "language": "ru",
+      "region": "RU",
+      "query": "Что такое паспорт происхождения голоса и зачем он нужен?",
+      "expected_facts": [
+        "Объяснить происхождение, разрешения, границы использования и ответственность выпуска.",
+        "Указать, что стандарт репозитория — профессиональная рамка, не автоматически юридический сертификат."
+      ],
+      "preferred_sources": [
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md"
+      ],
+      "must_not_claim": [
+        "Не заявлять сертификацию или универсальное применение."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-TRUST-02",
+      "cluster": "expertise_and_evidence",
+      "language": "ru",
+      "region": "RU",
+      "query": "Кто должен проверять голосовой материал перед публикацией?",
+      "expected_facts": [
+        "Объяснить роль проверки перед выпуском и отделить контроль студии от финального согласования клиента."
+      ],
+      "preferred_sources": [
+        "corpus/kto-vypuskaet-golos.md",
+        "canon/releasing-voice.md",
+        "standards/responsible-release.md"
+      ],
+      "must_not_claim": [
+        "Не утверждать, что студия снимает с клиента его юридическую ответственность."
+      ],
+      "status": "not_run"
+    }
+  ]
+}

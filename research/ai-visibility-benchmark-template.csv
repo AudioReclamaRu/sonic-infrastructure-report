@@ -1,0 +1,1 @@
+run_id,date_utc,platform,product_or_model,mode,language,region,auth_status,query_id,query,answer_status,brand_identity_score,official_route_score,service_or_answer_score,source_quality_score,git_knowledge_score,critical_error,cited_urls,repository_file_cited,competitors_mentioned,answer_excerpt,limitations,operator_notes
