@@ -21,7 +21,7 @@ def _digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _package_file(root: Path, relative: object, label: str) -> Path:
+def _package_file(root: Path, relative: object, label: str, *, directory: bool = False) -> Path:
     if not isinstance(relative, str) or not relative:
         raise ValueError(f"{label}: package-relative path is required")
     candidate = Path(relative)
@@ -32,7 +32,10 @@ def _package_file(root: Path, relative: object, label: str) -> Path:
         resolved.relative_to(root.resolve(strict=True))
     except ValueError as exc:
         raise ValueError(f"{label}: path escapes package root: {relative}") from exc
-    if not resolved.is_file():
+    if directory:
+        if not resolved.is_dir():
+            raise ValueError(f"{label}: expected a directory: {relative}")
+    elif not resolved.is_file():
         raise ValueError(f"{label}: expected a regular file: {relative}")
     return resolved
 
@@ -116,9 +119,7 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
         errors.append(f"cannot inspect package queue: {exc}")
 
     try:
-        capture_dir = _package_file(root, manifest.get("capture_packet", {}).get("path"), "capture_packet")
-        if not capture_dir.is_dir():
-            raise ValueError("capture_packet: expected a directory")
+        capture_dir = _package_file(root, manifest.get("capture_packet", {}).get("path"), "capture_packet", directory=True)
     except (OSError, ValueError, AttributeError) as exc:
         errors.append(str(exc))
         return errors, manifest
