@@ -143,7 +143,7 @@ class RunPassportTests(unittest.TestCase):
         record = {
             "schema": "studio/ai-visibility-observation/1",
             "observation_id": "obs-001", "run_id": "capture-run-001",
-            "observed_at_utc": "2026-11-17T14:00:00Z",
+            "observed_at_utc": "2026-11-17T12:10:00Z",
             "market": {
                 "country_code": "RU", "interface_locale": "ru-RU",
                 "prompt_language": "ru", "answer_language": "ru",
@@ -242,6 +242,19 @@ class RunPassportTests(unittest.TestCase):
         write_json(result_path, seal(payload, "result_sha256"))
         errors = validate_result(result_path, passport)
         self.assertTrue(any("exact plan passport" in error for error in errors))
+
+
+    def test_finalization_rejects_observations_outside_regional_session_window(self):
+        passport, csv_path, evidence_dir, record_path = self._verified_capture()
+        record = json.loads(record_path.read_text(encoding="utf-8"))
+        record["observed_at_utc"] = "2026-11-17T14:00:00Z"
+        record_path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "more than 30 minutes"):
+            create_result(Namespace(
+                passport=passport, run_id="capture-run-001",
+                observations_csv=csv_path, evidence_dir=evidence_dir,
+                output=self.root / "invalid-result.json",
+            ))
 
     def test_finalization_requires_both_csv_and_primary_records(self):
         with self.assertRaisesRegex(ValueError, "requires both"):
