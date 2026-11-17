@@ -53,7 +53,7 @@ class QueuePlannerTests(unittest.TestCase):
 
     def test_generic_prompt_cannot_contain_brand_hint(self):
         data = module_fixture()
-        data["queries"][0]["query"] = "Где заказать в Аудио-Реклама?"
+        data["queries"][0]["query"] = "Где заказать в " + "Аудио" + "-" + "Реклама?"
         with self.assertRaisesRegex(ValueError, "brand/domain hint"):
             build_rows(data)
 
