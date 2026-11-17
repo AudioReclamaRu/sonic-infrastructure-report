@@ -26,8 +26,9 @@ VALID_STATUSES = ANSWERED | NON_ANSWERED
 VALID_MODES = {"consumer_ui", "model_api", "search_results_ui"}
 VALID_BOOL = {"true", "false", "1", "0", "yes", "no"}
 GROUP_FIELDS = (
-    "run_id", "country_code", "interface_locale", "prompt_language",
-    "platform", "platform_surface", "measurement_mode", "intent",
+    "run_id", "country_code", "interface_locale", "prompt_language", "answer_language",
+    "platform", "product_or_model", "platform_surface", "measurement_mode",
+    "search_mode", "grounding_state", "auth_status", "intent",
 )
 
 def read_rows(path: Path):
@@ -76,8 +77,9 @@ def validate(path: Path):
             if hit:
                 errors.append(f"{prefix}: non-answer status {status} cannot carry generic_discovery_hit")
         key_fields = (
-            "run_id", "country_code", "interface_locale", "prompt_language",
-            "platform", "platform_surface", "measurement_mode", "intent", "query_id",
+            "run_id", "country_code", "interface_locale", "prompt_language", "answer_language",
+            "platform", "product_or_model", "platform_surface", "measurement_mode",
+            "search_mode", "grounding_state", "auth_status", "intent", "query_id",
         )
         key = tuple((row.get(field) or "").strip() for field in key_fields)
         if all(key):
@@ -105,7 +107,7 @@ def summarize(rows: list[dict[str, str]]) -> dict[str, Any]:
             scores[field] = round(sum(values) / len(values), 3) if values else None
         hits = [truth(r.get("generic_discovery_hit", "")) for r in answered]
         known_hits = [v for v in hits if v is not None]
-        critical = sum(1 for r in answered if (r.get("critical_error") or "").strip())
+        critical = sum(1 for r in answered if (r.get("critical_error") or "").strip().lower() not in {"", "none", "false", "no", "0", "n/a", "not_applicable"})
         output.append({
             **dict(zip(GROUP_FIELDS, key)),
             "observations": len(group),
