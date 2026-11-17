@@ -80,5 +80,36 @@ class QueuePlannerTests(unittest.TestCase):
         rows[0]["execution_status"] = "OK"
         self.assertTrue(any("planned queue status" in e for e in validate_rows(rows)))
 
+    def test_frozen_module_validation_rejects_prompt_mutation(self):
+        expected = build_rows(module_fixture())
+        actual = [dict(row) for row in expected]
+        actual[0]["query"] = "Изменённый запрос"
+        errors = validate_rows(actual, expected)
+        self.assertTrue(any("differs from deterministic frozen-module output" in e and "query" in e for e in errors))
+
+    def test_frozen_module_validation_rejects_all_material_field_mutations(self):
+        fields = (
+            "queue_id", "module_id", "module_version", "query_id", "intent",
+            "country_code", "interface_locale", "prompt_language", "answer_language",
+            "platform", "platform_surface", "measurement_mode", "platform_priority",
+            "execution_status", "region_verification", "notes",
+        )
+        for field in fields:
+            with self.subTest(field=field):
+                expected = build_rows(module_fixture())
+                actual = [dict(row) for row in expected]
+                actual[0][field] = actual[0][field] + "-tampered"
+                errors = validate_rows(actual, expected)
+                self.assertTrue(
+                    any("differs from deterministic frozen-module output" in e and field in e for e in errors),
+                    msg=f"mutation of {field} was not detected: {errors}",
+                )
+
+    def test_frozen_module_validation_rejects_row_reordering(self):
+        expected = build_rows(module_fixture())
+        actual = list(reversed([dict(row) for row in expected]))
+        errors = validate_rows(actual, expected)
+        self.assertTrue(any("differs from deterministic frozen-module output" in e for e in errors))
+
 if __name__ == "__main__":
     unittest.main()

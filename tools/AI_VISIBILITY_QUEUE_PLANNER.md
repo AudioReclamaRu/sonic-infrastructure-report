@@ -35,7 +35,7 @@ python tools/ai_visibility_queue.py validate \
   --module research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json
 ```
 
-Validation checks required fields, duplicate IDs and query/platform pairs, legal measurement modes, planned-state integrity, and complete Cartesian coverage against the frozen source module.
+Validation checks required fields, duplicate IDs and query/platform pairs, legal measurement modes, planned-state integrity, and complete Cartesian coverage against the frozen source module. It also compares every queue field and row order with the deterministic module output; changing a prompt, intent, locale, platform surface, measurement mode, priority, note, status, region label or queue ID is rejected even when the query/platform pair still exists.
 
 ## Safety and interpretation
 
