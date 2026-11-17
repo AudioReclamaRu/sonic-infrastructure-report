@@ -312,6 +312,64 @@ def validate_observation_artifacts(
         for field, value in expected.items():
             if (row.get(field) or "").strip() != str(value or ""):
                 errors.append(f"CSV line {line}: {field} does not match evidence record {observation_id}")
+
+        # CSV is a derived benchmark view, never an independent source of
+        # scores or discovery outcomes. Bind every metric column that is
+        # present back to the primary JSON record.
+        direct_fields = {
+            "region": market.get("region"),
+            "product_or_model": platform.get("product"),
+            "date_utc": str(record.get("observed_at_utc") or "")[:10],
+            "date_time_utc": record.get("observed_at_utc"),
+            "answer_excerpt": record.get("answer_excerpt"),
+        }
+        for field, value in direct_fields.items():
+            if field in row and (row.get(field) or "").strip() != str(value or ""):
+                errors.append(f"CSV line {line}: {field} does not match evidence record {observation_id}")
+
+        score_fields = {
+            "brand_identity_score": "brand_identity",
+            "official_route_score": "official_route",
+            "service_or_answer_score": "service_or_answer",
+            "commercial_accuracy_score": "commercial_accuracy",
+            "expertise_retrieval_score": "expertise_retrieval",
+            "source_quality_score": "source_quality",
+            "citation_quality_score": "citation_quality",
+            "git_knowledge_score": "git_knowledge",
+        }
+        scores = record.get("scores") if isinstance(record.get("scores"), dict) else {}
+        for csv_field, json_field in score_fields.items():
+            if csv_field not in row:
+                continue
+            raw = (row.get(csv_field) or "").strip()
+            expected_score = scores.get(json_field)
+            try:
+                actual_score = float(raw) if raw else None
+            except ValueError:
+                actual_score = float("nan")
+            if actual_score != expected_score:
+                errors.append(f"CSV line {line}: {csv_field} does not match evidence record {observation_id}")
+
+        for csv_field, json_field in (
+            ("generic_discovery_hit", "generic_discovery_hit"),
+            ("critical_error", "critical_error"),
+        ):
+            if csv_field not in row:
+                continue
+            raw = (row.get(csv_field) or "").strip().casefold()
+            expected_flag = record.get(json_field)
+            true_values = {"true", "1", "yes"}
+            false_values = {"false", "0", "no"}
+            if expected_flag is None:
+                matches = not raw
+            elif expected_flag is True:
+                matches = raw in true_values
+            elif expected_flag is False:
+                matches = raw in false_values
+            else:
+                matches = False
+            if not matches:
+                errors.append(f"CSV line {line}: {csv_field} does not match evidence record {observation_id}")
     unlinked = set(by_id) - seen_ids
     if unlinked:
         errors.append("JSON records not linked from CSV: " + ", ".join(sorted(unlinked)))
