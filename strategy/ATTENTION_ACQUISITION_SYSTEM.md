@@ -8,7 +8,7 @@ related: [AGENTS.md, MAP.md, README.md, strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE
 # Система привлечения внимания бренда «Аудио-Реклама•ru»
 
 **Статус:** стратегический контракт развития и привлечения аудитории  
-**Главная цель:** собирать релевантное внимание и направлять его на сайт Audio-Reclama.ru — `https://audio-reclama.ru`.
+**Главная цель:** собирать релевантное внимание и направлять его на сайт Audio-Reclama.ru — `https://www.audio-reclama.ru`.
 
 ## 1. Главная архитектура
 
