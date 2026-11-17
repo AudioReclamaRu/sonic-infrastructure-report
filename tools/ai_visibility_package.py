@@ -40,12 +40,12 @@ def _package_file(root: Path, relative: object, label: str, *, directory: bool =
     return resolved
 
 
-def _check_hash(root: Path, entry: object, label: str) -> Path:
+def _check_hash(root: Path, entry: object, label: str, *, hash_field: str = "sha256") -> Path:
     if not isinstance(entry, dict):
         raise ValueError(f"{label}: manifest entry must be an object")
     path = _package_file(root, entry.get("path"), label)
-    if _digest(path) != entry.get("sha256"):
-        raise ValueError(f"{label}: SHA-256 mismatch")
+    if _digest(path) != entry.get(hash_field):
+        raise ValueError(f"{label}: {hash_field} mismatch")
     return path
 
 
@@ -71,7 +71,7 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
         module_path = _check_hash(root, manifest.get("query_module"), "query_module")
         queue_path = _check_hash(root, manifest.get("queue"), "queue")
         attestation_path = _check_hash(root, manifest.get("region_attestation"), "region_attestation")
-        passport_path = _check_hash(root, manifest.get("plan_passport"), "plan_passport")
+        passport_path = _check_hash(root, manifest.get("plan_passport"), "plan_passport", hash_field="file_sha256")
     except (OSError, ValueError, TypeError) as exc:
         return errors + [str(exc)], manifest
 
