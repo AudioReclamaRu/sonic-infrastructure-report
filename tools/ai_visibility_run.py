@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from tools.ai_visibility_queue import QUEUE_FIELDS, build_rows, load_module, read_queue
+from tools.ai_visibility_region import validate_attestation
 
 PLAN_SCHEMA = "studio/ai-visibility-run-passport/1"
 RESULT_SCHEMA = "studio/ai-visibility-run-result/1"
@@ -61,7 +62,7 @@ def resolve_entry(entry: dict[str, Any], manifest_path: Path) -> Path:
     return raw if raw.is_absolute() else (manifest_path.resolve().parent / raw).resolve()
 
 
-def inspect_queue(path: Path) -> dict[str, Any]:
+def inspect_queue(path: Path, expected_region_status: str = "UNVERIFIED") -> dict[str, Any]:
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
         reader = csv.DictReader(stream)
         headers = set(reader.fieldnames or [])
@@ -86,8 +87,8 @@ def inspect_queue(path: Path) -> dict[str, Any]:
             raise ValueError(f"{path}:{line}: planned queue row must remain NOT_TESTED")
         if row.get("measurement_mode") not in ALLOWED_MODES:
             raise ValueError(f"{path}:{line}: invalid measurement_mode")
-        if row.get("region_verification") != "UNVERIFIED":
-            raise ValueError(f"{path}:{line}: queue planner output must remain UNVERIFIED")
+        if row.get("region_verification") != expected_region_status:
+            raise ValueError(f"{path}:{line}: queue region status must match passport status {expected_region_status}")
         identity = tuple(row.get(field, "") for field in (
             "query_id", "intent", "country_code", "interface_locale",
             "prompt_language", "answer_language", "platform", "platform_surface",
@@ -105,14 +106,14 @@ def inspect_queue(path: Path) -> dict[str, Any]:
         "platform_surface_count": len(platforms),
         "market_locale_count": len(markets),
         "measurement_modes": sorted({item[2] for item in platforms}),
-        "region_verification_in_queue": "UNVERIFIED",
+        "region_verification_in_queue": expected_region_status,
     }
 
 
-def validate_module_queue_pair(module_path: Path, queue_path: Path) -> list[str]:
+def validate_module_queue_pair(module_path: Path, queue_path: Path, region_status: str = "UNVERIFIED") -> list[str]:
     """Require the queue to be the exact deterministic output of its frozen module."""
     try:
-        expected = build_rows(load_module(module_path))
+        expected = build_rows(load_module(module_path), region_status=region_status)
         actual = read_queue(queue_path)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         return [f"{module_path} <-> {queue_path}: cannot rebuild queue: {exc}"]
@@ -156,27 +157,38 @@ def create_plan(args: argparse.Namespace) -> dict[str, Any]:
     module_paths = [Path(item).resolve(strict=True) for item in args.module]
     queue_paths = [Path(item).resolve(strict=True) for item in args.queue]
     modules = [file_entry(path, base, "frozen_query_module") for path in module_paths]
+    region_status = "UNVERIFIED"
+    evidence = None
+    if args.region_attestation:
+        attestation_path = Path(args.region_attestation).resolve(strict=True)
+        attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+        attestation_errors, attestation_status = validate_attestation(
+            attestation, attestation_path.parent
+        )
+        if attestation_errors or attestation_status != "VERIFIED":
+            raise ValueError("regional attestation is not VERIFIED: " + "; ".join(attestation_errors or [attestation_status]))
+        region_status = "VERIFIED"
+        evidence = file_entry(attestation_path, base, "verified_region_attestation")
+    if args.region_status != region_status:
+        raise ValueError("region status does not match the supplied attestation")
     queues = []
+
     for path in queue_paths:
-        pair_errors = validate_module_queue_pair(module_paths[len(queues)], path)
+        pair_errors = validate_module_queue_pair(module_paths[len(queues)], path, region_status)
         if pair_errors:
             raise ValueError("; ".join(pair_errors))
-        summary = inspect_queue(path)
+        summary = inspect_queue(path, region_status)
         entry = file_entry(path, base, "planned_execution_queue")
         entry["matrix"] = summary
         queues.append(entry)
-    if args.region_status != "UNVERIFIED":
-        raise ValueError("v1 run passports only accept UNVERIFIED region status; verified access requires a separately designed provenance workflow")
-    evidence = None
     return seal({
         "schema": PLAN_SCHEMA,
         "run_id": args.run_id,
         "created_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "lifecycle": "PLANNED",
         "scope": {
-            "region_status": args.region_status,
-            "region_label": None,
-            "region_evidence": evidence,
+            "region_status": region_status,
+            "region_attestation": evidence,
             "operator_label": args.operator_label,
             "notes": args.notes,
         },
@@ -214,9 +226,27 @@ def validate_plan(path: Path) -> tuple[list[str], dict[str, Any] | None]:
     if not isinstance(artifacts, dict):
         return errors + ["artifacts must be an object"], payload
     entries = artifacts.get("query_modules", []) + artifacts.get("execution_queues", [])
-    region_entry = (payload.get("scope") or {}).get("region_evidence")
+    scope = payload.get("scope") or {}
+    region_entry = scope.get("region_attestation")
     if region_entry:
         entries.append(region_entry)
+    region_status = scope.get("region_status", "UNVERIFIED")
+    if region_status not in {"UNVERIFIED", "VERIFIED"}:
+        errors.append("invalid passport region_status")
+    if region_status == "VERIFIED":
+        if not region_entry:
+            errors.append("VERIFIED passport requires a region attestation artifact")
+        else:
+            try:
+                attestation_path = resolve_entry(region_entry, path)
+                attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+                attestation_errors, attestation_status = validate_attestation(attestation, attestation_path.parent)
+                if attestation_errors or attestation_status != "VERIFIED":
+                    errors.append("region attestation no longer validates as VERIFIED: " + "; ".join(attestation_errors or [attestation_status]))
+            except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+                errors.append(f"cannot validate region attestation: {exc}")
+    elif region_entry is not None:
+        errors.append("UNVERIFIED passport must not contain a region attestation")
     for entry in entries:
         try:
             artifact_path = resolve_entry(entry, path)
@@ -238,7 +268,7 @@ def validate_plan(path: Path) -> tuple[list[str], dict[str, Any] | None]:
         for module_entry, queue_entry in zip(module_entries, queue_entries):
             try:
                 errors.extend(validate_module_queue_pair(
-                    resolve_entry(module_entry, path), resolve_entry(queue_entry, path)
+                    resolve_entry(module_entry, path), resolve_entry(queue_entry, path), region_status
                 ))
             except (OSError, KeyError, TypeError) as exc:
                 errors.append(f"cannot verify module/queue pair: {exc}")
@@ -337,7 +367,9 @@ def main(argv: list[str] | None = None) -> int:
     create.add_argument("--module", action="append", default=[])
     create.add_argument("--queue", action="append", default=[])
     create.add_argument("--output", required=True, type=Path)
-    create.add_argument("--region-status", choices=("UNVERIFIED",), default="UNVERIFIED")
+    create.add_argument("--region-status", choices=("UNVERIFIED", "VERIFIED"), default="UNVERIFIED")
+    create.add_argument("--region-attestation", type=Path,
+                        help="required for VERIFIED; must pass the independent region evidence validator")
     create.add_argument("--operator-label")
     create.add_argument("--notes")
     validate = sub.add_parser("validate", help="verify plan passport seal and frozen input files")

@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import json
 import tempfile
 import unittest
@@ -36,9 +37,75 @@ class RunPassportTests(unittest.TestCase):
         args = Namespace(
             output=self.passport, run_id="run-2026-11-17-001",
             module=[str(self.module)], queue=[str(self.queue)],
-            region_status="UNVERIFIED", notes="test", operator_label="tester",
+            region_status="UNVERIFIED", region_attestation=None, notes="test", operator_label="tester",
         )
         write_json(self.passport, create_plan(args))
+
+
+    def _verified_attestation(self):
+        artifacts = {}
+        for name, content in {
+            "geo-a.txt": "geo vendor A RU",
+            "geo-b.txt": "geo vendor B RU",
+            "asn.txt": "local ISP",
+            "session.txt": "consumer UI capture",
+        }.items():
+            path = self.root / name
+            path.write_text(content, encoding="utf-8")
+            artifacts[name] = {
+                "evidence_file": name,
+                "evidence_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+        return {
+            "schema": "studio/ai-visibility-region-attestation/1",
+            "attestation_id": "ru-attestation-001",
+            "observed_at_utc": "2026-11-17T12:00:00Z",
+            "country_code": "RU", "interface_locale": "ru-RU",
+            "network": {
+                "connection_type": "residential_isp", "vpn_detected": False,
+                "proxy_detected": False, "remote_desktop_detected": False,
+                "ip_fingerprint_hmac_sha256": "a" * 64, "provider_name": "Local ISP",
+            },
+            "geolocation_sources": [
+                {"provider": "Geo A", "independence_group": "A", "country_code": "RU",
+                 "captured_at_utc": "2026-11-17T12:01:00Z", **artifacts["geo-a.txt"]},
+                {"provider": "Geo B", "independence_group": "B", "country_code": "RU",
+                 "captured_at_utc": "2026-11-17T12:02:00Z", **artifacts["geo-b.txt"]},
+            ],
+            "network_owner_evidence": {
+                "provider": "ASN DB", "organization": "Local ISP",
+                "network_class": "residential_isp", **artifacts["asn.txt"],
+            },
+            "session_capture": {
+                "platform": "ChatGPT", "product": "Consumer UI", "interface_locale": "ru-RU",
+                "captured_at_utc": "2026-11-17T12:03:00Z", **artifacts["session.txt"],
+            },
+            "operator_declaration": {
+                "operator": "operator-a", "direct_connection": True, "no_vpn": True,
+                "no_proxy": True, "no_remote_desktop": True,
+            },
+            "review": {
+                "status": "APPROVED", "reviewer": "reviewer-b",
+                "reviewed_at_utc": "2026-11-17T13:00:00Z", "rationale": "Reviewed independently.",
+            },
+        }
+
+    def test_verified_region_requires_and_freezes_reviewed_attestation(self):
+        attestation_path = self.root / "region-attestation.json"
+        attestation_path.write_text(json.dumps(self._verified_attestation()), encoding="utf-8")
+        rows = build_rows(load_module(self.module), region_status="VERIFIED")
+        write_queue(rows, self.queue)
+        output = self.root / "verified-passport.json"
+        args = Namespace(
+            output=output, run_id="run-verified-001", module=[str(self.module)],
+            queue=[str(self.queue)], region_status="VERIFIED",
+            region_attestation=attestation_path, notes="", operator_label="tester",
+        )
+        write_json(output, create_plan(args))
+        errors, payload = validate_plan(output)
+        self.assertEqual(errors, [])
+        self.assertEqual(payload["scope"]["region_status"], "VERIFIED")
+        self.assertIsNotNone(payload["scope"]["region_attestation"])
 
     def test_plan_passport_seals_and_verifies_inputs(self):
         errors, payload = validate_plan(self.passport)

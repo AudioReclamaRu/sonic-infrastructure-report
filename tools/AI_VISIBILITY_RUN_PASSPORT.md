@@ -82,3 +82,14 @@ python tools/ai_visibility_run.py validate-final ^
 \`\`\`bash
 python -m unittest tools.tests.test_ai_visibility_run -v
 \`\`\`
+
+
+For a reviewed Russian vantage point, first validate the region pack and generate every queue with the same attestation:
+
+```bash
+python tools/ai_visibility_region.py research/ru-region-attestation.json
+python tools/ai_visibility_queue.py generate --module research/queries/ru-generic-discovery.json --output research/queues/ru-generic-discovery.csv --region-attestation research/ru-region-attestation.json
+python tools/ai_visibility_run.py create --run-id RU-2026-11-17-001 --module research/queries/ru-generic-discovery.json --queue research/queues/ru-generic-discovery.csv --output research/runs/RU-2026-11-17-001/passport.json --region-status VERIFIED --region-attestation research/ru-region-attestation.json
+```
+
+The run passport revalidates and hashes the region attestation and requires the queue's VERIFIED state to be the exact deterministic output of the frozen module plus that attestation. Without the attestation, queue generation and passports remain UNVERIFIED.

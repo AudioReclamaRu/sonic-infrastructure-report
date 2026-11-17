@@ -52,3 +52,8 @@ Validation checks required fields, duplicate IDs and query/platform pairs, legal
 ```bash
 python -m unittest tools.tests.test_ai_visibility_queue -v
 ```
+
+
+## Regional verification
+
+Queue generation defaults to `UNVERIFIED`. The optional `--region-attestation` argument is accepted only when the offline region validator returns `VERIFIED`; then generated rows carry `region_verification=VERIFIED`. The matching attestation must be retained with the run passport. Merely setting a CSV cell to VERIFIED is not sufficient.
