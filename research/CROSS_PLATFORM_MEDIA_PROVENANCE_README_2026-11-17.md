@@ -18,6 +18,14 @@ The user directly reports that the three RUTUBE presentation-voiceover clips bel
 
 The graph records pairwise `user_reports_identical_audiovisual_content` edges. This is a user-review assertion, not an independently verified file hash or audiovisual fingerprint. The substantial duration mismatch remains open and must not be erased or explained by assumption.
 
+## Expanded discovery nodes and candidate clusters
+
+A second public-index search pass added 14 RUTUBE video nodes to the graph (see the node CSV). Two candidate similarity edges are recorded without asserting identity:
+- Two generic "Озвучивание видео роликов" uploads have the same broad title but displayed durations of 28 sec and 70 sec.
+- Two Webcom promo uploads both display 35 sec but have different IDs and titles.
+
+These are discovery leads only. No video-file or audiovisual comparison was performed for either pair.
+
 ## What is established
 
 The public RUTUBE service-explainer page `1d312c393658146cae1c56746592dd43` includes an exact YouTube watch URL with video ID `MJJcbzR2wto`. Its description also includes a VK share URL whose query parameter wraps that same YouTube URL.
