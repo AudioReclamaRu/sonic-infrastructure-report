@@ -54,6 +54,8 @@ Those descriptions also say A4-page narration is negotiable and quote a 72-hour 
 
 ## Cross-platform profile metadata
 
+The Dzen profile `https://dzen.ru/audioreclamaru` was independently fetched. It displayed 294 followers and returned the same brand, contact email, profile positioning and self-reported WOW AWARDS 2018 claim. Its page metadata includes `noindex, follow`. Three recent Dzen price explainers were linked from the profile; their snippets are recorded separately, but full article bodies were unavailable during direct fetch.
+
 The public YouTube channel page at https://www.youtube.com/@audioreclama/videos returned the same display brand, contact email, profile description and WOW AWARDS 2018 claim as the RUTUBE profile. This is a strong textual metadata match between public profiles, but it does not prove account ownership, administrative access or common legal ownership.
 
 A RUTUBE Short titled "Мы в дзен - dzen.ru/audioreclamaru" explicitly references the Dzen profile URL. This proves a public link reference only; it does not independently verify Dzen account ownership or admin access.
