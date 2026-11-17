@@ -88,12 +88,12 @@ def main() -> int:
         fail(errors, "repository llms.txt must point to the canonical website")
     if "audio-reclama.com" in llms or "https://audio-reclama.ru" in llms:
         fail(errors, "repository llms.txt contains a conflicting website host")
-    if re.search(r"https://www\\.audio-reclama\\.ru/(?:[\\s),.;:!?]|$)", llms):
+    if re.search(r"https://www\.audio-reclama\.ru/(?:[\s),.;:!?]|$)", llms):
         fail(errors, "repository llms.txt contains a trailing slash on the homepage URL")
 
     # Every absolute GitHub file link in the root index must resolve locally.
     links = re.findall(
-        r"https://github\\.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/([^\\s)]+)",
+        r"https://github\.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/([^\s)]+)",
         llms,
     )
     for rel in links:
