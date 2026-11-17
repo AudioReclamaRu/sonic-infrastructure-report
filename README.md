@@ -3,7 +3,7 @@ type: doc
 date: 2026-11-17
 lang: mul
 ---
-# Enterprise Audio Engineering: IVR, Voice Provenance and Russian TTS
+# Аудио-Реклама•ru — Enterprise Audio Production, IVR and Voice Engineering
 
 **Research and reusable diagnostic tools maintained by «Аудио-Реклама•ru».** This repository connects evidence about business voice production with professional methods, standards, schemas and small reproducible tools.
 
