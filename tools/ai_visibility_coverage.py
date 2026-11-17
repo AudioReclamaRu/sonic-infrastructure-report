@@ -31,6 +31,7 @@ NON_ANSWERED = {
     "BLOCKED_AUTH", "UNSUPPORTED_PROVIDER", "BLOCKED_NETWORK", "ERROR",
 }
 VALID_STATUSES = ANSWERED | NON_ANSWERED
+ALLOWED_MODES = {"consumer_ui", "model_api", "search_results_ui"}
 
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -43,7 +44,8 @@ def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
 
 def cell_key(row: dict[str, str]) -> tuple[str, ...]:
     return tuple((row.get(k) or "").strip() for k in (
-        "query_id", "platform", "measurement_mode", "country_code", "interface_locale"
+        "query_id", "intent", "platform", "platform_surface", "measurement_mode",
+        "country_code", "interface_locale", "prompt_language", "answer_language"
     ))
 
 
@@ -60,7 +62,11 @@ def analyze(queue_paths: list[Path], observation_path: Path | None = None) -> di
         if missing:
             errors.append(f"{path}: missing queue columns: {', '.join(missing)}")
             continue
+        if not rows:
+            errors.append(f"{path}: queue contains no planned rows")
         for number, row in enumerate(rows, start=2):
+            if row.get("measurement_mode") not in ALLOWED_MODES:
+                errors.append(f"{path}:{number}: invalid measurement_mode")
             if row.get("execution_status") != "NOT_TESTED":
                 errors.append(f"{path}:{number}: planned queue row must remain NOT_TESTED")
             if row.get("region_verification") not in {"UNVERIFIED", "VERIFIED", "BLOCKED", "NOT_APPLICABLE"}:
@@ -89,6 +95,8 @@ def analyze(queue_paths: list[Path], observation_path: Path | None = None) -> di
             status = (row.get("answer_status") or "").strip().upper()
             if status not in VALID_STATUSES:
                 errors.append(f"{observation_path}:{number}: unknown answer_status {status!r}")
+            if row.get("measurement_mode") not in ALLOWED_MODES:
+                errors.append(f"{observation_path}:{number}: invalid measurement_mode")
             observation_id = (row.get("observation_id") or "").strip()
             if not observation_id:
                 errors.append(f"{observation_path}:{number}: missing observation_id")
