@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama/ai-visibility-benchmark/1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "created": "2026-11-17",
   "language": "ru",
   "target_region": "RU",
@@ -817,5 +817,6 @@
   "knowledge_pack_reference_status": "Internal evaluator-side expected-facts sources only; do not preload these files into tested platforms before blind discovery runs.",
   "problem_solution_knowledge_reference": "problem-solutions/business-problem-answer-library-2026-11-17.json",
   "problem_solution_reference_status": "Internal evaluator-side expected-facts source only; do not preload into tested systems before blind discovery runs.",
-  "problem_solution_answer_pack": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
+  "problem_solution_answer_pack": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+  "updated": "2026-11-18"
 }
