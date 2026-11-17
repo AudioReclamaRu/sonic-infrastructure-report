@@ -39,6 +39,10 @@ related:
 - AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
 - ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 20 запросов с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
+- ai-visibility-ru-generic-discovery-queries-2026-11-17.json — отдельный исполнимый RU query-module из 29 небрендированных запросов и 12 платформенных поверхностей; все строки not_run.
+- ai-visibility-ru-brand-service-queries-2026-11-18.json — отдельный исполнимый RU query-module из тех же 20 фиксированных брендовых/сервисных benchmark-запросов и 12 поверхностей. Он добавляет market и platform_execution_order; не путать с evaluator benchmark JSON.
+- RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md — ручной операционный протокол сбора первичных RU-наблюдений с региональным gate; статус prepared_not_executed.
+- ../tools/AI_VISIBILITY_QUEUE_PLANNER.md — инструкция к офлайн-генератору двух плановых очередей (348 generic + 240 brand/service); это не записи наблюдений.
 - AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
 - ../tools/ai_visibility_evidence.py — офлайн-проверка полных observation records и согласованности ссылок CSV ↔ JSON по уникальному observation_id.
