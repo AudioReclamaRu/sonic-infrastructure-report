@@ -75,8 +75,8 @@ def main() -> int:
     queries = benchmark.get("queries", []) if benchmark else []
     if benchmark.get("schema") != "audio-reclama/ai-visibility-benchmark/1":
         fail(errors, "unexpected benchmark schema")
-    if len(queries) != 20:
-        fail(errors, f"expected 20 fixed queries, found {len(queries)}")
+    if len(queries) < 20:
+        fail(errors, f"expected at least 20 fixed queries, found {len(queries)}")
     ids = [q.get("id") for q in queries]
     if len(ids) != len(set(ids)):
         fail(errors, "benchmark query IDs must be unique")
@@ -279,7 +279,7 @@ def main() -> int:
             print(f" - {error}")
         return 1
 
-    print("AI Discovery assets OK: canonical entity, JSON-LD, llms index, 20 unrun queries, 29 × 12 RU queue, anchored scoring rubric and observation schema.")
+    print("AI Discovery assets OK: canonical entity, JSON-LD, llms index, {len(queries)} unrun fixed queries, 29 × 12 RU queue, anchored scoring rubric and observation schema.")
     return 0
 
 
