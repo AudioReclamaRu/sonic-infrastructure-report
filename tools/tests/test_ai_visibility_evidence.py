@@ -162,5 +162,67 @@ class EvidenceRecordTests(unittest.TestCase):
             errors = validate_batch(records, queue_path=queue, expected_region_attestation=self._attestation_binding())
             self.assertTrue(any("VERIFIED region requires explicit" in item for item in errors))
 
+    def test_non_answer_csv_row_requires_primary_json_observation_id(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            queue = self._write_queue(root)
+            blocked = make_record(
+                answer_status="BLOCKED_REGION", raw_answer="",
+                generic_discovery_hit=None, critical_error=None,
+            )
+            (records / "obs-blocked.json").write_text(json.dumps(blocked), encoding="utf-8")
+            csv_path = root / "benchmark.csv"
+            headers = [
+                "observation_id", "run_id", "country_code", "interface_locale",
+                "prompt_language", "answer_language", "platform", "platform_surface",
+                "measurement_mode", "query_id", "intent", "query", "answer_status",
+            ]
+            row = {
+                "observation_id": "", "run_id": "run-001", "country_code": "RU",
+                "interface_locale": "ru-RU", "prompt_language": "ru", "answer_language": "ru",
+                "platform": "yandex_alice_ai", "platform_surface": "Alice AI consumer interface",
+                "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01",
+                "intent": "generic_commercial", "query": "Где заказать рекламный аудиоролик?",
+                "answer_status": "BLOCKED_REGION",
+            }
+            with csv_path.open("w", encoding="utf-8", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=headers)
+                writer.writeheader()
+                writer.writerow(row)
+            errors = validate_batch(records, csv_path, queue_path=queue)
+            self.assertTrue(any("every collection outcome requires observation_id" in e for e in errors))
+
+    def test_unlinked_non_answer_csv_row_cannot_be_added_beside_valid_record(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            record = make_record()
+            (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+            csv_path = root / "benchmark.csv"
+            headers = [
+                "observation_id", "run_id", "country_code", "interface_locale",
+                "prompt_language", "answer_language", "platform", "platform_surface",
+                "measurement_mode", "query_id", "intent", "query", "answer_status",
+            ]
+            base = {
+                "observation_id": "obs-001", "run_id": "run-001", "country_code": "RU",
+                "interface_locale": "ru-RU", "prompt_language": "ru", "answer_language": "ru",
+                "platform": "yandex_alice_ai", "platform_surface": "Alice AI consumer interface",
+                "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01",
+                "intent": "generic_commercial", "query": "Где заказать рекламный аудиоролик?",
+                "answer_status": "OK",
+            }
+            phantom = dict(base, observation_id="", answer_status="BLOCKED_REGION")
+            with csv_path.open("w", encoding="utf-8", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=headers)
+                writer.writeheader()
+                writer.writerow(base)
+                writer.writerow(phantom)
+            errors = validate_batch(records, csv_path)
+            self.assertTrue(any("every collection outcome requires observation_id" in e for e in errors))
+
 if __name__ == "__main__":
     unittest.main()
