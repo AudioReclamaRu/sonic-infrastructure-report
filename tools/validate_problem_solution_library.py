@@ -238,6 +238,40 @@ def validate(root: Path = ROOT) -> list[str]:
                 elif not safe_relative_path(primary_source) or not (root / primary_source).is_file():
                     errors.append(f"{label} does not resolve to a safe repository-relative path: {primary_source}")
 
+        evidence_refs = entry.get("evidence_refs")
+        if not isinstance(evidence_refs, list) or not evidence_refs:
+            errors.append(
+                f"routing entry {routing_id or index} must have non-empty source-grounded evidence_refs"
+            )
+            evidence_refs = []
+        primary_urls = {
+            source for source in (primary_sources if isinstance(primary_sources, list) else [])
+            if isinstance(source, str) and source.startswith("https://")
+        }
+        for evidence_index, evidence_path in enumerate(evidence_refs, start=1):
+            label = f"routing entry {routing_id or index} evidence_refs[{evidence_index}]"
+            if not safe_relative_path(evidence_path):
+                errors.append(f"{label} must be a safe repository-relative path")
+                continue
+            evidence_file = root / evidence_path
+            if not evidence_file.is_file():
+                continue
+            try:
+                evidence_text = evidence_file.read_text(encoding="utf-8-sig")
+            except OSError as exc:
+                errors.append(f"{label} cannot be read: {exc}")
+                continue
+            frontmatter_parts = evidence_text.split("---", 2)
+            metadata = frontmatter_parts[1].splitlines() if len(frontmatter_parts) >= 3 else []
+            if not any(line.strip() == "type: evidence" for line in metadata):
+                errors.append(f"{label} must point to a type: evidence record")
+            if not any(line.strip() == "status: verified" for line in metadata):
+                errors.append(f"{label} must point to a verified evidence record")
+            if primary_urls and not any(url in evidence_text for url in primary_urls):
+                errors.append(
+                    f"{label} does not cite any URL declared in routing primary_sources"
+                )
+
         for field in ("service_fit", "guardrails"):
             values = entry.get(field)
             if not isinstance(values, list) or not values:
@@ -325,11 +359,9 @@ def main() -> int:
     library = json.loads((ROOT / LIBRARY).read_text(encoding="utf-8"))
     benchmark = json.loads((ROOT / BENCHMARK).read_text(encoding="utf-8"))
     routing = json.loads((ROOT / ROUTING_INDEX).read_text(encoding="utf-8"))
-    mapped_query_count = len({query_id for entry in routing["entries"] for query_id in entry.get("benchmark_query_ids", [])})
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} scenarios, {len(routing['entries'])} routing entries, "
-        f"{mapped_query_count} linked control prompts, "
         f"{len(benchmark['queries'])} unrun queries; "
         "preferred-source paths resolve and source URLs are canonical."
     )
