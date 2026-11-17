@@ -50,10 +50,11 @@
 
 ## Измерение видимости в ответах ИИ
 
-- [Протокол benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md).
-- [Контрольные запросы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-queries-2026-11-17.json): 20 RU-вопросов, пока не прогнанных.
+- [Глобальный протокол AI Visibility Benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md): все регионы мира, глобальные и региональные платформы, UI/API, языки и интенты.
+- [Глобальная матрица рынков, языков и платформ](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-global-market-matrix-2026-11-17.json): первая волна ячеек для проверки, не исчерпывающий список стран.
+- [RU-контрольные запросы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-queries-2026-11-17.json): отдельный фиксированный модуль из 20 русскоязычных вопросов; ещё не прогнан.
 - [Шаблон журнала прогонов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-template.csv).
-- [Baseline 11.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/reports/visibility-baseline-2026-11-11.md): ограниченный прогон, не baseline ChatGPT, Gemini или Perplexity.
+- [Baseline 11.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/reports/visibility-baseline-2026-11-11.md): ограниченный поисковый прогон, не baseline всех AI-платформ.
 - [Протокол измерения спроса и поискового эффекта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/MEASUREMENT_PROTOCOL.md).
 
 ## Правила интерпретации
