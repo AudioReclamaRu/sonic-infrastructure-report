@@ -43,6 +43,16 @@ Six additional surfaces were added after a second discovery pass:
 - **Podcasting Source** — invites studios, software, agencies and services to list, but free pricing and submission terms have not been confirmed. Keep unpriced until checked.
 - **GetListedGlobal** — generic international business directory with a free standard listing and account requirement. Low priority until country support, category quality, data terms and buyer relevance are checked.
 
+## Existing public brand profiles discovered 2026-11-17
+
+A separate exact-brand/domain discovery pass surfaced three existing public company/agency pages. These are **observed indexed presences**, not evidence that the business owns or can edit the profiles:
+
+- **Cinematch** — public company profile at `https://www.cinematch.pro/companies/audio-reclama-ru`; page labels the profile as confirmed and displays company, location, service and contact details. Verify what the platform's confirmation means and who controls the page.
+- **LinkedIn** — public company page at `https://www.linkedin.com/company/audio-reclama-ru`; it contains organization description and company metadata. Treat employee-count, founding-year and other profile fields as page claims until verified. Check administrator access before edits.
+- **Ruward** — public agency catalog profile at `https://ruward.ru/catalog/audio-reclama-ru/`; it contains company description, categories, projects and contact details. Some historical claims (including voice-talent counts and founding/operating dates) need primary-source review before reuse.
+
+The initial indexed search did not surface exact-match results for VORG or The VoiceOver Community. This is **not proof of absence**. Their `listing_status` remains `NOT_CHECKED` until the native directory search is inspected manually. More generally, search-engine indexing and platform-native listing state are separate evidence fields.
+
 ## CSV fields
 
 - `platform`, `url`: platform identity and reviewed entry point.
