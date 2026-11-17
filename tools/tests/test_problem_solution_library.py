@@ -65,6 +65,7 @@ def fixture_root():
         "entries": [{
             "routing_id": "business_problem/ivr",
             "intent_type": "business_problem",
+            "benchmark_query_ids": ["Q-01"],
             "problem": "The caller is lost in IVR",
             "source": {"file": LIBRARY, "scenario_id": "ivr"},
             "answer_references": [
@@ -143,6 +144,13 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(ROUTING, routing)
         errors = validate(self.root)
         self.assertTrue(any("heading does not resolve" in e for e in errors))
+
+    def test_routing_index_unknown_benchmark_query_fails(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["benchmark_query_ids"] = ["Q-UNKNOWN"]
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("unknown benchmark query" in e for e in errors))
 
     def test_routing_index_missing_source_scenario_fails(self):
         routing = self.read_json(ROUTING)
