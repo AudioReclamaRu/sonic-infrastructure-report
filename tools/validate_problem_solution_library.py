@@ -56,7 +56,7 @@ def validate(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     library = _read_json(root / LIBRARY, errors, LIBRARY) or {}
     scenarios = library.get("scenarios", [])
-    if library.get("schema") != "ai-discovery/business-problem-answer-library/1":
+    if library.get("schema") != "audio-reclama/problem-solution-library/1":
         errors.append("unexpected business problem library schema")
     if not isinstance(scenarios, list) or not scenarios:
         errors.append("business problem library must contain at least one scenario")
