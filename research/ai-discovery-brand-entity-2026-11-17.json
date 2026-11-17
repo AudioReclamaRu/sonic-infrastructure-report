@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "record_type": "brand_entity_knowledge",
   "status": "source_grounded_draft",
-  "observed_at": "2026-11-17",
+  "observed_at": "2026-11-18",
   "entity": {
     "canonical_name": "Аудио-Реклама•ru",
     "website": "https://www.audio-reclama.ru",
@@ -135,7 +135,23 @@
     "countries_claimed": 182,
     "continents_claimed": 5,
     "voice_actor_count": null,
-    "voice_actor_count_note": "На одной главной странице отображаются и 620, и 622 диктора; число не нормализовать до проверки."
+    "voice_actor_count_note": "Не нормализовать общее число: исторические снимки показывали 619, 620, 621, 622 и 794. На 18.11.2026 главная показывает 622, а каталог показывает 309 в русском фильтре; это разные области подсчёта. Требуется определение метрики владельцем.",
+    "counter_observations": [
+      {
+        "observed_at": "2026-11-18",
+        "source": "https://www.audio-reclama.ru",
+        "displayed_claim": "622 диктора; 62 языка",
+        "scope": "headline on homepage",
+        "note": "first-party page claim; not independent count audit"
+      },
+      {
+        "observed_at": "2026-11-18",
+        "source": "https://www.audio-reclama.ru/diktoryi/",
+        "displayed_claim": "Русский — 309; найдено 309 дикторов",
+        "scope": "Russian-language filter only",
+        "note": "not a count of all languages"
+      }
+    ]
   },
   "source": {
     "url": "https://www.audio-reclama.ru/",
