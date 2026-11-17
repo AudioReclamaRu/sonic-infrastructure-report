@@ -266,9 +266,7 @@
         "https://www.audio-reclama.ru/diktoryi/"
       ],
       "evidence_refs": [
-        "evidence/E-2026-063.md",
-        "evidence/E-2026-057.md",
-        "evidence/E-2026-055.md"
+        "evidence/E-2026-063.md"
       ],
       "service_fit": [
         "Кастинг и запись дикторов"
@@ -425,7 +423,8 @@
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "https://www.audio-reclama.ru/perevodchiki/",
         "problem-solutions/IVR_DESIGN_STANDARD.md",
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
       "evidence_refs": [
         "evidence/E-2026-057.md",
@@ -517,8 +516,7 @@
         "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
       ],
       "evidence_refs": [
-        "evidence/E-2026-057.md",
-        "evidence/E-2026-063.md"
+        "evidence/E-2026-057.md"
       ],
       "service_fit": [
         "Запись аудиороликов: публичная страница упоминает передачу авторских и исключительных прав, но объём определяется договором"
@@ -603,7 +601,8 @@
         "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
         "problem-solutions/IVR_DESIGN_STANDARD.md",
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "https://www.audio-reclama.ru/faq.html"
       ],
       "evidence_refs": [
         "evidence/E-2026-053.md",
