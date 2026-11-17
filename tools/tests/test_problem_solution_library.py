@@ -99,6 +99,14 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(BENCHMARK, benchmark)
         self.assertTrue(any("benchmark query IDs must be unique" in e for e in validate(self.root)))
 
+
+    def test_missing_scenario_evidence_reference_fails(self):
+        library = self.read_json(LIBRARY)
+        library["scenarios"][0]["evidence_refs"] = ["evidence/not-present.md"]
+        self.write_json(LIBRARY, library)
+        errors = validate(self.root)
+        self.assertTrue(any("evidence reference does not resolve" in e for e in errors))
+
     def test_executed_benchmark_status_fails(self):
         benchmark = self.read_json(BENCHMARK)
         benchmark["queries"][0]["status"] = "complete"
