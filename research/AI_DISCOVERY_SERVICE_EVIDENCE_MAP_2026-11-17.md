@@ -124,7 +124,7 @@ related:
 
 ## 7. Источники
 
-Все ссылки ниже ведут на публичные страницы официального домена audio-reclama.ru. Дата просмотра поисковых снимков — 17.11.2026.
+Все ссылки ниже ведут на публичные страницы официального домена www.audio-reclama.ru. Дата просмотра поисковых снимков — 17.11.2026.
 
 1. [Запись аудиороликов](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
 2. [Приветствия для АТС, IVR-меню, автоответчики и автоинформаторы](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
