@@ -125,7 +125,8 @@ def validate_rows(rows: list[dict[str, str]], expected: list[dict[str, str]] | N
     seen_pairs: set[tuple[str, str, str]] = set()
     for line, row in enumerate(rows, start=2):
         prefix = f"line {line}"
-        missing = [field for field in QUEUE_FIELDS if not (row.get(field) or "").strip()]
+        optional_fields = {"platform_priority", "notes"}
+        missing = [field for field in QUEUE_FIELDS if field not in optional_fields and not (row.get(field) or "").strip()]
         if missing:
             errors.append(f"{prefix}: missing fields: {', '.join(missing)}")
             continue
