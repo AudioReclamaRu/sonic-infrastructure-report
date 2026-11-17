@@ -68,6 +68,17 @@ A further public-web pass found three additional surfaces and one important data
 
 The initial indexed search did not surface exact-match results for VORG or The VoiceOver Community. This is **not proof of absence**. Their `listing_status` remains `NOT_CHECKED` until the native directory search is inspected manually. More generally, search-engine indexing and platform-native listing state are separate evidence fields.
 
+## User-identified social profiles added 2026-11-17
+
+The user supplied these two URLs and identified them as the company's social profiles:
+
+- Instagram: `https://www.instagram.com/audio_reclama_ru/`
+- Facebook: `https://www.facebook.com/audioreclamaru/`
+
+They are included as `USER_IDENTIFIED_PROFILE`, distinct from independently inspected `FOUND_PUBLIC_LISTING` entries. The platform pages could not be fetched in this audit session, so no claim is made about current public visibility, page status, verification badges, followers, audience, profile contents or admin access. The user's identification establishes intended brand association for this research register; it does not independently prove platform ownership/control. No login, follow, message, claim, edit, upload or promotion was performed.
+
+Recommended next read-only checks when platform pages are accessible: bio/About accuracy, canonical website link, category, public contact details, location, page transparency, recent activity, content rights, cross-links, duplicate profiles and publicly visible engagement. Treat account analytics as unavailable unless supplied by an authorized account owner.
+
 ## CSV fields
 
 - `platform`, `url`: platform identity and reviewed entry point.
@@ -85,6 +96,7 @@ The initial indexed search did not surface exact-match results for VORG or The V
 
 - `NOT_CHECKED`: existing public listing has not been directly checked in the platform's own directory.
 - `FOUND_PUBLIC_LISTING`: a public listing/profile/media presence was directly observed; ownership and edit rights may remain unknown.
+- `USER_IDENTIFIED_PROFILE`: the user supplied a direct profile URL and identified it as their/company's profile, but public contents and account control were not independently inspected in this research pass.
 - `MENTION_ONLY`: a third-party mention or data-aggregator record exists, but it is not treated as a canonical or owner-managed profile.
 - `STALE_OR_UNVERIFIED`: observed content appears stale, conflicting or unverified; do not reuse its claims without primary-source checks.
 - `NOT_APPLICABLE_AS_LISTING`: the surface is not a directory listing destination.
