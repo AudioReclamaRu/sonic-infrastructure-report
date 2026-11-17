@@ -31,22 +31,19 @@ A RUTUBE Short explicitly contains the Dzen URL `dzen.ru/audioreclamaru`. The gr
 
 The current channel page surfaced 20 standard videos and 20 Shorts. Their 40 IDs and page metadata are recorded separately from the 55-item historic/commercial portfolio inventory.
 
-## Same-channel content relationships requiring media comparison
+## Same-title duplicate groups confirmed by the user
 
-The current-channel snapshot exposes several useful candidate relationships:
-- Two uploads titled `О настоящем` share the same 173-second duration and parable description, but have different IDs and publication dates. Recorded as a possible duplicate, not a confirmed duplicate.
-- A 6:36 long-form video and a 2:00 Short share the title `Как внимание оживляет реальность?`; recorded as a possible cutdown/topic relationship.
-- An 8:26 long-form video and a 1:53 Short share the title `Что меняется, когда мы обращаем внимание?`; recorded as a possible cutdown/topic relationship.
+The user clarified that **all videos carrying the same displayed label/title are identical because the user personally duplicated them**. Apply this rule across both the 55-item historical portfolio inventory and the separate 40-item current-channel snapshot. Accordingly, the following same-title groups are confirmed as identical in content by direct user statement:
+- `О настоящем`: `a09326cb28c58665913f4b9adc96a42b` and `0c6e3a93eabaead32f8508a03271bce6` (both 173 sec; different IDs and publication dates).
+- `Как внимание оживляет реальность?`: `d3165979354bec5ef112f0fc2fc5c373` and `adc39b0c0a683ac99e9520fb8772b851` (396 sec and 120 sec; video + Short).
+- `Что меняется, когда мы обращаем внимание?`: `2bb4d1d1a5fae2124d8908d655ab04f7` and `252772852a7693e56f215c2be9d7929a` (506 sec and 113 sec; video + Short).
+- `Озвучивание видео роликов. Аудио-Реклама•ru`: `3f16c932b8b6ecce805ab51a95abda4e` and `2b525619cc77d1bf3cab10c4f193b555` (28 sec and 70 sec).
 
-No audiovisual comparison was performed for these pairs.
+The three presentation-voiceover records above are also user-confirmed identical content. Keep every platform ID, URL, date, duration and counter as a separate source record. The user's statement establishes content identity for this inventory; it does not establish byte-for-byte identity of downloaded files or replace an independently computed file hash/fingerprint. Duration discrepancies remain recorded, not silently reconciled.
 
 ## Expanded discovery nodes and candidate clusters
 
-A second public-index search pass added 14 RUTUBE video nodes to the graph (see the node CSV). Two candidate similarity edges are recorded without asserting identity:
-- Two generic "Озвучивание видео роликов" uploads have the same broad title but displayed durations of 28 sec and 70 sec.
-- Two Webcom promo uploads both display 35 sec but have different IDs and titles.
-
-These are discovery leads only. No video-file or audiovisual comparison was performed for either pair.
+A second public-index search pass added 14 RUTUBE video nodes to the graph (see the node CSV). The generic "Озвучивание видео роликов" pair has the same displayed title and is now user-confirmed identical in content under the user's general same-title rule. The two Webcom promo uploads both display 35 sec but have different IDs and titles; they remain a candidate related-version cluster because the titles do not match. No file hash or independent audiovisual fingerprint was computed.
 
 ## Page-level verification: YouTube service-explainer target
 
@@ -83,7 +80,7 @@ The public YouTube handle `@audioreclama` and VK Video community/surface `-18300
 ## Evidence rules
 
 - Exact URL reference ≠ same media.
-- Same title, client, duration, creator label or channel ≠ duplicate.
+- For this user's RUTUBE inventory, same displayed video title = user-confirmed identical content because the user personally duplicated same-title videos. This is a direct user assertion, not independent binary identity verification. Same client, duration, creator label or channel without the same title does not by itself establish a duplicate.
 - A share URL ≠ native platform upload.
 - Search-index attribution ≠ account ownership or admin access.
 - Unavailable or unfetched destination ≠ deleted asset.
