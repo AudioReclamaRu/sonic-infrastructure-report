@@ -58,6 +58,17 @@ The user reports that the three presentation-voiceover clips are identical in co
 
 This resolves the indexed timestamp discrepancy for these records, but does not reconcile the content identity assertion with the different durations. User review remains the identity evidence; RUTUBE metadata only establishes dates and duration fields. See `RUTUBE_PAGE_METADATA_VERIFICATION_2026-11-17.csv`.
 
+## Duplicate-graph consistency audit — 2026-11-17
+
+After applying the user's same-title identity rule, the portfolio and current-channel CSVs were checked against the provenance edge list:
+
+- Five same-title groups are present: three presentation-voiceover uploads, two generic video-voiceover uploads, two `О настоящем` uploads, and the two matching long-form/Short title pairs about attention.
+- These groups require seven unique pairwise identity edges (the three-member presentation group contributes three).
+- All seven pairs are represented in the graph. The four repeated edge rows previously duplicating existing pairs were removed; the graph now contains 17 distinct edges and no repeated source/target pair.
+- The contradictory channel-inventory note for the second `О настоящем` upload was corrected to reflect user-confirmed identity.
+- Every source record remains separate. IDs, URLs, publication dates, durations and counters were not collapsed or rewritten. The 86/188/80-second presentation metadata discrepancy remains visible and unresolved.
+- This is a structural consistency check of the repository's CSV records, not a download, frame comparison, audio fingerprint, or independent verification of the underlying media files.
+
 ## What is established
 
 The public RUTUBE service-explainer page `1d312c393658146cae1c56746592dd43` includes an exact YouTube watch URL with video ID `MJJcbzR2wto`. Its description also includes a VK share URL whose query parameter wraps that same YouTube URL.
