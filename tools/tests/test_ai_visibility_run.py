@@ -8,6 +8,7 @@ from pathlib import Path
 from tools.ai_visibility_run import (
     create_plan, create_result, validate_plan, validate_result, write_json,
 )
+from tools.ai_visibility_queue import build_rows, load_module, write_queue
 
 
 class RunPassportTests(unittest.TestCase):
@@ -30,24 +31,7 @@ class RunPassportTests(unittest.TestCase):
             },
         }), encoding="utf-8")
         self.queue = self.root / "queue.csv"
-        fields = [
-            "queue_id", "module_id", "module_version", "query_id", "query", "intent",
-            "country_code", "interface_locale", "prompt_language", "answer_language",
-            "platform", "platform_surface", "measurement_mode", "execution_status",
-            "region_verification",
-        ]
-        row = {
-            "queue_id": "q-1", "module_id": "module/1", "module_version": "1.0",
-            "query_id": "Q1", "query": "Example prompt", "intent": "generic",
-            "country_code": "RU", "interface_locale": "ru-RU", "prompt_language": "ru",
-            "answer_language": "ru", "platform": "chatgpt", "platform_surface": "consumer UI",
-            "measurement_mode": "consumer_ui", "execution_status": "NOT_TESTED",
-            "region_verification": "UNVERIFIED",
-        }
-        with self.queue.open("w", encoding="utf-8", newline="") as stream:
-            writer = csv.DictWriter(stream, fieldnames=fields)
-            writer.writeheader()
-            writer.writerow(row)
+        write_queue(build_rows(load_module(self.module)), self.queue)
         self.passport = self.root / "passport.json"
         args = Namespace(
             output=self.passport, run_id="run-2026-11-17-001",
