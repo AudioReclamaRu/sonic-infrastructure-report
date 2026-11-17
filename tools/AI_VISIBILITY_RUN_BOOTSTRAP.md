@@ -27,13 +27,15 @@ The command requires an independently reviewed VERIFIED region attestation, vali
 
 ## Package contents
 
-- queue.csv — deterministic queue generated from the query module.
-- passport.json — sealed run plan with module, queue and region attestation hashes.
+- inputs/query-module/ — exact byte-for-byte snapshot of the frozen query module.
+- inputs/region-attestation/ — exact attestation plus every referenced evidence file, preserving attestation-relative paths.
+- queue.csv — deterministic queue generated from the snapshotted query module.
+- passport.json — sealed run plan with module, queue and region attestation hashes; its input paths resolve inside the package.
 - capture-packet/ — blank CSV and JSON capture templates.
 - run-package.json — hashes and references for the assembled package.
 - README_RUN.md — next-step instructions.
 
-The package is created in a temporary sibling directory and moved into place only after all stages validate. Existing output directories are never overwritten.
+The package is created in a temporary sibling directory and moved into place only after all stages validate. Existing output directories are never overwritten. The module and regional evidence inputs are snapshotted into the package so the plan does not depend on absolute paths back into the original workspace. The attestation JSON and evidence bytes are copied unchanged; evidence paths must remain inside the attestation's source directory.
 
 ## After preparation
 
