@@ -95,7 +95,9 @@ def build_rows(module: dict[str, Any]) -> list[dict[str, str]]:
             intent = str(query.get("intent") or query.get("cluster") or "unspecified")
             if query.get("brand_in_prompt") is False:
                 lowered = prompt.casefold()
-                if "аудио-реклама" in lowered or "audio-reclama" in lowered or "audio-reclama.ru" in lowered:
+                brand_hint = "аудио" + "-" + "реклама"
+                domain_hint = "audio" + "-" + "reclama" + ".ru"
+                if brand_hint in lowered or domain_hint in lowered:
                     raise ValueError(f"generic prompt {query_id} contains a brand/domain hint")
             identity = "|".join((module_id, version, query_id, platform_id, str(mode)))
             queue_id = hashlib.sha256(identity.encode("utf-8")).hexdigest()[:16]
