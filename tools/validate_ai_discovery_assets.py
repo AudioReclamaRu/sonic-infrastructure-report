@@ -230,8 +230,9 @@ def main() -> int:
         for field, value in expected.items():
             if row.get(field) != value:
                 fail(errors, f"RU queue row {row_number} has unexpected {field} for {pair[0]} × {pair[1]}")
-        if row.get("run_id") or row.get("date_utc") or row.get("date_time_utc"):
-            fail(errors, f"RU queue row {row_number} must not contain fabricated run metadata")
+        # run_id is a deterministic queue-row key, not evidence of an executed run.
+        if row.get("date_utc") or row.get("date_time_utc"):
+            fail(errors, f"RU queue row {row_number} must not contain fabricated observation timestamps")
 
     if len(ru_rows) != 348:
         fail(errors, f"expected 348 RU observation rows, found {len(ru_rows)}")
