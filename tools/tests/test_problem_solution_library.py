@@ -17,7 +17,7 @@ def fixture_root():
     (root / "research").mkdir()
     (root / "guides").mkdir()
     library = {
-        "schema": "ai-discovery/business-problem-answer-library/1",
+        "schema": "audio-reclama/problem-solution-library/1",
         "scenarios": [{
             "id": "ivr",
             "problem": "The caller is lost in IVR",
