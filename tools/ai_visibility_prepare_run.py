@@ -153,6 +153,7 @@ def prepare_run(
             "plan_passport": {
                 "path": "passport.json",
                 "sha256": passport["passport_sha256"],
+                "file_sha256": digest_file(passport_path),
             },
             "capture_packet": {
                 "path": "capture-packet/",
