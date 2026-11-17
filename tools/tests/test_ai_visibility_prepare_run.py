@@ -87,6 +87,18 @@ class PrepareRunTests(unittest.TestCase):
             )
         self.assertFalse(target.exists())
 
+    def test_rejects_windows_style_evidence_path_on_any_platform(self):
+        for unsafe in (r"..\\outside.png", r"C:\\private\\evidence.png", r"folder\\..\\outside.png"):
+            with self.subTest(path=unsafe):
+                target = self.root / "snapshot"
+                with self.assertRaisesRegex(ValueError, "portable relative path"):
+                    _copy_region_inputs(
+                        {"session_capture": {"evidence_file": unsafe}},
+                        self.root,
+                        target,
+                    )
+                self.assertFalse(target.exists())
+
     def test_existing_output_is_never_overwritten(self):
         output = self.root / "run-package"
         output.mkdir()
