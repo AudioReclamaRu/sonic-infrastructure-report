@@ -51,7 +51,7 @@ A VERIFIED result means the evidence pack passed this protocol's structural and 
 - VPN, proxy, cloud-hosting, remote-desktop and unknown network types cannot qualify for the RU consumer baseline.
 - Geolocation observations must agree on RU and be contemporaneous with the UI session.
 - The reviewer must differ from the operator and provide a timestamp and rationale.
-- Do not promote an existing queue or observation from UNVERIFIED on the basis of this report alone. The attestation must be explicitly reviewed and then connected to a run passport through a later integration step.
+- Do not manually edit a queue or observation from UNVERIFIED to VERIFIED. After review, regenerate the queue with `ai_visibility_queue.py --region-attestation` and create the run passport with the same attestation; the tools enforce the matching hashes and deterministic queue output.
 - Model API calls and search-results UI observations are not consumer UI sessions.
 - No network lookup, AI query, paid check, tracker, proxy, website change or publication is performed by this validator.
 
