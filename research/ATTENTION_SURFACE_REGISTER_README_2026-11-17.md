@@ -68,6 +68,12 @@ A further public-web pass found three additional surfaces and one important data
 
 The initial indexed search did not surface exact-match results for VORG or The VoiceOver Community. This is **not proof of absence**. Their `listing_status` remains `NOT_CHECKED` until the native directory search is inspected manually. More generally, search-engine indexing and platform-native listing state are separate evidence fields.
 
+## Social and editorial media surfaces
+
+- **LinkedIn company page** is already recorded above as an existing public company-entity profile; it belongs in the professional/B2B layer, not the video inventory.
+- **Instagram** (`https://www.instagram.com/audio_reclama_ru/`) and **Facebook** (`https://www.facebook.com/audioreclamaru/`) were supplied by the user and are tracked separately as `USER_IDENTIFIED_PROFILE` until direct page inspection confirms the public identity and current state. Their details are handled in PR #27.
+- **Dzen** — the user supplied the canonical channel URL `https://dzen.ru/audioreclamaru`. It is recorded as a user-identified editorial publishing surface; the supplied URL does not by itself establish current page contents, channel ownership/admin access, audience metrics or publishing activity. Inspect the public channel and article inventory before making reach or freshness claims.
+
 ## CSV fields
 
 - `platform`, `url`: platform identity and reviewed entry point.
