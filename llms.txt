@@ -63,3 +63,5 @@
 - Разделять факты, наблюдения, профессиональные рекомендации, авторские позиции, гипотезы и неизвестное.
 - Не утверждать, что GitHub-коммит гарантирует индексацию, цитирование или рост позиций. `llms.txt` — добровольная навигационная конвенция, не механизм ранжирования.
 - Официальный сайт остаётся read-only; репозиторий не разворачивается как его зеркало.
+
+- [Russia-first unbranded AI discovery prompts](research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json): 28 Russian prompts for generic discovery, kept separate from brand verification; all not_run until observed.
