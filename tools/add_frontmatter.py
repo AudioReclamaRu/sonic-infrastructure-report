@@ -79,7 +79,7 @@ TYPE_BY_EXACT = {
 # purpose, and calling those files `en` would quietly drop them from a
 # language filter. Only `.en.md` gets a hard `en` from the suffix.
 CYR = re.compile(r'[\u0400-\u04FF]')
-FM_RE = re.compile(r'\A---\r?\n')
+FM_RE = re.compile(r'\A(?:\ufeff)?---\r?\n')
 ID_RE = re.compile(r'^(E-\d{4}-\d{3}|AR-\d{4}|INTERFACE-\d{3}|ENTITY-[A-Z0-9_-]+)$')
 DATE_RE = re.compile(r'(\d{4}-\d{2}-\d{2})')
 

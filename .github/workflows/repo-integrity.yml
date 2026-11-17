@@ -52,3 +52,6 @@ jobs:
 
       - name: canonical brand and website naming
         run: python tools/check_brand_naming.py
+
+      - name: AI Discovery asset integrity
+        run: python tools/validate_ai_discovery_assets.py
