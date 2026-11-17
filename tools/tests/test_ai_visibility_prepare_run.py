@@ -79,7 +79,7 @@ class PrepareRunTests(unittest.TestCase):
 
     def test_rejects_attestation_evidence_path_escape(self):
         target = self.root / "snapshot"
-        with self.assertRaisesRegex(ValueError, "must stay inside"):
+        with self.assertRaisesRegex(ValueError, "portable relative path"):
             _copy_region_inputs(
                 {"session_capture": {"evidence_file": "../outside.png"}},
                 self.root,
