@@ -44,6 +44,17 @@ Metrics are volatile and must always be stored with the capture date and source.
 | [Рекламный видеоролик РИО](https://rutube.ru/video/25f54baf0758c846baf3158f79cbec87/) | 30-second advertising video | Public card attributed to the branded creator | 1 subscriber; 1 view in indexed card | Portfolio sample; client/name rights and case-study context need verification |
 | [Рекламный видеоролик OneOwner](https://rutube.ru/video/6fb4a0ab5da571465083e14655d70769/) | 1:02 advertising video | Public card attributed to the branded creator | 1 subscriber; 2 views in indexed card | Portfolio sample; confirm permission to display client/project identity |
 | [Озвучивание видео роликов](https://rutube.ru/video/3f16c932b8b6ecce805ab51a95abda4e/) | 28-second video voice-over sample | Public card attributed to the branded creator | 1 subscriber; 1 view in indexed card | Service-specific asset; descriptive title, but no visible language/client/use-case detail |
+| [Диктор Андрей Лысенко — дубляж + липсинк](https://rutube.ru/video/2fbb6ea80d8fa7a9c701f0d162c53c62/) | 1:40 dubbing/lip-sync sample | Indexed creator attribution; 9 views | 1 subscriber; 9 views | Clear specialized service signal; needs rights and talent metadata |
+| [TASTE TOMMOROWRUS](https://rutube.ru/video/87142c58e4f58ba2a846bfdf66997b09/) | 1:32 localized promo | Description credits Russian retitling/voice-over, sound engineer and voice talent | 1 subscriber; 2 views | Strong case-study metadata; spelling/title may be source-side typo |
+| [SAXO BANK LARS](https://rutube.ru/video/1f934ed871f9cb97fb58f8fac8290953/) | 2:25 localized promo | Description says localization commissioned by Danish online investment bank; credits voice talent and sound engineer | 1 subscriber; 1 view | Strong localization proof point; verify rights to display client identity |
+| [WSE_RUS_ORIGINAL MUS_SUBTITLES_4](https://rutube.ru/video/0c8498b35e7761ea57c4eefbcbe5bcd7/) | 2:38 subtitling + voice-over sample | Description credits subtitles, voice talent and sound engineer | 1 subscriber; 1 view | Multi-role localization workflow is visible |
+| [Развлекательный центр Тактика](https://rutube.ru/video/0fb0aa3d67a88fc1206829bc2f4a82c8/) | 5-second advertising spot | Explicit client/use-case title | 1 subscriber; 6-month age label | Highly concise portfolio item; duration may be only excerpt |
+| [Едок — синхронное и закадровое озвучивание](https://rutube.ru/video/707b89fe329a33c5f2a3746aee67cf61/) | 20-second synchronized and voice-over sample | Indexed as recently published (12 days in one result) | 1 subscriber; 1 view | Potentially newer commercial sample; verify actual publication timestamp |
+| [Avansa — озвучивание видео](https://rutube.ru/video/4605e8cfca9142783ccb7d034b24d095/) | 1:20 video voice-over | Client/project title and service type visible | 1 subscriber; 1 view | Useful service-tagged portfolio item |
+| [CentrSvet Group — озвучивание презентаций](https://rutube.ru/video/3720e3c99658a40e97d577a7ac69d7af/) | 2:33 presentation narration | Client and presentation use case visible | 1 subscriber; 1 view | Supports presentation voice-over category |
+| [Innovatione Russia](https://rutube.ru/video/bbb6f397554f19ff30566e17af532cf7/) | 53-second Russian video voice-over | Language and service type visible in title | 1 subscriber; 1 view | Better metadata than generic title; client rights still need review |
+| [Quantum and Apollo — sound design](https://rutube.ru/video/1933b59b42d5be8115397a7e9c33f589/) | 30-second sound-design sample | Explicit sound-design label and project title | 1 subscriber; 1 view | Adds a distinct sound-design category |
+| [Саров Бизнес Банк — вклады](https://rutube.ru/video/89307ed31032dbecc1a2f45c5edfc90b/) | 10-second bank advertising voice-over | Search result states video temporarily unavailable | 1 subscriber; 1 indexed view | Preserve as unavailable, not as deleted or absent |
 
 The table is a selected sample, not an exhaustive inventory. Counts may change after capture, and indexed snippets may not represent the currently rendered page.
 
@@ -62,7 +73,7 @@ The indexed result for the public channel at https://www.youtube.com/@audiorecla
 | Google. Озвучка. Диктор Вячеслав Тимошенко. Закадровая начитка. студия (брендовый суффикс опущен) | 10 years | 1,369 | Search-descriptive service + talent title |
 | Жуланова Ольга (дикторское демо) | 7 years | 1,289 | Voice/demo content |
 
-These counts are historical index observations, not live page counters or owner analytics. The same service explainer exists on RUTUBE under the title "Видео-Гид по услугам студии (брендовый суффикс в названии опущен) - просим репост :)" and its indexed RUTUBE card shows 3 views. The evidence suggests a significant difference between platform distribution histories; it does not establish the reason (audience size, recommendation, embeds, external referrals, age, or cross-post timing are not isolated).
+These counts are historical index observations, not live page counters or owner analytics. The same service explainer exists on RUTUBE under the matching title and description and its indexed RUTUBE card shows 3 views. The RUTUBE description explicitly links to the YouTube video ID `MJJcbzR2wto`, providing direct evidence of a cross-platform link: https://www.youtube.com/watch?v=MJJcbzR2wto. The evidence suggests a significant difference between platform distribution histories; it does not establish the reason (audience size, recommendation, embeds, external referrals, age, or cross-post timing are not isolated).
 
 The YouTube channel's indexed description says the studio provides advertising and presentation sound. The listed keywords include voice recording, production, voice-over, radio and online narration. This is a platform-indexed description, not a verified current services/pricing statement.
 
@@ -118,6 +129,7 @@ These are editorial recommendations, not instructions to publish or edit existin
 - RUTUBE voice-talent / price video: https://rutube.ru/video/7e6fdc99e390e1cbdf5b3c585e7287df/
 - RUTUBE second historical tariff description: https://rutube.ru/video/267161158b530c3e0b1e657379142d0e/
 - YouTube historical channel result: https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw
+- YouTube service explainer linked from RUTUBE description: https://www.youtube.com/watch?v=MJJcbzR2wto
 - RUTUBE RIO advertising video: https://rutube.ru/video/25f54baf0758c846baf3158f79cbec87/
 - RUTUBE OneOwner advertising video: https://rutube.ru/video/6fb4a0ab5da571465083e14655d70769/
 - RUTUBE voice-over sample: https://rutube.ru/video/3f16c932b8b6ecce805ab51a95abda4e/
