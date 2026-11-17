@@ -92,6 +92,9 @@ def build_packet(passport_path: Path, output_dir: Path) -> dict[str, Any]:
     if len({row["queue_id"] for row in rows}) != len(rows):
         raise ValueError("queue_id values must be unique across all queues")
 
+    template_names = [safe_name("OBS-" + safe_name(row["queue_id"])) + ".json" for row in rows]
+    if len(set(template_names)) != len(template_names):
+        raise ValueError("queue IDs collide after safe filename normalization")
     evidence_dir = output_dir / "evidence"
     evidence_dir.mkdir(parents=True)
     csv_path = output_dir / "capture.csv"
@@ -116,7 +119,7 @@ def build_packet(passport_path: Path, output_dir: Path) -> dict[str, Any]:
             })
 
     template_files = []
-    for row in rows:
+    for index, row in enumerate(rows):
         observation_id = "OBS-" + safe_name(row["queue_id"])
         record = {
             "schema": "studio/ai-visibility-observation/1",
@@ -160,7 +163,7 @@ def build_packet(passport_path: Path, output_dir: Path) -> dict[str, Any]:
             "limitations": [],
             "operator_notes": "DRAFT TEMPLATE — replace placeholders only from an actual captured session.",
         }
-        filename = safe_name(observation_id) + ".json"
+        filename = template_names[index]
         (evidence_dir / filename).write_text(
             json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
         )
