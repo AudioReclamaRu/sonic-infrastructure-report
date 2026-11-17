@@ -14,6 +14,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from tools.ai_visibility_region import validate_attestation
+
 QUEUE_FIELDS = (
     "queue_id", "module_id", "module_version", "query_id", "query", "intent",
     "country_code", "interface_locale", "prompt_language", "answer_language",
@@ -52,7 +54,9 @@ def _market_fields(module: dict[str, Any]) -> dict[str, str]:
     return fields  # type: ignore[return-value]
 
 
-def build_rows(module: dict[str, Any]) -> list[dict[str, str]]:
+def build_rows(module: dict[str, Any], region_status: str = REGION_STATUS) -> list[dict[str, str]]:
+    if region_status not in {"UNVERIFIED", "VERIFIED", "NOT_APPLICABLE"}:
+        raise ValueError(f"invalid region_status: {region_status}")
     market = _market_fields(module)
     module_id = str(module.get("schema") or "unspecified-module")
     version = str(module.get("version") or "unspecified")
@@ -115,7 +119,7 @@ def build_rows(module: dict[str, Any]) -> list[dict[str, str]]:
                 "measurement_mode": str(mode),
                 "platform_priority": str(priority if priority is not None else ""),
                 "execution_status": PLANNED_STATUS,
-                "region_verification": REGION_STATUS,
+                "region_verification": region_status,
                 "notes": notes,
             })
     return rows
@@ -180,15 +184,28 @@ def main() -> int:
     generate = sub.add_parser("generate", help="generate a planned queue from a frozen query module")
     generate.add_argument("--module", required=True, type=Path)
     generate.add_argument("--output", required=True, type=Path)
+    generate.add_argument("--region-attestation", type=Path,
+                          help="only generate VERIFIED rows from an independently reviewed attestation")
     validate = sub.add_parser("validate", help="validate queue structure and optional source-module coverage")
     validate.add_argument("--queue", required=True, type=Path)
     validate.add_argument("--module", type=Path, help="also verify the complete query × platform Cartesian product")
+    validate.add_argument("--region-attestation", type=Path,
+                          help="require queue region status to match a reviewed attestation")
     args = parser.parse_args()
 
     try:
         if args.command == "generate":
             module = load_module(args.module)
-            rows = build_rows(module)
+            region_status = REGION_STATUS
+            if args.region_attestation:
+                attestation = json.loads(args.region_attestation.read_text(encoding="utf-8"))
+                attestation_errors, attestation_status = validate_attestation(
+                    attestation, args.region_attestation.resolve().parent
+                )
+                if attestation_errors or attestation_status != "VERIFIED":
+                    raise ValueError("regional attestation is not VERIFIED: " + "; ".join(attestation_errors or [attestation_status]))
+                region_status = "VERIFIED"
+            rows = build_rows(module, region_status=region_status)
             errors = validate_rows(rows, rows)
             if errors:
                 raise ValueError("; ".join(errors))
@@ -198,8 +215,19 @@ def main() -> int:
             return 0
 
         rows = read_queue(args.queue)
-        expected = build_rows(load_module(args.module)) if args.module else None
+        region_status = REGION_STATUS
+        if args.region_attestation:
+            attestation = json.loads(args.region_attestation.read_text(encoding="utf-8"))
+            attestation_errors, attestation_status = validate_attestation(
+                attestation, args.region_attestation.resolve().parent
+            )
+            if attestation_errors or attestation_status != "VERIFIED":
+                raise ValueError("regional attestation is not VERIFIED: " + "; ".join(attestation_errors or [attestation_status]))
+            region_status = "VERIFIED"
+        expected = build_rows(load_module(args.module), region_status=region_status) if args.module else None
         errors = validate_rows(rows, expected)
+        if any(row.get("region_verification") != region_status for row in rows):
+            errors.append(f"queue region_verification must be {region_status}; region attestation mismatch or missing")
         if errors:
             for error in errors:
                 print(f"ERROR: {error}", file=sys.stderr)
