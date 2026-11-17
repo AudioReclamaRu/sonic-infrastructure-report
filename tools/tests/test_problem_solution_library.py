@@ -175,8 +175,8 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
 
     def test_routing_evidence_must_match_primary_source(self):
         (self.root / "evidence/unrelated.md").write_text(
-            "---\\nid: E-TEST-002\\ntype: evidence\\nstatus: verified\\n---\\n"
-            "Primary source: https://www.audio-reclama.ru/faq.html\\n",
+            "---\nid: E-TEST-002\ntype: evidence\nstatus: verified\n---\n"
+            "Primary source: https://www.audio-reclama.ru/faq.html\n",
             encoding="utf-8",
         )
         routing = self.read_json(ROUTING)
@@ -187,8 +187,8 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
 
     def test_routing_evidence_rejects_unverified_record(self):
         (self.root / "evidence/draft.md").write_text(
-            "---\\nid: E-TEST-003\\ntype: evidence\\nstatus: draft\\n---\\n"
-            "Primary source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\\n",
+            "---\nid: E-TEST-003\ntype: evidence\nstatus: draft\n---\n"
+            "Primary source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
             encoding="utf-8",
         )
         routing = self.read_json(ROUTING)
