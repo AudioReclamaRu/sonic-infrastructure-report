@@ -18,6 +18,14 @@ The user directly reports that the three RUTUBE presentation-voiceover clips bel
 
 The graph records pairwise `user_reports_identical_audiovisual_content` edges. This is a user-review assertion, not an independently verified file hash or audiovisual fingerprint. The substantial duration mismatch remains open and must not be erased or explained by assumption.
 
+## Current RUTUBE channel and YouTube/Dzen profile relationships
+
+The public RUTUBE channel page (`channel/73612493`) and public YouTube channel (`@audioreclama`) returned matching display brand, contact email, profile description and self-reported WOW AWARDS 2018 claim. The graph records a medium-confidence public profile-text match only; account ownership and admin access are not inferred.
+
+A RUTUBE Short explicitly contains the Dzen URL `dzen.ru/audioreclamaru`. The graph records the link reference, not ownership of the Dzen profile. A direct fetch of the VK Video route redirected to a generic VK Video landing page; no absence or ownership conclusion is drawn.
+
+The current channel page surfaced 20 standard videos and 20 Shorts. Their 40 IDs and page metadata are recorded separately from the 55-item historic/commercial portfolio inventory.
+
 ## Expanded discovery nodes and candidate clusters
 
 A second public-index search pass added 14 RUTUBE video nodes to the graph (see the node CSV). Two candidate similarity edges are recorded without asserting identity:
