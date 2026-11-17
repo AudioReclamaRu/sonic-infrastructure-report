@@ -193,10 +193,21 @@ def validate_queue_links(records: dict[str, dict], queue_path: Path) -> list[str
         if key not in planned:
             errors.append(f"observation {observation_id}: no exact matching planned queue cell")
             continue
-        if planned[key].get("region_verification") == "UNVERIFIED":
+        region_status = planned[key].get("region_verification")
+        if region_status == "UNVERIFIED":
             errors.append(
                 f"observation {observation_id}: queue region is UNVERIFIED; "
                 "evidence record does not independently establish regional verification"
+            )
+        elif region_status == "VERIFIED":
+            if not market.get("region") or not market.get("region_evidence"):
+                errors.append(
+                    f"observation {observation_id}: VERIFIED region requires explicit market.region "
+                    "and market.region_evidence in the primary record"
+                )
+        elif region_status == "BLOCKED" and record.get("answer_status") not in {"BLOCKED_REGION", "BLOCKED_NETWORK"}:
+            errors.append(
+                f"observation {observation_id}: BLOCKED queue region must not be recorded as an answered observation"
             )
     return errors
 
