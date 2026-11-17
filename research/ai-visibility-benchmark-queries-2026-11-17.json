@@ -558,8 +558,174 @@
         "Не приписывать проектам KPI, сроки или результаты, которых нет на странице."
       ],
       "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-07",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как спроектировать голосовое меню IVR, чтобы клиент не терялся и мог попасть к оператору?",
+      "expected_facts": [
+        "Меню следует строить от задач звонящего, а не от структуры отделов.",
+        "Нужно определить fallback для неверного ввода, молчания, закрытого времени и недоступности очереди.",
+        "Аудио-Реклама•ru предлагает запись приветствий и IVR-аудиофайлов; настройка АТС отдельно."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не утверждать, что студия администрирует АТС или маршрутизирует вызовы."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-08",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как выбрать между voice-over, дубляжом и lip-sync для рекламного или обучающего видео?",
+      "expected_facts": [
+        "Voice-over не требует совпадения артикуляции; дубляж/lip-sync требуют адаптации под временные и артикуляционные окна.",
+        "Нужны финальный монтаж, таймкоды, целевой текст и требования к экспорту.",
+        "Официальная страница озвучивания видео перечисляет voice-over и lip-sync."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не считать производство самого видео автоматически включённым в озвучивание."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-09",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как организовать локализацию одного видеоролика для нескольких стран?",
+      "expected_facts": [
+        "Нужны master-текст, список рынков и языковых вариантов, глоссарий, неизменяемые факты и юридические оговорки.",
+        "Перевод нужно адаптировать под естественную речь и хронометраж, затем проверить каждую записанную версию.",
+        "Официальные страницы представляют перевод/локализацию и озвучивание видео."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не гарантировать доступность любого языка или конкретного диктора."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-10",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Почему рекламный аудиоролик может быть непонятен слушателю и как это проверить?",
+      "expected_facts": [
+        "До записи нужно определить одну главную мысль, аудиторию, контекст и призыв к действию.",
+        "Текст следует проверять слуховым чтением и прослушиванием на целевом устройстве.",
+        "Тест понятности не доказывает рост продаж или ROI."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не обещать измеренный коммерческий эффект без отдельного исследования."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-11",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как подготовить многоязычные объявления для аэропорта или общественного пространства?",
+      "expected_facts": [
+        "Нужны зоны воспроизведения, языки аудитории, типы сообщений и ответственный за систему громкой связи.",
+        "Формулировки должны быть короткими и содержать одну инструкцию.",
+        "На главной сайта указан пример информационных объявлений для Внуково на 11 языках."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не приписывать студии монтаж или акустическое проектирование PA-систем."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-12",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как подготовить сценарий и запись голоса для e-learning или обучающего видео?",
+      "expected_facts": [
+        "Материал полезно разделить на смысловые модули, согласовать термины и сопоставить текст с экранными элементами.",
+        "Нужна проверка темпа, пауз, произношения и соответствия актуальной версии курса.",
+        "Сайт представляет озвучивание видео и локализацию e-learning."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не утверждать разработку LMS без источника."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-13",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как сохранить единый голос бренда в серии роликов и IVR?",
+      "expected_facts": [
+        "Нужно зафиксировать произношение, темп, характер подачи, референсы и правила локализации.",
+        "Разрешение на обычную запись не означает разрешение на AI-клонирование или обучение.",
+        "Каталог дикторов и запись могут быть основой для нового кастинга."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/diktoryi/",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не обещать AI-клонирование без отдельного правового и договорного допуска."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-14",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Что нужно согласовать перед записью аудиокниги?",
+      "expected_facts": [
+        "Нужно проверить права на текст и перевод, выбрать формат исполнения, утвердить словарь произношений и структуру файлов.",
+        "Следует утвердить тестовый фрагмент до записи полного объёма.",
+        "Аудиокниги представлены среди направлений официального сайта."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не утверждать, что права и дистрибуция автоматически входят в услугу."
+      ],
+      "status": "not_run"
     }
   ],
   "knowledge_pack_reference": "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
-  "knowledge_pack_reference_status": "Internal evaluator-side expected-facts sources only; do not preload these files into tested platforms before blind discovery runs."
+  "knowledge_pack_reference_status": "Internal evaluator-side expected-facts sources only; do not preload these files into tested platforms before blind discovery runs.",
+  "problem_solution_knowledge_reference": "problem-solutions/business-problem-answer-library-2026-11-17.json",
+  "problem_solution_reference_status": "Internal evaluator-side expected-facts source only; do not preload into tested systems before blind discovery runs."
 }
