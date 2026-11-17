@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama/ai-visibility-benchmark/1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "created": "2026-11-17",
   "language": "ru",
   "target_region": "RU",
@@ -460,7 +460,8 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "evidence/E-2026-054.md"
       ],
       "must_not_claim": [
         "Не заявлять настройку или администрирование АТС и маршрутизации звонков без отдельного источника."
@@ -479,7 +480,8 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "evidence/E-2026-055.md"
       ],
       "must_not_claim": [
         "Не утверждать, что весь набор включён в каждый проект."
@@ -875,6 +877,79 @@
       ],
       "must_not_claim": [
         "Не обещать универсальные настройки аудиоэкспорта или сертификацию без утверждённого процесса."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-BRAND-07",
+      "cluster": "brand_entity",
+      "language": "ru",
+      "region": "RU",
+      "query": "Почему на главной странице указано 622 диктора, а в русском фильтре каталога — 309?",
+      "expected_facts": [
+        "На главной странице при повторной проверке 18.11.2026 отображалось 622 диктора и 62 языка.",
+        "На странице каталога 309 относится к русскому фильтру, а не к сумме всех языковых профилей.",
+        "Исторические снимки содержали разные счётчики; единое число общего каталога не нормализуется без определения метрики."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/diktoryi/",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "evidence/E-2026-056.md"
+      ],
+      "must_not_claim": [
+        "Не выдавать число 309 из русской категории за весь международный каталог.",
+        "Не считать разные даты и области счёта одной и той же метрикой."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-20",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как понять, какой аудиоформат нужен для голосового меню АТС и кто должен подтвердить технические параметры?",
+      "expected_facts": [
+        "Требования к формату нужно получить у поставщика АТС или оператора IP-телефонии.",
+        "FAQ приводит WAV/PCM 8 кГц, 8 бит, G.711 A-law как пример, а не универсальную настройку.",
+        "Сайт заявляет подготовку IVR-файлов и конвертацию в согласованный формат; администрирование АТС отдельно не следует из этого."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/faq.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "evidence/E-2026-053.md",
+        "evidence/E-2026-054.md"
+      ],
+      "must_not_claim": [
+        "Не переносить телефонный пример на радио и видео.",
+        "Не заявлять настройку или маршрутизацию АТС.",
+        "Не использовать неоднозначную строку PCM 11025 khz как готовую спецификацию."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-21",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Чем отличается сухая запись диктора от готовой обработанной дорожки и что выбрать для монтажа?",
+      "expected_facts": [
+        "FAQ описывает сухую запись как дорожку без компрессоров и эквалайзеров.",
+        "Обработанная дорожка описана как готовый голос для аудиопрезентации или аудиоролика без музыкального оформления.",
+        "Для заказа следует согласовать тип результата и спецификацию принимающей системы; слово «эфирное» не заменяет требования вещателя."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/faq.html",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "evidence/E-2026-053.md"
+      ],
+      "must_not_claim": [
+        "Не утверждать, что обработанная дорожка всегда включает музыку или полный микс.",
+        "Не приписывать ей автоматическое соответствие любой площадке."
       ],
       "status": "not_run"
     }
