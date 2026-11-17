@@ -26,6 +26,15 @@ A RUTUBE Short explicitly contains the Dzen URL `dzen.ru/audioreclamaru`. The gr
 
 The current channel page surfaced 20 standard videos and 20 Shorts. Their 40 IDs and page metadata are recorded separately from the 55-item historic/commercial portfolio inventory.
 
+## Same-channel content relationships requiring media comparison
+
+The current-channel snapshot exposes several useful candidate relationships:
+- Two uploads titled `О настоящем` share the same 173-second duration and parable description, but have different IDs and publication dates. Recorded as a possible duplicate, not a confirmed duplicate.
+- A 6:36 long-form video and a 2:00 Short share the title `Как внимание оживляет реальность?`; recorded as a possible cutdown/topic relationship.
+- An 8:26 long-form video and a 1:53 Short share the title `Что меняется, когда мы обращаем внимание?`; recorded as a possible cutdown/topic relationship.
+
+No audiovisual comparison was performed for these pairs.
+
 ## Expanded discovery nodes and candidate clusters
 
 A second public-index search pass added 14 RUTUBE video nodes to the graph (see the node CSV). Two candidate similarity edges are recorded without asserting identity:
