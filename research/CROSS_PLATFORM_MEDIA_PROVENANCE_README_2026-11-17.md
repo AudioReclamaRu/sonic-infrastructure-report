@@ -9,6 +9,15 @@ related:
 
 # Cross-platform Media Provenance Graph — 2026-11-17
 
+## User-reviewed identical presentation-voiceover clips
+
+The user directly reports that the three RUTUBE presentation-voiceover clips below are identical in content:
+- `6b2195a00c6681c760fe3027e83c988f` — displayed duration 1:25
+- `a859a8ccbfddcd613676ca8786766ab9` — displayed duration 3:07
+- `498c5b58d739c33ad029a3dc98484678` — displayed duration 1:20
+
+The graph records pairwise `user_reports_identical_audiovisual_content` edges. This is a user-review assertion, not an independently verified file hash or audiovisual fingerprint. The substantial duration mismatch remains open and must not be erased or explained by assumption.
+
 ## What is established
 
 The public RUTUBE service-explainer page `1d312c393658146cae1c56746592dd43` includes an exact YouTube watch URL with video ID `MJJcbzR2wto`. Its description also includes a VK share URL whose query parameter wraps that same YouTube URL.
