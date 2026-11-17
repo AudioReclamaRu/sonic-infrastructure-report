@@ -78,6 +78,7 @@ def main() -> int:
         "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
         "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -240,6 +241,7 @@ def main() -> int:
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
         "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
     ]
     for rel in llms_required_paths:
         if rel not in llms:
