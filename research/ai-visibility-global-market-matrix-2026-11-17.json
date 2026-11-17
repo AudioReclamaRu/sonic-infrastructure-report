@@ -661,16 +661,52 @@
       "id": "dola",
       "name": "Dola",
       "owner": "ByteDance",
-      "tier": "global_watchlist",
+      "tier": "global_core_secondary",
       "kind": "general_assistant",
       "measurement_modes": [
         "consumer_ui"
       ],
       "openseo_engine": null,
-      "notes": "Promote to core if future usage/relevance checks justify it; ByteDance lists launch in 100+ markets."
+      "notes": "Included in DataReportal's Aug 2026 global GenAI mobile-app MAU index top nine; app-index measures are not directly comparable with web traffic or regional MAU counts."
+    },
+    {
+      "id": "agent_i",
+      "name": "Agent i",
+      "owner": "LY Corporation (LINE Yahoo)",
+      "tier": "japan_regional_priority",
+      "kind": "general_ai_agent_and_recommendation_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null,
+      "notes": "Launched in April 2026 across LINE and Yahoo! JAPAN, with a dedicated mobile app announced on 10 Nov 2026; measure Japanese consumer surface separately."
+    },
+    {
+      "id": "a_dot",
+      "name": "A.Dot / 에이닷",
+      "owner": "SK Telecom",
+      "tier": "south_korea_regional_watchlist",
+      "kind": "consumer_ai_phone_and_voice_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null,
+      "notes": "Appears in Korean consumer chatbot app usage reporting; monitor if discovery/recommendation capability is suitable for commercial prompts."
+    },
+    {
+      "id": "zeta_ai",
+      "name": "Zeta AI / 제타",
+      "owner": "Scatter Lab",
+      "tier": "south_korea_regional_watchlist",
+      "kind": "consumer_character_chatbot",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null,
+      "notes": "Large Korean chatbot by measured usage time, but character-conversation focus makes generic vendor-discovery relevance uncertain; do not merge its scores with general assistants."
     }
   ],
-  "platform_selection_rule": "The global core is not a permanent ranking. Refresh platform priority from current independent usage signals and official product status. Regional assistants are included where they are important discovery surfaces in the market. Add strong local leaders when evidence supports material reach; do not claim exhaustive coverage of every app.",
+  "platform_selection_rule": "The global core is not a permanent ranking. Refresh platform priority from current independent usage signals and official product status. Regional assistants are included where they are important discovery surfaces in the market. Add strong local leaders when evidence supports material reach; do not claim exhaustive coverage of every app. A 2026 global usage signal supports tracking Dola as a secondary global platform; Japan's Agent i and South Korea's A.Dot/Zeta are added as region-specific observations, with their distinct assistant/roleplay functions kept separate from general discovery scoring.",
   "sources": [
     {
       "topic": "ChatGPT supported countries",
@@ -726,6 +762,46 @@
       "topic": "China AI assistant market signals (secondary synthesis of QuestMobile data)",
       "url": "https://report-ai.org/indexes/state-of-ai/state-of-ai-usage/",
       "source_type": "secondary"
+    },
+    {
+      "topic": "Global GenAI mobile-app usage index, Aug 2026 (excludes China; indexed MAU)",
+      "url": "https://datareportal.com/reports/digital-2027-global-overview-report",
+      "source_type": "secondary_synthesis",
+      "notes": "Measures mobile-app index, not total user base; explicitly excludes China."
+    },
+    {
+      "topic": "Global AI chatbot website ranking, Sep 2026",
+      "url": "https://www.similarweb.com/top-websites/ai-chatbots-and-tools/",
+      "source_type": "measurement_provider",
+      "notes": "Web traffic ranking; excludes use inside mobile apps."
+    },
+    {
+      "topic": "China AI assistant market, QuestMobile Sep 2026 synthesis",
+      "url": "https://report-ai.org/indexes/state-of-ai/state-of-ai-usage/",
+      "source_type": "secondary_synthesis",
+      "notes": "Doubao 419m MAU; Qwen and DeepSeek reported separately; different metric and geography from global app indices."
+    },
+    {
+      "topic": "Japan Agent i launch by LY Corporation",
+      "url": "https://www.lycorp.co.jp/en/news/release/020398/",
+      "source_type": "official"
+    },
+    {
+      "topic": "Japan Agent i mobile app launch, 10 Nov 2026",
+      "url": "https://www.lycorp.co.jp/ja/news/release/020972/",
+      "source_type": "official"
+    },
+    {
+      "topic": "South Korea GenAI app use, Sep 2026, Wiseapp Retail figures reported by ChosunBiz",
+      "url": "https://biz.chosun.com/en/en-it/2026/10/13/2PN76TDHZFA2ZLHDGOGWQB3PCE/",
+      "source_type": "secondary",
+      "notes": "Local consumer MAU sample; ChatGPT, Gemini, Claude, Copilot, Grok, Perplexity and A.Dot listed separately."
+    },
+    {
+      "topic": "South Korea chatbot use and usage time, Feb 2026, Wiseapp Retail figures reported by Yonhap",
+      "url": "https://www.yna.co.kr/view/AKR20260310031500017",
+      "source_type": "secondary",
+      "notes": "Includes Zeta and A.Dot; app audience/usage is not equivalent to commercial search use."
     }
   ],
   "execution_rules": [
