@@ -6,7 +6,6 @@ import argparse
 import csv
 import hashlib
 import json
-import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -129,16 +128,9 @@ def create_plan(args: argparse.Namespace) -> dict[str, Any]:
         entry = file_entry(path, base, "planned_execution_queue")
         entry["matrix"] = summary
         queues.append(entry)
+    if args.region_status != "UNVERIFIED":
+        raise ValueError("v1 run passports only accept UNVERIFIED region status; verified access requires a separately designed provenance workflow")
     evidence = None
-    if args.region_status == "VERIFIED":
-        if not args.region_label or not args.region_evidence:
-            raise ValueError("VERIFIED region requires --region-label and --region-evidence")
-        evidence_path = Path(args.region_evidence)
-        evidence = file_entry(evidence_path, base, "regional_verification_evidence")
-    elif args.region_label or args.region_evidence:
-        raise ValueError("region label/evidence may only be supplied with --region-status VERIFIED")
-    if args.region_status == "BLOCKED":
-        raise ValueError("BLOCKED is a collection outcome, not a plan-time regional attestation")
     return seal({
         "schema": PLAN_SCHEMA,
         "run_id": args.run_id,
@@ -294,9 +286,7 @@ def main(argv: list[str] | None = None) -> int:
     create.add_argument("--module", action="append", default=[])
     create.add_argument("--queue", action="append", default=[])
     create.add_argument("--output", required=True, type=Path)
-    create.add_argument("--region-status", choices=("UNVERIFIED", "VERIFIED", "NOT_APPLICABLE"), default="UNVERIFIED")
-    create.add_argument("--region-label")
-    create.add_argument("--region-evidence")
+    create.add_argument("--region-status", choices=("UNVERIFIED",), default="UNVERIFIED")
     create.add_argument("--operator-label")
     create.add_argument("--notes")
     validate = sub.add_parser("validate", help="verify plan passport seal and frozen input files")
