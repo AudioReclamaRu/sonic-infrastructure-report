@@ -1,3 +1,10 @@
+---
+type: doc
+date: 2026-11-17
+lang: en
+related: [strategy/ATTENTION_ECOSYSTEM_RECON_2026-11-14.md]
+---
+
 # Attention Surface Register — 2026-11-17
 
 This register converts the attention-surface candidates researched in the ecosystem reconnaissance into a filterable operational inventory.
