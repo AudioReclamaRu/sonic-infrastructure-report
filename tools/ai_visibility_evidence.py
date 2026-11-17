@@ -218,6 +218,15 @@ def validate_queue_links(
                     errors.append(f"observation {observation_id}: region_attestation_id does not match the run passport")
                 if market.get("region_attestation_sha256") != expected_region_attestation.get("sha256"):
                     errors.append(f"observation {observation_id}: region_attestation_sha256 does not match the run passport")
+                capture_time = expected_region_attestation.get("session_captured_at_utc")
+                observed_time = record.get("observed_at_utc")
+                try:
+                    capture_dt = datetime.fromisoformat(str(capture_time).replace("Z", "+00:00"))
+                    observed_dt = datetime.fromisoformat(str(observed_time).replace("Z", "+00:00"))
+                    if capture_dt.tzinfo is None or observed_dt.tzinfo is None or abs(observed_dt - capture_dt).total_seconds() > 1800:
+                        errors.append(f"observation {observation_id}: capture time is more than 30 minutes from the verified regional session")
+                except (TypeError, ValueError):
+                    errors.append(f"observation {observation_id}: invalid verified regional session timestamp")
         elif region_status == "BLOCKED" and record.get("answer_status") not in {"BLOCKED_REGION", "BLOCKED_NETWORK"}:
             errors.append(
                 f"observation {observation_id}: BLOCKED queue region must not be recorded as an answered observation"
