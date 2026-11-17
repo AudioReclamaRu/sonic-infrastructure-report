@@ -99,3 +99,5 @@
 - [Offline AI observation evidence validator](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ai_visibility_evidence.py): validates full JSON records and enforces one-to-one CSV evidence linkage without network calls.
 
 - [Джинглы и звуковые подписи](https://www.audio-reclama.ru/audio/zvuk-media.html) и [корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) — две дополнительные problem-first темы с отдельными evidence E-2026-059 и E-2026-064.
+
+- [Маршрутный индекс ответов на бизнес-проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 17 маршрутов от задачи клиента к короткому ответу, сценарию, первичным URL и verified evidence; валидатор требует точного совпадения источника.
