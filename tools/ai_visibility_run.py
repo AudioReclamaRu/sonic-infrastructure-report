@@ -13,6 +13,7 @@ from typing import Any
 
 from tools.ai_visibility_queue import QUEUE_FIELDS, build_rows, load_module, read_queue
 from tools.ai_visibility_region import validate_attestation
+from tools.ai_visibility_evidence import validate_observation_artifacts
 
 PLAN_SCHEMA = "studio/ai-visibility-run-passport/1"
 RESULT_SCHEMA = "studio/ai-visibility-run-result/1"
@@ -281,19 +282,37 @@ def create_result(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("plan passport validation failed: " + "; ".join(errors))
     if args.run_id != plan.get("run_id"):
         raise ValueError("--run-id does not match the plan passport")
+    if not args.observations_csv or not args.evidence_dir:
+        raise ValueError("finalization requires both --observations-csv and --evidence-dir")
+    directory = Path(args.evidence_dir).resolve(strict=True)
+    if not directory.is_dir():
+        raise ValueError("--evidence-dir must be a directory")
+    record_paths = sorted(directory.glob("*.json"))
+    if not record_paths:
+        raise ValueError("--evidence-dir contains no *.json observation records")
+    queue_entries = plan["artifacts"]["execution_queues"]
+    queue_paths = [resolve_entry(entry, args.passport) for entry in queue_entries]
+    region_attestation = None
+    region_entry = (plan.get("scope") or {}).get("region_attestation")
+    if region_entry:
+        attestation_path = resolve_entry(region_entry, args.passport)
+        attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+        region_attestation = {
+            "attestation_id": attestation.get("attestation_id"),
+            "sha256": region_entry.get("sha256"),
+        }
+    evidence_errors = validate_observation_artifacts(
+        record_paths,
+        Path(args.observations_csv).resolve(strict=True),
+        queue_paths,
+        args.run_id,
+        region_attestation,
+    )
+    if evidence_errors:
+        raise ValueError("observation evidence validation failed: " + "; ".join(evidence_errors))
     base = args.output.resolve().parent
-    csv_entry = file_entry(Path(args.observations_csv), base, "benchmark_observations_csv") if args.observations_csv else None
-    records = []
-    if args.evidence_dir:
-        directory = Path(args.evidence_dir).resolve(strict=True)
-        if not directory.is_dir():
-            raise ValueError("--evidence-dir must be a directory")
-        for record_path in sorted(directory.glob("*.json")):
-            records.append(file_entry(record_path, base, "primary_observation_json"))
-        if not records:
-            raise ValueError("evidence directory contains no *.json records")
-    if not csv_entry and not records:
-        raise ValueError("provide --observations-csv and/or --evidence-dir")
+    csv_entry = file_entry(Path(args.observations_csv), base, "benchmark_observations_csv")
+    records = [file_entry(path, base, "primary_observation_json") for path in record_paths]
     return seal({
         "schema": RESULT_SCHEMA,
         "run_id": args.run_id,
@@ -305,9 +324,10 @@ def create_result(args: argparse.Namespace) -> dict[str, Any]:
             "primary_json_records": records,
         },
         "semantics": [
-            "This result passport links collected artifacts to the exact frozen plan passport.",
-            "It records artifact integrity and linkage, not the truth or quality of the measured answers.",
-            "Run the benchmark and evidence validators before finalization; this command does not replace them.",
+            "Finalization is blocked unless primary JSON records and the benchmark CSV pass schema, exact queue-cell, run-ID, and CSV linkage checks.",
+            "For VERIFIED regional runs, every primary record must carry the exact region attestation ID and SHA-256 from the plan passport.",
+            "The result passport links collected artifacts to the exact frozen plan passport.",
+            "It records artifact integrity and linkage, not the truth or quality of measured answers.",
             "A blocked or unavailable observation is not zero visibility."
         ],
     }, "result_sha256")
