@@ -183,7 +183,7 @@ OpenSEO остаётся одним из каналов, а не универс�
 
 ## 9. Журнал и исходный статус
 
-Использовать `ai-visibility-benchmark-template.csv` или расширенный формат журнала, в котором есть страна, locale, platform, interface_mode, intent, run_id, status, prompt, response, source_urls и scoring. Одна строка — одна пара «запрос × платформа × запуск × рыночная ячейка». Каждому запуску присваивать уникальный `run_id`.
+Использовать `ai-visibility-benchmark-template.csv`. Одна строка — одна пара «запрос × платформа × запуск × рыночная ячейка». В шаблоне отдельно предусмотрены `country_code`, `interface_locale`, `prompt_language`, `answer_language`, `platform`, `platform_surface`, `measurement_mode` (consumer UI / model API), `search_mode`, `grounding_state`, `intent`, `query`, `answer_status`, `completeness_status`, раздельные scoring-поля, `cited_urls`, `repository_file_cited` и `critical_error`. Поля `language`, `region` и `mode` оставлены для обратной совместимости со старым RU-шаблоном; в международных записях использовать явные новые поля, а не полагаться на неоднозначные legacy-значения. Каждому запуску присваивать уникальный `run_id`.
 
 На 17.11.2026:
 - Все 20 русскоязычных контрольных запросов ещё не прогнаны и остаются со статусом `not_run`; международный baseline также не выполнялся.
