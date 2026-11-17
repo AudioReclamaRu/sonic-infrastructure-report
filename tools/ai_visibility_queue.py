@@ -211,7 +211,8 @@ def main() -> int:
                 raise ValueError("; ".join(errors))
             write_queue(rows, args.output)
             print(f"Generated {len(rows)} planned rows: {args.output}")
-            print("All rows remain NOT_TESTED; region verification remains UNVERIFIED.")
+            print("All rows remain NOT_TESTED.")
+            print(f"Region verification status: {region_status}.")
             return 0
 
         rows = read_queue(args.queue)
