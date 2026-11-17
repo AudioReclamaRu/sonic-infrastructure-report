@@ -138,7 +138,7 @@ def create_plan(args: argparse.Namespace) -> dict[str, Any]:
         "lifecycle": "PLANNED",
         "scope": {
             "region_status": args.region_status,
-            "region_label": args.region_label,
+            "region_label": None,
             "region_evidence": evidence,
             "operator_label": args.operator_label,
             "notes": args.notes,
