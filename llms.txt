@@ -57,6 +57,8 @@
 - [Протокол измерения спроса и поискового эффекта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/MEASUREMENT_PROTOCOL.md).
 
 ## Правила интерпретации
+- [Локальный валидатор и агрегатор benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/AI_VISIBILITY_BENCHMARK.md): офлайн-проверка CSV и раздельная агрегация результатов без API и платных проверок.
+- [Код валидатора benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ai_visibility_benchmark.py) и [автотесты](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/tests/test_ai_visibility_benchmark.py).
 
 - Текущие услуги, цены, контакты и условия проверять на официальном сайте; старые снимки Git не заменяют актуальную коммерческую информацию.
 - Публичное упоминание проекта не доказывает KPI, отзыв, endorsement или право использовать клиентский материал.
