@@ -9,7 +9,7 @@ related:
 
 # RUTUBE Public Media Inventory — 2026-11-17
 
-This inventory captures 45 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
+This inventory captures 48 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
 
 ## Fields and interpretation
 
@@ -22,6 +22,8 @@ This inventory captures 45 publicly indexed RUTUBE assets attributed to the publ
 - Blank numeric/date fields mean not reliably captured, not zero/none.
 
 ## Findings
+
+1. A fourth discovery pass found three more named announcer items: a second Ilya Gulko sample (45 sec), an Eric Tadjibaev voice demo (5 min 23 sec), and a Tatyana Maers dubbing sample (10 sec) currently marked temporarily unavailable. The second Ilya item is a separate ID from the earlier 6:35 demo; neither is presumed duplicate.
 
 1. A third discovery pass added eight individually named announcer or advertising samples: Игорь Китаев, Алексей Никитин, Андрей Демин, Михаил Сушков, Екатерина Грефенштейн, Евгений Хорошевцев, plus two short commercials. These are distinct source records; no identity or reuse-rights assumptions are made.
 
@@ -44,4 +46,4 @@ This inventory captures 45 publicly indexed RUTUBE assets attributed to the publ
 
 ## Source coverage
 
-All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 45 items, not yet a complete channel scrape.
+All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 48 items, not yet a complete channel scrape.
