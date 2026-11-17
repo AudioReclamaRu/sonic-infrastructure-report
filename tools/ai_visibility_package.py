@@ -146,9 +146,14 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
             capture_rows = list(csv.DictReader(stream))
         if len(capture_rows) != packet.get("planned_cells"):
             errors.append("capture CSV row count does not match capture packet")
+        queue_by_id = {row.get("queue_id"): row for row in queue_rows}
         for row in capture_rows:
             if row.get("run_id") != run_id or row.get("answer_status") != "NOT_TESTED" or row.get("completeness_status") != "NOT_TESTED":
                 errors.append("capture CSV contains completed or foreign-run rows")
+                break
+            planned = queue_by_id.get("".join([])) if False else None
+            if row.get("query_id") not in {item.get("query_id") for item in queue_rows}:
+                errors.append("capture CSV contains a query outside the frozen queue")
                 break
         templates = packet.get("evidence_templates")
         if not isinstance(templates, list) or len(templates) != packet.get("planned_cells"):
@@ -160,6 +165,14 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
                 record = json.loads(template_path.read_text(encoding="utf-8"))
                 if record.get("run_id") != run_id or record.get("answer_status") != "NOT_TESTED":
                     errors.append(f"template is not a NOT_TESTED record for this run: {relative}")
+                expected_id = "OBS-" + str(record.get("observation_id", "")).removeprefix("OBS-")
+                if not expected_id.startswith("OBS-") or len(expected_id) <= 4:
+                    errors.append(f"template observation_id is malformed: {relative}")
+                market = record.get("market") or {}
+                if market.get("region_attestation_id") != manifest["region_attestation"].get("attestation_id"):
+                    errors.append(f"template is not bound to the packaged region attestation: {relative}")
+                if market.get("region_attestation_sha256") != manifest["region_attestation"].get("sha256"):
+                    errors.append(f"template region attestation hash does not match package: {relative}")
                 if record.get("observed_at_utc") or record.get("raw_answer"):
                     errors.append(f"draft template contains observation data: {relative}")
                 if (record.get("platform") or {}).get("product"):
@@ -167,9 +180,14 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
                 market = record.get("market") or {}
                 if market.get("region") or market.get("region_evidence"):
                     errors.append(f"draft template contains regional observation data: {relative}")
-                scores = record.get("scores") or {}
-                if any(value is not None for value in scores.values()):
-                    errors.append(f"draft template contains scores: {relative}")
+                required_scores = {
+                    "brand_identity", "official_route", "service_or_answer",
+                    "commercial_accuracy", "expertise_retrieval", "source_quality",
+                    "citation_quality", "git_knowledge",
+                }
+                scores = record.get("scores")
+                if not isinstance(scores, dict) or set(scores) != required_scores or any(value is not None for value in scores.values()):
+                    errors.append(f"draft template must contain the complete null score set: {relative}")
                 observation_id = record.get("observation_id")
                 if not isinstance(observation_id, str) or observation_id in seen_ids:
                     errors.append(f"missing or duplicate observation_id in template: {relative}")
