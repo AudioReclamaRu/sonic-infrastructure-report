@@ -90,7 +90,7 @@ These are editorial recommendations, not instructions to publish or edit existin
 - RUTUBE RIO advertising video: https://rutube.ru/video/25f54baf0758c846baf3158f79cbec87/
 - RUTUBE OneOwner advertising video: https://rutube.ru/video/6fb4a0ab5da571465083e14655d70769/
 - RUTUBE voice-over sample: https://rutube.ru/video/3f16c932b8b6ecce805ab51a95abda4e/
-- LinkedIn company page: https://www.linkedin.com/company/audio-reclama-ru
+- LinkedIn company page: https://www.linkedin.com/company/audio%2Dreclama-ru
 - YouTube channel: https://www.youtube.com/@audioreclama
 - VK Video sample: https://vk.com/video-18300431_456239326
 - Instagram (user-supplied): https://www.instagram.com/audio_reclama_ru/
