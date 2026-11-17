@@ -43,6 +43,10 @@
       "guardrails": [
         "Настройка АТС",
         "Маршрутизация и IT-интеграция"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-01",
+        "AR-PROBLEM-07"
       ]
     },
     {
@@ -74,6 +78,9 @@
       ],
       "guardrails": [
         "Производство видео входит автоматически"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-08"
       ]
     },
     {
@@ -105,6 +112,9 @@
       ],
       "guardrails": [
         "Наличие любого языка или свободного диктора гарантировано"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-09"
       ]
     },
     {
@@ -140,6 +150,12 @@
       "guardrails": [
         "Рост продаж или ROI",
         "Автоматическая закупка радиоэфира"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-03",
+        "AR-PROBLEM-04",
+        "AR-PROBLEM-06",
+        "AR-PROBLEM-10"
       ]
     },
     {
@@ -171,6 +187,10 @@
       ],
       "guardrails": [
         "Проектирование или монтаж PA-систем"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-05",
+        "AR-PROBLEM-11"
       ]
     },
     {
@@ -202,6 +222,9 @@
       ],
       "guardrails": [
         "Разработка LMS"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-12"
       ]
     },
     {
@@ -231,6 +254,9 @@
       ],
       "guardrails": [
         "AI-клонирование или обучение без отдельного разрешения"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-13"
       ]
     },
     {
@@ -259,6 +285,9 @@
       ],
       "guardrails": [
         "Права и дистрибуция включены автоматически"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-14"
       ]
     },
     {
@@ -302,6 +331,10 @@
         "Не обещать настройку АТС, маршрутизацию или загрузку в любую платформу",
         "Не трактовать «16 bit» из описания MP3 как спецификацию PCM-мастера",
         "Не обещать соответствие требованиям конкретного вещателя без его спецификации"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-20",
+        "AR-PROBLEM-21"
       ]
     },
     {
@@ -337,7 +370,10 @@
         "Не заявлять, что студия администрирует DAM, библиотеку файлов или чужую АТС.",
         "Не считать наличие новой версии доказательством её загрузки и отключения старой."
       ],
-      "review_status": "draft_requires_technical_owner_review"
+      "review_status": "draft_requires_technical_owner_review",
+      "benchmark_query_ids": [
+        "AR-PROBLEM-15"
+      ]
     },
     {
       "routing_id": "voice_asset_operation/content_change_impact",
@@ -374,7 +410,10 @@
         "Не обещать автоматическое обнаружение всех мест использования аудиофайла.",
         "Не переносить ответственность за точность бизнес-информации с заказчика на студию."
       ],
-      "review_status": "draft_requires_technical_owner_review"
+      "review_status": "draft_requires_technical_owner_review",
+      "benchmark_query_ids": [
+        "AR-PROBLEM-16"
+      ]
     },
     {
       "routing_id": "voice_asset_operation/brand_voice_continuity",
@@ -412,7 +451,10 @@
         "Не приравнивать единство бренда к обязательному использованию одного голоса.",
         "Не заявлять voice cloning как публичную услугу без отдельного подтверждения."
       ],
-      "review_status": "draft_requires_technical_owner_review"
+      "review_status": "draft_requires_technical_owner_review",
+      "benchmark_query_ids": [
+        "AR-PROBLEM-17"
+      ]
     },
     {
       "routing_id": "voice_asset_operation/voice_reuse_rights",
@@ -447,7 +489,10 @@
         "Не утверждать, что обычный заказ записи разрешает обучение AI или цифровую реплику.",
         "Не представлять внутренний паспорт как независимую сертификацию или юридическое заключение."
       ],
-      "review_status": "draft_requires_legal_and_owner_review"
+      "review_status": "draft_requires_legal_and_owner_review",
+      "benchmark_query_ids": [
+        "AR-TRUST-03"
+      ]
     },
     {
       "routing_id": "voice_asset_operation/multilingual_asset_alignment",
@@ -485,7 +530,10 @@
         "Не утверждать, что буквальный перевод гарантирует естественную озвучку.",
         "Не включать поддержку конкретной LMS или PA-системы без отдельного подтверждения."
       ],
-      "review_status": "draft_requires_expert_and_owner_review"
+      "review_status": "draft_requires_expert_and_owner_review",
+      "benchmark_query_ids": [
+        "AR-PROBLEM-18"
+      ]
     },
     {
       "routing_id": "voice_asset_operation/final_audio_release_qc",
@@ -525,7 +573,12 @@
         "Не называть внутреннюю процедуру независимой сертификацией.",
         "Не переносить на студию ответственность заказчика за точность бизнес-содержания."
       ],
-      "review_status": "draft_requires_technical_owner_review"
+      "review_status": "draft_requires_technical_owner_review",
+      "benchmark_query_ids": [
+        "AR-PROBLEM-02",
+        "AR-PROBLEM-19",
+        "AR-TRUST-02"
+      ]
     }
   ]
 }
