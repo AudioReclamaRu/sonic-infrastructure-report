@@ -44,6 +44,7 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md — problem-first бриф по форматам, типам дикторских дорожек, требованиям принимающей системы и приёмке файла; технический черновик, не утверждённый стандарт.
 - drafts/VIDEO_VOICEOVER_REVISED_DRAFT.md — новая редакция для обновления старого URL (пока черновик).
 - research/QUERY_SERP_SAMPLE_2026-11-14.md — выборочный срез конкурирующих ответов, без заявлений о частотности.
+- ../evidence/E-2026-049.md … ../evidence/E-2026-052.md — повторно проверенные 18.11.2026 источники FAQ, IVR, озвучивания видео и счётчиков каталога.
 - ../tools/validate_problem_solution_library.py — CI-проверка структуры problem-solution JSON, URL источников и существования файлов, на которые ссылается benchmark.
 - IMPLEMENTATION_ROADMAP.md — план внедрения.
 
