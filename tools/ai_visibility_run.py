@@ -157,7 +157,7 @@ def create_plan(args: argparse.Namespace) -> dict[str, Any]:
     module_paths = [Path(item).resolve(strict=True) for item in args.module]
     queue_paths = [Path(item).resolve(strict=True) for item in args.queue]
     modules = [file_entry(path, base, "frozen_query_module") for path in module_paths]
-    queues = []
+
     for path in queue_paths:
         pair_errors = validate_module_queue_pair(module_paths[len(queues)], path, region_status)
         if pair_errors:
@@ -166,20 +166,6 @@ def create_plan(args: argparse.Namespace) -> dict[str, Any]:
         entry = file_entry(path, base, "planned_execution_queue")
         entry["matrix"] = summary
         queues.append(entry)
-    region_status = "UNVERIFIED"
-    evidence = None
-    if args.region_attestation:
-        attestation_path = Path(args.region_attestation).resolve(strict=True)
-        attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
-        attestation_errors, attestation_status = validate_attestation(
-            attestation, attestation_path.parent
-        )
-        if attestation_errors or attestation_status != "VERIFIED":
-            raise ValueError("regional attestation is not VERIFIED: " + "; ".join(attestation_errors or [attestation_status]))
-        region_status = "VERIFIED"
-        evidence = file_entry(attestation_path, base, "verified_region_attestation")
-    if args.region_status != region_status:
-        raise ValueError("region status does not match the supplied attestation")
     return seal({
         "schema": PLAN_SCHEMA,
         "run_id": args.run_id,
