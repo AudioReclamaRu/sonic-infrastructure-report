@@ -59,8 +59,8 @@ class EvidenceRecordTests(unittest.TestCase):
             record = make_record()
             (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
             csv_path = root / "benchmark.csv"
-            headers = ["observation_id", "run_id", "country_code", "interface_locale", "platform", "measurement_mode", "query_id", "answer_status"]
-            row = {"observation_id": "obs-001", "run_id": "run-001", "country_code": "RU", "interface_locale": "ru-RU", "platform": "yandex_alice_ai", "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01", "answer_status": "OK"}
+            headers = ["observation_id", "run_id", "country_code", "interface_locale", "prompt_language", "answer_language", "platform", "platform_surface", "measurement_mode", "query_id", "intent", "query", "answer_status"]
+            row = {"observation_id": "obs-001", "run_id": "run-001", "country_code": "RU", "interface_locale": "ru-RU", "prompt_language": "ru", "answer_language": "ru", "platform": "yandex_alice_ai", "platform_surface": "Alice AI consumer interface", "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01", "intent": "generic_commercial", "query": "Где заказать рекламный аудиоролик?", "answer_status": "OK"}
             with csv_path.open("w", encoding="utf-8", newline="") as stream:
                 writer = csv.DictWriter(stream, fieldnames=headers)
                 writer.writeheader()
@@ -73,6 +73,62 @@ class EvidenceRecordTests(unittest.TestCase):
                 writer.writerow(row)
             errors = validate_batch(records, csv_path)
             self.assertTrue(any("platform does not match" in item for item in errors))
+
+
+    def _write_queue(self, root, prompt="Где заказать рекламный аудиоролик?", region_status="VERIFIED"):
+        path = root / "queue.csv"
+        fields = [
+            "query_id", "query", "intent", "country_code", "interface_locale",
+            "prompt_language", "answer_language", "platform", "platform_surface",
+            "measurement_mode", "execution_status", "region_verification",
+        ]
+        row = {
+            "query_id": "RU-GEN-AD-01", "query": prompt, "intent": "generic_commercial",
+            "country_code": "RU", "interface_locale": "ru-RU", "prompt_language": "ru",
+            "answer_language": "ru", "platform": "yandex_alice_ai",
+            "platform_surface": "Alice AI consumer interface", "measurement_mode": "consumer_ui",
+            "execution_status": "NOT_TESTED", "region_verification": region_status,
+        }
+        with path.open("w", encoding="utf-8", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=fields)
+            writer.writeheader()
+            writer.writerow(row)
+        return path
+
+    def test_batch_requires_exact_queue_cell_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            (records / "obs-001.json").write_text(json.dumps(make_record(), ensure_ascii=False), encoding="utf-8")
+            queue = self._write_queue(root)
+            self.assertEqual(validate_batch(records, queue_path=queue), [])
+            wrong_queue = self._write_queue(root, prompt="Другой точный запрос")
+            errors = validate_batch(records, queue_path=wrong_queue)
+            self.assertTrue(any("no exact matching planned queue cell" in item for item in errors))
+
+    def test_unverified_region_is_never_promoted_by_observation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            (records / "obs-001.json").write_text(json.dumps(make_record(), ensure_ascii=False), encoding="utf-8")
+            queue = self._write_queue(root, region_status="UNVERIFIED")
+            errors = validate_batch(records, queue_path=queue)
+            self.assertTrue(any("region is UNVERIFIED" in item for item in errors))
+
+
+    def test_verified_region_requires_explicit_primary_record_provenance(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            record = make_record()
+            record["market"]["region_evidence"] = ""
+            (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+            queue = self._write_queue(root, region_status="VERIFIED")
+            errors = validate_batch(records, queue_path=queue)
+            self.assertTrue(any("VERIFIED region requires explicit" in item for item in errors))
 
 if __name__ == "__main__":
     unittest.main()
