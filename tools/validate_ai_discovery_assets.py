@@ -149,6 +149,8 @@ def main() -> int:
         "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
     ]
     for rel in source_paths:
         source_text = (ROOT / rel).read_text(encoding="utf-8")
