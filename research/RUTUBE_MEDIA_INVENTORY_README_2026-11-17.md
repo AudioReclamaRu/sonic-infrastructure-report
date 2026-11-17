@@ -9,7 +9,7 @@ related:
 
 # RUTUBE Public Media Inventory — 2026-11-17
 
-This inventory captures 23 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
+This inventory captures 37 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
 
 ## Fields and interpretation
 
@@ -23,13 +23,15 @@ This inventory captures 23 publicly indexed RUTUBE assets attributed to the publ
 
 ## Findings
 
+0. A second discovery pass added 14 indexed assets: additional advertising spots (РИО, OneOwner, МЕГА, Скоровар, НЕПРОСПИ, ТЦ Новая Эра, and a Vladimir regional campaign), two general video-voiceover samples, a separate Ilya Gulko demo, a PhotoFunia video-making sample, an older Webcom promo, and an НСС synchronous-voiceover item. The НСС item is marked temporarily unavailable, not deleted.
+
 0. Three additional indexed items extend the service map: an НСС tariff-plan commercial (15 sec), a Russian Wealth greeting/IVR sample (24 sec), and a Sarov Business Bank deposit video (10 sec). The Sarov item is explicitly marked temporarily unavailable in the public result; it is not treated as deleted.
 
 1. The inventory spans service explainer, presentation narration, localization, dubbing/lip-sync, subtitles, advertising voice-over, voice demos, sound design, logo audio and film-trailer narration.
 2. Three generic presentation-narration entries (IDs `6b2195a00c6681c760fe3027e83c988f`, `a859a8ccbfddcd613676ca8786766ab9`, `498c5b58d739c33ad029a3dc98484678`) are treated as the same content based on the user's direct audiovisual review on 2026-11-17. This is recorded as `user_confirmed_identical_content`, not as an independently computed audio/video fingerprint. Their indexed durations (1:25, 3:07 and 1:20) conflict materially; retain all three source records and investigate whether duration metadata, page rendition or clip boundaries explain the discrepancy. Do not silently collapse the source IDs.
 3. Two items labelled Едок share a project name and 20-second duration but have different titles and IDs. This is a possible related-version cluster, not a confirmed duplicate.
 4. The service explainer RUTUBE description explicitly includes the YouTube URL `https://www.youtube.com/watch?v=MJJcbzR2wto`. This is a direct cross-platform link and a strong seed for matching the two assets.
-5. The indexed publication timestamp often shows 18 December 2025 while the age label says 11–16 years ago. This likely reflects different date semantics or migration/indexing behavior, but the cause is not established. Treat this as a metadata anomaly, not proof of reuploading.
+6. The indexed publication timestamp often shows 18 December 2025 while the age label says 11–16 years ago. This likely reflects different date semantics or migration/indexing behavior, but the cause is not established. Treat this as a metadata anomaly, not proof of reuploading.
 
 ## Limitations
 
@@ -41,4 +43,4 @@ This inventory captures 23 publicly indexed RUTUBE assets attributed to the publ
 
 ## Source coverage
 
-All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 23 items, not yet a complete channel scrape.
+All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 37 items, not yet a complete channel scrape.
