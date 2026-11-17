@@ -45,7 +45,8 @@ Finalization now runs the evidence checks itself. The standalone validator remai
 python tools/ai_visibility_benchmark.py validate research/runs/RU-2026-11-17-001/observations.csv
 python tools/ai_visibility_evidence.py validate-batch research/runs/RU-2026-11-17-001/evidence/ ^
   --csv research/runs/RU-2026-11-17-001/observations.csv ^
-  --queue research/queues/ru-generic-discovery.csv
+  --queue research/queues/ru-generic-discovery.csv ^
+  --run-id RU-2026-11-17-001
 \`\`\`
 
 Then freeze the output artifacts against the exact plan hash:
