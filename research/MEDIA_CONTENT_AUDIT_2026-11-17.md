@@ -24,9 +24,10 @@ Metrics are volatile and must always be stored with the capture date and source.
 
 ## Executive findings
 
-1. **RUTUBE has a discoverable portfolio footprint**, including service explainers, voice-over/dubbing examples, advertising videos, voice demos and short clips. The sampled public cards show very low displayed engagement: typically 1–5 views, with creator follower/subscriber labels varying between 1 and 3 across sampled cards. These are page-level snapshots, not channel analytics.
-2. **The content mix is broad but fragmented.** Titles range from descriptive service labels (e.g. video voice-over, advertising video, IVR/voice greeting) to generic clip labels ("Clip 1", "Clip 2", "Clip 4") and brand slogans. Generic titles are weak for search discovery because they do not identify the service, client problem, language, voice talent or use case.
-3. **A stale-price risk is present.** One RUTUBE video description publicly states 58,000 ₽ for a 30-second commercial, 55,000 ₽ for an IVR greeting, and 72 hours from payment. This is an observed historical statement only; current validity is unknown. Do not copy it into current price pages, AI answer prompts, profile descriptions or sales materials until checked against an approved current tariff.
+1. **RUTUBE has a discoverable portfolio footprint**, including service explainers, voice-over/dubbing examples, advertising videos, voice demos and short clips. Sampled public cards in this pass show low displayed counts, commonly 1–6 views, but this is platform-specific and must not be generalized to the brand's whole video footprint.
+2. **YouTube has a materially stronger historical discovery signal.** An indexed channel result for the channel at `youtube.com/@audioreclama` reports 513,155 views for the 13-year-old service explainer "Видео-Гид по услугам студии Аудио-Реклама.ru" and 91,365 for "Аудио+"; other historical voice demos show thousands of views. These are search-index snapshots (crawled last year), not current analytics. The service explainer also appears as a RUTUBE item with a displayed 3 views, suggesting platform-specific distribution differences; identity of the underlying asset is strongly indicated by title/description but a binary duplicate comparison is not yet performed.
+3. **The content mix is broad but fragmented.** Titles range from descriptive service labels (e.g. video voice-over, advertising video, IVR/voice greeting) to generic clip labels ("Clip 1", "Clip 2", "Clip 4") and brand slogans. Generic titles are weak for search discovery because they do not identify the service, client problem, language, voice talent or use case.
+4. **Historical pricing is inconsistent and potentially stale.** One RUTUBE voice-talent description states 58,000 ₽ for a 30-second commercial and 55,000 ₽ for an IVR greeting; another states 20,000 ₽ and 17,000 ₽ respectively, both with a 72-hour turnaround. These conflicting historical values cannot be reconciled from public cards. Neither should be treated as current. Do not copy them into current price pages, AI answer prompts, profile descriptions or sales materials until checked against an approved current tariff.
 4. **Date and metadata inconsistencies need care.** Some older portfolio pages display a platform publication timestamp of 18 December 2025 while the same card also shows age labels such as "13 years ago" or "6 months ago". Use the platform's explicit created/published fields when visible, retain the raw discrepancy, and do not infer a reliable last-activity date from search snippets alone.
 5. **Cross-platform presence is wider than the verified content inventory.** LinkedIn, YouTube, VK Video and RUTUBE have previously recorded public presences. Instagram, Facebook and Dzen URLs were supplied by the user, but their pages were not independently inspected in this pass. Ownership/admin access remains unverified across these surfaces.
 
@@ -46,12 +47,40 @@ Metrics are volatile and must always be stored with the capture date and source.
 
 The table is a selected sample, not an exhaustive inventory. Counts may change after capture, and indexed snippets may not represent the currently rendered page.
 
+
+## YouTube historical discovery signal
+
+The indexed result for the public channel at https://www.youtube.com/@audioreclama (channel ID `UCxTNs2bLhmUNsx2rz_txNBw`) exposes the following historical video counts in a result crawled last year:
+
+| Video | Indexed publication age | Indexed views | Interpretation |
+|---|---:|---:|---|
+| Видео-Гид по услугам студии Аудио-Реклама.ru | 13 years | 513,155 | Major historical discovery asset; should be treated as a candidate cornerstone explainer |
+| Аудио+ | 8 years | 91,365 | Strong historical reach for a service/utility concept |
+| Киреев Антон. Аудио-Реклама.ru | 7 years | 6,538 | Voice/demo content with meaningful historical reach |
+| Марина Гладкая Аудио-Реклама.ru | 7 years | 2,735 | Voice/demo content |
+| Петеляев Андрей. Аудио-Реклама.ru | 7 years | 2,139 | Voice/demo content |
+| Google. Озвучка. Диктор Вячеслав Тимошенко. Закадровая начитка. Студия Audio-Reclama.ru | 10 years | 1,369 | Search-descriptive service + talent title |
+| Жуланова Ольга. Аудио-Реклама.ru | 7 years | 1,289 | Voice/demo content |
+
+These counts are historical index observations, not live page counters or owner analytics. The same service explainer exists on RUTUBE under the title "Видео-Гид по услугам студии Аудио-Реклама.ru - просим репост :)" and its indexed RUTUBE card shows 3 views. The evidence suggests a significant difference between platform distribution histories; it does not establish the reason (audience size, recommendation, embeds, external referrals, age, or cross-post timing are not isolated).
+
+The YouTube channel's indexed description says the studio provides advertising and presentation sound. The listed keywords include voice recording, production, voice-over, radio and online narration. This is a platform-indexed description, not a verified current services/pricing statement.
+
+## Historical tariff conflict requiring source-of-truth review
+
+Two RUTUBE public descriptions expose conflicting historical prices:
+
+- [Диктор Сергей Чихачёв](https://rutube.ru/video/7e6fdc99e390e1cbdf5b3c585e7287df/): 58,000 ₽ for a 30-second commercial and 55,000 ₽ for IVR greeting (as recorded in the prior sample).
+- [Антон Киреев](https://rutube.ru/video/267161158b530c3e0b1e657379142d0e/): 20,000 ₽ for a 30-second commercial and 17,000 ₽ for IVR greeting; the description also says 72 hours from payment.
+
+The dates/contexts and tariff scope are not sufficiently established to reconcile these values. Treat both as historical, potentially stale statements. No price recommendation or edit is authorized.
+
 ## Cross-platform inventory status
 
 | Platform | Current evidence class | What is established | What remains unknown |
 |---|---|---|---|
 | RUTUBE | Direct public cards / indexed results | Branded creator attribution and multiple public portfolio/short-video pages | Full inventory, channel ownership, current analytics, rights, source files, cross-post relationships |
-| YouTube | Previously recorded public snapshot | Handle `@audioreclama` and branded video/channel presence were recorded; an earlier indexed snapshot showed 279 followers and one video at 2,207 views | Current counts, full inventory, channel owner/admin access, audience geography, current activity |
+| YouTube | Public indexed channel and video results | Channel ID `UCxTNs2bLhmUNsx2rz_txNBw`; indexed historical results show 513,155 views on the service explainer, 91,365 on "Аудио+", and multiple voice demos with thousands of views | Current counts, current analytics, full inventory, channel owner/admin access, audience geography, recent activity |
 | VK Video | Previously recorded indexed snapshot | Branded creator/community attribution and video IDs associated with community ID `-18300431` were recorded | Direct community identity, current metrics, ownership/admin access, full inventory, rights |
 | LinkedIn | Public company page indexed | Public company page describes media production and audio/video services | Current admin access and accuracy of profile claims; search-index snapshot may be stale |
 | Instagram | User-identified URL | https://www.instagram.com/audio_reclama_ru/ | Direct page content, identity, activity, metrics, ownership/admin access |
@@ -72,10 +101,10 @@ These are editorial recommendations, not instructions to publish or edit existin
 
 ## Next audit steps
 
-1. Build a full RUTUBE inventory by creator/channel and collect each public asset's stable ID, title, duration, explicit created/published dates, description, views, creator label and capture time.
+1. Build a full YouTube and RUTUBE inventory by creator/channel and collect each public asset's stable ID, title, duration, explicit created/published dates, description, views, creator label and capture time.
 2. Inspect YouTube and VK Video native public pages, separating current page data from search-engine snapshots.
 3. Revisit Instagram, Facebook and Dzen only when public pages are accessible; retain `USER_IDENTIFIED_PROFILE` until direct identity evidence exists.
-4. Create a deduplication graph across platforms using video IDs, titles, durations, thumbnails and source links; do not infer duplicates from title similarity alone.
+4. Create a deduplication graph across YouTube, RUTUBE and VK Video using video IDs, titles, durations, thumbnails and source links; do not infer duplicates from title similarity alone. Prioritize the 513k-view YouTube service explainer and its RUTUBE counterpart.
 5. Verify the old RUTUBE tariff statement against the currently approved pricing source before deciding whether it should remain public, be updated or be left untouched. No profile edit is authorized by this report.
 6. If channel analytics are later supplied by an authorized owner, add dated metrics for impressions/reach, watch time, retention, clicks, leads and conversions, keeping public counters separate.
 
@@ -87,6 +116,8 @@ These are editorial recommendations, not instructions to publish or edit existin
 - RUTUBE Clip 1, 22 July 2026: https://rutube.ru/video/b53874b7661d334ae5b6a15a6a013246/
 - RUTUBE service explainer: https://rutube.ru/video/1d312c393658146cae1c56746592dd43/
 - RUTUBE voice-talent / price video: https://rutube.ru/video/7e6fdc99e390e1cbdf5b3c585e7287df/
+- RUTUBE second historical tariff description: https://rutube.ru/video/267161158b530c3e0b1e657379142d0e/
+- YouTube historical channel result: https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw
 - RUTUBE RIO advertising video: https://rutube.ru/video/25f54baf0758c846baf3158f79cbec87/
 - RUTUBE OneOwner advertising video: https://rutube.ru/video/6fb4a0ab5da571465083e14655d70769/
 - RUTUBE voice-over sample: https://rutube.ru/video/3f16c932b8b6ecce805ab51a95abda4e/
