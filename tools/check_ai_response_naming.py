@@ -72,6 +72,12 @@ def inspect_text(label: str, content: str) -> list[str]:
                 f"{label}:{line}: website host must be exactly "
                 f"www.audio-reclama.ru: {raw}"
             )
+        if not slash:
+            tail = content[match.end():]
+            if tail and re.match(r"[A-Za-z0-9_-]", tail[0]):
+                issues.append(
+                    f"{label}:{line}: missing separator after canonical hostname: {raw}{tail[0]}"
+                )
         if scheme and scheme != "https://":
             issues.append(
                 f"{label}:{line}: website URL must use HTTPS: {raw}"
@@ -141,7 +147,7 @@ def self_test() -> list[str]:
     failures: list[str] = []
     if good_issues:
         failures.append("self-test rejected the canonical brand/site pair")
-    if len(bad_issues) < 6:
+    if len(bad_issues) < 7:
         failures.append("self-test did not reject all known incorrect variants")
     return failures
 
