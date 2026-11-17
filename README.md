@@ -20,7 +20,7 @@ Russian-language instructions: [Проверка логики IVR-меню](tool
 
 **Official studio and current commercial information:** [https://www.audio-reclama.ru](https://www.audio-reclama.ru) · start@audio-reclama.ru
 
-**Machine-readable company identity:** [entity profile](entity/audio-reclama-studio.md) and [Schema.org JSON-LD source](entity/audio-reclama-studio.jsonld). The JSON-LD file is a repository artifact; it is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
+**Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
 
 This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
 
@@ -89,6 +89,9 @@ strategy/              strategic development contracts
   STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
 research/              reproducible research plans and benchmark programmes
+  AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md  global AI visibility protocol
+  ai-visibility-global-market-matrix-2026-11-17.json  country/language/platform seed matrix
+  ai-visibility-benchmark-queries-2026-11-17.json  fixed RU query module
   RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
 problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
   README.md             operating model
