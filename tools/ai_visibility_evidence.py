@@ -4,9 +4,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
+
+from tools.ai_visibility_region import validate_attestation
 
 SCORE_KEYS = (
     "brand_identity", "official_route", "service_or_answer", "commercial_accuracy",
@@ -213,7 +216,9 @@ def validate_queue_links(
                     f"observation {observation_id}: VERIFIED region requires explicit market.region "
                     "and market.region_evidence in the primary record"
                 )
-            if expected_region_attestation:
+            if not expected_region_attestation:
+                errors.append(f"observation {observation_id}: VERIFIED queue requires the exact run region attestation")
+            else:
                 if market.get("region_attestation_id") != expected_region_attestation.get("attestation_id"):
                     errors.append(f"observation {observation_id}: region_attestation_id does not match the run passport")
                 if market.get("region_attestation_sha256") != expected_region_attestation.get("sha256"):
@@ -358,6 +363,7 @@ def main(argv=None) -> int:
     batch.add_argument("--csv", type=Path)
     batch.add_argument("--queue", type=Path, action="append", default=[], help="also require exact match to a planned execution queue; repeat for multiple queues")
     batch.add_argument("--run-id", help="require every record and CSV row to belong to this exact run ID")
+    batch.add_argument("--region-attestation", type=Path, help="require exact match to an independently reviewed regional attestation")
     args = parser.parse_args(argv)
     if args.command == "validate-record":
         try:
@@ -367,7 +373,25 @@ def main(argv=None) -> int:
         else:
             errors = validate_record(record)
     else:
-        errors = validate_batch(args.records_dir, args.csv, queue_paths=args.queue, expected_run_id=args.run_id)
+        expected_region_attestation = None
+        if args.region_attestation:
+            attestation_path = args.region_attestation.resolve(strict=True)
+            attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+            attestation_errors, attestation_status = validate_attestation(attestation, attestation_path.parent)
+            if attestation_errors or attestation_status != "VERIFIED":
+                errors = ["region attestation is not VERIFIED: " + "; ".join(attestation_errors or [attestation_status])]
+            else:
+                expected_region_attestation = {
+                    "attestation_id": attestation.get("attestation_id"),
+                    "sha256": hashlib.sha256(attestation_path.read_bytes()).hexdigest(),
+                    "session_captured_at_utc": (attestation.get("session_capture") or {}).get("captured_at_utc"),
+                }
+                errors = validate_batch(args.records_dir, args.csv, queue_paths=args.queue,
+                                        expected_run_id=args.run_id,
+                                        expected_region_attestation=expected_region_attestation)
+        else:
+            errors = validate_batch(args.records_dir, args.csv, queue_paths=args.queue,
+                                    expected_run_id=args.run_id)
     if errors:
         print("AI visibility evidence validation FAILED:")
         for error in errors:
