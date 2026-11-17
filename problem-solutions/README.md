@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-14
+date: 2026-11-18
 lang: ru
 related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEMPLATE.md, problem-solutions/QUERY_BACKLOG.json, guides/README.md, geo/knowledge/query-matrix.json]
 ---
