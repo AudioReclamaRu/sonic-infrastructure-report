@@ -90,7 +90,8 @@ def validate(path: Path):
             "search_mode", "grounding_state", "auth_status", "intent", "query_id",
         )
         key = tuple((row.get(field) or "").strip() for field in key_fields)
-        if all(key):
+        key_required_fields = ("run_id", "country_code", "interface_locale", "prompt_language", "answer_language", "platform", "platform_surface", "measurement_mode", "intent", "query_id")
+        if all((row.get(field) or "").strip() for field in key_required_fields):
             if key in seen:
                 errors.append(f"{prefix}: duplicate observation key {key}")
             seen.add(key)
