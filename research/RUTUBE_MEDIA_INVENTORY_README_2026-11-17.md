@@ -18,7 +18,7 @@ This inventory captures 23 publicly indexed RUTUBE assets attributed to the publ
 - `displayed_age_label`: platform age text as surfaced in the result.
 - `indexed_publication_timestamp`: timestamp rendered by the indexed result, where available. It frequently conflicts with the age label (e.g. 2025-12-18 versus 11–16 years ago). Preserve both; do not select one as the true original publication date without page-level evidence.
 - `capture_date`: date this research snapshot was compiled (2026-11-17), not the platform's publication date.
-- `duplicate_status`: `confirmed_cross_platform_link` means the RUTUBE description explicitly linked to a YouTube video ID; `possible_same_service_cluster` or `possible_related_version` means candidates for manual audiovisual comparison only, not proven duplicates.
+- `duplicate_status`: `confirmed_cross_platform_link` means the RUTUBE description explicitly linked to a YouTube video ID; `user_confirmed_identical_content` records the user's direct audiovisual review; `possible_same_service_cluster` or `possible_related_version` remains a candidate only, not a proven duplicate.
 - Blank numeric/date fields mean not reliably captured, not zero/none.
 
 ## Findings
