@@ -9,7 +9,7 @@ related:
 
 # RUTUBE Public Media Inventory — 2026-11-17
 
-This inventory captures 20 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
+This inventory captures 23 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
 
 ## Fields and interpretation
 
@@ -22,6 +22,8 @@ This inventory captures 20 publicly indexed RUTUBE assets attributed to the publ
 - Blank numeric/date fields mean not reliably captured, not zero/none.
 
 ## Findings
+
+0. Three additional indexed items extend the service map: an НСС tariff-plan commercial (15 sec), a Russian Wealth greeting/IVR sample (24 sec), and a Sarov Business Bank deposit video (10 sec). The Sarov item is explicitly marked temporarily unavailable in the public result; it is not treated as deleted.
 
 1. The inventory spans service explainer, presentation narration, localization, dubbing/lip-sync, subtitles, advertising voice-over, voice demos, sound design, logo audio and film-trailer narration.
 2. Three generic presentation-narration entries (IDs `6b2195a00c6681c760fe3027e83c988f`, `a859a8ccbfddcd613676ca8786766ab9`, `498c5b58d739c33ad029a3dc98484678`) are a candidate cluster because their titles are identical or near-identical but durations differ. They may be different examples, edited cuts or duplicate uploads. Compare the actual audiovisual content before consolidating.
@@ -39,4 +41,4 @@ This inventory captures 20 publicly indexed RUTUBE assets attributed to the publ
 
 ## Source coverage
 
-All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 20 items, not yet a complete channel scrape.
+All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 23 items, not yet a complete channel scrape.
