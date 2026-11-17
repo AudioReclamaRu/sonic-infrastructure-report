@@ -101,7 +101,7 @@ class CoverageAnalyzerTests(unittest.TestCase):
         markdown = render_markdown(report)
         self.assertIn("AI Visibility Coverage Report", markdown)
         self.assertIn("Collection coverage", markdown)
-        self.assertIn("NOT", " ".join(report["interpretation"]))
+        self.assertIn("not observations", " ".join(report["interpretation"]))
 
 
 if __name__ == "__main__":
