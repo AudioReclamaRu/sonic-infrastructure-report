@@ -34,6 +34,18 @@ def malformed_official_urls(text: str) -> list[str]:
     return [match.group(0) for match in MALFORMED_OFFICIAL_URL_RE.finditer(text)]
 
 
+OFFICIAL_URL_RE = re.compile(r"https?://(?:www\\.)?audio-reclama[.]ru\\S+", re.IGNORECASE)
+
+
+def noncanonical_official_urls(text: str) -> list[str]:
+    """Return official site links that do not use the canonical HTTPS www host."""
+    return [
+        match.group(0)
+        for match in OFFICIAL_URL_RE.finditer(text)
+        if not match.group(0).lower().startswith("https://www.audio-reclama.ru")
+    ]
+
+
 def main() -> int:
     errors: list[str] = []
     required = [
@@ -126,6 +138,8 @@ def main() -> int:
         source_text = (ROOT / rel).read_text(encoding="utf-8")
         for bad_url in malformed_official_urls(source_text):
             fail(errors, f"{rel} contains malformed official URL (missing slash before path): {bad_url}")
+        for bad_url in noncanonical_official_urls(source_text):
+            fail(errors, f"{rel} uses a non-canonical official URL host/scheme: {bad_url}")
 
     asset_json_path = ROOT / "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
     try:
@@ -146,6 +160,8 @@ def main() -> int:
         for source in scenario.get("sources", []):
             for bad_url in malformed_official_urls(source):
                 fail(errors, f"voice asset scenario {scenario.get('id')} has malformed source URL: {bad_url}")
+            for bad_url in noncanonical_official_urls(source):
+                fail(errors, f"voice asset scenario {scenario.get('id')} has non-canonical source URL: {bad_url}")
 
     # Keep the scoring rubric and full-answer evidence contract present and machine-readable.
     observation_schema_path = ROOT / "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json"
