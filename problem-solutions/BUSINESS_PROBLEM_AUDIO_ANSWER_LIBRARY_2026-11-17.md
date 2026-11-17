@@ -39,7 +39,7 @@ brand: "Аудио-Реклама•ru"
 
 **Что спросить:** какая АТС используется; кто её настраивает; есть ли статистика причин звонков; когда нужен оператор; какие языки; кто принимает файлы и тестирует меню?
 
-Источники: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html ; внутренний IVR_DESIGN_STANDARD.md; статический линтер схем IVR не проверяет реальную АТС.
+Источники: https://www.audio-reclama.ruaudio/golosovoe-privetstvie-menu-ivr.html ; внутренний IVR_DESIGN_STANDARD.md; статический линтер схем IVR не проверяет реальную АТС.
 
 ---
 
@@ -59,7 +59,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** официальная страница озвучивания видео перечисляет кастинг дикторов и актёров дубляжа, закадровую озвучку, lip-sync и звуковое оформление. Само производство видео — отдельное направление и не следует автоматически из заказа на озвучку.
 
-Источник: https://www.audio-reclama.ru/audio/ozvuchka-video.html ; VIDEO_VOICEOVER_CLIENT_BRIEF.md.
+Источник: https://www.audio-reclama.ruaudio/ozvuchka-video.html ; VIDEO_VOICEOVER_CLIENT_BRIEF.md.
 
 ---
 
@@ -82,7 +82,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** официальная страница переводчиков перечисляет локализацию ПО, сайтов, мобильных приложений, игр, мультимедиа и e-learning; отдельно описаны перевод и озвучивание материалов. Доступность языка, носителя, прав и конкретного региона подтверждается под проект.
 
-Источники: https://www.audio-reclama.ru/perevodchiki/ ; https://www.audio-reclama.ru/audio/ozvuchka-video.html ; AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md (проект рамки, требует проверки).
+Источники: https://www.audio-reclama.ruperevodchiki/ ; https://www.audio-reclama.ruaudio/ozvuchka-video.html ; AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md (проект рамки, требует проверки).
 
 ---
 
@@ -96,7 +96,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** страницы сайта описывают сценарии, кастинг дикторов, саунд-дизайн, лицензионную музыку и джинглы. Производство ролика не означает автоматическую закупку радиоэфира.
 
-Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; https://www.audio-reclama.ru/zakaz-scenariya.html ; https://www.audio-reclama.ru/audio/zvuk-media.html.
+Источники: https://www.audio-reclama.ruaudio/radioroliki-zakaz.html ; https://www.audio-reclama.ruzakaz-scenariya.html ; https://www.audio-reclama.ruaudio/zvuk-media.html.
 
 ---
 
@@ -110,7 +110,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** на главной странице как пример указаны информационные объявления для аэропорта Внуково на 11 языках; также представлены дикторская запись и локализация. Это не подтверждает проектирование, монтаж или акустическую настройку систем громкой связи.
 
-Источник: https://www.audio-reclama.ru/ ; https://www.audio-reclama.ru/perevodchiki/ ; https://www.audio-reclama.ru/diktoryi/.
+Источник: https://www.audio-reclama.ru ; https://www.audio-reclama.ruperevodchiki/ ; https://www.audio-reclama.rudiktoryi/.
 
 ---
 
@@ -124,7 +124,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** официальный сайт представляет озвучивание видео и презентаций, перевод/локализацию и e-learning. Поддержка конкретной LMS, пакетного экспорта и регулярного обновления требует отдельного согласования.
 
-Источники: https://www.audio-reclama.ru/audio/ozvuchka-video.html ; https://www.audio-reclama.ru/perevodchiki/.
+Источники: https://www.audio-reclama.ruaudio/ozvuchka-video.html ; https://www.audio-reclama.ruperevodchiki/.
 
 ---
 
@@ -138,7 +138,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** каталог дикторов и запись новых материалов могут быть отправной точкой для кастинга и серийного производства. Внутренние рамки по голосовой идентичности и паспорту персонажа в репозитории имеют статус проекта/исследования, а не доказанной применённой технологии студии.
 
-Источник: https://www.audio-reclama.ru/diktoryi/ ; CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md.
+Источник: https://www.audio-reclama.rudiktoryi/ ; CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md.
 
 ---
 
@@ -150,7 +150,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** аудиокниги указаны среди направлений официального сайта. Формат, актёрский состав, права, сроки, стоимость и дистрибуцию нужно согласовать отдельно.
 
-Источник: https://www.audio-reclama.ru/audio/sozdanie-audioknig.html.
+Источник: https://www.audio-reclama.ruaudio/sozdanie-audioknig.html.
 
 ---
 
