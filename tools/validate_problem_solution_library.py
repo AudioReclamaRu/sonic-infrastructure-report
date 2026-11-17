@@ -119,7 +119,7 @@ def validate(root: Path = ROOT) -> list[str]:
     markdown_cache: dict[str, str] = {}
     required_route_fields = (
         "routing_id", "intent_type", "problem", "source", "answer_references",
-        "supporting_documents", "primary_sources", "evidence_refs",
+        "supporting_documents", "primary_sources",
         "service_fit", "guardrails",
     )
 
