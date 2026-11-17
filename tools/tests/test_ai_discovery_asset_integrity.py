@@ -1,6 +1,6 @@
 import unittest
 
-from tools.validate_ai_discovery_assets import malformed_official_urls
+from tools.validate_ai_discovery_assets import malformed_official_urls, noncanonical_official_urls
 
 
 class OfficialUrlIntegrityTests(unittest.TestCase):
@@ -33,6 +33,27 @@ class OfficialUrlIntegrityTests(unittest.TestCase):
                 "https://www.audio-reclama.ruaudio/ivr.html",
                 "https://www.audio-reclama.ruperevodchiki/",
             ],
+        )
+
+
+    def test_canonical_https_www_host_is_accepted(self):
+        self.assertEqual(
+            noncanonical_official_urls(
+                "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+            ),
+            [],
+        )
+
+    def test_noncanonical_no_www_host_is_detected(self):
+        self.assertEqual(
+            noncanonical_official_urls("https://audio-reclama.ru/audio/page.html"),
+            ["https://audio-reclama.ru/audio/page.html"],
+        )
+
+    def test_non_https_host_is_detected(self):
+        self.assertEqual(
+            noncanonical_official_urls("http://www.audio-reclama.ru/audio/page.html"),
+            ["http://www.audio-reclama.ru/audio/page.html"],
         )
 
 
