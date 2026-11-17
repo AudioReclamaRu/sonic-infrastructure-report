@@ -115,11 +115,12 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append("problem-answer routing index entry_count must equal actual entries")
 
     routing_ids: list[str] = []
+    routing_benchmark_query_ids: list[str] = []
     source_cache: dict[str, dict] = {}
     markdown_cache: dict[str, str] = {}
     required_route_fields = (
         "routing_id", "intent_type", "problem", "source", "answer_references",
-        "supporting_documents", "primary_sources",
+        "supporting_documents", "primary_sources", "benchmark_query_ids",
         "service_fit", "guardrails",
     )
 
@@ -142,6 +143,18 @@ def validate(root: Path = ROOT) -> list[str]:
         routing_id = entry.get("routing_id")
         if isinstance(routing_id, str) and routing_id:
             routing_ids.append(routing_id)
+
+        benchmark_refs = entry.get("benchmark_query_ids")
+        if not isinstance(benchmark_refs, list) or not benchmark_refs:
+            errors.append(f"routing entry {routing_id or index} must have benchmark_query_ids")
+            benchmark_refs = []
+        if any(not isinstance(query_id, str) or not query_id for query_id in benchmark_refs):
+            errors.append(f"routing entry {routing_id or index} benchmark_query_ids must contain non-empty strings")
+        if len(benchmark_refs) != len(set(item for item in benchmark_refs if isinstance(item, str))):
+            errors.append(f"routing entry {routing_id or index} benchmark_query_ids must be unique")
+        routing_benchmark_query_ids.extend(
+            query_id for query_id in benchmark_refs if isinstance(query_id, str) and query_id
+        )
 
         source = entry.get("source")
         if not isinstance(source, dict):
@@ -284,6 +297,21 @@ def validate(root: Path = ROOT) -> list[str]:
                 errors.append(f"{label} does not resolve to a repository file: {source}")
     if len(query_ids) != len(set(query_ids)):
         errors.append("benchmark query IDs must be unique")
+
+    known_query_ids = set(query_ids)
+    unknown_route_queries = sorted(set(routing_benchmark_query_ids) - known_query_ids)
+    for query_id in unknown_route_queries:
+        errors.append(f"routing index references unknown benchmark query: {query_id}")
+
+    problem_query_ids = {
+        query.get("id") for query in queries
+        if isinstance(query, dict) and query.get("cluster") == "problem_solving"
+        and isinstance(query.get("id"), str)
+    }
+    mapped_problem_queries = set(routing_benchmark_query_ids) & problem_query_ids
+    for query_id in sorted(problem_query_ids - mapped_problem_queries):
+        errors.append(f"problem-solving benchmark query is not mapped to an answer route: {query_id}")
+
     return errors
 
 
