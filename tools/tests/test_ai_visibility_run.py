@@ -36,7 +36,7 @@ class RunPassportTests(unittest.TestCase):
         args = Namespace(
             output=self.passport, run_id="run-2026-11-17-001",
             module=[str(self.module)], queue=[str(self.queue)],
-            region_status="UNVERIFIED", notes="test", operator_label="tester",
+            region_status="UNVERIFIED", region_attestation=None, notes="test", operator_label="tester",
         )
         write_json(self.passport, create_plan(args))
 
