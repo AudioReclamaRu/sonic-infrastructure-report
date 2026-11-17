@@ -55,4 +55,4 @@ Any validation error stops report generation. The report does not alter the sour
 python -m unittest tools.tests.test_ai_visibility_report -v
 \`\`\`
 
-The builder is offline-only. It performs no provider requests, geolocation lookups, paid checks, website changes or publication.
+The JSON output follows research/AI_VISIBILITY_FINAL_REPORT_SCHEMA_2026-11-17.json. The builder is offline-only. It performs no provider requests, geolocation lookups, paid checks, website changes or publication.
