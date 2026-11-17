@@ -159,6 +159,25 @@ def validate_rows(rows: list[dict[str, str]], expected: list[dict[str, str]] | N
                 errors.append(f"missing query/platform combinations: {missing[:10]}")
             if extra:
                 errors.append(f"unexpected query/platform combinations: {extra[:10]}")
+
+        # A queue is a deterministic serialization of its frozen module, not
+        # merely a set of query/platform IDs. Compare every field and row order
+        # so edited prompts, locale, intent, surfaces, modes, priorities,
+        # notes, statuses, region labels or queue IDs cannot pass validation.
+        if len(rows) != len(expected):
+            errors.append(
+                f"queue row count {len(rows)} does not match frozen module row count {len(expected)}"
+            )
+        for line, (actual_row, expected_row) in enumerate(zip(rows, expected), start=2):
+            differences = [
+                field for field in QUEUE_FIELDS
+                if (actual_row.get(field) or "") != (expected_row.get(field) or "")
+            ]
+            if differences:
+                errors.append(
+                    f"line {line}: differs from deterministic frozen-module output in "
+                    + ", ".join(differences)
+                )
     return errors
 
 
