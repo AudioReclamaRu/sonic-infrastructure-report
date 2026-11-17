@@ -35,7 +35,7 @@ class RegionAttestationTests(unittest.TestCase):
                 "vpn_detected": False,
                 "proxy_detected": False,
                 "remote_desktop_detected": False,
-                "ip_fingerprint_sha256": "a" * 64,
+                "ip_fingerprint_hmac_sha256": "a" * 64,
                 "provider_name": "Example Local ISP",
             },
             "geolocation_sources": [
