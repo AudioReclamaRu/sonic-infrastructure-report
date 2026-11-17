@@ -153,6 +153,7 @@ def prepare_run(
             "plan_passport": {
                 "path": "passport.json",
                 "sha256": passport["passport_sha256"],
+                "file_sha256": digest_file(passport_path),
             },
             "capture_packet": {
                 "path": "capture-packet/",
@@ -186,7 +187,7 @@ def prepare_run(
 
 ## Next action
 
-Review capture-packet/README_CAPTURE.md. The package contains no observations. Fill the templates only from actual consumer sessions, then run the evidence validator, finalize the result passport, validate it and generate the final report.
+First run the offline package integrity check: `python tools/ai_visibility_package.py --package-dir <this-package-directory>`. Then review capture-packet/README_CAPTURE.md. The package contains no observations. Fill the templates only from actual consumer sessions, then run the evidence validator, finalize the result passport, validate it and generate the final report.
 
 Do not use a VPN, proxy, cloud host or remote desktop for the RU consumer baseline. Every observation must be within 30 minutes of the verified session capture. If the session window expires, create a new attestation and a new run package.
 """
