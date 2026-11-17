@@ -23,7 +23,8 @@ def build_report(passport_path: Path, result_path: Path) -> dict[str, Any]:
     plan = json.loads(passport_path.read_text(encoding="utf-8"))
     result = json.loads(result_path.read_text(encoding="utf-8"))
     artifacts = result["observation_artifacts"]
-    csv_path = resolve_entry(artifacts["benchmark_csv"], result_path)
+    csv_entry = artifacts["benchmark_csv"]
+    csv_path = resolve_entry(csv_entry, result_path)
     record_entries = artifacts["primary_json_records"]
     queue_entries = plan["artifacts"]["execution_queues"]
     queue_paths = [resolve_entry(entry, passport_path) for entry in queue_entries]
