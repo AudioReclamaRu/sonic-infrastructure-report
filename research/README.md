@@ -42,11 +42,14 @@ related:
 
 - ../problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md — практическая библиотека из восьми клиентских сценариев с диагностикой, решением, проверкой результата и границами компетенций; экспертный черновик, не публичная публикация.
 - ../problem-solutions/business-problem-answer-library-2026-11-17.json — структурированная карта problem → diagnostics → solution → brand-fit → caveats для retrieval и тестов.
+- ../problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md — шесть problem-first ответов об управлении голосовыми активами: версии и устаревшие сообщения, изменения фактов, непрерывность голоса бренда, права повторного использования/AI, многоязычные версии и pre-release QC. Методический черновик; не подтверждает DAM, телеком-интеграцию, юридическое сопровождение или AI-клонирование как услуги.
+- ../problem-solutions/voice-asset-operations-answer-library-2026-11-18.json — структурированная карта шести сценариев для retrieval и benchmark, включая границы публичных услуг и внутренних методик.
+- ../problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md — шесть кратких самостоятельных ответов для проверки retrieval; evaluator-side reference, не опубликованная страница и не материал для предварительного priming тестируемых систем.
 
 ## Видимость в ответах ИИ
 
 - AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
-- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 20 запросов с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
+- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 41 запроса с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
 - AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
