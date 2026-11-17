@@ -21,6 +21,31 @@ def fail(errors: list[str], message: str) -> None:
     errors.append(message)
 
 
+# Detect a malformed canonical host whose path was accidentally concatenated
+# directly to ".ru" (for example: https://www.audio-reclama.ruaudio/page.html).
+MALFORMED_OFFICIAL_URL_RE = re.compile(
+    r"https://www[.]audio-reclama[.]ru(?=[A-Za-z0-9_-])\S+",
+    re.IGNORECASE,
+)
+
+
+def malformed_official_urls(text: str) -> list[str]:
+    """Return official-domain URLs with a missing slash before their path."""
+    return [match.group(0) for match in MALFORMED_OFFICIAL_URL_RE.finditer(text)]
+
+
+OFFICIAL_URL_RE = re.compile(r"https?://(?:www[.])?audio-reclama[.]ru\S+", re.IGNORECASE)
+
+
+def noncanonical_official_urls(text: str) -> list[str]:
+    """Return official site links that do not use the canonical HTTPS www host."""
+    return [
+        match.group(0)
+        for match in OFFICIAL_URL_RE.finditer(text)
+        if not match.group(0).lower().startswith("https://www.audio-reclama.ru")
+    ]
+
+
 def main() -> int:
     errors: list[str] = []
     required = [
@@ -38,6 +63,16 @@ def main() -> int:
         "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json",
         "tools/ai_visibility_evidence.py",
         "tools/tests/test_ai_visibility_evidence.py",
+        "research/README.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json",
+        "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -77,6 +112,13 @@ def main() -> int:
         fail(errors, "unexpected benchmark schema")
     if len(queries) < 20:
         fail(errors, f"expected at least 20 fixed queries, found {len(queries)}")
+    if benchmark.get("query_count") != len(queries):
+        fail(errors, f"benchmark query_count must equal actual query count ({len(queries)})")
+
+    research_index = (ROOT / "research/README.md").read_text(encoding="utf-8")
+    count_pattern = rf"фиксированный RU-набор из {len(queries)} запрос(?:а|ов)"
+    if not re.search(count_pattern, research_index, flags=re.IGNORECASE):
+        fail(errors, f"research README must document the benchmark's actual {len(queries)}-query count")
     ids = [q.get("id") for q in queries]
     if len(ids) != len(set(ids)):
         fail(errors, "benchmark query IDs must be unique")
@@ -88,6 +130,48 @@ def main() -> int:
                 fail(errors, f"query {index} missing required field: {field}")
         if query.get("status") != "not_run":
             fail(errors, f"query {query.get('id')} must remain not_run until executed")
+
+    # Validate source URLs in problem-answer assets. A broken URL defeats evidence retrieval
+    # even when the prose and JSON structure otherwise pass.
+    source_paths = [
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json",
+        "research/ai-visibility-benchmark-queries-2026-11-17.json",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+    ]
+    for rel in source_paths:
+        source_text = (ROOT / rel).read_text(encoding="utf-8")
+        for bad_url in malformed_official_urls(source_text):
+            fail(errors, f"{rel} contains malformed official URL (missing slash before path): {bad_url}")
+        for bad_url in noncanonical_official_urls(source_text):
+            fail(errors, f"{rel} uses a non-canonical official URL host/scheme: {bad_url}")
+
+    asset_json_path = ROOT / "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
+    try:
+        asset_library = json.loads(asset_json_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(errors, f"invalid voice asset operations JSON: {exc}")
+        asset_library = {}
+    if asset_library.get("schema") != "audio-reclama/voice-asset-operations/1":
+        fail(errors, "unexpected voice asset operations schema")
+    scenarios = asset_library.get("scenarios", [])
+    if len(scenarios) != 6:
+        fail(errors, f"expected 6 voice asset operation scenarios, found {len(scenarios)}")
+    for scenario in scenarios:
+        for field in ("id", "problem", "diagnostic_questions", "solution_steps",
+                      "quality_checks", "public_service_fit", "sources", "must_not_claim", "status"):
+            if not scenario.get(field):
+                fail(errors, f"voice asset scenario {scenario.get('id')} missing field: {field}")
+        for source in scenario.get("sources", []):
+            for bad_url in malformed_official_urls(source):
+                fail(errors, f"voice asset scenario {scenario.get('id')} has malformed source URL: {bad_url}")
+            for bad_url in noncanonical_official_urls(source):
+                fail(errors, f"voice asset scenario {scenario.get('id')} has non-canonical source URL: {bad_url}")
 
     # Keep the scoring rubric and full-answer evidence contract present and machine-readable.
     observation_schema_path = ROOT / "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json"
@@ -130,6 +214,27 @@ def main() -> int:
         fail(errors, "repository llms.txt must expose citation metadata")
     if SITE not in llms:
         fail(errors, "repository llms.txt must point to the canonical website")
+
+    # Keep the root LLM navigation aligned with the current evidence and problem-first library.
+    llms_required_paths = [
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "entity/kirill-kalinin.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+    ]
+    for rel in llms_required_paths:
+        if rel not in llms:
+            fail(errors, f"repository llms.txt is missing problem-first knowledge link: {rel}")
+    if "41 русскоязычного" not in llms:
+        fail(errors, "repository llms.txt must reflect the current 41-query benchmark")
+    if "все `not_run`" not in llms:
+        fail(errors, "repository llms.txt must state that the 41-query benchmark is not run")
     if "audio-reclama.com" in llms or "https://audio-reclama.ru" in llms:
         fail(errors, "repository llms.txt contains a conflicting website host")
     if re.search(r"https://www\.audio-reclama\.ru/(?:[\s),.;:!?]|$)", llms):
