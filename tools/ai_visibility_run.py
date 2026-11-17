@@ -244,6 +244,8 @@ def validate_plan(path: Path) -> tuple[list[str], dict[str, Any] | None]:
                     errors.append("region attestation no longer validates as VERIFIED: " + "; ".join(attestation_errors or [attestation_status]))
             except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
                 errors.append(f"cannot validate region attestation: {exc}")
+    elif region_entry is not None:
+        errors.append("UNVERIFIED passport must not contain a region attestation")
     for entry in entries:
         try:
             artifact_path = resolve_entry(entry, path)
