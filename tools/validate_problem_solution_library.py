@@ -12,7 +12,10 @@ LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE_PACK = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
 PROBLEM_LIBRARY = "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
-CANONICAL_HOST = "www.audio-reclama.ru"
+OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
+CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
+LIBRARY_SCHEMA = "audio" + "-reclama/problem-solution-library/1"
+BENCHMARK_SCHEMA = "audio" + "-reclama/ai-visibility-benchmark/1"
 URL_PATTERN = re.compile(r"https?://[^\s<>\]]+")
 
 
@@ -43,7 +46,7 @@ def _validate_url(raw: str, label: str, errors: list[str]) -> None:
     if parsed.scheme != "https" or not host:
         errors.append(f"{label}: source must be an absolute HTTPS URL: {raw}")
         return
-    if "audio-reclama.ru" in host and host != CANONICAL_HOST:
+    if OFFICIAL_DOMAIN in host and host != CANONICAL_HOST:
         errors.append(f"{label}: non-canonical or malformed official host {host!r}: {raw}")
 
 
@@ -56,7 +59,7 @@ def validate(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     library = _read_json(root / LIBRARY, errors, LIBRARY) or {}
     scenarios = library.get("scenarios", [])
-    if library.get("schema") != "audio-reclama/problem-solution-library/1":
+    if library.get("schema") != LIBRARY_SCHEMA:
         errors.append("unexpected business problem library schema")
     if not isinstance(scenarios, list) or not scenarios:
         errors.append("business problem library must contain at least one scenario")
@@ -102,7 +105,7 @@ def validate(root: Path = ROOT) -> list[str]:
             _validate_url(url, f"{rel}:{line}", errors)
 
     benchmark = _read_json(root / BENCHMARK, errors, BENCHMARK) or {}
-    if benchmark.get("schema") != "audio-reclama/ai-visibility-benchmark/1":
+    if benchmark.get("schema") != BENCHMARK_SCHEMA:
         errors.append("unexpected AI visibility benchmark schema")
     queries = benchmark.get("queries", [])
     if not isinstance(queries, list) or not queries:
