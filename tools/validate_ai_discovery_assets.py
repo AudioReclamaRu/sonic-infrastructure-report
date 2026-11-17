@@ -67,6 +67,11 @@ def main() -> int:
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
+        "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "tools/validate_problem_solution_library.py",
         "problem-solutions/business-problem-answer-library-2026-11-17.json",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -143,6 +148,7 @@ def main() -> int:
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
     ]
     for rel in source_paths:
         source_text = (ROOT / rel).read_text(encoding="utf-8")
@@ -227,14 +233,18 @@ def main() -> int:
         "entity/kirill-kalinin.md",
         "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
+        "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
     ]
     for rel in llms_required_paths:
         if rel not in llms:
             fail(errors, f"repository llms.txt is missing problem-first knowledge link: {rel}")
-    if "41 русскоязычного" not in llms:
-        fail(errors, "repository llms.txt must reflect the current 41-query benchmark")
+    if f"{len(queries)} русскоязычного" not in llms:
+        fail(errors, f"repository llms.txt must reflect the current {len(queries)}-query benchmark")
     if "все `not_run`" not in llms:
-        fail(errors, "repository llms.txt must state that the 41-query benchmark is not run")
+        fail(errors, f"repository llms.txt must state that the {len(queries)}-query benchmark is not run")
     if "audio-reclama.com" in llms or "https://audio-reclama.ru" in llms:
         fail(errors, "repository llms.txt contains a conflicting website host")
     if re.search(r"https://www\.audio-reclama\.ru/(?:[\s),.;:!?]|$)", llms):
@@ -252,8 +262,8 @@ def main() -> int:
     entity_md = (ROOT / "entity/audio-reclama-studio.md").read_text(encoding="utf-8")
     if BRAND not in entity_md or SITE not in entity_md:
         fail(errors, "company entity profile is missing canonical identity")
-    if "622" not in entity_md or "620" not in entity_md:
-        fail(errors, "company entity profile must preserve the observed counter discrepancy")
+    if "622" not in entity_md or "309" not in entity_md:
+        fail(errors, "company entity profile must distinguish homepage total from Russian-filter count")
 
     protocol = (ROOT / "research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md").read_text(encoding="utf-8")
     if "ещё не прогнаны" not in protocol and "ещё не прогнаны" not in protocol.lower():
