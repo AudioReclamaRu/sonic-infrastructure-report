@@ -5,6 +5,7 @@ lang: en
 related:
   - research/RUTUBE_MEDIA_INVENTORY_2026-11-17.csv
   - research/MEDIA_CONTENT_AUDIT_2026-11-17.md
+  - research/RUTUBE_PAGE_METADATA_VERIFICATION_2026-11-17.csv
 ---
 
 # RUTUBE Public Media Inventory — 2026-11-17
@@ -37,7 +38,8 @@ This inventory captures 55 publicly indexed RUTUBE assets attributed to the publ
 8. Two Webcom promo entries have the same displayed duration (35 sec) but different titles/IDs (`bb09d1b11b3bf0fd842696c2225a9477` and `183370cb7bf9436a4726c0088f111223`); this is a possible related-version cluster, not proof of duplicate content.
 9. Two items labelled Едок share a project name and 20-second duration but have different titles and IDs. This is a possible related-version cluster, not a confirmed duplicate.
 10. The service explainer RUTUBE description explicitly includes the YouTube URL `https://www.youtube.com/watch?v=MJJcbzR2wto`. This is a direct cross-platform link and a strong seed for matching the two assets.
-11. The indexed publication timestamp often shows 18 December 2025 while the age label says 11–16 years ago. This likely reflects different date semantics or migration/indexing behavior, but the cause is not established. Treat this as a metadata anomaly, not proof of reuploading.
+11. Page-level metadata verification resolves the date anomaly for four checked RUTUBE pages: the service explainer was published 2012-11-13; two presentation samples were published 2015-07-10; the third presentation sample was published 2025-12-15. Search-index timestamps showing 2025-12-18 are not reliable original publication dates for these records.
+12. Page-level duration metadata differs from rounded public snippet durations by one second for two presentation clips: 86 vs 85 sec and 188 vs 187 sec. The third is 80 sec in both. Preserve both representations in the metadata verification file.
 
 ## Limitations
 
