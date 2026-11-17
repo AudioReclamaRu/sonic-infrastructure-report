@@ -107,6 +107,22 @@ class EvidenceRecordTests(unittest.TestCase):
             errors = validate_batch(records, queue_path=wrong_queue)
             self.assertTrue(any("no exact matching planned queue cell" in item for item in errors))
 
+
+    def test_batch_matches_across_multiple_frozen_queues(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            (records / "obs-001.json").write_text(json.dumps(make_record(), ensure_ascii=False), encoding="utf-8")
+            matching = self._write_queue(root)
+            matching.rename(root / "queue-matching.csv")
+            nonmatching = self._write_queue(root, prompt="Another exact prompt")
+            errors = validate_batch(
+                records,
+                queue_paths=[root / "queue-matching.csv", nonmatching],
+            )
+            self.assertEqual(errors, [])
+
     def test_unverified_region_is_never_promoted_by_observation(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
