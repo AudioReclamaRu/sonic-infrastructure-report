@@ -64,6 +64,10 @@ def main() -> int:
         "tools/ai_visibility_evidence.py",
         "tools/tests/test_ai_visibility_evidence.py",
         "research/README.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json",
+        "problem-solutions/business-problem-answer-library-2026-11-17.json",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
@@ -130,9 +134,14 @@ def main() -> int:
     # Validate source URLs in problem-answer assets. A broken URL defeats evidence retrieval
     # even when the prose and JSON structure otherwise pass.
     source_paths = [
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/business-problem-answer-library-2026-11-17.json",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
     ]
     for rel in source_paths:
         source_text = (ROOT / rel).read_text(encoding="utf-8")
