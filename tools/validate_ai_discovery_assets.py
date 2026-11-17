@@ -279,7 +279,7 @@ def main() -> int:
             print(f" - {error}")
         return 1
 
-    print("AI Discovery assets OK: canonical entity, JSON-LD, llms index, {len(queries)} unrun fixed queries, 29 × 12 RU queue, anchored scoring rubric and observation schema.")
+    print(f"AI Discovery assets OK: canonical entity, JSON-LD, llms index, {len(queries)} unrun fixed queries, 29 × 12 RU queue, anchored scoring rubric and observation schema.")
     return 0
 
 
