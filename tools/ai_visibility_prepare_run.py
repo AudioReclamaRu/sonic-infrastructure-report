@@ -43,7 +43,7 @@ def _evidence_files(value: Any) -> set[str]:
 def _copy_region_inputs(attestation: dict[str, Any], source_dir: Path, target_dir: Path) -> None:
     """Copy exact evidence bytes while preserving attestation-relative paths."""
     source_root = source_dir.resolve(strict=True)
-    target_dir.mkdir(parents=True, exist_ok=True)
+    snapshots: list[tuple[Path, Path]] = []
     for relative_name in sorted(_evidence_files(attestation)):
         relative = Path(relative_name)
         if relative.is_absolute() or ".." in relative.parts:
@@ -55,6 +55,10 @@ def _copy_region_inputs(attestation: dict[str, Any], source_dir: Path, target_di
             raise ValueError(f"regional evidence path escapes attestation directory: {relative_name}") from exc
         if not source.is_file():
             raise ValueError(f"regional evidence artifact is not a regular file: {relative_name}")
+        snapshots.append((source, relative))
+
+    target_dir.mkdir(parents=True, exist_ok=True)
+    for source, relative in snapshots:
         destination = target_dir / relative
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, destination)
