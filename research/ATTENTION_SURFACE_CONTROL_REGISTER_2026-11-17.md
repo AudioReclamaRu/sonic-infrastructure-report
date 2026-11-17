@@ -151,9 +151,10 @@ related:
 
 - [ATTENTION_ACQUISITION_SYSTEM](../strategy/ATTENTION_ACQUISITION_SYSTEM.md)
 - [ATTENTION_ECOSYSTEM_RECON_2026-11-14](../strategy/ATTENTION_ECOSYSTEM_RECON_2026-11-14.md)
-- [EXTERNAL_ACQUISITION_SURFACES_AUDIT_2026-11-15](EXTERNAL_ACQUISITION_SURFACES_AUDIT_2026-11-15.md)
-- [ACQUISITION_CHANNEL_AUDIT_2026-11-15](ACQUISITION_CHANNEL_AUDIT_2026-11-15.md)
-- [E-2026-049](../evidence/E-2026-049.md)
+- [PR #11 — аудит внешних профилей и owner-access маршрутов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/11) — содержит исторический аудит и E-2026-049; PR открыт и не входит в main.
+- [PR #10 — аудит acquisition-каналов и профильный update pack](https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/10) — содержит отдельный исторический аудит; PR открыт и не входит в main.
+
+Материалы PR #10/#11 не представлены как файлы текущей ветки: до их отдельного принятия ссылки ведут на сами pull requests.
 
 «Аудио-Реклама•ru»  
 https://www.audio-reclama.ru
