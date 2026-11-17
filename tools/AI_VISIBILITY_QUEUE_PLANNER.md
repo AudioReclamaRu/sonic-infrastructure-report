@@ -1,19 +1,20 @@
 ---
 type: tool
-date: 2026-11-17
+date: 2026-11-18
 lang: ru
 related:
   - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
   - research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json
+  - research/ai-visibility-ru-brand-service-queries-2026-11-18.json
   - research/ai-visibility-benchmark-queries-2026-11-17.json
   - tools/AI_VISIBILITY_BENCHMARK.md
 ---
 
 # AI Visibility Queue Planner
 
-The queue planner turns a frozen query module into an explicit, auditable execution matrix. It is an offline planning tool: it does not call providers, infer region access, or create observations.
+Планировщик превращает отдельный frozen query-module в явную, проверяемую матрицу запуска. Это офлайн-инструмент подготовки: он не обращается к провайдерам, не подтверждает регион и не создаёт наблюдения.
 
-## Generate a queue
+## Подготовить очереди
 
 ```bash
 python tools/ai_visibility_queue.py generate \
@@ -21,34 +22,43 @@ python tools/ai_visibility_queue.py generate \
   --output research/queues/ru-generic-discovery-queue.csv
 
 python tools/ai_visibility_queue.py generate \
-  --module research/ai-visibility-benchmark-queries-2026-11-17.json \
+  --module research/ai-visibility-ru-brand-service-queries-2026-11-18.json \
   --output research/queues/ru-brand-service-queue.csv
 ```
 
-For the current RU modules, the expected Cartesian products are 29 prompts × 12 platform surfaces (348 planned rows) for generic discovery, and 20 prompts × 12 platform surfaces (240 planned rows) for brand/service verification. Counts are derived from the source files; the tool does not hard-code them.
+Для текущей первой российской волны ожидается:
 
-## Validate coverage
+- Generic discovery: 29 небрендированных запросов × 12 поверхностей = 348 плановых строк.
+- Brand/service verification: 20 брендовых и сервисных запросов × 12 поверхностей = 240 плановых строк.
+
+Второй источник — отдельный исполнимый query-module, построенный из фиксированного benchmark-набора. Нельзя передавать непосредственно файл ai-visibility-benchmark-queries-2026-11-17.json: этот evaluator-файл не содержит обязательных для планировщика полей market и platform_execution_order. Это сохраняет различие между контрольными ответами benchmark и исполнимым определением эксперимента.
+
+## Проверить покрытие
 
 ```bash
 python tools/ai_visibility_queue.py validate \
   --queue research/queues/ru-generic-discovery-queue.csv \
   --module research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json
+
+python tools/ai_visibility_queue.py validate \
+  --queue research/queues/ru-brand-service-queue.csv \
+  --module research/ai-visibility-ru-brand-service-queries-2026-11-18.json
 ```
 
-Validation checks required fields, duplicate IDs and query/platform pairs, legal measurement modes, planned-state integrity, and complete Cartesian coverage against the frozen source module.
+Проверяются обязательные поля, дубли ID и пар query/platform, допустимые режимы измерения, целостность планового статуса и полное декартово покрытие исходного модуля.
 
-## Safety and interpretation
+## Безопасность и интерпретация
 
-- Every generated row starts as `NOT_TESTED`; region verification starts as `UNVERIFIED`.
-- The planner does not treat the user's current location, a provider's nominal country list, or a proxy as proof of actual test region.
-- `consumer_ui`, `model_api`, and `search_results_ui` remain separate measurement modes.
-- Generic-discovery prompts are checked for accidental brand/domain hints when the source marks them as unbranded.
-- Queue CSVs are not benchmark observation CSVs. Do not pass them to `ai_visibility_benchmark.py`; only completed, evidence-linked observations belong there.
-- The source query modules are immutable experiment definitions once collection begins. Create a new version rather than editing prompts after observations exist.
-- No network, AI API, paid tracker, Firecrawl credits, website access, or website modification is used.
+- Каждая сгенерированная строка начинается с NOT_TESTED; региональная проверка — UNVERIFIED.
+- Текущая геолокация пользователя, номинальный список стран провайдера или прокси не доказывают регион реального запуска.
+- consumer_ui, model_api и search_results_ui остаются отдельными режимами. В конкретном модуле присутствуют только реально перечисленные поверхности; отсутствие режима не дополняется догадкой.
+- Generic discovery проверяется на случайные брендовые подсказки, когда в модуле явно задано brand_in_prompt=false.
+- CSV очереди не являются benchmark CSV наблюдений. Не передавать их в ai_visibility_benchmark.py; только фактически полученные ответы с привязанными доказательствами становятся наблюдениями.
+- После начала измерений нельзя переписывать frozen query-module: изменения оформляются новой версией.
+- Не используются сеть, AI API, платный трекер, кредиты Firecrawl; сайт не читается и не изменяется этим инструментом.
 
-## Tests
+## Тесты
 
 ```bash
-python -m unittest tools.tests.test_ai_visibility_queue -v
+python -m unittest tools.tests.test_ai_visibility_queue tools.tests.test_ai_visibility_ru_brand_service_queue -v
 ```
