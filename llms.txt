@@ -72,3 +72,5 @@
 
 - [AI Visibility scoring rubric](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md): anchored 0/1/2/null criteria for eight scoring axes, generic discovery and critical errors.
 - [Immutable observation record schema](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json): preserves full answers, exact prompts, market/surface metadata and source evidence before CSV aggregation.
+
+- [Offline AI observation evidence validator](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ai_visibility_evidence.py): validates full JSON records and enforces one-to-one CSV evidence linkage without network calls.
