@@ -17,6 +17,7 @@ def fixture_root():
     (root / "problem-solutions").mkdir()
     (root / "research").mkdir()
     (root / "guides").mkdir()
+    (root / "evidence").mkdir()
     library = {
         "schema": "audio-reclama/problem-solution-library/1",
         "scenarios": [{
@@ -57,6 +58,11 @@ def fixture_root():
         encoding="utf-8",
     )
     (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
+    (root / "evidence/ivr.md").write_text(
+        "---\nid: E-TEST-001\ntype: evidence\nstatus: verified\n---\n"
+        "Primary source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
+        encoding="utf-8",
+    )
     routing = {
         "schema": "audio-reclama/problem-answer-routing/1",
         "version": "1.0.0",
@@ -75,7 +81,7 @@ def fixture_root():
             "primary_sources": [
                 "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
             ],
-            "evidence_refs": [],
+            "evidence_refs": ["evidence/ivr.md"],
             "service_fit": ["IVR voice prompts"],
             "guardrails": ["PBX administration is not implied"],
         }],
@@ -158,6 +164,38 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(ROUTING, routing)
         errors = validate(self.root)
         self.assertTrue(any("does not resolve scenario" in e for e in errors))
+
+
+    def test_routing_entry_requires_source_grounded_evidence(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["evidence_refs"] = []
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("must have non-empty source-grounded evidence_refs" in e for e in errors))
+
+    def test_routing_evidence_must_match_primary_source(self):
+        (self.root / "evidence/unrelated.md").write_text(
+            "---\\nid: E-TEST-002\\ntype: evidence\\nstatus: verified\\n---\\n"
+            "Primary source: https://www.audio-reclama.ru/faq.html\\n",
+            encoding="utf-8",
+        )
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["evidence_refs"] = ["evidence/unrelated.md"]
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("does not cite any URL declared" in e for e in errors))
+
+    def test_routing_evidence_rejects_unverified_record(self):
+        (self.root / "evidence/draft.md").write_text(
+            "---\\nid: E-TEST-003\\ntype: evidence\\nstatus: draft\\n---\\n"
+            "Primary source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\\n",
+            encoding="utf-8",
+        )
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["evidence_refs"] = ["evidence/draft.md"]
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("must point to a verified evidence record" in e for e in errors))
 
     def test_malformed_link_in_markdown_fails(self):
         (self.root / REFERENCE).write_text(
