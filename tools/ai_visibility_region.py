@@ -85,7 +85,7 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
     if not isinstance(network, dict):
         errors.append("network must be an object")
         network = {}
-    allowed_network_fields = {"connection_type", "vpn_detected", "proxy_detected", "remote_desktop_detected", "ip_fingerprint_sha256", "provider_name", "asn"}
+    allowed_network_fields = {"connection_type", "vpn_detected", "proxy_detected", "remote_desktop_detected", "ip_fingerprint_hmac_sha256", "provider_name", "asn"}
     if set(network) - allowed_network_fields:
         errors.append("network contains unsupported fields; raw IP addresses and credentials must never be stored")
     allowed_network = LOCAL_NETWORK_CLASSES | {"vpn", "proxy", "cloud_hosting", "remote_desktop", "unknown"}
@@ -95,9 +95,9 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
     for field in ("vpn_detected", "proxy_detected", "remote_desktop_detected"):
         if not isinstance(network.get(field), bool):
             errors.append(f"network.{field} must be boolean")
-    fingerprint = network.get("ip_fingerprint_sha256")
+    fingerprint = network.get("ip_fingerprint_hmac_sha256")
     if not isinstance(fingerprint, str) or not SHA256_RE.fullmatch(fingerprint):
-        errors.append("network.ip_fingerprint_sha256 must be a SHA-256 fingerprint; raw IP addresses must not be stored")
+        errors.append("network.ip_fingerprint_hmac_sha256 must be a SHA-256 fingerprint; raw IP addresses must not be stored")
     if not isinstance(network.get("provider_name"), str) or not network.get("provider_name", "").strip():
         errors.append("network.provider_name is required")
     if connection not in LOCAL_NETWORK_CLASSES:
