@@ -6,6 +6,8 @@ related:
   - research/RUTUBE_MEDIA_INVENTORY_2026-11-17.csv
   - research/MEDIA_CONTENT_AUDIT_2026-11-17.md
   - research/RUTUBE_PAGE_METADATA_VERIFICATION_2026-11-17.csv
+  - research/RUTUBE_CHANNEL_CONTENT_INVENTORY_2026-11-17.csv
+  - research/RUTUBE_CHANNEL_PROFILE_SNAPSHOT_2026-11-17.md
 ---
 
 # RUTUBE Public Media Inventory — 2026-11-17
@@ -48,6 +50,10 @@ This inventory captures 55 publicly indexed RUTUBE assets attributed to the publ
 - No video files were downloaded or compared frame-by-frame/audio-fingerprint-wise in this pass.
 - Client names in titles/descriptions do not establish current permission to reuse logos, publish case studies or promote client work.
 - No account login, claim, edit, upload, deletion, outreach, promotion, paid service, spending or official website change occurred.
+
+## Separate current-channel layer
+
+The separate `RUTUBE_CHANNEL_CONTENT_INVENTORY_2026-11-17.csv` records 20 standard videos and 20 Shorts visible on the public channel page in a 2026-11-17 capture. It is intentionally not counted in the 55-item commercial portfolio sample because it includes newer narrative, sound-branding and voice-talent content.
 
 ## Source coverage
 
