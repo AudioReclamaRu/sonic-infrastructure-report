@@ -20,7 +20,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru",
-        "entity/audio-reclama-studio.md"
+        "entity/audio-reclama-studio.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не придумывать юридическую форму, год основания, награды или место на рынке."
@@ -39,7 +41,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru",
-        "entity/audio-reclama-studio.md"
+        "entity/audio-reclama-studio.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не утверждать, что каждый проект включает все этапы."
@@ -57,7 +61,9 @@
       ],
       "preferred_sources": [
         "standards/BRAND_AND_SITE_NAMING.md",
-        "https://www.audio-reclama.ru"
+        "https://www.audio-reclama.ru",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не подменять сайт GitHub Pages или URL репозитория."
@@ -75,7 +81,9 @@
         "Если данные недоступны или устарели, сказать об этом."
       ],
       "preferred_sources": [
-        "https://www.audio-reclama.ru"
+        "https://www.audio-reclama.ru",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не придумывать email, телефон или адрес офиса."
@@ -94,7 +102,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru",
-        "entity/audio-reclama-studio.md"
+        "entity/audio-reclama-studio.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не повторять 618 как актуальное значение и не выбирать 622/620 без оговорки."
@@ -112,7 +122,9 @@
         "Указать только видимые этапы: сценарий, кастинг, саунд-дизайн, лицензируемая музыка."
       ],
       "preferred_sources": [
-        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не придумывать цену или гарантированный срок."
@@ -130,7 +142,9 @@
         "Различить приветствия, меню IVR и автоинформаторы."
       ],
       "preferred_sources": [
-        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не заявлять настройку/администрирование АТС без источника."
@@ -148,7 +162,9 @@
         "Упомянуть только подтверждённые элементы производства."
       ],
       "preferred_sources": [
-        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не обещать фиксированную цену или результат без деталей проекта."
@@ -166,7 +182,9 @@
         "Различить одноголосовую запись, ролевую озвучку и радиоспектакль."
       ],
       "preferred_sources": [
-        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не придумывать цену или доступность."
@@ -184,7 +202,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/zvuk-media.html",
-        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не делать вывод о правах использования без текущих условий."
@@ -203,7 +223,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru",
-        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не копировать недатированные цены из старых снимков репозитория."
@@ -223,7 +245,9 @@
       "preferred_sources": [
         "https://www.audio-reclama.ru",
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "geo/knowledge/case-studies.json"
+        "geo/knowledge/case-studies.json",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не придумывать даты, объёмы, KPI или разрешения."
@@ -242,7 +266,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru",
-        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
       ],
       "must_not_claim": [
         "Не выдумывать имена сотрудников и гарантии результата."
@@ -384,5 +410,7 @@
       ],
       "status": "not_run"
     }
-  ]
+  ],
+  "knowledge_pack_reference": "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+  "knowledge_pack_reference_status": "internal source-grounded expected-facts reference; do not preload or show to tested answer platforms before blind discovery runs"
 }
