@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama/problem-answer-routing/1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-11-18",
   "purpose": "Route a natural-language business problem to an existing answer, source scenario, supporting professional document, primary source and service-scope guardrail. This is an index over existing knowledge, not a separate service catalogue.",
   "retrieval_policy": [
@@ -580,5 +580,10 @@
         "AR-TRUST-02"
       ]
     }
-  ]
+  ],
+  "benchmark_coverage": {
+    "unique_query_ids": 23,
+    "problem_solving_query_ids": 21,
+    "policy": "Every problem_solving benchmark query must map to at least one routing entry; secondary trust queries may also map to routes."
+  }
 }
