@@ -72,6 +72,21 @@
             "string",
             "null"
           ]
+        },
+        "region_attestation_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Exact attestation_id from the VERIFIED run passport."
+        },
+        "region_attestation_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "SHA-256 of the exact region attestation JSON file bound into the run passport."
         }
       }
     },
