@@ -140,7 +140,8 @@ def self_test() -> list[str]:
         "https://www.audio-reclama.ru/\n"
         "Бренд Аудио-Реклама.ru.\n"
         "Аудио Реклама.\n"
-        "Audio-Reclama."
+        "Audio-Reclama.\n"
+        "https://www.audio-reclama.ru" + "audio/golosovoe-privetstvie-menu-ivr.html\n"
     )
     good_issues = inspect_text("self-test-good", good)
     bad_issues = inspect_text("self-test-bad", bad)
