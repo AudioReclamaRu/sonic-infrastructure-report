@@ -29,6 +29,18 @@ def make_record(**updates):
     return record
 
 class EvidenceRecordTests(unittest.TestCase):
+    def _attestation_binding(self):
+        return {
+            "attestation_id": "attestation-001",
+            "sha256": "a" * 64,
+            "session_captured_at_utc": "2026-11-17T15:00:00Z",
+        }
+
+    def _bind_record(self, record):
+        record["market"]["region_attestation_id"] = "attestation-001"
+        record["market"]["region_attestation_sha256"] = "a" * 64
+        return record
+
     def test_valid_full_answer_record_passes(self):
         self.assertEqual(validate_record(make_record()), [])
 
@@ -100,11 +112,13 @@ class EvidenceRecordTests(unittest.TestCase):
             root = Path(tmp)
             records = root / "records"
             records.mkdir()
-            (records / "obs-001.json").write_text(json.dumps(make_record(), ensure_ascii=False), encoding="utf-8")
+            record = self._bind_record(make_record())
+            (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
             queue = self._write_queue(root)
-            self.assertEqual(validate_batch(records, queue_path=queue), [])
+            binding = self._attestation_binding()
+            self.assertEqual(validate_batch(records, queue_path=queue, expected_region_attestation=binding), [])
             wrong_queue = self._write_queue(root, prompt="Другой точный запрос")
-            errors = validate_batch(records, queue_path=wrong_queue)
+            errors = validate_batch(records, queue_path=wrong_queue, expected_region_attestation=binding)
             self.assertTrue(any("no exact matching planned queue cell" in item for item in errors))
 
 
@@ -113,13 +127,15 @@ class EvidenceRecordTests(unittest.TestCase):
             root = Path(tmp)
             records = root / "records"
             records.mkdir()
-            (records / "obs-001.json").write_text(json.dumps(make_record(), ensure_ascii=False), encoding="utf-8")
+            record = self._bind_record(make_record())
+            (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
             matching = self._write_queue(root)
             matching.rename(root / "queue-matching.csv")
             nonmatching = self._write_queue(root, prompt="Another exact prompt")
             errors = validate_batch(
                 records,
                 queue_paths=[root / "queue-matching.csv", nonmatching],
+                expected_region_attestation=self._attestation_binding(),
             )
             self.assertEqual(errors, [])
 
@@ -139,11 +155,11 @@ class EvidenceRecordTests(unittest.TestCase):
             root = Path(tmp)
             records = root / "records"
             records.mkdir()
-            record = make_record()
+            record = self._bind_record(make_record())
             record["market"]["region_evidence"] = ""
             (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
             queue = self._write_queue(root, region_status="VERIFIED")
-            errors = validate_batch(records, queue_path=queue)
+            errors = validate_batch(records, queue_path=queue, expected_region_attestation=self._attestation_binding())
             self.assertTrue(any("VERIFIED region requires explicit" in item for item in errors))
 
 if __name__ == "__main__":
