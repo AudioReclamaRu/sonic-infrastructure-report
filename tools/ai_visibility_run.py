@@ -13,6 +13,7 @@ from typing import Any
 
 from tools.ai_visibility_queue import QUEUE_FIELDS, build_rows, load_module, read_queue
 from tools.ai_visibility_region import validate_attestation
+from tools.ai_visibility_evidence import validate_observation_artifacts
 
 PLAN_SCHEMA = "studio/ai-visibility-run-passport/1"
 RESULT_SCHEMA = "studio/ai-visibility-run-result/1"
@@ -281,19 +282,38 @@ def create_result(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("plan passport validation failed: " + "; ".join(errors))
     if args.run_id != plan.get("run_id"):
         raise ValueError("--run-id does not match the plan passport")
+    if not args.observations_csv or not args.evidence_dir:
+        raise ValueError("finalization requires both --observations-csv and --evidence-dir")
+    directory = Path(args.evidence_dir).resolve(strict=True)
+    if not directory.is_dir():
+        raise ValueError("--evidence-dir must be a directory")
+    record_paths = sorted(directory.glob("*.json"))
+    if not record_paths:
+        raise ValueError("--evidence-dir contains no *.json observation records")
+    queue_entries = plan["artifacts"]["execution_queues"]
+    queue_paths = [resolve_entry(entry, args.passport) for entry in queue_entries]
+    region_attestation = None
+    region_entry = (plan.get("scope") or {}).get("region_attestation")
+    if region_entry:
+        attestation_path = resolve_entry(region_entry, args.passport)
+        attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+        region_attestation = {
+            "attestation_id": attestation.get("attestation_id"),
+            "sha256": region_entry.get("sha256"),
+            "session_captured_at_utc": (attestation.get("session_capture") or {}).get("captured_at_utc"),
+        }
+    evidence_errors = validate_observation_artifacts(
+        record_paths,
+        Path(args.observations_csv).resolve(strict=True),
+        queue_paths,
+        args.run_id,
+        region_attestation,
+    )
+    if evidence_errors:
+        raise ValueError("observation evidence validation failed: " + "; ".join(evidence_errors))
     base = args.output.resolve().parent
-    csv_entry = file_entry(Path(args.observations_csv), base, "benchmark_observations_csv") if args.observations_csv else None
-    records = []
-    if args.evidence_dir:
-        directory = Path(args.evidence_dir).resolve(strict=True)
-        if not directory.is_dir():
-            raise ValueError("--evidence-dir must be a directory")
-        for record_path in sorted(directory.glob("*.json")):
-            records.append(file_entry(record_path, base, "primary_observation_json"))
-        if not records:
-            raise ValueError("evidence directory contains no *.json records")
-    if not csv_entry and not records:
-        raise ValueError("provide --observations-csv and/or --evidence-dir")
+    csv_entry = file_entry(Path(args.observations_csv), base, "benchmark_observations_csv")
+    records = [file_entry(path, base, "primary_observation_json") for path in record_paths]
     return seal({
         "schema": RESULT_SCHEMA,
         "run_id": args.run_id,
@@ -305,9 +325,10 @@ def create_result(args: argparse.Namespace) -> dict[str, Any]:
             "primary_json_records": records,
         },
         "semantics": [
-            "This result passport links collected artifacts to the exact frozen plan passport.",
-            "It records artifact integrity and linkage, not the truth or quality of the measured answers.",
-            "Run the benchmark and evidence validators before finalization; this command does not replace them.",
+            "Finalization is blocked unless primary JSON records and the benchmark CSV pass schema, exact queue-cell, run-ID, and CSV linkage checks.",
+            "For VERIFIED regional runs, every primary record must carry the exact region attestation ID and SHA-256 from the plan passport.",
+            "The result passport links collected artifacts to the exact frozen plan passport.",
+            "It records artifact integrity and linkage, not the truth or quality of measured answers.",
             "A blocked or unavailable observation is not zero visibility."
         ],
     }, "result_sha256")
@@ -340,9 +361,11 @@ def validate_result(path: Path, plan_path: Path) -> list[str]:
     entries.extend(artifacts.get("primary_json_records", []))
     if not entries:
         errors.append("result passport contains no observation artifacts")
+    resolved_entries = []
     for entry in entries:
         try:
             artifact_path = resolve_entry(entry, path)
+            resolved_entries.append((entry, artifact_path))
             if not artifact_path.is_file():
                 errors.append(f"missing observation artifact: {entry.get('path')}")
             elif digest_file(artifact_path) != entry.get("sha256"):
@@ -351,6 +374,33 @@ def validate_result(path: Path, plan_path: Path) -> list[str]:
                 errors.append(f"size mismatch: {entry.get('path')}")
         except (OSError, KeyError, TypeError) as exc:
             errors.append(f"invalid observation artifact entry: {exc}")
+    csv_entry = artifacts.get("benchmark_csv")
+    record_entries = artifacts.get("primary_json_records", [])
+    if not csv_entry or not record_entries:
+        errors.append("FINALIZED result requires both benchmark CSV and primary JSON records")
+    elif len(resolved_entries) == len(entries):
+        try:
+            csv_path = resolve_entry(csv_entry, path)
+            record_paths = [resolve_entry(entry, path) for entry in record_entries]
+            queue_paths = [
+                resolve_entry(entry, plan_path)
+                for entry in plan["artifacts"]["execution_queues"]
+            ]
+            region_attestation = None
+            region_entry = (plan.get("scope") or {}).get("region_attestation")
+            if region_entry:
+                attestation_path = resolve_entry(region_entry, plan_path)
+                attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+                region_attestation = {
+                    "attestation_id": attestation.get("attestation_id"),
+                    "sha256": region_entry.get("sha256"),
+                    "session_captured_at_utc": (attestation.get("session_capture") or {}).get("captured_at_utc"),
+                }
+            errors.extend(validate_observation_artifacts(
+                record_paths, csv_path, queue_paths, plan.get("run_id"), region_attestation
+            ))
+        except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+            errors.append(f"cannot revalidate observation provenance: {exc}")
     return errors
 
 

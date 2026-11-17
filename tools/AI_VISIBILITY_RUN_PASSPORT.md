@@ -21,6 +21,7 @@ python tools/ai_visibility_run.py create ^
   --run-id RU-2026-11-17-001 ^
   --module research/queries/ru-generic-discovery.json ^
   --queue research/queues/ru-generic-discovery.csv ^
+  --run-id RU-2026-11-17-001 ^
   --output research/runs/RU-2026-11-17-001/passport.json ^
   --region-status UNVERIFIED
 \`\`\`
@@ -38,13 +39,14 @@ This detects changed, missing or replaced input files and modifications to the p
 
 ## 3. Validate evidence, then finalize
 
-First run the existing benchmark and evidence validators, including exact queue linkage:
+Finalization now runs the evidence checks itself. The standalone validator remains useful during collection; pass the same run ID and repeat `--queue` for each planned queue:
 
 \`\`\`bash
 python tools/ai_visibility_benchmark.py validate research/runs/RU-2026-11-17-001/observations.csv
 python tools/ai_visibility_evidence.py validate-batch research/runs/RU-2026-11-17-001/evidence/ ^
   --csv research/runs/RU-2026-11-17-001/observations.csv ^
-  --queue research/queues/ru-generic-discovery.csv
+  --queue research/queues/ru-generic-discovery.csv ^
+  --run-id RU-2026-11-17-001
 \`\`\`
 
 Then freeze the output artifacts against the exact plan hash:
@@ -71,10 +73,11 @@ python tools/ai_visibility_run.py validate-final ^
 - Plan passport and result passport are separate immutable records. The result references the exact SHA-256 of the plan passport.
 - Query modules, queue files, CSV observations and individual JSON evidence records are hashed with SHA-256 and their byte sizes are recorded.
 - The tool never edits queues or observations.
-- The current v1 passport intentionally supports only \`UNVERIFIED\` region status. It cannot promote the Netherlands/VPN or an operator assertion into a verified Russian vantage point. A future region-attestation workflow must define independent evidence and provenance before enabling that state.
+- A passport defaults to \`UNVERIFIED\`. It may carry \`VERIFIED\` only when the region attestation passes the independent evidence/review validator and is hashed into the passport. Finalization requires every primary observation to carry the exact attestation ID and SHA-256 and to be timestamped within 30 minutes of the verified consumer-session capture; an operator assertion or manually edited queue cannot promote the region.
 - SHA-256 detects accidental or deliberate byte changes relative to the recorded digest; it does not authenticate who created the file, prove the source is truthful, or provide a digital signature.
 - Run IDs are caller-supplied labels, not globally unique guarantees. Operators should use a stable unique naming convention.
-- The tool does not replace benchmark/evidence validation and does not calculate visibility. Blocked, unavailable and error outcomes are not zero visibility.
+- Finalization requires both the CSV and primary JSON records, validates every record against the exact planned queue cells and run ID, verifies CSV ↔ JSON linkage, and binds regional attestation provenance where applicable. `validate-final` repeats these semantic checks.
+- The tool does not calculate visibility. Blocked, unavailable and error outcomes are not zero visibility.
 - No AI/provider requests, paid checks, paid trackers, website changes, publishing, or network calls are made.
 
 ## Tests
@@ -93,3 +96,5 @@ python tools/ai_visibility_run.py create --run-id RU-2026-11-17-001 --module res
 ```
 
 The run passport revalidates and hashes the region attestation and requires the queue's VERIFIED state to be the exact deterministic output of the frozen module plus that attestation. Without the attestation, queue generation and passports remain UNVERIFIED.
+
+For standalone evidence-batch validation of a VERIFIED queue, also pass `--region-attestation path/to/ru-region-attestation.json`; the validator checks the exact attestation ID, file SHA-256 and 30-minute session window. Do not pass this option for an UNVERIFIED queue.
