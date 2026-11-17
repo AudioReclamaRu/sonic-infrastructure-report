@@ -282,7 +282,11 @@ def validate_observation_artifacts(
         if status in ANSWERED and not observation_id:
             errors.append(f"CSV line {line}: answered row is missing observation_id")
             continue
+        # Every CSV row represents a captured collection outcome, including
+        # blocked/unavailable outcomes. Requiring an ID for all statuses prevents
+        # unlinked non-answer rows from silently entering coverage reports.
         if not observation_id:
+            errors.append(f"CSV line {line}: every collection outcome requires observation_id linked to a primary JSON evidence record")
             continue
         if observation_id in seen_ids:
             errors.append(f"CSV line {line}: duplicate observation_id {observation_id}")
