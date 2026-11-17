@@ -41,6 +41,7 @@ related:
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
 - AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
+- ../tools/ai_visibility_evidence.py — офлайн-проверка полных observation records и согласованности ссылок CSV ↔ JSON по уникальному observation_id.
 
 ## Поисковая видимость и качество обхода
 
