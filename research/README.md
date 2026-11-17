@@ -35,6 +35,10 @@ related:
 - OPEN_SOURCE_TARGET_AUDIT_PIPER_2026-11-14.md — предварительный аудит OHF-Voice/Piper: социальные правила, лицензия, политика и возможный вклад. Сам по себе аудит не означает, что публичное участие, issue или PR уже состоялись.
 
 ## Problem-first knowledge для бизнес-задач
+## Краткие ответы для AI retrieval
+
+- ../problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md — восемь самостоятельных кратких ответов с практическими шагами, точной связью с услугами и официальными источниками. Эталон для проверки retrieval, не публикация на сайте.
+
 
 - ../problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md — практическая библиотека из восьми клиентских сценариев с диагностикой, решением, проверкой результата и границами компетенций; экспертный черновик, не публичная публикация.
 - ../problem-solutions/business-problem-answer-library-2026-11-17.json — структурированная карта problem → diagnostics → solution → brand-fit → caveats для retrieval и тестов.
