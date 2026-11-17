@@ -27,7 +27,21 @@ This register converts the attention-surface candidates researched in the ecosys
 | P2 — conditional | Podder Directory; Podcast-Led Growth | Relevant only if the actual service fits podcast production categories; free/acceptance details differ. |
 | P3 — conditional venue/expert | WhereToPodcast; Podpal; SourceBottle | Require a qualifying physical studio or a genuine individual expert profile; do not create inaccurate company/venue profiles. |
 | Monitor only | Source of Sources | Journalist-query opportunity channel, not a directory. Respond only to individually relevant requests after checking terms. |
-| Exclude from company listing | Voicefolk | Individual voiceover artist directory, not a company/studio profile. |
+| P1/P2 — inspect after category validation | Enterprise League; Podle | Both support company listings and relevant audio/podcast categories; Enterprise League has an explicit free standard profile but a paid verified-badge visibility boundary; Podle states company listings are free. Exact company/category fit and existing profiles still need checking. |
+| P2 — conditional | VoiceLab360; Podcasting Source | VoiceLab360 is relevant only with a qualifying studio/remote-session facility and has a 2.5% fee on platform bookings; Podcasting Source invites relevant businesses but free listing terms are not confirmed. |
+| P3 — broad/low confidence | GetListedGlobal | Generic global directory with a free standard listing, but audio-specific demand, country coverage and directory quality require validation. |
+| Individual-provider marketplaces | Podwires; Voicefolk | Podwires is a freelancer/producer profile marketplace; Voicefolk is an individual voiceover artist directory. Neither should be used as a company profile without a genuine named individual and appropriate authorization. |
+
+## Additional candidates added 2026-11-17
+
+Six additional surfaces were added after a second discovery pass:
+
+- **Podle** — podcast/video services directory; company listing is stated free. Conditional on a genuine match to its podcast/video service taxonomy. Review its terms and check whether the company already appears.
+- **Enterprise League** — B2B directory with an Audio Production category and country pages. Standard profile is stated free; verification may be free but paid subscription is required for the verified badge to display in directory/search results. Treat the free profile and paid visibility badge separately.
+- **Podwires** — international podcast producer marketplace; free profiles are for individual producers/freelancers, not a confirmed company listing route. Do not create a company-as-person profile.
+- **VoiceLab360** — studio partner listing stated free, but only for qualifying professional studios, home studios, remote-session studios or production facilities with voice capability. A 2.5% platform booking fee applies to completed bookings processed there; platform terms require those bookings to remain on-platform.
+- **Podcasting Source** — invites studios, software, agencies and services to list, but free pricing and submission terms have not been confirmed. Keep unpriced until checked.
+- **GetListedGlobal** — generic international business directory with a free standard listing and account requirement. Low priority until country support, category quality, data terms and buyer relevance are checked.
 
 ## CSV fields
 
