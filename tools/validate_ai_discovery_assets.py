@@ -243,7 +243,7 @@ def main() -> int:
     for rel in llms_required_paths:
         if rel not in llms:
             fail(errors, f"repository llms.txt is missing problem-first knowledge link: {rel}")
-    if f"{len(queries)} русскоязычного" not in llms:
+    if f"{len(queries)} русскоязыч" not in llms:
         fail(errors, f"repository llms.txt must reflect the current {len(queries)}-query benchmark")
     if "все `not_run`" not in llms:
         fail(errors, f"repository llms.txt must state that the {len(queries)}-query benchmark is not run")
