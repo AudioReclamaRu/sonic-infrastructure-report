@@ -97,7 +97,7 @@ def main() -> int:
 
     if observation_schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
         fail(errors, "AI observation record must declare JSON Schema 2020-12")
-    if observation_schema.get("properties", {}).get("schema", {}).get("const") != "audio-reclama/ai-visibility-observation/1":
+    if observation_schema.get("properties", {}).get("schema", {}).get("const") != "studio/ai-visibility-observation/1":
         fail(errors, "unexpected AI observation record schema identifier")
     observation_required = set(observation_schema.get("required", []))
     for field in ("observed_at_utc", "market", "platform", "query", "answer_status", "raw_answer", "scores", "evidence"):
