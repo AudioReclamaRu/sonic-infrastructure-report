@@ -56,5 +56,5 @@ jobs:
       - name: AI Discovery asset integrity
         run: python tools/validate_ai_discovery_assets.py
 
-      - name: AI visibility benchmark, evidence, queue, coverage, run-passport, region-attestation and final-report regression tests
-        run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence tools.tests.test_ai_visibility_queue tools.tests.test_ai_visibility_coverage tools.tests.test_ai_visibility_run tools.tests.test_ai_visibility_region tools.tests.test_ai_visibility_report -v
+      - name: AI visibility benchmark, evidence, queue, coverage, run-passport, region-attestation final-report and capture-packet regression tests
+        run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence tools.tests.test_ai_visibility_queue tools.tests.test_ai_visibility_coverage tools.tests.test_ai_visibility_run tools.tests.test_ai_visibility_region tools.tests.test_ai_visibility_report tools.tests.test_ai_visibility_capture -v
