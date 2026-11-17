@@ -7,6 +7,7 @@ import hashlib
 import json
 import sys
 import tempfile
+import shutil
 from argparse import Namespace
 from datetime import datetime, timezone
 from pathlib import Path
@@ -22,6 +23,41 @@ PACKAGE_SCHEMA = "studio/ai-visibility-run-package/1"
 
 def digest_file(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _evidence_files(value: Any) -> set[str]:
+    """Collect attestation evidence_file references without rewriting the attestation."""
+    found: set[str] = set()
+    if isinstance(value, dict):
+        for key, item in value.items():
+            if key == "evidence_file" and isinstance(item, str) and item.strip():
+                found.add(item)
+            else:
+                found.update(_evidence_files(item))
+    elif isinstance(value, list):
+        for item in value:
+            found.update(_evidence_files(item))
+    return found
+
+
+def _copy_region_inputs(attestation: dict[str, Any], source_dir: Path, target_dir: Path) -> None:
+    """Copy exact evidence bytes while preserving attestation-relative paths."""
+    source_root = source_dir.resolve(strict=True)
+    target_dir.mkdir(parents=True, exist_ok=True)
+    for relative_name in sorted(_evidence_files(attestation)):
+        relative = Path(relative_name)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError(f"regional evidence path must stay inside attestation directory: {relative_name}")
+        source = (source_root / relative).resolve(strict=True)
+        try:
+            source.relative_to(source_root)
+        except ValueError as exc:
+            raise ValueError(f"regional evidence path escapes attestation directory: {relative_name}") from exc
+        if not source.is_file():
+            raise ValueError(f"regional evidence artifact is not a regular file: {relative_name}")
+        destination = target_dir / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, destination)
 
 
 def prepare_run(
@@ -52,16 +88,26 @@ def prepare_run(
     with tempfile.TemporaryDirectory(prefix=".ai-visibility-run-", dir=output_dir.parent) as temporary:
         stage = Path(temporary) / "package"
         stage.mkdir()
+        inputs_dir = stage / "inputs"
+        module_snapshot = inputs_dir / "query-module" / module_path.name
+        module_snapshot.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(module_path, module_snapshot)
+        attestation_snapshot_dir = inputs_dir / "region-attestation"
+        attestation_snapshot = attestation_snapshot_dir / "attestation.json"
+        attestation_snapshot_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(attestation_path, attestation_snapshot)
+        _copy_region_inputs(attestation, attestation_path.parent, attestation_snapshot_dir)
+
         queue_path = stage / "queue.csv"
         passport_path = stage / "passport.json"
         write_queue(rows, queue_path)
         args = Namespace(
             output=passport_path,
             run_id=run_id,
-            module=[str(module_path)],
+            module=[str(module_snapshot)],
             queue=[str(queue_path)],
             region_status="VERIFIED",
-            region_attestation=attestation_path,
+            region_attestation=attestation_snapshot,
             operator_label=operator_label,
             notes=notes,
         )
@@ -76,8 +122,9 @@ def prepare_run(
             "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
             "run_id": run_id,
             "query_module": {
-                "filename": module_path.name,
-                "sha256": digest_file(module_path),
+                "path": "inputs/query-module/" + module_snapshot.name,
+                "filename": module_snapshot.name,
+                "sha256": digest_file(module_snapshot),
             },
             "queue": {
                 "path": "queue.csv",
@@ -85,8 +132,9 @@ def prepare_run(
                 "planned_cells": len(rows),
             },
             "region_attestation": {
+                "path": "inputs/region-attestation/attestation.json",
                 "attestation_id": attestation.get("attestation_id"),
-                "sha256": digest_file(attestation_path),
+                "sha256": digest_file(attestation_snapshot),
             },
             "plan_passport": {
                 "path": "passport.json",
@@ -115,6 +163,8 @@ def prepare_run(
 
 ## Contents
 
+- inputs/query-module/ — exact frozen query-module bytes
+- inputs/region-attestation/ — exact attestation and referenced evidence bytes
 - queue.csv — frozen execution queue
 - passport.json — immutable plan passport
 - capture-packet/ — blank CSV and JSON templates for manual capture
