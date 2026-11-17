@@ -31,7 +31,7 @@
         "Маршрутизация и IT-интеграция"
       ],
       "sources": [
-        "https://www.audio-reclama.ruaudio/golosovoe-privetstvie-menu-ivr.html"
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
       ]
     },
     {
@@ -58,7 +58,7 @@
         "Производство видео входит автоматически"
       ],
       "sources": [
-        "https://www.audio-reclama.ruaudio/ozvuchka-video.html"
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ]
     },
     {
@@ -85,8 +85,8 @@
         "Наличие любого языка или свободного диктора гарантировано"
       ],
       "sources": [
-        "https://www.audio-reclama.ruperevodchiki/",
-        "https://www.audio-reclama.ruaudio/ozvuchka-video.html"
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ]
     },
     {
@@ -116,9 +116,9 @@
         "Автоматическая закупка радиоэфира"
       ],
       "sources": [
-        "https://www.audio-reclama.ruaudio/radioroliki-zakaz.html",
-        "https://www.audio-reclama.ruzakaz-scenariya.html",
-        "https://www.audio-reclama.ruaudio/zvuk-media.html"
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html"
       ]
     },
     {
@@ -146,7 +146,7 @@
       ],
       "sources": [
         "https://www.audio-reclama.ru",
-        "https://www.audio-reclama.ruperevodchiki/"
+        "https://www.audio-reclama.ru/perevodchiki/"
       ]
     },
     {
@@ -172,8 +172,8 @@
         "Разработка LMS"
       ],
       "sources": [
-        "https://www.audio-reclama.ruaudio/ozvuchka-video.html",
-        "https://www.audio-reclama.ruperevodchiki/"
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
       ]
     },
     {
@@ -198,7 +198,7 @@
         "AI-клонирование или обучение без отдельного разрешения"
       ],
       "sources": [
-        "https://www.audio-reclama.rudiktoryi/"
+        "https://www.audio-reclama.ru/diktoryi/"
       ]
     },
     {
@@ -223,7 +223,7 @@
         "Права и дистрибуция включены автоматически"
       ],
       "sources": [
-        "https://www.audio-reclama.ruaudio/sozdanie-audioknig.html"
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
       ]
     }
   ]
