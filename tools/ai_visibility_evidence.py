@@ -65,7 +65,10 @@ def validate_record(record: object) -> list[str]:
         country = market.get("country_code")
         if isinstance(country, str) and (len(country) != 2 or not country.isalpha() or country.upper() != country):
             errors.append("market.country_code must be a two-letter uppercase ISO code")
-        for field in ("region", "region_evidence", "answer_language"):
+        for field in (
+            "region", "region_evidence", "answer_language",
+            "region_attestation_id", "region_attestation_sha256",
+        ):
             if field in market and market[field] is not None and not isinstance(market[field], str):
                 errors.append(f"market.{field} must be a string or null")
 
