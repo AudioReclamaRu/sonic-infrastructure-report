@@ -9,7 +9,7 @@ related:
 
 # RUTUBE Public Media Inventory — 2026-11-17
 
-This inventory captures 37 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
+This inventory captures 45 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
 
 ## Fields and interpretation
 
@@ -22,6 +22,8 @@ This inventory captures 37 publicly indexed RUTUBE assets attributed to the publ
 - Blank numeric/date fields mean not reliably captured, not zero/none.
 
 ## Findings
+
+1. A third discovery pass added eight individually named announcer or advertising samples: Игорь Китаев, Алексей Никитин, Андрей Демин, Михаил Сушков, Екатерина Грефенштейн, Евгений Хорошевцев, plus two short commercials. These are distinct source records; no identity or reuse-rights assumptions are made.
 
 1. The second discovery pass added 14 indexed assets: advertising spots (РИО, OneOwner, МЕГА, Скоровар, НЕПРОСПИ, ТЦ Новая Эра, and a Vladimir regional campaign), two general video-voiceover samples, a separate Ilya Gulko demo, a PhotoFunia video-making sample, an older Webcom promo, and an НСС synchronous-voiceover item. The НСС item is marked temporarily unavailable, not deleted.
 2. Three additional indexed items extend the service map: an НСС tariff-plan commercial (15 sec), a Russian Wealth greeting/IVR sample (24 sec), and a Sarov Business Bank deposit video (10 sec). The Sarov item is explicitly marked temporarily unavailable in the public result; it is not treated as deleted.
@@ -42,4 +44,4 @@ This inventory captures 37 publicly indexed RUTUBE assets attributed to the publ
 
 ## Source coverage
 
-All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 37 items, not yet a complete channel scrape.
+All asset URLs and captured fields are in `RUTUBE_MEDIA_INVENTORY_2026-11-17.csv`. This is a selected indexed sample of 45 items, not yet a complete channel scrape.
