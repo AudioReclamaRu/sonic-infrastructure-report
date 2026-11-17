@@ -110,6 +110,11 @@ def inspect_text(label: str, content: str) -> list[str]:
             if pattern is LATIN_TRUNCATION_PATTERN
             else content
         )
+        if pattern is LATIN_TRUNCATION_PATTERN:
+            # Internal repository paths are identifiers, not public brand names.
+            source_text = source_text.replace(
+                "entity/audio-reclama-studio.md", ""
+            )
         for match in pattern.finditer(source_text):
             line = source_text.count("\n", 0, match.start()) + 1
             issues.append(f"{label}:{line}: {message}: {match.group(0)}")
