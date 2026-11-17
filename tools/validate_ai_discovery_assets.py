@@ -31,6 +31,9 @@ def main() -> int:
         "research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md",
         "research/ai-visibility-benchmark-queries-2026-11-17.json",
         "research/ai-visibility-benchmark-template.csv",
+        "research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json",
+        "research/ai-visibility-ru-observation-queue-2026-11-17.csv",
+        "research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -125,6 +128,117 @@ def main() -> int:
     for field in ("run_id", "platform", "query_id", "answer_status", "cited_urls"):
         if field not in header:
             fail(errors, f"benchmark CSV template missing column: {field}")
+
+
+    # Validate the Russia-first generic prompt × platform matrix.
+    ru_query_path = ROOT / "research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json"
+    ru_queue_path = ROOT / "research/ai-visibility-ru-observation-queue-2026-11-17.csv"
+    try:
+        ru_module = json.loads(ru_query_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(errors, f"invalid RU generic discovery JSON: {exc}")
+        ru_module = {}
+
+    ru_queries = ru_module.get("queries", []) if ru_module else []
+    ru_platforms = ru_module.get("platform_execution_order", []) if ru_module else []
+    if ru_module.get("schema") != "ai-visibility/query-module/1":
+        fail(errors, "unexpected RU generic discovery schema")
+    if ru_module.get("market", {}).get("country_code") != "RU":
+        fail(errors, "RU query module must target country RU")
+    if ru_module.get("market", {}).get("interface_locale") != "ru-RU":
+        fail(errors, "RU query module must use interface locale ru-RU")
+    if ru_module.get("status") != "not_run":
+        fail(errors, "RU query module must remain not_run until observations are collected")
+    if len(ru_queries) != 29:
+        fail(errors, f"expected 29 RU generic prompts, found {len(ru_queries)}")
+    ru_query_ids = [q.get("id") for q in ru_queries]
+    if len(ru_query_ids) != len(set(ru_query_ids)):
+        fail(errors, "RU generic query IDs must be unique")
+    for query in ru_queries:
+        if not query.get("id") or not query.get("query"):
+            fail(errors, "every RU generic prompt must have an ID and exact query text")
+            continue
+        if query.get("brand_in_prompt") is not False:
+            fail(errors, f"RU generic prompt {query['id']} must remain unbranded")
+        if query.get("status") != "not_run":
+            fail(errors, f"RU generic prompt {query['id']} must remain not_run until executed")
+        if query.get("language") != "ru" or query.get("region") != "RU":
+            fail(errors, f"RU generic prompt {query['id']} has inconsistent language/region")
+
+    if len(ru_platforms) != 12:
+        fail(errors, f"expected 12 RU platform surfaces, found {len(ru_platforms)}")
+    ru_platform_ids = [p.get("id") for p in ru_platforms]
+    if len(ru_platform_ids) != len(set(ru_platform_ids)):
+        fail(errors, "RU platform IDs must be unique")
+    if [p.get("priority") for p in ru_platforms] != list(range(1, len(ru_platforms) + 1)):
+        fail(errors, "RU platform priorities must be sequential starting at 1")
+    for platform in ru_platforms:
+        if platform.get("status") != "not_run":
+            fail(errors, f"RU platform {platform.get('id')} must remain not_run until executed")
+
+    try:
+        with ru_queue_path.open(encoding="utf-8", newline="") as stream:
+            ru_reader = csv.DictReader(stream)
+            ru_header = ru_reader.fieldnames or []
+            ru_rows = list(ru_reader)
+    except OSError as exc:
+        fail(errors, f"cannot read RU observation queue: {exc}")
+        ru_header, ru_rows = [], []
+
+    if len(ru_header) != 38 or len(set(ru_header)) != len(ru_header):
+        fail(errors, f"RU observation queue must have 38 unique columns; found {len(ru_header)}")
+    ru_required_columns = {
+        "country_code", "interface_locale", "prompt_language", "language",
+        "platform", "platform_surface", "measurement_mode", "query_id",
+        "intent", "query", "answer_status", "answer_language",
+    }
+    for field in sorted(ru_required_columns - set(ru_header)):
+        fail(errors, f"RU observation queue missing column: {field}")
+
+    expected_pairs = {
+        (platform.get("id"), query.get("id"))
+        for platform in ru_platforms for query in ru_queries
+    }
+    seen_pairs = set()
+    platform_by_id = {p.get("id"): p for p in ru_platforms}
+    query_by_id = {q.get("id"): q for q in ru_queries}
+    for row_number, row in enumerate(ru_rows, start=2):
+        if None in row or any(value is None for value in row.values()):
+            fail(errors, f"RU observation queue row {row_number} has an inconsistent column count")
+            continue
+        pair = (row.get("platform"), row.get("query_id"))
+        if pair in seen_pairs:
+            fail(errors, f"duplicate RU observation queue pair: {pair[0]} × {pair[1]}")
+        seen_pairs.add(pair)
+        platform = platform_by_id.get(pair[0])
+        query = query_by_id.get(pair[1])
+        if platform is None or query is None:
+            fail(errors, f"unknown platform/query in RU observation queue row {row_number}: {pair}")
+            continue
+        expected = {
+            "country_code": "RU",
+            "interface_locale": "ru-RU",
+            "prompt_language": "ru",
+            "language": "ru",
+            "platform_surface": platform.get("surface"),
+            "measurement_mode": platform.get("measurement_mode"),
+            "intent": query.get("intent"),
+            "query": query.get("query"),
+            "answer_status": "NOT_TESTED",
+            "answer_language": "",
+        }
+        for field, value in expected.items():
+            if row.get(field) != value:
+                fail(errors, f"RU queue row {row_number} has unexpected {field} for {pair[0]} × {pair[1]}")
+        if row.get("run_id") or row.get("date_utc") or row.get("date_time_utc"):
+            fail(errors, f"RU queue row {row_number} must not contain fabricated run metadata")
+
+    if len(ru_rows) != 348:
+        fail(errors, f"expected 348 RU observation rows, found {len(ru_rows)}")
+    if seen_pairs != expected_pairs:
+        missing = len(expected_pairs - seen_pairs)
+        extra = len(seen_pairs - expected_pairs)
+        fail(errors, f"RU observation queue is not a complete 29 × 12 matrix (missing={missing}, extra={extra})")
 
     if errors:
         print("AI Discovery asset validation FAILED:")
