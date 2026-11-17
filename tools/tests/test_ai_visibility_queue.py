@@ -33,6 +33,11 @@ class QueuePlannerTests(unittest.TestCase):
         self.assertEqual({r["region_verification"] for r in rows}, {"UNVERIFIED"})
         self.assertEqual(validate_rows(rows, rows), [])
 
+    def test_verified_region_status_is_explicit_and_separate_from_generation_default(self):
+        rows = build_rows(module_fixture(), region_status="VERIFIED")
+        self.assertEqual({r["region_verification"] for r in rows}, {"VERIFIED"})
+        self.assertEqual(validate_rows(rows, rows), [])
+
     def test_rejects_mixed_or_unknown_measurement_mode(self):
         data = module_fixture()
         data["platform_execution_order"][0]["measurement_mode"] = "consumer_and_api"
