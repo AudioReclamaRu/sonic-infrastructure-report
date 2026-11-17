@@ -360,9 +360,11 @@ def validate_result(path: Path, plan_path: Path) -> list[str]:
     entries.extend(artifacts.get("primary_json_records", []))
     if not entries:
         errors.append("result passport contains no observation artifacts")
+    resolved_entries = []
     for entry in entries:
         try:
             artifact_path = resolve_entry(entry, path)
+            resolved_entries.append((entry, artifact_path))
             if not artifact_path.is_file():
                 errors.append(f"missing observation artifact: {entry.get('path')}")
             elif digest_file(artifact_path) != entry.get("sha256"):
@@ -371,6 +373,32 @@ def validate_result(path: Path, plan_path: Path) -> list[str]:
                 errors.append(f"size mismatch: {entry.get('path')}")
         except (OSError, KeyError, TypeError) as exc:
             errors.append(f"invalid observation artifact entry: {exc}")
+    csv_entry = artifacts.get("benchmark_csv")
+    record_entries = artifacts.get("primary_json_records", [])
+    if not csv_entry or not record_entries:
+        errors.append("FINALIZED result requires both benchmark CSV and primary JSON records")
+    elif len(resolved_entries) == len(entries):
+        try:
+            csv_path = resolve_entry(csv_entry, path)
+            record_paths = [resolve_entry(entry, path) for entry in record_entries]
+            queue_paths = [
+                resolve_entry(entry, plan_path)
+                for entry in plan["artifacts"]["execution_queues"]
+            ]
+            region_attestation = None
+            region_entry = (plan.get("scope") or {}).get("region_attestation")
+            if region_entry:
+                attestation_path = resolve_entry(region_entry, plan_path)
+                attestation = json.loads(attestation_path.read_text(encoding="utf-8"))
+                region_attestation = {
+                    "attestation_id": attestation.get("attestation_id"),
+                    "sha256": region_entry.get("sha256"),
+                }
+            errors.extend(validate_observation_artifacts(
+                record_paths, csv_path, queue_paths, plan.get("run_id"), region_attestation
+            ))
+        except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+            errors.append(f"cannot revalidate observation provenance: {exc}")
     return errors
 
 
