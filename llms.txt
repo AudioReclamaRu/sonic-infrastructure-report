@@ -69,3 +69,6 @@
 - [Russia-first unbranded AI discovery prompts](research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json): 29 Russian prompts for generic discovery, kept separate from brand verification; all not_run until observed.
 - [RU observation runbook](research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md): operational gates, exact UI procedure, status taxonomy and scoring safeguards.
 - [RU observation queue](research/ai-visibility-ru-observation-queue-2026-11-17.csv): 348 platform × prompt rows across 12 platforms; all NOT_TESTED until actual observation.
+
+- [AI Visibility scoring rubric](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md): anchored 0/1/2/null criteria for eight scoring axes, generic discovery and critical errors.
+- [Immutable observation record schema](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json): preserves full answers, exact prompts, market/surface metadata and source evidence before CSV aggregation.

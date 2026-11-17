@@ -12,7 +12,7 @@ HEADERS = [
     "intent", "query", "answer_status", "completeness_status",
     *SCORE_FIELDS, "generic_discovery_hit", "critical_error", "cited_urls",
     "repository_file_cited", "competitors_mentioned", "answer_excerpt",
-    "limitations", "operator_notes",
+    "limitations", "operator_notes", "observation_id",
 ]
 
 def make_row(**updates):
@@ -26,7 +26,7 @@ def make_row(**updates):
         "query_id": "RU-GEN-AD-01", "query": "Где заказать рекламный аудиоролик?",
         "answer_status": "OK", "completeness_status": "complete",
         "brand_identity_score": "2", "official_route_score": "1",
-        "generic_discovery_hit": "true",
+        "generic_discovery_hit": "true", "observation_id": "obs-001",
     })
     row.update(updates)
     return row
@@ -45,6 +45,14 @@ class BenchmarkValidationTests(unittest.TestCase):
         errors, rows = validate(self.write_csv([make_row()]))
         self.assertEqual(errors, [])
         self.assertEqual(len(rows), 1)
+
+    def test_answered_row_requires_observation_id(self):
+        errors, _ = validate(self.write_csv([make_row(observation_id="")]))
+        self.assertTrue(any("require observation_id" in item for item in errors))
+
+    def test_duplicate_observation_id_fails(self):
+        errors, _ = validate(self.write_csv([make_row(), make_row(query_id="RU-GEN-AD-02", observation_id="obs-001")]))
+        self.assertTrue(any("duplicate observation_id" in item for item in errors))
 
     def test_duplicate_observation_key_fails(self):
         errors, _ = validate(self.write_csv([make_row(), make_row()]))

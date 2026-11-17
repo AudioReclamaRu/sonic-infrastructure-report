@@ -34,6 +34,8 @@ def main() -> int:
         "research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json",
         "research/ai-visibility-ru-observation-queue-2026-11-17.csv",
         "research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md",
+        "research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md",
+        "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -85,6 +87,34 @@ def main() -> int:
         if query.get("status") != "not_run":
             fail(errors, f"query {query.get('id')} must remain not_run until executed")
 
+    # Keep the scoring rubric and full-answer evidence contract present and machine-readable.
+    observation_schema_path = ROOT / "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json"
+    try:
+        observation_schema = json.loads(observation_schema_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(errors, f"invalid AI observation record JSON Schema: {exc}")
+        observation_schema = {}
+
+    if observation_schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
+        fail(errors, "AI observation record must declare JSON Schema 2020-12")
+    if observation_schema.get("properties", {}).get("schema", {}).get("const") != "studio/ai-visibility-observation/1":
+        fail(errors, "unexpected AI observation record schema identifier")
+    observation_required = set(observation_schema.get("required", []))
+    for field in ("observed_at_utc", "market", "platform", "query", "answer_status", "raw_answer", "scores", "evidence"):
+        if field not in observation_required:
+            fail(errors, f"AI observation record schema missing required field: {field}")
+
+    scoring_rubric = (ROOT / "research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md").read_text(encoding="utf-8")
+    for criterion in ("brand_identity_score", "official_route_score", "service_or_answer_score",
+                      "commercial_accuracy_score", "expertise_retrieval_score", "source_quality_score",
+                      "citation_quality_score", "git_knowledge_score", "generic_discovery_hit",
+                      "critical_error"):
+        if criterion not in scoring_rubric:
+            fail(errors, f"AI visibility scoring rubric missing criterion: {criterion}")
+    for anchor in ("**0 —", "**1 —", "**2 —", "**null —"):
+        if anchor not in scoring_rubric:
+            fail(errors, f"AI visibility scoring rubric missing score anchor: {anchor}")
+
     citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     if "cff-version: 1.2.0" not in citation or f'title: "{BRAND}' not in citation:
         fail(errors, "CITATION.cff must identify the canonical company and use CFF 1.2.0")
@@ -125,7 +155,7 @@ def main() -> int:
     csv_path = ROOT / "research/ai-visibility-benchmark-template.csv"
     with csv_path.open(encoding="utf-8", newline="") as stream:
         header = next(csv.reader(stream), [])
-    for field in ("run_id", "platform", "query_id", "answer_status", "cited_urls"):
+    for field in ("run_id", "platform", "query_id", "answer_status", "cited_urls", "observation_id"):
         if field not in header:
             fail(errors, f"benchmark CSV template missing column: {field}")
 
@@ -247,7 +277,7 @@ def main() -> int:
             print(f" - {error}")
         return 1
 
-    print("AI Discovery assets OK: canonical entity, JSON-LD, llms index, 20 unique unrun queries and CSV schema.")
+    print("AI Discovery assets OK: canonical entity, JSON-LD, llms index, 20 unrun queries, 29 × 12 RU queue, anchored scoring rubric and observation schema.")
     return 0
 
 

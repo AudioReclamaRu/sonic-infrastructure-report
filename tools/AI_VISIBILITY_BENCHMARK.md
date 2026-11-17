@@ -5,6 +5,8 @@ lang: ru
 related:
   - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
   - research/ai-visibility-benchmark-template.csv
+  - research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md
+  - research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json
 ---
 
 # Локальный валидатор и агрегатор AI Visibility Benchmark
@@ -19,11 +21,12 @@ related:
     python tools/ai_visibility_benchmark.py summarize research/ai-visibility-benchmark-template.csv --output reports/ai-visibility-summary.json
     python -m unittest tools.tests.test_ai_visibility_benchmark -v
 
-Перед запуском используйте копию CSV с фактическими наблюдениями. Пустой шаблон с одной строкой заголовков допустим и даёт ноль наблюдений.
+Перед запуском используйте копию CSV с фактическими наблюдениями. Каждую отвеченную строку связывайте через observation_id с полным JSON observation record; excerpt в CSV не является первичным доказательством. Пустой шаблон с одной строкой заголовков допустим и даёт ноль наблюдений.
 
 ## Что обеспечивает
 
 - Проверяет обязательные поля, допустимые статусы, режим измерения и уникальность наблюдения.
+- Для каждой отвеченной строки требует уникальный observation_id, связанный с отдельной полной записью ответа и источников.
 - Принимает баллы только от 0 до 2; заблокированные, недоступные, неподдерживаемые и непрогнанные строки не могут содержать оценки или hit-флаг.
 - Группирует строго по запуску, стране, локали, языку запроса, платформе, поверхности, consumer UI/API и интенту.
 - Считает долю generic discovery только по строкам, где результат явно отмечен true или false.

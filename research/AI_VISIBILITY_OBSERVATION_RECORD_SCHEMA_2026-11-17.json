@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json",
+  "title": "AI Visibility Observation Record",
+  "description": "One immutable record for one exact prompt submitted to one exact AI product surface in one session. Preserve the complete answer and evidence; do not synthesize observations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "observation_id",
+    "run_id",
+    "observed_at_utc",
+    "market",
+    "platform",
+    "query",
+    "answer_status",
+    "raw_answer",
+    "scores",
+    "evidence"
+  ],
+  "properties": {
+    "schema": {
+      "const": "studio/ai-visibility-observation/1"
+    },
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "market": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "country_code",
+        "interface_locale",
+        "prompt_language"
+      ],
+      "properties": {
+        "country_code": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$"
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interface_locale": {
+          "type": "string",
+          "minLength": 2
+        },
+        "prompt_language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "answer_language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "product",
+        "surface",
+        "measurement_mode"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surface": {
+          "type": "string",
+          "minLength": 1
+        },
+        "measurement_mode": {
+          "enum": [
+            "consumer_ui",
+            "model_api",
+            "search_results_ui"
+          ]
+        },
+        "model_or_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "search_mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "grounding_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "auth_status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_id",
+        "intent",
+        "exact_prompt"
+      ],
+      "properties": {
+        "query_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exact_prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "answer_status": {
+      "enum": [
+        "OK",
+        "PARTIAL",
+        "NOT_TESTED",
+        "NOT_AVAILABLE_IN_COUNTRY",
+        "BLOCKED_REGION",
+        "BLOCKED_AUTH",
+        "UNSUPPORTED_PROVIDER",
+        "BLOCKED_NETWORK",
+        "ERROR"
+      ]
+    },
+    "raw_answer": {
+      "type": "string"
+    },
+    "answer_excerpt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "named_providers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generic_discovery_hit": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "critical_error": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brand_identity",
+        "official_route",
+        "service_or_answer",
+        "commercial_accuracy",
+        "expertise_retrieval",
+        "source_quality",
+        "citation_quality",
+        "git_knowledge"
+      ],
+      "properties": {
+        "brand_identity": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "official_route": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "service_or_answer": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "commercial_accuracy": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "expertise_retrieval": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "source_quality": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "citation_quality": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "git_knowledge": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sources"
+      ],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "url"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "supporting_claim": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "relevant_excerpt": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "repository_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capture_artifact": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reference to an authentic screenshot/export stored with access controls; never fabricate a path."
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operator_notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "answer_status": {
+            "enum": [
+              "NOT_TESTED",
+              "NOT_AVAILABLE_IN_COUNTRY",
+              "BLOCKED_REGION",
+              "BLOCKED_AUTH",
+              "UNSUPPORTED_PROVIDER",
+              "BLOCKED_NETWORK",
+              "ERROR"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "raw_answer": {
+            "maxLength": 0
+          },
+          "generic_discovery_hit": {
+            "type": "null"
+          },
+          "critical_error": {
+            "type": "null"
+          },
+          "scores": {
+            "properties": {
+              "brand_identity": {
+                "type": "null"
+              },
+              "official_route": {
+                "type": "null"
+              },
+              "service_or_answer": {
+                "type": "null"
+              },
+              "commercial_accuracy": {
+                "type": "null"
+              },
+              "expertise_retrieval": {
+                "type": "null"
+              },
+              "source_quality": {
+                "type": "null"
+              },
+              "citation_quality": {
+                "type": "null"
+              },
+              "git_knowledge": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

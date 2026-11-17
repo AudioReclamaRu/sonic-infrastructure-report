@@ -45,12 +45,20 @@ def validate(path: Path):
     if missing:
         return [f"missing required columns: {', '.join(missing)}"], rows
     seen = set()
+    seen_observation_ids = set()
     for line, row in enumerate(rows, start=2):
         prefix = f"line {line}"
         for field in REQUIRED_FIELDS:
             if not (row.get(field) or "").strip():
                 errors.append(f"{prefix}: {field} is required")
         status = (row.get("answer_status") or "").strip().upper()
+        observation_id = (row.get("observation_id") or "").strip()
+        if status in ANSWERED and not observation_id:
+            errors.append(f"{prefix}: answered observations require observation_id linking to the full evidence record")
+        if observation_id:
+            if observation_id in seen_observation_ids:
+                errors.append(f"{prefix}: duplicate observation_id {observation_id!r}")
+            seen_observation_ids.add(observation_id)
         if status and status not in VALID_STATUSES:
             errors.append(f"{prefix}: unknown answer_status {status!r}")
         mode = (row.get("measurement_mode") or "").strip().lower()
@@ -82,7 +90,8 @@ def validate(path: Path):
             "search_mode", "grounding_state", "auth_status", "intent", "query_id",
         )
         key = tuple((row.get(field) or "").strip() for field in key_fields)
-        if all(key):
+        key_required_fields = ("run_id", "country_code", "interface_locale", "prompt_language", "answer_language", "platform", "platform_surface", "measurement_mode", "intent", "query_id")
+        if all((row.get(field) or "").strip() for field in key_required_fields):
             if key in seen:
                 errors.append(f"{prefix}: duplicate observation key {key}")
             seen.add(key)
