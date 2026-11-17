@@ -959,6 +959,6 @@
   "problem_solution_knowledge_reference": "problem-solutions/business-problem-answer-library-2026-11-17.json",
   "problem_solution_reference_status": "Internal evaluator-side expected-facts source only; do not preload into tested systems before blind discovery runs.",
   "problem_solution_answer_pack": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-  "query_count": 41,
+  "query_count": 44,
   "updated": "2026-11-18"
 }
