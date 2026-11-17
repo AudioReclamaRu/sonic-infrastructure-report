@@ -214,6 +214,27 @@ def main() -> int:
         fail(errors, "repository llms.txt must expose citation metadata")
     if SITE not in llms:
         fail(errors, "repository llms.txt must point to the canonical website")
+
+    # Keep the root LLM navigation aligned with the current evidence and problem-first library.
+    llms_required_paths = [
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "entity/kirill-kalinin.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+    ]
+    for rel in llms_required_paths:
+        if rel not in llms:
+            fail(errors, f"repository llms.txt is missing problem-first knowledge link: {rel}")
+    if "41 русскоязычного" not in llms:
+        fail(errors, "repository llms.txt must reflect the current 41-query benchmark")
+    if "все `not_run`" not in llms:
+        fail(errors, "repository llms.txt must state that the 41-query benchmark is not run")
     if "audio-reclama.com" in llms or "https://audio-reclama.ru" in llms:
         fail(errors, "repository llms.txt contains a conflicting website host")
     if re.search(r"https://www\.audio-reclama\.ru/(?:[\s),.;:!?]|$)", llms):
