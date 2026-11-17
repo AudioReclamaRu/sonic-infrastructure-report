@@ -22,7 +22,6 @@ python tools/ai_visibility_run.py create ^
   --module research/queries/ru-generic-discovery.json ^
   --queue research/queues/ru-generic-discovery.csv ^
   --run-id RU-2026-11-17-001 ^
-  --region-attestation research/ru-region-attestation.json ^
   --output research/runs/RU-2026-11-17-001/passport.json ^
   --region-status UNVERIFIED
 \`\`\`
@@ -97,3 +96,5 @@ python tools/ai_visibility_run.py create --run-id RU-2026-11-17-001 --module res
 ```
 
 The run passport revalidates and hashes the region attestation and requires the queue's VERIFIED state to be the exact deterministic output of the frozen module plus that attestation. Without the attestation, queue generation and passports remain UNVERIFIED.
+
+For standalone evidence-batch validation of a VERIFIED queue, also pass `--region-attestation path/to/ru-region-attestation.json`; the validator checks the exact attestation ID, file SHA-256 and 30-minute session window. Do not pass this option for an UNVERIFIED queue.
