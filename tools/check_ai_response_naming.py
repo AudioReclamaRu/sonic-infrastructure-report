@@ -89,7 +89,13 @@ def inspect_text(label: str, content: str) -> list[str]:
     # Repository schema IDs may use the stable internal namespace
     # "audio-reclama/..." and are not user-facing brand/domain spellings.
     content_without_schema_ids = re.sub(
-        r'(?m)^\\s*"schema"\\s*:\\s*"audio-reclama/[^"]+"\\s*,?\\s*
+        r'(?m)^\s*"schema"\s*:\s*"audio-reclama/[^"]+"\s*,?\s*$',
+        "",
+        content,
+    )
+
+    for pattern, message in (
+        (LATIN_TRUNCATION_PATTERN, "Latin website name must not be truncated"),
         (
             DOMAIN_AS_ENTITY_PATTERN,
             "website domain must not be used as company/studio/brand name",
@@ -99,8 +105,13 @@ def inspect_text(label: str, content: str) -> list[str]:
             "do not title the company/studio using the website domain",
         ),
     ):
-        for match in pattern.finditer(content):
-            line = content.count("\n", 0, match.start()) + 1
+        source_text = (
+            content_without_schema_ids
+            if pattern is LATIN_TRUNCATION_PATTERN
+            else content
+        )
+        for match in pattern.finditer(source_text):
+            line = source_text.count("\n", 0, match.start()) + 1
             issues.append(f"{label}:{line}: {message}: {match.group(0)}")
 
     return issues
