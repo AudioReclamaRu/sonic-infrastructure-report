@@ -226,7 +226,7 @@ def validate_observation_artifacts(
     record_paths: list[Path],
     csv_path: Path,
     queue_paths: list[Path],
-    expected_run_id: str,
+    expected_run_id: str | None,
     expected_region_attestation: dict | None = None,
 ) -> list[str]:
     """Validate records, CSV linkage, run identity and exact queue provenance."""
@@ -243,7 +243,7 @@ def validate_observation_artifacts(
         for error in validate_record(record):
             errors.append(f"{path.name}: {error}")
         if isinstance(record, dict):
-            if record.get("run_id") != expected_run_id:
+            if expected_run_id is not None and record.get("run_id") != expected_run_id:
                 errors.append(f"{path.name}: run_id does not match the frozen run passport")
             observation_id = record.get("observation_id")
             if isinstance(observation_id, str) and observation_id:
@@ -279,7 +279,7 @@ def validate_observation_artifacts(
         platform = record.get("platform", {})
         query = record.get("query", {})
         expected = {
-            "run_id": expected_run_id, "country_code": market.get("country_code"),
+            "run_id": expected_run_id or record.get("run_id"), "country_code": market.get("country_code"),
             "interface_locale": market.get("interface_locale"),
             "prompt_language": market.get("prompt_language"),
             "answer_language": market.get("answer_language") or "",
@@ -309,8 +309,11 @@ def validate_batch(
     paths = sorted(records_dir.glob("*.json")) if records_dir.is_dir() else []
     if not paths:
         return [f"no JSON observation records found in {records_dir}"]
-    if expected_run_id is None and csv_path is not None:
-        return validate_observation_artifacts(paths, csv_path, queue_paths or ([queue_path] if queue_path else []), "")
+    queues = queue_paths or ([queue_path] if queue_path else [])
+    if csv_path is not None:
+        return validate_observation_artifacts(
+            paths, csv_path, queues, expected_run_id, expected_region_attestation
+        )
     errors: list[str] = []
     by_id: dict[str, dict] = {}
     for path in paths:
@@ -329,15 +332,9 @@ def validate_batch(
                 if observation_id in by_id:
                     errors.append(f"duplicate observation_id across records: {observation_id}")
                 by_id[observation_id] = record
-    queues = queue_paths or ([queue_path] if queue_path else [])
     if queues:
         errors.extend(validate_queue_links(by_id, queues, expected_region_attestation))
-    if csv_path is None:
-        return errors
-    if expected_run_id is None:
-        errors.append("expected_run_id is required when validating a CSV batch")
-        return errors
-    return errors + validate_observation_artifacts(paths, csv_path, [], expected_run_id)
+    return errors
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
