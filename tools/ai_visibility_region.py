@@ -113,6 +113,7 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
         geo = []
     independence = set()
     providers = set()
+    evidence_hashes = set()
     for index, source in enumerate(geo, start=1):
         label = f"geolocation_sources[{index}]"
         if not isinstance(source, dict):
@@ -128,6 +129,7 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
             errors.append(f"{label}.country_code must be RU")
         independence.add(source.get("independence_group"))
         providers.add(source.get("provider"))
+        evidence_hashes.add(source.get("evidence_sha256"))
         timestamp = parse_time(source.get("captured_at_utc"))
         if timestamp is None:
             errors.append(f"{label}.captured_at_utc must be ISO-8601 UTC")
@@ -138,6 +140,8 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
         errors.append("geolocation sources must have at least two distinct independence_group values")
     if len(providers) < 2:
         errors.append("geolocation sources must name at least two distinct providers")
+    if len(evidence_hashes) < 2:
+        errors.append("geolocation sources must reference distinct evidence artifacts")
 
     owner = record.get("network_owner_evidence")
     errors.extend(artifact_errors(owner, "network_owner_evidence", base))
