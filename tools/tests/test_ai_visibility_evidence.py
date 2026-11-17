@@ -117,5 +117,18 @@ class EvidenceRecordTests(unittest.TestCase):
             errors = validate_batch(records, queue_path=queue)
             self.assertTrue(any("region is UNVERIFIED" in item for item in errors))
 
+
+    def test_verified_region_requires_explicit_primary_record_provenance(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            record = make_record()
+            record["market"]["region_evidence"] = ""
+            (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+            queue = self._write_queue(root, region_status="VERIFIED")
+            errors = validate_batch(records, queue_path=queue)
+            self.assertTrue(any("VERIFIED region requires explicit" in item for item in errors))
+
 if __name__ == "__main__":
     unittest.main()
