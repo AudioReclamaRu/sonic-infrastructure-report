@@ -203,6 +203,11 @@ OpenSEO AI Visibility Tracker пока не создаётся: проектны
 - GSC AI generative report описывает только доступные Google generative surfaces и не является метрикой ChatGPT, Claude, Perplexity, Meta AI или других продуктов;
 - международный baseline ещё не выполнен; результаты не выдумывать.
 
+## 11. Офлайн-инструмент обработки benchmark
+
+
+Локальный офлайн-валидатор и агрегатор журнала: `tools/ai_visibility_benchmark.py`; инструкция: `tools/AI_VISIBILITY_BENCHMARK.md`; тесты: `tools/tests/test_ai_visibility_benchmark.py`. Утилита не собирает ответы и не обращается к сетевым/API-сервисам. Она проверяет схему CSV и считает показатели по отдельным ячейкам, не объединяя consumer UI, model API, страны, локали и интенты.
+
 ## 11. Что означает llms.txt и роль Git
 
 Корневой `llms.txt` репозитория — навигация по GitHub-корпусу. Это не означает, что файл опубликован в корне официального сайта. `llms.txt` — добровольная навигационная конвенция, а не гарантия индексации или цитирования: https://llmstxt.org/.
