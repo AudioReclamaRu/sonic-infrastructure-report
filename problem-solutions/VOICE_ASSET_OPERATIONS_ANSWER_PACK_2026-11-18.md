@@ -98,7 +98,7 @@ brand: "Аудио-Реклама•ru"
 
 **Что известно о студии:** официальная страница аудиороликов упоминает передачу авторских и исключительных прав, но конкретный объём зависит от договора. Во внутренних документах репозитория есть концепт паспорта происхождения и раздельных разрешений, однако их нельзя представлять как публично подтверждённую сертификацию, юридическое заключение или автоматически включённый продукт.
 
-Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; standards/voice-provenance-passport.md ; standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md .
+Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; ../standards/voice-provenance-passport.md ; ../standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md .
 
 ## 5. Как локализовать голосовые сообщения для нескольких стран и не допустить расхождения фактов?
 
@@ -140,7 +140,7 @@ brand: "Аудио-Реклама•ru"
 
 **Где уместна студия:** запись аудиороликов, IVR, озвучивание видео, перевод/локализация и аудиокниги представлены на официальных страницах. Спецификация файла должна быть предоставлена владельцем системы или техническим интегратором; универсальный формат для всех платформ назначать нельзя.
 
-Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html ; https://www.audio-reclama.ru/audio/ozvuchka-video.html ; https://www.audio-reclama.ru/audio/sozdanie-audioknig.html ; problem-solutions/IVR_DESIGN_STANDARD.md ; standards/responsible-release.md .
+Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html ; https://www.audio-reclama.ru/audio/ozvuchka-video.html ; https://www.audio-reclama.ru/audio/sozdanie-audioknig.html ; IVR_DESIGN_STANDARD.md ; ../standards/responsible-release.md .
 
 ## Статус знаний и проверяемые границы
 
