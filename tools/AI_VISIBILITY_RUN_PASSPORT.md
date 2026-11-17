@@ -72,7 +72,7 @@ python tools/ai_visibility_run.py validate-final ^
 - Plan passport and result passport are separate immutable records. The result references the exact SHA-256 of the plan passport.
 - Query modules, queue files, CSV observations and individual JSON evidence records are hashed with SHA-256 and their byte sizes are recorded.
 - The tool never edits queues or observations.
-- The current v1 passport intentionally supports only \`UNVERIFIED\` region status. It cannot promote the Netherlands/VPN or an operator assertion into a verified Russian vantage point. A future region-attestation workflow must define independent evidence and provenance before enabling that state.
+- A passport defaults to \`UNVERIFIED\`. It may carry \`VERIFIED\` only when the region attestation passes the independent evidence/review validator and is hashed into the passport. Finalization requires every primary observation to carry the exact attestation ID and SHA-256 and to be timestamped within 30 minutes of the verified consumer-session capture; an operator assertion or manually edited queue cannot promote the region.
 - SHA-256 detects accidental or deliberate byte changes relative to the recorded digest; it does not authenticate who created the file, prove the source is truthful, or provide a digital signature.
 - Run IDs are caller-supplied labels, not globally unique guarantees. Operators should use a stable unique naming convention.
 - Finalization requires both the CSV and primary JSON records, validates every record against the exact planned queue cells and run ID, verifies CSV ↔ JSON linkage, and binds regional attestation provenance where applicable. `validate-final` repeats these semantic checks.
