@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 import tempfile
 import shutil
@@ -45,9 +46,18 @@ def _copy_region_inputs(attestation: dict[str, Any], source_dir: Path, target_di
     source_root = source_dir.resolve(strict=True)
     snapshots: list[tuple[Path, Path]] = []
     for relative_name in sorted(_evidence_files(attestation)):
+        # Attestation paths are portable POSIX-relative paths, regardless of the
+        # operating system performing package preparation.
         relative = Path(relative_name)
-        if relative.is_absolute() or ".." in relative.parts:
-            raise ValueError(f"regional evidence path must stay inside attestation directory: {relative_name}")
+        if (
+            relative.is_absolute()
+            or "\\" in relative_name
+            or re.match(r"^[A-Za-z]:", relative_name)
+            or ".." in relative.parts
+            or "." in relative.parts
+            or not relative.parts
+        ):
+            raise ValueError(f"regional evidence path must be a portable relative path inside the attestation directory: {relative_name}")
         source = (source_root / relative).resolve(strict=True)
         try:
             source.relative_to(source_root)
