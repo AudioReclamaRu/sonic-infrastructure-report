@@ -12,6 +12,9 @@ LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE_PACK = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
 PROBLEM_LIBRARY = "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
+VOICE_ASSET_LIBRARY = "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
+ROUTING_INDEX = "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
+ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
 CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
 LIBRARY_SCHEMA = "audio" + "-reclama/problem-solution-library/1"
@@ -99,6 +102,137 @@ def validate(root: Path = ROOT) -> list[str]:
     if len(scenario_ids) != len(set(scenario_ids)):
         errors.append("business problem scenario IDs must be unique")
 
+    # Verify the routing graph end to end: source scenario -> exact answer
+    # heading -> supporting documents -> primary sources and evidence files.
+    routing = _read_json(root / ROUTING_INDEX, errors, ROUTING_INDEX) or {}
+    if routing.get("schema") != ROUTING_SCHEMA:
+        errors.append("unexpected problem-answer routing index schema")
+    entries = routing.get("entries", [])
+    if not isinstance(entries, list) or not entries:
+        errors.append("problem-answer routing index must contain entries")
+        entries = []
+    if routing.get("entry_count") != len(entries):
+        errors.append("problem-answer routing index entry_count must equal actual entries")
+
+    routing_ids: list[str] = []
+    source_cache: dict[str, dict] = {}
+    markdown_cache: dict[str, str] = {}
+    required_route_fields = (
+        "routing_id", "intent_type", "problem", "source", "answer_references",
+        "supporting_documents", "primary_sources", "evidence_refs",
+        "service_fit", "guardrails",
+    )
+
+    def safe_relative_path(value: object) -> bool:
+        return (
+            isinstance(value, str)
+            and bool(value)
+            and not value.startswith("/")
+            and ".." not in Path(value).parts
+        )
+
+    for index, entry in enumerate(entries, start=1):
+        if not isinstance(entry, dict):
+            errors.append(f"routing entry {index} must be an object")
+            continue
+        for field in required_route_fields:
+            if field not in entry or entry[field] in (None, "", []):
+                errors.append(f"routing entry {index} missing required field: {field}")
+
+        routing_id = entry.get("routing_id")
+        if isinstance(routing_id, str) and routing_id:
+            routing_ids.append(routing_id)
+
+        source = entry.get("source")
+        if not isinstance(source, dict):
+            errors.append(f"routing entry {routing_id or index} source must be an object")
+            source = {}
+        source_file = source.get("file")
+        source_scenario_id = source.get("scenario_id")
+        if not safe_relative_path(source_file):
+            errors.append(f"routing entry {routing_id or index} has unsafe source file path")
+        elif not (root / source_file).is_file():
+            errors.append(f"routing entry {routing_id or index} source file does not resolve: {source_file}")
+        else:
+            if source_file not in source_cache:
+                source_cache[source_file] = _read_json(root / source_file, errors, source_file) or {}
+            source_scenarios = source_cache[source_file].get("scenarios", [])
+            if not isinstance(source_scenarios, list):
+                errors.append(f"routing source file {source_file} must contain a scenarios list")
+                source_scenarios = []
+            matched = next(
+                (item for item in source_scenarios
+                 if isinstance(item, dict) and item.get("id") == source_scenario_id),
+                None,
+            )
+            if matched is None:
+                errors.append(
+                    f"routing entry {routing_id or index} does not resolve scenario "
+                    f"{source_scenario_id!r} in {source_file}"
+                )
+            elif matched.get("problem") != entry.get("problem"):
+                errors.append(
+                    f"routing entry {routing_id or index} problem text does not match its source scenario"
+                )
+
+        answer_references = entry.get("answer_references")
+        if not isinstance(answer_references, list) or not answer_references:
+            errors.append(f"routing entry {routing_id or index} must have answer_references")
+            answer_references = []
+        for answer_index, answer_ref in enumerate(answer_references, start=1):
+            label = f"routing entry {routing_id or index} answer reference {answer_index}"
+            if not isinstance(answer_ref, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            answer_file = answer_ref.get("file")
+            heading = answer_ref.get("heading")
+            if not safe_relative_path(answer_file):
+                errors.append(f"{label} has unsafe file path")
+            elif not (root / answer_file).is_file():
+                errors.append(f"{label} file does not resolve: {answer_file}")
+            else:
+                if answer_file not in markdown_cache:
+                    try:
+                        markdown_cache[answer_file] = (root / answer_file).read_text(encoding="utf-8")
+                    except OSError as exc:
+                        errors.append(f"{label} cannot read {answer_file}: {exc}")
+                        markdown_cache[answer_file] = ""
+                if not isinstance(heading, str) or not heading or heading not in markdown_cache[answer_file]:
+                    errors.append(f"{label} heading does not resolve in {answer_file}: {heading!r}")
+
+        for path_field in ("supporting_documents", "evidence_refs"):
+            values = entry.get(path_field)
+            if not isinstance(values, list):
+                errors.append(f"routing entry {routing_id or index} {path_field} must be a list")
+                continue
+            for path_index, relative_path in enumerate(values, start=1):
+                label = f"routing entry {routing_id or index} {path_field}[{path_index}]"
+                if not safe_relative_path(relative_path):
+                    errors.append(f"{label} must be a safe repository-relative path")
+                elif not (root / relative_path).is_file():
+                    errors.append(f"{label} does not resolve: {relative_path}")
+
+        primary_sources = entry.get("primary_sources")
+        if not isinstance(primary_sources, list) or not primary_sources:
+            errors.append(f"routing entry {routing_id or index} must have primary_sources")
+        else:
+            for source_index, primary_source in enumerate(primary_sources, start=1):
+                label = f"routing entry {routing_id or index} primary source {source_index}"
+                if not isinstance(primary_source, str) or not primary_source:
+                    errors.append(f"{label} must be a non-empty string")
+                elif primary_source.startswith(("https://", "http://")):
+                    _validate_url(primary_source, label, errors)
+                elif not safe_relative_path(primary_source) or not (root / primary_source).is_file():
+                    errors.append(f"{label} does not resolve to a safe repository-relative path: {primary_source}")
+
+        for field in ("service_fit", "guardrails"):
+            values = entry.get(field)
+            if not isinstance(values, list) or not values:
+                errors.append(f"routing entry {routing_id or index} {field} must be a non-empty list")
+
+    if len(routing_ids) != len(set(routing_ids)):
+        errors.append("problem-answer routing IDs must be unique")
+
     for rel in (REFERENCE_PACK, PROBLEM_LIBRARY):
         path = root / rel
         try:
@@ -162,9 +296,11 @@ def main() -> int:
         return 1
     library = json.loads((ROOT / LIBRARY).read_text(encoding="utf-8"))
     benchmark = json.loads((ROOT / BENCHMARK).read_text(encoding="utf-8"))
+    routing = json.loads((ROOT / ROUTING_INDEX).read_text(encoding="utf-8"))
     print(
         "Problem-solution knowledge PASS: "
-        f"{len(library['scenarios'])} scenarios, {len(benchmark['queries'])} unrun queries; "
+        f"{len(library['scenarios'])} scenarios, {len(routing['entries'])} routing entries, "
+        f"{len(benchmark['queries'])} unrun queries; "
         "preferred-source paths resolve and source URLs are canonical."
     )
     return 0
