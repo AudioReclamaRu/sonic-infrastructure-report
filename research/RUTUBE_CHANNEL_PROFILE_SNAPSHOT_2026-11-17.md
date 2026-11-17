@@ -36,6 +36,8 @@ This current content layer is intentionally separated from the 55-item historica
 
 The 20 standard videos span 2026-02-24 through 2026-07-28; the 20 Shorts span 2026-07-23 through 2026-09-24. Public view counts are capture-time page counters, not analytics or conversions.
 
+**Duplicate-label rule (user-confirmed, 2026-11-17):** every video carrying the same displayed title is identical in content because the user personally duplicated it. The current-channel inventory therefore treats the two `О настоящем` uploads and the matching-title video/Short pairs as confirmed same-content records. Each ID, URL, publication date, duration and counter remains separate; this is not an independent file-hash or audiovisual-fingerprint result.
+
 ## Historical price descriptions found on seven voice-talent pages
 
 Seven RUTUBE descriptions dated 2026-02-24 include per-voice price text. Amounts below are in RUB and are preserved as historical page snapshots, not current confirmed rates.
