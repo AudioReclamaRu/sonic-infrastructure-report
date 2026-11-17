@@ -89,6 +89,9 @@ strategy/              strategic development contracts
   STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
 research/              reproducible research plans and benchmark programmes
+  AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md  global AI visibility protocol
+  ai-visibility-global-market-matrix-2026-11-17.json  country/language/platform seed matrix
+  ai-visibility-benchmark-queries-2026-11-17.json  fixed RU query module
   RU_TTS_QUALITY_BENCHMARK_PLAN_2026-11-14.md  proposed Russian TTS quality test suite
 problem-solutions/     diagnostic knowledge: symptom → diagnosis → solution → verification
   README.md             operating model
