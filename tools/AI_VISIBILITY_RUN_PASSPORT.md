@@ -21,6 +21,7 @@ python tools/ai_visibility_run.py create ^
   --run-id RU-2026-11-17-001 ^
   --module research/queries/ru-generic-discovery.json ^
   --queue research/queues/ru-generic-discovery.csv ^
+  --run-id RU-2026-11-17-001 ^
   --output research/runs/RU-2026-11-17-001/passport.json ^
   --region-status UNVERIFIED
 \`\`\`
@@ -38,7 +39,7 @@ This detects changed, missing or replaced input files and modifications to the p
 
 ## 3. Validate evidence, then finalize
 
-First run the existing benchmark and evidence validators, including exact queue linkage:
+Finalization now runs the evidence checks itself. The standalone validator remains useful during collection; pass the same run ID and repeat `--queue` for each planned queue:
 
 \`\`\`bash
 python tools/ai_visibility_benchmark.py validate research/runs/RU-2026-11-17-001/observations.csv
@@ -74,7 +75,8 @@ python tools/ai_visibility_run.py validate-final ^
 - The current v1 passport intentionally supports only \`UNVERIFIED\` region status. It cannot promote the Netherlands/VPN or an operator assertion into a verified Russian vantage point. A future region-attestation workflow must define independent evidence and provenance before enabling that state.
 - SHA-256 detects accidental or deliberate byte changes relative to the recorded digest; it does not authenticate who created the file, prove the source is truthful, or provide a digital signature.
 - Run IDs are caller-supplied labels, not globally unique guarantees. Operators should use a stable unique naming convention.
-- The tool does not replace benchmark/evidence validation and does not calculate visibility. Blocked, unavailable and error outcomes are not zero visibility.
+- Finalization requires both the CSV and primary JSON records, validates every record against the exact planned queue cells and run ID, verifies CSV ↔ JSON linkage, and binds regional attestation provenance where applicable. `validate-final` repeats these semantic checks.
+- The tool does not calculate visibility. Blocked, unavailable and error outcomes are not zero visibility.
 - No AI/provider requests, paid checks, paid trackers, website changes, publishing, or network calls are made.
 
 ## Tests
