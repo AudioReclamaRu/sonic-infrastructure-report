@@ -347,7 +347,8 @@ def main(argv=None) -> int:
     batch = sub.add_parser("validate-batch", help="validate a directory of records and optional CSV links")
     batch.add_argument("records_dir", type=Path)
     batch.add_argument("--csv", type=Path)
-    batch.add_argument("--queue", type=Path, help="also require exact match to a planned execution queue")
+    batch.add_argument("--queue", type=Path, action="append", default=[], help="also require exact match to a planned execution queue; repeat for multiple queues")
+    batch.add_argument("--run-id", help="require every record and CSV row to belong to this exact run ID")
     args = parser.parse_args(argv)
     if args.command == "validate-record":
         try:
@@ -357,7 +358,7 @@ def main(argv=None) -> int:
         else:
             errors = validate_record(record)
     else:
-        errors = validate_batch(args.records_dir, args.csv, args.queue)
+        errors = validate_batch(args.records_dir, args.csv, queue_paths=args.queue, expected_run_id=args.run_id)
     if errors:
         print("AI visibility evidence validation FAILED:")
         for error in errors:
