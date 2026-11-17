@@ -21,6 +21,8 @@ TEXT_SUFFIXES = {
 EXEMPT_PATHS = {
     "standards/BRAND_AND_SITE_NAMING.md",
     "tools/check_ai_response_naming.py",
+    # The validator intentionally contains negative hostname test strings.
+    "tools/validate_ai_discovery_assets.py",
 }
 
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
