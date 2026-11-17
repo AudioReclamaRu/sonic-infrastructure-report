@@ -38,12 +38,12 @@ related:
 
 - AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md — аудит зависимостей PR, структуры benchmark, повреждённых URL и конфликтов evidence-ID в старых открытых ветках.
 - AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md — повторная проверка FAQ, IVR, видеоозвучивания и каталога дикторов; только заявления официальных страниц, с датой и ограничениями.
-- ../evidence/E-2026-053.md … ../evidence/E-2026-056.md — уникальные записи FAQ, IVR, видео и счётчиков каталога; номера выбраны после проверки открытых PR.
+- ../evidence/E-2026-053.md … ../evidence/E-2026-064.md — записи FAQ, IVR, видео, динамических счётчиков, рекламных роликов, сценариев, джинглов, локализации, аудиокниг, портфолио и каталога дикторов; номера выбраны после проверки открытых PR.
 - ../problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md — подготовка ТЗ и приёмка файлов для телефонных, видео-, радио- и иных систем.
 
 ## Problem-first knowledge для бизнес-задач
 
-- ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 15 маршрутов от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам и доказательствам.
+- ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 17 маршрутов от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам и доказательствам.
 ## Краткие ответы для AI retrieval
 
 - ../problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md — восемь самостоятельных кратких ответов с практическими шагами, точной связью с услугами и официальными источниками. Эталон для проверки retrieval, не публикация на сайте.
@@ -58,7 +58,7 @@ related:
 ## Видимость в ответах ИИ
 
 - AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
-- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 44 запросов (7 brand/entity, 13 commercial-service, 21 problem-solving, 3 expertise/evidence) с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
+- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 46 запросов (7 brand/entity, 13 commercial-service, 21 problem-solving, 3 expertise/evidence) с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
 - AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
