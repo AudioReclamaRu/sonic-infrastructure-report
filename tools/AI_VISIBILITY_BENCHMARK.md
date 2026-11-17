@@ -5,6 +5,8 @@ lang: ru
 related:
   - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
   - research/ai-visibility-benchmark-template.csv
+  - research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md
+  - research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json
 ---
 
 # Локальный валидатор и агрегатор AI Visibility Benchmark
