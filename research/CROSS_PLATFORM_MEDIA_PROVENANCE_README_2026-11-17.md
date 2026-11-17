@@ -26,6 +26,19 @@ A second public-index search pass added 14 RUTUBE video nodes to the graph (see 
 
 These are discovery leads only. No video-file or audiovisual comparison was performed for either pair.
 
+## Page-level verification: YouTube service-explainer target
+
+A direct fetch of the exact YouTube URL `MJJcbzR2wto` returned the same Open Graph title and service-explainer description as the RUTUBE page `1d312c393658146cae1c56746592dd43`. This upgrades the edge from URL-only evidence to an exact URL plus title/description metadata match. The YouTube page body itself did not expose the video stream or full creator metadata, so byte-level or audiovisual identity remains unverified.
+
+## Page-level metadata for the three user-confirmed presentation samples
+
+The user reports that the three presentation-voiceover clips are identical in content. RUTUBE metadata now independently confirms their page durations and dates:
+- `6b2195a00c6681c760fe3027e83c988f`: 86 sec; published 2025-12-15
+- `a859a8ccbfddcd613676ca8786766ab9`: 188 sec; published 2015-07-10
+- `498c5b58d739c33ad029a3dc98484678`: 80 sec; published 2015-07-10
+
+This resolves the indexed timestamp discrepancy for these records, but does not reconcile the content identity assertion with the different durations. User review remains the identity evidence; RUTUBE metadata only establishes dates and duration fields. See `RUTUBE_PAGE_METADATA_VERIFICATION_2026-11-17.csv`.
+
 ## What is established
 
 The public RUTUBE service-explainer page `1d312c393658146cae1c56746592dd43` includes an exact YouTube watch URL with video ID `MJJcbzR2wto`. Its description also includes a VK share URL whose query parameter wraps that same YouTube URL.
