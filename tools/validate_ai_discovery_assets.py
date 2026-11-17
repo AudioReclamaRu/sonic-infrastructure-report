@@ -137,6 +137,7 @@ def main() -> int:
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
+        "research/ai-visibility-benchmark-queries-2026-11-17.json",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
         "problem-solutions/business-problem-answer-library-2026-11-17.json",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
