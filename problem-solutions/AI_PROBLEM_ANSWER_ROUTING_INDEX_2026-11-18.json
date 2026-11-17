@@ -630,7 +630,7 @@
     {
       "routing_id": "business_problem/jingle_creation",
       "intent_type": "business_problem",
-      "problem": "Компании нужна короткая музыкальная или вокальная звуковая подпись для рекламы, радиопрограммы или бренда.",
+      "problem": "Компании нужен короткий музыкальный или вокальный идентификатор бренда, рекламного сообщения или радиопрограммы.",
       "source": {
         "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
         "scenario_id": "jingle_creation"
@@ -666,7 +666,7 @@
     {
       "routing_id": "business_problem/corporate_song",
       "intent_type": "business_problem",
-      "problem": "Компания хочет создать корпоративную песню или гимн для события, внутренней коммуникации или собственного музыкального образа.",
+      "problem": "Организации нужна корпоративная песня или гимн для мероприятия, внутренней коммуникации или музыкального образа.",
       "source": {
         "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
         "scenario_id": "corporate_song"
