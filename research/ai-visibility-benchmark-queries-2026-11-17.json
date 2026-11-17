@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama/ai-visibility-benchmark/1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "created": "2026-11-17",
   "language": "ru",
   "target_region": "RU",
@@ -736,11 +736,154 @@
         "Не утверждать, что права и дистрибуция автоматически входят в услугу."
       ],
       "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-15",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как компании вести версии голосовых файлов, чтобы не выпустить устаревшее приветствие или рекламное сообщение?",
+      "expected_facts": [
+        "Каждый голосовой актив нужно связывать с точной версией текста, языком, назначением, каналом, владельцем и статусом выпуска.",
+        "Новая запись должна заменять предыдущую версию явно; проверка должна затрагивать реальную точку воспроизведения.",
+        "Студия публично предлагает запись аудиороликов и голосовых приветствий/IVR, но реестр DAM и администрирование файловой системы не подтверждены как отдельная услуга."
+      ],
+      "preferred_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "must_not_claim": [
+        "Не заявлять управление DAM, внешней библиотекой файлов или гарантированное отключение старой версии без подтверждения."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-16",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Что нужно пересмотреть в голосовых сообщениях, если изменились цены, адрес, график или условия услуги?",
+      "expected_facts": [
+        "Следует найти все аудиоактивы и языковые версии, в которых использованы изменившиеся сведения.",
+        "Новый текст утверждает владелец бизнес-информации; затронутые файлы версионируются и проверяются в каждом канале.",
+        "Подтверждённые направления студии включают сценарии/запись аудиороликов, IVR и локализацию."
+      ],
+      "preferred_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "must_not_claim": [
+        "Не обещать автоматический поиск всех аудиофайлов или снятие старых версий со всех систем."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-17",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "expected_facts": [
+        "Идентичность голоса включает произношение, темп, характер подачи, смысловые роли и референсы, а не только тембр.",
+        "Кастинг и каталог дикторов подтверждены публичными страницами, но наличие конкретного исполнителя и будущая доступность требуют проверки.",
+        "Внутренние frameworks по голосовой идентичности не доказывают наличие услуги AI-клонирования."
+      ],
+      "preferred_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "https://www.audio-reclama.ru/diktoryi/",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
+      ],
+      "must_not_claim": [
+        "Не гарантировать доступность диктора, бессрочное использование голоса или AI-клонирование."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-TRUST-03",
+      "cluster": "expertise_and_evidence",
+      "language": "ru",
+      "region": "RU",
+      "query": "Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "expected_facts": [
+        "Нужно отдельно проверить права на текст/перевод, исполнение, фонограмму и сторонние элементы, а также медиа, территорию и срок.",
+        "Согласие на обычную запись само по себе не означает согласие на обучение AI, voice cloning или генерацию новых реплик.",
+        "На публичной странице аудиороликов передача авторских и исключительных прав упоминается, но конкретный объём определяется договором.",
+        "Паспорт происхождения голоса в репозитории — внутренняя методическая позиция, не независимая сертификация или юридическое заключение."
+      ],
+      "preferred_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md"
+      ],
+      "must_not_claim": [
+        "Не трактовать обычное согласие на запись как автоматическое разрешение на AI training или цифровую реплику."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-18",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как локализовать голосовые сообщения на несколько языков и не допустить расхождения цифр, имён и условий?",
+      "expected_facts": [
+        "Нужно зафиксировать master-текст, целевые языки/региональные варианты, неизменяемые факты и словарь произношений.",
+        "Каждая языковая версия проходит отдельную смысловую, лингвистическую и аудиопроверку.",
+        "Публичные страницы подтверждают перевод/локализацию, озвучивание видео и многоязычные приветствия; конкретный язык и исполнитель проверяются под проект."
+      ],
+      "preferred_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "must_not_claim": [
+        "Не переносить количество языков одной услуги на другую и не утверждать, что буквальный перевод гарантирует естественное исполнение."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-19",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "expected_facts": [
+        "Содержательная проверка включает текстовую версию, числа, имена, даты, произношение, полноту и права.",
+        "Аудио/техническая проверка включает обрезания, клиппинг, шумы, разборчивость и соответствие спецификации принимающей системы.",
+        "Нельзя назначать универсальные параметры файла для всех АТС; их задаёт принимающая система или интегратор.",
+        "Внутренняя процедура pre-air review не должна называться независимой сертификацией; окончательное решение о выпуске остаётся у заказчика."
+      ],
+      "preferred_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "standards/responsible-release.md"
+      ],
+      "must_not_claim": [
+        "Не обещать универсальные настройки аудиоэкспорта или сертификацию без утверждённого процесса."
+      ],
+      "status": "not_run"
     }
   ],
   "knowledge_pack_reference": "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
   "knowledge_pack_reference_status": "Internal evaluator-side expected-facts sources only; do not preload these files into tested platforms before blind discovery runs.",
   "problem_solution_knowledge_reference": "problem-solutions/business-problem-answer-library-2026-11-17.json",
   "problem_solution_reference_status": "Internal evaluator-side expected-facts source only; do not preload into tested systems before blind discovery runs.",
-  "problem_solution_answer_pack": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
+  "problem_solution_answer_pack": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+  "query_count": 41,
+  "updated": "2026-11-18"
 }

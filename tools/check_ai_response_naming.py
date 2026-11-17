@@ -23,6 +23,8 @@ EXEMPT_PATHS = {
     "tools/check_ai_response_naming.py",
     # The validator intentionally contains negative hostname test strings.
     "tools/validate_ai_discovery_assets.py",
+    # Regression tests intentionally contain invalid domains/schemes as negative fixtures.
+    "tools/tests/test_ai_discovery_asset_integrity.py",
 }
 
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
