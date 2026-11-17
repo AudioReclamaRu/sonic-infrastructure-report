@@ -28,7 +28,7 @@ class PrepareRunTests(unittest.TestCase):
             patch("tools.ai_visibility_prepare_run.write_queue", side_effect=lambda _rows, path: path.write_text("queue fixture", encoding="utf-8")),
             patch("tools.ai_visibility_prepare_run.create_plan", return_value=plan),
             patch("tools.ai_visibility_prepare_run.validate_plan", return_value=([], plan)),
-            patch("tools.ai_visibility_prepare_run.build_packet", return_value={"schema": "packet/1", "planned_cells": 1}),
+            patch("tools.ai_visibility_prepare_run.build_packet", side_effect=lambda _passport, path: (path.mkdir(parents=True), {"schema": "packet/1", "planned_cells": 1})[1]),
         ):
             manifest = prepare_run(self.module, self.attestation, "run-001", output)
         self.assertEqual(manifest["package_status"], "PLANNED_CAPTURE_READY")
