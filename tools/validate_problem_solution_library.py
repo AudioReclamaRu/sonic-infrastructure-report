@@ -325,9 +325,11 @@ def main() -> int:
     library = json.loads((ROOT / LIBRARY).read_text(encoding="utf-8"))
     benchmark = json.loads((ROOT / BENCHMARK).read_text(encoding="utf-8"))
     routing = json.loads((ROOT / ROUTING_INDEX).read_text(encoding="utf-8"))
+    mapped_query_count = len({query_id for entry in routing["entries"] for query_id in entry.get("benchmark_query_ids", [])})
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} scenarios, {len(routing['entries'])} routing entries, "
+        f"{mapped_query_count} linked control prompts, "
         f"{len(benchmark['queries'])} unrun queries; "
         "preferred-source paths resolve and source URLs are canonical."
     )
