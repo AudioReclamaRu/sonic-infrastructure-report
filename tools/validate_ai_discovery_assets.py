@@ -34,7 +34,7 @@ def malformed_official_urls(text: str) -> list[str]:
     return [match.group(0) for match in MALFORMED_OFFICIAL_URL_RE.finditer(text)]
 
 
-OFFICIAL_URL_RE = re.compile(r"https?://(?:www\\.)?audio-reclama[.]ru\\S+", re.IGNORECASE)
+OFFICIAL_URL_RE = re.compile(r"https?://(?:www[.])?audio-reclama[.]ru\S+", re.IGNORECASE)
 
 
 def noncanonical_official_urls(text: str) -> list[str]:
