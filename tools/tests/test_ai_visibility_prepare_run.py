@@ -37,6 +37,35 @@ class PrepareRunTests(unittest.TestCase):
         self.assertTrue((output / "capture-packet").is_dir())
         self.assertTrue((output / "run-package.json").is_file())
         self.assertTrue((output / "README_RUN.md").is_file())
+        self.assertEqual((output / "inputs/query-module/queries.json").read_text(encoding="utf-8"), '{"schema":"test-module"}')
+        self.assertEqual((output / "inputs/region-attestation/attestation.json").read_bytes(), self.attestation.read_bytes())
+
+
+    def test_copies_attestation_evidence_without_rewriting_source(self):
+        evidence_dir = self.root / "evidence"
+        evidence_dir.mkdir()
+        evidence = evidence_dir / "session.png"
+        evidence.write_bytes(b"session-evidence")
+        attestation = {
+            "attestation_id": "attestation-001",
+            "session_capture": {"evidence_file": "evidence/session.png"},
+        }
+        self.attestation.write_text(json.dumps(attestation), encoding="utf-8")
+        output = self.root / "portable-run"
+        with (
+            patch("tools.ai_visibility_prepare_run.load_module", return_value={"schema": "test-module"}),
+            patch("tools.ai_visibility_prepare_run.validate_attestation", return_value=([], "VERIFIED")),
+            patch("tools.ai_visibility_prepare_run.build_rows", return_value=[{"queue_id": "Q1"}]),
+            patch("tools.ai_visibility_prepare_run.write_queue", side_effect=lambda _rows, path: path.write_text("queue fixture", encoding="utf-8")),
+            patch("tools.ai_visibility_prepare_run.create_plan", return_value={"run_id": "run-001", "passport_sha256": "a" * 64}),
+            patch("tools.ai_visibility_prepare_run.validate_plan", return_value=([], {"run_id": "run-001", "passport_sha256": "a" * 64})),
+            patch("tools.ai_visibility_prepare_run.build_packet", side_effect=lambda _passport, path: (path.mkdir(parents=True), {"schema": "packet/1", "planned_cells": 1})[1]),
+        ):
+            prepare_run(self.module, self.attestation, "run-001", output)
+        copied = output / "inputs/region-attestation/evidence/session.png"
+        self.assertEqual(copied.read_bytes(), b"session-evidence")
+        self.assertEqual(self.attestation.read_text(encoding="utf-8"), json.dumps(attestation))
+
 
     def test_unverified_attestation_blocks_package_creation(self):
         output = self.root / "run-package"
