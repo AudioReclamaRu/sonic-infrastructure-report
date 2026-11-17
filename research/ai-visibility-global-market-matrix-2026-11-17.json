@@ -1,0 +1,740 @@
+{
+  "schema": "audio-reclama/global-ai-visibility-market-matrix/1",
+  "version": "1.0.0",
+  "created": "2026-11-17",
+  "status": "design_only_not_executed",
+  "purpose": "Seed market/language cells for a reproducible worldwide AI visibility benchmark. This is a sampling plan, not a statement that every platform is available in every country or that every listed language is currently commercially serviceable.",
+  "global_scope": {
+    "target": "Any potential client in any country worldwide; no country ceiling.",
+    "first_priority": [
+      "Russia",
+      "CIS and Russian-speaking markets"
+    ],
+    "worldwide_regions": [
+      "Europe",
+      "United Kingdom",
+      "North America",
+      "Australia and New Zealand",
+      "Asia",
+      "Latin America",
+      "Middle East",
+      "Africa",
+      "other markets with potential demand"
+    ],
+    "coverage_rule": "The markets below are the first structured sampling wave, not an exhaustive country list. Add further countries and languages when demand, historical customers, service capacity, platform access or useful regional AI coverage justify them. Do not use this seed list to exclude the rest of the world.",
+    "language_rule": "Each locale is a separate test cell. A country's dominant language, a customer's language and the platform UI language may differ; store them independently.",
+    "serviceability_rule": "A benchmark locale is not a promise that the studio can fulfil every language. Verify voice talent, translation/localization, rights, delivery, payments and contractual feasibility before making a commercial claim."
+  },
+  "market_groups": [
+    {
+      "id": "russia-and-cis",
+      "priority": "P0",
+      "rationale": "Россия — первый коммерческий приоритет; далее русскоязычные и локально-языковые сегменты СНГ. Не считать язык страны единственным языком аудитории.",
+      "markets": [
+        {
+          "country_code": "RU",
+          "country": "Russia",
+          "locales": [
+            "ru-RU"
+          ],
+          "notes": "Primary market; direct UI measurements required where providers exclude RU."
+        },
+        {
+          "country_code": "KZ",
+          "country": "Kazakhstan",
+          "locales": [
+            "ru-KZ",
+            "kk-KZ"
+          ]
+        },
+        {
+          "country_code": "BY",
+          "country": "Belarus",
+          "locales": [
+            "ru-BY",
+            "be-BY"
+          ],
+          "notes": "DataForSEO does not support Belarus locations."
+        },
+        {
+          "country_code": "AM",
+          "country": "Armenia",
+          "locales": [
+            "ru-AM",
+            "hy-AM"
+          ]
+        },
+        {
+          "country_code": "AZ",
+          "country": "Azerbaijan",
+          "locales": [
+            "ru-AZ",
+            "az-AZ"
+          ]
+        },
+        {
+          "country_code": "UZ",
+          "country": "Uzbekistan",
+          "locales": [
+            "ru-UZ",
+            "uz-UZ"
+          ]
+        },
+        {
+          "country_code": "KG",
+          "country": "Kyrgyzstan",
+          "locales": [
+            "ru-KG",
+            "ky-KG"
+          ]
+        },
+        {
+          "country_code": "TJ",
+          "country": "Tajikistan",
+          "locales": [
+            "ru-TJ",
+            "tg-TJ"
+          ]
+        },
+        {
+          "country_code": "MD",
+          "country": "Moldova",
+          "locales": [
+            "ru-MD",
+            "ro-MD"
+          ]
+        },
+        {
+          "country_code": "GE",
+          "country": "Georgia",
+          "locales": [
+            "ka-GE",
+            "ru-GE"
+          ]
+        },
+        {
+          "country_code": "UA",
+          "country": "Ukraine",
+          "locales": [
+            "uk-UA",
+            "ru-UA"
+          ],
+          "notes": "Keep Ukrainian and Russian-language samples separate; test only where product access and local rules permit."
+        }
+      ]
+    },
+    {
+      "id": "english-language-markets",
+      "priority": "P1",
+      "rationale": "English-language demand across North America, the UK, Australia and other markets; country remains a separate dimension.",
+      "markets": [
+        {
+          "country_code": "US",
+          "country": "United States",
+          "locales": [
+            "en-US",
+            "es-US"
+          ]
+        },
+        {
+          "country_code": "CA",
+          "country": "Canada",
+          "locales": [
+            "en-CA",
+            "fr-CA"
+          ]
+        },
+        {
+          "country_code": "GB",
+          "country": "United Kingdom",
+          "locales": [
+            "en-GB"
+          ]
+        },
+        {
+          "country_code": "IE",
+          "country": "Ireland",
+          "locales": [
+            "en-IE"
+          ]
+        },
+        {
+          "country_code": "AU",
+          "country": "Australia",
+          "locales": [
+            "en-AU"
+          ]
+        },
+        {
+          "country_code": "NZ",
+          "country": "New Zealand",
+          "locales": [
+            "en-NZ"
+          ]
+        },
+        {
+          "country_code": "ZA",
+          "country": "South Africa",
+          "locales": [
+            "en-ZA"
+          ]
+        },
+        {
+          "country_code": "IN",
+          "country": "India",
+          "locales": [
+            "en-IN",
+            "hi-IN"
+          ]
+        },
+        {
+          "country_code": "SG",
+          "country": "Singapore",
+          "locales": [
+            "en-SG",
+            "zh-SG"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "europe",
+      "priority": "P1",
+      "rationale": "Major European markets, including multilingual countries; query locale should match the language being sampled.",
+      "markets": [
+        {
+          "country_code": "DE",
+          "country": "Germany",
+          "locales": [
+            "de-DE"
+          ]
+        },
+        {
+          "country_code": "FR",
+          "country": "France",
+          "locales": [
+            "fr-FR"
+          ]
+        },
+        {
+          "country_code": "ES",
+          "country": "Spain",
+          "locales": [
+            "es-ES"
+          ]
+        },
+        {
+          "country_code": "IT",
+          "country": "Italy",
+          "locales": [
+            "it-IT"
+          ]
+        },
+        {
+          "country_code": "NL",
+          "country": "Netherlands",
+          "locales": [
+            "nl-NL"
+          ]
+        },
+        {
+          "country_code": "PL",
+          "country": "Poland",
+          "locales": [
+            "pl-PL"
+          ]
+        },
+        {
+          "country_code": "BE",
+          "country": "Belgium",
+          "locales": [
+            "nl-BE",
+            "fr-BE"
+          ]
+        },
+        {
+          "country_code": "CH",
+          "country": "Switzerland",
+          "locales": [
+            "de-CH",
+            "fr-CH",
+            "it-CH"
+          ]
+        },
+        {
+          "country_code": "AT",
+          "country": "Austria",
+          "locales": [
+            "de-AT"
+          ]
+        },
+        {
+          "country_code": "SE",
+          "country": "Sweden",
+          "locales": [
+            "sv-SE"
+          ]
+        },
+        {
+          "country_code": "PT",
+          "country": "Portugal",
+          "locales": [
+            "pt-PT"
+          ]
+        },
+        {
+          "country_code": "RO",
+          "country": "Romania",
+          "locales": [
+            "ro-RO"
+          ]
+        },
+        {
+          "country_code": "TR",
+          "country": "Türkiye",
+          "locales": [
+            "tr-TR"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "latin-america",
+      "priority": "P1",
+      "rationale": "Spanish- and Portuguese-speaking markets are independent language/country cells, not one generic LATAM segment.",
+      "markets": [
+        {
+          "country_code": "BR",
+          "country": "Brazil",
+          "locales": [
+            "pt-BR"
+          ]
+        },
+        {
+          "country_code": "MX",
+          "country": "Mexico",
+          "locales": [
+            "es-MX"
+          ]
+        },
+        {
+          "country_code": "AR",
+          "country": "Argentina",
+          "locales": [
+            "es-AR"
+          ]
+        },
+        {
+          "country_code": "CO",
+          "country": "Colombia",
+          "locales": [
+            "es-CO"
+          ]
+        },
+        {
+          "country_code": "CL",
+          "country": "Chile",
+          "locales": [
+            "es-CL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "asia-and-middle-east",
+      "priority": "P1",
+      "rationale": "Regional AI ecosystems and major multilingual markets; check the exact consumer product and access route for every country.",
+      "markets": [
+        {
+          "country_code": "CN",
+          "country": "China mainland",
+          "locales": [
+            "zh-CN"
+          ],
+          "notes": "Prioritize domestic platforms; do not assume Western assistants are accessible."
+        },
+        {
+          "country_code": "HK",
+          "country": "Hong Kong",
+          "locales": [
+            "zh-HK",
+            "en-HK"
+          ]
+        },
+        {
+          "country_code": "JP",
+          "country": "Japan",
+          "locales": [
+            "ja-JP"
+          ]
+        },
+        {
+          "country_code": "KR",
+          "country": "South Korea",
+          "locales": [
+            "ko-KR"
+          ]
+        },
+        {
+          "country_code": "ID",
+          "country": "Indonesia",
+          "locales": [
+            "id-ID"
+          ]
+        },
+        {
+          "country_code": "MY",
+          "country": "Malaysia",
+          "locales": [
+            "ms-MY",
+            "en-MY"
+          ]
+        },
+        {
+          "country_code": "AE",
+          "country": "United Arab Emirates",
+          "locales": [
+            "ar-AE",
+            "en-AE"
+          ]
+        },
+        {
+          "country_code": "SA",
+          "country": "Saudi Arabia",
+          "locales": [
+            "ar-SA"
+          ]
+        },
+        {
+          "country_code": "IL",
+          "country": "Israel",
+          "locales": [
+            "he-IL",
+            "ar-IL",
+            "en-IL"
+          ]
+        },
+        {
+          "country_code": "VN",
+          "country": "Vietnam",
+          "locales": [
+            "vi-VN"
+          ]
+        },
+        {
+          "country_code": "TH",
+          "country": "Thailand",
+          "locales": [
+            "th-TH"
+          ]
+        },
+        {
+          "country_code": "PH",
+          "country": "Philippines",
+          "locales": [
+            "en-PH",
+            "fil-PH"
+          ]
+        },
+        {
+          "country_code": "EG",
+          "country": "Egypt",
+          "locales": [
+            "ar-EG"
+          ]
+        }
+      ]
+    }
+  ],
+  "platform_catalog": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "owner": "OpenAI",
+      "tier": "global_core",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": "chatgpt",
+      "openseo_note": "OpenSEO describes this as a consumer-site answer; verify per-country exclusions."
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "owner": "Google",
+      "tier": "global_core",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": "gemini",
+      "openseo_note": "OpenSEO describes this as a consumer-site answer."
+    },
+    {
+      "id": "microsoft_copilot",
+      "name": "Microsoft Copilot",
+      "owner": "Microsoft",
+      "tier": "global_core",
+      "kind": "general_assistant_and_search",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "owner": "Anthropic",
+      "tier": "global_core",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": "claude",
+      "openseo_note": "OpenSEO capability is modelApi=true; treat as API observation, not Claude.ai consumer UI."
+    },
+    {
+      "id": "meta_ai",
+      "name": "Meta AI",
+      "owner": "Meta",
+      "tier": "global_core",
+      "kind": "general_assistant_embedded_in_social_apps",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "owner": "xAI",
+      "tier": "global_core",
+      "kind": "general_assistant_embedded_in_x",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "owner": "DeepSeek",
+      "tier": "global_core_and_china_priority",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "owner": "Perplexity AI",
+      "tier": "global_core",
+      "kind": "answer_engine",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": "perplexity",
+      "openseo_note": "OpenSEO capability is modelApi=true; keep separate from Perplexity consumer UI."
+    },
+    {
+      "id": "mistral_le_chat",
+      "name": "Le Chat",
+      "owner": "Mistral AI",
+      "tier": "global_core",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "google_ai_overviews",
+      "name": "Google AI Overviews",
+      "owner": "Google",
+      "tier": "global_search_surface",
+      "kind": "search_surface",
+      "measurement_modes": [
+        "search_results_ui"
+      ],
+      "openseo_engine": "google_ai_overview"
+    },
+    {
+      "id": "google_ai_mode",
+      "name": "Google AI Mode",
+      "owner": "Google",
+      "tier": "global_search_surface",
+      "kind": "search_surface",
+      "measurement_modes": [
+        "search_results_ui"
+      ],
+      "openseo_engine": "google_ai_mode"
+    },
+    {
+      "id": "yandex_alice_ai",
+      "name": "Alice AI / Алиса AI",
+      "owner": "Yandex",
+      "tier": "russia_cis_regional_priority",
+      "kind": "general_assistant_and_search",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "sber_gigachat",
+      "name": "GigaChat",
+      "owner": "Sber",
+      "tier": "russia_cis_regional_priority",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "doubao",
+      "name": "Doubao / 豆包",
+      "owner": "ByteDance",
+      "tier": "china_regional_priority",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen / 通义千问",
+      "owner": "Alibaba",
+      "tier": "china_regional_priority",
+      "kind": "general_assistant_and_model_family",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi",
+      "owner": "Moonshot AI",
+      "tier": "china_regional_priority",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "tencent_yuanbao",
+      "name": "Yuanbao / 元宝",
+      "owner": "Tencent",
+      "tier": "china_regional_priority",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "baidu_ernie",
+      "name": "ERNIE / 文心",
+      "owner": "Baidu",
+      "tier": "china_regional_priority",
+      "kind": "general_assistant_and_search",
+      "measurement_modes": [
+        "consumer_ui",
+        "model_api"
+      ],
+      "openseo_engine": null
+    },
+    {
+      "id": "dola",
+      "name": "Dola",
+      "owner": "ByteDance",
+      "tier": "global_watchlist",
+      "kind": "general_assistant",
+      "measurement_modes": [
+        "consumer_ui"
+      ],
+      "openseo_engine": null,
+      "notes": "Promote to core if future usage/relevance checks justify it; ByteDance lists launch in 100+ markets."
+    }
+  ],
+  "platform_selection_rule": "The global core is not a permanent ranking. Refresh platform priority from current independent usage signals and official product status. Regional assistants are included where they are important discovery surfaces in the market. Add strong local leaders when evidence supports material reach; do not claim exhaustive coverage of every app.",
+  "sources": [
+    {
+      "topic": "ChatGPT supported countries",
+      "url": "https://help.openai.com/en/articles/7947663-chatgpt-plus",
+      "source_type": "official"
+    },
+    {
+      "topic": "Gemini availability and supported languages",
+      "url": "https://support.google.com/gemini/answer/13575153",
+      "source_type": "official"
+    },
+    {
+      "topic": "Microsoft Copilot countries and languages",
+      "url": "https://support.microsoft.com/en-us/microsoft-365-copilot/supported-languages-for-microsoft-365-copilot",
+      "source_type": "official"
+    },
+    {
+      "topic": "Anthropic supported regions policy (effective 2026-11-12)",
+      "url": "https://www.anthropic.com/legal/supported-regions",
+      "source_type": "official"
+    },
+    {
+      "topic": "Grok availability",
+      "url": "https://help.x.com/en/using-x/about-grok",
+      "source_type": "official"
+    },
+    {
+      "topic": "Meta AI rollout and regional availability example",
+      "url": "https://about.fb.com/news/2025/03/europe-meet-your-newest-assistant-meta-ai/",
+      "source_type": "official"
+    },
+    {
+      "topic": "ByteDance products, including Doubao and Dola",
+      "url": "https://www.bytedance.com/products-services",
+      "source_type": "official"
+    },
+    {
+      "topic": "Kimi multilingual capabilities",
+      "url": "https://www.kimi.ai/help/others/capability",
+      "source_type": "official"
+    },
+    {
+      "topic": "Yandex Alice AI service terms and interfaces",
+      "url": "https://yandex.ru/legal/alice_chat/ru/",
+      "source_type": "official"
+    },
+    {
+      "topic": "DataForSEO SERP locations and exclusion of Russia/Belarus",
+      "url": "https://docs.dataforseo.com/v3/serp-se-locations/",
+      "source_type": "official"
+    },
+    {
+      "topic": "China AI assistant market signals (secondary synthesis of QuestMobile data)",
+      "url": "https://report-ai.org/indexes/state-of-ai/state-of-ai-usage/",
+      "source_type": "secondary"
+    }
+  ],
+  "execution_rules": [
+    "Check platform availability and account eligibility from the exact country on the measurement date; never infer availability solely from supported language or another product's market list.",
+    "Record country, interface region, prompt language, answer language, platform, exact app surface, consumer UI/API, model/version, account state, search/grounding state, date/time UTC, prompt, full response, cited URLs and status.",
+    "A product-unavailable result is a platform availability observation, not a zero-visibility score. An unsupported measurement provider is not a platform failure.",
+    "Run brand/entity, generic commercial discovery, problem-solving, comparison and expertise intents separately. Generic prompts must not contain the brand name or a repository URL.",
+    "Use natural local-language prompts; translate the intent, not mechanically the source sentence. Version and freeze each locale prompt set.",
+    "Keep consumer UI and model API series separate. Keep Google AI Overviews and AI Mode separate from Gemini. Keep wrappers such as Poe separate from the underlying model.",
+    "No paid checks, subscriptions, credits, API usage with cost, advertising or placements without explicit approval."
+  ]
+}
