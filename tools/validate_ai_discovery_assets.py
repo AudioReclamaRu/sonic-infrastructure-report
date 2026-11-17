@@ -155,7 +155,7 @@ def main() -> int:
     csv_path = ROOT / "research/ai-visibility-benchmark-template.csv"
     with csv_path.open(encoding="utf-8", newline="") as stream:
         header = next(csv.reader(stream), [])
-    for field in ("run_id", "platform", "query_id", "answer_status", "cited_urls"):
+    for field in ("run_id", "platform", "query_id", "answer_status", "cited_urls", "observation_id"):
         if field not in header:
             fail(errors, f"benchmark CSV template missing column: {field}")
 
