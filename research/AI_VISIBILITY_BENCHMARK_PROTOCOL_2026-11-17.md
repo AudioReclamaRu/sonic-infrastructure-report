@@ -8,7 +8,6 @@ related:
   - geo/reports/visibility-benchmark-baseline-2026-11-06.md
   - geo/knowledge/query-matrix.json
   - problem-solutions/MEASUREMENT_PROTOCOL.md
-  - entity/audio-reclama-studio.md
 ---
 
 # Протокол измерения видимости «Аудио-Реклама•ru» в ответах ИИ через Git-репозиторий
