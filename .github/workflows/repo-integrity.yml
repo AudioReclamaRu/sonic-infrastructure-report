@@ -56,5 +56,8 @@ jobs:
       - name: AI Discovery asset integrity
         run: python tools/validate_ai_discovery_assets.py
 
+      - name: AI Discovery URL integrity regression tests
+        run: python -m unittest tools.tests.test_ai_discovery_asset_integrity -v
+
       - name: AI visibility benchmark and evidence regression tests
         run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence -v
