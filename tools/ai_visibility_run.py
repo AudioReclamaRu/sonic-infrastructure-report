@@ -300,6 +300,7 @@ def create_result(args: argparse.Namespace) -> dict[str, Any]:
         region_attestation = {
             "attestation_id": attestation.get("attestation_id"),
             "sha256": region_entry.get("sha256"),
+            "session_captured_at_utc": (attestation.get("session_capture") or {}).get("captured_at_utc"),
         }
     evidence_errors = validate_observation_artifacts(
         record_paths,
@@ -393,6 +394,7 @@ def validate_result(path: Path, plan_path: Path) -> list[str]:
                 region_attestation = {
                     "attestation_id": attestation.get("attestation_id"),
                     "sha256": region_entry.get("sha256"),
+                    "session_captured_at_utc": (attestation.get("session_capture") or {}).get("captured_at_utc"),
                 }
             errors.extend(validate_observation_artifacts(
                 record_paths, csv_path, queue_paths, plan.get("run_id"), region_attestation
