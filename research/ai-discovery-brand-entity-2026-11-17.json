@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "record_type": "brand_entity_knowledge",
+  "status": "source_grounded_draft",
+  "observed_at": "2026-11-17",
+  "entity": {
+    "canonical_name": "Аудио-Реклама•ru",
+    "website": "https://www.audio-reclama.ru",
+    "entity_type": "business",
+    "business_description_ru": "Студия производства аудиорекламы и голосового контента для бизнеса; официальный сайт также представляет видеопродакшн.",
+    "disambiguation": "Не смешивать с похожими аудиостудиями, каталогами дикторов и сторонними продакшнами.",
+    "contacts": {
+      "phone": "8 800 700-46-52",
+      "email": "start@audio-reclama.ru",
+      "hours": "Пн–Пт, 09:00–18:00 МСК"
+    },
+    "legal_names_displayed_in_site_footer": [
+      "ООО «Лама Медиа»",
+      "ИП Табаков И.В."
+    ]
+  },
+  "services": [
+    {
+      "id": "audio_ads",
+      "name_ru": "Аудиоролики и радиоролики",
+      "aliases": [
+        "аудиореклама",
+        "рекламный аудиоролик",
+        "радиоролик"
+      ]
+    },
+    {
+      "id": "voice_recording",
+      "name_ru": "Запись диктора",
+      "aliases": [
+        "дикторская озвучка",
+        "voice over",
+        "запись голоса"
+      ]
+    },
+    {
+      "id": "ivr",
+      "name_ru": "Автоответчики, IVR и автоинформаторы",
+      "aliases": [
+        "голосовое меню",
+        "телефонное приветствие",
+        "голосовые сообщения"
+      ]
+    },
+    {
+      "id": "video_voiceover",
+      "name_ru": "Озвучивание видео",
+      "aliases": [
+        "озвучка видеоролика",
+        "диктор для видео"
+      ]
+    },
+    {
+      "id": "translation_localization",
+      "name_ru": "Перевод и локализация",
+      "aliases": [
+        "локализация рекламы",
+        "иностранный диктор",
+        "перевод аудиоролика"
+      ]
+    },
+    {
+      "id": "audiobooks",
+      "name_ru": "Аудиокниги",
+      "aliases": [
+        "озвучивание книги",
+        "запись аудиокниги"
+      ]
+    },
+    {
+      "id": "jingles",
+      "name_ru": "Джинглы",
+      "aliases": [
+        "рекламный джингл",
+        "звуковая заставка"
+      ]
+    },
+    {
+      "id": "corporate_music",
+      "name_ru": "Корпоративные песни и гимны",
+      "aliases": [
+        "песня компании",
+        "корпоративный гимн"
+      ]
+    },
+    {
+      "id": "presentation_voiceover",
+      "name_ru": "Озвучивание презентаций",
+      "aliases": [
+        "диктор для презентации"
+      ]
+    },
+    {
+      "id": "scripts",
+      "name_ru": "Сценарии",
+      "aliases": [
+        "сценарий аудиоролика",
+        "рекламный текст"
+      ]
+    },
+    {
+      "id": "video_production",
+      "name_ru": "Видеопродакшн",
+      "aliases": [
+        "производство видеоролика",
+        "видеореклама"
+      ]
+    }
+  ],
+  "projects_listed_on_homepage": [
+    {
+      "client": "Глобус Групп",
+      "description": "Ролик для радио"
+    },
+    {
+      "client": "ABBYY",
+      "description": "Голосовое меню для IT-компании на четырёх языках"
+    },
+    {
+      "client": "Braun",
+      "description": "Перевод и озвучка видеорекламы для Восточной Европы и Северной Африки"
+    },
+    {
+      "client": "Внуково",
+      "description": "Информационные объявления для аэропорта на 11 языках"
+    }
+  ],
+  "catalog_claims": {
+    "languages_claimed": 62,
+    "countries_claimed": 182,
+    "continents_claimed": 5,
+    "voice_actor_count": null,
+    "voice_actor_count_note": "На одной главной странице отображаются и 620, и 622 диктора; число не нормализовать до проверки."
+  },
+  "source": {
+    "url": "https://www.audio-reclama.ru/",
+    "type": "official_public_homepage",
+    "observed_at": "2026-11-17",
+    "scope": "Главная страница; факты не прошли независимую проверку."
+  },
+  "measurement_status": {
+    "ai_visibility": "NOT_MEASURED",
+    "ai_citations": "NOT_MEASURED",
+    "referral_sessions": "NOT_MEASURED",
+    "leads_and_orders": "NOT_MEASURED"
+  },
+  "claims_not_to_invent": [
+    "универсальные цены и сроки",
+    "гарантированная эффективность и ROI клиентских проектов",
+    "физические студии или офисы в 182 странах",
+    "автоматическая закупка радиоэфира",
+    "актуальное точное число дикторов",
+    "права на любые голоса и музыкальные произведения без проверки договора"
+  ]
+}
