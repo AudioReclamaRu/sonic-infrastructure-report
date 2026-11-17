@@ -34,6 +34,10 @@ def build_report(passport_path: Path, result_path: Path) -> dict[str, Any]:
     coverage = analyze_coverage(queue_paths, csv_path)
     if coverage["errors"]:
         raise ValueError("coverage validation failed: " + "; ".join(coverage["errors"]))
+    coverage["inputs"] = {
+        "queue_files": [entry.get("path") for entry in queue_entries],
+        "observation_file": csv_entry.get("path"),
+    }
     benchmark = summarize(rows)
 
     region_attestation = (plan.get("scope") or {}).get("region_attestation")
