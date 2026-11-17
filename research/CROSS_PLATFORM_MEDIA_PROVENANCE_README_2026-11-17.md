@@ -18,7 +18,12 @@ The user directly reports that the three RUTUBE presentation-voiceover clips bel
 
 The graph records pairwise `user_reports_identical_audiovisual_content` edges. This is a user-review assertion, not an independently verified file hash or audiovisual fingerprint. The substantial duration mismatch remains open and must not be erased or explained by assumption.
 
-## Current RUTUBE channel and YouTube/Dzen profile relationships
+## Current RUTUBE, YouTube and Dzen profile relationships
+
+The public Dzen profile `https://dzen.ru/audioreclamaru` was fetched and displayed 294 followers. Its brand, email, profile description and self-reported WOW AWARDS 2018 claim match the RUTUBE and YouTube public profiles. Its metadata includes `noindex, follow`; this is recorded as a page directive, not a claim about all Dzen article indexing.
+
+Three recent price-explainer articles are linked from the Dzen profile. Search/profile snippets state: English dubbing 30 sec from 3,500 RUB (Kazakh/Uzbek from 3,000); IVR minimum order from 1,999 RUB or 198 RUB/file in a 100-file package; advertising voiceover from 1,667 RUB/file in a 30-file package or 3,500 RUB one-off. Direct article fetches returned a temporary-unavailable message, so these remain snippet-only claims with no exact publication timestamp. See `DZEN_CONTENT_AND_PRICE_SNAPSHOT_2026-11-17.csv`.
+
 
 The public RUTUBE channel page (`channel/73612493`) and public YouTube channel (`@audioreclama`) returned matching display brand, contact email, profile description and self-reported WOW AWARDS 2018 claim. The graph records a medium-confidence public profile-text match only; account ownership and admin access are not inferred.
 
