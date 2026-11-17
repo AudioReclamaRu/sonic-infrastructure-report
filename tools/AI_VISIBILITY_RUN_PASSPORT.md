@@ -22,6 +22,7 @@ python tools/ai_visibility_run.py create ^
   --module research/queries/ru-generic-discovery.json ^
   --queue research/queues/ru-generic-discovery.csv ^
   --run-id RU-2026-11-17-001 ^
+  --region-attestation research/ru-region-attestation.json ^
   --output research/runs/RU-2026-11-17-001/passport.json ^
   --region-status UNVERIFIED
 \`\`\`
