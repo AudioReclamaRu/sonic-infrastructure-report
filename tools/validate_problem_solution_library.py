@@ -87,6 +87,15 @@ def validate(root: Path = ROOT) -> list[str]:
                 errors.append(f"scenario {sid or index} source {source_index} must be a URL string")
             else:
                 _validate_url(source, f"scenario {sid or index} source {source_index}", errors)
+
+        evidence_refs = scenario.get("evidence_refs", [])
+        if evidence_refs and not isinstance(evidence_refs, list):
+            errors.append(f"scenario {sid or index} evidence_refs must be a list of repository paths")
+        for evidence_index, evidence_ref in enumerate(evidence_refs if isinstance(evidence_refs, list) else [], start=1):
+            if not isinstance(evidence_ref, str) or evidence_ref.startswith("/") or ".." in Path(evidence_ref).parts:
+                errors.append(f"scenario {sid or index} evidence reference {evidence_index} must be a safe repository-relative path")
+            elif not (root / evidence_ref).is_file():
+                errors.append(f"scenario {sid or index} evidence reference does not resolve: {evidence_ref}")
     if len(scenario_ids) != len(set(scenario_ids)):
         errors.append("business problem scenario IDs must be unique")
 
