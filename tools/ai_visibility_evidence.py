@@ -143,38 +143,43 @@ def validate_record(record: object) -> list[str]:
             errors.append("evidence.repository_files must be an array of strings")
     return errors
 
-def validate_queue_links(records: dict[str, dict], queue_path: Path) -> list[str]:
-    """Verify each evidence record matches an explicit planned queue cell."""
+def validate_queue_links(
+    records: dict[str, dict],
+    queue_paths: list[Path],
+    expected_region_attestation: dict | None = None,
+) -> list[str]:
+    """Verify each evidence record matches one exact planned queue cell."""
     errors: list[str] = []
-    try:
-        with queue_path.open(encoding="utf-8-sig", newline="") as stream:
-            reader = csv.DictReader(stream)
-            rows = list(reader)
-            headers = set(reader.fieldnames or [])
-    except OSError as exc:
-        return [f"cannot read queue CSV: {exc}"]
-
     required = {
         "query_id", "query", "intent", "country_code", "interface_locale",
         "prompt_language", "answer_language", "platform", "platform_surface",
         "measurement_mode", "execution_status", "region_verification",
     }
-    missing = sorted(required - headers)
-    if missing:
-        return ["queue CSV missing required columns: " + ", ".join(missing)]
-
     planned: dict[tuple[str, ...], dict[str, str]] = {}
-    for line, row in enumerate(rows, start=2):
-        if row.get("execution_status") != "NOT_TESTED":
-            errors.append(f"queue line {line}: planned row must remain NOT_TESTED")
-        key = (
-            row["query_id"], row["platform"], row["measurement_mode"],
-            row["country_code"], row["interface_locale"], row["prompt_language"],
-            row["answer_language"], row["platform_surface"], row["intent"], row["query"],
-        )
-        if key in planned:
-            errors.append(f"queue line {line}: duplicate planned evidence identity {key[:4]}")
-        planned[key] = row
+    for queue_path in queue_paths:
+        try:
+            with queue_path.open(encoding="utf-8-sig", newline="") as stream:
+                reader = csv.DictReader(stream)
+                rows = list(reader)
+                headers = set(reader.fieldnames or [])
+        except OSError as exc:
+            errors.append(f"cannot read queue CSV {queue_path}: {exc}")
+            continue
+        missing = sorted(required - headers)
+        if missing:
+            errors.append(f"queue CSV {queue_path} missing required columns: " + ", ".join(missing))
+            continue
+        for line, row in enumerate(rows, start=2):
+            if row.get("execution_status") != "NOT_TESTED":
+                errors.append(f"queue {queue_path} line {line}: planned row must remain NOT_TESTED")
+            key = (
+                row["query_id"], row["platform"], row["measurement_mode"],
+                row["country_code"], row["interface_locale"], row["prompt_language"],
+                row["answer_language"], row["platform_surface"], row["intent"], row["query"],
+            )
+            if key in planned:
+                errors.append(f"queue {queue_path} line {line}: duplicate planned evidence identity {key[:4]}")
+            planned[key] = row
 
     for observation_id, record in records.items():
         market = record.get("market", {})
@@ -205,6 +210,11 @@ def validate_queue_links(records: dict[str, dict], queue_path: Path) -> list[str
                     f"observation {observation_id}: VERIFIED region requires explicit market.region "
                     "and market.region_evidence in the primary record"
                 )
+            if expected_region_attestation:
+                if market.get("region_attestation_id") != expected_region_attestation.get("attestation_id"):
+                    errors.append(f"observation {observation_id}: region_attestation_id does not match the run passport")
+                if market.get("region_attestation_sha256") != expected_region_attestation.get("sha256"):
+                    errors.append(f"observation {observation_id}: region_attestation_sha256 does not match the run passport")
         elif region_status == "BLOCKED" and record.get("answer_status") not in {"BLOCKED_REGION", "BLOCKED_NETWORK"}:
             errors.append(
                 f"observation {observation_id}: BLOCKED queue region must not be recorded as an answered observation"
@@ -212,13 +222,19 @@ def validate_queue_links(records: dict[str, dict], queue_path: Path) -> list[str
     return errors
 
 
-def validate_batch(records_dir: Path, csv_path: Path | None = None, queue_path: Path | None = None) -> list[str]:
+def validate_observation_artifacts(
+    record_paths: list[Path],
+    csv_path: Path,
+    queue_paths: list[Path],
+    expected_run_id: str,
+    expected_region_attestation: dict | None = None,
+) -> list[str]:
+    """Validate records, CSV linkage, run identity and exact queue provenance."""
     errors: list[str] = []
-    paths = sorted(records_dir.glob("*.json")) if records_dir.is_dir() else []
-    if not paths:
-        return [f"no JSON observation records found in {records_dir}"]
+    if not record_paths:
+        return ["no JSON observation records supplied"]
     by_id: dict[str, dict] = {}
-    for path in paths:
+    for path in sorted(record_paths):
         try:
             record = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as exc:
@@ -227,15 +243,15 @@ def validate_batch(records_dir: Path, csv_path: Path | None = None, queue_path: 
         for error in validate_record(record):
             errors.append(f"{path.name}: {error}")
         if isinstance(record, dict):
+            if record.get("run_id") != expected_run_id:
+                errors.append(f"{path.name}: run_id does not match the frozen run passport")
             observation_id = record.get("observation_id")
             if isinstance(observation_id, str) and observation_id:
                 if observation_id in by_id:
                     errors.append(f"duplicate observation_id across records: {observation_id}")
                 by_id[observation_id] = record
-    if queue_path is not None:
-        errors.extend(validate_queue_links(by_id, queue_path))
-    if csv_path is None:
-        return errors
+    if queue_paths:
+        errors.extend(validate_queue_links(by_id, queue_paths, expected_region_attestation))
     try:
         with csv_path.open(encoding="utf-8-sig", newline="") as stream:
             reader = csv.DictReader(stream)
@@ -263,7 +279,7 @@ def validate_batch(records_dir: Path, csv_path: Path | None = None, queue_path: 
         platform = record.get("platform", {})
         query = record.get("query", {})
         expected = {
-            "run_id": record.get("run_id"), "country_code": market.get("country_code"),
+            "run_id": expected_run_id, "country_code": market.get("country_code"),
             "interface_locale": market.get("interface_locale"),
             "prompt_language": market.get("prompt_language"),
             "answer_language": market.get("answer_language") or "",
@@ -279,6 +295,49 @@ def validate_batch(records_dir: Path, csv_path: Path | None = None, queue_path: 
     if unlinked:
         errors.append("JSON records not linked from CSV: " + ", ".join(sorted(unlinked)))
     return errors
+
+
+def validate_batch(
+    records_dir: Path,
+    csv_path: Path | None = None,
+    queue_path: Path | None = None,
+    *,
+    queue_paths: list[Path] | None = None,
+    expected_run_id: str | None = None,
+    expected_region_attestation: dict | None = None,
+) -> list[str]:
+    paths = sorted(records_dir.glob("*.json")) if records_dir.is_dir() else []
+    if not paths:
+        return [f"no JSON observation records found in {records_dir}"]
+    if expected_run_id is None and csv_path is not None:
+        return validate_observation_artifacts(paths, csv_path, queue_paths or ([queue_path] if queue_path else []), "")
+    errors: list[str] = []
+    by_id: dict[str, dict] = {}
+    for path in paths:
+        try:
+            record = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"{path.name}: cannot read JSON: {exc}")
+            continue
+        for error in validate_record(record):
+            errors.append(f"{path.name}: {error}")
+        if isinstance(record, dict):
+            if expected_run_id is not None and record.get("run_id") != expected_run_id:
+                errors.append(f"{path.name}: run_id does not match expected run")
+            observation_id = record.get("observation_id")
+            if isinstance(observation_id, str) and observation_id:
+                if observation_id in by_id:
+                    errors.append(f"duplicate observation_id across records: {observation_id}")
+                by_id[observation_id] = record
+    queues = queue_paths or ([queue_path] if queue_path else [])
+    if queues:
+        errors.extend(validate_queue_links(by_id, queues, expected_region_attestation))
+    if csv_path is None:
+        return errors
+    if expected_run_id is None:
+        errors.append("expected_run_id is required when validating a CSV batch")
+        return errors
+    return errors + validate_observation_artifacts(paths, csv_path, [], expected_run_id)
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
