@@ -193,6 +193,10 @@ OpenSEO AI Visibility Tracker пока не создаётся: проектны
 
 ## 10. Журнал и исходный статус
 
+Для каждого фактического ответа сначала создавать полный неизменяемый observation record по схеме `AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json`. Он хранит точный prompt, полный ответ, метаданные поверхности, источники, ограничения и оценки. CSV остаётся компактным агрегируемым индексом: в нём сохраняются excerpt и ссылки на цитаты; он не заменяет первичную запись ответа.
+
+Все оценки 0/1/2/null выставлять по единой рубрике `AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md`. Рубрика разделяет отсутствие результата и невозможность наблюдения, generic discovery и распознавание сущности, качество источника и точность цитирования. Не рассчитывать единый AI score.
+
 Использовать `ai-visibility-benchmark-template.csv`. Одна строка — одна пара «запрос × платформа × запуск × рыночная ячейка». В шаблоне отдельно предусмотрены `country_code`, `interface_locale`, `prompt_language`, `answer_language`, `platform`, `platform_surface`, `measurement_mode` (consumer UI / model API), `search_mode`, `grounding_state`, `intent`, `query`, `answer_status`, `completeness_status`, раздельные scoring-поля, `cited_urls`, `repository_file_cited` и `critical_error`. Поля `language`, `region` и `mode` оставлены для обратной совместимости со старым RU-шаблоном; в международных записях использовать явные новые поля, а не полагаться на неоднозначные legacy-значения. Каждому запуску присваивать уникальный `run_id`.
 
 На 17.11.2026:
