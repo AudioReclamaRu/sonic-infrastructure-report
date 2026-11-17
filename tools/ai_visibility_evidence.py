@@ -143,7 +143,65 @@ def validate_record(record: object) -> list[str]:
             errors.append("evidence.repository_files must be an array of strings")
     return errors
 
-def validate_batch(records_dir: Path, csv_path: Path | None = None) -> list[str]:
+def validate_queue_links(records: dict[str, dict], queue_path: Path) -> list[str]:
+    """Verify each evidence record matches an explicit planned queue cell."""
+    errors: list[str] = []
+    try:
+        with queue_path.open(encoding="utf-8-sig", newline="") as stream:
+            reader = csv.DictReader(stream)
+            rows = list(reader)
+            headers = set(reader.fieldnames or [])
+    except OSError as exc:
+        return [f"cannot read queue CSV: {exc}"]
+
+    required = {
+        "query_id", "query", "intent", "country_code", "interface_locale",
+        "prompt_language", "answer_language", "platform", "platform_surface",
+        "measurement_mode", "execution_status", "region_verification",
+    }
+    missing = sorted(required - headers)
+    if missing:
+        return ["queue CSV missing required columns: " + ", ".join(missing)]
+
+    planned: dict[tuple[str, ...], dict[str, str]] = {}
+    for line, row in enumerate(rows, start=2):
+        if row.get("execution_status") != "NOT_TESTED":
+            errors.append(f"queue line {line}: planned row must remain NOT_TESTED")
+        key = (
+            row["query_id"], row["platform"], row["measurement_mode"],
+            row["country_code"], row["interface_locale"], row["prompt_language"],
+            row["answer_language"], row["platform_surface"], row["intent"], row["query"],
+        )
+        if key in planned:
+            errors.append(f"queue line {line}: duplicate planned evidence identity {key[:4]}")
+        planned[key] = row
+
+    for observation_id, record in records.items():
+        market = record.get("market", {})
+        platform = record.get("platform", {})
+        query = record.get("query", {})
+        if not all(isinstance(item, dict) for item in (market, platform, query)):
+            continue
+        key = (
+            str(query.get("query_id") or ""), str(platform.get("id") or ""),
+            str(platform.get("measurement_mode") or ""),
+            str(market.get("country_code") or ""), str(market.get("interface_locale") or ""),
+            str(market.get("prompt_language") or ""), str(market.get("answer_language") or ""),
+            str(platform.get("surface") or ""), str(query.get("intent") or ""),
+            str(query.get("exact_prompt") or ""),
+        )
+        if key not in planned:
+            errors.append(f"observation {observation_id}: no exact matching planned queue cell")
+            continue
+        if planned[key].get("region_verification") == "UNVERIFIED":
+            errors.append(
+                f"observation {observation_id}: queue region is UNVERIFIED; "
+                "evidence record does not independently establish regional verification"
+            )
+    return errors
+
+
+def validate_batch(records_dir: Path, csv_path: Path | None = None, queue_path: Path | None = None) -> list[str]:
     errors: list[str] = []
     paths = sorted(records_dir.glob("*.json")) if records_dir.is_dir() else []
     if not paths:
@@ -163,6 +221,8 @@ def validate_batch(records_dir: Path, csv_path: Path | None = None) -> list[str]
                 if observation_id in by_id:
                     errors.append(f"duplicate observation_id across records: {observation_id}")
                 by_id[observation_id] = record
+    if queue_path is not None:
+        errors.extend(validate_queue_links(by_id, queue_path))
     if csv_path is None:
         return errors
     try:
@@ -193,9 +253,13 @@ def validate_batch(records_dir: Path, csv_path: Path | None = None) -> list[str]
         query = record.get("query", {})
         expected = {
             "run_id": record.get("run_id"), "country_code": market.get("country_code"),
-            "interface_locale": market.get("interface_locale"), "platform": platform.get("id"),
-            "measurement_mode": platform.get("measurement_mode"), "query_id": query.get("query_id"),
-            "answer_status": record.get("answer_status"),
+            "interface_locale": market.get("interface_locale"),
+            "prompt_language": market.get("prompt_language"),
+            "answer_language": market.get("answer_language") or "",
+            "platform": platform.get("id"), "platform_surface": platform.get("surface"),
+            "measurement_mode": platform.get("measurement_mode"),
+            "query_id": query.get("query_id"), "intent": query.get("intent"),
+            "query": query.get("exact_prompt"), "answer_status": record.get("answer_status"),
         }
         for field, value in expected.items():
             if (row.get(field) or "").strip() != str(value or ""):
@@ -213,6 +277,7 @@ def main(argv=None) -> int:
     batch = sub.add_parser("validate-batch", help="validate a directory of records and optional CSV links")
     batch.add_argument("records_dir", type=Path)
     batch.add_argument("--csv", type=Path)
+    batch.add_argument("--queue", type=Path, help="also require exact match to a planned execution queue")
     args = parser.parse_args(argv)
     if args.command == "validate-record":
         try:
@@ -222,7 +287,7 @@ def main(argv=None) -> int:
         else:
             errors = validate_record(record)
     else:
-        errors = validate_batch(args.records_dir, args.csv)
+        errors = validate_batch(args.records_dir, args.csv, args.queue)
     if errors:
         print("AI visibility evidence validation FAILED:")
         for error in errors:
