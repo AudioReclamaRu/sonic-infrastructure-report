@@ -85,6 +85,9 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
     if not isinstance(network, dict):
         errors.append("network must be an object")
         network = {}
+    allowed_network_fields = {"connection_type", "vpn_detected", "proxy_detected", "remote_desktop_detected", "ip_fingerprint_sha256", "provider_name", "asn"}
+    if set(network) - allowed_network_fields:
+        errors.append("network contains unsupported fields; raw IP addresses and credentials must never be stored")
     allowed_network = LOCAL_NETWORK_CLASSES | {"vpn", "proxy", "cloud_hosting", "remote_desktop", "unknown"}
     connection = network.get("connection_type")
     if connection not in allowed_network:
@@ -115,6 +118,9 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
         if not isinstance(source, dict):
             errors.append(f"{label} must be an object")
             continue
+        allowed_source_fields = {"provider", "independence_group", "country_code", "captured_at_utc", "evidence_file", "evidence_sha256"}
+        if set(source) - allowed_source_fields:
+            errors.append(f"{label} contains unsupported fields")
         for field in ("provider", "independence_group", "country_code", "captured_at_utc"):
             if not isinstance(source.get(field), str) or not source[field].strip():
                 errors.append(f"{label}.{field} is required")
@@ -136,16 +142,24 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
     owner = record.get("network_owner_evidence")
     errors.extend(artifact_errors(owner, "network_owner_evidence", base))
     if isinstance(owner, dict):
+        allowed_owner_fields = {"provider", "organization", "network_class", "evidence_file", "evidence_sha256"}
+        if set(owner) - allowed_owner_fields:
+            errors.append("network_owner_evidence contains unsupported fields")
         if owner.get("network_class") not in LOCAL_NETWORK_CLASSES:
             errors.append("network_owner_evidence.network_class must identify a local ISP, mobile carrier or business ISP")
         if not isinstance(owner.get("organization"), str) or not owner.get("organization", "").strip():
             errors.append("network_owner_evidence.organization is required")
         if not isinstance(owner.get("provider"), str) or not owner.get("provider", "").strip():
             errors.append("network_owner_evidence.provider is required")
+        if owner.get("network_class") != connection:
+            errors.append("network_owner_evidence.network_class must match network.connection_type")
 
     session = record.get("session_capture")
     errors.extend(artifact_errors(session, "session_capture", base))
     if isinstance(session, dict):
+        allowed_session_fields = {"platform", "product", "interface_locale", "captured_at_utc", "evidence_file", "evidence_sha256"}
+        if set(session) - allowed_session_fields:
+            errors.append("session_capture contains unsupported fields")
         for field in ("platform", "product", "interface_locale", "captured_at_utc"):
             if not isinstance(session.get(field), str) or not session[field].strip():
                 errors.append(f"session_capture.{field} is required")
@@ -163,6 +177,9 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
     if not isinstance(declaration, dict):
         errors.append("operator_declaration must be an object")
     else:
+        allowed_declaration_fields = {"operator", "direct_connection", "no_vpn", "no_proxy", "no_remote_desktop"}
+        if set(declaration) - allowed_declaration_fields:
+            errors.append("operator_declaration contains unsupported fields")
         if not isinstance(declaration.get("operator"), str) or not declaration.get("operator", "").strip():
             errors.append("operator_declaration.operator is required")
         for field in ("direct_connection", "no_vpn", "no_proxy", "no_remote_desktop"):
@@ -173,21 +190,24 @@ def validate_attestation(record: object, base: Path) -> tuple[list[str], str]:
     if not isinstance(review, dict):
         errors.append("review must be an object")
         review = {}
+    allowed_review_fields = {"status", "reviewer", "reviewed_at_utc", "rationale"}
+    if set(review) - allowed_review_fields:
+        errors.append("review contains unsupported fields")
     review_status = review.get("status")
     if review_status not in VALID_REVIEW:
         errors.append("review.status must be PENDING, APPROVED or REJECTED")
-    if review_status == "APPROVED":
+    if review_status in {"APPROVED", "REJECTED"}:
         if not isinstance(review.get("reviewer"), str) or not review.get("reviewer", "").strip():
-            errors.append("approved review requires reviewer")
+            errors.append("review decision requires reviewer")
         if review.get("reviewer") == (declaration.get("operator") if isinstance(declaration, dict) else None):
             errors.append("reviewer must be independent from the operator")
         reviewed_at = parse_time(review.get("reviewed_at_utc"))
         if reviewed_at is None:
-            errors.append("approved review requires reviewed_at_utc")
+            errors.append("review decision requires reviewed_at_utc")
         elif observed_at and reviewed_at < observed_at:
             errors.append("reviewed_at_utc cannot precede the attestation")
         if not isinstance(review.get("rationale"), str) or not review.get("rationale", "").strip():
-            errors.append("approved review requires a rationale")
+            errors.append("review decision requires a rationale")
 
     if errors:
         return errors, "EVIDENCE_INCOMPLETE"
