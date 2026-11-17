@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "studio/ai-visibility-region-attestation/1",
+  "title": "AI Visibility RU Regional Vantage Attestation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "attestation_id", "observed_at_utc", "country_code",
+    "interface_locale", "network", "geolocation_sources",
+    "network_owner_evidence", "session_capture", "operator_declaration", "review"
+  ],
+  "properties": {
+    "schema": {"const": "studio/ai-visibility-region-attestation/1"},
+    "attestation_id": {"type": "string", "minLength": 1},
+    "observed_at_utc": {"type": "string", "format": "date-time"},
+    "country_code": {"const": "RU"},
+    "interface_locale": {"const": "ru-RU"},
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "connection_type", "vpn_detected", "proxy_detected",
+        "remote_desktop_detected", "ip_fingerprint_sha256", "provider_name"
+      ],
+      "properties": {
+        "connection_type": {"enum": ["residential_isp", "mobile_carrier", "business_isp", "vpn", "proxy", "cloud_hosting", "remote_desktop", "unknown"]},
+        "vpn_detected": {"type": "boolean"},
+        "proxy_detected": {"type": "boolean"},
+        "remote_desktop_detected": {"type": "boolean"},
+        "ip_fingerprint_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "provider_name": {"type": "string", "minLength": 1},
+        "asn": {"type": "string"}
+      }
+    },
+    "geolocation_sources": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["provider", "independence_group", "country_code", "captured_at_utc", "evidence_file", "evidence_sha256"],
+        "properties": {
+          "provider": {"type": "string", "minLength": 1},
+          "independence_group": {"type": "string", "minLength": 1},
+          "country_code": {"const": "RU"},
+          "captured_at_utc": {"type": "string", "format": "date-time"},
+          "evidence_file": {"type": "string", "minLength": 1},
+          "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "network_owner_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "organization", "network_class", "evidence_file", "evidence_sha256"],
+      "properties": {
+        "provider": {"type": "string", "minLength": 1},
+        "organization": {"type": "string", "minLength": 1},
+        "network_class": {"enum": ["residential_isp", "mobile_carrier", "business_isp"]},
+        "evidence_file": {"type": "string", "minLength": 1},
+        "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "session_capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["platform", "product", "interface_locale", "captured_at_utc", "evidence_file", "evidence_sha256"],
+      "properties": {
+        "platform": {"type": "string", "minLength": 1},
+        "product": {"type": "string", "minLength": 1},
+        "interface_locale": {"const": "ru-RU"},
+        "captured_at_utc": {"type": "string", "format": "date-time"},
+        "evidence_file": {"type": "string", "minLength": 1},
+        "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "operator_declaration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operator", "direct_connection", "no_vpn", "no_proxy", "no_remote_desktop"],
+      "properties": {
+        "operator": {"type": "string", "minLength": 1},
+        "direct_connection": {"const": true},
+        "no_vpn": {"const": true},
+        "no_proxy": {"const": true},
+        "no_remote_desktop": {"const": true}
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["PENDING", "APPROVED", "REJECTED"]},
+        "reviewer": {"type": "string"},
+        "reviewed_at_utc": {"type": "string", "format": "date-time"},
+        "rationale": {"type": "string"}
+      }
+    }
+  }
+}
