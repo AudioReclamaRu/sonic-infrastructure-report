@@ -36,6 +36,8 @@ def main() -> int:
         "research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md",
         "research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md",
         "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json",
+        "tools/ai_visibility_evidence.py",
+        "tools/tests/test_ai_visibility_evidence.py",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
