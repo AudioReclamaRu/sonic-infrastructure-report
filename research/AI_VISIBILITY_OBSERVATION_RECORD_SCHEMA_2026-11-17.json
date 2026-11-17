@@ -20,7 +20,7 @@
   ],
   "properties": {
     "schema": {
-      "const": "audio-reclama/ai-visibility-observation/1"
+      "const": "studio/ai-visibility-observation/1"
     },
     "observation_id": {
       "type": "string",
