@@ -11,7 +11,7 @@
     "answer_language": "ru"
   },
   "status": "not_run",
-  "purpose": "Generic, unbranded discovery prompts for measuring whether AI assistants recommend or surface relevant audio-production providers in Russia. These prompts are a separate module from the fixed 20-question brand/service verification set.",
+  "purpose": "Generic, unbranded discovery prompts for measuring whether AI assistants recommend or surface relevant audio-production providers in Russia. Separate from the fixed 20-question brand/service verification set.",
   "experiment_rules": [
     "Do not include the brand name, domain, GitHub repository or a hint to the entity corpus in generic discovery prompts.",
     "Run each prompt in a fresh session on each platform; record exact platform surface, date/time, account state, region signal, search/grounding mode and full answer.",
@@ -21,48 +21,382 @@
     "The prompt wording is fixed for repeatability. Localize only in a new version, never edit this version after collection starts."
   ],
   "platform_execution_order": [
-    {"priority": 1, "id": "yandex_alice_ai", "surface": "Alice AI consumer interface", "measurement_mode": "consumer_ui", "status": "not_run", "note": "Russian-market local platform; confirm current AI-answer/search mode before each run."},
-    {"priority": 2, "id": "sber_gigachat", "surface": "GigaChat consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 3, "id": "chatgpt", "surface": "ChatGPT consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 4, "id": "gemini", "surface": "Gemini consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 5, "id": "perplexity", "surface": "Perplexity consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 6, "id": "deepseek", "surface": "DeepSeek consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 7, "id": "claude", "surface": "Claude consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 8, "id": "microsoft_copilot", "surface": "Microsoft Copilot consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 9, "id": "grok", "surface": "Grok consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"},
-    {"priority": 10, "id": "google_ai_overviews", "surface": "Google Search AI Overviews", "measurement_mode": "search_results_ui", "status": "not_run"},
-    {"priority": 11, "id": "google_ai_mode", "surface": "Google Search AI Mode", "measurement_mode": "search_results_ui", "status": "not_run"},
-    {"priority": 12, "id": "meta_ai", "surface": "Meta AI consumer interface", "measurement_mode": "consumer_ui", "status": "not_run"}
+    {
+      "priority": 1,
+      "id": "yandex_alice_ai",
+      "surface": "Alice AI consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run",
+      "note": "Russian-market local platform; confirm current AI-answer/search mode before each run."
+    },
+    {
+      "priority": 2,
+      "id": "sber_gigachat",
+      "surface": "GigaChat consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 3,
+      "id": "chatgpt",
+      "surface": "ChatGPT consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 4,
+      "id": "gemini",
+      "surface": "Gemini consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 5,
+      "id": "perplexity",
+      "surface": "Perplexity consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 6,
+      "id": "deepseek",
+      "surface": "DeepSeek consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 7,
+      "id": "claude",
+      "surface": "Claude consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 8,
+      "id": "microsoft_copilot",
+      "surface": "Microsoft Copilot consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 9,
+      "id": "grok",
+      "surface": "Grok consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 10,
+      "id": "google_ai_overviews",
+      "surface": "Google Search AI Overviews",
+      "measurement_mode": "search_results_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 11,
+      "id": "google_ai_mode",
+      "surface": "Google Search AI Mode",
+      "measurement_mode": "search_results_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 12,
+      "id": "meta_ai",
+      "surface": "Meta AI consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    }
   ],
   "queries": [
-    ["RU-GEN-AD-01","commercial_audio","Где в России заказать производство рекламного аудиоролика под ключ — от сценария до готового звука?","generic_commercial"],
-    ["RU-GEN-AD-02","commercial_audio","Какие студии в России записывают рекламные ролики для радио и интернет-рекламы?","generic_commercial"],
-    ["RU-GEN-AD-03","commercial_audio","Как выбрать студию для записи рекламного аудиоролика, если важны диктор, музыка и саунд-дизайн?","generic_commercial"],
-    ["RU-GEN-AD-04","commercial_audio","Где заказать озвучку рекламного текста профессиональным диктором на русском языке?","generic_commercial"],
-    ["RU-GEN-AD-05","commercial_audio","Сколько обычно стоит производство рекламного аудиоролика в России и от чего зависит цена?","generic_commercial"],
-    ["RU-GEN-AD-06","commercial_audio","Какие российские студии могут подготовить несколько вариантов рекламного аудиоролика для тестирования?","generic_commercial"],
-    ["RU-GEN-IVR-01","ivr_and_telephony","Где заказать запись голосового приветствия для компании и телефонной станции?","generic_commercial"],
-    ["RU-GEN-IVR-02","ivr_and_telephony","Какие студии в России записывают профессиональные голосовые меню IVR и автоответчики?","generic_commercial"],
-    ["RU-GEN-IVR-03","ivr_and_telephony","Кто может подготовить многоуровневое голосовое меню для контакт-центра: сценарий, диктор и запись?","generic_commercial"],
-    ["RU-GEN-IVR-04","ivr_and_telephony","Как выбрать подрядчика для записи телефонных объявлений и голосовых сообщений на нескольких языках?","generic_commercial"],
-    ["RU-GEN-VIDEO-01","video_voiceover","Где заказать профессиональную озвучку корпоративного или рекламного видеоролика?","generic_commercial"],
-    ["RU-GEN-VIDEO-02","video_voiceover","Какие студии подбирают диктора и синхронизируют озвучку с видеорядом?","generic_commercial"],
-    ["RU-GEN-VIDEO-03","video_voiceover","Кто делает закадровую озвучку презентаций, обучающих и корпоративных видео?","generic_commercial"],
-    ["RU-GEN-AUDIOBOOK-01","audiobooks","Где в России заказать запись аудиокниги с профессиональным чтецом?","generic_commercial"],
-    ["RU-GEN-AUDIOBOOK-02","audiobooks","Как выбрать студию для многоголосой озвучки книги или аудиоспектакля?","generic_commercial"],
-    ["RU-GEN-LOCAL-01","multilingual_localization","Где заказать перевод и озвучивание рекламного или корпоративного аудиоматериала на несколько языков?","generic_commercial"],
-    ["RU-GEN-LOCAL-02","multilingual_localization","Кто производит многоязычные голосовые объявления для аэропортов, вокзалов и общественных пространств?","generic_commercial"],
-    ["RU-GEN-LOCAL-03","multilingual_localization","Как найти подрядчика, который организует дикторов на разных языках и проверит произношение терминов?","generic_commercial"],
-    ["RU-GEN-JINGLE-01","jingles_and_brand_audio","Где заказать создание музыкального джингла для бренда или радиорекламы?","generic_commercial"],
-    ["RU-GEN-JINGLE-02","jingles_and_brand_audio","Какие студии в России создают корпоративные песни и аудиологотипы?","generic_commercial"],
-    ["RU-GEN-VENDOR-01","vendor_selection","Посоветуйте российские студии аудиопроизводства для бизнеса: рекламные ролики, IVR и дикторская озвучка.","comparative_commercial"],
-    ["RU-GEN-VENDOR-02","vendor_selection","Какие критерии сравнить при выборе студии звукозаписи для коммерческой озвучки?","comparative_commercial"],
-    ["RU-GEN-VENDOR-03","vendor_selection","Какие подрядчики могут закрыть полный цикл делового аудиопроизводства, а не только предоставить диктора?","comparative_commercial"],
-    ["RU-GEN-VENDOR-04","vendor_selection","Где найти студию с большим выбором дикторов и возможностью работать с проектами на разных языках?","comparative_commercial"],
-    ["RU-GEN-PROBLEM-01","problem_solving","Как подготовить сценарий телефонного меню, чтобы клиент быстро находил нужный отдел?","problem_solving"],
-    ["RU-GEN-PROBLEM-02","problem_solving","Как организовать запись голосовых сообщений для сети филиалов с единым звучанием бренда?","problem_solving"],
-    ["RU-GEN-PROBLEM-03","problem_solving","Как проверить качество дикторской записи, произношение, уровни громкости и финальный монтаж перед публикацией?","problem_solving"],
-    ["RU-GEN-PROBLEM-04","problem_solving","Как рассчитать длительность радиоролика и адаптировать текст под 15, 20 или 30 секунд?","problem_solving"],
-    ["RU-GEN-PROBLEM-05","problem_solving","Как получить несколько языковых версий аудиообъявления с одинаковым смыслом и сопоставимой длительностью?","problem_solving"]
-  ].map(([id,cluster,query,intent]) => ({id,cluster,query,language:"ru",region:"RU",intent,brand_in_prompt:false,status:"not_run"}))
+    {
+      "id": "RU-GEN-AD-01",
+      "cluster": "commercial_audio",
+      "query": "Где в России заказать производство рекламного аудиоролика под ключ — от сценария до готового звука?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AD-02",
+      "cluster": "commercial_audio",
+      "query": "Какие студии в России записывают рекламные ролики для радио и интернет-рекламы?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AD-03",
+      "cluster": "commercial_audio",
+      "query": "Как выбрать студию для записи рекламного аудиоролика, если важны диктор, музыка и саунд-дизайн?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AD-04",
+      "cluster": "commercial_audio",
+      "query": "Где заказать озвучку рекламного текста профессиональным диктором на русском языке?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AD-05",
+      "cluster": "commercial_audio",
+      "query": "Сколько обычно стоит производство рекламного аудиоролика в России и от чего зависит цена?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AD-06",
+      "cluster": "commercial_audio",
+      "query": "Какие российские студии могут подготовить несколько вариантов рекламного аудиоролика для тестирования?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-IVR-01",
+      "cluster": "ivr_and_telephony",
+      "query": "Где заказать запись голосового приветствия для компании и телефонной станции?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-IVR-02",
+      "cluster": "ivr_and_telephony",
+      "query": "Какие студии в России записывают профессиональные голосовые меню IVR и автоответчики?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-IVR-03",
+      "cluster": "ivr_and_telephony",
+      "query": "Кто может подготовить многоуровневое голосовое меню для контакт-центра: сценарий, диктор и запись?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-IVR-04",
+      "cluster": "ivr_and_telephony",
+      "query": "Как выбрать подрядчика для записи телефонных объявлений и голосовых сообщений на нескольких языках?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VIDEO-01",
+      "cluster": "video_voiceover",
+      "query": "Где заказать профессиональную озвучку корпоративного или рекламного видеоролика?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VIDEO-02",
+      "cluster": "video_voiceover",
+      "query": "Какие студии подбирают диктора и синхронизируют озвучку с видеорядом?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VIDEO-03",
+      "cluster": "video_voiceover",
+      "query": "Кто делает закадровую озвучку презентаций, обучающих и корпоративных видео?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AUDIOBOOK-01",
+      "cluster": "audiobooks",
+      "query": "Где в России заказать запись аудиокниги с профессиональным чтецом?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-AUDIOBOOK-02",
+      "cluster": "audiobooks",
+      "query": "Как выбрать студию для многоголосой озвучки книги или аудиоспектакля?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-LOCAL-01",
+      "cluster": "multilingual_localization",
+      "query": "Где заказать перевод и озвучивание рекламного или корпоративного аудиоматериала на несколько языков?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-LOCAL-02",
+      "cluster": "multilingual_localization",
+      "query": "Кто производит многоязычные голосовые объявления для аэропортов, вокзалов и общественных пространств?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-LOCAL-03",
+      "cluster": "multilingual_localization",
+      "query": "Как найти подрядчика, который организует дикторов на разных языках и проверит произношение терминов?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-JINGLE-01",
+      "cluster": "jingles_and_brand_audio",
+      "query": "Где заказать создание музыкального джингла для бренда или радиорекламы?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-JINGLE-02",
+      "cluster": "jingles_and_brand_audio",
+      "query": "Какие студии в России создают корпоративные песни и аудиологотипы?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VENDOR-01",
+      "cluster": "vendor_selection",
+      "query": "Посоветуйте российские студии аудиопроизводства для бизнеса: рекламные ролики, IVR и дикторская озвучка.",
+      "language": "ru",
+      "region": "RU",
+      "intent": "comparative_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VENDOR-02",
+      "cluster": "vendor_selection",
+      "query": "Какие критерии сравнить при выборе студии звукозаписи для коммерческой озвучки?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "comparative_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VENDOR-03",
+      "cluster": "vendor_selection",
+      "query": "Какие подрядчики могут закрыть полный цикл делового аудиопроизводства, а не только предоставить диктора?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "comparative_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-VENDOR-04",
+      "cluster": "vendor_selection",
+      "query": "Где найти студию с большим выбором дикторов и возможностью работать с проектами на разных языках?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "comparative_commercial",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-PROBLEM-01",
+      "cluster": "problem_solving",
+      "query": "Как подготовить сценарий телефонного меню, чтобы клиент быстро находил нужный отдел?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "problem_solving",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-PROBLEM-02",
+      "cluster": "problem_solving",
+      "query": "Как организовать запись голосовых сообщений для сети филиалов с единым звучанием бренда?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "problem_solving",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-PROBLEM-03",
+      "cluster": "problem_solving",
+      "query": "Как проверить качество дикторской записи, произношение, уровни громкости и финальный монтаж перед публикацией?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "problem_solving",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-PROBLEM-04",
+      "cluster": "problem_solving",
+      "query": "Как рассчитать длительность радиоролика и адаптировать текст под 15, 20 или 30 секунд?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "problem_solving",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-GEN-PROBLEM-05",
+      "cluster": "problem_solving",
+      "query": "Как получить несколько языковых версий аудиообъявления с одинаковым смыслом и сопоставимой длительностью?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "problem_solving",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    }
+  ]
 }
