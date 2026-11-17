@@ -24,7 +24,7 @@ def fail(errors: list[str], message: str) -> None:
 # Detect a malformed canonical host whose path was accidentally concatenated
 # directly to ".ru" (for example: https://www.audio-reclama.ruaudio/page.html).
 MALFORMED_OFFICIAL_URL_RE = re.compile(
-    r"https://www\\.audio-reclama\\.ru(?=[A-Za-z0-9_-])[^\\s\\"'<>]*",
+    r"https://www[.]audio-reclama[.]ru(?=[A-Za-z0-9_-])\S+",
     re.IGNORECASE,
 )
 
