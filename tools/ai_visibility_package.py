@@ -146,28 +146,53 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
             capture_rows = list(csv.DictReader(stream))
         if len(capture_rows) != packet.get("planned_cells"):
             errors.append("capture CSV row count does not match capture packet")
-        queue_by_id = {row.get("queue_id"): row for row in queue_rows}
+        expected_csv_cells = {
+            (item.get("query_id"), item.get("query"), item.get("platform"),
+             item.get("platform_surface"), item.get("measurement_mode"))
+            for item in queue_rows
+        }
+        actual_csv_cells = {
+            (item.get("query_id"), item.get("query"), item.get("platform"),
+             item.get("platform_surface"), item.get("measurement_mode"))
+            for item in capture_rows
+        }
+        if actual_csv_cells != expected_csv_cells:
+            errors.append("capture CSV cells do not match the frozen queue")
         for row in capture_rows:
             if row.get("run_id") != run_id or row.get("answer_status") != "NOT_TESTED" or row.get("completeness_status") != "NOT_TESTED":
                 errors.append("capture CSV contains completed or foreign-run rows")
-                break
-            planned = queue_by_id.get("".join([])) if False else None
-            if row.get("query_id") not in {item.get("query_id") for item in queue_rows}:
-                errors.append("capture CSV contains a query outside the frozen queue")
                 break
         templates = packet.get("evidence_templates")
         if not isinstance(templates, list) or len(templates) != packet.get("planned_cells"):
             errors.append("evidence template list does not match planned_cells")
         else:
+            expected_templates = {
+                "OBS-" + str(row.get("queue_id")): row for row in queue_rows
+            }
             seen_ids: set[str] = set()
             for relative in templates:
                 template_path = _package_file(capture_dir, relative, "evidence_template")
                 record = json.loads(template_path.read_text(encoding="utf-8"))
                 if record.get("run_id") != run_id or record.get("answer_status") != "NOT_TESTED":
                     errors.append(f"template is not a NOT_TESTED record for this run: {relative}")
-                expected_id = "OBS-" + str(record.get("observation_id", "")).removeprefix("OBS-")
-                if not expected_id.startswith("OBS-") or len(expected_id) <= 4:
-                    errors.append(f"template observation_id is malformed: {relative}")
+                observation_id = record.get("observation_id")
+                planned = expected_templates.get(observation_id)
+                if planned is None:
+                    errors.append(f"template observation_id is not in the frozen queue: {relative}")
+                else:
+                    query = record.get("query") or {}
+                    platform = record.get("platform") or {}
+                    market = record.get("market") or {}
+                    if (
+                        query.get("query_id") != planned.get("query_id")
+                        or query.get("exact_prompt") != planned.get("query")
+                        or query.get("intent") != planned.get("intent")
+                        or platform.get("id") != planned.get("platform")
+                        or platform.get("surface") != planned.get("platform_surface")
+                        or platform.get("measurement_mode") != planned.get("measurement_mode")
+                        or market.get("country_code") != planned.get("country_code")
+                    ):
+                        errors.append(f"template cell does not match its frozen queue row: {relative}")
                 market = record.get("market") or {}
                 if market.get("region_attestation_id") != manifest["region_attestation"].get("attestation_id"):
                     errors.append(f"template is not bound to the packaged region attestation: {relative}")
@@ -192,6 +217,8 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
                 if not isinstance(observation_id, str) or observation_id in seen_ids:
                     errors.append(f"missing or duplicate observation_id in template: {relative}")
                 seen_ids.add(observation_id)
+            if seen_ids != set(expected_templates):
+                errors.append("capture templates do not cover the exact frozen queue cells")
         _package_file(capture_dir, "README_CAPTURE.md", "capture instructions")
         _package_file(root, "README_RUN.md", "run instructions")
     except (OSError, json.JSONDecodeError, TypeError, AttributeError, ValueError) as exc:
