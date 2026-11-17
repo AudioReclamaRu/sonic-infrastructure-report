@@ -1,6 +1,15 @@
+---
+type: research
+date: 2026-11-17
+lang: en
+related:
+  - research/RUTUBE_MEDIA_INVENTORY_2026-11-17.csv
+  - research/MEDIA_CONTENT_AUDIT_2026-11-17.md
+---
+
 # RUTUBE Public Media Inventory — 2026-11-17
 
-This inventory captures 20 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export.
+This inventory captures 20 publicly indexed RUTUBE assets attributed to the public creator label **Аудио-Реклама•ru — флагман деловой звукозаписи**. It is a research snapshot, not an owner analytics export. Display titles normalize minor brand-spelling and punctuation variants to the canonical brand; source URLs remain the authority for the exact platform title.
 
 ## Fields and interpretation
 
