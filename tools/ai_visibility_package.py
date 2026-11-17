@@ -107,6 +107,7 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
         if len(queues) != 1 or queues[0].get("sha256") != manifest["queue"].get("sha256"):
             errors.append("plan passport is not bound to the packaged queue")
 
+    queue_rows: list[dict[str, str]] = []
     try:
         with queue_path.open("r", encoding="utf-8-sig", newline="") as stream:
             queue_rows = list(csv.DictReader(stream))
@@ -129,6 +130,11 @@ def validate_package(manifest_path: Path) -> tuple[list[str], dict[str, Any] | N
         packet = json.loads(packet_manifest_path.read_text(encoding="utf-8"))
         if packet.get("schema") != PACKET_SCHEMA:
             errors.append("unexpected capture packet schema")
+        package_packet = manifest.get("capture_packet") or {}
+        if package_packet.get("manifest_schema") != packet.get("schema"):
+            errors.append("package manifest capture packet schema does not match packet")
+        if package_packet.get("planned_cells") != packet.get("planned_cells"):
+            errors.append("package manifest capture packet count does not match packet")
         if packet.get("packet_status") != "DRAFT_TEMPLATES_ONLY":
             errors.append("capture packet must remain DRAFT_TEMPLATES_ONLY")
         if packet.get("run_id") != run_id:
