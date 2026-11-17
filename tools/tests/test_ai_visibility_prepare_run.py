@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from tools.ai_visibility_prepare_run import prepare_run
+from tools.ai_visibility_prepare_run import _copy_region_inputs, prepare_run
 
 
 class PrepareRunTests(unittest.TestCase):
@@ -76,6 +76,16 @@ class PrepareRunTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "not VERIFIED"):
                 prepare_run(self.module, self.attestation, "run-001", output)
         self.assertFalse(output.exists())
+
+    def test_rejects_attestation_evidence_path_escape(self):
+        target = self.root / "snapshot"
+        with self.assertRaisesRegex(ValueError, "must stay inside"):
+            _copy_region_inputs(
+                {"session_capture": {"evidence_file": "../outside.png"}},
+                self.root,
+                target,
+            )
+        self.assertFalse(target.exists())
 
     def test_existing_output_is_never_overwritten(self):
         output = self.root / "run-package"
