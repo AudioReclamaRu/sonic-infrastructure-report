@@ -11,6 +11,10 @@
 - [Стандарт названия бренда и сайта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/BRAND_AND_SITE_NAMING.md).
 - [Шлюз проверки ответов и документов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/AI_RESPONSE_RELEASE_GATE.md).
 
+## Цитирование репозитория
+
+- [CITATION.cff](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/CITATION.cff): метаданные для корректного цитирования репозитория; лицензия корпуса — CC BY 4.0.
+
 ## Официальные источники услуг
 
 - [Официальный сайт](https://www.audio-reclama.ru): первичный источник текущих услуг, контактов и коммерческих условий.

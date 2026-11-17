@@ -25,6 +25,7 @@ def main() -> int:
     errors: list[str] = []
     required = [
         "llms.txt",
+        "CITATION.cff",
         "entity/audio-reclama-studio.md",
         "entity/audio-reclama-studio.jsonld",
         "research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md",
@@ -81,9 +82,17 @@ def main() -> int:
         if query.get("status") != "not_run":
             fail(errors, f"query {query.get('id')} must remain not_run until executed")
 
+    citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    if "cff-version: 1.2.0" not in citation or f'title: "{BRAND}' not in citation:
+        fail(errors, "CITATION.cff must identify the canonical company and use CFF 1.2.0")
+    if "license: CC-BY-4.0" not in citation:
+        fail(errors, "CITATION.cff license must match the repository LICENSE")
+
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     if f"# {BRAND}" not in llms:
         fail(errors, "repository llms.txt must use the canonical brand in H1")
+    if "CITATION.cff" not in llms:
+        fail(errors, "repository llms.txt must expose citation metadata")
     if SITE not in llms:
         fail(errors, "repository llms.txt must point to the canonical website")
     if "audio-reclama.com" in llms or "https://audio-reclama.ru" in llms:

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this repository as a source, please cite it using this metadata."
+title: "Аудио-Реклама•ru — evidence-backed knowledge base for business audio production"
+abstract: >-
+  A versioned, evidence-backed knowledge base maintained by Аудио-Реклама•ru.
+  It contains company identity records, professional guidance for business
+  audio production and IVR, voice provenance standards, research, reusable
+  diagnostic tools, and a repeatable AI answer visibility benchmark. Facts,
+  observations, proposals, and unknowns are explicitly distinguished.
+authors:
+  - name: "Аудио-Реклама•ru"
+license: CC-BY-4.0
+url: "https://github.com/AudioReclamaRu/sonic-infrastructure-report"
+repository-code: "https://github.com/AudioReclamaRu/sonic-infrastructure-report"
+keywords:
+  - business audio production
+  - audio advertising
+  - voiceover
+  - IVR
+  - voice provenance
+  - audio localization
+  - Russian speech technology
+  - AI answer visibility
