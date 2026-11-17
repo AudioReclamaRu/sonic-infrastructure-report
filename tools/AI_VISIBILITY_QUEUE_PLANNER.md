@@ -1,3 +1,14 @@
+---
+type: tool
+date: 2026-11-17
+lang: ru
+related:
+  - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
+  - research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json
+  - research/ai-visibility-benchmark-queries-2026-11-17.json
+  - tools/AI_VISIBILITY_BENCHMARK.md
+---
+
 # AI Visibility Queue Planner
 
 The queue planner turns a frozen query module into an explicit, auditable execution matrix. It is an offline planning tool: it does not call providers, infer region access, or create observations.
