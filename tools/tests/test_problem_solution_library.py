@@ -8,6 +8,7 @@ LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
 PROBLEMS = "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
+ROUTING = "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
 
 
 def fixture_root():
@@ -48,7 +49,7 @@ def fixture_root():
     (root / LIBRARY).write_text(json.dumps(library), encoding="utf-8")
     (root / BENCHMARK).write_text(json.dumps(benchmark), encoding="utf-8")
     (root / REFERENCE).write_text(
-        "Answer source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
+        "## IVR guide answer\nAnswer source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
         encoding="utf-8",
     )
     (root / PROBLEMS).write_text(
@@ -56,6 +57,29 @@ def fixture_root():
         encoding="utf-8",
     )
     (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
+    routing = {
+        "schema": "audio-reclama/problem-answer-routing/1",
+        "version": "1.0.0",
+        "updated": "2026-11-18",
+        "entry_count": 1,
+        "entries": [{
+            "routing_id": "business_problem/ivr",
+            "intent_type": "business_problem",
+            "problem": "The caller is lost in IVR",
+            "source": {"file": LIBRARY, "scenario_id": "ivr"},
+            "answer_references": [
+                {"file": REFERENCE, "heading": "## IVR guide answer"}
+            ],
+            "supporting_documents": ["guides/ivr.md"],
+            "primary_sources": [
+                "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+            ],
+            "evidence_refs": [],
+            "service_fit": ["IVR voice prompts"],
+            "guardrails": ["PBX administration is not implied"],
+        }],
+    }
+    (root / ROUTING).write_text(json.dumps(routing), encoding="utf-8")
     return temporary, root
 
 
@@ -112,6 +136,20 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         benchmark["queries"][0]["status"] = "complete"
         self.write_json(BENCHMARK, benchmark)
         self.assertTrue(any("must remain not_run" in e for e in validate(self.root)))
+
+    def test_routing_index_missing_answer_heading_fails(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["answer_references"][0]["heading"] = "## Missing heading"
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("heading does not resolve" in e for e in errors))
+
+    def test_routing_index_missing_source_scenario_fails(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["source"]["scenario_id"] = "missing"
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("does not resolve scenario" in e for e in errors))
 
     def test_malformed_link_in_markdown_fails(self):
         (self.root / REFERENCE).write_text(
