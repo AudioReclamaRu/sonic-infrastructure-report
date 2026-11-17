@@ -64,4 +64,6 @@
 - Не утверждать, что GitHub-коммит гарантирует индексацию, цитирование или рост позиций. `llms.txt` — добровольная навигационная конвенция, не механизм ранжирования.
 - Официальный сайт остаётся read-only; репозиторий не разворачивается как его зеркало.
 
-- [Russia-first unbranded AI discovery prompts](research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json): 28 Russian prompts for generic discovery, kept separate from brand verification; all not_run until observed.
+- [Russia-first unbranded AI discovery prompts](research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json): 29 Russian prompts for generic discovery, kept separate from brand verification; all not_run until observed.
+- [RU observation runbook](research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md): operational gates, exact UI procedure, status taxonomy and scoring safeguards.
+- [RU observation queue](research/ai-visibility-ru-observation-queue-2026-11-17.csv): 348 platform × prompt rows across 12 platforms; all NOT_TESTED until actual observation.

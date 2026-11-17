@@ -219,3 +219,6 @@ https://www.audio-reclama.ru — start@audio-reclama.ru
 ## Russia-first AI discovery
 
 The first execution market is Russia (`ru-RU`). The fixed 20-question Russian brand/service verification set is preserved separately from the [29 unbranded Russian discovery prompts](research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json). The latter tests whether relevant providers are surfaced without naming the company. All prompts remain `not_run` until actual observations are collected. Russia is the first priority, while the overall market scope remains worldwide.
+
+
+The Russian measurement workflow is prepared but not executed: [operational runbook](research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md) and [348-row observation queue](research/ai-visibility-ru-observation-queue-2026-11-17.csv) cover 29 generic prompts across 12 platform surfaces. Rows remain `NOT_TESTED` until collected from a verified Russian regional vantage point.
