@@ -224,5 +224,51 @@ class EvidenceRecordTests(unittest.TestCase):
             errors = validate_batch(records, csv_path)
             self.assertTrue(any("every collection outcome requires observation_id" in e for e in errors))
 
+    def test_csv_scores_and_discovery_flags_must_match_primary_json(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = root / "records"
+            records.mkdir()
+            record = make_record(
+                generic_discovery_hit=True,
+                critical_error=False,
+                scores={**{key: None for key in SCORE_KEYS}, "brand_identity": 2, "source_quality": 1},
+            )
+            (records / "obs-001.json").write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
+            headers = [
+                "observation_id", "run_id", "country_code", "interface_locale",
+                "prompt_language", "answer_language", "platform", "platform_surface",
+                "measurement_mode", "query_id", "intent", "query", "answer_status",
+                "brand_identity_score", "source_quality_score",
+                "generic_discovery_hit", "critical_error",
+            ]
+            row = {
+                "observation_id": "obs-001", "run_id": "run-001", "country_code": "RU",
+                "interface_locale": "ru-RU", "prompt_language": "ru", "answer_language": "ru",
+                "platform": "yandex_alice_ai", "platform_surface": "Alice AI consumer interface",
+                "measurement_mode": "consumer_ui", "query_id": "RU-GEN-AD-01",
+                "intent": "generic_commercial", "query": "Где заказать рекламный аудиоролик?",
+                "answer_status": "OK", "brand_identity_score": "2",
+                "source_quality_score": "1", "generic_discovery_hit": "true",
+                "critical_error": "false",
+            }
+            csv_path = root / "benchmark.csv"
+            def write_row():
+                with csv_path.open("w", encoding="utf-8", newline="") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=headers)
+                    writer.writeheader()
+                    writer.writerow(row)
+            write_row()
+            self.assertEqual(validate_batch(records, csv_path), [])
+            row["brand_identity_score"] = "0"
+            write_row()
+            errors = validate_batch(records, csv_path)
+            self.assertTrue(any("brand_identity_score does not match" in e for e in errors))
+            row["brand_identity_score"] = "2"
+            row["generic_discovery_hit"] = "false"
+            write_row()
+            errors = validate_batch(records, csv_path)
+            self.assertTrue(any("generic_discovery_hit does not match" in e for e in errors))
+
 if __name__ == "__main__":
     unittest.main()
