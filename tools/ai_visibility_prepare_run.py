@@ -6,9 +6,9 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import sys
 import tempfile
-import shutil
 from argparse import Namespace
 from datetime import datetime, timezone
 from pathlib import Path
