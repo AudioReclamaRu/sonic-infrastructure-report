@@ -11,6 +11,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from tools.ai_visibility_queue import QUEUE_FIELDS, build_rows, load_module, read_queue
+
 PLAN_SCHEMA = "studio/ai-visibility-run-passport/1"
 RESULT_SCHEMA = "studio/ai-visibility-run-result/1"
 QUEUE_REQUIRED = {
@@ -70,10 +72,16 @@ def inspect_queue(path: Path) -> dict[str, Any]:
     if not rows:
         raise ValueError(f"{path}: queue is empty")
     identities = set()
+    queue_ids = set()
     platforms = set()
     query_ids = set()
     markets = set()
     for line, row in enumerate(rows, start=2):
+        if any(not (row.get(field) or "").strip() for field in QUEUE_REQUIRED):
+            raise ValueError(f"{path}:{line}: blank required queue field")
+        if row["queue_id"] in queue_ids:
+            raise ValueError(f"{path}:{line}: duplicate queue_id {row['queue_id']}")
+        queue_ids.add(row["queue_id"])
         if row.get("execution_status") != "NOT_TESTED":
             raise ValueError(f"{path}:{line}: planned queue row must remain NOT_TESTED")
         if row.get("measurement_mode") not in ALLOWED_MODES:
@@ -101,6 +109,29 @@ def inspect_queue(path: Path) -> dict[str, Any]:
     }
 
 
+def validate_module_queue_pair(module_path: Path, queue_path: Path) -> list[str]:
+    """Require the queue to be the exact deterministic output of its frozen module."""
+    try:
+        expected = build_rows(load_module(module_path))
+        actual = read_queue(queue_path)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        return [f"{module_path} <-> {queue_path}: cannot rebuild queue: {exc}"]
+    errors = []
+    if len(actual) != len(expected):
+        errors.append(f"{module_path} <-> {queue_path}: row count {len(actual)} != expected {len(expected)}")
+    for index, (actual_row, expected_row) in enumerate(zip(actual, expected), start=2):
+        differences = [
+            field for field in QUEUE_FIELDS
+            if (actual_row.get(field) or "") != (expected_row.get(field) or "")
+        ]
+        if differences:
+            errors.append(
+                f"{module_path} <-> {queue_path}: line {index} differs from frozen module in "
+                + ", ".join(differences)
+            )
+    return errors
+
+
 def seal(payload: dict[str, Any], hash_field: str) -> dict[str, Any]:
     sealed = dict(payload)
     sealed.pop(hash_field, None)
@@ -120,10 +151,16 @@ def create_plan(args: argparse.Namespace) -> dict[str, Any]:
     base = output.parent
     if not args.module or not args.queue:
         raise ValueError("at least one --module and one --queue are required")
-    modules = [file_entry(Path(item), base, "frozen_query_module") for item in args.module]
+    if len(args.module) != len(args.queue):
+        raise ValueError("provide exactly one --queue for each --module, in matching order")
+    module_paths = [Path(item).resolve(strict=True) for item in args.module]
+    queue_paths = [Path(item).resolve(strict=True) for item in args.queue]
+    modules = [file_entry(path, base, "frozen_query_module") for path in module_paths]
     queues = []
-    for item in args.queue:
-        path = Path(item).resolve(strict=True)
+    for path in queue_paths:
+        pair_errors = validate_module_queue_pair(module_paths[len(queues)], path)
+        if pair_errors:
+            raise ValueError("; ".join(pair_errors))
         summary = inspect_queue(path)
         entry = file_entry(path, base, "planned_execution_queue")
         entry["matrix"] = summary
@@ -191,6 +228,20 @@ def validate_plan(path: Path) -> tuple[list[str], dict[str, Any] | None]:
                 errors.append(f"size mismatch: {entry.get('path')}")
         except (OSError, KeyError, TypeError) as exc:
             errors.append(f"invalid artifact entry: {exc}")
+    module_entries = artifacts.get("query_modules", [])
+    queue_entries = artifacts.get("execution_queues", [])
+    if not isinstance(module_entries, list) or not isinstance(queue_entries, list):
+        errors.append("query_modules and execution_queues must be arrays")
+    elif len(module_entries) != len(queue_entries) or not module_entries:
+        errors.append("passport must contain one queue for each query module")
+    else:
+        for module_entry, queue_entry in zip(module_entries, queue_entries):
+            try:
+                errors.extend(validate_module_queue_pair(
+                    resolve_entry(module_entry, path), resolve_entry(queue_entry, path)
+                ))
+            except (OSError, KeyError, TypeError) as exc:
+                errors.append(f"cannot verify module/queue pair: {exc}")
     return errors, payload
 
 
