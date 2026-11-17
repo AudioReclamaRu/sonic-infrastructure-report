@@ -41,8 +41,10 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md — технический аудит существующей статьи 2020 года.
 - VOICE_RECORDING_TEST_PROTOCOL.md — как проводить контролируемые A/B-тесты записи и обработки.
 - VIDEO_VOICEOVER_CLIENT_BRIEF.md — сбор исходных данных для коммерческого заказа на озвучивание видео.
+- AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md — problem-first бриф по форматам, типам дикторских дорожек, требованиям принимающей системы и приёмке файла; технический черновик, не утверждённый стандарт.
 - drafts/VIDEO_VOICEOVER_REVISED_DRAFT.md — новая редакция для обновления старого URL (пока черновик).
 - research/QUERY_SERP_SAMPLE_2026-11-14.md — выборочный срез конкурирующих ответов, без заявлений о частотности.
+- ../tools/validate_problem_solution_library.py — CI-проверка структуры problem-solution JSON, URL источников и существования файлов, на которые ссылается benchmark.
 - IMPLEMENTATION_ROADMAP.md — план внедрения.
 
 ## 1. Что это за слой
