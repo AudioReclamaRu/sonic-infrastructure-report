@@ -42,11 +42,13 @@ That indicates real search attention around voice, dubbing, and production knowl
 
 Do not assume the cause is price, metadata, copy, or UX until the competing search results and actual page are compared. The zero-click near-page-one terms merit a SERP/snippet audit; lower-ranking pages merit relevance, proof, and internal-link review.
 
-### 3. Social distribution has three connected networks, not four
+### 3. Social distribution: TikTok is now connected, but its first measured post has zero views
 
-Metricool confirms Facebook, Instagram, and YouTube under the active brand; vidIQ confirms an owner-level publish-capable YouTube connection. TikTok was absent from both current connection inventories.
+The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricool sync completed. The later Metricool brand settings now confirm TikTok account `audio_reclama_ru` alongside Facebook, Instagram and YouTube; vidIQ also confirms an active, publish-capable TikTok connection.
 
-The Instagram Reel “Бесплатный дофамин. Сценарий — в комплекте.” was the strongest of three returned Reels in this window (259 views, reach 196, 8 interactions, average watch time 5.44 seconds). The sample is too small to generalize, but the pattern supports testing short creative that opens with a concrete benefit and shows a real deliverable.
+The current TikTok read (E-2026-070) returns one 10-second video in the 2026-10-19–2026-11-18 window and records 0 views, 0 likes, 0 comments and 0 shares. Metricool reports 0 current followers. Reach, watch time and traffic-source cells are null, and the impression-source distribution query returned no rows. Since the integration was first connected on 2026-11-18, account history may be incomplete. This does not establish a shadowban or For You ineligibility. The immediate operational blocker is verification of the post's public visibility and eligibility in TikTok Studio; do not treat zero views as evidence about retention.
+
+The Instagram Reel “Бесплатный дофамин. Сценарий — в комплекте.” remains the strongest of three returned Reels (259 views, reach 196, 8 interactions, average watch time 5.44 seconds). This small sample supports testing a specific curiosity-generating promise over generic studio promotion, but does not establish causation.
 
 Metricool's Tuesday activity estimates indicate initial test slots around 16:00 Moscow for YouTube and 10:00–12:00 Moscow for Facebook. Treat these as hypotheses, not measured online audience or guaranteed reach. Instagram's returned timing values were all zero; no schedule recommendation is warranted from that response.
 
@@ -62,9 +64,10 @@ Metricool's Tuesday activity estimates indicate initial test slots around 16:00 
 ### P2 — Route informational attention to useful commercial next steps
 
 1. From high-traffic dubbing/voiceover articles, draft contextual internal-link placements to genuinely relevant services (not blanket banners).
-2. Prepare short video scripts from the same knowledge: one problem, one demonstration/example, one result, one non-pushy next step.
-3. Create 3–5 test variations around clear benefit-led hooks; measure retention and shares rather than relying on raw views only.
-4. Use platform-native versions for YouTube Shorts, Instagram Reels, and Facebook Reels. Keep a clean source master without another platform's watermark; adjust caption, title, and CTA to each platform.
+2. Complete the TikTok visibility / For You eligibility check for the first post; compare TikTok Studio's own analytics with Metricool. See [E-2026-070](../evidence/E-2026-070.md).
+3. Produce the three distinct, pre-language TikTok tests specified in E-2026-070 (sound transformation, IVR path, one object/three sound treatments). Capture each at 2 h, 24 h and 72 h.
+4. Prepare short video scripts from the same knowledge: one problem, one demonstration/example, one result, one non-pushy next step.
+5. Use platform-native versions for YouTube Shorts, Instagram Reels, Facebook Reels and TikTok. Keep a clean source master without another platform's watermark; adjust caption, title, and CTA to each platform.
 
 ### P3 — Measurement setup (blocker before ROI claims)
 
@@ -90,7 +93,7 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - Official website: read-only; no page, metadata, CMS, form, analytics code, robots, sitemap, or configuration changes.
 - Social accounts: no new profiles or posts; no drafts scheduled or published in this pass.
 - Paid tools, credits, placements, and ad spend: none purchased or activated.
-- TikTok: not connected; no location spoofing, purchased accounts, or fictitious identity recommended.
+- TikTok is connected to Metricool and vidIQ; the current analytics record contains one post with zero recorded views. New posts remain owner-approval-only; no location spoofing, purchased accounts, or fictitious identity recommended.
 - AI visibility benchmarks: keep unrun prompts blind until the baseline test is executed; do not prime external AI systems using internal answer packs.
 - This register is a research deliverable for owner review, not an implementation approval.
 
@@ -101,5 +104,6 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-067 — GSC commercial-page snapshot](../evidence/E-2026-067.md)
 - [E-2026-068 — Commercial landing-page query performance](../evidence/E-2026-068.md)
 - [E-2026-069 — Connected social-channel snapshot](../evidence/E-2026-069.md)
+- [E-2026-070 — TikTok first-post distribution snapshot and diagnostic](../evidence/E-2026-070.md)
 
 Competitor price data is self-published by competitors and is not independent validation. All performance values retain the source and date window in the evidence files.
