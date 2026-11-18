@@ -85,6 +85,19 @@ The 2026-11-17 technical crawl found 7 catalogue/category pages without H1 and d
 
 **Review-only priority:** repair headings and distinct descriptions on the existing URLs, preserve the high-performing English page, and improve meaningful image alternatives. Candidate wording is recorded in E-2026-073. No changes to the live catalogue were made; no availability or performer credentials are inferred.
 
+### 2C. Public crawler access and page-level AI semantics
+
+A read-only audit of live public metadata and machine-access files is recorded in [E-2026-074](../evidence/E-2026-074.md). It adds a technical priority beyond query targeting:
+
+- `https://www.audio-reclama.ru/llms.txt` returns 404. A root-level, source-grounded candidate is ready for owner review, but `llms.txt` is a voluntary agent-navigation convention, not a proven ranking or citation lever. Keep it low priority behind crawlability, entity consistency, useful page content and accurate metadata.
+- `robots.txt` and sitemap are reachable. Sitemap contains 1,186 URLs, including 703 individual voice profiles, 308 filter/category pages, 137 blog URLs and 12 portfolio pages. Do not create more category pages by default.
+- The video-voiceover service page and seven key catalogue pages lack an extracted H1. Male/female category pages share a description. Candidate H1/title/descriptions are in `research/AI_DISCOVERY_SITE_IMPLEMENTATION_PACK_2026-11-18.md`.
+- The English entry `/en/` returns 200 but has sparse visible content and its Open Graph URL points at the homepage. It is intentionally excluded from the root llms candidate until its content and page-level metadata are corrected.
+- `robots.txt` includes `Disallow: /en/*` and `Allow: /en/`. Google's current matching rules make the more-specific Allow effective for `/en/`; Yandex documents prefix-length precedence and Allow on equal-length matches, but verify it in Yandex Webmaster before making a universal crawler-access claim. No live robots rules were changed.
+- The public pages use `noyaca`; this is not `noindex` and there is no reason to remove it for AI SEO. Meta-description quality and actual visible page semantics deserve attention instead.
+
+No JSON-LD additions are proposed until the live page source is checked for existing markup. The repository's JSON-LD profile is a comparison candidate, not proof that structured data is deployed on the official site.
+
 ### 3. Social distribution: TikTok is now connected, but its first measured post has zero views
 
 The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricool sync completed. The later Metricool brand settings now confirm TikTok account `audio_reclama_ru` alongside Facebook, Instagram and YouTube; vidIQ also confirms an active, publish-capable TikTok connection.
@@ -160,5 +173,6 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-071 — TikTok account-level discoverability and publishing-path diagnostics](../evidence/E-2026-071.md)
 - [E-2026-072 — Russia-only Search Console and video discovery-path audit](../evidence/E-2026-072.md)
 - [E-2026-073 — Voice-catalog discoverability and semantic clarity](../evidence/E-2026-073.md)
+- [E-2026-074 — Official-site AI access and semantic consistency](../evidence/E-2026-074.md)
 
 Competitor price data is self-published by competitors and is not independent validation. All performance values retain the source and date window in the evidence files.
