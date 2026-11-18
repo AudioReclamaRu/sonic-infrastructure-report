@@ -7,6 +7,8 @@
 ## Идентичность компании
 
 - Канонический профиль сущности и машиночитаемая запись Organization находятся в каталоге `entity/`; это источники с градацией доказательств, не замена официального сайта.
+- [Канонический профиль компании](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.md): источник с градацией доказательств и текущими ограничениями утверждений.
+- [Schema.org Organization JSON-LD](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.jsonld): машиночитаемый профиль в репозитории; не означает, что JSON-LD установлен на официальном сайте.
 - [Стандарт названия бренда и сайта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/BRAND_AND_SITE_NAMING.md).
 - [Шлюз проверки ответов и документов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/AI_RESPONSE_RELEASE_GATE.md).
 
@@ -38,6 +40,8 @@
 - [Банковское голосовое меню](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/bank-voice-menu.md).
 - [Объявления в аэропортах](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/airport-announcements.md).
 - [Озвучивание видео](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/video-voiceover.md).
+- [Аудит существующей видео-voiceover статьи 2020 года](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md): перечисляет проверенные технические ошибки и рекомендует обновлять старый URL, а не создавать дубль.
+- [Черновик обновления этой статьи](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/drafts/VIDEO_VOICEOVER_REVISED_DRAFT.md): внутренний неопубликованный проект, не действующий текст сайта.
 - [Линтер логики IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ivr_flow_linter/README.ru.md): локальная проверка графа меню, не тест живой АТС или аудио.
 
 ## Карта услуг и доказательства компетенций
