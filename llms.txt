@@ -7,8 +7,7 @@
 ## Идентичность компании
 
 - Канонический профиль сущности и машиночитаемая запись Organization находятся в каталоге `entity/`; это источники с градацией доказательств, не замена официального сайта.
-- [Канонический профиль компании](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.md): источник с градацией доказательств и текущими ограничениями утверждений.
-- [Schema.org Organization JSON-LD](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.jsonld): машиночитаемый профиль в репозитории; не означает, что JSON-LD установлен на официальном сайте.
+- [Каталог сущностей и машиночитаемых профилей](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): содержит канонический профиль компании с градацией доказательств и Schema.org Organization JSON-LD; это записи репозитория, не подтверждение установки разметки на официальном сайте.
 - [Стандарт названия бренда и сайта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/BRAND_AND_SITE_NAMING.md).
 - [Шлюз проверки ответов и документов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/AI_RESPONSE_RELEASE_GATE.md).
 
