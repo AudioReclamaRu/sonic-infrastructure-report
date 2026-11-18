@@ -42,6 +42,32 @@ That indicates real search attention around voice, dubbing, and production knowl
 
 Do not assume the cause is price, metadata, copy, or UX until the competing search results and actual page are compared. The zero-click near-page-one terms merit a SERP/snippet audit; lower-ranking pages merit relevance, proof, and internal-link review.
 
+### 2A. Russia-only search cut and the video discovery gateway
+
+A separate country-filtered GSC read for `RUS` shows why the commercial and informational paths should be evaluated separately. The full Russia-only evidence is in [E-2026-072](../evidence/E-2026-072.md).
+
+| Page | RU clicks | RU impressions | CTR | Avg. position |
+|---|---:|---:|---:|---:|
+| Radio advertising | 3 | 838 | 0.36% | 10.7 |
+| IVR / telephone greetings | 4 | 611 | 0.65% | 27.6 |
+| Video voiceover service | 2 | 155 | 1.29% | 44.7 |
+| Audiobook production | 30 | 1,041 | 2.88% | 30.4 |
+| Jingles / sound media | 0 | 120 | 0.00% | 33.4 |
+| Corporate songs / anthems | 0 | 17 | 0.00% | 47.3 |
+| Presentation voiceover | 0 | 7 | 0.00% | 36.9 |
+| Existing video-voiceover tutorial (blog) | 121 | 3,289 | 3.68% | 7.2 |
+
+**Highest-leverage discovery surface:** the 2020 how-to article already ranks for Russian queries such as `как озвучить видео` (438 impressions, 34 clicks, position 1.7) and `как озвучивать видео` (187 impressions, 33 clicks, position 1.3). The dedicated video service page is much weaker in the same country window. This suggests a strong informational entry point that should be connected to a clear, accurate professional-service path; it does not prove enquiries or that contextual links are absent.
+
+**Freshness warning:** the live article still contains technical advice that the existing audit found inaccurate or too universal (including a fixed 15 cm microphone distance, an unqualified “20%” music level and a malformed `−20 to −10 dB` range). It also uses a legacy brand spelling in its attribution/footer. The technical audit and a revised draft for the **same existing URL** are already in the repo. Do not create a duplicate article or copy the old values into AI answers. The draft is not published; the official website remains read-only.
+
+**Other Russia-only opportunities:**
+- Radio: `аудиореклама заказать` — 89 impressions, 0 clicks, position 7.7; `аудиореклама записать` — 49 impressions, 0 clicks, position 7.1. Compare actual SERP titles/snippets and competing results before assigning a cause.
+- IVR: `голосовое приветствие для атс` — 99 impressions, 1 click, position 21.4; `запись ivr` — 35 impressions, 1 click, position 44.3. Reuse the existing IVR answer and design standard.
+- Audiobooks: the service page has 30 clicks and 1,041 impressions; price/quotation queries already generate clicks, but its average position is 30.4. Improve the estimation brief without inventing public prices or delivery promises.
+
+The Russia-only cut is not interchangeable with the unfiltered Search Console summary in E-2026-068. Page totals and query rows are separate aggregations and must not be added together.
+
 ### 3. Social distribution: TikTok is now connected, but its first measured post has zero views
 
 The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricool sync completed. The later Metricool brand settings now confirm TikTok account `audio_reclama_ru` alongside Facebook, Instagram and YouTube; vidIQ also confirms an active, publish-capable TikTok connection.
@@ -115,5 +141,6 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-069 — Connected social-channel snapshot](../evidence/E-2026-069.md)
 - [E-2026-070 — TikTok first-post distribution snapshot and diagnostic](../evidence/E-2026-070.md)
 - [E-2026-071 — TikTok account-level discoverability and publishing-path diagnostics](../evidence/E-2026-071.md)
+- [E-2026-072 — Russia-only Search Console and video discovery-path audit](../evidence/E-2026-072.md)
 
 Competitor price data is self-published by competitors and is not independent validation. All performance values retain the source and date window in the evidence files.
