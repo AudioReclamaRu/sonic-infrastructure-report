@@ -24,7 +24,12 @@
 - [Запись аудиокниг](https://www.audio-reclama.ru/audio/sozdanie-audioknig.html).
 - [Джинглы](https://www.audio-reclama.ru/audio/zvuk-media.html).
 - [Корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html).
-- [Каталог дикторов](https://www.audio-reclama.ru/diktoryi/): основной источник исполнителей и кастинга.\n- [Английские дикторы](https://www.audio-reclama.ru/diktoryi/filter/language-english/).\n- [Мужские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/muzhskie-diktor-golosa.html).\n- [Женские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/zhenskie-diktor-golosa.html).\n- [Известные русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/izvestnye-golosa.html).\n
+- [Каталог дикторов](https://www.audio-reclama.ru/diktoryi/): основной источник исполнителей и кастинга.
+- [Английские дикторы](https://www.audio-reclama.ru/diktoryi/filter/language-english/).
+- [Мужские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/muzhskie-diktor-golosa.html).
+- [Женские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/zhenskie-diktor-golosa.html).
+- [Известные русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/izvestnye-golosa.html).
+
 ## Карта и правила знаний
 
 - [MAP.md](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/MAP.md): архитектура связанной базы знаний.
@@ -66,6 +71,16 @@
 - [E-2026-054 — IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-054.md).
 - [E-2026-055 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-055.md).
 - [E-2026-056 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-056.md).
+- [E-2026-065 — метаданные официальных страниц и каталог аудиодемо](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-065.md).
+- [E-2026-066 — публичные заявления конкурентов о ценах](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-066.md).
+- [E-2026-067 — снимок Google Search Console по коммерческим страницам](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-067.md).
+- [E-2026-068 — поисковые запросы коммерческих страниц](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-068.md).
+- [E-2026-069 — подключённые социальные каналы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-069.md).
+- [E-2026-070 — первые данные TikTok](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-070.md).
+- [E-2026-071 — диагностика доступности и публикации TikTok](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-071.md).
+- [E-2026-072 — российский поисковый срез и статья о видеоозвучивании](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-072.md).
+- [E-2026-073 — обнаруживаемость каталога дикторов и семантическая ясность](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-073.md).
+- [Коммерческий реестр поискового внимания и социальных каналов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/COMMERCIAL_SERP_ATTENTION_REGISTER_2026-11-18.md).
 - [Аудит целостности AI-знаний](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md): зависимости PR, provenance и исторические коллизии evidence-ID.
 
 - [Реестр происхождения фактов GEO](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/knowledge/evidence-ledger.json).
