@@ -13,7 +13,13 @@
     "telephone": "8 800 700-46-52",
     "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
       "opens": "09:00",
       "closes": "18:00"
     }
@@ -37,13 +43,70 @@
     "@type": "OfferCatalog",
     "name": "Аудио- и видеопроизводство для бизнеса",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись рекламных аудиороликов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись IVR, голосовых приветствий и автоинформаторов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Озвучивание видео"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись аудиокниг"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Создание джинглов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Создание корпоративных песен и гимнов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Озвучивание презентаций"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Запись рекламных аудиороликов",
+          "url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Запись IVR, голосовых приветствий и автоинформаторов",
+          "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Озвучивание видео",
+          "url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Запись аудиокниг",
+          "url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Создание джинглов",
+          "url": "https://www.audio-reclama.ru/audio/zvuk-media.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Создание корпоративных песен и гимнов",
+          "url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Озвучивание презентаций",
+          "url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Подбор и кастинг дикторов",
+          "url": "https://www.audio-reclama.ru/diktoryi/"
+        }
+      }
     ]
   }
 }
