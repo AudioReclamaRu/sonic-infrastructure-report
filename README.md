@@ -20,6 +20,8 @@ Russian-language instructions: [Проверка логики IVR-меню](tool
 
 **Official studio and current commercial information:** [https://www.audio-reclama.ru](https://www.audio-reclama.ru) · start@audio-reclama.ru
 
+**Official commercial portfolio:** [Portfolio — project cases and capabilities](assets/portfolio/PORTFOLIO-2026-11-18.md) is the repository's indexed first-party portfolio source, linked to the canonical PDF. The Markdown file is an extracted-text snapshot, not the PDF binary; portfolio statements are distinguished from independent verification and current service commitments.
+
 **Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
 
 This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
@@ -116,6 +118,7 @@ reports/               verified analysis + live cadence
   signals/                        daily market signals (dated, evidence-linked)
   verdicts/verdict-index.md       weekly append-only verdict record
 evidence/              machine-readable facts (E-YYYY-NNN)
+assets/portfolio/       official portfolio source, project-case index and asset metadata
 entity/                named entities of the market (canonical IDs)
 ar-notes/              «Аудио-Реклама•ru» Research Notes (short, evidence-bound)
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
