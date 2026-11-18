@@ -65,9 +65,10 @@ Metricool's Tuesday activity estimates indicate initial test slots around 16:00 
 
 ### P1 — Resolve TikTok post visibility and account standing
 
-1. Verify that the existing post is fully published and its audience is Everyone; specifically eliminate the TikTok Content Posting API's documented SELF_ONLY limitation for unaudited clients.
-2. Inspect TikTok Studio Account Check, Inbox → System notifications → Account updates, and the existing post's More insights / Analytics eligibility notice. Appeal only a stated incorrect restriction.
-3. Compare TikTok Studio's public-availability state with Metricool's zero views and the public embed failure. Do not delete or re-upload the post while its state is unknown.
+1. Verify the TikTok account region and the real country/network used when the post was published. 2026 reporting documents continuing Russia-side functionality restrictions; do not substitute a VPN or fake region for a proper account check.
+2. Verify that the existing post is fully published and its audience is Everyone; specifically eliminate the TikTok Content Posting API's documented SELF_ONLY limitation for unaudited clients.
+3. Inspect TikTok Studio Account Check, Inbox → System notifications → Account updates, and the existing post's More insights / Analytics eligibility notice. Appeal only a stated incorrect restriction.
+4. Compare TikTok Studio's public-availability state with Metricool's zero views and the public embed failure. Do not delete or re-upload the post while its state is unknown.
 
 ### P2 — Route informational attention to useful commercial next steps
 
@@ -101,7 +102,7 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - Official website: read-only; no page, metadata, CMS, form, analytics code, robots, sitemap, or configuration changes.
 - Social accounts: no new profiles or posts; no drafts scheduled or published in this pass.
 - Paid tools, credits, placements, and ad spend: none purchased or activated.
-- TikTok is connected to Metricool and vidIQ; the only returned post has zero recorded views and its public embed says unavailable. Account-level suppression is not proven; a private-only third-party API post is a documented alternative. New posts remain owner-approval-only; no location spoofing, purchased accounts, or fictitious identity recommended.
+- TikTok is connected to Metricool and vidIQ; the only returned post has zero recorded views and its public embed says unavailable. Account-level suppression is not proven; a private-only third-party API post and Russia-side region limitations are documented alternatives to account-wide recommendation suppression. New posts remain owner-approval-only; no location spoofing, purchased accounts, or fictitious identity recommended.
 - AI visibility benchmarks: keep unrun prompts blind until the baseline test is executed; do not prime external AI systems using internal answer packs.
 - This register is a research deliverable for owner review, not an implementation approval.
 
