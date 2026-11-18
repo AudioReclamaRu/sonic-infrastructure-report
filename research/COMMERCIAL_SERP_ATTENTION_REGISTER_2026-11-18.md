@@ -68,6 +68,23 @@ A separate country-filtered GSC read for `RUS` shows why the commercial and info
 
 The Russia-only cut is not interchangeable with the unfiltered Search Console summary in E-2026-068. Page totals and query rows are separate aggregations and must not be added together.
 
+### 2B. Voice-catalog entity clarity and multilingual discovery
+
+A second high-signal path is the existing voice catalogue. A Russia-only GSC cut shows strong demand for the English-language catalogue, and a large visibility surface for known voices. The full evidence and crawler details are in [E-2026-073](../evidence/E-2026-073.md).
+
+| Existing catalogue page | RU clicks | RU impressions | CTR | Avg. position |
+|---|---:|---:|---:|---:|
+| English-language voices | 80 | 813 | 9.84% | 4.7 |
+| Known Russian voices | 34 | 5,816 | 0.58% | 8.8 |
+| Female Russian voices | 16 | 535 | 2.99% | 6.1 |
+| Male Russian voices | 13 | 944 | 1.38% | 8.7 |
+
+The English page receives query traffic such as `диктор по английскому языку` (197 impressions, 32 clicks, position 1.6) and `диктор английского языка` (142 impressions, 28 clicks, position 1.7). This is a proven existing route in the Russia search sample, not a reason to create another language page.
+
+The 2026-11-17 technical crawl found 7 catalogue/category pages without H1 and duplicate meta descriptions on the male/female Russian pages. The same two pages each exposed 101 images without alt in the crawl; audit image-by-image so meaningful portraits receive accurate alt while decorative images stay empty. The “known voices” page has 5,816 RU impressions but only 34 clicks; review its live SERP snippet and broad-query relevance before changing copy.
+
+**Review-only priority:** repair headings and distinct descriptions on the existing URLs, preserve the high-performing English page, and improve meaningful image alternatives. Candidate wording is recorded in E-2026-073. No changes to the live catalogue were made; no availability or performer credentials are inferred.
+
 ### 3. Social distribution: TikTok is now connected, but its first measured post has zero views
 
 The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricool sync completed. The later Metricool brand settings now confirm TikTok account `audio_reclama_ru` alongside Facebook, Instagram and YouTube; vidIQ also confirms an active, publish-capable TikTok connection.
@@ -142,5 +159,6 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-070 — TikTok first-post distribution snapshot and diagnostic](../evidence/E-2026-070.md)
 - [E-2026-071 — TikTok account-level discoverability and publishing-path diagnostics](../evidence/E-2026-071.md)
 - [E-2026-072 — Russia-only Search Console and video discovery-path audit](../evidence/E-2026-072.md)
+- [E-2026-073 — Voice-catalog discoverability and semantic clarity](../evidence/E-2026-073.md)
 
 Competitor price data is self-published by competitors and is not independent validation. All performance values retain the source and date window in the evidence files.
