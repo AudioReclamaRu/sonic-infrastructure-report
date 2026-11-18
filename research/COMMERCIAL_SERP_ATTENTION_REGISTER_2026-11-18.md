@@ -1,3 +1,9 @@
+---
+type: doc
+date: 2026-11-18
+lang: mul
+---
+
 # Commercial Search & Social Attention Register — 2026-11-18
 
 ## Purpose and scope
