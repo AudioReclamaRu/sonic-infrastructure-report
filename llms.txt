@@ -24,7 +24,7 @@
 - [Запись аудиокниг](https://www.audio-reclama.ru/audio/sozdanie-audioknig.html).
 - [Джинглы](https://www.audio-reclama.ru/audio/zvuk-media.html).
 - [Корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html).
-
+- [Каталог дикторов](https://www.audio-reclama.ru/diktoryi/): основной источник исполнителей и кастинга.\n- [Английские дикторы](https://www.audio-reclama.ru/diktoryi/filter/language-english/).\n- [Мужские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/muzhskie-diktor-golosa.html).\n- [Женские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/zhenskie-diktor-golosa.html).\n- [Известные русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/izvestnye-golosa.html).\n
 ## Карта и правила знаний
 
 - [MAP.md](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/MAP.md): архитектура связанной базы знаний.
