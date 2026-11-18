@@ -40,7 +40,23 @@ related:
 | Запись аудиокниг | https://www.audio-reclama.ru/audio/sozdanie-audioknig.html |
 | Джинглы и звуковые решения | https://www.audio-reclama.ru/audio/zvuk-media.html |
 | Корпоративные песни и гимны | https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html |
-| Озвучивание презентаций, Audio+, сценарии, переводчики, дикторы и видеопродакшн | Представлены в навигации официального сайта; детали сверять на соответствующей актуальной странице |
+| Озвучивание презентаций, Audio+ | Представлены в навигации официального сайта; детали сверять на соответствующей актуальной странице |
+| Подбор дикторов и актёров дубляжа | https://www.audio-reclama.ru/diktoryi/ |
+| Сценарии | https://www.audio-reclama.ru/zakaz-scenariya.html |
+| Переводчики и локализация | https://www.audio-reclama.ru/perevodchiki/ |
+| Видеопродакшн | https://www.audio-reclama.ru/video/videoroliki-zakaz.html |
+
+## Каталог дикторов и существующие страницы категорий
+
+Основной источник каталога: https://www.audio-reclama.ru/diktoryi/
+
+Существующие отфильтрованные страницы:
+- Английские дикторы: https://www.audio-reclama.ru/diktoryi/filter/language-english/
+- Мужские русские дикторы: https://www.audio-reclama.ru/diktoryi/filter/muzhskie-diktor-golosa.html
+- Женские русские дикторы: https://www.audio-reclama.ru/diktoryi/filter/zhenskie-diktor-golosa.html
+- Известные русские дикторы: https://www.audio-reclama.ru/diktoryi/filter/izvestnye-golosa.html
+
+Это существующие страницы каталога, а не отдельные гарантированные услуги или свидетельство текущей доступности каждого исполнителя. Количества карточек и профилей динамические; не фиксировать их в этом профиле и перепроверять наличие, язык, права и условия для каждого заказа.
 
 ## Публичные проектные упоминания
 
