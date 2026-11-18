@@ -48,6 +48,8 @@ The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricoo
 
 The current TikTok read (E-2026-070) returns one 10-second video in the 2026-10-19–2026-11-18 window and records 0 views, 0 likes, 0 comments and 0 shares. Metricool reports 0 current followers. Reach, watch time and traffic-source cells are null, and the impression-source distribution query returned no rows. Since the integration was first connected on 2026-11-18, account history may be incomplete. This does not establish a shadowban or For You ineligibility. The immediate operational blocker is verification of the post's public visibility and eligibility in TikTok Studio; do not treat zero views as evidence about retention.
 
+A subsequent public-profile check found the profile page reachable and indexable by the external extractor, with 1 follower, 0 likes and one video entry. The public embed for the only returned post says "Video currently unavailable." This still does not prove a ban. TikTok's own developer documentation provides a more concrete candidate: posts made by unaudited Content Posting API clients are restricted to SELF_ONLY; upload-to-inbox also requires a final in-app share. Verify whether the post is set to Everyone and fully published before attributing the zero to account-level penalties. See [E-2026-071](../evidence/E-2026-071.md).
+
 The Instagram Reel “Бесплатный дофамин. Сценарий — в комплекте.” remains the strongest of three returned Reels (259 views, reach 196, 8 interactions, average watch time 5.44 seconds). This small sample supports testing a specific curiosity-generating promise over generic studio promotion, but does not establish causation.
 
 Metricool's Tuesday activity estimates indicate initial test slots around 16:00 Moscow for YouTube and 10:00–12:00 Moscow for Facebook. Treat these as hypotheses, not measured online audience or guaranteed reach. Instagram's returned timing values were all zero; no schedule recommendation is warranted from that response.
@@ -61,13 +63,19 @@ Metricool's Tuesday activity estimates indicate initial test slots around 16:00 
 3. **Video voiceover:** prioritise exact query match for “озвучка ролика стоимость” and related service terms. Add proof-oriented examples and the specification required for a quote only after confirming what can be delivered.
 4. **Audiobooks:** build a transparent brief/checklist for estimating length, finished audio hours, editing/mastering, rights, sample reading, and delivery. Do not invent a per-minute price.
 
+### P1 — Resolve TikTok post visibility and account standing
+
+1. Verify that the existing post is fully published and its audience is Everyone; specifically eliminate the TikTok Content Posting API's documented SELF_ONLY limitation for unaudited clients.
+2. Inspect TikTok Studio Account Check, Inbox → System notifications → Account updates, and the existing post's More insights / Analytics eligibility notice. Appeal only a stated incorrect restriction.
+3. Compare TikTok Studio's public-availability state with Metricool's zero views and the public embed failure. Do not delete or re-upload the post while its state is unknown.
+
 ### P2 — Route informational attention to useful commercial next steps
 
 1. From high-traffic dubbing/voiceover articles, draft contextual internal-link placements to genuinely relevant services (not blanket banners).
-2. Complete the TikTok visibility / For You eligibility check for the first post; compare TikTok Studio's own analytics with Metricool. See [E-2026-070](../evidence/E-2026-070.md).
-3. Produce the three distinct, pre-language TikTok tests specified in E-2026-070 (sound transformation, IVR path, one object/three sound treatments). Capture each at 2 h, 24 h and 72 h.
-4. Prepare short video scripts from the same knowledge: one problem, one demonstration/example, one result, one non-pushy next step.
-5. Use platform-native versions for YouTube Shorts, Instagram Reels, Facebook Reels and TikTok. Keep a clean source master without another platform's watermark; adjust caption, title, and CTA to each platform.
+2. Preserve the existing publication queue. Do not create another TikTok queue or change creative while public availability and account standing remain unverified.
+3. Use Creator Search Insights to map existing queued items to actual TikTok searches and content gaps; use relevant captions/hashtags rather than generic #FYP.
+4. Build authentic niche distribution through substantive comments, relevant creator collaborations, Duet/Stitch and genuine external sharing from existing owned channels. Treat this as audience development, not a guaranteed ranking switch.
+5. Reuse approved assets in platform-native versions for YouTube Shorts, Instagram Reels, Facebook Reels and TikTok, while respecting the pre-language creative rule and keeping platform watermarks out of source masters.
 
 ### P3 — Measurement setup (blocker before ROI claims)
 
@@ -93,7 +101,7 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - Official website: read-only; no page, metadata, CMS, form, analytics code, robots, sitemap, or configuration changes.
 - Social accounts: no new profiles or posts; no drafts scheduled or published in this pass.
 - Paid tools, credits, placements, and ad spend: none purchased or activated.
-- TikTok is connected to Metricool and vidIQ; the current analytics record contains one post with zero recorded views. New posts remain owner-approval-only; no location spoofing, purchased accounts, or fictitious identity recommended.
+- TikTok is connected to Metricool and vidIQ; the only returned post has zero recorded views and its public embed says unavailable. Account-level suppression is not proven; a private-only third-party API post is a documented alternative. New posts remain owner-approval-only; no location spoofing, purchased accounts, or fictitious identity recommended.
 - AI visibility benchmarks: keep unrun prompts blind until the baseline test is executed; do not prime external AI systems using internal answer packs.
 - This register is a research deliverable for owner review, not an implementation approval.
 
@@ -105,5 +113,6 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-068 — Commercial landing-page query performance](../evidence/E-2026-068.md)
 - [E-2026-069 — Connected social-channel snapshot](../evidence/E-2026-069.md)
 - [E-2026-070 — TikTok first-post distribution snapshot and diagnostic](../evidence/E-2026-070.md)
+- [E-2026-071 — TikTok account-level discoverability and publishing-path diagnostics](../evidence/E-2026-071.md)
 
 Competitor price data is self-published by competitors and is not independent validation. All performance values retain the source and date window in the evidence files.
