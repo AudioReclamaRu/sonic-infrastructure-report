@@ -5,10 +5,10 @@ lang: mul
 status: draft_not_sent
 related:
   - strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md
-  - https://www.audio-reclama.ru/
-  - https://www.audio-reclama.ru/project/vnukovo.html
-  - https://www.audio-reclama.ru/project/abbyy.html
-  - https://www.audio-reclama.ru/project/rzhd.html
+  - https://www.audio-reclama.ru
+  - https://www.audio-reclama.ruproject/vnukovo.html
+  - https://www.audio-reclama.ruproject/abbyy.html
+  - https://www.audio-reclama.ruproject/rzhd.html
 ---
 
 # Медиакит и партнёрские аудиовставки — «Аудио-Реклама•ru»
@@ -68,9 +68,9 @@ related:
 | РЖД / «Стриж» и «Сапсан» | Оповещения на русском и английском; подготовка файлов для загрузки в систему | Что студия отвечает за инфраструктуру поезда или текущую эксплуатацию |
 
 Первичные публичные страницы:
-- https://www.audio-reclama.ru/project/vnukovo.html
-- https://www.audio-reclama.ru/project/abbyy.html
-- https://www.audio-reclama.ru/project/rzhd.html
+- https://www.audio-reclama.ruproject/vnukovo.html
+- https://www.audio-reclama.ruproject/abbyy.html
+- https://www.audio-reclama.ruproject/rzhd.html
 
 ## 7. Фактическая справка для ведущего / редактора
 
@@ -80,21 +80,21 @@ related:
 - Возможность организовать производство для любой языковой группы по всему миру подтверждена владельцем 19.11.2026; это не означает наличие физического офиса в каждой стране.
 
 Ссылки:
-- https://www.audio-reclama.ru/audio/radioroliki-zakaz.html
-- https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
-- https://www.audio-reclama.ru/audio/ozvuchka-video.html
-- https://www.audio-reclama.ru/perevodchiki/
+- https://www.audio-reclama.ruaudio/radioroliki-zakaz.html
+- https://www.audio-reclama.ruaudio/golosovoe-privetstvie-menu-ivr.html
+- https://www.audio-reclama.ruaudio/ozvuchka-video.html
+- https://www.audio-reclama.ruperevodchiki/
 
 ## 8. UTM-шаблоны для будущих размещений
 
 Создавать отдельную ссылку под каждый канал/материал, чтобы отличать переходы. Пример структуры (параметры заменить на фактический источник):
 
 - Подкаст:  
-  https://www.audio-reclama.ru/?utm_source=podcast_name&utm_medium=host_read&utm_campaign=global_audio_production
+  https://www.audio-reclama.ru?utm_source=podcast_name&utm_medium=host_read&utm_campaign=global_audio_production
 - Редакционная статья:  
-  https://www.audio-reclama.ru/?utm_source=publication_name&utm_medium=editorial&utm_campaign=multilingual_audio
+  https://www.audio-reclama.ru?utm_source=publication_name&utm_medium=editorial&utm_campaign=multilingual_audio
 - Профиль каталога:  
-  https://www.audio-reclama.ru/?utm_source=directory_name&utm_medium=profile&utm_campaign=voice_production
+  https://www.audio-reclama.ru?utm_source=directory_name&utm_medium=profile&utm_campaign=voice_production
 
 Для клика из статьи лучше направлять пользователя сразу на соответствующую страницу услуги или проектный кейс, а не всегда на главную. Не подменять UTM-метками канонические ссылки в базе сущностей; это ссылки для конкретного размещения.
 
