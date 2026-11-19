@@ -5,8 +5,6 @@ lang: en
 status: draft_requires_editorial_review
 entity_id: ENTITY-AR-STUDIO-001
 related:
-  - entity/audio-reclama-studio.md
-  - entity/audio-reclama-studio.jsonld
   - standards/BRAND_AND_SITE_NAMING.md
   - geo/knowledge/evidence-ledger.json
 ---
