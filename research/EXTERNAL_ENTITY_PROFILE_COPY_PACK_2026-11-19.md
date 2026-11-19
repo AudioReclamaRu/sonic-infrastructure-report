@@ -8,7 +8,7 @@ related:
   - evidence/E-2026-076.md
   - evidence/E-2026-077.md
   - research/EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md
-  - entity/audio-reclama-studio.md
+  - entity/audio%2Dreclama-studio.md
 ---
 
 # Пакет согласования внешних профилей — Аудио-Реклама•ru
