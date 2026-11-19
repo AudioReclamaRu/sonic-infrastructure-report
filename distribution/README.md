@@ -20,6 +20,8 @@ related:
 - [Audio+ и высокоохватные видео](AUDIO_PLUS_YOUTUBE_AND_PROFILE_KIT_2026-11-20.md) — подготовленные тексты для YouTube/RUTUBE и AllAdvertising; разделяет B2C Audio+ и B2B-маршрут студии. Статус: draft_not_published.
 - [Нативная статья для Дзена о многоязычных объявлениях](DZEN_MULTILINGUAL_AUDIO_ANNOUNCEMENTS_2026-11-19.md) — отдельная редакционная адаптация с первичными ссылками на проекты. Статус: draft_for_owner_editorial_review.
 - [Реестр точек привлечения внимания](../research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv) — фактические поисковые поверхности, профили, каталоги, редакции и следующий безопасный шаг.
+- [Мастер-реестр внешних площадок](EXTERNAL_SURFACES_MASTER_REGISTER_2026-11-20.md) — собственные соцсети и видеохостинги, Metricool-подключения, owner-confirmed Dzen/VC.ru и публичные каталоги с отдельным статусом прав редактора.
+- [Машиночитаемый реестр внешних площадок](../research/EXTERNAL_SURFACES_MASTER_REGISTER_2026-11-20.csv) — одна строка на аккаунт/профиль, включая ID, способ редактирования, статус доступа и следующий шаг.
 
 ## Правила
 
