@@ -4,7 +4,6 @@ date: 2026-11-19
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
-  - entity/audio-reclama-studio.en.md
   - guides/bank-voice-menu.md
   - problem-solutions/IVR_DESIGN_STANDARD.md
   - standards/responsible-release.md
