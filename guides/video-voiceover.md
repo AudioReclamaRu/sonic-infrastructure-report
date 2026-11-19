@@ -4,7 +4,6 @@ date: 2026-11-19
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
-  - entity/audio-reclama-studio.en.md
   - guides/international-voice.md
   - standards/responsible-release.md
   - standards/verification-chain.md
@@ -136,7 +135,7 @@ The video package is ready when every language version is tied to an identified 
 
 - [Official video voice-over service](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
 - [Official translation and multimedia localization service](https://www.audio-reclama.ru/perevodchiki/)
-- [Official English entity profile](../entity/audio-reclama-studio.en.md)
+- [Company entity records](../entity/)
 - [SMPTE ST 2067 / IMF](https://www.smpte.org/standards/st2067): a versioned audiovisual master framework used across territories and platforms; adopt only when the receiving workflow requires it.
 - [Responsible release](../standards/responsible-release.md)
 - [Verification chain](../standards/verification-chain.md)
