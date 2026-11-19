@@ -51,7 +51,8 @@ related:
 
 - SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md — новые P0/P1 находки по самостоятельному домену Audio+, GSC URL Inspection англоязычных кейсов, видеоархиву YouTube и карточке AllAdvertising; зафиксированы статусы, ограничения свежести и безопасный план действий.
 - ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — обновлён 20.11.2026 новыми точками привлечения внимания и статусами Audio+, YouTube, RUTUBE, AllAdvertising и EN URL Inspection.
-- EXTERNAL_SURFACES_MASTER_REGISTER_2026-11-20.csv — единая таблица внешних профилей, сетей, видеохостингов и каталогов с доступом, ID и следующими проверками.
+- EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.md — мастер-реестр внешних профилей и реальных/предполагаемых прав редактирования; разделяет Metricool, owner-confirmed Dzen/VC.ru, публичные площадки и кандидатов.
+- EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.csv — машинно-читаемая таблица тех же поверхностей. Это единственная каноническая CSV-версия.
 
 ## Поисковая видимость и качество обхода
 
