@@ -1,9 +1,10 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.audio-reclama.ru/#organization",
   "name": "Аудио-Реклама•ru",
   "url": "https://www.audio-reclama.ru",
-  "description": "Аудио-Реклама•ru is a business audio recording and production studio. Its published service range includes audio and radio commercials, IVR and telephone greetings, automated announcements, voice-over for video and presentations, audiobook recording, jingles, corporate songs, voice talent selection, scripts, and translation and localization for audio and video.",
+  "description": "Аудио-Реклама•ru is a business audio recording and production studio with worldwide production capability for any language group through its international network of collaborators. Its published service range includes audio and radio commercials, IVR and telephone greetings, automated announcements, voice-over for video and presentations, audiobook recording, jingles, corporate songs, voice talent selection, scripts, and translation and localization for audio and video.",
   "email": "start@audio-reclama.ru",
   "knowsAbout": [
     "Business audio production",
