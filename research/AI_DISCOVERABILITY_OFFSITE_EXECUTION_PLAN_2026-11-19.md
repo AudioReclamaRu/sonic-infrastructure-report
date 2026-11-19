@@ -11,7 +11,7 @@ related:
   - research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md
   - research/EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md
   - research/EXTERNAL_ENTITY_PROFILE_COPY_PACK_2026-11-19.md
-  - entity/audio-reclama-studio.md
+  - entity/audio%2Dreclama-studio.md
 ---
 
 # AI Discoverability — внешний контур обнаружения «Аудио-Реклама•ru»
