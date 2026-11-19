@@ -106,3 +106,14 @@ The initial indexed search did not surface exact-match results for VORG or The V
 Before preparing any profile copy, verify (1) exact category fit against the actual offer, (2) current directory presence using the platform's own search, (3) country/region eligibility, (4) free-tier limits and paid boundaries, and (5) terms governing submitted text, images, and intellectual property.
 
 For existing presences, first verify (1) identity and legal-entity match, (2) factual freshness of address, contacts, services and portfolio, (3) profile owner/admin access, (4) source and rights of media/assets, and (5) whether public metrics indicate meaningful audience. Record unresolved conflicts; do not make edits or claims without explicit authorization.
+
+## X channel decision — 2026-11-19
+
+X was evaluated as a possible additional autopublishing surface. It is **deferred**, not rejected permanently:
+- No verified official company X handle was surfaced in the scoped exact-name/domain search.
+- The existing Metricool brand has no X network in its returned connection state.
+- Metricool requires a Starter-or-higher paid plan and a €10/$10 monthly X add-on per account.
+- DataReportal reports late-2026 X advertising reach in Russia of 549,000 (0.4% of population), explicitly not equivalent to MAU.
+- Use only authorized API-based publishers; never browser-macro automation or engagement spam.
+
+See `evidence/E-2026-080.md` for the full decision basis. No account, add-on, OAuth access or post was created.
