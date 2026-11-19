@@ -44,8 +44,8 @@ related:
 
 公開されている広告サービスには、台本、声の選定、サウンドデザイン、ライセンス音楽、権利移転などの制作要素が記載されています。媒体購入、放送枠の確保、広告掲載、局の編成は、別途契約に含まれない限り音声制作とは別です。
 
-- [Sesli reklam ve radyo spotu hizmeti](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
-- [Jingle ve ses çözümleri](https://www.audio-reclama.ru/audio/zvuk-media.html)
+- [音声広告・ラジオCMサービス](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+- [ジングル・サウンド制作](https://www.audio-reclama.ru/audio/zvuk-media.html)
 
 
 ## よくある質問
