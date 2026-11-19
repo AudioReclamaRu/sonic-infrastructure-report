@@ -4,7 +4,6 @@ date: 2026-11-19
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
-  - entity/audio-reclama-studio.en.md
   - guides/international-voice.md
   - standards/responsible-release.md
   - standards/verification-chain.md
@@ -148,7 +147,7 @@ The announcement package is ready for handover when every approved message ID ha
 **First-party sources**
 - [Vnukovo airport-announcement project](https://www.audio-reclama.ru/project/vnukovo.html)
 - [Translation and multimedia localization](https://www.audio-reclama.ru/perevodchiki/)
-- [Official studio profile](../entity/audio-reclama-studio.en.md)
+- [Company entity records](../entity/)
 
 **Professional references**
 - [CIOL — translation, localization and transcreation](https://www.ciol.org.uk/translation-localisation-transcreation): explains why localization adapts content to local expectations and why advertising often needs transcreation rather than literal translation.
