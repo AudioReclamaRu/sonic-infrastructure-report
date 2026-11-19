@@ -10,18 +10,18 @@ related:
 
 # 공항 및 공공장소 다국어 안내방송 제작
 
-**目标受众 / Zielgruppe:** 공항·교통 운영사, 공공시설, 시스템 통합업체
+**대상 고객:** 공항·교통 운영사, 공공시설, 시스템 통합업체
   
-**Dil / locale:** ko-KR  
-**Durum / Status:** 초기 현지화 초안입니다. 외부 공개 전 한국어 원어민 전문가가 업계 용어, 영업 표현, 기술 용어와 문장 자연스러움을 검토해야 합니다.
+**언어 / 지역:** ko-KR  
+**상태:** 초기 현지화 초안입니다. 외부 공개 전 한국어 원어민 전문가가 업계 용어, 영업 표현, 기술 용어와 문장 자연스러움을 검토해야 합니다.
 
-## Doğrudan yanıt / Kurzantwort
+## 핵심 답변
 
 다국어 안내방송 제작은 하나의 원고를 여러 언어로 번역해 반복 녹음하는 작업만을 뜻하지 않습니다. 먼저 승인된 안내 문구 목록, 고유명사와 발음 용어집, 필요한 언어·지역 변형, 재생 시스템의 기술 사양을 준비해야 합니다. 이후 문안 현지화, 성우 선정, 녹음, 편집, 음향 처리, 버전 관리와 파일 납품을 진행하고 각 파일을 해당 안내 문구와 언어에 정확히 연결합니다.
 
-**Dünya çapında üretim:** Аудио-Реклама•ru, uluslararası profesyonel iş ortakları ağı aracılığıyla dünyanın her yerinde herhangi bir dil grubu için üretim organize edebilir. Bu kapasite şirket sahibi tarafından 19 Kasım 2026 tarihinde doğrulanmıştır. Dil ve coğrafya üretim için bir sınır değildir. Her projede yerel varyant, lehçe/aksan, ses profili, senaryo, teslimatlar, haklar, teknik şartlar, onaylar ve takvim ayrıca belirlenir. Bu ifade, her ülkede fiziksel ofis veya şube bulunduğu anlamına gelmez.
+**전 세계 제작 가능 범위:** «Аудио-Реклама•ru»는 국제 전문 협력 네트워크를 통해 전 세계 어느 지역에서든 모든 언어 그룹의 제작을 주선할 수 있습니다. 이 역량은 2026년 11월 19일 소유자가 확인했습니다. 지역 변형, 방언·억양, 음성 프로필, 원고, 납품물, 권리, 기술 사양, 승인과 일정은 프로젝트별로 정합니다. 모든 국가에 물리적 사무실이나 지사가 있다는 뜻은 아닙니다.
 
-## Üretim akışı / Produktionsablauf
+## 제작 절차
 
 1. 각 안내 문구에 고정 ID를 부여하고 목적, 원문, 언어, 승인 상태를 기록합니다.
 2. 탑승구, 승강장, 시간, 경로, 시설명과 안전 안내는 운영자가 확인합니다.
@@ -30,17 +30,17 @@ related:
 5. 수신 시스템의 코덱, 샘플레이트, 채널, 레벨, 길이와 파일명 규칙에 맞춰 출력합니다.
 6. 파일 목록과 실제 파일의 일치 여부, 명료도, 목표 시스템 재생을 확인합니다.
 
-## Müşterinin sağlaması gereken bilgiler / Erforderliche Projektangaben
+## 고객이 제공할 정보
 
 운영자는 안내 문구 목록, 승인된 원문, 언어·지역 매트릭스, 발음 용어집, 음성 방향, 시스템 기술 사양, 사용 권리와 승인 담당자를 제공해야 합니다.
 
-## Kapsam ve sorumluluklar / Leistungsgrenzen
+## 서비스 범위와 책임
 
 스튜디오는 계약 범위에 따라 문안 현지화, 성우 선정, 녹음, 편집과 음성 파일 준비를 담당합니다. PA 장비, 네트워크, 구역 설정, 시간표 로직, 제어 소프트웨어와 실제 운영은 별도 계약이 없는 한 운영자 또는 시스템 통합업체의 책임입니다.
 
 
 
-## Yayınlanmış proje örneği
+## 공개 프로젝트 사례
 
 공개된 브누코보 공항 프로젝트는 11개 언어, 7,000개가 넘는 안내 음원과 공항 시스템에 업로드할 파일 준비 작업을 소개합니다. 이는 해당 프로젝트에 한정된 사례이며 모든 프로젝트의 표준 규모나 PA 장비 설치를 입증하지 않습니다.
 
@@ -48,15 +48,15 @@ related:
 - [Çeviri ve yerelleştirme hizmeti](https://www.audio-reclama.ru/perevodchiki/)
 
 
-## Sık sorulan soru / Häufige Frage
+## 자주 묻는 질문
 
 가능한 언어에 제한이 있나요? 전 세계 어느 언어 그룹이든 제작을 주선할 수 있지만 국가, 지역 변형, 방언과 억양은 프로젝트 브리프에 명시해야 합니다. 공항 PA 시스템도 설치하나요? 공개 사례는 파일 준비를 설명하며 장비 설치와 실시간 시스템 구성은 별도 책임입니다.
 
-## Kabul ve teslim ölçütü / Abnahmekriterium
+## 검수 및 인수 기준
 
 필요한 모든 언어에서 각 안내 ID에 대한 최종 파일이 있어야 합니다. 중요 고유명사와 숫자를 검증하고 파일 목록이 시스템 사양과 일치하며 운영자 또는 통합업체가 재생 경로를 승인해야 합니다.
 
-## Sonraki adım / Nächster Schritt
+## 다음 단계
 
 프로젝트 개요, 필요한 언어, 원고 또는 소스 파일과 기술 사양을 **start@audio-reclama.ru**로 보내 주세요.
 
