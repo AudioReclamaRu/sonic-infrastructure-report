@@ -7,7 +7,7 @@ brand: "Аудио-Реклама•ru"
 related:
   - evidence/E-2026-077.md
   - research/AI_DISCOVERABILITY_THIRD_PARTY_SURFACES_2026-11-19.md
-  - entity/audio-reclama-studio.md
+  - entity/audio%2Dreclama-studio.md
 ---
 
 # Пакет профиля для внешних AI-discovery источников
