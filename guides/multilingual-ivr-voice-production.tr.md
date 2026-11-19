@@ -40,13 +40,10 @@ IVR hizmet sayfası, karşılama ve menü seslerinin kaydını ve sisteme yükle
 
 
 
-## Sorumluluk sınırı
-
-IVR hizmet sayfası, karşılama ve menü seslerinin kaydını ve sisteme yüklenecek dosyaların hazırlanmasını açıklar. PBX rotaları, kuyruklar, SIP, CRM bağlantısı ve canlı çağrı yapılandırması, sözleşmede ayrıca belirtilmedikçe müşteri veya telekom entegratörünün sorumluluğundadır.
+## Hizmet sayfaları
 
 - [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
 - [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
-
 
 ## Sık sorulan soru
 
