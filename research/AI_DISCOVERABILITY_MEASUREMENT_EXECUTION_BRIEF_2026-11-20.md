@@ -10,7 +10,6 @@ related:
   - research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json
   - research/ai-visibility-benchmark-queries-2026-11-17.json
   - research/AI_VISIBILITY_V2_MEASUREMENT_2026-11-14.md
-  - research/AI_VISIBILITY_RU_VANTAGE_PROTOCOL_2026-11-17.md
   - https://www.audio-reclama.ru
 ---
 
@@ -44,7 +43,7 @@ related:
 
 - Generic discovery: 29 неизменяемых небрендированных вопросов, статус `not_run`. Вопросы проверяют, появится ли студия, когда человек не знает её названия.
 - Brand/service verification: отдельный набор из 20 русскоязычных вопросов, статус `not_run`. Он проверяет точность уже названного бренда, официального URL, услуг и экспертных ответов.
-- 348 комбинаций generic query × platform и 240 brand/service query × platform — это плановые ячейки, не проведённые наблюдения.
+- Generic queue: 29 × 12 = 348 плановых ячеек. Для brand/service существуют 20 benchmark-вопросов; исполнимый модуль, который создаёт 240 строк очереди, находится в PR #56 и пока не слит. Ни одна из этих ячеек ещё не является проведённым наблюдением.
 - Consumer UI, model API и search-results UI остаются разными сериями. Недоступность или блокировка не равны нулевой видимости.
 
 ### Рабочий порядок
@@ -151,7 +150,9 @@ Read-only чтение подключённого Search Console, фильтр �
 
 Пакет PR #34–#49 содержит planner, региональную attestation, immutable run passport, capture templates, evidence validation, finalization и reproducible report builder. Все 16 PR открыты и не слиты; на проверенных head-коммитах индивидуальные проверки CI прошли. Они являются зависимой цепочкой и должны проходить слияние строго по порядку #34 → #35 → … → #49. Не объединять их в обход зависимостей.
 
-PR #56 добавляет исполнимый RU brand/service query module и зависит от planner #34; его нужно согласовать и ретаргетировать после принятия базовой цепочки. Это не заменяет generic query module.
+PR #56 добавляет исполнимый RU brand/service query module и зависит от planner #34; его CI #587 и #235 прошёл. Сам PR остаётся открытым и не слитым; включать его после #34 и затем валидировать отдельную 240-строчную очередь. Это не заменяет generic query module.
+
+Региональная attestation и её offline validator описаны в PR #38: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/38. Этот PR входит в последовательную цепочку #34–#49 и пока не слит.
 
 Пример bootstrap-команды из PR #44 требует verified regional attestation:
 ```bash
@@ -198,7 +199,7 @@ AI mention, AI citation, referral session, lead и order — разные эта
 - OpenSEO AI Visibility Tracker не создан;
 - платные AI-проверки и кредиты не расходовали;
 - RU consumer baseline не выполнен;
-- AI-Discoverability PR #66 открыт и не слит. Его последний проверенный head после исправления канонического написания проходит `repo-integrity` #843 и `AI response and document naming gate` #482.
+- AI-Discoverability PR #66 открыт и не слит. Его последний проверенный head после исправления канонического написания проходит `repo-integrity` #844 и `AI response and document naming gate` #483.
 
 **Ближайшие операционные входы, без которых нельзя честно объявить RU-baseline начатым:**
 1. владелец/уполномоченный редактор открывает и выгружает отчёт Alice AI SoV в Яндекс Вебмастере для подтверждённого сайта;
