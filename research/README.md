@@ -43,6 +43,8 @@ related:
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
 - ../tools/ai_visibility_evidence.py — офлайн-проверка полных observation records и согласованности ссылок CSV ↔ JSON по уникальному observation_id.
 
+- AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md — первый исполнимый цикл AI-Discoverability: фактический RU GSC query→page срез, очередь Alice AI/GigaChat, SoV в Яндекс Вебмастере, обязательная региональная аттестация и запрет на подмену RU-измерений US/en трекером.
+
 ## Поисковая видимость и качество обхода
 
 - READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный live-аудит sitemap, коммерческих страниц и каталога дикторов. Зафиксированы 1 186 уникальных URL, 2 подтверждённых 404-профиля в sitemap, один redirecting URL и несогласованные публичные счётчики каталога; это не полный crawl и не отчёт Search Console/Яндекс Вебмастера.
