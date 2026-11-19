@@ -107,13 +107,14 @@ Before preparing any profile copy, verify (1) exact category fit against the act
 
 For existing presences, first verify (1) identity and legal-entity match, (2) factual freshness of address, contacts, services and portfolio, (3) profile owner/admin access, (4) source and rights of media/assets, and (5) whether public metrics indicate meaningful audience. Record unresolved conflicts; do not make edits or claims without explicit authorization.
 
-## X channel decision — 2026-11-19
+## X channel decision — corrected 2026-11-19
 
-X was evaluated as a possible additional autopublishing surface. It is **deferred**, not rejected permanently:
-- No verified official company X handle was surfaced in the scoped exact-name/domain search.
-- The existing Metricool brand has no X network in its returned connection state.
-- Metricool requires a Starter-or-higher paid plan and a €10/$10 monthly X add-on per account.
-- DataReportal reports late-2026 X advertising reach in Russia of 549,000 (0.4% of population), explicitly not equivalent to MAU.
-- Use only authorized API-based publishers; never browser-macro automation or engagement spam.
+The company owner supplied an existing profile URL: https://x.com/audioreclamaru (`@audioreclamaru`). The earlier exact-name search miss was not evidence that no account exists. The profile content could not be independently read in this research session (public fetch returned 403), so audience size, recent activity and profile completeness remain to be audited.
 
-See `evidence/E-2026-080.md` for the full decision basis. No account, add-on, OAuth access or post was created.
+- The existing Metricool brand has no X/Twitter network in its returned connection state; the supplied X profile is not currently linked there.
+- Official Metricool terms require Starter or higher plus a €10/$10 monthly X add-on per connected account (€120/$120 yearly); the add-on is charged immediately and may be prorated. No spend is approved.
+- DataReportal's late-2026 Russian X advertising reach of 549,000 (0.4% of population) is an ad-planning estimate, not MAU and not a measure of this profile's audience or B2B buyer segment.
+- Next step: inspect the existing profile and audience in X, then compare likely commercial relevance with the incremental automation cost.
+- Use only authorized API-based publishers; never browser-macro automation, mass-following, unsolicited DMs or engagement spam.
+
+See `evidence/E-2026-080.md` for the full decision basis. No OAuth access was granted, no add-on was purchased, and no posts were scheduled or published.
