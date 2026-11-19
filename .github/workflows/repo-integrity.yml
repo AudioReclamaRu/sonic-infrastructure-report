@@ -59,5 +59,11 @@ jobs:
       - name: AI Discovery URL integrity regression tests
         run: python -m unittest tools.tests.test_ai_discovery_asset_integrity -v
 
+      - name: Problem-solution knowledge integrity
+        run: python tools/validate_problem_solution_library.py
+
       - name: AI visibility benchmark and evidence regression tests
         run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence -v
+
+      - name: Problem-solution knowledge regression tests
+        run: python -m unittest tools.tests.test_problem_solution_library -v

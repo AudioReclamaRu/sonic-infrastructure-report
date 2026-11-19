@@ -45,8 +45,11 @@
 - [База фактов о компании](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md): подтверждённая публичной главной идентичность, направления, примеры, контакты и список утверждений, которые нельзя делать без новых доказательств.
 - [Машиночитаемая сущность бренда](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-discovery-brand-entity-2026-11-17.json): структурированная запись организации и границ доказательств.
 - [Доказательная карта коммерческих страниц](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md): состав отдельных услуг, публичные портфолио и точные границы (производство аудио ≠ размещение; подготовка IVR-файлов ≠ настройка АТС; озвучивание видео ≠ производство видео).
-- [Проблемно-ориентированная библиотека бизнеса](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md): восемь сценариев с диагностикой, решениями, проверками и ограничениями.
-- [Краткие самостоятельные ответы для retrieval](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md): восемь коротких ответов с официальными источниками; внутренняя reference-база, не опубликованные страницы.
+- [Проблемно-ориентированная библиотека бизнеса](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md): девять сценариев с диагностикой, решениями, проверками и ограничениями.
+- [Маршрутный индекс ответов на проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 15 бизнес- и voice-asset сценариев, связанных с точными ответами, руководствами, первичными источниками, evidence, guardrails и 23 контрольными вопросами benchmark.
+- [Краткие самостоятельные ответы для retrieval](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md): десять коротких ответов с официальными источниками; внутренняя reference-база, не опубликованные страницы.
+- [Техническое задание и приёмка аудиофайлов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md): требования принимающей системы, dry/processed tracks, телефонные форматы и контроль комплекта.
+- [Повторная проверка источников 18.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md): факты официальных FAQ/IVR/video и границы динамических счётчиков.
 - [Управление голосовыми активами](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md): шесть корпоративных задач — версии файлов, обновление изменившейся информации, единый голос бренда, права, локализация и финальный QC. Методический черновик, не отдельная DAM/телеком/юридическая услуга.
 - [Структурированная библиотека voice-asset проблем](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/voice-asset-operations-answer-library-2026-11-18.json): диагностика → шаги → проверки → доказанный service fit → запреты на неподтверждённые обещания.
 - [Краткие ответы о голосовых активах](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md): шесть ответов для evaluator-side retrieval; не загружать их в тестируемые платформы до blind discovery.
@@ -55,6 +58,12 @@
 - [Протокол контролируемых тестов записи](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md): план воспроизводимых экспериментов, не содержит заявленных результатов тестов.
 
 ## Доказательства и проектные упоминания
+
+- [E-2026-094…056](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-094.md): отдельные первичные записи FAQ, IVR, видео и счётчиков каталога.
+- [E-2026-095 — IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-095.md).
+- [E-2026-096 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-096.md).
+- [E-2026-097 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-097.md).
+- [Аудит целостности AI-знаний](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md): зависимости PR, provenance и исторические коллизии evidence-ID.
 
 - [Реестр происхождения фактов GEO](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/knowledge/evidence-ledger.json).
 - [Реестр публичных проектных упоминаний](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/knowledge/case-studies.json): статусы и ограничения.
@@ -65,7 +74,7 @@
 
 - [Глобальный протокол AI Visibility Benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md): все регионы мира, глобальные и региональные платформы, UI/API, языки и интенты.
 - [Глобальная матрица рынков, языков и платформ](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-global-market-matrix-2026-11-17.json): первая волна ячеек для проверки, не исчерпывающий список стран.
-- [RU-контрольные запросы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-queries-2026-11-17.json): фиксированный набор из 41 русскоязычного брендового, сервисного и problem-solving запроса; все `not_run`, это не результаты видимости и не измерение спроса.
+- [RU-контрольные запросы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-queries-2026-11-17.json): фиксированный набор из 44 русскоязычных brand/entity, service, problem-solving и expertise запросов; все `not_run`, это не результаты видимости и не измерение спроса.
 - [Шаблон журнала прогонов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-template.csv).
 - [Baseline 11.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/reports/visibility-baseline-2026-11-11.md): ограниченный поисковый прогон, не baseline всех AI-платформ.
 - [Протокол измерения спроса и поискового эффекта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/MEASUREMENT_PROTOCOL.md).
