@@ -5,7 +5,6 @@ lang: ar
 status: draft_requires_native_language_review
 related:
   - guides/audio-advertising-production.md
-  - entity/audio-reclama-studio.ar.md
   - standards/responsible-release.md
 ---
 
