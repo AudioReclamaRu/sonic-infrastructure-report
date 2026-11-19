@@ -10,6 +10,11 @@ related:
 
 # Voix off et localisation vidéo : définir la bonne prestation
 
+**Public concerné :** Marques, agences, équipes produit et producteurs vidéo  
+**Langue / région :** fr-FR  
+**Statut :** Premier brouillon de localisation. Avant toute publication externe, une personne qualifiée de langue maternelle française doit vérifier la terminologie et les usages régionaux.
+
+
 **Production à l’échelle mondiale :** «Аудио-Реклама•ru» peut organiser une production pour tout groupe linguistique, partout dans le monde, grâce à son réseau international de collaborateurs professionnels. Cette capacité a été confirmée par le propriétaire le 19 novembre 2026. Les variantes régionales, dialectes, accents, profils vocaux, droits et spécifications sont définis projet par projet. Cela ne signifie pas qu’il existe un bureau physique dans chaque pays.
 
 ## Déroulement de la production
