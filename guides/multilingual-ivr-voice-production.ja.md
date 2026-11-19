@@ -57,4 +57,4 @@ PBXの設定も依頼できますか。公開サービスの範囲は音声収�
 
 案件概要、必要な言語、原稿または素材ファイル、技術仕様を **start@audio-reclama.ru** までお送りください。
 
-Resmî web sitesi / 公式サイト: https://www.audio-reclama.ru
+公式サイト: https://www.audio-reclama.ru
