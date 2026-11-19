@@ -56,5 +56,18 @@ jobs:
       - name: AI Discovery asset integrity
         run: python tools/validate_ai_discovery_assets.py
 
+      - name: Evidence ID registry and branch reservations
+        shell: bash
+        env:
+          BRANCH_NAME: ${{ github.head_ref || '' }}
+          BASE_REF: ${{ github.base_ref || '' }}
+        run: |
+          if [ -n "$BRANCH_NAME" ]; then
+            python tools/validate_evidence_id_registry.py --branch-name "$BRANCH_NAME" --base-ref "origin/$BASE_REF"
+          else
+            python tools/validate_evidence_id_registry.py
+          fi
+          python -m unittest tools.tests.test_evidence_id_registry -v
+
       - name: AI visibility benchmark and evidence regression tests
         run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence -v
