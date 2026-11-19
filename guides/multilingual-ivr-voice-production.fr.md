@@ -40,13 +40,10 @@ La page IVR décrit l’enregistrement des accueils et des invites de menu ainsi
 
 
 
-## Limite de responsabilité
+## Pages de services
 
-La page IVR décrit l’enregistrement des accueils et des invites de menu ainsi que la préparation des fichiers à importer. Les routes PBX, files d’attente, SIP, connexions CRM et la configuration en production relèvent du client ou de son intégrateur télécom, sauf accord contractuel spécifique.
-
-- [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
-- [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
-
+- [Messages IVR et accueil téléphonique](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [Traduction et localisation](https://www.audio-reclama.ru/perevodchiki/)
 
 ## Question fréquente
 
