@@ -113,3 +113,16 @@ VORG принимает бесплатные стандартные карточ
 **Решение:** не запускать OpenSEO как RU-замер через рынок США, Нидерландов или прокси. Трекер не сохранять: новый tracker по умолчанию включает еженедельный платный график. Для России использовать существующие фиксированные RU-промпты и manual consumer-UI capture queue; явно фиксировать продукт, локаль, фактическую географию, полный ответ, источники и статусы blocked/unsupported/error/no-answer. Это ограничение поставщика, а не доказательство отсутствия видимости в российских ИИ.
 
 Подробная запись и доказательные границы: `evidence/E-2026-079.md`.
+
+## X (formerly Twitter): evaluated, not connected
+
+19 November 2026 review:
+- The existing Metricool brand currently has Facebook, Instagram, TikTok and YouTube connected; its returned network state does not include X.
+- A scoped public search did not surface a verifiable official X profile or handle for «Аудио-Реклама•ru». This is not proof that no account exists.
+- Metricool's official help says X requires a paid Starter-or-higher plan plus a separate add-on of €10/$10 per month for each X account, or €120/$120 annually. The charge begins immediately (or prorated) when activated. One add-on covers one account per brand.
+- DataReportal's Digital 2027 Russia report, using X advertising resources for late 2026, reports 549,000 potential X ad-reach accounts in Russia (0.4% of population). This is an advertising-reach estimate, not monthly active users; the report cautions against equating the metrics.
+- X's automation rules allow useful automated broadcasts but forbid non-API website scripting, spam and abuse of limits. Account owners remain responsible for connected apps.
+
+**Decision: defer X automation and do not purchase the add-on.** The current measured market is Russia-first, there is no verified official X handle, and the recurring Metricool cost is not justified by a demonstrated audience. Reconsider only for a confirmed international/English-language B2B target and after explicit owner approval of the add-on fee.
+
+Full evidence and source limits: `evidence/E-2026-080.md`.
