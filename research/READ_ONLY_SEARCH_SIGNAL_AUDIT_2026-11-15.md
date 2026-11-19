@@ -3,9 +3,9 @@ type: doc
 date: 2026-11-15
 lang: ru
 related:
-  - evidence/E-2026-048.md
-  - evidence/E-2026-049.md
-  - evidence/E-2026-050.md
+  - evidence/E-2026-089.md
+  - evidence/E-2026-090.md
+  - evidence/E-2026-091.md
   - research/READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md
   - problem-solutions/MEASUREMENT_PROTOCOL.md
   - strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md
@@ -17,7 +17,7 @@ related:
 **Дата:** 2026-11-15.  
 **Граница:** проверялись только общедоступные страницы и исходный HTML. Сайт, sitemap, robots.txt, метаданные и публикационные механизмы не изменялись. Это не полный crawl всех 1 186 URL и не отчёт о поисковой эффективности.
 
-Подробные источники и доказательственные границы: [E-2026-048](../evidence/E-2026-048.md). Предыдущий срез: [2026-11-14](READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md).
+Подробные источники и доказательственные границы: [E-2026-089](../evidence/E-2026-089.md). Предыдущий срез: [2026-11-14](READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md).
 
 ## 1. Что изменилось и что подтвердилось
 
@@ -211,7 +211,7 @@ Description эмоционально звучит, но не объясняет 
 3. Поддержать коммерческую маршрутизацию из статьи «Основные требования к дикторам» к каталогу/кастингу.
 4. Для страницы радиороликов сохранять существующее соответствие продукту и улучшать конверсию, не клонируя страницы.
 
-Полная выгрузка, ограничения и таблицы находятся в [E-2026-050](../evidence/E-2026-050.md). Не считать Serpstat traffic полем реальных посещений.
+Полная выгрузка, ограничения и таблицы находятся в [E-2026-091](../evidence/E-2026-091.md). Не считать Serpstat traffic полем реальных посещений.
 
 ### P2 — обновлять sitemap от фактической базы контента
 
@@ -235,7 +235,7 @@ Description эмоционально звучит, но не объясняет 
 
 - Сайт проверялся только на чтение; патчи не применялись.
 - Полный обход всех 1 186 URL не проведён. Блоговый путь проверен отдельно (138 возвращённых документов), семь страниц услуг получены с HTTP 200, три фильтра и три профиля дикторов проверены по HTML; две 404-страницы и один redirecting URL в sitemap подтверждены отдельно.
-- Не проверены Google Search Console, Яндекс Вебмастер, GA4, CRM, логи сервера, Core Web Vitals и фактический индексный статус страниц. Serpstat E-2026-050 — оценочная сторонняя база без timestamp исходного среза; DataForSEO live SERP не выполнился (502); реальные сессии и конверсии остаются UNKNOWN.
+- Не проверены Google Search Console, Яндекс Вебмастер, GA4, CRM, логи сервера, Core Web Vitals и фактический индексный статус страниц. Serpstat E-2026-091 — оценочная сторонняя база без timestamp исходного среза; DataForSEO live SERP не выполнился (502); реальные сессии и конверсии остаются UNKNOWN.
 - При отсутствии доступа baseline и поисковая эффективность остаются UNKNOWN.
 - Никакого прироста трафика не заявляется.
 
@@ -251,8 +251,8 @@ Description эмоционально звучит, но не объясняет 
 - Google robots.txt specification: https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec
 - Google sitemap guidance: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
 - Google canonical guidance: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
-- Blog crawl evidence and competitor page examples: [E-2026-049](../evidence/E-2026-049.md)
-- Third-party search visibility and query-to-page evidence: [E-2026-050](../evidence/E-2026-050.md)
+- Blog crawl evidence and competitor page examples: [E-2026-090](../evidence/E-2026-090.md)
+- Third-party search visibility and query-to-page evidence: [E-2026-091](../evidence/E-2026-091.md)
 - Competitor examples: https://www.demyanoff.ru/golosovoe-privetstvie-ivr, https://www.zvukograd.ru/, https://kupigolos.ru/diktory, https://rolik.fm/
 
 ## Footer
