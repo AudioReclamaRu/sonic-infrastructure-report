@@ -27,6 +27,7 @@ Each guide couples a live site URL (verified 200) with the repo layer
 - `guides/video-voiceover.md` — video and presentation voiceover: who holds the final version
 - `guides/chronomer-timing.md` — timing a text before ordering: the free calculator
 - `guides/international-voice.md` — international voice and the address of a claim
+- `guides/multilingual-ivr-voice-prompts.md` — commissioning multilingual IVR voice prompts (draft under preparation; not yet indexed as a released guide)
 
 All site URLs referenced here were live (HTTP 200) at last verification
 11.09.2026. The ordering entry point is the online order form:
