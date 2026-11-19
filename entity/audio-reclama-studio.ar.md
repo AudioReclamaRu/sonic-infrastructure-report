@@ -5,8 +5,6 @@ lang: ar
 status: draft_requires_native_language_review
 entity_id: ENTITY-AR-STUDIO-001
 related:
-  - entity/audio-reclama-studio.md
-  - entity/audio-reclama-studio.en.md
   - research/AI_DISCOVERABILITY_LANGUAGE_ROADMAP_2026-11-19.md
 ---
 
