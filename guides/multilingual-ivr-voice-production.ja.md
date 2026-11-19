@@ -1,0 +1,63 @@
+---
+type: guide
+date: 2026-11-19
+lang: ja
+status: draft_requires_native_language_review
+locale_scope: ja-JP
+related:
+  - guides/multilingual-ivr-voice-production.md
+---
+
+# 多言語IVR音声：電話メニューの収録とローカライズ
+
+**目标受众 / Zielgruppe:** 銀行、コンタクトセンター、通信事業者、サービス企業
+  
+**Dil / locale:** ja-JP  
+**Durum / Status:** 初期ローカライズ案です。外部公開前に、日本語を母語とする専門家が、業界用語、商談表現、技術用語、読みやすさを確認する必要があります。
+
+## Doğrudan yanıt / Kurzantwort
+
+多言語IVR音声を依頼する際は、承認済みのコールフロー、原稿、対象言語と地域変種、発音用語集、PBXまたはコンタクトセンターの音声取り込み仕様を用意します。制作チームは原稿のローカライズ、声の手配、メニューごとの収録・編集を行い、各IDに対応したバージョン付きファイルを納品できます。
+
+**Dünya çapında üretim:** Аудио-Реклама•ru, uluslararası profesyonel iş ortakları ağı aracılığıyla dünyanın her yerinde herhangi bir dil grubu için üretim organize edebilir. Bu kapasite şirket sahibi tarafından 19 Kasım 2026 tarihinde doğrulanmıştır. Dil ve coğrafya üretim için bir sınır değildir. Her projede yerel varyant, lehçe/aksan, ses profili, senaryo, teslimatlar, haklar, teknik şartlar, onaylar ve takvim ayrıca belirlenir. Bu ifade, her ülkede fiziksel ofis veya şube bulunduğu anlamına gelmez.
+
+## Üretim akışı / Produktionsablauf
+
+1. メニューの各ノードに固定IDを付け、原稿、遷移先、無入力・誤入力・戻る操作の挙動を定義します。
+2. 製品名、数字、日付、時刻、法的案内を各言語で調整し、承認します。
+3. 発音リストと声の演出方針を作成します。
+4. 言語とノードIDごとに収録し、原稿・音声・ファイル版を紐付けます。
+5. PBXの仕様に合わせて音声を書き出します。
+6. インテグレーターが各言語のテスト通話を行い、転送・フォールバックを確認します。
+
+## Müşterinin sağlaması gereken bilgiler / Erforderliche Projektangaben
+
+依頼者はコールフロー、メニューID、承認済み原稿、言語・地域一覧、発音メモ、声の参考資料、PBX形式仕様、権利範囲、承認担当者を用意します。
+
+## Kapsam ve sorumluluklar / Leistungsgrenzen
+
+IVRサービスページで説明されているのは、電話応答やメニュー音声の収録と、システムに取り込むファイルの準備です。PBXのルーティング、待ち行列、SIP、CRM連携、実環境の設定は、別途契約に含めない限り顧客または通信システムの担当者が行います。
+
+
+
+## Sorumluluk sınırı
+
+IVRサービスページで説明されているのは、電話応答やメニュー音声の収録と、システムに取り込むファイルの準備です。PBXのルーティング、待ち行列、SIP、CRM連携、実環境の設定は、別途契約に含めない限り顧客または通信システムの担当者が行います。
+
+- [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
+
+
+## Sık sorulan soru / Häufige Frage
+
+PBXの設定も依頼できますか。公開サービスの範囲は音声収録とファイル準備であり、PBX設定は別途合意が必要です。対応言語に上限はありますか。所有者は国際ネットワークを通じ、世界中のあらゆる言語グループの制作を手配できると確認しています。地域変種とアクセントはブリーフで指定します。
+
+## Kabul ve teslim ölçütü / Abnahmekriterium
+
+承認済みの各メニューノードに、言語ごとの正しいIDの最終ファイルがあり、PBX仕様を満たし、インテグレーターが実電話またはテスト回線ですべての分岐、フォールバック、必要なオペレーター接続を確認していること。
+
+## Sonraki adım / Nächster Schritt
+
+案件概要、必要な言語、原稿または素材ファイル、技術仕様を **start@audio-reclama.ru** までお送りください。
+
+Resmî web sitesi / 公式サイト: https://www.audio-reclama.ru
