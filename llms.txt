@@ -47,6 +47,13 @@
 - [Матрица запросов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/knowledge/query-matrix.json).
 - [Корпус о выпуске голоса](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/corpus/kto-vypuskaet-golos.md).
 
+## Независимые AI-discovery источники и внешние профили
+
+- [Исследование независимых каталогов и B2B-платформ](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_THIRD_PARTY_SURFACES_2026-11-19.md): бесплатные варианты Clutch Basic + The Manifest, Sortlist Free, Voice Over Resource Guide и The VoiceOver Community; без платных размещений.
+- [E-2026-077 — доказательства условий внешних каталогов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-077.md): официальные правила бесплатных профилей, требования к фактам и границы платных функций.
+- [RU/EN copy pack внешних профилей](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_EXTERNAL_PROFILE_COPY_2026-11-19.md): точные описания и обязательные поля, оставленные на подтверждение владельца.
+- [Реестр внешних attention surfaces](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ATTENTION_SURFACE_REGISTER_2026-11-17.csv): текущие статусы проверенных и потенциальных внешних профилей.
+
 ## Измерение видимости в ответах ИИ
 
 - [Глобальный протокол AI Visibility Benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md): все регионы мира, глобальные и региональные платформы, UI/API, языки и интенты.
