@@ -224,3 +224,6 @@ The first execution market is Russia (`ru-RU`). The fixed 20-question Russian br
 
 
 The Russian measurement workflow is prepared but not executed: [operational runbook](research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md) and [348-row observation queue](research/ai-visibility-ru-observation-queue-2026-11-17.csv) cover 29 generic prompts across 12 platform surfaces. Rows remain `NOT_TESTED` until collected from a verified Russian regional vantage point.
+
+
+**New site-attention findings (20 Nov 2026):** the current discovery pass now includes the separate Audio+ checkout domain, its B2C offer boundary, the historical YouTube reach assets, AllAdvertising profile and Google URL Inspection states for English case pages. See [the breakthrough report](research/SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md), [the updated attention register](research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv) and [the Audio+ / video draft kit](distribution/AUDIO_PLUS_YOUTUBE_AND_PROFILE_KIT_2026-11-20.md). No public changes were made.
