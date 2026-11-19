@@ -40,13 +40,10 @@ Die IVR-Leistungsseite beschreibt die Aufnahme von Begrüßungen und Menüansage
 
 
 
-## Verantwortungsabgrenzung
+## Dienstleistungsseiten
 
-Die IVR-Leistungsseite beschreibt die Aufnahme von Begrüßungen und Menüansagen sowie die Vorbereitung der Dateien für den Systemimport. PBX-Routen, Warteschlangen, SIP, CRM-Anbindung und Live-Konfiguration verantwortet der Kunde bzw. Telekommunikationsintegrator, sofern dies nicht ausdrücklich zusätzlich vereinbart wird.
-
-- [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
-- [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
-
+- [IVR- und Telefonansageleistungen](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [Übersetzung und Lokalisierung](https://www.audio-reclama.ru/perevodchiki/)
 
 ## Häufige Frage
 
