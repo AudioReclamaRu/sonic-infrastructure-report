@@ -7,6 +7,7 @@
 ## Идентичность компании
 
 - Канонический профиль сущности и машиночитаемая запись Organization находятся в каталоге `entity/`; это источники с градацией доказательств, не замена официального сайта.
+- [Каталог сущностей и машиночитаемых профилей](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): содержит канонический профиль компании с градацией доказательств и Schema.org Organization JSON-LD; это записи репозитория, не подтверждение установки разметки на официальном сайте.
 - [Стандарт названия бренда и сайта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/BRAND_AND_SITE_NAMING.md).
 - [Шлюз проверки ответов и документов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/AI_RESPONSE_RELEASE_GATE.md).
 
@@ -23,6 +24,11 @@
 - [Запись аудиокниг](https://www.audio-reclama.ru/audio/sozdanie-audioknig.html).
 - [Джинглы](https://www.audio-reclama.ru/audio/zvuk-media.html).
 - [Корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html).
+- [Каталог дикторов](https://www.audio-reclama.ru/diktoryi/): основной источник исполнителей и кастинга.
+- [Английские дикторы](https://www.audio-reclama.ru/diktoryi/filter/language-english/).
+- [Мужские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/muzhskie-diktor-golosa.html).
+- [Женские русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/zhenskie-diktor-golosa.html).
+- [Известные русские дикторы](https://www.audio-reclama.ru/diktoryi/filter/izvestnye-golosa.html).
 
 ## Карта и правила знаний
 
@@ -38,12 +44,23 @@
 - [Банковское голосовое меню](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/bank-voice-menu.md).
 - [Объявления в аэропортах](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/airport-announcements.md).
 - [Озвучивание видео](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/video-voiceover.md).
+- [Аудит существующей видео-voiceover статьи 2020 года](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/VIDEO_VOICEOVER_ARTICLE_AUDIT_2026-11-14.md): перечисляет проверенные технические ошибки и рекомендует обновлять старый URL, а не создавать дубль.
+- [Черновик обновления этой статьи](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/drafts/VIDEO_VOICEOVER_REVISED_DRAFT.md): внутренний неопубликованный проект, не действующий текст сайта.
 - [Линтер логики IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ivr_flow_linter/README.ru.md): локальная проверка графа меню, не тест живой АТС или аудио.
 
 ## Карта услуг и доказательства компетенций
 
 - [База фактов о компании](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md): подтверждённая публичной главной идентичность, направления, примеры, контакты и список утверждений, которые нельзя делать без новых доказательств.
 - [Машиночитаемая сущность бренда](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-discovery-brand-entity-2026-11-17.json): структурированная запись организации и границ доказательств.
+- [E-2026-074 — Исторический снимок 18.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-074.md): первая проверка robots.txt, sitemap и root llms.txt; статус 404 относится только к дате наблюдения.
+- [E-2026-075 — Повторная проверка 19.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-075.md): опубликованный root llms.txt теперь доступен; повторно проверены robots, sitemap, AI-crawler access и live metadata.
+- [Проверка live root llms.txt](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/LLMS_TXT_LIVE_REVIEW_2026-11-19.md): текущие свойства и замечания к опубликованному файлу.
+- [Исправленная редакция root llms.txt для согласования](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/LLMS_TXT_CORRECTED_OWNER_REVIEW_2026-11-19.md): кандидат с каноническим названием и адресом; не опубликован.
+- [Пакет согласования AI-discovery правок официального сайта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_SITE_IMPLEMENTATION_PACK_2026-11-18.md): review-only H1, title, descriptions, OG/Twitter/canonical и порядок проверки structured data.
+- [Старый черновик root llms.txt от 18.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/LLMS_TXT_OFFICIAL_SITE_CANDIDATE_2026-11-18.txt): помечен как исторический и заменён более поздним live-review.
+- [Внешние профили и доказательства сущности](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-076.md): официальное подтверждение конкретной награды WOW Awards, датированная позиция в AllAdvertising RRAR-2026 и расхождения внешних карточек.
+- [Очередь согласования внешних профилей](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md): только owner-review, без заявок и редактирования внешних профилей.
+- [Готовые RU/EN описания внешних профилей](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/EXTERNAL_ENTITY_PROFILE_COPY_PACK_2026-11-19.md): варианты описаний и точные поля для владельческого согласования.
 - [Доказательная карта коммерческих страниц](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md): состав отдельных услуг, публичные портфолио и точные границы (производство аудио ≠ размещение; подготовка IVR-файлов ≠ настройка АТС; озвучивание видео ≠ производство видео).
 - [Проблемно-ориентированная библиотека бизнеса](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md): одиннадцать сценариев с диагностикой, решениями, проверками и ограничениями.
 - [Маршрутный индекс ответов на проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 17 бизнес- и voice-asset сценариев, связанных с точными ответами, руководствами, первичными источниками, evidence и guardrails.
@@ -63,6 +80,16 @@
 - [E-2026-054 — IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-054.md).
 - [E-2026-055 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-055.md).
 - [E-2026-056 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-056.md).
+- [E-2026-065 — метаданные официальных страниц и каталог аудиодемо](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-065.md).
+- [E-2026-066 — публичные заявления конкурентов о ценах](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-066.md).
+- [E-2026-067 — снимок Google Search Console по коммерческим страницам](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-067.md).
+- [E-2026-068 — поисковые запросы коммерческих страниц](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-068.md).
+- [E-2026-069 — подключённые социальные каналы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-069.md).
+- [E-2026-070 — первые данные TikTok](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-070.md).
+- [E-2026-071 — диагностика доступности и публикации TikTok](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-071.md).
+- [E-2026-072 — российский поисковый срез и статья о видеоозвучивании](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-072.md).
+- [E-2026-073 — обнаруживаемость каталога дикторов и семантическая ясность](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-073.md).
+- [Коммерческий реестр поискового внимания и социальных каналов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/COMMERCIAL_SERP_ATTENTION_REGISTER_2026-11-18.md).
 - [Аудит целостности AI-знаний](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md): зависимости PR, provenance и исторические коллизии evidence-ID.
 
 - [Реестр происхождения фактов GEO](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/knowledge/evidence-ledger.json).
