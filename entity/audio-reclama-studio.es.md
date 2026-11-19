@@ -69,3 +69,13 @@ Para evaluar un proyecto, conviene indicar:
 El brief concreta la variante lingüística, el dialecto o acento, el alcance, los derechos, los formatos, los requisitos técnicos, las aprobaciones y el presupuesto. La capacidad de producción no se limita por idioma o geografía.
 
 **Estado de la ficha:** borrador de primera localización para descubrimiento en español; requiere revisión por un profesional nativo antes de su publicación externa. Es un documento del repositorio público; no está instalado en el sitio oficial ni demuestra que sistemas de IA ya lo hayan indexado, citado o recomendado.
+
+
+## Rutas comerciales por necesidad del comprador
+
+- [Anuncios multilingües para aeropuertos](../guides/airport-announcements.es.md)
+- [Producción de voces IVR en varios idiomas](../guides/multilingual-ivr-voice-production.es.md)
+- [Producción de publicidad en audio](../guides/audio-advertising-production.es.md)
+- [Locución y localización de vídeo](../guides/video-voiceover.es.md)
+
+Estas rutas son borradores de conocimiento en el repositorio; no son páginas de servicio publicadas en el sitio oficial.
