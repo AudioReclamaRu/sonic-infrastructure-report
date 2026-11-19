@@ -44,8 +44,8 @@ Die veröffentlichte Werbeleistung nennt unter anderem Textarbeit, Stimmenauswah
 
 Die veröffentlichte Werbeleistung nennt unter anderem Textarbeit, Stimmenauswahl, Sounddesign, lizenzierte Musik und Rechteübertragung. Mediaeinkauf, Sendezeit, Kampagnenplatzierung und Senderplanung sind von der Audioproduktion getrennt, sofern sie nicht ausdrücklich vereinbart werden.
 
-- [Sesli reklam ve radyo spotu hizmeti](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
-- [Jingle ve ses çözümleri](https://www.audio-reclama.ru/audio/zvuk-media.html)
+- [Audio-Werbung und Radiospots](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+- [Jingles und Klanglösungen](https://www.audio-reclama.ru/audio/zvuk-media.html)
 
 
 ## Häufige Frage
