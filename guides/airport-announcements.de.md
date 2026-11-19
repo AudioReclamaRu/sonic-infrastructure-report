@@ -44,8 +44,8 @@ Das Studio übernimmt im vereinbarten Umfang Lokalisierung, Stimmenauswahl, Aufn
 
 Das veröffentlichte Vnukovo-Projekt beschreibt mehr als 7.000 Ansage-Tracks in elf Sprachen und die Vorbereitung von Dateien für das Flughafensystem. Diese Angaben gelten für genau dieses veröffentlichte Projekt; sie sind weder ein Standardumfang noch ein Beleg für die Installation der PA-Anlage.
 
-- [Vnukovo proje sayfası](https://www.audio-reclama.ru/project/vnukovo.html)
-- [Çeviri ve yerelleştirme hizmeti](https://www.audio-reclama.ru/perevodchiki/)
+- [Vnukovo-Flughafenprojekt](https://www.audio-reclama.ru/project/vnukovo.html)
+- [Übersetzung und Lokalisierung](https://www.audio-reclama.ru/perevodchiki/)
 
 
 ## Häufige Frage
