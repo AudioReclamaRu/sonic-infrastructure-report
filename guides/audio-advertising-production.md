@@ -4,7 +4,6 @@ date: 2026-11-19
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
-  - entity/audio-reclama-studio.en.md
   - canon/releasing-voice.md
   - standards/responsible-release.md
   - standards/verification-chain.md
@@ -145,7 +144,7 @@ The advertisement is ready for delivery when the client has approved the script 
 
 - [Official audio-advertising service](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
 - [Official jingles service](https://www.audio-reclama.ru/audio/zvuk-media.html)
-- [Official English entity profile](../entity/audio-reclama-studio.en.md)
+- [Company entity records](../entity/)
 - [EBU R 128 — loudness normalisation and permitted maximum level](https://tech.ebu.ch/publications/r128): a broadcast recommendation, not a universal platform requirement.
 - [Equity — guide to audio work](https://www.equity.org.uk/advice-and-support/area-of-work/audio-artists-hub/a-guide-to-audio-work): discusses radio commercial timing and voice-recording workflows.
 - [Responsible release](../standards/responsible-release.md)
