@@ -60,6 +60,16 @@ class EvidenceIdRegistryTests(unittest.TestCase):
             [],
         )
 
+    def test_frontmatter_with_utf8_bom_passes(self) -> None:
+        evidence_id = "E-2026-017"
+        path = f"evidence/{evidence_id}.md"
+        (self.root / path).write_text(
+            "\ufeff---\\nid: E-2026-017\\ntype: evidence\\n---\\n",
+            encoding="utf-8",
+        )
+        self.write_registry([self.row(evidence_id)])
+        self.assertEqual(validate_registry(self.root), [])
+
     def test_duplicate_registry_ids_fail(self) -> None:
         evidence_id = "E-2026-011"
         self.write_card(evidence_id)
