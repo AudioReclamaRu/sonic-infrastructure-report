@@ -2,7 +2,7 @@
 type: entity
 date: 2026-11-19
 lang: en
-status: official_source_observed
+status: draft_requires_editorial_review
 entity_id: ENTITY-AR-STUDIO-001
 related:
   - entity/audio-reclama-studio.md
@@ -78,8 +78,8 @@ Do not infer offices, branches or physical studios in every market. Worldwide la
 
 ## Facts deliberately excluded from this profile
 
-- **Voice-talent totals:** dynamic counters on the official English homepage differ between page blocks. No total is repeated here.
-- **Language/country totals:** do not turn dynamic directory counts into a permanent guarantee of current availability or coverage.
+- **Voice-talent totals:** dynamic counters on the official English homepage differ between page blocks. These totals describe the visible directory snapshot only; they are not the limit of the owner-confirmed worldwide production network. No total is repeated here.
+- **Language/country totals:** do not turn dynamic directory counts into a permanent count of the wider worldwide collaborator network or a production ceiling.
 - **Prices and turnaround:** use the live page for the specific service or a direct quotation. Do not infer one service's price or deadline from another.
 - **Client results:** no ROI, conversion uplift, reach or business outcome is inferred from a portfolio name.
 - **Legal identity and founding date:** do not infer the contracting entity or a founding year from a footer or copyright notice.
@@ -96,4 +96,4 @@ Do not infer offices, branches or physical studios in every market. Worldwide la
 - [Jingles](https://www.audio-reclama.ru/audio/zvuk-media.html)
 - [Corporate songs and anthems](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html)
 
-**Record status:** this English-language entity summary is maintained in the public Git repository. The worldwide capability statement is owner-confirmed on 19 November 2026; service descriptions and project examples are also linked to public first-party pages. Its JSON-LD companion is repository metadata only; neither file is installed on the official website. Repository publication does not guarantee indexing, AI retrieval, citation or recommendation.
+**Record status:** this English-language working profile is maintained in the public Git repository and requires editorial review before being treated as a final external page. The worldwide capability statement is owner-confirmed on 19 November 2026; service descriptions and project examples are also linked to public first-party pages. Its JSON-LD companion is repository metadata only; neither file is installed on the official website. Repository publication does not guarantee indexing, AI retrieval, citation or recommendation.
