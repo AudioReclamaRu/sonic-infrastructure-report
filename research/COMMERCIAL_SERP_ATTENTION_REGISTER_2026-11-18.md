@@ -203,7 +203,7 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 
 ## Evidence index
 
-- [E-2026-065 — Official page metadata and audio-demo inventory](../evidence/E-2026-065.md)
+- [E-2026-106 — Official page metadata and audio-demo inventory](../evidence/E-2026-106.md)
 - [E-2026-066 — Competitor public pricing claims](../evidence/E-2026-066.md)
 - [E-2026-067 — GSC commercial-page snapshot](../evidence/E-2026-067.md)
 - [E-2026-068 — Commercial landing-page query performance](../evidence/E-2026-068.md)
