@@ -78,9 +78,9 @@
 
 - [E-2026-053…064](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-053.md): отдельные записи FAQ, IVR, видео, аудиороликов, сценариев, джинглов, локализации, аудиокниг, портфолио, каталога и счётчиков.
 - [E-2026-054 — IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-054.md).
-- [E-2026-055 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-055.md).
-- [E-2026-056 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-056.md).
-- [E-2026-065 — метаданные официальных страниц и каталог аудиодемо](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-065.md).
+- [E-2026-096 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-096.md).
+- [E-2026-097 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-097.md).
+- [E-2026-106 — метаданные официальных страниц и каталог аудиодемо](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-106.md).
 - [E-2026-066 — публичные заявления конкурентов о ценах](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-066.md).
 - [E-2026-067 — снимок Google Search Console по коммерческим страницам](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-067.md).
 - [E-2026-068 — поисковые запросы коммерческих страниц](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-068.md).
