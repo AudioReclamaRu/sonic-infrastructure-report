@@ -13,14 +13,14 @@
 
 ## English-language entity profile
 
-- [English entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.en.md): international-facing description, service map, first-party portfolio references, and language/routing limitations.
-- [English Organization JSON-LD](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.en.jsonld): machine-readable repository companion. It is not installed on the official website.
+- [English entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): international-facing description, service map, first-party portfolio references, and language/routing limitations.
+- [Organization JSON-LD and entity records](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): machine-readable repository companions; not installed on the official website.
 
 ## Localized entity profiles and language strategy
 
-- [Spanish entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.es.md).
-- [Brazilian Portuguese entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.pt-BR.md).
-- [Arabic entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.ar.md).
+- [Spanish entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity).
+- [Brazilian Portuguese entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity).
+- [Arabic entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity).
 - [Multilingual AI Discoverability Roadmap](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_LANGUAGE_ROADMAP_2026-11-19.md): language waves for AI-content and measurement priorities. Production capability is owner-confirmed worldwide for any language group; the waves do not restrict production.
 - [Deep technical and semantic AI Discoverability audit](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md): live audit of robots, sitemap, English/localized routes, entity identity, structured data, AI crawler controls and first-party measurement surfaces.
 
