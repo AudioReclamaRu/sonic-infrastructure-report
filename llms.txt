@@ -59,10 +59,10 @@
 
 ## Доказательства и проектные упоминания
 
-- [E-2026-053…056](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-053.md): отдельные первичные записи FAQ, IVR, видео и счётчиков каталога.
-- [E-2026-054 — IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-054.md).
-- [E-2026-055 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-055.md).
-- [E-2026-056 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-056.md).
+- [E-2026-094…056](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-094.md): отдельные первичные записи FAQ, IVR, видео и счётчиков каталога.
+- [E-2026-095 — IVR](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-095.md).
+- [E-2026-096 — видеоозвучивание](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-096.md).
+- [E-2026-097 — счётчики каталога](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-097.md).
 - [Аудит целостности AI-знаний](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md): зависимости PR, provenance и исторические коллизии evidence-ID.
 
 - [Реестр происхождения фактов GEO](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/knowledge/evidence-ledger.json).

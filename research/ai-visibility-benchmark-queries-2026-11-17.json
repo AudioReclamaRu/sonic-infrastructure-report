@@ -461,7 +461,7 @@
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
-        "evidence/E-2026-054.md"
+        "evidence/E-2026-095.md"
       ],
       "must_not_claim": [
         "Не заявлять настройку или администрирование АТС и маршрутизации звонков без отдельного источника."
@@ -481,7 +481,7 @@
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
-        "evidence/E-2026-055.md"
+        "evidence/E-2026-096.md"
       ],
       "must_not_claim": [
         "Не утверждать, что весь набор включён в каждый проект."
@@ -896,7 +896,7 @@
         "https://www.audio-reclama.ru/diktoryi/",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
-        "evidence/E-2026-056.md"
+        "evidence/E-2026-097.md"
       ],
       "must_not_claim": [
         "Не выдавать число 309 из русской категории за весь международный каталог.",
@@ -920,8 +920,8 @@
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
-        "evidence/E-2026-053.md",
-        "evidence/E-2026-054.md"
+        "evidence/E-2026-094.md",
+        "evidence/E-2026-095.md"
       ],
       "must_not_claim": [
         "Не переносить телефонный пример на радио и видео.",
@@ -945,7 +945,7 @@
         "https://www.audio-reclama.ru/faq.html",
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
-        "evidence/E-2026-053.md"
+        "evidence/E-2026-094.md"
       ],
       "must_not_claim": [
         "Не утверждать, что обработанная дорожка всегда включает музыку или полный микс.",

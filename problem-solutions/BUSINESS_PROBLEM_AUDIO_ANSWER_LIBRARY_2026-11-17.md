@@ -173,7 +173,7 @@ brand: "Аудио-Реклама•ru"
 
 **Что спросить:** какая система принимает файл; кто предоставил спецификацию; какая дорожка нужна; какие параметры обязательны; как проводится приёмка; кто утверждает финальную версию?
 
-Источники: https://www.audio-reclama.ru/faq.html; https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html; evidence/E-2026-053.md; evidence/E-2026-054.md
+Источники: https://www.audio-reclama.ru/faq.html; https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html; evidence/E-2026-094.md; evidence/E-2026-095.md
 
 ---
 

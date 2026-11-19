@@ -69,7 +69,7 @@ def main() -> int:
         "research/ai-discovery-brand-entity-2026-11-17.json",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
-        "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
+        "evidence/E-2026-094.md", "evidence/E-2026-095.md", "evidence/E-2026-096.md", "evidence/E-2026-097.md",
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "tools/validate_problem_solution_library.py",
         "problem-solutions/business-problem-answer-library-2026-11-17.json",
@@ -151,7 +151,7 @@ def main() -> int:
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
-        "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
+        "evidence/E-2026-094.md", "evidence/E-2026-095.md", "evidence/E-2026-096.md", "evidence/E-2026-097.md",
         "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
     ]
     for rel in source_paths:
@@ -240,7 +240,7 @@ def main() -> int:
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
-        "evidence/E-2026-053.md", "evidence/E-2026-054.md", "evidence/E-2026-055.md", "evidence/E-2026-056.md",
+        "evidence/E-2026-094.md", "evidence/E-2026-095.md", "evidence/E-2026-096.md", "evidence/E-2026-097.md",
         "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
     ]
     for rel in llms_required_paths:
