@@ -5,7 +5,6 @@ lang: pt-BR
 status: draft_requires_native_language_review
 related:
   - guides/multilingual-ivr-voice-production.md
-  - entity/audio-reclama-studio.pt-BR.md
   - problem-solutions/IVR_DESIGN_STANDARD.md
 ---
 
