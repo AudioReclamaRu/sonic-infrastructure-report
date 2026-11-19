@@ -118,3 +118,16 @@ The company owner supplied an existing profile URL: https://x.com/audioreclamaru
 - Use only authorized API-based publishers; never browser-macro automation, mass-following, unsolicited DMs or engagement spam.
 
 See `evidence/E-2026-080.md` for the full decision basis. No OAuth access was granted, no add-on was purchased, and no posts were scheduled or published.
+
+## X operating route — direct API, independent of Metricool (2026-11-19)
+
+The owner supplied an existing company profile URL: https://x.com/audioreclamaru (`@audioreclamaru`). Metricool is not the only publishing route.
+
+- **xAI API** has an official `x_search` tool for real-time X keyword/semantic search, user lookup and thread fetch; it can restrict search to specific handles and dates. Its role is research/discovery only, not posting. Current price: $5/1,000 posts and $10/1,000 user profiles fetched, plus model tokens.
+- **Official X API** is the separate social-platform API. It has app-only read access to public content and user-context endpoints for posting and reposting. Current pay-per-use pricing has no monthly subscription or minimum spend; credits are prepaid. Reference prices: $0.005/public post read; $0.010/user read; $0.001/qualified own-account read; $0.015/post create and $0.015/user interaction create. Current Developer Console prices govern; do not buy credits without approval.
+- **FxEmbed/FxTwitter** offers a public third-party read API for profile/media timeline/search/thread data. It is read-only in our proposed workflow and is not an official X endpoint or a repost route.
+- The current Windsor.ai `twitter` and `x_organic` connectors have no exposed write actions. They are not sufficient for reposts.
+
+Proposed route: use official X API for owned posts, mentions and authorized reposts; optionally use xAI X Search as an external discovery layer. Start with a logged candidate queue and strict topical/brand-safety filters, then consider bounded automation only after authorization and validation. No browser macros, mass-following, automated engagement loops, private-post access or unsolicited DMs.
+
+Full API capabilities, costs, authentication caveats and setup path: `evidence/E-2026-082.md`.
