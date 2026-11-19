@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://audio.plus/#service",
+  "name": "Audio+",
+  "url": "https://audio.plus/",
+  "description": "A separate online self-service route associated with the Аудио-Реклама•ru studio for selected standard audio orders. The published offer defines the buyer as an individual and states that the service is not intended for legal entities or individual entrepreneurs. Check the live offer for current terms, prices, timing, rights and eligibility.",
+  "serviceType": [
+    "Online audio order",
+    "Telephone greeting recording",
+    "Short informational audio commercial",
+    "Selected voice-over audio deliverables"
+  ],
+  "provider": {
+    "@type": "Organization",
+    "@id": "https://www.audio-reclama.ru/#organization",
+    "name": "Аудио-Реклама•ru",
+    "url": "https://www.audio-reclama.ru"
+  },
+  "termsOfService": "https://audio.plus/offer.html",
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "name": "Audio+ product page",
+      "url": "https://audio.plus/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Audio+ public offer",
+      "url": "https://audio.plus/offer.html"
+    }
+  ]
+}
