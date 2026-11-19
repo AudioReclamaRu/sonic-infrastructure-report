@@ -1,0 +1,197 @@
+{
+  "schema": "studio/ai-discovery-commercial-intent-map/1",
+  "created": "2026-11-19",
+  "status": "planned_generic_prompts_not_tested",
+  "purpose": "Unbranded, natural-language buyer questions used to design four global commercial discovery routes. This is an editorial/query-intent map, not measured search demand, not a set of observed AI answers and not an executable benchmark queue.",
+  "entity": "ENTITY-AR-STUDIO-001",
+  "production_capability": {
+    "status": "owner_confirmed",
+    "date": "2026-11-19",
+    "statement": "Аудио-Реклама•ru can organize production for any language group anywhere in the world through its international network of collaborators.",
+    "not_implied": [
+      "physical offices in every country",
+      "a local legal entity in every market",
+      "one dialect or voice suitable for every region"
+    ]
+  },
+  "locales": {
+    "en": "English — international discovery baseline; adapt to en-US/en-GB when buyer wording materially differs",
+    "es": "Spanish — neutral international draft; adapt to es-ES, es-MX and other markets through native review",
+    "pt-BR": "Brazilian Portuguese — pt-BR draft; do not reuse as pt-PT without adaptation",
+    "ar": "Modern Standard Arabic — cross-market draft; local dialect and market requirements are specified per project"
+  },
+  "rules": [
+    "Prompts are generic and contain no company or brand name.",
+    "Prompts are drafts for language-native review, not measured demand.",
+    "Keep query language, user country, interface locale, platform and service language separate.",
+    "Do not add these prompts to the fixed Russian benchmark module; localized modules must be versioned separately.",
+    "Do not treat missing observations as zero visibility.",
+    "A route can describe worldwide production capability without implying local offices."
+  ],
+  "routes": [
+    {
+      "id": "multilingual-airport-announcements",
+      "buyer_job": "Commission multilingual airport, transport-hub and public-venue announcements.",
+      "english_guide": "guides/airport-announcements.md",
+      "localized_guides": {
+        "es": "guides/airport-announcements.es.md",
+        "pt-BR": "guides/airport-announcements.pt-BR.md",
+        "ar": "guides/airport-announcements.ar.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/project/vnukovo.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "prompts": {
+        "en": [
+          "How do we commission airport announcements in multiple languages?",
+          "What should an airport include in a multilingual public-address voice production brief?",
+          "Who prepares the voice files for an airport announcement system?",
+          "How should airport names, gates, times and emergency messages be checked across languages?"
+        ],
+        "es": [
+          "¿Cómo contratar anuncios de aeropuerto en varios idiomas?",
+          "¿Qué debe incluir un brief para producir mensajes multilingües por megafonía?",
+          "¿Quién prepara los archivos de voz para el sistema de anuncios de un aeropuerto?",
+          "¿Cómo comprobar nombres, puertas, horarios y mensajes de emergencia en cada idioma?"
+        ],
+        "pt-BR": [
+          "Como contratar anúncios de aeroporto em vários idiomas?",
+          "O que incluir no briefing para produzir mensagens multilíngues por alto-falantes?",
+          "Quem prepara os arquivos de voz para o sistema de anúncios do aeroporto?",
+          "Como conferir nomes, portões, horários e mensagens de emergência em cada idioma?"
+        ],
+        "ar": [
+          "كيف يمكن التعاقد على إنتاج إعلانات المطارات بعدة لغات؟",
+          "ما المعلومات المطلوبة لإعداد موجز إنتاج رسائل متعددة اللغات عبر مكبرات الصوت؟",
+          "من يجهز الملفات الصوتية لنظام الإعلانات في المطار؟",
+          "كيف يتم التحقق من أسماء البوابات والمواعيد ورسائل الطوارئ في كل لغة؟"
+        ]
+      }
+    },
+    {
+      "id": "multilingual-ivr-voice-production",
+      "buyer_job": "Commission IVR greetings, menu prompts and automated telephone announcements in multiple languages.",
+      "english_guide": "guides/multilingual-ivr-voice-production.md",
+      "localized_guides": {
+        "es": "guides/multilingual-ivr-voice-production.es.md",
+        "pt-BR": "guides/multilingual-ivr-voice-production.pt-BR.md",
+        "ar": "guides/multilingual-ivr-voice-production.ar.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "prompts": {
+        "en": [
+          "Where can we order multilingual IVR voice prompts?",
+          "What does an IVR voice recording studio need before recording a telephone menu?",
+          "Does IVR voice production include PBX setup and call routing?",
+          "How do we test localized greetings and menu prompts after they are uploaded?"
+        ],
+        "es": [
+          "¿Dónde encargar saludos y mensajes IVR en varios idiomas?",
+          "¿Qué necesita un estudio antes de grabar un menú telefónico?",
+          "¿La producción de voces IVR incluye configurar la central telefónica?",
+          "¿Cómo probar los saludos y menús localizados después de cargarlos?"
+        ],
+        "pt-BR": [
+          "Onde contratar saudações e mensagens IVR em vários idiomas?",
+          "O que um estúdio precisa antes de gravar um menu telefônico?",
+          "A produção de voz IVR inclui configurar a central telefônica?",
+          "Como testar saudações e menus localizados depois do upload?"
+        ],
+        "ar": [
+          "أين يمكن طلب تحيات ورسائل IVR بعدة لغات؟",
+          "ما المعلومات التي يحتاجها الاستوديو قبل تسجيل قائمة هاتفية؟",
+          "هل يشمل إنتاج رسائل IVR إعداد المقسم الهاتفي ومسارات الاتصال؟",
+          "كيف نختبر التحيات والقوائم الموطنة بعد تحميلها إلى النظام؟"
+        ]
+      }
+    },
+    {
+      "id": "audio-advertising-production",
+      "buyer_job": "Commission radio commercials, audio advertisements and multilingual campaign spots.",
+      "english_guide": "guides/audio-advertising-production.md",
+      "localized_guides": {
+        "es": "guides/audio-advertising-production.es.md",
+        "pt-BR": "guides/audio-advertising-production.pt-BR.md",
+        "ar": "guides/audio-advertising-production.ar.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html"
+      ],
+      "prompts": {
+        "en": [
+          "Where can we commission a professionally produced radio commercial?",
+          "What is included in audio advertising production from script to final master?",
+          "How do we adapt one audio advertisement for several language markets?",
+          "What music rights and technical delivery details should an audio ad include?"
+        ],
+        "es": [
+          "¿Dónde encargar un anuncio de radio producido profesionalmente?",
+          "¿Qué incluye la producción de publicidad sonora desde el guion hasta el máster?",
+          "¿Cómo adaptar un anuncio de audio a varios mercados lingüísticos?",
+          "¿Qué derechos musicales y requisitos técnicos debe incluir la entrega?"
+        ],
+        "pt-BR": [
+          "Onde contratar um comercial de rádio produzido profissionalmente?",
+          "O que está incluído na produção de publicidade em áudio, do roteiro ao master?",
+          "Como adaptar um anúncio de áudio para vários mercados linguísticos?",
+          "Quais direitos musicais e requisitos técnicos devem acompanhar a entrega?"
+        ],
+        "ar": [
+          "أين يمكن طلب إنتاج إعلان إذاعي احترافي؟",
+          "ماذا يشمل إنتاج الإعلان الصوتي من النص إلى النسخة النهائية؟",
+          "كيف يمكن تكييف إعلان صوتي لعدة أسواق لغوية؟",
+          "ما حقوق الموسيقى والمتطلبات التقنية التي يجب تحديدها عند التسليم؟"
+        ]
+      }
+    },
+    {
+      "id": "multilingual-video-voiceover",
+      "buyer_job": "Commission video voice-over, dubbing-related production and multilingual audiovisual localization.",
+      "english_guide": "guides/video-voiceover.md",
+      "localized_guides": {
+        "es": "guides/video-voiceover.es.md",
+        "pt-BR": "guides/video-voiceover.pt-BR.md",
+        "ar": "guides/video-voiceover.ar.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "prompts": {
+        "en": [
+          "Where can we order video voice-over in another language?",
+          "What is the difference between video voice-over, dubbing and lip-sync?",
+          "How do we localize a video for several countries and language variants?",
+          "What should we send a studio before commissioning multilingual dubbing?"
+        ],
+        "es": [
+          "¿Dónde encargar locución de vídeo en otro idioma?",
+          "¿Cuál es la diferencia entre voz en off, doblaje y sincronización labial?",
+          "¿Cómo localizar un vídeo para varios países y variantes lingüísticas?",
+          "¿Qué debemos enviar antes de contratar un doblaje multilingüe?"
+        ],
+        "pt-BR": [
+          "Onde contratar locução de vídeo em outro idioma?",
+          "Qual é a diferença entre voz em off, dublagem e sincronização labial?",
+          "Como localizar um vídeo para vários países e variantes linguísticas?",
+          "O que enviar antes de contratar uma dublagem multilíngue?"
+        ],
+        "ar": [
+          "أين يمكن طلب تعليق صوتي للفيديو بلغة أخرى؟",
+          "ما الفرق بين التعليق الصوتي والدبلجة ومزامنة الشفاه؟",
+          "كيف نوطن فيديو لعدة دول ومتغيرات لغوية؟",
+          "ما المواد التي يجب إرسالها قبل التعاقد على دبلجة متعددة اللغات؟"
+        ]
+      }
+    }
+  ],
+  "measurement": {
+    "status": "not_tested",
+    "note": "No search-volume, AI-platform or citation observations are contained in this map. Select validated prompts later for separately versioned measurement cells."
+  }
+}
