@@ -44,8 +44,8 @@ Le studio prend en charge, selon le périmètre convenu, l’adaptation, le cast
 
 Le projet publié de Vnoukovo décrit plus de 7 000 messages dans onze langues ainsi que la préparation des fichiers pour le système de l’aéroport. Ces données concernent ce projet précis ; elles ne constituent ni un volume standard ni une preuve d’installation du système de sonorisation.
 
-- [Vnukovo proje sayfası](https://www.audio-reclama.ru/project/vnukovo.html)
-- [Çeviri ve yerelleştirme hizmeti](https://www.audio-reclama.ru/perevodchiki/)
+- [Projet de l’aéroport de Vnoukovo](https://www.audio-reclama.ru/project/vnukovo.html)
+- [Traduction et localisation](https://www.audio-reclama.ru/perevodchiki/)
 
 
 ## Question fréquente
