@@ -44,8 +44,8 @@ related:
 
 공개된 광고 서비스에는 대본 작업, 성우 선정, 사운드 디자인, 라이선스 음악과 권리 이전 등이 포함된다고 안내되어 있습니다. 매체 구매, 방송 시간 확보, 캠페인 게재와 편성은 별도 계약이 없는 한 오디오 제작과 구분됩니다.
 
-- [Sesli reklam ve radyo spotu hizmeti](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
-- [Jingle ve ses çözümleri](https://www.audio-reclama.ru/audio/zvuk-media.html)
+- [오디오 광고 및 라디오 광고 서비스](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+- [징글 및 사운드 솔루션](https://www.audio-reclama.ru/audio/zvuk-media.html)
 
 
 ## 자주 묻는 질문
@@ -60,4 +60,4 @@ related:
 
 프로젝트 개요, 필요한 언어, 원고 또는 소스 파일과 기술 사양을 **start@audio-reclama.ru**로 보내 주세요.
 
-Resmî web sitesi / 공식 웹사이트: https://www.audio-reclama.ru
+공식 웹사이트:: https://www.audio-reclama.ru
