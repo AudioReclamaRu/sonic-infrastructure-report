@@ -74,6 +74,8 @@ The waves below are an execution order for AI-discovery content and measurement,
 | Korean | ko-KR | Meaningful usage in the Google conversational-AI dataset and a major technology/media market |
 | Chinese | zh-CN first; zh-TW/zh-HK separately if target markets and platform access support them | Large potential market, distinct regional platforms and language conventions; platform access and service feasibility must be assessed separately |
 
+**Wave B content status, 19 November 2026:** first-pass repository drafts now exist for the four core buyer tasks—airport/public-address announcements, multilingual IVR, audio advertising and video voice-over—in Turkish (tr-TR), German (de-DE), French (fr-FR), Japanese (ja-JP), Korean (ko-KR) and Simplified Chinese (zh-Hans / zh-CN orientation). These 24 route files are editorial drafts, not published website pages. They require competent native-language review before external use. For Chinese, Traditional Chinese, Cantonese and other regional variants remain separate work; Simplified Chinese must not be treated as a universal Chinese version. No search demand or AI visibility has been measured by creating these drafts.
+
 ### Wave C — demand-led expansion
 
 Initial candidates: Hindi, Indonesian, Italian, Vietnamese, Polish, Dutch, Ukrainian, Kazakh, Uzbek, Azerbaijani, Armenian, Georgian and other languages identified from the country × language × platform matrix.
@@ -87,7 +89,7 @@ For every selected locale, build a small connected discovery package:
 1. **Entity card:** native-language description of the one canonical company, official website, business category, service areas and scope limits.
 2. **Service map:** buyer need → matching publicly documented service → primary source page → what must be confirmed.
 3. **Problem answers:** direct, useful answers for the buyer's actual questions in that language, not keyword-swapped translations.
-4. **Expert route:** at least one strong guide or diagnostic answer tied to a service the studio actually documents.
+4. **Expert route:** at least one strong guide or diagnostic answer tied to a service the studio actually documents. The four Wave B buyer tasks now have first-pass drafts in Turkish, German, French, Japanese, Korean and Simplified Chinese; native-language review remains open.
 5. **Proof route:** source-backed portfolio examples, methods, rights and boundaries, with first-party claims clearly distinguished from independent evidence.
 6. **Machine navigation:** links from the repository's root `llms.txt`, language index and entity graph. Language-specific JSON-LD may be added where it improves unambiguous retrieval; it remains repository metadata until separately and explicitly installed on the official site.
 7. **Benchmark prompts:** localized generic-discovery and branded prompts kept separate, tagged with locale, country, platform, interface/API, model/version, search/grounding and intent.
@@ -133,8 +135,8 @@ A repository file is a discovery asset, not a deployment. No commit guarantees i
 
 1. Complete the English entity bridge and its navigation.
 2. Add Spanish, Brazilian Portuguese and Arabic entity profiles as the first AI-usage-led expansion.
-3. Add Turkish, German, French, Japanese, Korean and Chinese locale profiles in the next tranche, ordered by AI-language significance, buyer-market relevance and observed discovery opportunity, not by presumed production availability.
-4. For each locale, create buyer-intent answer routes for the strongest commercial tasks rather than translating every existing page.
+3. First-pass Wave B buyer-intent routes have been added for Turkish, German, French, Japanese, Korean and Simplified Chinese. Treat these as draft assets only; the next step is native-language editorial review and regional adaptation, not automatic publication.
+4. After review, select which locale × task pairs deserve genuine platform measurement. Do not translate every existing page or infer demand from the number of drafts.
 5. Add localized prompts to the appropriate country × platform benchmark cells only when genuine platform access and a valid measurement route exist.
 6. Expand into Wave C through observed market opportunity, not by mechanical coverage of every language.
 
