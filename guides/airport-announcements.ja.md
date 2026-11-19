@@ -44,8 +44,8 @@ related:
 
 公開されているヴヌーコヴォ空港の事例では、11言語・7,000以上の音声ファイルと空港システム向けのファイル準備が紹介されています。これは当該プロジェクトの情報であり、標準的な案件規模やPA設備の設置実績を意味するものではありません。
 
-- [Vnukovo proje sayfası](https://www.audio-reclama.ru/project/vnukovo.html)
-- [Çeviri ve yerelleştirme hizmeti](https://www.audio-reclama.ru/perevodchiki/)
+- [ヴヌーコヴォ空港のプロジェクト](https://www.audio-reclama.ru/project/vnukovo.html)
+- [翻訳・ローカライズ](https://www.audio-reclama.ru/perevodchiki/)
 
 
 ## よくある質問
