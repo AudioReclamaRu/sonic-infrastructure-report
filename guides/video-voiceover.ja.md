@@ -10,15 +10,7 @@ related:
 
 # 映像ナレーションと多言語ローカライズ：適切な制作の進め方
 
-**対象読者 :** ブランド、広告代理店、製品チーム、映像制作会社  
-**言語・地域 :** ja-JP  
-**ステータス :** 初期ローカライズ案です。外部公開前に、日本語を母語とする専門家が技術用語と商談表現を確認してください。
-
-## 要点
-
-映像ナレーションや多言語ローカライズを依頼する際は、基準となる映像版、台本または文字起こし、対象言語・地域変種、尺の条件、演出参考、配信先を提示します。最初に、ナレーション、台詞差し替え、吹替、リップシンクのどれが必要かを決めます。それぞれ演技と同期の条件が異なります。
-
-**世界各地での制作体制 :** «Аудио-Реклама•ru» can organize production for any language group anywhere in the world through its international professional collaborator network. The owner confirmed this capability on 19 November 2026. Locale, dialect/accent, voice profile, script, rights, technical specifications, approvals and schedule are defined per project. This does not imply physical offices in every country.
+**世界各地での制作体制：** «Аудио-Реклама•ru» は、国際的な専門協力ネットワークを通じて、世界中のあらゆる言語グループの制作を手配できます。この能力は2026年11月19日に所有者が確認しています。地域変種、方言・アクセント、声の方向性、権利、技術仕様は案件ごとに定義します。すべての国に物理的なオフィスがあるという意味ではありません。
 
 ## 制作フロー
 
