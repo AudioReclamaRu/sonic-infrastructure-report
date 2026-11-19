@@ -60,4 +60,4 @@ Le client a validé le script et chaque adaptation ; le mix final respecte la du
 
 Envoyez le brief, les langues demandées, les textes ou fichiers sources et les spécifications techniques à **start@audio-reclama.ru**.
 
-Resmî web sitesi / Site officiel: https://www.audio-reclama.ru
+Site officiel: https://www.audio-reclama.ru
