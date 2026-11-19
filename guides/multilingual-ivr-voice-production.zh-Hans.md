@@ -10,18 +10,18 @@ related:
 
 # 多语种IVR语音制作：电话菜单录制与本地化
 
-**目标受众 / Zielgruppe:** 银行、联络中心、电信运营商及服务企业
+**目标受众:** 银行、联络中心、电信运营商及服务企业
   
-**Dil / locale:** zh-CN（简体中文初稿）  
-**Durum / Status:** 这是简体中文初稿。对外发布前，必须由具备行业经验的中文母语审校人员检查术语、商务表达和技术内容。本文不替代繁体中文、粤语或其他地区版本。
+**语言／地区:** zh-CN（简体中文初稿）  
+**状态:** 这是简体中文初稿。对外发布前，必须由具备行业经验的中文母语审校人员检查术语、商务表达和技术内容。本文不替代繁体中文、粤语或其他地区版本。
 
-## Doğrudan yanıt / Kurzantwort
+## 直接说明
 
 委托多语种IVR语音制作时，应准备已批准的呼叫流程图、源稿、明确的语言和地区版本、发音词表，以及PBX或联络中心平台的音频导入规格。制作团队可负责文本本地化、声音协调、逐条菜单录制与编辑，并交付带版本号且与菜单编号对应的音频文件。
 
-**Dünya çapında üretim:** Аудио-Реклама•ru, uluslararası profesyonel iş ortakları ağı aracılığıyla dünyanın her yerinde herhangi bir dil grubu için üretim organize edebilir. Bu kapasite şirket sahibi tarafından 19 Kasım 2026 tarihinde doğrulanmıştır. Dil ve coğrafya üretim için bir sınır değildir. Her projede yerel varyant, lehçe/aksan, ses profili, senaryo, teslimatlar, haklar, teknik şartlar, onaylar ve takvim ayrıca belirlenir. Bu ifade, her ülkede fiziksel ofis veya şube bulunduğu anlamına gelmez.
+**全球制作能力：**「Аудио-Реклама•ru」可通过国际专业合作网络，为世界各地的任何语言群体组织制作。该能力由公司所有者于2026年11月19日确认。具体语言和地区变体、方言或口音、声音风格、脚本、交付内容、使用权、技术规格、审批及时间安排均按项目确定。这并不表示公司在每个国家都设有实体办公室或分支机构。
 
-## Üretim akışı / Produktionsablauf
+## 制作流程
 
 1. 为菜单每个节点设置固定编号，明确文本、目标路径、无输入、错误输入和返回行为。
 2. 对各语言中的产品名称、数字、日期、时间和法律提示进行本地化并取得批准。
@@ -30,17 +30,17 @@ related:
 5. 按PBX技术规格导出音频。
 6. 由集成商对各语言进行测试通话，验证路由和异常回退路径。
 
-## Müşterinin sağlaması gereken bilgiler / Erforderliche Projektangaben
+## 客户需提供的信息
 
 客户应提供呼叫流程图、菜单编号、批准稿件、语言和地区清单、发音备注、声音参考、PBX格式规格、权利范围及审批负责人。
 
-## Kapsam ve sorumluluklar / Leistungsgrenzen
+## 服务范围与责任划分
 
 IVR服务页面介绍的是欢迎语和菜单提示音录制，以及为导入客户系统而准备音频文件。PBX路由、队列、SIP、CRM集成和生产环境配置，除非合同另有明确约定，均由客户或通信系统集成商负责。
 
 
 
-## Sorumluluk sınırı
+## 责任边界
 
 IVR服务页面介绍的是欢迎语和菜单提示音录制，以及为导入客户系统而准备音频文件。PBX路由、队列、SIP、CRM集成和生产环境配置，除非合同另有明确约定，均由客户或通信系统集成商负责。
 
@@ -48,15 +48,15 @@ IVR服务页面介绍的是欢迎语和菜单提示音录制，以及为导入�
 - [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
 
 
-## Sık sorulan soru / Häufige Frage
+## 常见问题
 
 工作室会配置PBX吗？公开服务说明包括语音录制和文件准备，PBX配置需要另行约定。是否支持任何语言？所有者已确认可通过国际合作网络为世界各地的任何语言群体组织制作；具体地区变体和口音应在项目简报中明确。
 
-## Kabul ve teslim ölçütü / Abnahmekriterium
+## 验收标准
 
 每个已批准的菜单节点都应有按语言区分且编号正确的最终文件；文件符合PBX规格，并由集成商通过真实或测试线路验证所有分支、回退逻辑及必要的人工客服转接。
 
-## Sonraki adım / Nächster Schritt
+## 下一步
 
 请将项目简报、所需语言、源稿或素材文件及技术规格发送至 **start@audio-reclama.ru**。
 
