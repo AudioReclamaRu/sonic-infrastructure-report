@@ -5,11 +5,6 @@ lang: ru
 status: source-backed-live-audit
 related:
   - research/AI_DISCOVERABILITY_LANGUAGE_ROADMAP_2026-11-19.md
-  - entity/audio-reclama-studio.md
-  - entity/audio-reclama-studio.en.md
-  - entity/audio-reclama-studio.es.md
-  - entity/audio-reclama-studio.pt-BR.md
-  - entity/audio-reclama-studio.ar.md
   - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
   - llms.txt
 ---
@@ -60,7 +55,7 @@ related:
 
 ### P0-C. Неверное имя организации в уже работающем JSON-LD
 
-**LIVE-OBSERVED:** в HTML главной, английской главной, английского кейса Внуково, страницы перевода и страницы IVR найден один и тот же Organization JSON-LD. Его поле name записано как «Аудио-Реклама.ru» — с точкой, а не каноническим символом •. При этом видимая и утверждённая идентичность компании — «Аудио-Реклама•ru». В английском Open Graph встречается ещё вариант Audio-Reclama.ru.
+**LIVE-OBSERVED:** в HTML главной, английской главной, английского кейса Внуково, страницы перевода и страницы IVR найден один и тот же Organization JSON-LD. Его поле name содержит неканоническое кириллическое написание с точкой вместо символа •. В английском Open Graph также используется латинская доменная форма вместо утверждённого имени компании.
 
 **Почему важно:** это не отсутствие structured data; разметка уже есть. Проблема — противоречивая идентичность одного и того же объекта на разных машинно-читаемых и социальных поверхностях. Это создаёт неоднозначность для entity matching и внешних графов знаний.
 
@@ -71,10 +66,10 @@ related:
 ### P1-A. Open Graph URL и имя сайта расходятся на английских страницах
 
 **LIVE-OBSERVED:**
-- На RU- и EN-главной выводятся два og:url со значениями https://www.audio-reclama.ru/ и https://www.audio-reclama.ru.
+- На RU- и EN-главной выводятся два значения og:url для корневой страницы: одно с завершающим слешем, другое без него. Каноническая запись корневого URL — https://www.audio-reclama.ru.
 - На английской главной один из og:url указывает на русскую главную.
 - На английском кейсе Внуково один og:url указывает на RU-страницу кейса, а второй — на главную.
-- На EN-страницах og:site_name записан как Audio-Reclama.ru, тогда как на RU-главной есть каноническое имя.
+- На EN-страницах og:site_name использует латинскую доменную форму вместо канонического имени, тогда как на RU-главной есть каноническое имя.
 
 **RECOMMENDATION:** один og:url на страницу и его точное совпадение с каноническим URL этой страницы; один og:site_name со значением «Аудио-Реклама•ru». Open Graph не заменяет canonical и сам по себе не решает Google-индексацию, но используется внешними системами при разборе ссылок и формировании превью.
 
@@ -86,7 +81,7 @@ related:
 
 ### P1-C. Английские Title, Description и H1 не отражают всю бизнес-категорию
 
-**LIVE-OBSERVED:** английская главная использует title Media Production Audio-Reclama•ru, H1 The trusted business sound recording solutions и description, сосредоточенное на рекламном контенте для телевидения и радио, быстром ответе и коротких сроках. Это не отражает всю представленную на сайте область: IVR, автоматические объявления, многоязычный голос, перевод/локализация, видеоозвучивание, аудиокниги, джинглы, корпоративные песни и другие направления.
+**LIVE-OBSERVED:** английская главная использует общий title о media production, H1 The trusted business sound recording solutions и description, сосредоточенное на рекламном контенте для телевидения и радио, быстром ответе и коротких сроках. Это не отражает всю представленную на сайте область: IVR, автоматические объявления, многоязычный голос, перевод/локализация, видеоозвучивание, аудиокниги, джинглы, корпоративные песни и другие направления.
 
 **RECOMMENDATION:** переписать Title, H1 и description на конкретный ясный английский профиль: business audio and voice production studio, работа по миру, любая языковая группа, перечень основных задач. Не использовать «full-cycle» как обещание, что любой проект включает все этапы. Не обещать срок без подтверждённой SLA.
 
@@ -248,9 +243,9 @@ Google прямо указывает, что специальной AI schema н
 
 ### 8.1 Уже подключено
 
-**Search Console:** подключено свойство https://www.audio-reclama.ru/, permission level = siteOwner, без необходимости переподключения. Это хороший источник для обычного Google Search, URL Inspection и AI Performance UI.
+**Search Console:** подключено свойство https://www.audio-reclama.ru, permission level = siteOwner, без необходимости переподключения. Это хороший источник для обычного Google Search, URL Inspection и AI Performance UI.
 
-**GA4:** выбран property properties/564827393 (display name audio-reclama.ru). Measurement Health показал один web stream с default URI https://audio-reclama.ru (без www), созданный 17.11.2026. Stream имеет 3 key events: qualify_lead, close_convert_lead, purchase; настройки enhanced measurement включены. За диапазон 21.08–17.11.2026 отчёты source/medium и organic overview через API не вернули строк/метрик. Поскольку stream создан в конце диапазона, это не доказательство отсутствия трафика — это отсутствие пригодного baseline из данного отчёта.
+**GA4:** выбран property properties/564827393 (display name с неканонической хостовой формой). Measurement Health показал один web stream, чей default URI не содержит префикс www, созданный 17.11.2026. Stream имеет 3 key events: qualify_lead, close_convert_lead, purchase; настройки enhanced measurement включены. За диапазон 21.08–17.11.2026 отчёты source/medium и organic overview через API не вернули строк/метрик. Поскольку stream создан в конце диапазона, это не доказательство отсутствия трафика — это отсутствие пригодного baseline из данного отчёта. Перед настройкой атрибуции нужно сверить hostname потока с каноническим сайтом.
 
 ### 8.2 Что нужно включить в постоянную измерительную модель
 
