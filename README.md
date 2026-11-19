@@ -22,6 +22,8 @@ Russian-language instructions: [Проверка логики IVR-меню](tool
 
 **Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
 
+**Site attention programme:** current Search Console findings, channel priorities, owner-ready site fixes and unpublished media drafts are indexed in [the attention execution plan](strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md), [the distribution workspace](distribution/README.md) and [the attention opportunity register](research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv).
+
 This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
 
 The knowledge model keeps source-backed facts, professional specifications, research proposals and authorial positions separate. A proposal or synthetic example is never presented as a completed studio test or client case.
@@ -88,7 +90,7 @@ strategy/              strategic development contracts
   ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
   STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
-research/              reproducible research plans and benchmark programmes
+research/              reproducible research plans, attention register and benchmark programmes
   AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md  global AI visibility protocol
   ai-visibility-global-market-matrix-2026-11-17.json  country/language/platform seed matrix
   ai-visibility-benchmark-queries-2026-11-17.json  fixed RU query module
