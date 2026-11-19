@@ -137,7 +137,7 @@
 - [E-2026-080 — границы измерения российского AI Visibility](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-080.md): почему рынок США/English нельзя подменять российским baseline.
 - [E-2026-081 — X и стоимость подключения](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-081.md): существующий аккаунт и ограничения платной интеграции.
 - [E-2026-082 — Biz360 2018 и WOW Awards](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-082.md): независимое историческое интервью и конкретная проектная награда.
-- [E-2026-083 — API для исследования и работы с X](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-083.md): различие xAI X Search и официального X API.
+- [E-2026-107 — API для исследования и работы с X](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-107.md): различие xAI X Search и официального X API.
 - [План независимых каталогов и B2B-профилей](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_THIRD_PARTY_SURFACES_2026-11-19.md): только бесплатные профили, без заявок и платного размещения.
 - [Пакет внешних профилей RU/EN](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_EXTERNAL_PROFILE_COPY_2026-11-19.md): черновые поля с HOLD там, где нужно подтверждение владельца.
 - [План внешней AI Discoverability](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_OFFSITE_EXECUTION_PLAN_2026-11-19.md): независимые доказательства и фактическое измерение AI-ответов.
