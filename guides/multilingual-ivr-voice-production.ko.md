@@ -10,18 +10,18 @@ related:
 
 # 다국어 IVR 음성 제작: 전화 안내 메뉴 녹음과 현지화
 
-**目标受众 / Zielgruppe:** 은행, 컨택센터, 통신사, 서비스 기업
+**대상 고객:** 은행, 컨택센터, 통신사, 서비스 기업
   
-**Dil / locale:** ko-KR  
-**Durum / Status:** 초기 현지화 초안입니다. 외부 공개 전 한국어 원어민 전문가가 업계 용어, 영업 표현, 기술 용어와 문장 자연스러움을 검토해야 합니다.
+**언어 / 지역:** ko-KR  
+**상태:** 초기 현지화 초안입니다. 외부 공개 전 한국어 원어민 전문가가 업계 용어, 영업 표현, 기술 용어와 문장 자연스러움을 검토해야 합니다.
 
-## Doğrudan yanıt / Kurzantwort
+## 핵심 답변
 
 다국어 IVR 음성을 의뢰하려면 승인된 통화 흐름도, 원고, 정확한 언어·지역 변형, 발음 용어집, PBX 또는 컨택센터 플랫폼의 오디오 가져오기 사양을 준비해야 합니다. 제작팀은 문안을 현지화하고 성우를 섭외하며 메뉴 단계별로 녹음·편집한 뒤 ID와 버전이 연결된 파일을 납품할 수 있습니다.
 
-**Dünya çapında üretim:** Аудио-Реклама•ru, uluslararası profesyonel iş ortakları ağı aracılığıyla dünyanın her yerinde herhangi bir dil grubu için üretim organize edebilir. Bu kapasite şirket sahibi tarafından 19 Kasım 2026 tarihinde doğrulanmıştır. Dil ve coğrafya üretim için bir sınır değildir. Her projede yerel varyant, lehçe/aksan, ses profili, senaryo, teslimatlar, haklar, teknik şartlar, onaylar ve takvim ayrıca belirlenir. Bu ifade, her ülkede fiziksel ofis veya şube bulunduğu anlamına gelmez.
+**전 세계 제작 가능 범위:** «Аудио-Реклама•ru»는 국제 전문 협력 네트워크를 통해 전 세계 어느 지역에서든 모든 언어 그룹의 제작을 주선할 수 있습니다. 이 역량은 2026년 11월 19일 소유자가 확인했습니다. 지역 변형, 방언·억양, 음성 프로필, 원고, 납품물, 권리, 기술 사양, 승인과 일정은 프로젝트별로 정합니다. 모든 국가에 물리적 사무실이나 지사가 있다는 뜻은 아닙니다.
 
-## Üretim akışı / Produktionsablauf
+## 제작 절차
 
 1. 메뉴의 각 노드에 고정 ID를 부여하고 문안, 목적지, 무응답·잘못된 입력·되돌아가기 동작을 정의합니다.
 2. 제품명, 숫자, 날짜, 시간과 법적 고지를 각 언어로 현지화하고 승인받습니다.
@@ -30,17 +30,17 @@ related:
 5. PBX 사양에 맞춰 오디오를 출력합니다.
 6. 통합업체가 언어별 테스트 통화로 라우팅과 예외 경로를 확인합니다.
 
-## Müşterinin sağlaması gereken bilgiler / Erforderliche Projektangaben
+## 고객이 제공할 정보
 
 고객은 통화 흐름도, 메뉴 ID, 승인 원고, 언어·지역 목록, 발음 메모, 음성 참고 자료, PBX 형식 사양, 권리 범위와 승인 담당자를 제공해야 합니다.
 
-## Kapsam ve sorumluluklar / Leistungsgrenzen
+## 서비스 범위와 책임
 
 IVR 서비스 페이지는 인사말과 메뉴 음성 녹음 및 시스템 업로드용 파일 준비를 설명합니다. PBX 경로, 대기열, SIP, CRM 연동과 실제 운영 설정은 별도 계약에 명시되지 않는 한 고객 또는 통신 시스템 통합업체의 책임입니다.
 
 
 
-## Sorumluluk sınırı
+## 책임 범위
 
 IVR 서비스 페이지는 인사말과 메뉴 음성 녹음 및 시스템 업로드용 파일 준비를 설명합니다. PBX 경로, 대기열, SIP, CRM 연동과 실제 운영 설정은 별도 계약에 명시되지 않는 한 고객 또는 통신 시스템 통합업체의 책임입니다.
 
@@ -48,15 +48,15 @@ IVR 서비스 페이지는 인사말과 메뉴 음성 녹음 및 시스템 업�
 - [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
 
 
-## Sık sorulan soru / Häufige Frage
+## 자주 묻는 질문
 
 스튜디오가 PBX도 설정하나요? 공개된 서비스는 음성 녹음과 파일 준비이며 PBX 설정은 별도 합의가 필요합니다. 모든 언어가 가능한가요? 소유자는 국제 협력 네트워크를 통해 전 세계 모든 언어 그룹의 제작을 주선할 수 있다고 확인했습니다. 지역 변형과 억양은 브리프에 지정해야 합니다.
 
-## Kabul ve teslim ölçütü / Abnahmekriterium
+## 검수 및 인수 기준
 
 승인된 각 메뉴 노드마다 언어별 최종 파일이 올바른 ID로 연결되어 있어야 합니다. 파일은 PBX 사양을 충족하고 통합업체는 실제 또는 테스트 전화로 모든 분기, 예외 경로와 상담원 연결을 검증해야 합니다.
 
-## Sonraki adım / Nächster Schritt
+## 다음 단계
 
 프로젝트 개요, 필요한 언어, 원고 또는 소스 파일과 기술 사양을 **start@audio-reclama.ru**로 보내 주세요.
 
