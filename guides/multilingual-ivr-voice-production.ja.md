@@ -40,13 +40,10 @@ IVRサービスページで説明されているのは、電話応答やメニ�
 
 
 
-## 責任範囲
+## サービスページ
 
-IVRサービスページで説明されているのは、電話応答やメニュー音声の収録と、システムに取り込むファイルの準備です。PBXのルーティング、待ち行列、SIP、CRM連携、実環境の設定は、別途契約に含めない限り顧客または通信システムの担当者が行います。
-
-- [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
-- [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
-
+- [IVR・電話応答音声サービス](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [翻訳・マルチメディアローカライズ](https://www.audio-reclama.ru/perevodchiki/)
 
 ## よくある質問
 
