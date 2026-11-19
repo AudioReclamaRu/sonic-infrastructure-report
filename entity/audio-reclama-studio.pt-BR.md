@@ -69,3 +69,13 @@ Para avaliar um projeto, informe:
 O briefing define a variante linguística, o dialeto ou sotaque, o escopo, os direitos, os formatos, os requisitos técnicos, as aprovações e o orçamento. A capacidade de produção não é limitada por idioma ou geografia.
 
 **Status deste perfil:** rascunho de primeira localização para descoberta em português brasileiro; requer revisão por um profissional nativo antes de publicação externa. É um documento do repositório público; não está instalado no site oficial e não comprova que sistemas de IA já o tenham indexado, citado ou recomendado.
+
+
+## Rotas comerciais por necessidade do comprador
+
+- [Anúncios multilíngues para aeroportos](../guides/airport-announcements.pt-BR.md)
+- [Produção de vozes IVR em vários idiomas](../guides/multilingual-ivr-voice-production.pt-BR.md)
+- [Produção de publicidade em áudio](../guides/audio-advertising-production.pt-BR.md)
+- [Locução e localização de vídeo](../guides/video-voiceover.pt-BR.md)
+
+Estas rotas são rascunhos de conhecimento no repositório; não são páginas de serviço publicadas no site oficial.
