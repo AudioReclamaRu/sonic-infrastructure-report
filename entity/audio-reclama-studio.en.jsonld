@@ -1,0 +1,93 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Аудио-Реклама•ru",
+  "url": "https://www.audio-reclama.ru",
+  "description": "Аудио-Реклама•ru is a business audio recording and production studio. Its published service range includes audio and radio commercials, IVR and telephone greetings, automated announcements, voice-over for video and presentations, audiobook recording, jingles, corporate songs, voice talent selection, scripts, and translation and localization for audio and video.",
+  "email": "start@audio-reclama.ru",
+  "knowsAbout": [
+    "Business audio production",
+    "Audio advertising and radio commercials",
+    "IVR voice prompts and telephone greetings",
+    "Automated telephone announcements",
+    "Video voice-over",
+    "Dubbing-related voice production",
+    "Audiobook recording",
+    "Advertising jingles",
+    "Corporate songs and anthems",
+    "Presentation voice-over",
+    "Voice talent casting",
+    "Audio scripts",
+    "Multilingual audio localization",
+    "Translation for voice recording",
+    "Audio and video production"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Business audio and voice production",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Audio commercials and radio spots",
+          "url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IVR and telephone greetings",
+          "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Video voice-over",
+          "url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Translation and multimedia localization",
+          "url": "https://www.audio-reclama.ru/perevodchiki/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Audiobook production",
+          "url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Advertising jingles",
+          "url": "https://www.audio-reclama.ru/audio/zvuk-media.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Corporate songs and anthems",
+          "url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
+        }
+      }
+    ]
+  },
+  "subjectOf": {
+    "@type": "WebPage",
+    "name": "Official English homepage",
+    "url": "https://www.audio-reclama.ru/en/",
+    "inLanguage": "en"
+  }
+}
