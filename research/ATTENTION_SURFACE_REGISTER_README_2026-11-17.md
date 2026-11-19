@@ -2,7 +2,7 @@
 type: doc
 date: 2026-11-17
 lang: en
-related: [strategy/ATTENTION_ECOSYSTEM_RECON_2026-11-14.md]
+related: [strategy/ATTENTION_ECOSYSTEM_RECON_2026-11-14.md, evidence/E-2026-077.md]
 ---
 
 # Attention Surface Register — 2026-11-17
@@ -24,7 +24,7 @@ This register converts the attention-surface candidates researched in the ecosys
 
 | Priority | Candidates | Rationale |
 |---|---|---|
-| P1 — inspect first | Voice Over Resource Guide; The VoiceOver Community | Free standard/resource listing is explicitly described and directory categories are close to professional audio/production services. Exact category eligibility still requires checking. |
+| P1 — inspect first | Clutch Basic + The Manifest; Sortlist Free; Voice Over Resource Guide | Current official terms confirm free company profiles, strong voiceover/audio-production/Audio Production category fit, and potential independent directory surfaces. Employee/rate/location/budget fields still require owner verification. |
 | P2 — conditional | Podder Directory; Podcast-Led Growth | Relevant only if the actual service fits podcast production categories; free/acceptance details differ. |
 | P3 — conditional venue/expert | WhereToPodcast; Podpal; SourceBottle | Require a qualifying physical studio or a genuine individual expert profile; do not create inaccurate company/venue profiles. |
 | Monitor only | Source of Sources | Journalist-query opportunity channel, not a directory. Respond only to individually relevant requests after checking terms. |
@@ -46,6 +46,17 @@ Six additional surfaces were added after a second discovery pass:
 - **VoiceLab360** — studio partner listing stated free, but only for qualifying professional studios, home studios, remote-session studios or production facilities with voice capability. A 2.5% platform booking fee applies to completed bookings processed there; platform terms require those bookings to remain on-platform.
 - **Podcasting Source** — invites studios, software, agencies and services to list, but free pricing and submission terms have not been confirmed. Keep unpriced until checked.
 - **GetListedGlobal** — generic international business directory with a free standard listing and account requirement. Low priority until country support, category quality, data terms and buyer relevance are checked.
+
+## AI-discoverability surfaces verified 2026-11-19
+
+A focused AI-discoverability pass verified three first-wave free routes and one secondary specialist directory. The detailed primary-source record is E-2026-077; the ready-to-review profile wording is in AI_DISCOVERABILITY_EXTERNAL_PROFILE_COPY_2026-11-19.md.
+
+- **Clutch Basic + The Manifest — P1:** free Basic profile; included in Clutch's service-line directories and, according to Clutch's help center, on The Manifest. Clutch has a live global Voiceover directory. The free profile lacks priority rank and a website link from directory pages; Verified is $499/year and paid. Do not purchase the Verified tier or advertising.
+- **Sortlist Free — P1:** free provider profile and exact Audio Production category. Sortlist accepts providers globally, while its marketing focus is currently Benelux, France and Spain. Paid Sortlist+ is £129/month and credits are separate; do not purchase either.
+- **Voice Over Resource Guide — P1:** free standard recording-studio/audio-production listing with Global/Remote option. A physical address is needed only for Map Search; no address should be invented. Human editorial review is required.
+- **The VoiceOver Community — P2:** free standard resource listing under Production Services / Recording Studios; enhanced listings are paid. Specialist audience; confirm international/remote listing fields.
+
+For every candidate, current state remains NOT_CHECKED in the platform's native directory. Indexed search misses do not prove absence. No profile, account, form, claim, review request, paid feature or submission was created.
 
 ## Existing public brand profiles discovered 2026-11-17
 
