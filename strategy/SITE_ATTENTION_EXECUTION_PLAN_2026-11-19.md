@@ -164,3 +164,22 @@ related:
 - Никаких платных проверок, рекламных кампаний, платных каталогов и подписок не запускалось.
 
 **Следующий практический пакет:** нативная статья для Дзена + медиакит с host-read/press angles + фактические тексты для тематических профилей + проверка готовности GA4. Это даст задел для реальных внешних переходов, не подменяя публикацию фактом подготовки.
+
+
+## Addendum — 20 November 2026: Audio+ funnel, old high-reach videos and EN URL Inspection
+
+A new evidence pass found three higher-impact routes:
+
+1. **Audio+ is a separate checkout domain.** The public order builder is at https://audio.plus/ and the offer at https://audio.plus/offer.html. Its displayed prices and user/order counters belong to that separate property. The connected GSC project covers https://www.audio-reclama.ru/ only; it does not report audio.plus sessions, orders or revenue. The main-site /audioplus/ route is currently classified by GSC as discovered but not indexed.
+2. **Audio+ has a meaningful audience boundary.** The published offer defines the buyer as a natural person, and says the service is not intended for legal entities and individual entrepreneurs. It also documents prepayment, one delivered version, no editing once work starts, publication-consent mechanics and a non-exclusive customer licence while exclusive rights remain with the service. This is content from the offer, not a legal opinion. B2B customers need a clear path to the studio rather than being pushed indiscriminately into self-service.
+3. **The long-lived video archive deserves priority.** The indexed YouTube snapshot shows 513,155 views for the 2012 Studio Video Guide and 91,365 for an Audio+ video. These are search-index snapshots, not current YouTube Analytics. The Video Guide's description and RUTUBE repost still use a legacy referral route; draft replacement text now leads to current service pages and distinguishes Audio+ from B2B studio work.
+
+### Immediate work order (subject to owner authorization for any external or site change)
+
+- Confirm Audio+ live price, SLA, customer eligibility, rights/consent and correction policy against the current order UI and current offer. The legacy article currently shows 790 RUB, 60 words, old payment methods and a two-hour promise, while the saved Audio+ HTML shows 1,990 RUB, 90 words and a current form. Do not promote old price or time claims.
+- Measure the two domains as separate surfaces and configure a valid cross-domain analytics model only after a permitted site/analytics change. No sales/conversion baseline for audio.plus is available in current connected data.
+- Review the existing YouTube video contents, then update descriptions and pinned comments with current route links only if authorized and if the video content still matches.
+- Verify access to the AllAdvertising company profile and its ranking, office/contact, founding-year, award and roster claims before any update. Its public page is updated 19.11.2026 and already links to the official website, portfolio and social surfaces; profile traffic is not yet measured.
+- Resolve the historical EN robots block through full current robots.txt plus fresh Google URL Inspection. Existing GSC inspection results are last-crawl states, not a live robots test.
+
+Full evidence, caveats and source URLs: [SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md](../research/SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md). Draft descriptions and profile text: [AUDIO_PLUS_YOUTUBE_AND_PROFILE_KIT_2026-11-20.md](../distribution/AUDIO_PLUS_YOUTUBE_AND_PROFILE_KIT_2026-11-20.md). Updated surface register: [ATTENTION_EXECUTION_REGISTER_2026-11-19.csv](../research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv).
