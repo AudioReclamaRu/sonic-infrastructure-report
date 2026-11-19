@@ -44,8 +44,8 @@ related:
 
 公开的广告服务列出了文案支持、声音选择、声音设计、授权音乐和权利转让等制作内容。媒体购买、播出时段采购、广告投放及电台排期，除非合同明确包含，否则不属于音频制作本身。
 
-- [Sesli reklam ve radyo spotu hizmeti](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
-- [Jingle ve ses çözümleri](https://www.audio-reclama.ru/audio/zvuk-media.html)
+- [音频广告和广播广告服务](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+- [品牌音效及声音设计](https://www.audio-reclama.ru/audio/zvuk-media.html)
 
 
 ## 常见问题
@@ -60,4 +60,4 @@ related:
 
 请将项目简报、所需语言、源稿或素材文件及技术规格发送至 **start@audio-reclama.ru**。
 
-Resmî web sitesi / 官方网站: https://www.audio-reclama.ru
+官方网站:: https://www.audio-reclama.ru
