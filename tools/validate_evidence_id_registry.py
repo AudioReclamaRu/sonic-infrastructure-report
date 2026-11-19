@@ -22,7 +22,7 @@ REGISTRY_FIELDS = ("evidence_id", "path", "allocated_branch", "notes")
 
 def frontmatter_id(path: Path) -> str | None:
     try:
-        text = path.read_text(encoding="utf-8")
+        text = path.read_text(encoding="utf-8-sig")
     except OSError:
         return None
     if not text.startswith("---\n"):
