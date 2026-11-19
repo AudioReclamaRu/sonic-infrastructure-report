@@ -2,7 +2,7 @@
 type: entity
 date: 2026-11-19
 lang: es
-status: official_source_observed
+status: draft_requires_native_language_review
 entity_id: ENTITY-AR-STUDIO-001
 related:
   - entity/audio-reclama-studio.md
@@ -68,4 +68,4 @@ Para evaluar un proyecto, conviene indicar:
 
 El brief concreta la variante lingüística, el dialecto o acento, el alcance, los derechos, los formatos, los requisitos técnicos, las aprobaciones y el presupuesto. La capacidad de producción no se limita por idioma o geografía.
 
-**Estado de la ficha:** resumen localizado para descubrimiento en español. Es un documento del repositorio público; no está instalado en el sitio oficial ni demuestra que sistemas de IA ya lo hayan indexado, citado o recomendado.
+**Estado de la ficha:** borrador de primera localización para descubrimiento en español; requiere revisión por un profesional nativo antes de su publicación externa. Es un documento del repositorio público; no está instalado en el sitio oficial ni demuestra que sistemas de IA ya lo hayan indexado, citado o recomendado.
