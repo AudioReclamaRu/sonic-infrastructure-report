@@ -30,7 +30,7 @@ related:
 
 Счётчики динамические. Это опубликованные показатели самого сервиса, а не независимо проверенная статистика оплаченных клиентов, выручки или уникальных активных пользователей. Различие чисел отражает разные поисковые/кэшированные снимки, не точный прирост.
 
-Страница основного сайта https://www.audio-reclama.ru/audioplus/ в Google Search Console за 16.08–16.11.2026 не получила строк кликов/показов и на 20.11.2026 имеет статус «Обнаружена, не проиндексирована». При этом статья о сервисе https://www.audio-reclama.ru/blog/audio-ili-kogda-v-vashih-rukah.html проиндексирована и за тот же период получила 3 клика и 294 показа (CTR 1,02%, средняя позиция 10,2).
+Страница основного сайта https://www.audio-reclama.ruaudioplus/ в Google Search Console за 16.08–16.11.2026 не получила строк кликов/показов и на 20.11.2026 имеет статус «Обнаружена, не проиндексирована». При этом статья о сервисе https://www.audio-reclama.rublog/audio-ili-kogda-v-vashih-rukah.html проиндексирована и за тот же период получила 3 клика и 294 показа (CTR 1,02%, средняя позиция 10,2).
 
 **Следствие:** сервис может получать прямые и внешние переходы на audio.plus, но у нас пока нет измеренного отчёта о конверсиях этого самостоятельного домена. GSC-показатели основного домена не измеряют трафик или продажи на audio.plus. Без сквозной аналитики нельзя оценить, сколько внимания доходит до оформления заказа и откуда оно приходит.
 
@@ -53,7 +53,7 @@ related:
 
 ### P1 — старый индексируемый материал Audio+ расходится с текущим публичным продуктовым описанием
 
-Старая статья основного сайта: https://www.audio-reclama.ru/blog/audio-ili-kogda-v-vashih-rukah.html
+Старая статья основного сайта: https://www.audio-reclama.rublog/audio-ili-kogda-v-vashih-rukah.html
 
 В её сохранённом HTML до сих пор указаны:
 - 790 ₽ за заказ по акции;
@@ -147,11 +147,11 @@ Metricool подключён к Facebook, Instagram, TikTok и YouTube толь�
 
 ## 8. Источники и дата наблюдения
 
-- Google Search Console connected property https://www.audio-reclama.ru/: URL Inspection по перечисленным EN и Audio+ URL; дата чтения 20.11.2026.
+- Google Search Console connected property https://www.audio-reclama.ru: URL Inspection по перечисленным EN и Audio+ URL; дата чтения 20.11.2026.
 - GSC performance: 16.08–16.11.2026, page/query slices для /audioplus/ и статьи Audio+.
 - Audio+ публичная страница: https://audio.plus/
 - Audio+ оферта: https://audio.plus/offer.html
-- Старая статья: https://www.audio-reclama.ru/blog/audio-ili-kogda-v-vashih-rukah.html
+- Старая статья: https://www.audio-reclama.rublog/audio-ili-kogda-v-vashih-rukah.html
 - YouTube channel: https://www.youtube.com/@audioreclama
 - Старый Video Guide: https://www.youtube.com/watch?v=MJJcbzR2wto
 - RUTUBE repost: https://rutube.ru/video/1d312c393658146cae1c56746592dd43/
