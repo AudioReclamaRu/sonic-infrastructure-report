@@ -45,6 +45,8 @@ related:
 
 - AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md — первый исполнимый цикл AI-Discoverability: фактический RU GSC query→page срез, очередь Alice AI/GigaChat, SoV в Яндекс Вебмастере, обязательная региональная аттестация и запрет на подмену RU-измерений US/en трекером.
 - ALICE_AI_EXPORT_SOURCE_ANALYSIS_2026-11-20.md — read-only разбор 177 строк пользовательской выгрузки источников Алисы AI: доля присутствия по этому файлу, распределение собственных URL, смещение в справочные/дикторские запросы, примеры маршрутизации к статьям вместо коммерческих страниц и следующие проверки. Не является полным корпусом ответов или официальным SoV.
+- AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md — связь RU Google Search Console query→page данных по четырём коммерческим страницам с неизменёнными generic/brand-service AI benchmark-модулями; обосновывает отдельные ценовые prompts для IVR, видео и аудиокниг. GSC — поисковый сигнал, не AI-видимость.
+- ai-visibility-ru-commercial-price-extension-2026-11-20.json — отдельный аддитивный набор из трёх небрендированных RU price-intent вопросов. Не изменяет 29-вопросный generic baseline; все вопросы пока NOT_RUN.
 
 ## Поисковая видимость и качество обхода
 
