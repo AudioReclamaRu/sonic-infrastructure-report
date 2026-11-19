@@ -5,7 +5,6 @@ lang: pt-BR
 status: draft_requires_native_language_review
 related:
   - guides/video-voiceover.md
-  - entity/audio-reclama-studio.pt-BR.md
   - standards/responsible-release.md
 ---
 
