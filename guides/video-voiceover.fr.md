@@ -10,49 +10,48 @@ related:
 
 # Voix off et localisation vidéo : définir la bonne prestation
 
-**Public :** équipes marketing, agences, production vidéo et équipes produit  
-**Langue / locale :** fr-FR  
-**Statut :** Premier brouillon de localisation. Une personne qualifiée de langue maternelle française doit vérifier les termes techniques, le vocabulaire commercial et les usages régionaux avant toute publication.
+**Public concerné :** Marques, agences, équipes produit et producteurs vidéo  
+**Langue / région :** fr-FR  
+**Statut :** Premier brouillon de localisation. Une personne qualifiée de langue maternelle française doit vérifier la terminologie et les usages régionaux avant publication.
 
-## Réponse directe / 要点
+## Réponse directe
 
-Pour commander une voix off ou une localisation vidéo, fournissez le montage de référence, le script, les langues et variantes régionales, les contraintes de durée, les références créatives et le mode de diffusion. Il faut distinguer narration hors champ, remplacement de dialogue, doublage et synchronisation labiale : ces traitements n'ont pas les mêmes contraintes de synchronisation.
+Pour commander une voix off ou une localisation vidéo, fournissez le montage de référence, le script ou la transcription, les langues et variantes régionales, les contraintes de durée, les références créatives et les modes de diffusion. Déterminez d’abord s’il faut une narration hors champ, un remplacement de dialogue, un doublage ou une synchronisation labiale : chaque méthode impose des contraintes différentes de jeu et de synchronisation.
 
-世界各地のあらゆる言語グループの制作を、国際的な協力ネットワークを通じて手配できます（所有者確認日：2026年11月19日）。地域変種、方言、アクセント、声の方向性、権利、技術仕様はプロジェクトごとに定義します。物理的な拠点が各国にあることを意味しません。
+**Production mondiale :** «Аудио-Реклама•ru» can organize production for any language group anywhere in the world through its international professional collaborator network. The owner confirmed this capability on 19 November 2026. Locale, dialect/accent, voice profile, script, rights, technical specifications, approvals and schedule are defined per project. This does not imply physical offices in every country.
 
-## 制作フロー
+## Déroulement de la production
 
-1. Identifier le montage de référence, la cadence/timecode, le dialogue source et le script.
-2. Définir les pays, langues, variantes et accents.
-3. Adapter le texte parlé, les noms, chiffres, textes à l'écran et mentions légales.
-4. Choisir les voix et règles de continuité.
-5. Enregistrer, monter et synchroniser sur la version image convenue.
-6. Vérifier le fichier exporté, pas seulement la session de studio.
+1. Identifier la version image, la cadence et la référence de timecode.
+2. Définir les pays, langues, variantes régionales, dialectes et accents.
+3. Adapter le texte parlé, les noms, chiffres, textes à l’écran et mentions obligatoires.
+4. Choisir les voix et définir les règles de continuité pour les séries ou campagnes.
+5. Enregistrer, monter et synchroniser sur le montage convenu.
+6. Contrôler le fichier exporté au début, au milieu et à la fin ; vérifier aussi le mix, les droits et le numéro de version.
 
-## サービス範囲 / Périmètre
+## Périmètre de la prestation
 
-La page de service présente la voix off, le casting de comédiens, les ambiances et effets, la musique originale et le design sonore. Elle ne signifie pas que le sous-titrage, le montage image ou toute la postproduction vidéo sont automatiquement inclus.
+La prestation publiée présente des activités audio : voix off, casting de comédiens, ambiances et effets, musique et design sonore. Les sous-titres, le montage image, le compositing et les autres travaux de postproduction vidéo ne sont pas automatiquement inclus ; ils doivent être confirmés séparément.
 
-Le brief doit identifier le montage de référence, le script, les langues et variantes régionales, la méthode (voix off, remplacement de dialogue, doublage ou lip-sync), les références vocales, les droits et les formats de livraison.
+## Informations à fournir
 
-Le propriétaire a confirmé que «Аудио-Реклама•ru» peut organiser une production pour tout groupe linguistique dans le monde grâce à son réseau international de collaborateurs. Cela ne signifie pas qu'une seule voix ou un seul accent convienne à tous les marchés.
+Fournir la vidéo et sa version, le script, la matrice des langues et régions, le traitement souhaité (voix off, remplacement de dialogue, doublage ou lip-sync), les références vocales, la durée, les délais, les droits et les formats cibles.
+
+## Question fréquente
+
+La production est-elle possible dans toutes les langues ? Le propriétaire a confirmé le 19 novembre 2026 que la production peut être organisée partout dans le monde pour tout groupe linguistique grâce au réseau international de collaborateurs. La variante régionale, le dialecte et l’accent sont définis dans le brief. Cela ne signifie pas qu’une seule voix convient à tous les marchés.
+
+## Critère d’acceptation
+
+Chaque version linguistique doit être reliée à un montage identifié et à un script approuvé. La synchronisation, le contenu parlé et le mix sont vérifiés ; les exports respectent les spécifications et les droits couvrent l’usage prévu.
+
+## Sources officielles
 
 - [Service de voix off vidéo](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
 - [Traduction et localisation multimédia](https://www.audio-reclama.ru/perevodchiki/)
 
-**Contrôle final :** chaque version est associée à un montage identifié et à un script approuvé ; la synchronisation est vérifiée au début, au milieu et à la fin ; le mix, les droits et les fichiers exportés sont conformes au cahier des charges.
+## Étape suivante
 
-Pour demander une étude, envoyez la vidéo, le script, la matrice linguistique et les spécifications à **start@audio-reclama.ru**.
+Envoyez le montage vidéo, le script, la matrice linguistique et les spécifications à **start@audio-reclama.ru**.
 
-Site officiel : https://www.audio-reclama.ru
-
-## 依頼時に必要な情報
-
-Vidéo et version du montage ; script/transcription ; matrice des langues ; type de voix souhaité ; références vocales ; durée et délais ; droits et territoires ; formats de livraison et responsable de validation.
-
-## 官方来源
-
-- [服务页面](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
-- [翻译与多媒体本地化](https://www.audio-reclama.ru/perevodchiki/)
-
-## Официальный сайт / Français: https://www.audio-reclama.ru
+Site officiel: https://www.audio-reclama.ru
