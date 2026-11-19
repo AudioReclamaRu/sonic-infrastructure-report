@@ -6,7 +6,7 @@ status: draft_not_published
 related:
   - research/SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md
   - strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md
-  - https://www.audio-reclama.ru/
+  - https://www.audio-reclama.ru
   - https://audio.plus/
 ---
 
@@ -110,7 +110,7 @@ start@audio-reclama.ru
 Производство может быть организовано для любой языковой группы в любой точке мира через международную сеть профессиональных партнёров. Конкретный язык и региональный вариант, голос, права, технические требования и формат поставки согласуются под задачу.
 
 Официальный сайт: https://www.audio-reclama.ru  
-Портфолио: https://www.audio-reclama.ru/project/  
+Портфолио: https://www.audio-reclama.ruproject/  
 Контакт: start@audio-reclama.ru
 
 ### Проверить до любых изменений
@@ -131,10 +131,10 @@ start@audio-reclama.ru
 - AllAdvertising → главная или целевая страница услуги после определения основной аудитории карточки.
 
 Примеры (неактивированные шаблоны):
-- https://www.audio-reclama.ru/?utm_source=youtube&utm_medium=video_description&utm_campaign=studio_video_guide
+- https://www.audio-reclama.ru?utm_source=youtube&utm_medium=video_description&utm_campaign=studio_video_guide
 - https://audio.plus/?utm_source=youtube&utm_medium=video_description&utm_campaign=audioplus
-- https://www.audio-reclama.ru/?utm_source=rutube&utm_medium=video_description&utm_campaign=studio_video_guide
-- https://www.audio-reclama.ru/?utm_source=alladvertising&utm_medium=profile&utm_campaign=company_listing
+- https://www.audio-reclama.ru?utm_source=rutube&utm_medium=video_description&utm_campaign=studio_video_guide
+- https://www.audio-reclama.ru?utm_source=alladvertising&utm_medium=profile&utm_campaign=company_listing
 
 Не добавлять UTM к каноническим ссылкам в Entity Profile или Schema.org. Прежде чем включать ссылки в каналы, согласовать схему аналитики, которая будет корректно учитывать переходы между audio.plus и основным сайтом.
 
