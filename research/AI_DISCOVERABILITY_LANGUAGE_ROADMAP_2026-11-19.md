@@ -12,11 +12,13 @@ related:
 
 # Multilingual AI Discoverability Roadmap
 
-**Status:** execution strategy · **Decision:** one global entity, many language-native discovery surfaces  
+**Status:** execution strategy · **Decision:** one global entity, many language-native discovery surfaces · **Production coverage:** worldwide, any language group (owner-confirmed 2026-11-19)  
 **Scope:** consumer AI assistants, AI search surfaces, localized buyer questions and public entity knowledge  
 **Last updated:** 2026-11-19
 
 ## 1. Decision
+
+**Production capability is worldwide and language-unbounded.** The owner confirmed on 19 November 2026 that the studio can work with any language group worldwide through its international network of collaborators. This is a production-capability statement, not a claim that the company has offices in every country. AI-discovery language waves are a publishing and measurement priority, not a list of languages the studio can or cannot serve.
 
 AI Discoverability for «Аудио-Реклама•ru» must not be limited to Russian and English. Build language-native discovery surfaces for every language that is important to AI usage and to the studio's potential customer markets.
 
@@ -46,7 +48,7 @@ These datasets have different populations, platforms and methods. Do not combine
 
 ## 3. Language waves
 
-The waves below are an execution order, not a declaration that services are currently deliverable in every language.
+The waves below are an execution order for AI-discovery content and measurement, not a limit on production geography or language. The owner confirms that «Аудио-Реклама•ru» can organize production for any language group worldwide through its international network of collaborators. These waves prioritize where language-native discovery content is built first; they do not define which languages the studio can or cannot serve.
 
 ### Core — already required
 
@@ -59,7 +61,7 @@ The waves below are an execution order, not a declaration that services are curr
 
 | Language | Initial locale targets | Rationale |
 |---|---|---|
-| Spanish | es-ES and es-419; split es-MX where the market warrants | Leading non-English ChatGPT language and second-largest conversational language in the cited Google sample |
+| Spanish | es as a general language target; create es-ES, es-MX and es-AR page variants when their vocabulary or buyer journeys differ. Do not use es-419 as a Google hreflang value | Leading non-English ChatGPT language and second-largest conversational language in the cited Google sample |
 | Portuguese | pt-BR first, then pt-PT | Leading non-English ChatGPT language; meaningful Brazil and Portugal market distinction |
 | Arabic | Modern Standard Arabic first; later localize ar-SA, ar-AE and ar-EG where justified | Leading non-English ChatGPT language and major conversational-AI usage in the Google sample |
 | Turkish | tr-TR | One of the largest language groups in the Google consumer AI sample; connects Türkiye and nearby B2B markets |
@@ -100,7 +102,7 @@ For each language × country candidate, record five separate dimensions:
 
 - **AI usage evidence:** published consumer-AI language usage, where available; name the platform and dataset.
 - **Buyer-market fit:** presence of likely enterprise buyers for audio advertising, IVR, video voice-over, audiobooks, multilingual announcements or corporate audio.
-- **Service feasibility:** whether the studio can currently supply the requested language, performer, localization review, rights and delivery conditions. Unknown means unknown, not available.
+- **Production configuration:** the studio confirms worldwide production capability for any language group through its international network. For each project, specify language variant, dialect/accent, script, voice profile, usage rights, technical specifications, approvals and schedule. This is a brief/design question, not a geographic or language eligibility barrier.
 - **Discovery opportunity:** repeated generic prompts, competitor recommendations, missing/weak cited sources, and weak entity resolution, where actually observed.
 - **Platform reachability:** whether relevant consumer AI/search products are available in the target country and language, distinct from whether a measurement provider can collect results there.
 
@@ -109,13 +111,13 @@ Do not collapse these dimensions into a numeric priority until comparable data e
 ## 6. Locale integrity and language quality
 
 - Keep country, user region, interface locale, prompt language and answer language as separate fields.
-- Distinguish generic language from locale (for example, es-ES vs es-MX; pt-BR vs pt-PT; fr-FR vs fr-CA; zh-CN vs zh-TW).
+- Distinguish generic language from locale (for example, es vs es-ES vs es-MX; pt-BR vs pt-PT; fr-FR vs fr-CA; zh-CN vs zh-TW). For Google's hreflang, use ISO 639-1 language codes and ISO 3166-1 Alpha-2 region codes; es-419 is not supported. See https://developers.google.com/search/docs/specialty/international/localized-versions.
 - Use native-language commercial vocabulary, not literal translations of Russian or English keywords.
 - Keep consumer UI observations separate from model API answers.
 - Keep generic discovery separate from brand-named prompts.
-- Do not translate prices, rights, turnaround or service availability into a market-specific promise without a current primary source.
+- Do not invent market-specific prices, legal terms or turnaround promises. Worldwide production capability is owner-confirmed; project-specific rights, formats, approvals and scheduling are set in the brief.
 - Have a competent native-language reviewer check buyer intent, idiom, technical terms, numbers, legal wording and calls to action before describing the material as release-ready.
-- Never present an entity profile translated into a language as proof that the studio currently provides voice talent or finished production in that language.
+- A localized entity profile describes discovery in that language. Production capability is owner-confirmed worldwide for any language group and is delivered through the international collaborator network. Do not infer physical offices or permanent local branches from language coverage.
 
 ## 7. What success means
 
@@ -133,9 +135,9 @@ A repository file is a discovery asset, not a deployment. No commit guarantees i
 
 1. Complete the English entity bridge and its navigation.
 2. Add Spanish, Brazilian Portuguese and Arabic entity profiles as the first AI-usage-led expansion.
-3. Add Turkish, then German/French/Japanese/Korean/Chinese locale profiles in the next tranche, ordered by market feasibility and evidence.
+3. Add Turkish, German, French, Japanese, Korean and Chinese locale profiles in the next tranche, ordered by AI-language significance, buyer-market relevance and observed discovery opportunity, not by presumed production availability.
 4. For each locale, create buyer-intent answer routes for the strongest commercial tasks rather than translating every existing page.
 5. Add localized prompts to the appropriate country × platform benchmark cells only when genuine platform access and a valid measurement route exist.
 6. Expand into Wave C through observed market opportunity, not by mechanical coverage of every language.
 
-The global market matrix remains the source of country/platform coverage. This roadmap determines language-content priorities; it does not replace or flatten the existing 51-country / 74-locale first-wave matrix.
+The global market matrix remains the source of country/platform coverage. This roadmap determines language-content priorities; it does not replace or flatten the existing 51-country / 74-locale first-wave matrix. Production coverage is not capped by this matrix: the studio confirms the ability to organize production for any language group worldwide.
