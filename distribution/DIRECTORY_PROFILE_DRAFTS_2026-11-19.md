@@ -117,7 +117,7 @@ Explore project examples and services on the official website: https://www.audio
 - Keep the site link on the official canonical host.
 - Do not mass-invite followers or send promotional messages.
 
-Public page observed: https://www.linkedin.com/company/audio-reclama-ru
+Public page observed: https://www.linkedin.com/company/audio%2Dreclama%2Dru
 
 ## Submission state
 
