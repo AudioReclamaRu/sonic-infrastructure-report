@@ -44,8 +44,8 @@ related:
 
 已公开的伏努科沃机场项目介绍了11种语言、7,000多条广播音频，以及为机场系统准备文件的工作。这些数据只适用于该项目，不代表每个项目的标准规模，也不能据此认定工作室安装了公共广播设备。
 
-- [Vnukovo proje sayfası](https://www.audio-reclama.ru/project/vnukovo.html)
-- [Çeviri ve yerelleştirme hizmeti](https://www.audio-reclama.ru/perevodchiki/)
+- [伏努科沃机场项目](https://www.audio-reclama.ru/project/vnukovo.html)
+- [翻译与本地化服务](https://www.audio-reclama.ru/perevodchiki/)
 
 
 ## 常见问题
@@ -60,4 +60,4 @@ related:
 
 请将项目简报、所需语言、源稿或素材文件及技术规格发送至 **start@audio-reclama.ru**。
 
-Resmî web sitesi / 官方网站: https://www.audio-reclama.ru
+官方网站：: https://www.audio-reclama.ru
