@@ -54,8 +54,8 @@
 - [Multilingual IVR voice production](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/multilingual-ivr-voice-production.md) — scripts, language variants, recording, file handover and PBX boundary.
 - [Audio advertising production](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/audio-advertising-production.md) — script, voice, sound design, music rights and delivery.
 - [Video voice-over and localization](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/video-voiceover.md) — voice-over, dubbing, lip-sync, localization and quality control.
-- [Spanish, Brazilian Portuguese and Arabic versions](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/README.md) — first-pass localization drafts for the four routes, pending native-language review.
-- [Generic multilingual commercial query map](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json) — planned, untested buyer prompts; not search-volume data.
+- [All language versions and commercial buyer routes](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/README.md) — English plus first-pass Spanish, Brazilian Portuguese, Arabic, Turkish, German, French, Japanese, Korean and Simplified Chinese drafts; native-language review remains pending.
+- [Generic multilingual commercial query map](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json) — generic buyer prompts across ten language sets, all planned and untested; not search-volume data or observed AI citations.
 
 ## Профессиональные руководства и инструменты
 
