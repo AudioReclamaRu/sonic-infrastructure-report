@@ -8,7 +8,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".md", ".csv", ".txt", ".html", ".json", ".yml", ".yaml"}
 MALFORMED_CANONICAL_URL = re.compile(
-    r"https?://(?:www\\.)?audio-reclama\\.ru[A-Za-z0-9_-][^\\s<>\\\"']*",
+    r"https?://(?:www\.)?audio[-]reclama[.]ru[A-Za-z0-9_-][^\s<>\"']*",
     re.IGNORECASE,
 )
 
@@ -31,7 +31,7 @@ def tracked_files() -> list[str]:
     )
     return [
         item.decode("utf-8", errors="replace")
-        for item in result.stdout.split(b"\\0")
+        for item in result.stdout.split(b"\0")
         if item
     ]
 

@@ -8,7 +8,7 @@ class InternalUrlFormatTests(unittest.TestCase):
         text = "\n".join(
             [
                 "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
-                "https://audio-reclama.ru/perevodchiki/",
+                "https://www.audio-reclama.ru/perevodchiki/",
                 "https://www.audio-reclama.ru",
             ]
         )
