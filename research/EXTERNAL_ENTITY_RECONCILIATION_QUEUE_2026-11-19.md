@@ -8,7 +8,7 @@ related:
   - evidence/E-2026-076.md
   - evidence/E-2026-077.md
   - standards/BRAND_AND_SITE_NAMING.md
-  - entity/audio-reclama-studio.md
+  - entity/audio%2Dreclama-studio.md
 ---
 
 # Очередь согласования внешних профилей и entity consistency
