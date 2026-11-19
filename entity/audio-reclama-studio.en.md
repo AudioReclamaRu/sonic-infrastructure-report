@@ -97,3 +97,13 @@ Do not infer offices, branches or physical studios in every market. Worldwide la
 - [Corporate songs and anthems](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html)
 
 **Record status:** this English-language working profile is maintained in the public Git repository and requires editorial review before being treated as a final external page. The worldwide capability statement is owner-confirmed on 19 November 2026; service descriptions and project examples are also linked to public first-party pages. Its JSON-LD companion is repository metadata only; neither file is installed on the official website. Repository publication does not guarantee indexing, AI retrieval, citation or recommendation.
+
+
+## High-intent international buyer routes
+
+- [Multilingual airport and public-address announcements](../guides/airport-announcements.md)
+- [Multilingual IVR voice production](../guides/multilingual-ivr-voice-production.md)
+- [Audio advertising production](../guides/audio-advertising-production.md)
+- [Video voice-over and localization](../guides/video-voiceover.md)
+
+These are source-grounded repository knowledge assets and working buyer-route drafts; they are not published service pages on the official website.
