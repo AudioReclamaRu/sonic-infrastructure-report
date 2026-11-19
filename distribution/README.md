@@ -16,6 +16,7 @@ related:
 - [План привлечения внимания и переходов на официальный сайт](../strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md) — основан на GSC/GA4 и действующих поверхностях.
 - [Медиакит и тексты для подкастов/редакций](MEDIA_AND_PODCAST_KIT_2026-11-19.md) — краткое описание, host-read 15/30 сек., три редакционные темы, факты и UTM-шаблоны. Статус: draft_not_sent.
 - [Адаптации для LinkedIn, VK и YouTube](OWNED_CHANNEL_ADAPTATIONS_2026-11-19.md) — отдельные варианты для собственных каналов; статус: draft_not_published.
+- [Черновики профилей для VORG, The VoiceOver Community, Enterprise League и LinkedIn](DIRECTORY_PROFILE_DRAFTS_2026-11-19.md) — точные тексты и проверки до подачи; ни одна карточка не отправлялась.
 - [Нативная статья для Дзена о многоязычных объявлениях](DZEN_MULTILINGUAL_AUDIO_ANNOUNCEMENTS_2026-11-19.md) — отдельная редакционная адаптация с первичными ссылками на проекты. Статус: draft_for_owner_editorial_review.
 - [Реестр точек привлечения внимания](../research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv) — фактические поисковые поверхности, профили, каталоги, редакции и следующий безопасный шаг.
 
