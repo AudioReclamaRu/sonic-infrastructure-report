@@ -2,7 +2,7 @@
 type: doc
 date: 2026-11-17
 lang: en
-related: [strategy/ATTENTION_ECOSYSTEM_RECON_2026-11-14.md]
+related: [strategy/ATTENTION_ECOSYSTEM_RECON_2026-11-14.md, evidence/E-2026-078.md]
 ---
 
 # Attention Surface Register — 2026-11-17
@@ -24,7 +24,7 @@ This register converts the attention-surface candidates researched in the ecosys
 
 | Priority | Candidates | Rationale |
 |---|---|---|
-| P1 — inspect first | Voice Over Resource Guide; The VoiceOver Community | Free standard/resource listing is explicitly described and directory categories are close to professional audio/production services. Exact category eligibility still requires checking. |
+| P1 — inspect first | Clutch Basic + The Manifest; Sortlist Free; Voice Over Resource Guide | Current official terms confirm free company profiles, strong voiceover/audio-production/Audio Production category fit, and potential independent directory surfaces. Employee/rate/location/budget fields still require owner verification. |
 | P2 — conditional | Podder Directory; Podcast-Led Growth | Relevant only if the actual service fits podcast production categories; free/acceptance details differ. |
 | P3 — conditional venue/expert | WhereToPodcast; Podpal; SourceBottle | Require a qualifying physical studio or a genuine individual expert profile; do not create inaccurate company/venue profiles. |
 | Monitor only | Source of Sources | Journalist-query opportunity channel, not a directory. Respond only to individually relevant requests after checking terms. |
@@ -46,6 +46,17 @@ Six additional surfaces were added after a second discovery pass:
 - **VoiceLab360** — studio partner listing stated free, but only for qualifying professional studios, home studios, remote-session studios or production facilities with voice capability. A 2.5% platform booking fee applies to completed bookings processed there; platform terms require those bookings to remain on-platform.
 - **Podcasting Source** — invites studios, software, agencies and services to list, but free pricing and submission terms have not been confirmed. Keep unpriced until checked.
 - **GetListedGlobal** — generic international business directory with a free standard listing and account requirement. Low priority until country support, category quality, data terms and buyer relevance are checked.
+
+## AI-discoverability surfaces verified 2026-11-19
+
+A focused AI-discoverability pass verified three first-wave free routes and one secondary specialist directory. The detailed primary-source record is E-2026-078; the ready-to-review profile wording is in AI_DISCOVERABILITY_EXTERNAL_PROFILE_COPY_2026-11-19.md.
+
+- **Clutch Basic + The Manifest — P1:** free Basic profile; included in Clutch's service-line directories and, according to Clutch's help center, on The Manifest. Clutch has a live global Voiceover directory. The free profile lacks priority rank and a website link from directory pages; Verified is $499/year and paid. Do not purchase the Verified tier or advertising.
+- **Sortlist Free — P1:** free provider profile and exact Audio Production category. Sortlist accepts providers globally, while its marketing focus is currently Benelux, France and Spain. Paid Sortlist+ is £129/month and credits are separate; do not purchase either.
+- **Voice Over Resource Guide — P1:** free standard recording-studio/audio-production listing with Global/Remote option. A physical address is needed only for Map Search; no address should be invented. Human editorial review is required.
+- **The VoiceOver Community — P2:** free standard resource listing under Production Services / Recording Studios; enhanced listings are paid. Specialist audience; confirm international/remote listing fields.
+
+For every candidate, current state remains NOT_CHECKED in the platform's native directory. Indexed search misses do not prove absence. No profile, account, form, claim, review request, paid feature or submission was created.
 
 ## Existing public brand profiles discovered 2026-11-17
 
@@ -95,3 +106,28 @@ The initial indexed search did not surface exact-match results for VORG or The V
 Before preparing any profile copy, verify (1) exact category fit against the actual offer, (2) current directory presence using the platform's own search, (3) country/region eligibility, (4) free-tier limits and paid boundaries, and (5) terms governing submitted text, images, and intellectual property.
 
 For existing presences, first verify (1) identity and legal-entity match, (2) factual freshness of address, contacts, services and portfolio, (3) profile owner/admin access, (4) source and rights of media/assets, and (5) whether public metrics indicate meaningful audience. Record unresolved conflicts; do not make edits or claims without explicit authorization.
+
+## X channel decision — corrected 2026-11-19
+
+The company owner supplied an existing profile URL: https://x.com/audioreclamaru (`@audioreclamaru`). The earlier exact-name search miss was not evidence that no account exists. The profile content could not be independently read in this research session (public fetch returned 403), so audience size, recent activity and profile completeness remain to be audited.
+
+- The existing Metricool brand has no X/Twitter network in its returned connection state; the supplied X profile is not currently linked there.
+- Official Metricool terms require Starter or higher plus a €10/$10 monthly X add-on per connected account (€120/$120 yearly); the add-on is charged immediately and may be prorated. No spend is approved.
+- DataReportal's late-2026 Russian X advertising reach of 549,000 (0.4% of population) is an ad-planning estimate, not MAU and not a measure of this profile's audience or B2B buyer segment.
+- Next step: inspect the existing profile and audience in X, then compare likely commercial relevance with the incremental automation cost.
+- Use only authorized API-based publishers; never browser-macro automation, mass-following, unsolicited DMs or engagement spam.
+
+See `evidence/E-2026-081.md` for the full decision basis. No OAuth access was granted, no add-on was purchased, and no posts were scheduled or published.
+
+## X operating route — direct API, independent of Metricool (2026-11-19)
+
+The owner supplied an existing company profile URL: https://x.com/audioreclamaru (`@audioreclamaru`). Metricool is not the only publishing route.
+
+- **xAI API** has an official `x_search` tool for real-time X keyword/semantic search, user lookup and thread fetch; it can restrict search to specific handles and dates. Its role is research/discovery only, not posting. Current price: $5/1,000 posts and $10/1,000 user profiles fetched, plus model tokens.
+- **Official X API** is the separate social-platform API. It has app-only read access to public content and user-context endpoints for posting and reposting. Current pay-per-use pricing has no monthly subscription or minimum spend; credits are prepaid. Reference prices: $0.005/public post read; $0.010/user read; $0.001/qualified own-account read; $0.015/post create and $0.015/user interaction create. Current Developer Console prices govern; do not buy credits without approval.
+- **FxEmbed/FxTwitter** offers a public third-party read API for profile/media timeline/search/thread data. It is read-only in our proposed workflow and is not an official X endpoint or a repost route.
+- The current Windsor.ai `twitter` and `x_organic` connectors have no exposed write actions. They are not sufficient for reposts.
+
+Proposed route: use official X API for owned posts, mentions and authorized reposts; optionally use xAI X Search as an external discovery layer. Start with a logged candidate queue and strict topical/brand-safety filters, then consider bounded automation only after authorization and validation. No browser macros, mass-following, automated engagement loops, private-post access or unsolicited DMs.
+
+Full API capabilities, costs, authentication caveats and setup path: `evidence/E-2026-107.md`.
