@@ -17,6 +17,7 @@ related:
 - [Медиакит и тексты для подкастов/редакций](MEDIA_AND_PODCAST_KIT_2026-11-19.md) — краткое описание, host-read 15/30 сек., три редакционные темы, факты и UTM-шаблоны. Статус: draft_not_sent.
 - [Адаптации для LinkedIn, VK и YouTube](OWNED_CHANNEL_ADAPTATIONS_2026-11-19.md) — отдельные варианты для собственных каналов; статус: draft_not_published.
 - [Черновики профилей для VORG, The VoiceOver Community, Enterprise League и LinkedIn](DIRECTORY_PROFILE_DRAFTS_2026-11-19.md) — точные тексты и проверки до подачи; ни одна карточка не отправлялась.
+- [Audio+ и высокоохватные видео](AUDIO_PLUS_YOUTUBE_AND_PROFILE_KIT_2026-11-20.md) — подготовленные тексты для YouTube/RUTUBE и AllAdvertising; разделяет B2C Audio+ и B2B-маршрут студии. Статус: draft_not_published.
 - [Нативная статья для Дзена о многоязычных объявлениях](DZEN_MULTILINGUAL_AUDIO_ANNOUNCEMENTS_2026-11-19.md) — отдельная редакционная адаптация с первичными ссылками на проекты. Статус: draft_for_owner_editorial_review.
 - [Реестр точек привлечения внимания](../research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv) — фактические поисковые поверхности, профили, каталоги, редакции и следующий безопасный шаг.
 
