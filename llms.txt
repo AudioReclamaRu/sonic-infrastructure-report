@@ -49,6 +49,15 @@
 
 ## Измерение видимости в ответах ИИ
 
+## Внешние источники и граф сущности
+
+- [Каноническая сущность студии](entity/audio-reclama-studio.md): source-graded сведения и профили внешних платформ.
+- [Внешние доказательства E-2026-076](evidence/E-2026-076.md): WOW Awards 2018, AllAdvertising RRAR-2026, Cinematch, LinkedIn, Ruward, RUTUBE и исторические профили.
+- [Внешние доказательства E-2026-077](evidence/E-2026-077.md): публичные профили YouTube и Dzen, локальный XTOOL и ограничения VK entity link.
+- [План внешней AI Discoverability](research/AI_DISCOVERABILITY_OFFSITE_EXECUTION_PLAN_2026-11-19.md): entity resolution, независимые цитаты, профили и реальные измерения ответов ИИ.
+- [Очередь согласования внешних профилей](research/EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md).
+- [Пакет точных RU/EN описаний профилей](research/EXTERNAL_ENTITY_PROFILE_COPY_PACK_2026-11-19.md): owner-review only; ничего не опубликовано.
+
 - [Глобальный протокол AI Visibility Benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md): все регионы мира, глобальные и региональные платформы, UI/API, языки и интенты.
 - [Глобальная матрица рынков, языков и платформ](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-global-market-matrix-2026-11-17.json): первая волна ячеек для проверки, не исчерпывающий список стран.
 - [RU-контрольные запросы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-queries-2026-11-17.json): отдельный фиксированный модуль из 20 русскоязычных вопросов; ещё не прогнан.
