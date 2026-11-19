@@ -70,7 +70,7 @@ related:
 ## Внешние медиа-активы и независимые записи
 
 - **YouTube, архивный видеогид услуг:** https://www.youtube.com/watch?v=MJJcbzR2wto. Опубликован 13.11.2012; live snapshot 19.11.2026 — 513,173 накопленных просмотра и 252 likes. В описании перечисляет запись дикторов, рекламные аудиоролики, озвучивание видео и презентаций, голосовые приветствия и IVR. Это исторический накопленный счётчик конкретного ролика, не текущий охват канала.
-- **TexTerra, страница бывшего клиента:** https://texterra.ru/clients/audio-reclama-ru.html. Публичная запись указывает период сотрудничества сентябрь 2016 — июнь 2017 и выполненную работу «комплексный интернет-маркетинг». Это доказательство исторических деловых отношений, не текущий контракт, не раскрытый scope и не KPI.
+- **TexTerra, страница бывшего клиента:** https://texterra.ru/clients/audio%2Dreclama-ru.html. Публичная запись указывает период сотрудничества сентябрь 2016 — июнь 2017 и выполненную работу «комплексный интернет-маркетинг». Это доказательство исторических деловых отношений, не текущий контракт, не раскрытый scope и не KPI.
 - **YouTube channel:** https://www.youtube.com/@audioreclama — canonical profile; included in `sameAs`.
 - **Dzen channel:** https://dzen.ru/audioreclamaru — canonical author hub; included in `sameAs`, noting the author page currently returns `noindex, follow`.
 
