@@ -62,6 +62,20 @@ The official English homepage publicly presents examples including:
 
 These are portfolio references published on the studio's own website. They are not independent customer reviews, third-party endorsements, proof of current client relationships, quantified outcomes or permission to reuse customer names, logos, recordings or project materials outside their published context. Use the source page for exact wording and project detail.
 
+## Audio+ is a separate self-service product route
+
+The studio's public website links to Audio+ at https://audio.plus/. Audio+ is a separate product funnel and should not be treated as another name for the studio or as the default route for every business project.
+
+**Published offer boundary:** the public offer defines the buyer as a natural person and explicitly says the service is not intended for legal entities and individual entrepreneurs. The offer also describes prepayment, one delivered version, restrictions on changes after work begins, a publication-consent mechanism and licensing terms. This is a summary of the published text, not a legal opinion; confirm the live offer before making any customer-facing promise.
+
+For a business customer, legal entity or sole proprietor, a multi-file or multilingual assignment, individually negotiated rights or non-standard technical requirements, use the main studio's direct project route rather than automatically sending the enquiry to the Audio+ checkout.
+
+The owner-confirmed worldwide production capability belongs to the studio's broader production network. It must not automatically be attributed to the fixed self-service Audio+ voice selector: Audio+'s complete language coverage and availability for every locale have not been verified.
+
+Prices, counters, text limits and turnaround statements are dynamic. The older Audio+ article on the main website contains different price and word-limit information from the saved Audio+ page snapshot. Do not repeat the old price or a two-hour promise without current operational confirmation.
+
+The product has its own source-graded profile and Schema.org companion: [Audio+ entity record](audio-plus.ru.md) and [Audio+ Service JSON-LD](audio-plus.jsonld).
+
 ## International language and routing limits
 
 An English-language homepage exists at https://www.audio-reclama.ru/en/. In the website paths observed for this profile, several service links from that English homepage resolve to Russian-language pages, including the audio-commercial, IVR, translation, voice-talent and audiobook destinations. This is a website-localization and buyer-journey gap, not a production-capability gap: the studio's worldwide network can organize production for any language group. The next discovery improvement is to provide language-native service explanations and enquiry routes, while accurately stating which existing service source is currently in Russian.
