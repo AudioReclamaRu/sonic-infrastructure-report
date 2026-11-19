@@ -98,6 +98,28 @@ A read-only audit of live public metadata and machine-access files is recorded i
 
 No JSON-LD additions are proposed until the live page source is checked for existing markup. The repository's JSON-LD profile is a comparison candidate, not proof that structured data is deployed on the official site.
 
+### 2C. Root llms.txt and AI crawler access — live recheck 19.11.2026
+
+The 18.11.2026 snapshot in E-2026-074 recorded a 404 for the root `llms.txt`. A new read-only fetch on 19.11.2026 successfully retrieved the public file. This supersedes the earlier 404 only as a statement about the **current** state; the previous observation remains a valid dated snapshot.
+
+**What is now confirmed**
+- `https://www.audio-reclama.ru/llms.txt` is live and contains service/catalogue navigation, a bilingual introduction, project references, contact links and important caveats.
+- The public file correctly warns that the English localization is partial and that the number of languages represented by voice talent is not the number of website language versions.
+- `robots.txt` and `sitemap.xml` are both publicly retrievable; the sitemap lists 1,186 URLs.
+- The live robots file has a generic `User-agent: *` group and no explicit `OAI-SearchBot` or `GPTBot` group. Key public service/catalogue routes inherit the generic policy and are not caught by the listed private/transactional path exclusions.
+- OpenAI distinguishes `OAI-SearchBot` (ChatGPT Search discovery) from `GPTBot` (potential model-training crawl). The purposes are separate; no claim of an actual crawl, index or citation follows from robots permission alone.
+
+**Live-file correction candidate**
+- The published llms file uses an alternative Latin rendering of the brand and a trailing slash on the homepage URL, contrary to the mandatory canonical naming rule.
+- A corrected, owner-review-only text is prepared in [LLMS_TXT_CORRECTED_OWNER_REVIEW_2026-11-19.md](LLMS_TXT_CORRECTED_OWNER_REVIEW_2026-11-19.md). It preserves the existing caveats and links; it is not published.
+- Keep the existing root file. Do not create another version, change robots.txt or modify the CMS without explicit permission.
+
+**Policy caution**
+- The live robots file contains both `Disallow: /en/*` and `Allow: /en/`. Google's parser treats the trailing wildcard as redundant and gives precedence to the more-specific Allow; Yandex has its own matching rules, so verify the pair in Yandex Webmaster before claiming cross-engine access for all /en/ URLs. No robots edit is proposed.
+- The English page currently has `og:url` pointing to the Russian homepage and only 19 GSC impressions / 0 clicks across 11 countries in 16.08–16.11.2026. Treat it as a partial entry page, not a working international acquisition surface.
+
+Full evidence and boundaries: [E-2026-075](../evidence/E-2026-075.md).
+
 ### 3. Social distribution: TikTok is now connected, but its first measured post has zero views
 
 The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricool sync completed. The later Metricool brand settings now confirm TikTok account `audio_reclama_ru` alongside Facebook, Instagram and YouTube; vidIQ also confirms an active, publish-capable TikTok connection.
@@ -174,5 +196,8 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-072 — Russia-only Search Console and video discovery-path audit](../evidence/E-2026-072.md)
 - [E-2026-073 — Voice-catalog discoverability and semantic clarity](../evidence/E-2026-073.md)
 - [E-2026-074 — Official-site AI access and semantic consistency](../evidence/E-2026-074.md)
+- [E-2026-075 — Live llms.txt, robots policy and page metadata recheck](../evidence/E-2026-075.md)
+- [Corrected root llms.txt proposal for owner review](LLMS_TXT_CORRECTED_OWNER_REVIEW_2026-11-19.md)
+- [Live root llms.txt review summary](LLMS_TXT_LIVE_REVIEW_2026-11-19.md)
 
 Competitor price data is self-published by competitors and is not independent validation. All performance values retain the source and date window in the evidence files.
