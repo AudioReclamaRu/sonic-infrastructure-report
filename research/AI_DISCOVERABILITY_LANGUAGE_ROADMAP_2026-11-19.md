@@ -5,8 +5,6 @@ lang: en
 related:
   - research/ai-visibility-global-market-matrix-2026-11-17.json
   - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
-  - entity/audio-reclama-studio.md
-  - entity/audio-reclama-studio.en.md
   - strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md
 ---
 
