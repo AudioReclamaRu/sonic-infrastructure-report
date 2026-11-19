@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama/ai-visibility-benchmark/1",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "created": "2026-11-17",
   "language": "ru",
   "target_region": "RU",
@@ -109,7 +109,8 @@
         "entity/audio-reclama-studio.md",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "evidence/E-2026-097.md"
       ],
       "must_not_claim": [
         "Не повторять 618 как актуальное значение и не выбирать 622/620 без оговорки."
@@ -514,14 +515,15 @@
       "region": "RU",
       "query": "Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
       "expected_facts": [
-        "На разных страницах одного домена встречаются значения 619, 620, 621, 622 и 794.",
-        "Нужно сообщить о расхождении и не выбирать одно значение без сверки."
+        "На главной странице при одной проверке 18.11.2026 одновременно отображались общие счётчики 622 и 620.",
+        "На странице каталога 309 относится только к фильтру русского языка.",
+        "Исторические значения 619, 621 и 794 нельзя смешивать или усреднять с текущими значениями; единое общее число не нормализовано."
       ],
       "preferred_sources": [
-        "https://www.audio-reclama.ru/",
-        "https://www.audio-reclama.ru/perevodchiki/",
-        "https://www.audio-reclama.ru/diktoryi/",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/diktory/",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "evidence/E-2026-097.md"
       ],
       "must_not_claim": [
         "Не усреднять значения и не называть одно из них текущим подтверждённым числом."
@@ -885,22 +887,24 @@
       "cluster": "brand_entity",
       "language": "ru",
       "region": "RU",
-      "query": "Почему на главной странице указано 622 диктора, а в русском фильтре каталога — 309?",
+      "query": "Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
       "expected_facts": [
-        "На главной странице при повторной проверке 18.11.2026 отображалось 622 диктора и 62 языка.",
-        "На странице каталога 309 относится к русскому фильтру, а не к сумме всех языковых профилей.",
-        "Исторические снимки содержали разные счётчики; единое число общего каталога не нормализуется без определения метрики."
+        "На главной странице при одной проверке 18.11.2026 одновременно отображались два общих счётчика: 622 и 620; рядом заявлены 62 языка.",
+        "309 относится к результату русского языкового фильтра и не является общим числом голосов.",
+        "Ни один из общих счётчиков нельзя объявить единственным корректным без определения метрики владельцем."
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru",
-        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/diktory/",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
-        "evidence/E-2026-097.md"
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-104.md"
       ],
       "must_not_claim": [
-        "Не выдавать число 309 из русской категории за весь международный каталог.",
-        "Не считать разные даты и области счёта одной и той же метрикой."
+        "Не выдавать число 309 из русской категории за весь каталог.",
+        "Не игнорировать один из двух общих счётчиков, одновременно видимых на главной странице.",
+        "Не усреднять счётчики или объяснять причину расхождения без источника."
       ],
       "status": "not_run"
     },
@@ -952,6 +956,50 @@
         "Не приписывать ей автоматическое соответствие любой площадке."
       ],
       "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-22",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "expected_facts": [
+        "Джингл уместен как короткая музыкальная или вокальная звуковая подпись, заставка либо повторяемый мотив для аудиомедиа; формат зависит от носителя и задачи.",
+        "До производства нужно определить бренд/фразу, аудиторию, канал и контексты использования, длительность, язык/версии, музыкальные референсы и права.",
+        "Официальная страница «Аудио-Реклама•ru» заявляет радиоджинглы, музыкальные мотивы, джинглы для программ и рекламные пропевки."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "evidence/E-2026-100.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не обещать измеренный рост узнаваемости, запоминания или продаж.",
+        "Не предполагать права на стороннюю музыку без отдельной проверки."
+      ],
+      "status": "not_run"
+    },
+    {
+      "id": "AR-PROBLEM-23",
+      "cluster": "problem_solving",
+      "language": "ru",
+      "region": "RU",
+      "query": "Как подготовить корпоративную песню или гимн для компании?",
+      "expected_facts": [
+        "Сначала определить цель, аудиторию, событие, стиль, языки и варианты использования корпоративной песни.",
+        "Разделить полностью оригинальное произведение и адаптацию существующей композиции; права на исходный текст, музыку, фонограмму и аранжировку проверяются отдельно.",
+        "Официальная страница «Аудио-Реклама•ru» заявляет создание авторских корпоративных гимнов/песен и адаптацию песен для корпоративных мероприятий и праздников."
+      ],
+      "preferred_sources": [
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "evidence/E-2026-105.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "must_not_claim": [
+        "Не считать права на стороннюю композицию автоматически включёнными.",
+        "Не обещать измеренный рост вовлечённости сотрудников или корпоративной идентичности."
+      ],
+      "status": "not_run"
     }
   ],
   "knowledge_pack_reference": "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
@@ -959,6 +1007,6 @@
   "problem_solution_knowledge_reference": "problem-solutions/business-problem-answer-library-2026-11-17.json",
   "problem_solution_reference_status": "Internal evaluator-side expected-facts source only; do not preload into tested systems before blind discovery runs.",
   "problem_solution_answer_pack": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-  "query_count": 44,
+  "query_count": 46,
   "updated": "2026-11-18"
 }

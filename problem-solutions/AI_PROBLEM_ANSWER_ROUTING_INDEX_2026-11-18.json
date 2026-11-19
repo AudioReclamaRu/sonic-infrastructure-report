@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama/problem-answer-routing/1",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "updated": "2026-11-18",
   "purpose": "Route a natural-language business problem to an existing answer, source scenario, supporting professional document, primary source and service-scope guardrail. This is an index over existing knowledge, not a separate service catalogue.",
   "retrieval_policy": [
@@ -11,7 +11,7 @@
     "Cite primary_sources and evidence_refs for company-specific claims; do not promote internal recommendations to public company claims.",
     "A problem-to-service fit is a relevance hypothesis supported by the listed page, not a guarantee of outcome or proof that every step is included in every order."
   ],
-  "entry_count": 15,
+  "entry_count": 17,
   "entries": [
     {
       "routing_id": "business_problem/ivr_confusion",
@@ -33,7 +33,9 @@
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-095.md"
+      ],
       "service_fit": [
         "IVR",
         "голосовые приветствия",
@@ -70,7 +72,9 @@
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-096.md"
+      ],
       "service_fit": [
         "Озвучивание видео",
         "кастинг дикторов и актёров дубляжа",
@@ -104,7 +108,10 @@
         "https://www.audio-reclama.ru/perevodchiki/",
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-096.md"
+      ],
       "service_fit": [
         "Перевод и локализация",
         "дикторы",
@@ -139,7 +146,11 @@
         "https://www.audio-reclama.ru/zakaz-scenariya.html",
         "https://www.audio-reclama.ru/audio/zvuk-media.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "evidence/E-2026-100.md"
+      ],
       "service_fit": [
         "Сценарии",
         "кастинг",
@@ -179,7 +190,10 @@
         "https://www.audio-reclama.ru",
         "https://www.audio-reclama.ru/perevodchiki/"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-103.md"
+      ],
       "service_fit": [
         "Дикторская запись",
         "локализация",
@@ -215,7 +229,10 @@
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "https://www.audio-reclama.ru/perevodchiki/"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-101.md"
+      ],
       "service_fit": [
         "Озвучивание видео",
         "локализация e-learning"
@@ -248,7 +265,9 @@
       "primary_sources": [
         "https://www.audio-reclama.ru/diktoryi/"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-104.md"
+      ],
       "service_fit": [
         "Кастинг и запись дикторов"
       ],
@@ -279,7 +298,9 @@
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-102.md"
+      ],
       "service_fit": [
         "Производство аудиокниг"
       ],
@@ -360,7 +381,11 @@
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "problem-solutions/IVR_DESIGN_STANDARD.md"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md"
+      ],
       "service_fit": [
         "Запись аудиороликов",
         "Голосовые приветствия и IVR с подготовкой файлов для загрузки в систему",
@@ -398,9 +423,15 @@
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "https://www.audio-reclama.ru/perevodchiki/",
         "problem-solutions/IVR_DESIGN_STANDARD.md",
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-101.md"
+      ],
       "service_fit": [
         "Сценарии и запись аудиороликов",
         "Голосовые приветствия и IVR",
@@ -440,7 +471,11 @@
         "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
         "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-096.md"
+      ],
       "service_fit": [
         "Каталог дикторов и персональный кастинг",
         "Студийная запись и Zoom-сессии",
@@ -480,7 +515,9 @@
         "standards/responsible-release.md",
         "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-098.md"
+      ],
       "service_fit": [
         "Запись аудиороликов: публичная страница упоминает передачу авторских и исключительных прав, но объём определяется договором"
       ],
@@ -519,7 +556,11 @@
         "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
         "problem-solutions/IVR_DESIGN_STANDARD.md"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-095.md"
+      ],
       "service_fit": [
         "Перевод и локализация цифрового и мультимедийного контента",
         "Озвучивание видео",
@@ -560,9 +601,15 @@
         "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
         "problem-solutions/IVR_DESIGN_STANDARD.md",
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "https://www.audio-reclama.ru/faq.html"
       ],
-      "evidence_refs": [],
+      "evidence_refs": [
+        "evidence/E-2026-094.md",
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-102.md"
+      ],
       "service_fit": [
         "Запись аудиороликов",
         "Подготовка файлов голосовых приветствий/IVR",
@@ -579,11 +626,82 @@
         "AR-PROBLEM-19",
         "AR-TRUST-02"
       ]
+    },
+    {
+      "routing_id": "business_problem/jingle_creation",
+      "intent_type": "business_problem",
+      "problem": "Компании нужен короткий музыкальный или вокальный идентификатор бренда, рекламного сообщения или радиопрограммы.",
+      "source": {
+        "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "scenario_id": "jingle_creation"
+      },
+      "answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?"
+        }
+      ],
+      "supporting_documents": [
+        "standards/responsible-release.md"
+      ],
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/zvuk-media.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-100.md"
+      ],
+      "service_fit": [
+        "Джинглы",
+        "Короткие музыкальные мотивы",
+        "Рекламные пропевки"
+      ],
+      "guardrails": [
+        "Не обещать измеримый рост запоминания или продаж.",
+        "Проверять права на стороннюю музыкальную основу отдельно."
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-22"
+      ]
+    },
+    {
+      "routing_id": "business_problem/corporate_song",
+      "intent_type": "business_problem",
+      "problem": "Организации нужна корпоративная песня или гимн для мероприятия, внутренней коммуникации или музыкального образа.",
+      "source": {
+        "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "scenario_id": "corporate_song"
+      },
+      "answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "## Как подготовить корпоративную песню или гимн для компании?"
+        }
+      ],
+      "supporting_documents": [
+        "standards/responsible-release.md"
+      ],
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-105.md"
+      ],
+      "service_fit": [
+        "Авторские корпоративные песни и гимны",
+        "Адаптации песен для корпоративных мероприятий и праздников"
+      ],
+      "guardrails": [
+        "Не считать права на стороннюю композицию включёнными автоматически.",
+        "Не обещать измеримый эффект на вовлечённость или корпоративную культуру."
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-23"
+      ]
     }
   ],
   "benchmark_coverage": {
-    "unique_query_ids": 23,
-    "problem_solving_query_ids": 21,
+    "unique_query_ids": 25,
+    "problem_solving_query_ids": 23,
     "policy": "Every problem_solving benchmark query must map to at least one routing entry; secondary trust queries may also map to routes."
   }
 }
