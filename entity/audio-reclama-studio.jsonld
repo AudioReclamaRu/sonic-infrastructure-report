@@ -13,7 +13,13 @@
     "telephone": "8 800 700-46-52",
     "hoursAvailable": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
       "opens": "09:00",
       "closes": "18:00"
     }
@@ -37,13 +43,59 @@
     "@type": "OfferCatalog",
     "name": "Аудио- и видеопроизводство для бизнеса",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись рекламных аудиороликов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись IVR, голосовых приветствий и автоинформаторов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Озвучивание видео"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Запись аудиокниг"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Создание джинглов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Создание корпоративных песен и гимнов"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Озвучивание презентаций"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Запись рекламных аудиороликов"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Запись IVR, голосовых приветствий и автоинформаторов"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Озвучивание видео"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Запись аудиокниг"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Создание джинглов"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Создание корпоративных песен и гимнов"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Озвучивание презентаций"
+        }
+      }
     ]
-  }
+  },
+  "sameAs": [
+    "https://www.youtube.com/@audioreclama",
+    "https://dzen.ru/audioreclamaru"
+  ]
 }
