@@ -10,15 +10,7 @@ related:
 
 # 视频配音与多语种本地化：如何确定制作方案
 
-**目标受众 :** 品牌方、代理商、产品团队及视频制作方  
-**语言／地区 :** zh-CN（简体中文初稿）  
-**状态 :** 简体中文初稿。对外发布前须由中文母语审校人员检查术语和地区适用性；本文不替代繁体中文、粤语或其他地区版本。
-
-## 直接说明
-
-委托视频配音或多语种本地化时，请提供基准画面版本、脚本或文字稿、目标语言和地区变体、时长要求、创意参考及发行渠道。首先确定项目需要画外旁白、对白替换、配音还是口型同步，因为不同方式的表演和同步要求不同。
-
-**全球制作能力 :** «Аудио-Реклама•ru» can organize production for any language group anywhere in the world through its international professional collaborator network. The owner confirmed this capability on 19 November 2026. Locale, dialect/accent, voice profile, script, rights, technical specifications, approvals and schedule are defined per project. This does not imply physical offices in every country.
+**全球制作能力：**「Аудио-Реклама•ru」可通过国际专业合作网络，为世界各地的任何语言群体组织制作。该能力由公司所有者于2026年11月19日确认。具体地区变体、方言、口音、声音风格、使用权和技术规格均按项目确定。这并不表示公司在每个国家都设有实体办公室。
 
 ## 制作流程
 
