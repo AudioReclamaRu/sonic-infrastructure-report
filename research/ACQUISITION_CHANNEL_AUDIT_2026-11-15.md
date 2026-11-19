@@ -3,14 +3,14 @@ type: doc
 date: 2026-11-15
 lang: ru
 related:
-  - evidence/E-2026-049.md
+  - evidence/E-2026-092.md
   - strategy/ATTENTION_ACQUISITION_SYSTEM.md
   - problem-solutions/MEASUREMENT_PROTOCOL.md
 ---
 # Аудит точек привлечения: Яндекс Карты, 2ГИС, SoundCloud и PR-площадки
 
 **Дата live-среза:** 15.11.2026  
-**Статус:** исследование с подтверждёнными наблюдениями и черновым планом действий. Ни одна внешняя карточка или площадка не редактировалась. Основания: [E-2026-049](../evidence/E-2026-049.md).
+**Статус:** исследование с подтверждёнными наблюдениями и черновым планом действий. Ни одна внешняя карточка или площадка не редактировалась. Основания: [E-2026-092](../evidence/E-2026-092.md).
 
 ## 1. Главный вывод
 
@@ -139,4 +139,4 @@ https://help.soundcloud.com/hc/en-us/articles/115003449407-Profile-Description-W
 
 ## Sources
 
-See [E-2026-049](../evidence/E-2026-049.md) for the direct sources, exact platform fields and evidence limits.
+See [E-2026-092](../evidence/E-2026-092.md) for the direct sources, exact platform fields and evidence limits.

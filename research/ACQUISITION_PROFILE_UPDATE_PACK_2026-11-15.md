@@ -3,7 +3,7 @@ type: doc
 date: 2026-11-15
 lang: ru
 related:
-  - evidence/E-2026-049.md
+  - evidence/E-2026-092.md
   - research/ACQUISITION_CHANNEL_AUDIT_2026-11-15.md
   - strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md
 ---
@@ -13,7 +13,7 @@ related:
 **Дата подготовки:** 2026-11-15.  
 **Канонический сайт:** https://www.audio-reclama.ru/
 
-Основание: live-аудит существующих профилей в [E-2026-049](../evidence/E-2026-049.md) и [отчёт по acquisition-каналам](ACQUISITION_CHANNEL_AUDIT_2026-11-15.md).
+Основание: live-аудит существующих профилей в [E-2026-092](../evidence/E-2026-092.md) и [отчёт по acquisition-каналам](ACQUISITION_CHANNEL_AUDIT_2026-11-15.md).
 
 ## 1. Основная короткая характеристика
 
@@ -106,5 +106,5 @@ related:
 
 ## Related evidence
 
-- [E-2026-049 — live-поля существующих карточек и условия платформ](../evidence/E-2026-049.md)
+- [E-2026-092 — live-поля существующих карточек и условия платформ](../evidence/E-2026-092.md)
 - [ACQUISITION_CHANNEL_AUDIT_2026-11-15](ACQUISITION_CHANNEL_AUDIT_2026-11-15.md)
