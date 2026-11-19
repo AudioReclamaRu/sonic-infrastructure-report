@@ -153,4 +153,4 @@ The owner supplied an existing company profile URL: https://x.com/audioreclamaru
 
 Proposed route: use official X API for owned posts, mentions and authorized reposts; optionally use xAI X Search as an external discovery layer. Start with a logged candidate queue and strict topical/brand-safety filters, then consider bounded automation only after authorization and validation. No browser macros, mass-following, automated engagement loops, private-post access or unsolicited DMs.
 
-Full API capabilities, costs, authentication caveats and setup path: `evidence/E-2026-083.md`.
+Full API capabilities, costs, authentication caveats and setup path: `evidence/E-2026-107.md`.
