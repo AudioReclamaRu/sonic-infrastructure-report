@@ -64,7 +64,7 @@ class EvidenceIdRegistryTests(unittest.TestCase):
         evidence_id = "E-2026-017"
         path = f"evidence/{evidence_id}.md"
         (self.root / path).write_text(
-            "\ufeff---\\nid: E-2026-017\\ntype: evidence\\n---\\n",
+            "\ufeff---\nid: E-2026-017\ntype: evidence\n---\n",
             encoding="utf-8",
         )
         self.write_registry([self.row(evidence_id)])
