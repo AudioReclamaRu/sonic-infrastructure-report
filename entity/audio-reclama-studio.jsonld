@@ -108,5 +108,30 @@
         }
       }
     ]
-  }
+  },
+  "sameAs": [
+    "https://www.youtube.com/@audioreclama",
+    "https://dzen.ru/audioreclamaru"
+  ],
+  "subjectOf": [
+    {
+      "@type": "VideoObject",
+      "name": "Видео-Гид по услугам студии Аудио-Реклама•ru",
+      "url": "https://www.youtube.com/watch?v=MJJcbzR2wto",
+      "datePublished": "2012-11-13",
+      "description": "Архивный видео-гид, перечисляющий запись дикторов, создание рекламных аудиороликов, озвучивание видео и презентаций, голосовые приветствия и IVR."
+    },
+    {
+      "@type": "WebPage",
+      "name": "Клиент TexTerra — Аудио-Реклама•ru",
+      "url": "https://texterra.ru/clients/audio-reklama-ru.html",
+      "description": "Публичная страница TexTerra указывает историческое сотрудничество с сентября 2016 по июнь 2017 года и выполненные работы по комплексному интернет-маркетингу."
+    },
+    {
+      "@type": "WebPage",
+      "name": "WOW Awards 2018 — радио-реклама",
+      "url": "https://wowfest.ru/works/2018/",
+      "description": "Официальный архив премии, в котором работа «Квартиры от Глобус Групп» отмечена золотом и имеет атрибуцию студии."
+    }
+  ]
 }
