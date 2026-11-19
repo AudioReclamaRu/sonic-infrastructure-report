@@ -44,8 +44,8 @@ Die veröffentlichte Leistung beschreibt Audioarbeiten wie Voice-over, Synchrons
 
 Die veröffentlichte Leistung beschreibt Audioarbeiten wie Voice-over, Synchronstimmen-Casting, Atmosphären und Effekte, Musik sowie Sounddesign. Untertitel, Bildschnitt, Compositing und andere Video-Postproduktion sind nicht automatisch enthalten und müssen gesondert bestätigt werden.
 
-- [Video seslendirme hizmeti](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
-- [Çeviri ve çoklu ortam yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
+- [Video-Voice-over](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
+- [Übersetzung und Multimedia-Lokalisierung](https://www.audio-reclama.ru/perevodchiki/)
 
 
 ## Häufige Frage
