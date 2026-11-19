@@ -40,13 +40,10 @@ IVR服务页面介绍的是欢迎语和菜单提示音录制，以及为导入�
 
 
 
-## 责任边界
+## 服务页面
 
-IVR服务页面介绍的是欢迎语和菜单提示音录制，以及为导入客户系统而准备音频文件。PBX路由、队列、SIP、CRM集成和生产环境配置，除非合同另有明确约定，均由客户或通信系统集成商负责。
-
-- [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
-- [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
-
+- [IVR及电话问候语服务](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [翻译与本地化服务](https://www.audio-reclama.ru/perevodchiki/)
 
 ## 常见问题
 
@@ -60,4 +57,4 @@ IVR服务页面介绍的是欢迎语和菜单提示音录制，以及为导入�
 
 请将项目简报、所需语言、源稿或素材文件及技术规格发送至 **start@audio-reclama.ru**。
 
-Resmî web sitesi / 官方网站: https://www.audio-reclama.ru
+官方网站：: https://www.audio-reclama.ru
