@@ -126,3 +126,17 @@ VORG принимает бесплатные стандартные карточ
 **Decision: defer X automation and do not purchase the add-on.** The current measured market is Russia-first, there is no verified official X handle, and the recurring Metricool cost is not justified by a demonstrated audience. Reconsider only for a confirmed international/English-language B2B target and after explicit owner approval of the add-on fee.
 
 Full evidence and source limits: `evidence/E-2026-080.md`.
+
+### Biz360 follow-up (2018) — independent founder interview
+
+- [«B2B-индустрия: как делать деньги на тех, кто делает деньги»](https://biz360.ru/materials/b2b-industriya-kak-delat-dengi-na-tekh-kto-delaet-dengi/), Евгений Шляхов, 28 февраля 2018.
+- Отдельный от публикации 2016 года материал: в нём есть блок о «Аудио-Реклама.ru», владельце Игоре Табакове, развитии студии, рекламном аудиопроизводстве и историческом сервисе «Аудио+».
+- Использовать как исторический источник, а не как актуальный прайс, штат, объёмы или описание сегодняшних функций. Статья является интервью, не независимым финансовым аудитом.
+
+### WOW Awards — официальное подтверждение конкретного проекта
+
+- [Официальный архив WOW Awards](https://wowfest.ru/wowawards/) перечисляет «Золото Квартиры от Глобус Групп» с кредитом «Глобус Групп | Аудио-Реклама.ru».
+- Разрешённая формулировка: проект «Квартиры от Глобус Групп», выполненный с кредитом «Аудио-Реклама•ru», получил золото WOW Awards.
+- Это **проектная награда**, не общая награда студии, не сертификат и не подтверждение лидерства на рынке. Не приписывать ей неуказанные KPI, подкатегорию, дату или расширенную роль.
+
+Подробные доказательства и исторические ограничения: `evidence/E-2026-081.md`.
