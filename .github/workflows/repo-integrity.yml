@@ -53,6 +53,11 @@ jobs:
       - name: canonical brand and website naming
         run: python tools/check_brand_naming.py
 
+      - name: Internal website URL boundary safeguards
+        run: |
+          python -m unittest tools.tests.test_internal_url_format -v
+          python tools/check_internal_url_format.py
+
       - name: AI Discovery asset integrity
         run: python tools/validate_ai_discovery_assets.py
 

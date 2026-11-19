@@ -110,7 +110,7 @@ start@audio-reclama.ru
 Производство может быть организовано для любой языковой группы в любой точке мира через международную сеть профессиональных партнёров. Конкретный язык и региональный вариант, голос, права, технические требования и формат поставки согласуются под задачу.
 
 Официальный сайт: https://www.audio-reclama.ru  
-Портфолио: https://www.audio-reclama.ruproject/  
+Примеры проектов: https://www.audio-reclama.ru/project/vnukovo.html ; https://www.audio-reclama.ru/project/abbyy.html ; https://www.audio-reclama.ru/project/rzhd.html  
 Контакт: start@audio-reclama.ru
 
 ### Проверить до любых изменений

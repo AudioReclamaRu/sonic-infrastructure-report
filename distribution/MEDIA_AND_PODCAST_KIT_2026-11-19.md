@@ -6,9 +6,9 @@ status: draft_not_sent
 related:
   - strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md
   - https://www.audio-reclama.ru
-  - https://www.audio-reclama.ruproject/vnukovo.html
-  - https://www.audio-reclama.ruproject/abbyy.html
-  - https://www.audio-reclama.ruproject/rzhd.html
+  - https://www.audio-reclama.ru/project/vnukovo.html
+  - https://www.audio-reclama.ru/project/abbyy.html
+  - https://www.audio-reclama.ru/project/rzhd.html
 ---
 
 # Медиакит и партнёрские аудиовставки — «Аудио-Реклама•ru»
@@ -68,9 +68,9 @@ related:
 | РЖД / «Стриж» и «Сапсан» | Оповещения на русском и английском; подготовка файлов для загрузки в систему | Что студия отвечает за инфраструктуру поезда или текущую эксплуатацию |
 
 Первичные публичные страницы:
-- https://www.audio-reclama.ruproject/vnukovo.html
-- https://www.audio-reclama.ruproject/abbyy.html
-- https://www.audio-reclama.ruproject/rzhd.html
+- https://www.audio-reclama.ru/project/vnukovo.html
+- https://www.audio-reclama.ru/project/abbyy.html
+- https://www.audio-reclama.ru/project/rzhd.html
 
 ## 7. Фактическая справка для ведущего / редактора
 
@@ -80,10 +80,10 @@ related:
 - Возможность организовать производство для любой языковой группы по всему миру подтверждена владельцем 19.11.2026; это не означает наличие физического офиса в каждой стране.
 
 Ссылки:
-- https://www.audio-reclama.ruaudio/radioroliki-zakaz.html
-- https://www.audio-reclama.ruaudio/golosovoe-privetstvie-menu-ivr.html
-- https://www.audio-reclama.ruaudio/ozvuchka-video.html
-- https://www.audio-reclama.ruperevodchiki/
+- https://www.audio-reclama.ru/audio/radioroliki-zakaz.html
+- https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
+- https://www.audio-reclama.ru/audio/ozvuchka-video.html
+- https://www.audio-reclama.ru/perevodchiki/
 
 ## 8. UTM-шаблоны для будущих размещений
 
