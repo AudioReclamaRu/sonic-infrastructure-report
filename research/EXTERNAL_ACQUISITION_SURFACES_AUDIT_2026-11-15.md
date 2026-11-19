@@ -3,7 +3,7 @@ type: doc
 date: 2026-11-15
 lang: ru
 related:
-  - evidence/E-2026-049.md
+  - evidence/E-2026-093.md
   - evidence/E-2026-047.md
   - strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md
   - strategy/ATTENTION_ACQUISITION_SYSTEM.md
@@ -12,7 +12,7 @@ related:
 
 **Статус:** проверенный read-only аудит внешних профилей и потенциальных каналов привлечения.  
 **Цель:** не множить аккаунты и каталоги, а усилить уже существующие точки, где клиент может обнаружить студию, изучить предложение и перейти на Audio-Reclama.ru.  
-**Доказательства:** [E-2026-049](../evidence/E-2026-049.md).
+**Доказательства:** [E-2026-093](../evidence/E-2026-093.md).
 
 ## 1. Вывод
 
@@ -113,7 +113,7 @@ related:
 
 ## Related
 
-- [E-2026-049 — live-доказательства внешних профилей и возможностей claim](../evidence/E-2026-049.md)
+- [E-2026-093 — live-доказательства внешних профилей и возможностей claim](../evidence/E-2026-093.md)
 - [SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15](../strategy/SITE_TRAFFIC_GROWTH_MANDATE_2026-11-15.md)
 - [ATTENTION_ACQUISITION_SYSTEM](../strategy/ATTENTION_ACQUISITION_SYSTEM.md)
 
