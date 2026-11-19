@@ -13,7 +13,7 @@ The repository covers:
 - **Russian speech technology:** test design for TTS, pronunciation, names, numbers, prosody and multilingual voice workflows.
 - **Enterprise audio production:** advertising, voice recording, localization and video voiceover, within the studio's documented service scope.
 
-**Start with:** [MAP.md](MAP.md) for the knowledge architecture, [llms.txt](llms.txt) for machine-readable navigation, and [FACT-METHOD.md](FACT-METHOD.md) for evidence status and verification rules.
+**Start with:** [MAP.md](MAP.md) for the knowledge architecture, [llms.txt](llms.txt) for machine-readable navigation, [English entity profile](entity/audio-reclama-studio.en.md) for international AI discovery, and [FACT-METHOD.md](FACT-METHOD.md) for evidence status and verification rules.
 
 **Runnable utility:** [IVR Flow Linter](tools/ivr_flow_linter/README.md) checks a declared IVR graph for missing routes, dead ends, unreachable nodes, fallback gaps and optional operator escape. It is a static graph check—not a PBX integration or live telephone test.
 Russian-language instructions: [Проверка логики IVR-меню](tools/ivr_flow_linter/README.ru.md).
