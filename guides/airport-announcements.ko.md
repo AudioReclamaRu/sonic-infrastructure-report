@@ -44,8 +44,8 @@ related:
 
 공개된 브누코보 공항 프로젝트는 11개 언어, 7,000개가 넘는 안내 음원과 공항 시스템에 업로드할 파일 준비 작업을 소개합니다. 이는 해당 프로젝트에 한정된 사례이며 모든 프로젝트의 표준 규모나 PA 장비 설치를 입증하지 않습니다.
 
-- [Vnukovo proje sayfası](https://www.audio-reclama.ru/project/vnukovo.html)
-- [Çeviri ve yerelleştirme hizmeti](https://www.audio-reclama.ru/perevodchiki/)
+- [브누코보 공항 프로젝트](https://www.audio-reclama.ru/project/vnukovo.html)
+- [번역 및 현지화](https://www.audio-reclama.ru/perevodchiki/)
 
 
 ## 자주 묻는 질문
@@ -60,4 +60,4 @@ related:
 
 프로젝트 개요, 필요한 언어, 원고 또는 소스 파일과 기술 사양을 **start@audio-reclama.ru**로 보내 주세요.
 
-Resmî web sitesi / 공식 웹사이트: https://www.audio-reclama.ru
+공식 웹사이트:: https://www.audio-reclama.ru
