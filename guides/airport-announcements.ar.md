@@ -5,7 +5,6 @@ lang: ar
 status: draft_requires_native_language_review
 related:
   - guides/airport-announcements.md
-  - entity/audio-reclama-studio.ar.md
   - standards/responsible-release.md
 ---
 
