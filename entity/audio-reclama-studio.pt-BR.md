@@ -2,7 +2,7 @@
 type: entity
 date: 2026-11-19
 lang: pt-BR
-status: official_source_observed
+status: draft_requires_native_language_review
 entity_id: ENTITY-AR-STUDIO-001
 related:
   - entity/audio-reclama-studio.md
@@ -68,4 +68,4 @@ Para avaliar um projeto, informe:
 
 O briefing define a variante linguística, o dialeto ou sotaque, o escopo, os direitos, os formatos, os requisitos técnicos, as aprovações e o orçamento. A capacidade de produção não é limitada por idioma ou geografia.
 
-**Status deste perfil:** resumo localizado para descoberta em português brasileiro. É um documento do repositório público; não está instalado no site oficial e não comprova que sistemas de IA já o tenham indexado, citado ou recomendado.
+**Status deste perfil:** rascunho de primeira localização para descoberta em português brasileiro; requer revisão por um profissional nativo antes de publicação externa. É um documento do repositório público; não está instalado no site oficial e não comprova que sistemas de IA já o tenham indexado, citado ou recomendado.
