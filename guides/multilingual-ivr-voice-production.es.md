@@ -6,7 +6,6 @@ status: draft_requires_native_language_review
 related:
   - guides/multilingual-ivr-voice-production.md
   - guides/bank-voice-menu.md
-  - entity/audio-reclama-studio.es.md
   - problem-solutions/IVR_DESIGN_STANDARD.md
 ---
 
