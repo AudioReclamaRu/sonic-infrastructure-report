@@ -44,8 +44,8 @@ La prestation publicitaire publiée mentionne notamment l’écriture, le castin
 
 La prestation publicitaire publiée mentionne notamment l’écriture, le casting, le design sonore, la musique sous licence et le transfert de droits. L’achat média, le temps d’antenne, le placement de campagne et la programmation des stations sont distincts de la production audio, sauf accord explicite.
 
-- [Sesli reklam ve radyo spotu hizmeti](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
-- [Jingle ve ses çözümleri](https://www.audio-reclama.ru/audio/zvuk-media.html)
+- [Publicité audio et spots radio](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+- [Jingles et solutions sonores](https://www.audio-reclama.ru/audio/zvuk-media.html)
 
 
 ## Question fréquente
