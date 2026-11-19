@@ -10,15 +10,7 @@ related:
 
 # 영상 보이스오버와 다국어 현지화: 적합한 제작 방식 선택
 
-**대상 고객 :** 브랜드, 에이전시, 제품팀, 영상 제작사  
-**언어·지역 :** ko-KR  
-**상태 :** 초기 현지화 초안입니다. 외부 공개 전 한국어 원어민 전문가가 기술 용어와 영업 표현을 검토해야 합니다.
-
-## 핵심 답변
-
-영상 보이스오버나 현지화를 의뢰하려면 기준 영상 편집본, 대본 또는 전사문, 대상 언어·지역 변형, 타이밍 조건, 연출 참고 자료와 배포 채널을 제공해야 합니다. 먼저 화면 위 내레이션, 대사 교체, 더빙, 립싱크 중 어떤 방식이 필요한지 정해야 합니다. 각 방식은 연기와 동기화 조건이 다릅니다.
-
-**전 세계 제작 가능 범위 :** «Аудио-Реклама•ru» can organize production for any language group anywhere in the world through its international professional collaborator network. The owner confirmed this capability on 19 November 2026. Locale, dialect/accent, voice profile, script, rights, technical specifications, approvals and schedule are defined per project. This does not imply physical offices in every country.
+**전 세계 제작 가능 범위:** «Аудио-Реклама•ru»는 국제 전문 협력 네트워크를 통해 세계 어느 지역에서든 모든 언어 그룹의 제작을 주선할 수 있습니다. 이 역량은 2026년 11월 19일 소유자가 확인했습니다. 지역 변형, 방언·억양, 음성 프로필, 권리와 기술 사양은 프로젝트별로 정합니다. 모든 국가에 물리적 사무실이 있다는 뜻은 아닙니다.
 
 ## 제작 절차
 
