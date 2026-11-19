@@ -37,6 +37,13 @@ related:
 | Dzen | https://dzen.ru/audioreclamaru | Каноническое название, контакты, описание локализации, кастингов и прав; текущий тематический контент | Author page имеет `noindex, follow`; не переносить этот статус автоматически на отдельные публикации |
 | GitHub entity graph | Публичный репозиторий, entity MD + JSON-LD | Стабильное описание сущности и связи `sameAs` для YouTube и Dzen | GitHub-коммит не доказывает, что внешние модели уже прочитали или цитируют файлы |
 
+### Historical media assets and editorial/agency proof
+
+- **YouTube video-guide (13.11.2012):** the live page displayed 513,173 accumulated views and 252 likes on 19.11.2026. It describes announcer recording, advertising audio production, voice-over for video/presentations, telephone greetings and IVR. This is an existing long-lived high-reach asset, not a monthly audience figure.
+- **TexTerra client page:** a live read of the existing case page shows the studio as a client and lists work as comprehensive internet marketing from September 2016 to June 2017. This is independent evidence of a historical business relationship, not a current partnership or an outcome/KPI claim.
+
+These two assets improve the external entity graph more materially than adding a fresh generic company description. The video link should be retained and not duplicated; a revised archive description may be prepared but not published without owner approval.
+
 ### Independent references
 
 | Источник | Подтверждение | Уровень использования |
