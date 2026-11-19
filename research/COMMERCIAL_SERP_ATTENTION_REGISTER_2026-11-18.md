@@ -215,6 +215,7 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-074 — Official-site AI access and semantic consistency](../evidence/E-2026-074.md)
 - [E-2026-075 — Live llms.txt, robots policy and page metadata recheck](../evidence/E-2026-075.md)
 - [E-2026-076 — External entity profiles, project award and ranking evidence](../evidence/E-2026-076.md)
+- [External entity profile copy pack (RU/EN)](EXTERNAL_ENTITY_PROFILE_COPY_PACK_2026-11-19.md)
 - [External entity reconciliation queue](EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md)
 - [Corrected root llms.txt proposal for owner review](LLMS_TXT_CORRECTED_OWNER_REVIEW_2026-11-19.md)
 - [Live root llms.txt review summary](LLMS_TXT_LIVE_REVIEW_2026-11-19.md)
