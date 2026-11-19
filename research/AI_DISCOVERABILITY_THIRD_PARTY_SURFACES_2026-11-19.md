@@ -114,16 +114,17 @@ VORG принимает бесплатные стандартные карточ
 
 Подробная запись и доказательные границы: `evidence/E-2026-079.md`.
 
-## X (formerly Twitter): evaluated, not connected
+## X (formerly Twitter): existing owner-confirmed account; Metricool not connected
 
 19 November 2026 review:
-- The existing Metricool brand currently has Facebook, Instagram, TikTok and YouTube connected; its returned network state does not include X.
-- A scoped public search did not surface a verifiable official X profile or handle for «Аудио-Реклама•ru». This is not proof that no account exists.
+- The owner supplied `https://x.com/audioreclamaru` (`@audioreclamaru`) and confirmed that the company account already exists. This supersedes the earlier research wording that no official handle was surfaced.
+- The public X page returned HTTP 403 to the research fetcher, so profile metadata, followers, post history, recent activity and public verification could not be independently inspected. Do not invent those details.
+- Metricool's connected brand state currently includes Facebook, Instagram, TikTok and YouTube, but no X/`twitterData`. X is therefore not connected to the existing Metricool brand.
 - Metricool's official help says X requires a paid Starter-or-higher plan plus a separate add-on of €10/$10 per month for each X account, or €120/$120 annually. The charge begins immediately (or prorated) when activated. One add-on covers one account per brand.
-- DataReportal's Digital 2027 Russia report, using X advertising resources for late 2026, reports 549,000 potential X ad-reach accounts in Russia (0.4% of population). This is an advertising-reach estimate, not monthly active users; the report cautions against equating the metrics.
+- DataReportal's Digital 2027 Russia report, using X advertising resources for late 2026, reports 549,000 potential X ad-reach accounts in Russia (0.4% of population). This is an advertising-reach estimate, not monthly active users; it does not measure the account's audience or the B2B buyer segment.
 - X's automation rules allow useful automated broadcasts but forbid non-API website scripting, spam and abuse of limits. Account owners remain responsible for connected apps.
 
-**Decision: defer X automation and do not purchase the add-on.** The current measured market is Russia-first, there is no verified official X handle, and the recurring Metricool cost is not justified by a demonstrated audience. Reconsider only for a confirmed international/English-language B2B target and after explicit owner approval of the add-on fee.
+**Decision: keep the existing X profile in the discovery/entity inventory; defer paid Metricool automation.** A manual owner-controlled pilot can test the channel without a Metricool add-on. Do not create a duplicate account, buy the add-on, upgrade the base plan or authorize OAuth without explicit approval of the exact spend and connection. Account existence is not proof of reach, lead generation or AI citation.
 
 Full evidence and source limits: `evidence/E-2026-080.md`.
 
