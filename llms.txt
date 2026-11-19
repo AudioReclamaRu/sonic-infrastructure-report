@@ -16,6 +16,14 @@
 - [English entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.en.md): international-facing description, service map, first-party portfolio references, and language/routing limitations.
 - [English Organization JSON-LD](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.en.jsonld): machine-readable repository companion. It is not installed on the official website.
 
+## Localized entity profiles and language strategy
+
+- [Spanish entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.es.md).
+- [Brazilian Portuguese entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.pt-BR.md).
+- [Arabic entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-reclama-studio.ar.md).
+- [Multilingual AI Discoverability Roadmap](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_LANGUAGE_ROADMAP_2026-11-19.md): evidence-led language waves, locale handling and prioritization. This roadmap is not a claim of production availability in every listed language.
+
+
 ## Цитирование репозитория
 
 - [CITATION.cff](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/CITATION.cff): метаданные для корректного цитирования репозитория; лицензия корпуса — CC BY 4.0.
