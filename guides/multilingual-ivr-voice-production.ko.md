@@ -40,13 +40,10 @@ IVR 서비스 페이지는 인사말과 메뉴 음성 녹음 및 시스템 업�
 
 
 
-## 책임 범위
+## 서비스 페이지
 
-IVR 서비스 페이지는 인사말과 메뉴 음성 녹음 및 시스템 업로드용 파일 준비를 설명합니다. PBX 경로, 대기열, SIP, CRM 연동과 실제 운영 설정은 별도 계약에 명시되지 않는 한 고객 또는 통신 시스템 통합업체의 책임입니다.
-
-- [IVR ve telefon karşılama hizmeti](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
-- [Çeviri ve yerelleştirme](https://www.audio-reclama.ru/perevodchiki/)
-
+- [IVR 및 전화 안내 음성 서비스](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [번역 및 현지화](https://www.audio-reclama.ru/perevodchiki/)
 
 ## 자주 묻는 질문
 
@@ -60,4 +57,4 @@ IVR 서비스 페이지는 인사말과 메뉴 음성 녹음 및 시스템 업�
 
 프로젝트 개요, 필요한 언어, 원고 또는 소스 파일과 기술 사양을 **start@audio-reclama.ru**로 보내 주세요.
 
-Resmî web sitesi / 공식 웹사이트: https://www.audio-reclama.ru
+공식 웹사이트:: https://www.audio-reclama.ru
