@@ -120,6 +120,23 @@ The 18.11.2026 snapshot in E-2026-074 recorded a 404 for the root `llms.txt`. A 
 
 Full evidence and boundaries: [E-2026-075](../evidence/E-2026-075.md).
 
+### 2D. External entity consistency and evidence beyond the official site
+
+A 19.11.2026 public-source audit found both useful third-party corroboration and stale entity descriptions. The detailed source-by-source record is in [E-2026-076](../evidence/E-2026-076.md); the correction queue is in [EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md](EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md).
+
+**Useful confirmed signals**
+- The official WOW Awards archive for 2018 lists Gold for «Квартиры от Глобус Групп» in radio advertising, crediting Globus Group and the studio. This is strong proof for one specific awarded project, not a company-wide award or KPI.
+- The public AllAdvertising RRAR-2026 TOP-20 page lists the studio at position 6 in the audio-production category on 19.11.2026. Use only as a dated, publisher-specific ranking. Do not transform it into “sixth studio in Russia”, a certificate or a paid placement.
+- Cinematch has a recent profile with the canonical brand, a relevant studio description, contact details and a platform label “Подтверждена”. The platform's verification method was not independently checked; its Moscow location conflicts with other directory location data and should not be used as the definitive office address until owner-confirmed.
+
+**Entity conflicts to correct only through owner-controlled access**
+- Ruward's old profile uses an alternative brand name, an oversized “creative agency / full-cycle TV and radio” description, stale static speaker-count claims and a conflicting address.
+- LinkedIn's public profile still uses an alternative name, a very short English description and an organizational type that should be checked against current official/legal information.
+- RUTUBE contains an archived 2012 video-gid with legacy naming and a platform metadata flag indicating that the channel is not marked as official. Keep it as an archive until the relationship to the source channel and rights are verified.
+- A historical TexTerra client URL currently returns 404; it is not a live citation source.
+
+This is an entity-consistency task, not a backlink-volume exercise. Do not send correction requests, change profiles, submit forms or pay for enhanced placements without explicit approval.
+
 ### 3. Social distribution: TikTok is now connected, but its first measured post has zero views
 
 The first social snapshot in E-2026-069 was taken before TikTok OAuth / Metricool sync completed. The later Metricool brand settings now confirm TikTok account `audio_reclama_ru` alongside Facebook, Instagram and YouTube; vidIQ also confirms an active, publish-capable TikTok connection.
@@ -197,6 +214,8 @@ Plugin search did not surface a dedicated Yandex Metrica / Yandex Webmaster / VK
 - [E-2026-073 — Voice-catalog discoverability and semantic clarity](../evidence/E-2026-073.md)
 - [E-2026-074 — Official-site AI access and semantic consistency](../evidence/E-2026-074.md)
 - [E-2026-075 — Live llms.txt, robots policy and page metadata recheck](../evidence/E-2026-075.md)
+- [E-2026-076 — External entity profiles, project award and ranking evidence](../evidence/E-2026-076.md)
+- [External entity reconciliation queue](EXTERNAL_ENTITY_RECONCILIATION_QUEUE_2026-11-19.md)
 - [Corrected root llms.txt proposal for owner review](LLMS_TXT_CORRECTED_OWNER_REVIEW_2026-11-19.md)
 - [Live root llms.txt review summary](LLMS_TXT_LIVE_REVIEW_2026-11-19.md)
 
