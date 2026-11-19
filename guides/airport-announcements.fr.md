@@ -60,4 +60,4 @@ Chaque identifiant de message doit disposer d’un fichier final dans chaque lan
 
 Envoyez le brief, les langues demandées, les textes ou fichiers sources et les spécifications techniques à **start@audio-reclama.ru**.
 
-Resmî web sitesi / Site officiel: https://www.audio-reclama.ru
+Site officiel: https://www.audio-reclama.ru
