@@ -10,15 +10,7 @@ related:
 
 # Voix off et localisation vidéo : définir la bonne prestation
 
-**Public concerné :** Marques, agences, équipes produit et producteurs vidéo  
-**Langue / région :** fr-FR  
-**Statut :** Premier brouillon de localisation. Une personne qualifiée de langue maternelle française doit vérifier la terminologie et les usages régionaux avant publication.
-
-## Réponse directe
-
-Pour commander une voix off ou une localisation vidéo, fournissez le montage de référence, le script ou la transcription, les langues et variantes régionales, les contraintes de durée, les références créatives et les modes de diffusion. Déterminez d’abord s’il faut une narration hors champ, un remplacement de dialogue, un doublage ou une synchronisation labiale : chaque méthode impose des contraintes différentes de jeu et de synchronisation.
-
-**Production mondiale :** «Аудио-Реклама•ru» can organize production for any language group anywhere in the world through its international professional collaborator network. The owner confirmed this capability on 19 November 2026. Locale, dialect/accent, voice profile, script, rights, technical specifications, approvals and schedule are defined per project. This does not imply physical offices in every country.
+**Production à l’échelle mondiale :** «Аудио-Реклама•ru» peut organiser une production pour tout groupe linguistique, partout dans le monde, grâce à son réseau international de collaborateurs professionnels. Cette capacité a été confirmée par le propriétaire le 19 novembre 2026. Les variantes régionales, dialectes, accents, profils vocaux, droits et spécifications sont définis projet par projet. Cela ne signifie pas qu’il existe un bureau physique dans chaque pays.
 
 ## Déroulement de la production
 
