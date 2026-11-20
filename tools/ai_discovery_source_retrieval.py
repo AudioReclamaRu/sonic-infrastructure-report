@@ -112,6 +112,8 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
     query_anchor_ranks: list[int | None] = []
     fact_anchor_ranks: list[int | None] = []
     evidence_fact_ranks: list[int | None] = []
+    pure_evidence_fact_ranks: list[int | None] = []
+    mixed_evidence_fact_ranks: list[int | None] = []
     all_fact_ranks: list[int | None] = []
     entries: list[dict[str, Any]] = []
 
@@ -149,13 +151,18 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
 
             evidence_refs = [ref for ref in refs if ref.startswith("evidence/")]
             evidence_rank = _best_rank(evidence_refs, fact_positions) if evidence_refs else None
+            support_type = claim.get("support_type")
             if evidence_refs:
                 evidence_fact_ranks.append(evidence_rank)
+                if support_type == "first_party_evidence":
+                    pure_evidence_fact_ranks.append(evidence_rank)
+                elif support_type == "mixed":
+                    mixed_evidence_fact_ranks.append(evidence_rank)
 
             claim_results.append({
                 "fact_index": claim.get("fact_index"),
                 "expected_fact": fact_text,
-                "support_type": claim.get("support_type"),
+                "support_type": support_type,
                 "source_refs": refs,
                 "best_mapped_source_rank": target_rank,
                 "best_first_party_evidence_rank": evidence_rank,
@@ -262,6 +269,14 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
         "claims_with_mapped_source_top_5": _count_at(fact_anchor_ranks, 5),
         "claims_with_mapped_source_top_10": _count_at(fact_anchor_ranks, 10),
         "claims_with_first_party_evidence": evidence_claim_count,
+        "pure_first_party_claim_count": len(pure_evidence_fact_ranks),
+        "pure_first_party_evidence_top_3": _count_at(pure_evidence_fact_ranks, 3),
+        "pure_first_party_evidence_top_5": _count_at(pure_evidence_fact_ranks, 5),
+        "pure_first_party_evidence_top_10": _count_at(pure_evidence_fact_ranks, 10),
+        "mixed_claim_count": len(mixed_evidence_fact_ranks),
+        "mixed_claim_evidence_top_3": _count_at(mixed_evidence_fact_ranks, 3),
+        "mixed_claim_evidence_top_5": _count_at(mixed_evidence_fact_ranks, 5),
+        "mixed_claim_evidence_top_10": _count_at(mixed_evidence_fact_ranks, 10),
         "evidence_claims_with_evidence_top_1": _count_at(evidence_fact_ranks, 1),
         "evidence_claims_with_evidence_top_3": _count_at(evidence_fact_ranks, 3),
         "evidence_claims_with_evidence_top_5": _count_at(evidence_fact_ranks, 5),
@@ -359,7 +374,9 @@ def main() -> int:
         "AI Discovery mapped-source retrieval: "
         f"{metrics['queries_with_mapped_source_top_3']}/{metrics['query_count']} queries have a mapped source in top-3; "
         f"{metrics['claims_with_mapped_source_top_5']}/{metrics['expected_fact_count']} fact claims have a mapped source in top-5; "
-        f"{metrics['evidence_claims_with_evidence_top_5']}/{metrics['claims_with_first_party_evidence']} evidence-backed claims have first-party evidence in top-5; "
+        f"first-party evidence top-5 across all (including mixed) claims: {metrics['evidence_claims_with_evidence_top_5']}/{metrics['claims_with_first_party_evidence']}; "
+        f"pure first-party claims evidence top-5: {metrics['pure_first_party_evidence_top_5']}/{metrics['pure_first_party_claim_count']}; "
+        f"mixed claims with evidence top-5: {metrics['mixed_claim_evidence_top_5']}/{metrics['mixed_claim_count']}; "
         f"all facts are covered at top-5 in {metrics['all_claims_have_mapped_source_top_5']}/{metrics['query_count']} queries; "
         f"query-level mapped source top-3: {metrics['queries_with_mapped_source_top_3']}/{metrics['query_count']}; "
         f"all facts top-5: {metrics['all_claims_have_mapped_source_top_5']}/{metrics['query_count']}; "
