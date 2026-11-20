@@ -148,8 +148,8 @@ def _load_unit_dispositions(
             raise ValueError(f"first_party_fact must use only first-party evidence: {unit_id}")
         if category == "internal_recommendation" and classes != ["internal_methodology"]:
             raise ValueError(f"internal_recommendation must use only internal methodology: {unit_id}")
-        if category == "source_freshness_note" and classes != ["first_party_evidence"]:
-            raise ValueError(f"source_freshness_note must use first-party evidence: {unit_id}")
+        if category == "source_freshness_note" and "first_party_evidence" not in classes:
+            raise ValueError(f"source_freshness_note must include first-party evidence: {unit_id}")
         if category == "mixed_assertion" and classes != list(SOURCE_CLASSES):
             raise ValueError(f"mixed_assertion must use both source classes: {unit_id}")
         if category == "scope_limitation" and not classes:
