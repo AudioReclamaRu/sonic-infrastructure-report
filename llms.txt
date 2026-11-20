@@ -122,3 +122,5 @@
 - [Семь кратких brand/entity ответов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md): чем занимается студия, услуги, канонический сайт, контакты и ограничения каталожных счётчиков.
 - [Маршрутизация AR-BRAND-01…07](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json): точные query IDs → answer headings → entity sources → evidence → guardrails.
 - Динамические числа и контактные данные сопровождаются датой; конфликтующие счётчики не нормализованы. Все семь запросов остаются not_run.
+
+- [Карта доказательной поддержки каждого ожидаемого факта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json): 112 связей между каждым expected fact из 46 RU benchmark-запросов и конкретными evidence/внутренними методическими источниками; различает публичное evidence и внутреннюю профессиональную позицию. Внутренняя evaluator-side карта, не предварительно загружается в тестируемые AI-платформы.
