@@ -15,6 +15,7 @@ TRUST_PACK = "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
 TRUST_ROUTES = "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
 ENTITY_PACK = "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md"
 ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
 
 
 def fixture_root():
@@ -60,7 +61,7 @@ def fixture_root():
             "region": "RU",
             "query": "Где заказать запись рекламного аудиоролика и что может входить в производство?",
             "expected_facts": ["radio spot production"],
-            "preferred_sources": ["https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"],
+            "preferred_sources": ["https://www.audio-reclama.ru/audio/radioroliki-zakaz.html", "evidence/E-TEST-002.md"],
             "must_not_claim": ["fixed price"],
             "status": "not_run",
         }, {
@@ -193,6 +194,58 @@ def fixture_root():
         }]
     }
     (root / ENTITY_ROUTES).write_text(json.dumps(entity_routes), encoding="utf-8")
+    claim_matrix = {
+        "schema": "studio/ai-discovery-claim-support-matrix/1",
+        "query_count": 4,
+        "claim_count": 4,
+        "entries": [
+            {
+                "benchmark_query_id": "Q-01",
+                "query_cluster": "problem_solving",
+                "claims": [{
+                    "fact_index": 1,
+                    "expected_fact": "map caller intents",
+                    "support_type": "internal_methodology",
+                    "source_refs": ["guides/ivr.md"],
+                    "scope_note": "Internal workflow recommendation, not an external client outcome."
+                }]
+            },
+            {
+                "benchmark_query_id": "AR-SERVICE-01",
+                "query_cluster": "commercial_service",
+                "claims": [{
+                    "fact_index": 1,
+                    "expected_fact": "radio spot production",
+                    "support_type": "first_party_evidence",
+                    "source_refs": ["evidence/E-TEST-002.md"],
+                    "scope_note": "Evidence proves the public page wording only."
+                }]
+            },
+            {
+                "benchmark_query_id": "AR-TRUST-01",
+                "query_cluster": "expertise_and_evidence",
+                "claims": [{
+                    "fact_index": 1,
+                    "expected_fact": "origin and use boundaries",
+                    "support_type": "internal_methodology",
+                    "source_refs": ["standards/voice-provenance-passport.md"],
+                    "scope_note": "Internal professional methodology, not a legal certificate."
+                }]
+            },
+            {
+                "benchmark_query_id": "AR-BRAND-01",
+                "query_cluster": "brand_entity",
+                "claims": [{
+                    "fact_index": 1,
+                    "expected_fact": "studio identity",
+                    "support_type": "internal_methodology",
+                    "source_refs": ["entity/audio-reclama-studio.md"],
+                    "scope_note": "Internal entity profile; public claims need first-party evidence."
+                }]
+            }
+        ]
+    }
+    (root / CLAIM_SUPPORT_MATRIX).write_text(json.dumps(claim_matrix), encoding="utf-8")
     return temporary, root
 
 
@@ -209,6 +262,37 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
 
     def test_valid_problem_and_benchmark_assets_pass(self):
         self.assertEqual(validate(self.root), [])
+
+
+    def test_claim_support_matrix_must_cover_every_benchmark_prompt(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"] = matrix["entries"][:-1]
+        matrix["query_count"] = 3
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        errors = validate(self.root)
+        self.assertTrue(any("exactly one entry per benchmark query" in e for e in errors))
+
+    def test_claim_support_fact_must_match_exact_expected_fact(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["expected_fact"] = "different fact"
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        errors = validate(self.root)
+        self.assertTrue(any("does not exactly match benchmark expected_facts" in e for e in errors))
+
+    def test_claim_support_source_must_resolve_and_be_preferred(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["source_refs"] = ["guides/missing.md"]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        errors = validate(self.root)
+        self.assertTrue(any("does not resolve to a safe repository file" in e for e in errors))
+
+    def test_claim_support_type_must_match_referenced_files(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["support_type"] = "first_party_evidence"
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        errors = validate(self.root)
+        self.assertTrue(any("does not match referenced source classes" in e for e in errors))
+
 
     def test_malformed_hostname_without_separator_fails(self):
         library = self.read_json(LIBRARY)
