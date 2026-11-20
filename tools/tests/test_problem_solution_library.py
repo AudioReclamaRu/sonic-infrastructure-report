@@ -22,6 +22,7 @@ def fixture_root():
     (root / "research").mkdir()
     (root / "guides").mkdir()
     (root / "evidence").mkdir()
+    (root / "standards").mkdir()
     library = {
         "schema": "audio-reclama/problem-solution-library/1",
         "scenarios": [{
@@ -82,6 +83,7 @@ def fixture_root():
         encoding="utf-8",
     )
     (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
+    (root / "standards/voice-provenance-passport.md").write_text("# Voice provenance passport\n", encoding="utf-8")
     (root / SERVICE_PACK).write_text(
         "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?\n",
         encoding="utf-8",
