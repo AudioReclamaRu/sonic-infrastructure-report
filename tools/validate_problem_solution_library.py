@@ -1082,6 +1082,7 @@ def main() -> int:
     entity_routes = json.loads((ROOT / ENTITY_ROUTES).read_text(encoding="utf-8"))
     claim_matrix = json.loads((ROOT / CLAIM_SUPPORT_MATRIX).read_text(encoding="utf-8"))
     semantic_review = claim_matrix.get("semantic_review", {})
+    answer_audit = json.loads((ROOT / ANSWER_COVERAGE_AUDIT).read_text(encoding="utf-8"))
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
