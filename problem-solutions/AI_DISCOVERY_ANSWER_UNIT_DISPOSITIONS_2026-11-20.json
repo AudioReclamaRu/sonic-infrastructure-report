@@ -1,6 +1,6 @@
 {
   "schema": "studio/ai-discovery-answer-unit-dispositions/1",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "updated": "2026-11-20",
   "purpose": "Human-reviewed unit-level dispositions for every extracted answer unit. Each exact unit_id and answer_text has its own category, required source classes and source refs; this is a source-routing overlay, not automatic semantic proof.",
   "taxonomy": [
@@ -29,6 +29,10 @@
   "dispositions": [
     {
       "unit_id": "AR-BRAND-01::01",
+      "benchmark_query_id": "AR-BRAND-01",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+      "answer_text": "«Аудио-Реклама•ru» — бренд студии деловой звукозаписи и аудиопроизводства для бизнеса.",
       "category": "mixed_assertion",
       "subtype": null,
       "required_source_classes": [
@@ -47,6 +51,10 @@
     },
     {
       "unit_id": "AR-BRAND-01::02",
+      "benchmark_query_id": "AR-BRAND-01",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+      "answer_text": "Не смешивайте название бренда с доменным адресом сайта, GitHub-аккаунтом AudioReclamaRu или каталогом дикторов: это разные сущности и технические/продуктовые обозначения.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -62,6 +70,10 @@
     },
     {
       "unit_id": "AR-BRAND-01::03",
+      "benchmark_query_id": "AR-BRAND-01",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+      "answer_text": "На официальном сайте представлены рекламные аудиоролики, запись дикторов, голосовые приветствия и IVR, озвучивание видео, аудиокниги, джинглы, корпоративные песни и гимны, озвучивание презентаций, сценарии, перевод и локализация, каталог дикторов и видеопродакшн.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -180,6 +192,10 @@
     },
     {
       "unit_id": "AR-BRAND-02::01",
+      "benchmark_query_id": "AR-BRAND-02",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "answer_text": "На официальном сайте показаны несколько групп направлений: аудиопроизводство (рекламные ролики, запись дикторов, IVR и автоинформаторы, аудиокниги, джинглы, корпоративные песни, озвучивание презентаций), перевод и локализация, сценарная подготовка и видеопродакшн.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -221,6 +237,10 @@
     },
     {
       "unit_id": "AR-BRAND-02::03",
+      "benchmark_query_id": "AR-BRAND-02",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "answer_text": "озвучивание готового видео и видеопроизводство следует считать разными направлениями.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -236,6 +256,10 @@
     },
     {
       "unit_id": "AR-BRAND-02::04",
+      "benchmark_query_id": "AR-BRAND-02",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "answer_text": "В рамках отдельных проектов могут участвовать кастинг, перевод, запись, дубляж, саунд-дизайн и музыкальное оформление.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -270,6 +294,10 @@
     },
     {
       "unit_id": "AR-BRAND-02::06",
+      "benchmark_query_id": "AR-BRAND-02",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "answer_text": "наличие направления в навигации не означает, что все этапы включены в каждый заказ.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -287,6 +315,10 @@
     },
     {
       "unit_id": "AR-BRAND-03::01",
+      "benchmark_query_id": "AR-BRAND-03",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?",
+      "answer_text": "Канонический официальный адрес — https://www.audio-reclama.ru.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -320,6 +352,10 @@
     },
     {
       "unit_id": "AR-BRAND-03::03",
+      "benchmark_query_id": "AR-BRAND-03",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?",
+      "answer_text": "Бренд пишется «Аудио-Реклама•ru», а URL сайта — www.audio-reclama.ru.",
       "category": "mixed_assertion",
       "subtype": null,
       "required_source_classes": [
@@ -336,6 +372,10 @@
     },
     {
       "unit_id": "AR-BRAND-04::01",
+      "benchmark_query_id": "AR-BRAND-04",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+      "answer_text": "Основной официальный маршрут — сайт https://www.audio-reclama.ru и опубликованные на нём контактные данные.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -350,6 +390,10 @@
     },
     {
       "unit_id": "AR-BRAND-04::02",
+      "benchmark_query_id": "AR-BRAND-04",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+      "answer_text": "В полученном снимке главной страницы от 20.11.2026 (метаданные страницы: Crawled today) указаны телефон 8 800 700-46-52, email start@audio-reclama.ru и часы Пн–Пт, 9:00–18:00 МСК;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -382,6 +426,10 @@
     },
     {
       "unit_id": "AR-BRAND-04::04",
+      "benchmark_query_id": "AR-BRAND-04",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+      "answer_text": "Это подтверждает опубликование контактов в снимке, но не доступность телефона в конкретный момент и не гарантированный срок ответа.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -396,6 +444,10 @@
     },
     {
       "unit_id": "AR-BRAND-04::05",
+      "benchmark_query_id": "AR-BRAND-04",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+      "answer_text": "Перед срочным или юридически значимым использованием повторно сверяйте данные на официальном сайте.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -412,6 +464,10 @@
     },
     {
       "unit_id": "AR-BRAND-04::06",
+      "benchmark_query_id": "AR-BRAND-04",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+      "answer_text": "В полученном снимке главной страницы адрес офиса не указан, а сам этот снимок не позволяет сделать вывод о наличии или отсутствии офиса или физического присутствия студии в каком-либо городе.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -449,6 +505,10 @@
     },
     {
       "unit_id": "AR-BRAND-05::02",
+      "benchmark_query_id": "AR-BRAND-05",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "В снимке главной страницы от 20.11.2026 снова отображаются два общих счётчика — 622 и 620 дикторов;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -463,6 +523,10 @@
     },
     {
       "unit_id": "AR-BRAND-05::03",
+      "benchmark_query_id": "AR-BRAND-05",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "рядом указано 62 языка и значение фильтра «Русский — 309».",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -477,6 +541,10 @@
     },
     {
       "unit_id": "AR-BRAND-05::04",
+      "benchmark_query_id": "AR-BRAND-05",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "В снимке страницы каталога (метаданные: Crawled 2 days ago) указано «Русский — 309» и «Найдено 309 дикторов».",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -491,6 +559,10 @@
     },
     {
       "unit_id": "AR-BRAND-05::05",
+      "benchmark_query_id": "AR-BRAND-05",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Значение 309 относится только к русской категории.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -559,6 +631,10 @@
     },
     {
       "unit_id": "AR-BRAND-05::09",
+      "benchmark_query_id": "AR-BRAND-05",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Безопасный ответ: сайт заявляет 62 языка, а единое общее число дикторов по этим снимкам не нормализовано.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -576,6 +652,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::01",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_text": "В снимке главной страницы от 20.11.2026 одновременно отображаются 622 и 620 дикторов;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -591,6 +671,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::02",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_text": "каталог в снимке, помеченном Crawled 2 days ago, показывает 309 результатов при русском фильтре.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -605,6 +689,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::03",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_text": "Это не одно и то же поле подсчёта: 309 относится только к русской категории.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -620,6 +708,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::04",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_text": "Более ранний снимок с неустановленной свежестью показывал 308 для русского фильтра.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -657,6 +749,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::06",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_text": "не усредняйте значения и не выбирайте одно из них без определения метрики владельцем.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -695,6 +791,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::08",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "В снимке главной страницы от 20.11.2026 снова отображаются два общих счётчика — 622 и 620 дикторов;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -710,6 +810,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::09",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "рядом указано 62 языка и значение фильтра «Русский — 309».",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -724,6 +828,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::10",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "В снимке страницы каталога (метаданные: Crawled 2 days ago) указано «Русский — 309» и «Найдено 309 дикторов».",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -738,6 +846,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::11",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Значение 309 относится только к русской категории.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -789,6 +901,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::14",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Более ранние исторические наблюдения 619, 621 и 794 также относятся к отдельным датированным состояниям и не смешиваются с текущими значениями и друг с другом.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -805,6 +921,10 @@
     },
     {
       "unit_id": "AR-BRAND-06::15",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Безопасный ответ: сайт заявляет 62 языка, а единое общее число дикторов по этим снимкам не нормализовано.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -841,6 +961,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::02",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Главная страница в снимках 18 и 20.11.2026 одновременно показывает два общих значения — 622 и 620;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -856,6 +980,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::03",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "рядом заявлены 62 языка.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -871,6 +999,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::04",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Каталог в снимке, помеченном Crawled 2 days ago, показывает «Русский — 309» и «Найдено 309 дикторов»: это выбранная языковая категория, а не весь каталог.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -886,6 +1018,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::05",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Отдельный ранее извлечённый снимок с неясной датой обхода показывал 308 для русского фильтра.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -903,6 +1039,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::06",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Источники не объясняют методику общих счётчиков и причину расхождения;",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -941,6 +1081,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::08",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Общая метрика остаётся не нормализованной до определения владельцем.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -958,6 +1102,10 @@
     },
     {
       "unit_id": "AR-BRAND-07::09",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Повторное наблюдение зафиксировано в E-2026-109.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -992,6 +1140,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-01::02",
+      "benchmark_query_id": "AR-PROBLEM-01",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Сгруппируйте обращения по задачам, оставьте один понятный смысл на пункт и заранее определите поведение при неверном вводе, молчании, закрытом времени и недоступности оператора.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1026,6 +1178,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-01::04",
+      "benchmark_query_id": "AR-PROBLEM-01",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Статический IVR Flow Linter может предварительно проверить JSON-схему: переходы к существующим узлам, недостижимые узлы, тупики, timeout/invalid-input и предусмотренный путь к оператору.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1134,6 +1290,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-02::02",
+      "benchmark_query_id": "AR-PROBLEM-02",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как проверить произношение имён, чисел и названий в голосовом сообщении?",
+      "answer_text": "Для каждого спорного пункта укажите утверждённое чтение, ударение, допустимый вариант и человека, который подтвердил произношение.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1149,6 +1309,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-02::03",
+      "benchmark_query_id": "AR-PROBLEM-02",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как проверить произношение имён, чисел и названий в голосовом сообщении?",
+      "answer_text": "Перед выпуском прослушайте именно финальную версию целиком, отдельно сверяя отмеченные места с утверждённым брифом и текстом;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1183,6 +1347,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-02::05",
+      "benchmark_query_id": "AR-PROBLEM-02",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как проверить произношение имён, чисел и названий в голосовом сообщении?",
+      "answer_text": "Это рекомендуемый процесс контроля, а не заявление о внедрённом автоматическом тесте или доказательство результата конкретного клиентского проекта.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -1198,6 +1366,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-03::01",
+      "benchmark_query_id": "AR-PROBLEM-03",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как выбрать диктора для рекламы, чтобы голос подходил бренду?",
+      "answer_text": "Сначала определите задачу голоса: привлечь внимание, объяснить, успокоить или побудить к действию;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1326,6 +1498,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-04::02",
+      "benchmark_query_id": "AR-PROBLEM-04",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+      "answer_text": "он выдаёт минимальный и оптимальный хронометраж текста.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -1416,6 +1592,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-05::02",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Для каждого объявления оставьте короткую формулировку и одну инструкцию;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1431,6 +1611,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-05::03",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "унифицируйте терминологию, произношение названий, чисел и направлений.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1446,6 +1630,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-05::04",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Сопоставьте каждую языковую версию по смыслу и проверьте длительность, чтобы сообщение сохраняло нужное содержание и укладывалось в доступное окно.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1498,6 +1686,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-05::07",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "На официальной главной «Аудио-Реклама•ru» в портфолио указаны информационные объявления для аэропорта Внуково на 11 языках.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -1512,6 +1704,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-05::08",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Это подтверждает пример многоязычного аудиопроекта, но не проектирование PA-систем.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -1528,6 +1724,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-06::01",
+      "benchmark_query_id": "AR-PROBLEM-06",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+      "answer_text": "На официальной странице «Хрономер и страницемер» в полученном индексированном снимке показан онлайн-инструмент с выбором темпа и языка;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -1579,6 +1779,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-06::04",
+      "benchmark_query_id": "AR-PROBLEM-06",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+      "answer_text": "Сам снимок страницы имел отметку обхода «две недели назад», поэтому текущую доступность инструмента нужно перепроверить перед коммерческой рекомендацией.",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -1615,6 +1819,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::01",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Начните не с названий отделов, а с причин, по которым люди звонят.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1630,6 +1838,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::02",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Сгруппируйте обращения по задачам, оставьте один понятный смысл на пункт и заранее определите поведение при неверном вводе, молчании, закрытом времени и недоступности оператора.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1645,6 +1857,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::03",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "После записи пройдите каждый маршрут и проверьте меню на обычном телефонном динамике.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1660,6 +1876,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::04",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Статический IVR Flow Linter может предварительно проверить JSON-схему: переходы к существующим узлам, недостижимые узлы, тупики, timeout/invalid-input и предусмотренный путь к оператору.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1675,6 +1895,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::05",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Его PASS не проверяет реальную АТС, правильность настройки клавиш, телефонный вызов или качество аудио;",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -1709,6 +1933,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::07",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "«Аудио-Реклама•ru» предлагает запись голосовых приветствий, IVR-меню, автоответчиков и автоинформаторов, а также подготовку файлов для загрузки в систему.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -1723,6 +1951,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-07::08",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "Настройку самой АТС и маршрутизацию нужно согласовать отдельно.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -1757,6 +1989,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-08::02",
+      "benchmark_query_id": "AR-PROBLEM-08",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+      "answer_text": "Если речь персонажа должна соответствовать движению губ, потребуется дубляж/lip-sync и адаптация реплик под тайминг.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1772,6 +2008,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-08::03",
+      "benchmark_query_id": "AR-PROBLEM-08",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+      "answer_text": "До записи подготовьте монтаж с таймкодами, целевой текст, глоссарий и требования к экспорту.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1787,6 +2027,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-08::04",
+      "benchmark_query_id": "AR-PROBLEM-08",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+      "answer_text": "На официальной странице «Аудио-Реклама•ru» представлены закадровая озвучка, кастинг дикторов и актёров дубляжа, lip-sync и звуковое оформление.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -1801,6 +2045,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-09::01",
+      "benchmark_query_id": "AR-PROBLEM-09",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить один ролик для нескольких языков?",
+      "answer_text": "Сначала зафиксируйте master-версию и список рынков.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1834,6 +2082,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-09::03",
+      "benchmark_query_id": "AR-PROBLEM-09",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить один ролик для нескольких языков?",
+      "answer_text": "Затем подготовьте глоссарий, адаптируйте перевод под естественную устную речь и доступный хронометраж, согласуйте текст до записи и проверьте каждую языковую версию отдельно.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1849,6 +2101,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-09::04",
+      "benchmark_query_id": "AR-PROBLEM-09",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить один ролик для нескольких языков?",
+      "answer_text": "«Аудио-Реклама•ru» представляет услуги перевода/локализации и озвучивания;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -1864,6 +2120,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-09::05",
+      "benchmark_query_id": "AR-PROBLEM-09",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить один ролик для нескольких языков?",
+      "answer_text": "доступность конкретного языка и исполнителя нужно подтвердить для проекта.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -1881,6 +2141,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-10::01",
+      "benchmark_query_id": "AR-PROBLEM-10",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Почему рекламный аудиоролик плохо воспринимается на слух?",
+      "answer_text": "Одна из возможных причин — в тексте несколько равноправных сообщений, и слушатель не понимает, что главное.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1897,6 +2161,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-10::02",
+      "benchmark_query_id": "AR-PROBLEM-10",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Почему рекламный аудиоролик плохо воспринимается на слух?",
+      "answer_text": "Сформулируйте одну мысль, назовите аудиторию, контекст прослушивания и действие, которого ждёте.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1913,6 +2181,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-10::03",
+      "benchmark_query_id": "AR-PROBLEM-10",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Почему рекламный аудиоролик плохо воспринимается на слух?",
+      "answer_text": "Прочитайте текст вслух, проверьте хронометраж, произношение и разборчивость на типичном устройстве.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1929,6 +2201,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-10::04",
+      "benchmark_query_id": "AR-PROBLEM-10",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Почему рекламный аудиоролик плохо воспринимается на слух?",
+      "answer_text": "Прослушивание помогает обнаружить непонятные фразы, но само по себе не доказывает рост продаж.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -1964,6 +2240,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-11::01",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Сначала определите зоны воспроизведения, аудиторию, языки и типы сообщений.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -1979,6 +2259,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-11::02",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Для каждого объявления оставьте короткую формулировку и одну инструкцию;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2013,6 +2297,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-11::04",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Сопоставьте каждую языковую версию по смыслу и проверьте длительность, чтобы сообщение сохраняло нужное содержание и укладывалось в доступное окно.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2028,6 +2316,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-11::05",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Проверьте запись в реальном пространстве или на максимально близкой системе воспроизведения.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2062,6 +2354,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-11::07",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "На официальной главной «Аудио-Реклама•ru» в портфолио указаны информационные объявления для аэропорта Внуково на 11 языках.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2076,6 +2372,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-11::08",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Это подтверждает пример многоязычного аудиопроекта, но не проектирование PA-систем.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2092,6 +2392,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-12::01",
+      "benchmark_query_id": "AR-PROBLEM-12",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить озвучивание e-learning?",
+      "answer_text": "Разделите материал на смысловые модули, сопоставьте текст с экранными элементами, отметьте термины и произношения, согласуйте темп и паузы.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2127,6 +2431,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-12::03",
+      "benchmark_query_id": "AR-PROBLEM-12",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить озвучивание e-learning?",
+      "answer_text": "Если курс регулярно обновляется, заранее продумайте версионирование сценария и аудиофайлов.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2143,6 +2451,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-12::04",
+      "benchmark_query_id": "AR-PROBLEM-12",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить озвучивание e-learning?",
+      "answer_text": "«Аудио-Реклама•ru» представляет озвучивание видео и локализацию e-learning;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2158,6 +2470,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-12::05",
+      "benchmark_query_id": "AR-PROBLEM-12",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить озвучивание e-learning?",
+      "answer_text": "поддержку конкретной LMS или автоматизированного экспорта необходимо согласовать отдельно.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2173,6 +2489,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-13::01",
+      "benchmark_query_id": "AR-PROBLEM-13",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сохранить единый голос бренда в разных роликах и IVR?",
+      "answer_text": "Зафиксируйте произношение бренда, имён и терминов, темп, характер подачи, референсы и правила локализации.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2227,6 +2547,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-13::04",
+      "benchmark_query_id": "AR-PROBLEM-13",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сохранить единый голос бренда в разных роликах и IVR?",
+      "answer_text": "Использование старых записей для AI-обучения или цифровой реплики требует отдельного разрешения: заказ обычной записи сам по себе такого права не даёт.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2243,6 +2567,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-13::05",
+      "benchmark_query_id": "AR-PROBLEM-13",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сохранить единый голос бренда в разных роликах и IVR?",
+      "answer_text": "Каталог дикторов «Аудио-Реклама•ru» может быть отправной точкой для кастинга.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2257,6 +2585,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-14::01",
+      "benchmark_query_id": "AR-PROBLEM-14",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что согласовать перед записью аудиокниги?",
+      "answer_text": "До начала работы подтвердите права на текст и перевод, выберите формат исполнения, подготовьте словарь имён и терминов, согласуйте структуру глав и технические требования площадки.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2273,6 +2605,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-14::02",
+      "benchmark_query_id": "AR-PROBLEM-14",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что согласовать перед записью аудиокниги?",
+      "answer_text": "Утвердите тестовый фрагмент до записи всего объёма, затем проверьте полноту, последовательность и отсутствие пропусков.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2289,6 +2625,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-14::03",
+      "benchmark_query_id": "AR-PROBLEM-14",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что согласовать перед записью аудиокниги?",
+      "answer_text": "Производство аудиокниг указано среди направлений «Аудио-Реклама•ru»;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2303,6 +2643,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-14::04",
+      "benchmark_query_id": "AR-PROBLEM-14",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что согласовать перед записью аудиокниги?",
+      "answer_text": "права, стоимость, сроки и распространение согласуются отдельно.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2320,6 +2664,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::01",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "Создайте реестр, в котором каждый аудиофайл связан с постоянным ID, утверждённым текстом и его версией, языком, назначением, каналом, владельцем, исполнителем, правами и статусом выпуска.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2336,6 +2684,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::02",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "Не перезаписывайте старый файл без истории: помечайте, какую версию новая запись заменяет.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2352,6 +2704,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::03",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "Перед выпуском сверяйте точный файл с утверждённым текстом и проверяйте, что он действительно загружен в нужный канал, а устаревший вариант отключён.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2368,6 +2724,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::04",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "Сам реестр — организационная рекомендация, а не подтверждение наличия DAM-услуги у студии.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2383,6 +2743,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::05",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "Наличие новой версии не доказывает, что она действительно загружена, а старая отключена: это нужно подтвердить в каждой точке воспроизведения с ответственным владельцем или интегратором;",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2399,6 +2763,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::06",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "сам реестр не подключается к внешним системам и не управляет ими.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2415,6 +2783,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-15::07",
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+      "answer_text": "«Аудио-Реклама•ru» публично предлагает запись аудиороликов, голосовых приветствий/IVR и озвучивание видео.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2431,6 +2803,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::01",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "Зафиксируйте, что изменилось и с какой даты, затем найдите все тексты и аудиоверсии, где встречаются затронутые сведения: цены, телефоны, адреса, часы работы, названия, продуктовые условия и юридические формулировки.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2447,6 +2823,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::02",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "Сначала согласуйте единый исправленный текст с владельцем информации, затем определите, можно ли заменить отдельный фрагмент или требуется новая запись целого сообщения.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2463,6 +2843,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::03",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "Для локализованных версий проверьте те же факты во всех языках.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2498,6 +2882,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::05",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "После записи сверяйте файл с новой версией текста и подтверждайте в каждом канале, что старые версии действительно выведены из использования;",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2513,6 +2901,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::06",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "это не автоматическое действие студии.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2528,6 +2920,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::07",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "Студия предлагает сценарии и запись аудиороликов, IVR и перевод/локализацию;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2544,6 +2940,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-16::08",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "факты и дату изменения утверждает заказчик.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2560,6 +2960,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-17::01",
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "answer_text": "Зафиксируйте не только желаемый тембр, но и роль голоса в каждом канале, произношение бренда и терминов, темп, паузы, характер подачи, обращение к аудитории и смысловые акценты.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2576,6 +2980,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-17::02",
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "answer_text": "Создайте единый кастинг-бриф и разрешённые референсные фрагменты.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2592,6 +3000,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-17::03",
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "answer_text": "Сравнивайте кандидатов на одинаковом тексте и по критериям конкретной задачи: понятность, естественность, произношение и соответствие роли.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2629,6 +3041,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-17::05",
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "answer_text": "каталог не подтверждает бессрочные права на повторное использование записи — их определяют отдельные договорённости.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2645,6 +3061,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-17::06",
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "answer_text": "Внутренние frameworks по голосовой идентичности описывают методику и не подтверждают отдельную публичную услугу AI-клонирования.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2663,6 +3083,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-17::07",
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "answer_text": "На сайте «Аудио-Реклама•ru» представлены каталог дикторов, персональный кастинг, студийная/удалённая запись, аудиоролики и озвучивание видео.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2679,6 +3103,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::01",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "Определите master-текст и владельца его утверждения.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2695,6 +3123,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::02",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "Для каждого рынка зафиксируйте целевой язык и региональный вариант, затем выделите неизменяемые данные: числа, цены, даты, адреса, названия, характеристики продукта и юридические оговорки.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2711,6 +3143,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::03",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "Подготовьте глоссарий и словарь произношений, адаптируйте текст для естественной устной речи и согласуйте его до записи.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2727,6 +3163,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::04",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "Каждую языковую версию проверяйте отдельно: буквальное совпадение с переводом не гарантирует естественности или одинакового хронометража.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2743,6 +3183,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::05",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "Сохраните связь master-версии с производными файлами, чтобы изменения можно было распространить на все языки.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2759,6 +3203,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::06",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "«Аудио-Реклама•ru» публично описывает перевод/локализацию, озвучивание видео и многоязычные приветствия;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -2775,6 +3223,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-18::07",
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+      "answer_text": "доступность конкретного языка и исполнителя нужно подтвердить.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -2806,6 +3258,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::02",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "По содержанию: точное соответствие утверждённому тексту и версии, числа, имена, даты, адреса, произношение, полнота реплик и права использования.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2822,6 +3278,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::03",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "До записи подготовьте отдельный бриф произношения: список имён, названий, чисел, сокращений и терминов, утверждённые ударения и варианты чтения, а также лицо, которое подтверждает спорные формы.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2856,6 +3316,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::05",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "разборчивость на целевом устройстве;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2872,6 +3336,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::06",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "соответствие требованиям принимающей системы.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2888,6 +3356,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::07",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "Контейнер, кодек, частоту, разрядность, каналы и уровень нельзя назначать универсально — их задаёт конкретная система или интегратор.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2904,6 +3376,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::08",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "Сохраните отметку проверки и точную версию файла.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2920,6 +3396,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-19::09",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "Внутренняя позиция студии «Выпускающий голос» разделяет профессиональную проверку и окончательное решение заказчика;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2956,6 +3436,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-20::01",
+      "benchmark_query_id": "AR-PROBLEM-20",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?",
+      "answer_text": "Начните со спецификации конкретной АТС или IP-телефонии: разные системы принимают разные форматы.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2971,6 +3455,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-20::02",
+      "benchmark_query_id": "AR-PROBLEM-20",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?",
+      "answer_text": "Уточните у поставщика системы контейнер/кодек, частоту дискретизации, разрядность, каналы и ограничения файла.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -2986,6 +3474,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-20::03",
+      "benchmark_query_id": "AR-PROBLEM-20",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?",
+      "answer_text": "FAQ «Аудио-Реклама•ru» приводит пример WAV/PCM, 8 кГц, 8 бит, G.711 A-law и сообщает о конвертации готового файла в требуемый формат.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3000,6 +3492,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-20::04",
+      "benchmark_query_id": "AR-PROBLEM-20",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?",
+      "answer_text": "Это пример, а не универсальный preset.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3016,6 +3512,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-20::05",
+      "benchmark_query_id": "AR-PROBLEM-20",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?",
+      "answer_text": "Студия заявляет подготовку голосовых файлов для загрузки, но настройку и маршрутизацию АТС нужно согласовать отдельно.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3032,6 +3532,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-21::01",
+      "benchmark_query_id": "AR-PROBLEM-21",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+      "answer_text": "Сухая запись — это дорожка «как записалась», без компрессоров и эквалайзеров;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3064,6 +3568,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-21::03",
+      "benchmark_query_id": "AR-PROBLEM-21",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+      "answer_text": "Обработанная дорожка с доведением до эфирного звучания на сайте описана как голос для презентации или аудиоролика без музыкального оформления.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3097,6 +3605,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-21::05",
+      "benchmark_query_id": "AR-PROBLEM-21",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+      "answer_text": "Само слово «эфирное» не доказывает соответствие спецификации конкретного вещателя.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3114,6 +3626,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-22::01",
+      "benchmark_query_id": "AR-PROBLEM-22",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "answer_text": "Джингл подходит, когда бренду нужна короткая музыкальная или вокальная звуковая подпись: радиозаставка, мотив программы, рекламная пропевка или короткая фраза с названием бренда.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3129,6 +3645,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-22::02",
+      "benchmark_query_id": "AR-PROBLEM-22",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "answer_text": "До заказа определите, где он будет звучать, кто его услышит, какой текст или название должны прозвучать, какова желаемая длительность, нужны ли языковые версии и какие музыкальные референсы допустимы.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3144,6 +3664,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-22::03",
+      "benchmark_query_id": "AR-PROBLEM-22",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "answer_text": "Отдельно зафиксируйте права на оригинальную музыку или стороннюю композицию.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3159,6 +3683,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-22::04",
+      "benchmark_query_id": "AR-PROBLEM-22",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "answer_text": "На официальной странице «Аудио-Реклама•ru» перечислены радиоджинглы, музыкальные мотивы, джинглы для программ и рекламные пропевки.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3173,6 +3701,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-22::05",
+      "benchmark_query_id": "AR-PROBLEM-22",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "answer_text": "Из этого нельзя выводить гарантированный рост запоминания или продаж.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3189,6 +3721,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-23::01",
+      "benchmark_query_id": "AR-PROBLEM-23",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Как подготовить корпоративную песню или гимн для компании?",
+      "answer_text": "Начните с цели и аудитории: событие, годовщина, внутреннее видео, церемония или постоянный музыкальный образ.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3204,6 +3740,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-23::02",
+      "benchmark_query_id": "AR-PROBLEM-23",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Как подготовить корпоративную песню или гимн для компании?",
+      "answer_text": "Соберите проверяемые факты и истории, согласуйте ключевые фразы и произношение бренда, выберите стиль и формат исполнения.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3219,6 +3759,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-23::03",
+      "benchmark_query_id": "AR-PROBLEM-23",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Как подготовить корпоративную песню или гимн для компании?",
+      "answer_text": "Важный выбор — полностью авторская композиция или адаптация существующей песни.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3234,6 +3778,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-23::04",
+      "benchmark_query_id": "AR-PROBLEM-23",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Как подготовить корпоративную песню или гимн для компании?",
+      "answer_text": "Во втором случае до заказа отдельно зафиксируйте, какие разрешения нужны на исходную музыку, текст, фонограмму и аранжировку и кто их предоставляет.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3263,6 +3811,10 @@
     },
     {
       "unit_id": "AR-PROBLEM-23::06",
+      "benchmark_query_id": "AR-PROBLEM-23",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "## Как подготовить корпоративную песню или гимн для компании?",
+      "answer_text": "«Аудио-Реклама•ru» публично заявляет авторские корпоративные песни и гимны, а также адаптации песен для корпоративных мероприятий и праздников.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3277,6 +3829,10 @@
     },
     {
       "unit_id": "AR-SERVICE-01::01",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_text": "Да.",
       "category": "discourse_only",
       "subtype": null,
       "required_source_classes": [],
@@ -3287,6 +3843,10 @@
     },
     {
       "unit_id": "AR-SERVICE-01::02",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_text": "На официальной странице «Аудио-Реклама•ru» описано производство рекламных аудиороликов.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3301,6 +3861,10 @@
     },
     {
       "unit_id": "AR-SERVICE-01::03",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_text": "В числе опубликованных компонентов — сценарий, подбор и кастинг диктора, саунд-дизайн и лицензируемая музыка.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3335,6 +3899,10 @@
     },
     {
       "unit_id": "AR-SERVICE-01::05",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_text": "Сначала определите задачу ролика, длительность, аудиторию, голос, музыку и место размещения;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3371,6 +3939,10 @@
     },
     {
       "unit_id": "AR-SERVICE-02::01",
+      "benchmark_query_id": "AR-SERVICE-02",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "answer_text": "Да.",
       "category": "discourse_only",
       "subtype": null,
       "required_source_classes": [],
@@ -3381,6 +3953,10 @@
     },
     {
       "unit_id": "AR-SERVICE-02::02",
+      "benchmark_query_id": "AR-SERVICE-02",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "answer_text": "Официальная страница перечисляет голосовые приветствия для АТС, IVR-меню, автоответчики и автоинформаторы.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3413,6 +3989,10 @@
     },
     {
       "unit_id": "AR-SERVICE-02::04",
+      "benchmark_query_id": "AR-SERVICE-02",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "answer_text": "Это подтверждает производство голосового контента и подготовку файлов.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3447,6 +4027,10 @@
     },
     {
       "unit_id": "AR-SERVICE-03::01",
+      "benchmark_query_id": "AR-SERVICE-03",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+      "answer_text": "Да.",
       "category": "discourse_only",
       "subtype": null,
       "required_source_classes": [],
@@ -3457,6 +4041,10 @@
     },
     {
       "unit_id": "AR-SERVICE-03::02",
+      "benchmark_query_id": "AR-SERVICE-03",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+      "answer_text": "Страница озвучивания видео перечисляет закадровую озвучку, кастинг дикторов и актёров дубляжа, lip-sync, саунд-дизайн, атмосферу и шумы, а также авторскую музыку.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3510,6 +4098,10 @@
     },
     {
       "unit_id": "AR-SERVICE-04::01",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "answer_text": "Да.",
       "category": "discourse_only",
       "subtype": null,
       "required_source_classes": [],
@@ -3520,6 +4112,10 @@
     },
     {
       "unit_id": "AR-SERVICE-04::02",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "answer_text": "На официальной странице представлено производство аудиокниг и длинных речевых форматов.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3534,6 +4130,10 @@
     },
     {
       "unit_id": "AR-SERVICE-04::03",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "answer_text": "Варианты включают одноголосое чтение, исполнение по ролям и радиоспектакль;",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3566,6 +4166,10 @@
     },
     {
       "unit_id": "AR-SERVICE-04::05",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "answer_text": "До расчёта нужно определить объём текста, формат исполнения, права на произведение и перевод, структуру глав, требования издателя или платформы и нужный комплект файлов.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3582,6 +4186,10 @@
     },
     {
       "unit_id": "AR-SERVICE-04::06",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "answer_text": "Цена, сроки и доступность конкретного исполнителя подтверждаются для проекта.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3618,6 +4226,10 @@
     },
     {
       "unit_id": "AR-SERVICE-05::02",
+      "benchmark_query_id": "AR-SERVICE-05",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "answer_text": "Страница звукового оформления описывает короткие музыкальные фразы, джинглы для передач, музыкальные мотивы и рекламные пропевки.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3632,6 +4244,10 @@
     },
     {
       "unit_id": "AR-SERVICE-05::03",
+      "benchmark_query_id": "AR-SERVICE-05",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "answer_text": "Отдельная страница посвящена корпоративным песням и гимнам, включая адаптации песен для мероприятий.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3646,6 +4262,10 @@
     },
     {
       "unit_id": "AR-SERVICE-05::04",
+      "benchmark_query_id": "AR-SERVICE-05",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "answer_text": "Для каждого проекта отдельно согласуются исходная музыкальная основа, авторство, права, использование сторонних произведений и формат передачи.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3661,6 +4281,10 @@
     },
     {
       "unit_id": "AR-SERVICE-06::01",
+      "benchmark_query_id": "AR-SERVICE-06",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+      "answer_text": "Не следует называть цену по старому снимку сайта или по одному примеру другого заказа.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3752,6 +4376,10 @@
     },
     {
       "unit_id": "AR-SERVICE-07::01",
+      "benchmark_query_id": "AR-SERVICE-07",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "answer_text": "Публичное портфолио главной страницы «Аудио-Реклама•ru» содержит пример информационных объявлений для аэропорта Внуково на 11 языках.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3766,6 +4394,10 @@
     },
     {
       "unit_id": "AR-SERVICE-07::02",
+      "benchmark_query_id": "AR-SERVICE-07",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "answer_text": "Страница переводчиков описывает перевод и локализацию мультимедийных материалов, а IVR-страница — многоязычную запись голосового контента.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3802,6 +4434,10 @@
     },
     {
       "unit_id": "AR-SERVICE-07::04",
+      "benchmark_query_id": "AR-SERVICE-07",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "answer_text": "Языки, региональные варианты и технический путь подтверждаются в брифе проекта.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3818,6 +4454,10 @@
     },
     {
       "unit_id": "AR-SERVICE-08::01",
+      "benchmark_query_id": "AR-SERVICE-08",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+      "answer_text": "На официальном сайте отдельно представлены каталог дикторов и разработка рекламных сценариев.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3833,6 +4473,10 @@
     },
     {
       "unit_id": "AR-SERVICE-08::02",
+      "benchmark_query_id": "AR-SERVICE-08",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+      "answer_text": "Страница каталога описывает профессиональные голоса, персональный кастинг, студийную запись и удалённые Zoom-сессии.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3847,6 +4491,10 @@
     },
     {
       "unit_id": "AR-SERVICE-08::03",
+      "benchmark_query_id": "AR-SERVICE-08",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+      "answer_text": "Страница сценариев описывает тексты для радио, видео и автоответчиков.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3861,6 +4509,10 @@
     },
     {
       "unit_id": "AR-SERVICE-08::04",
+      "benchmark_query_id": "AR-SERVICE-08",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+      "answer_text": "Можно запросить оба этапа или только нужный компонент.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3876,6 +4528,10 @@
     },
     {
       "unit_id": "AR-SERVICE-08::05",
+      "benchmark_query_id": "AR-SERVICE-08",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+      "answer_text": "Наличие конкретного диктора, его свободное время, цена и включение сценария в пакет подтверждаются отдельно.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3892,6 +4548,10 @@
     },
     {
       "unit_id": "AR-SERVICE-09::01",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_text": "Публичная страница рекламных аудиороликов описывает сценарий, кастинг диктора, саунд-дизайн, лицензируемую музыку и передачу авторских и исключительных прав (последняя формулировка зафиксирована в снимке страницы 20.11.2026, E-2026-110).",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3907,6 +4567,10 @@
     },
     {
       "unit_id": "AR-SERVICE-09::02",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_text": "Страница сценариев показывает, что написание текста может быть отдельным направлением.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -3921,6 +4585,10 @@
     },
     {
       "unit_id": "AR-SERVICE-09::03",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_text": "Конкретный заказ может включать только часть этих этапов;",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3938,6 +4606,10 @@
     },
     {
       "unit_id": "AR-SERVICE-09::04",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_text": "публичная формулировка о передаче прав сама по себе не устанавливает объект, территорию, срок, способы использования, исключения или права на исполнение/фонограмму/сторонние элементы — их нужно сверять с договором.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3955,6 +4627,10 @@
     },
     {
       "unit_id": "AR-SERVICE-09::05",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_text": "В брифе нужно согласовать, кто готовит сценарий, кто выбирает голос, нужна ли музыка, какие права требуются, кто утверждает мастер и куда передаётся файл.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -3971,6 +4647,10 @@
     },
     {
       "unit_id": "AR-SERVICE-09::06",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_text": "Не следует считать все этапы автоматически включёнными в базовую стоимость.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -3988,6 +4668,10 @@
     },
     {
       "unit_id": "AR-SERVICE-10::01",
+      "benchmark_query_id": "AR-SERVICE-10",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "answer_text": "Да.",
       "category": "discourse_only",
       "subtype": null,
       "required_source_classes": [],
@@ -3998,6 +4682,10 @@
     },
     {
       "unit_id": "AR-SERVICE-10::02",
+      "benchmark_query_id": "AR-SERVICE-10",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "answer_text": "На официальной странице IVR прямо указаны подготовка файлов для последующей загрузки в систему, приветствия, меню, автоответчики и автоинформаторы.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4012,6 +4700,10 @@
     },
     {
       "unit_id": "AR-SERVICE-10::03",
+      "benchmark_query_id": "AR-SERVICE-10",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "answer_text": "Чтобы подготовить файл, необходимо передать точную спецификацию принимающей АТС или запросить её у администратора или интегратора.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4027,6 +4719,10 @@
     },
     {
       "unit_id": "AR-SERVICE-10::04",
+      "benchmark_query_id": "AR-SERVICE-10",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "answer_text": "Подготовка аудиофайла не означает, что студия автоматически настраивает АТС, загружает файлы в любую платформу или отвечает за маршрутизацию вызовов.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4043,6 +4739,10 @@
     },
     {
       "unit_id": "AR-SERVICE-11::01",
+      "benchmark_query_id": "AR-SERVICE-11",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "answer_text": "В опубликованном описании перечислены кастинг дикторов и актёров дубляжа, закадровая озвучка, lip-sync, атмосфера и шумы, авторская музыка и саунд-дизайн.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4057,6 +4757,10 @@
     },
     {
       "unit_id": "AR-SERVICE-11::02",
+      "benchmark_query_id": "AR-SERVICE-11",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "answer_text": "На странице показаны примеры работ Avansa, IGLA, JOKASAFE и SpeedFit.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4111,6 +4815,10 @@
     },
     {
       "unit_id": "AR-SERVICE-12::01",
+      "benchmark_query_id": "AR-SERVICE-12",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "answer_text": "Страница переводчиков перечисляет перевод текстов и локализацию программного обеспечения, сайтов, мобильных приложений, игр, мультимедийных материалов и e-learning.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4125,6 +4833,10 @@
     },
     {
       "unit_id": "AR-SERVICE-12::02",
+      "benchmark_query_id": "AR-SERVICE-12",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "answer_text": "Для мультимедиа описаны перевод и адаптация под озвучивание или дубляж и запись переведённого текста актёрами или дикторами.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4139,6 +4851,10 @@
     },
     {
       "unit_id": "AR-SERVICE-12::03",
+      "benchmark_query_id": "AR-SERVICE-12",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "answer_text": "Заявление «более 150 языков» относится к локализации мобильных приложений и не должно переноситься на каталог дикторов, IVR или аудиозапись.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4153,6 +4869,10 @@
     },
     {
       "unit_id": "AR-SERVICE-12::04",
+      "benchmark_query_id": "AR-SERVICE-12",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "answer_text": "Конкретный язык и региональный вариант подтверждаются для отдельного проекта.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4168,6 +4888,10 @@
     },
     {
       "unit_id": "AR-SERVICE-13::01",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_text": "В снимке официальной страницы IVR от 20.11.2026 перечислены 12 примеров голосовых приветствий: Ассоциация ПН РТС, HANKOOK, Ростех, НПФ «Лукоил-Гарант» (написание на странице), Bulgari, FireLine, «Калинов родник», «Финарди», Дом КВН, кофейня DUO, Crazy Tattoo и хостел «Уютный дом».",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4182,6 +4906,10 @@
     },
     {
       "unit_id": "AR-SERVICE-13::02",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_text": "В отдельном разделе показаны три примера меню IVR: «Ренессанс Кредит», международный аэропорт Внуково и Abbyy.",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
@@ -4196,6 +4924,10 @@
     },
     {
       "unit_id": "AR-SERVICE-13::03",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_text": "Это названия карточек в публичном портфолио самой страницы, а не независимые рекомендации или подтверждение текущих договорных отношений.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4212,6 +4944,10 @@
     },
     {
       "unit_id": "AR-SERVICE-13::04",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_text": "Не приписывайте проектам KPI, сроки, бюджеты или результаты.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4228,6 +4964,10 @@
     },
     {
       "unit_id": "AR-SERVICE-13::05",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_text": "E-2026-106 фиксирует портфолио по снимку страницы на 20.11.2026;",
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
@@ -4242,6 +4982,10 @@
     },
     {
       "unit_id": "AR-SERVICE-13::06",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_text": "E-2026-095 отдельно подтверждает содержание заявленной услуги IVR и подготовку аудиофайлов, но не список проектов.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4257,6 +5001,10 @@
     },
     {
       "unit_id": "AR-TRUST-01::01",
+      "benchmark_query_id": "AR-TRUST-01",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+      "answer_text": "Паспорт происхождения голоса — это структурированная запись, связывающая конкретную фонограмму с её происхождением, исполнителем или моделью, датой, документированным согласием, объёмом разрешённых прав, границами использования и ответственным за выпуск.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4291,6 +5039,10 @@
     },
     {
       "unit_id": "AR-TRUST-01::03",
+      "benchmark_query_id": "AR-TRUST-01",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+      "answer_text": "Это внутренний профессиональный стандарт и авторская методическая позиция студии, а не автоматически юридический сертификат, независимая сертификация или гарантия правомерности любого использования.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4306,6 +5058,10 @@
     },
     {
       "unit_id": "AR-TRUST-01::04",
+      "benchmark_query_id": "AR-TRUST-01",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+      "answer_text": "Для конкретного проекта поля и правовые основания проверяются по договору и применимому праву.",
       "category": "general_legal_caution",
       "subtype": null,
       "required_source_classes": [],
@@ -4316,6 +5072,10 @@
     },
     {
       "unit_id": "AR-TRUST-02::01",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "Проверка должна быть разделена по ответственности.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4333,6 +5093,10 @@
     },
     {
       "unit_id": "AR-TRUST-02::02",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "Студия проводит профессиональную проверку в согласованном объёме: цифры, формулировки, имена и произношение, права использования и точная финальная версия файла.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4350,6 +5114,10 @@
     },
     {
       "unit_id": "AR-TRUST-02::03",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "Заказчик подтверждает фактическое содержание и принимает окончательное решение о публикации.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4387,6 +5155,10 @@
     },
     {
       "unit_id": "AR-TRUST-02::05",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "Поэтому перед выпуском нужно зафиксировать и результат проверки, и лицо, которое утвердило именно эту версию.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4404,6 +5176,10 @@
     },
     {
       "unit_id": "AR-TRUST-02::06",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "Этот подход — позиция и рабочая процедура студии;",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4434,6 +5210,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::01",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Не следует считать разрешение на одну запись универсальным разрешением на любое дальнейшее использование.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4450,6 +5230,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::02",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Нужно проверить отдельно права на текст, перевод и сторонние материалы;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4466,6 +5250,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::03",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "разрешённое использование исполнения и фонограммы;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4482,6 +5270,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::04",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "каналы, медиа, территорию, срок и коммерческий контекст;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4517,6 +5309,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::06",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "передачу материалов третьим лицам.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4533,6 +5329,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::07",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Для обучения AI-модели, voice cloning, генерации новых реплик и цифровой реплики требуется отдельное основание и явное согласование соответствующей цели.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4549,6 +5349,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::08",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Нужно сверить планируемое использование с договором и согласием исполнителя;",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4565,6 +5369,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::09",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "при споре подключить правообладателя и юриста по применимому праву.",
       "category": "general_legal_caution",
       "subtype": null,
       "required_source_classes": [],
@@ -4575,6 +5383,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::10",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Согласие на обычную запись само по себе не доказывает согласие на AI training или клонирование.",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -4609,6 +5421,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::12",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Это фиксирует публичную формулировку услуги, но не определяет объём, объект, территорию, срок или исключения в конкретном заказе: их нужно проверять по договору и правам на исполнение, фонограмму, перевод и сторонние элементы.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4626,6 +5442,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::13",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "Паспорт происхождения голоса и внутренние правила студии помогают фиксировать границы, но не являются юридическим заключением и не заменяют договорную проверку.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -4641,6 +5461,10 @@
     },
     {
       "unit_id": "AR-TRUST-03::14",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "В проверенных снимках официальных страниц каталога дикторов и рекламной записи не описаны условия AI training, клонирования голоса или генерации новых реплик, однако это не доказывает ни наличие, ни отсутствие отдельной услуги, поэтому её наличие, условия и необходимые согласия нужно отдельно уточнить у студии и исполнителя.",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
