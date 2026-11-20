@@ -100,7 +100,7 @@
 
 - [Джинглы и звуковые подписи](https://www.audio-reclama.ru/audio/zvuk-media.html) и [корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) — две дополнительные problem-first темы с отдельными evidence E-2026-100 и E-2026-105.
 
-- [Маршрутный индекс ответов на бизнес-проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 20 маршрутов от задачи клиента к короткому ответу, сценарию, первичным URL и verified evidence; валидатор требует точного совпадения источника.
+- [Маршрутный индекс ответов на бизнес-проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 21 маршрут от задачи клиента к короткому ответу, сценарию, первичным URL и verified evidence; валидатор требует точного совпадения источника.
 
 
 ## Коммерческие buyer-intent ответы для AI retrieval
@@ -137,3 +137,5 @@
 - [Аудит покрытия ответов и запрещённых утверждений](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json): ручной review всех 46 benchmark-ответов, 112 ожидаемых фактов и 54 must_not_claim ограничения. Все ответы проверены по своим разделам; это внутренняя проверка, не измерение внешней AI-видимости.
 
 - [Аудит содержания ответов AI Discoverability](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md): ручная проверка 46 ответов, 112 expected facts и 54 must_not_claim ограничений; перечислены исправления маршрутов, границ услуг и правовых формулировок. Не является измерением AI-видимости.
+
+- [Лексическая оценка retrieval для 46 запросов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json): внутренний BM25 baseline по 44 секциям пяти answer packs — 45/46 точных маршрутов на первом месте, 46/46 в первой тройке; 46/46 допустимых top-1 с одной явно описанной альтернативой. Не является тестом внешних AI-моделей.
