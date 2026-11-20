@@ -233,6 +233,7 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             "benchmark_query_id": entry["benchmark_query_id"],
             "fact_index": claim["fact_index"],
             "expected_fact": claim["expected_fact"],
+            "support_type": claim["support_type"],
             "best_first_party_evidence_rank": claim["best_first_party_evidence_rank"],
             "evidence_refs": [ref for ref in claim["source_refs"] if ref.startswith("evidence/")],
             "top_candidates": claim["top_candidates"][:5],
@@ -240,6 +241,12 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
         for entry in entries for claim in entry["claims"]
         if claim["best_first_party_evidence_rank"] is not None
         and claim["best_first_party_evidence_rank"] > 5
+    ]
+    weak_pure_evidence_top_5 = [
+        item for item in weak_evidence_top_5 if item["support_type"] == "first_party_evidence"
+    ]
+    weak_mixed_evidence_top_5 = [
+        item for item in weak_evidence_top_5 if item["support_type"] == "mixed"
     ]
     all_fact_ranks_by_query = [
         [claim["best_mapped_source_rank"] for claim in entry["claims"]]
@@ -333,6 +340,8 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
         "query_summaries": query_summaries,
         "weak_claims_top_10": weak_claims_top_10,
         "weak_evidence_top_5": weak_evidence_top_5,
+        "weak_pure_evidence_top_5": weak_pure_evidence_top_5,
+        "weak_mixed_evidence_top_5": weak_mixed_evidence_top_5,
         "limitations": [
             "Source relevance is evaluated against both the user query and the fact-specific expected text; the latter is a controlled diagnostic, not text supplied by an actual searcher.",
             "A claim may map to multiple documents; the best mapped-document rank is reported and does not prove that every mapped source is needed.",
