@@ -111,6 +111,7 @@ guides/                high-intent landing pages (search surface)
   choosing-a-voice.md             choosing a voice in the synthetic era
   voice-provenance-passport.md    provenance passport and its use
   video-voiceover.md              video/presentation voiceover: final version
+  audiobook-production.ru.md     Russian buyer route: audiobook production and quote preparation (repository draft)
   chronomer-timing.md             free timing calculator before ordering
   international-voice.md          international voice: obligation with address
 dictionary/            canonical term definitions (5 live terms)
