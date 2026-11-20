@@ -331,7 +331,7 @@
       "claims": [
         {
           "fact_index": 1,
-          "expected_fact": "Разделить общее описание многоязычной услуги и публичное упоминание проекта Внуково.",
+          "expected_fact": "Страница переводчиков отдельно описывает перевод и локализацию; информационные объявления аэропорта Внуково упомянуты как отдельный пример в публичном портфолио.",
           "support_type": "first_party_evidence",
           "source_refs": [
             "evidence/E-2026-101.md",
@@ -343,7 +343,7 @@
         },
         {
           "fact_index": 2,
-          "expected_fact": "Сохранить только документированный масштаб.",
+          "expected_fact": "Публичное портфолио указывает информационные объявления для аэропорта Внуково на 11 языках.",
           "support_type": "first_party_evidence",
           "source_refs": [
             "evidence/E-2026-101.md",
@@ -361,7 +361,7 @@
       "claims": [
         {
           "fact_index": 1,
-          "expected_fact": "Официальный сайт перечисляет дикторов и сценарии в навигации.",
+          "expected_fact": "Каталог дикторов описывает профессиональных дикторов, персональный кастинг и способы записи; отдельная страница описывает подготовку рекламных сценариев.",
           "support_type": "first_party_evidence",
           "source_refs": [
             "evidence/E-2026-104.md",
@@ -373,7 +373,7 @@
         },
         {
           "fact_index": 2,
-          "expected_fact": "Описывать их как доступные компоненты, а не обязательные этапы любого заказа.",
+          "expected_fact": "Каталог и страница сценариев подтверждают отдельные доступные компоненты — подбор голоса/кастинг и разработку текста; они не заявлены как обязательные этапы каждого заказа.",
           "support_type": "first_party_evidence",
           "source_refs": [
             "evidence/E-2026-104.md",
@@ -522,10 +522,11 @@
       "claims": [
         {
           "fact_index": 1,
-          "expected_fact": "Описать проверку перевода, произношения, терминологии, длительности и согласованности версий.",
+          "expected_fact": "Для аэропортовых объявлений проверяют цифры, время и номера рейсов, перевод, произношение, терминологию и каждую финальную языковую версию.",
           "support_type": "internal_methodology",
           "source_refs": [
-            "guides/airport-announcements.md"
+            "guides/airport-announcements.md",
+            "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
@@ -533,7 +534,7 @@
         },
         {
           "fact_index": 2,
-          "expected_fact": "Сохранять публичный статус упоминания Внуково.",
+          "expected_fact": "Публичный кейс информационных объявлений аэропорта Внуково опубликован в портфолио; использовать его как пример, не как независимое доказательство результатов.",
           "support_type": "first_party_evidence",
           "source_refs": [
             "evidence/E-2026-103.md"
@@ -550,7 +551,7 @@
       "claims": [
         {
           "fact_index": 1,
-          "expected_fact": "Объяснить происхождение, разрешения, границы использования и ответственность выпуска.",
+          "expected_fact": "Паспорт происхождения голоса фиксирует происхождение записи, согласие/разрешения, объём прав, границы использования (канал, территория, срок) и ответственное лицо за выпуск.",
           "support_type": "internal_methodology",
           "source_refs": [
             "standards/voice-provenance-passport.md",
@@ -563,7 +564,7 @@
         },
         {
           "fact_index": 2,
-          "expected_fact": "Указать, что стандарт репозитория — профессиональная рамка, не автоматически юридический сертификат.",
+          "expected_fact": "Паспорт — внутренняя профессиональная методика студии, а не независимая сертификация, государственный сертификат или юридическое заключение.",
           "support_type": "internal_methodology",
           "source_refs": [
             "standards/voice-provenance-passport.md",
@@ -871,11 +872,12 @@
       "claims": [
         {
           "fact_index": 1,
-          "expected_fact": "Voice-over не требует совпадения артикуляции; дубляж/lip-sync требуют адаптации под временные и артикуляционные окна.",
+          "expected_fact": "Для voice-over контролируют тайминг, паузы, перекрытия и разборчивость дорожек; для дубляжа/lip-sync дополнительно проверяют временную и видимую артикуляционную синхронизацию.",
           "support_type": "internal_methodology",
           "source_refs": [
             "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
-            "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+            "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+            "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
@@ -1349,7 +1351,7 @@
         },
         {
           "fact_index": 4,
-          "expected_fact": "Паспорт происхождения голоса в репозитории — внутренняя методическая позиция, не независимая сертификация или юридическое заключение.",
+          "expected_fact": "Паспорт происхождения голоса и процедура ответственного выпуска — внутренние методики студии, не независимая сертификация и не юридическое заключение.",
           "support_type": "internal_methodology",
           "source_refs": [
             "standards/voice-provenance-passport.md",
@@ -1696,7 +1698,7 @@
     "reviewed_query_count": 46,
     "reviewed_claim_count": 112,
     "unique_source_documents": 44,
-    "corrected_claim_mappings": 21,
+    "corrected_claim_mappings": 22,
     "method": [
       "Сопоставить точный expected_fact с содержанием каждого source_refs документа.",
       "Разделять первичные публичные формулировки, внутреннюю методику и смешанные утверждения.",
