@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from tools.validate_problem_solution_library import validate
+from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
@@ -17,6 +18,7 @@ ENTITY_PACK = "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md"
 ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
 CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
 ANSWER_COVERAGE_AUDIT = "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json"
+RETRIEVAL_EVALUATION = RETRIEVAL_REPORT
 
 
 def fixture_root():
@@ -306,6 +308,11 @@ def fixture_root():
         "entries": answer_entries,
     }
     (root / ANSWER_COVERAGE_AUDIT).write_text(json.dumps(answer_audit), encoding="utf-8")
+    retrieval_report = evaluate_retrieval(root)
+    (root / RETRIEVAL_EVALUATION).write_text(
+        json.dumps(retrieval_report, ensure_ascii=False, indent=2) + "\\n",
+        encoding="utf-8",
+    )
     return temporary, root
 
 
@@ -556,6 +563,42 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
             encoding="utf-8",
         )
         self.assertTrue(any("malformed official host" in e for e in validate(self.root)))
+
+
+    def test_retrieval_tokenizer_normalizes_russian_inflections(self):
+        terms = tokenize("Дикторов и дикторами проверяют произношение")
+        self.assertGreaterEqual(terms.count("диктор"), 2)
+
+    def test_bm25_prefers_the_section_matching_the_query(self):
+        documents = [
+            {"file": "a.md", "heading": "Pronunciation brief", "text": "pronunciation names numbers announcer voice message"},
+            {"file": "b.md", "heading": "Airport announcements", "text": "airport multilingual announcements passenger route"},
+        ]
+        document_tokens = [tokenize(item["text"]) for item in documents]
+        document_frequency = {}
+        for terms in document_tokens:
+            for term in set(terms):
+                document_frequency[term] = document_frequency.get(term, 0) + 1
+        average_length = sum(map(len, document_tokens)) / len(document_tokens)
+        ranked = _bm25_rank(
+            "How to check pronunciation of names and numbers in a voice message",
+            documents,
+            document_tokens,
+            document_frequency,
+            average_length,
+        )
+        self.assertEqual(ranked[0]["heading"], "Pronunciation brief")
+
+    def test_retrieval_report_matches_current_answer_corpus(self):
+        errors = validate(self.root)
+        self.assertFalse(any("retrieval evaluation is stale" in error for error in errors), errors)
+
+    def test_retrieval_report_stale_metrics_fail(self):
+        report = self.read_json(RETRIEVAL_EVALUATION)
+        report["metrics"]["primary_top_3"] = 0
+        self.write_json(RETRIEVAL_EVALUATION, report)
+        errors = validate(self.root)
+        self.assertTrue(any("retrieval evaluation is stale or inconsistent" in error for error in errors))
 
 
 if __name__ == "__main__":
