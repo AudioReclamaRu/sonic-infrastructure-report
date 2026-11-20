@@ -881,6 +881,7 @@ def main() -> int:
     commercial_routes = json.loads((ROOT / COMMERCIAL_SERVICE_ROUTES).read_text(encoding="utf-8"))
     expertise_routes = json.loads((ROOT / EXPERTISE_ROUTES).read_text(encoding="utf-8"))
     entity_routes = json.loads((ROOT / ENTITY_ROUTES).read_text(encoding="utf-8"))
+    claim_matrix = json.loads((ROOT / CLAIM_SUPPORT_MATRIX).read_text(encoding="utf-8"))
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
@@ -888,7 +889,8 @@ def main() -> int:
         f"{len(expertise_routes['entries'])} expertise/evidence routes, "
         f"{len(entity_routes['entries'])} brand/entity routes, "
         f"{mapped_query_count} linked problem prompts, "
-        f"{len(benchmark['queries'])} unrun benchmark queries; "
+        f"{len(benchmark['queries'])} unrun benchmark queries, "
+        f"{claim_matrix['claim_count']} fact-level source mappings; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     return 0
