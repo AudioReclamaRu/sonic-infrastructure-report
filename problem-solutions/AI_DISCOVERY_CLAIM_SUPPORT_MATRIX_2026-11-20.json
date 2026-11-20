@@ -1718,10 +1718,10 @@
     "reviewed_at": "2026-11-20",
     "reviewed_query_count": 46,
     "reviewed_claim_count": 112,
-    "unique_source_documents": 44,
+    "unique_source_documents": 43,
     "corrected_claim_mappings": 24,
     "method": [
-      "Сопоставить точный expected_fact с содержанием каждого source_refs документа.",
+      "Compare each expected fact to source contents; manually read answer-section assertions and their mapped sources, checking semantic relevance, source class, freshness and circular/secondary source use.",
       "Разделять первичные публичные формулировки, внутреннюю методику и смешанные утверждения.",
       "Удалять источники соседней услуги, если они не поддерживают именно заявленный факт.",
       "Не использовать публичную страницу как доказательство внутренних процедур, клиентских KPI, правовых гарантий или отсутствия услуги.",
@@ -1733,7 +1733,8 @@
       "Первичные evidence-карточки подтверждают отображение/текст страниц на дату снимка; они не подтверждают фактические результаты проектов, свободную доступность услуг или договорный объём прав.",
       "Внутренние документы подтверждают только наличие внутренней методики/позиции, а не внешний отраслевой стандарт, юридическое заключение или фактическое исполнение услуги.",
       "Семантический review не является измерением AI visibility и не изменяет статусы benchmark.",
-      "Manual answer-level review does not convert internal drafts into approved standards or prove client outcomes."
+      "Manual answer-level review does not convert internal drafts into approved standards or prove client outcomes.",
+      "After the manual binding repair, the mapped source corpus contains 43 unique documents: 18 first-party evidence and 25 internal-methodology sources."
     ]
   },
   "manual_answer_review": {
