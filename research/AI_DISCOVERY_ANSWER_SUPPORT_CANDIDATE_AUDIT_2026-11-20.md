@@ -68,9 +68,9 @@ related:
 
 ## Проверки и ограничения
 
-- `repo-integrity`: SUCCESS на указанном HEAD.
-- `AI response and document naming gate`: SUCCESS.
-- `Problem-solution knowledge regression tests`: 46 passed.
+- `repo-integrity`: SUCCESS на HEAD `01306ab08bbc2db011001801c816ba79b778cdec` (run `44734673957`, job `integrity`).
+- `AI response and document naming gate`: SUCCESS (run `44734674024`).
+- `Problem-solution knowledge regression tests`: 48 passed.
 - `AI visibility benchmark and evidence regression tests`: 15 passed.
 - Встроенный validator: PASS; исходные 112 fact mappings, 54 must_not_claim checks и source-class-aware baseline остаются согласованными.
 - Все 46 внешних benchmark-запросов остаются `not_run`. ChatGPT, Gemini, Perplexity и другие внешние AI-платформы не проверялись.
