@@ -95,6 +95,7 @@ def main() -> int:
         "problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json",
         "research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md",
         "research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md",
+        "research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -277,6 +278,7 @@ def main() -> int:
         "problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json",
         "research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md",
         "research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md",
+        "research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md",
         "evidence/E-2026-106.md", "evidence/E-2026-107.md", "evidence/E-2026-108.md",
         "evidence/E-2026-109.md", "evidence/E-2026-110.md", "evidence/E-2026-111.md",
     ]
