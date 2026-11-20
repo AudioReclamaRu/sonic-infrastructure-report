@@ -150,7 +150,7 @@
     "pure_first_party_evidence_top_3": 42,
     "pure_first_party_evidence_top_5": 44,
     "queries_with_mapped_source_top_1": 15,
-    "queries_with_mapped_source_top_3": 29,
+    "queries_with_mapped_source_top_3": 30,
     "queries_with_mapped_source_top_5": 36,
     "query_count": 46
   },
@@ -195,7 +195,7 @@
         "claim_channel_top_5": 63,
         "document_count": 25,
         "query_channel_count": 34,
-        "query_channel_top_1": 10,
+        "query_channel_top_1": 11,
         "query_channel_top_3": 22,
         "query_channel_top_5": 26
       }
@@ -210,7 +210,7 @@
     "queries_all_required_classes_top_3": 31,
     "queries_all_required_classes_top_5": 37,
     "query_channel_checks": 74,
-    "query_channel_top_1": 32,
+    "query_channel_top_1": 33,
     "query_channel_top_3": 59,
     "query_channel_top_5": 65,
     "query_route_counts": {
