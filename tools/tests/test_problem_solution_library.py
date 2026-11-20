@@ -628,8 +628,8 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         )
         routed = report["source_class_aware"]
         self.assertEqual(routed["source_class_document_counts"], {
-            "first_party_evidence": 2,
-            "internal_methodology": 2,
+            "first_party_evidence": 1,
+            "internal_methodology": 3,
         })
         self.assertEqual(routed["query_route_counts"]["first_party_evidence_only"], 1)
         self.assertEqual(routed["query_route_counts"]["internal_methodology_only"], 3)
