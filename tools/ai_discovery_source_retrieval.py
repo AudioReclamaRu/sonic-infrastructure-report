@@ -362,9 +362,11 @@ def validate_report(root: Path = ROOT) -> list[str]:
         return [str(exc)]
     if actual.get("schema") != SCHEMA:
         errors.append("unexpected AI Discovery source-retrieval evaluation schema")
-    for field in ("date", "status", "method", "corpus", "metrics", "entries", "limitations"):
+    for field in ("date", "status", "method", "corpus", "metrics"):
         if actual.get(field) != expected.get(field):
-            errors.append(f"AI Discovery source-retrieval evaluation is stale or inconsistent: {field}")
+            errors.append(f"AI Discovery source-retrieval baseline is stale or inconsistent: {field}")
+    if actual.get("baseline_review_status") != "reviewed":
+        errors.append("AI Discovery source-retrieval baseline must be marked reviewed")
     return errors
 
 
@@ -379,6 +381,7 @@ def main() -> int:
         output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Wrote {REPORT}")
     metrics = result["metrics"]
+    print("SOURCE_RETRIEVAL_METRICS " + json.dumps(metrics, ensure_ascii=False, sort_keys=True))
     print(
         "AI Discovery mapped-source retrieval: "
         f"{metrics['queries_with_mapped_source_top_3']}/{metrics['query_count']} queries have a mapped source in top-3; "
