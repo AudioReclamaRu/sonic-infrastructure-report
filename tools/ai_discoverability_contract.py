@@ -129,7 +129,7 @@ def validate_queue(data: Any) -> list[str]:
     if not isinstance(data, dict):
         return ["work queue must be an object"]
     errors: list[str] = []
-    if data.get("schema") != "audio-reclama/ai-discoverability-work-queue/1":
+    if data.get("schema") != "megabrain/ai-discoverability-work-queue/1":
         errors.append("unexpected work queue schema")
     items = data.get("items")
     if not isinstance(items, list):
