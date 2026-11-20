@@ -11,7 +11,7 @@
     "Cite primary_sources and evidence_refs for company-specific claims; do not promote internal recommendations to public company claims.",
     "A problem-to-service fit is a relevance hypothesis supported by the listed page, not a guarantee of outcome or proof that every step is included in every order."
   ],
-  "entry_count": 20,
+  "entry_count": 21,
   "entries": [
     {
       "routing_id": "business_problem/ivr_confusion",
@@ -458,7 +458,7 @@
       "answer_references": [
         {
           "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
-          "heading": "Как сохранить единый голос бренда в рекламе, IVR и видео?"
+          "heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?"
         }
       ],
       "supporting_documents": [
@@ -591,7 +591,7 @@
       "answer_references": [
         {
           "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
-          "heading": "Что проверять перед выпуском финального голосового файла?"
+          "heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?"
         }
       ],
       "supporting_documents": [
@@ -627,7 +627,6 @@
       ],
       "review_status": "draft_requires_technical_owner_review",
       "benchmark_query_ids": [
-        "AR-PROBLEM-02",
         "AR-PROBLEM-19",
         "AR-TRUST-02"
       ]
@@ -716,7 +715,7 @@
       "answer_references": [
         {
           "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-          "heading": "## Как предварительно оценить хронометраж текста до записи?"
+          "heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?"
         }
       ],
       "supporting_documents": [
@@ -817,6 +816,45 @@
       ],
       "benchmark_query_ids": [
         "AR-PROBLEM-21"
+      ]
+    },
+    {
+      "routing_id": "voice_asset_operation/pronunciation_verification",
+      "intent_type": "voice_asset_operation",
+      "problem": "Нужно проверить произношение имён, чисел и названий в готовом голосовом сообщении до выпуска",
+      "source": {
+        "file": "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "scenario_id": "final_audio_release_qc"
+      },
+      "answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как проверить произношение имён, чисел и названий в голосовом сообщении?"
+        }
+      ],
+      "supporting_documents": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "standards/responsible-release.md"
+      ],
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-095.md"
+      ],
+      "service_fit": [
+        "Проверка произношения в процессе выпуска согласованного голосового материала",
+        "Запись рекламных аудиороликов и IVR"
+      ],
+      "guardrails": [
+        "Не заявлять, что автоматический тест произношения уже внедрён",
+        "Не выдавать внутренний протокол контроля за доказательство результата конкретного проекта"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-02"
       ]
     }
   ],
