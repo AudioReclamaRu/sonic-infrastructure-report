@@ -5,7 +5,7 @@ lang: mul
 ---
 # Standards — how the industry works with voice
 
-- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru.
+- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website https://www.audio-reclama.ru.
 
 Standards are the working layer: what a professional check looks like, who
 answers for a release, what a provenance passport contains, how a living voice
@@ -18,6 +18,8 @@ tiers, procedures, checks a machine or a human can apply.
 - `living-voice-standard.md` — voluntary verification standard of a human voice
   in audio advertising: Declaration, Session, Hash Chain tiers (based on the
   studio's MANIFEST ЖИВОЙ ГОЛОС).
+- `AUDIO_MASTER_QC_AND_DELIVERY.md` — proposed end-to-end quality control and acceptance protocol for the exported audio file; no universal delivery presets, recipient specification is authoritative.
+- `../research/AUDIO_RECIPIENT_TECHNICAL_PROFILES_2026-11-20.md` — source-checked recipient profiles and open gaps for audiobook platforms, broadcast, IVR and video ingest; research reference, not a studio preset.
 - `responsible-release.md` — the release procedure: who checks the voice before
   it airs, and the decision boundary (studio = last professional filter,
   client = responsible party).
@@ -86,4 +88,4 @@ standards/   how to work — profession standards, specifications
 
 Voice release editing (редактура голоса до эфира), provenance passports,
 license estimates, live recording, verification certificates.
-https://audio-reclama.ru · start@audio-reclama.ru
+https://www.audio-reclama.ru · start@audio-reclama.ru
