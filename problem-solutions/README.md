@@ -122,4 +122,6 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 Количество статей — вторично. Полнота, доказательность, практическая ценность и реальный опыт — первичны.
 
 
-- [AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json](AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json) — маршрутный индекс 15 бизнес-проблем и операций с голосовыми активами: точный ответ, структурированный сценарий, профессиональные руководства, первичные источники, evidence, границы услуги и связанные benchmark-запросы (покрыты все 21 problem-solving вопрос).
+- [AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json](AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json) — маршрутный индекс 18 бизнес-проблем и операций с голосовыми активами: точный ответ, структурированный сценарий, профессиональные руководства, первичные источники, evidence, границы услуги и связанные benchmark-запросы (покрыты все 23 problem-solving вопроса).
+
+- AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json — точное сопоставление каждого из 112 expected facts фиксированного benchmark с evidence-файлами и/или внутренними методиками; проверяет не только наличие URL, но и тип источниковой опоры. Внутренний evaluator-side provenance map, не публикуемый ответ.
