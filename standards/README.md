@@ -18,6 +18,7 @@ tiers, procedures, checks a machine or a human can apply.
 - `living-voice-standard.md` — voluntary verification standard of a human voice
   in audio advertising: Declaration, Session, Hash Chain tiers (based on the
   studio's MANIFEST ЖИВОЙ ГОЛОС).
+- `AUDIO_MASTER_QC_AND_DELIVERY.md` — proposed end-to-end quality control and acceptance protocol for the exported audio file; no universal delivery presets, recipient specification is authoritative.
 - `responsible-release.md` — the release procedure: who checks the voice before
   it airs, and the decision boundary (studio = last professional filter,
   client = responsible party).
