@@ -530,7 +530,7 @@
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Airport guide and AVT methodology both support the internal multilingual announcement QA checklist; the guide has a Russian retrieval summary while its language of record remains English."
         },
         {
           "fact_index": 2,
@@ -881,7 +881,7 @@
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "The AVT framework is the direct internal source for differentiating voice-over timing/overlap control from dubbing and visible articulation synchronization; client brief and recording protocol remain supporting operational sources."
         },
         {
           "fact_index": 2,
@@ -1698,7 +1698,7 @@
     "reviewed_query_count": 46,
     "reviewed_claim_count": 112,
     "unique_source_documents": 44,
-    "corrected_claim_mappings": 22,
+    "corrected_claim_mappings": 21,
     "method": [
       "Сопоставить точный expected_fact с содержанием каждого source_refs документа.",
       "Разделять первичные публичные формулировки, внутреннюю методику и смешанные утверждения.",
