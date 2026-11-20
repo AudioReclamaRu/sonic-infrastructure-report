@@ -105,3 +105,5 @@ related:
 - AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md — ручная проверка всех 46 answer texts: 112 ожидаемых фактов, 54 запрета и исправленные маршруты/формулировки; это не AI visibility measurement.
 
 - ../problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json — BM25 lexical baseline для 46 запросов по 44 секциям answer packs: 45 canonical top-1, 46 canonical top-3, 46 acceptable top-1 с одной явно объяснённой альтернативой. Это не тест внешних AI-платформ.
+
+- AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md — локальный BM25-baseline по 44 разделам пяти answer packs для всех 46 запросов: 45 canonical top-1, 46 canonical top-3; подробно описано единственное допустимое пересечение и ограничения метода.
