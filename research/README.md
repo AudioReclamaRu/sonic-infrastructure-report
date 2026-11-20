@@ -109,3 +109,5 @@ related:
 - AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md — локальный BM25-baseline по 44 разделам пяти answer packs для всех 46 запросов: 45 canonical top-1, 46 canonical top-3; подробно описано единственное допустимое пересечение и ограничения метода.
 
 - ../tools/ai_discovery_source_retrieval.py — BM25-проверка маршрута от benchmark query/expected fact к одному из 44 реально привязанных источников; первичные evidence и внутренние методики считаются раздельно.
+
+- AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md — BM25-проверка 44 mapped source docs по 46 запросам и 112 expected facts: все 112 имеют связанный источник в top-10, 96 — в top-3; чистые first-party claims находят snapshot в top-5 44/44. Смешанные claims измеряются отдельно.
