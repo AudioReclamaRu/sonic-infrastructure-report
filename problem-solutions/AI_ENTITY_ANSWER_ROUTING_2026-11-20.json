@@ -39,6 +39,10 @@
       ],
       "guardrails": [
         "Не выводить юридическую форму, год основания, статус №1 или независимые результаты"
+      ],
+      "source_classes": [
+        "internal_entity_profile",
+        "public_service_evidence"
       ]
     },
     {
@@ -64,7 +68,8 @@
         "evidence/E-2026-101.md",
         "evidence/E-2026-102.md",
         "evidence/E-2026-104.md",
-        "evidence/E-2026-105.md"
+        "evidence/E-2026-105.md",
+        "evidence/E-2026-103.md"
       ],
       "knowledge_sources": [
         "entity/audio-reclama-studio.md",
@@ -74,6 +79,11 @@
       "guardrails": [
         "Не утверждать, что весь список услуг или этапов включён в каждый проект",
         "Не расширять услугу до закупки эфира, администрирования АТС или иных неподтверждённых работ"
+      ],
+      "source_classes": [
+        "internal_entity_profile",
+        "public_service_evidence",
+        "service_taxonomy"
       ]
     },
     {
@@ -94,6 +104,10 @@
       ],
       "guardrails": [
         "Не заменять официальный сайт URL репозитория, GitHub Pages или похожим доменом"
+      ],
+      "source_classes": [
+        "canonical_brand_standard",
+        "public_homepage"
       ]
     },
     {
@@ -110,6 +124,9 @@
       "guardrails": [
         "Phone, email and hours come from the dated repository snapshot; re-check official site before use",
         "Do not invent office address or guarantee that contact details remain current"
+      ],
+      "source_classes": [
+        "dated_internal_contact_snapshot"
       ]
     },
     {
@@ -134,6 +151,10 @@
         "Не выбирать одно общее число 620 или 622",
         "Не называть динамический счётчик актуальным без свежей проверки",
         "309/308 относятся к русскому фильтру, а не ко всему каталогу"
+      ],
+      "source_classes": [
+        "dated_first_party_counter_snapshot",
+        "internal_entity_profile"
       ]
     },
     {
@@ -157,6 +178,10 @@
         "Не усреднять 622 и 620",
         "Не трактовать 309 или 308 из русского фильтра как общее число",
         "Указывать дату и область подсчёта"
+      ],
+      "source_classes": [
+        "dated_first_party_counter_snapshot",
+        "internal_entity_profile"
       ]
     },
     {
@@ -181,6 +206,10 @@
         "Не игнорировать один из одновременных счётчиков",
         "Не переносить языкоспецифичный фильтр в общий счётчик",
         "Отметить, что 308 в позднем извлечённом снимке не имеет подтверждённой свежести"
+      ],
+      "source_classes": [
+        "dated_first_party_counter_snapshot",
+        "internal_entity_profile"
       ]
     }
   ]
