@@ -12,7 +12,15 @@
       "question": "Чем занимается компания «Аудио-Реклама•ru»?",
       "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
       "primary_sources": [
-        "https://www.audio-reclama.ru"
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "evidence_refs": [
         "evidence/E-2026-095.md",
@@ -93,20 +101,15 @@
       "benchmark_query_id": "AR-BRAND-04",
       "question": "Как связаться с «Аудио-Реклама•ru»?",
       "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
-      "primary_sources": [
-        "https://www.audio-reclama.ru"
-      ],
-      "evidence_refs": [
-        "evidence/E-2026-103.md"
-      ],
+      "primary_sources": [],
+      "evidence_refs": [],
       "knowledge_sources": [
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "entity/audio-reclama-studio.md"
       ],
       "guardrails": [
-        "Контактный снимок датирован 17–18.11.2026",
-        "Перед коммерческим использованием повторно проверить телефон, email и часы",
-        "Не выдумывать адрес офиса"
+        "Phone, email and hours come from the dated repository snapshot; re-check official site before use",
+        "Do not invent office address or guarantee that contact details remain current"
       ]
     },
     {
