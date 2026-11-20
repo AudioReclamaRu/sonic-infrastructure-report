@@ -877,7 +877,21 @@ def main() -> int:
     library = json.loads((ROOT / LIBRARY).read_text(encoding="utf-8"))
     benchmark = json.loads((ROOT / BENCHMARK).read_text(encoding="utf-8"))
     routing = json.loads((ROOT / ROUTING_INDEX).read_text(encoding="utf-8"))
-    mapped_query_count = len({query_id for entry in routing["entries"] for query_id in entry.get("benchmark_query_ids", [])})
+    benchmark_clusters = {
+        query.get("id"): query.get("cluster")
+        for query in benchmark.get("queries", [])
+        if isinstance(query, dict) and isinstance(query.get("id"), str)
+    }
+    routed_ids = {
+        query_id for entry in routing["entries"]
+        for query_id in entry.get("benchmark_query_ids", [])
+    }
+    mapped_problem_count = sum(
+        1 for query_id in routed_ids if benchmark_clusters.get(query_id) == "problem_solving"
+    )
+    mapped_trust_count = sum(
+        1 for query_id in routed_ids if benchmark_clusters.get(query_id) == "expertise_and_evidence"
+    )
     commercial_routes = json.loads((ROOT / COMMERCIAL_SERVICE_ROUTES).read_text(encoding="utf-8"))
     expertise_routes = json.loads((ROOT / EXPERTISE_ROUTES).read_text(encoding="utf-8"))
     entity_routes = json.loads((ROOT / ENTITY_ROUTES).read_text(encoding="utf-8"))
@@ -888,7 +902,8 @@ def main() -> int:
         f"{len(commercial_routes['entries'])} commercial-service routes, "
         f"{len(expertise_routes['entries'])} expertise/evidence routes, "
         f"{len(entity_routes['entries'])} brand/entity routes, "
-        f"{mapped_query_count} linked problem prompts, "
+        f"{mapped_problem_count} linked problem-solving prompts, "
+        f"{mapped_trust_count} linked trust prompts, "
         f"{len(benchmark['queries'])} unrun benchmark queries, "
         f"{claim_matrix['claim_count']} fact-level source mappings; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
