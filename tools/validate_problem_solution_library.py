@@ -1115,7 +1115,7 @@ def main() -> int:
     source_retrieval = evaluate_source_retrieval(ROOT)
     source_retrieval_baseline = {
         key: source_retrieval[key]
-        for key in ("schema", "date", "status", "method", "corpus", "metrics")
+        for key in ("schema", "date", "status", "method", "corpus", "metrics", "source_class_aware")
     }
     source_retrieval_baseline["baseline_review_status"] = "reviewed"
     print(
@@ -1155,6 +1155,7 @@ def main() -> int:
     retrieval_evaluation = json.loads((ROOT / RETRIEVAL_EVALUATION).read_text(encoding="utf-8"))
     retrieval_metrics = retrieval_evaluation["metrics"]
     source_metrics = source_retrieval["metrics"]
+    source_class_aware = source_retrieval["source_class_aware"]
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
@@ -1177,6 +1178,10 @@ def main() -> int:
         f"first-party evidence top-5 (all evidence-bearing claims): {source_metrics['evidence_claims_with_evidence_top_5']}/{source_metrics['claims_with_first_party_evidence']}; "
         f"pure evidence top-5/top-10: {source_metrics['pure_first_party_evidence_top_5']}/{source_metrics['pure_first_party_claim_count']} and {source_metrics['pure_first_party_evidence_top_10']}/{source_metrics['pure_first_party_claim_count']}; "
         f"mixed evidence top-5: {source_metrics['mixed_claim_evidence_top_5']}/{source_metrics['mixed_claim_count']}; "
+        f"class-aware facts with every required source class in top-3: "
+        f"{source_class_aware['claims_all_required_classes_top_3']}/{source_metrics['expected_fact_count']}; "
+        f"mixed claims with both classes in top-3: "
+        f"{source_class_aware['mixed_claims_all_classes_top_3']}/{source_class_aware['mixed_claim_count']}; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     for weak in source_retrieval.get("weak_claims_top_10", []):
