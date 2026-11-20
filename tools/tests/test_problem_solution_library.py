@@ -6,6 +6,7 @@ from tools.validate_problem_solution_library import validate
 from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
 from tools.ai_discovery_source_retrieval import REPORT as SOURCE_RETRIEVAL_REPORT, evaluate as evaluate_source_retrieval, validate_report as validate_source_retrieval_report
 from tools.ai_discovery_answer_support import UNIT_DISPOSITIONS, evaluate as evaluate_answer_support, extract_answer_units
+from tools.ai_discovery_answer_support_review import evaluate as evaluate_answer_support_review
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
@@ -411,6 +412,29 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.assertTrue(units["Q-01"]["all_required_classes_top_3"])
         self.assertTrue(units["AR-SERVICE-01"]["all_required_classes_top_3"])
         self.assertEqual(result["status"], "candidate_retrieval_only")
+
+    def test_low_rank_inventory_uses_distinct_denominators_and_source_text(self):
+        report = evaluate_answer_support_review()
+        metrics = report["metrics"]
+        self.assertEqual(metrics["manual_disposition_unit_count"], 285)
+        self.assertEqual(metrics["retrieval_required_unit_count"], 275)
+        self.assertEqual(metrics["no_retrieval_unit_count"], 10)
+        self.assertEqual(metrics["units_with_expected_fact_candidate"], 236)
+        self.assertEqual(metrics["candidate_units_all_required_classes_top_3"], 165)
+        self.assertEqual(metrics["candidate_units_all_required_classes_top_5"], 189)
+        self.assertEqual(metrics["candidate_units_all_required_classes_top_10"], 211)
+        self.assertEqual(metrics["low_rank_unit_count"], 52)
+        self.assertEqual(metrics["retrieval_units_with_mapped_sources_top_5"], 223)
+        self.assertEqual(len(report["units"]), 52)
+        for unit in report["units"]:
+            self.assertEqual(unit["semantic_verdict"], "pending_manual_source_text_review")
+            self.assertTrue(unit["source_reviews"])
+            for source_review in unit["source_reviews"]:
+                self.assertTrue(source_review["mapped_sources"])
+                for mapped_source in source_review["mapped_sources"]:
+                    self.assertIn("lexical_rank", mapped_source)
+                    self.assertTrue(mapped_source["text_excerpt_candidates"])
+                    self.assertIn("metadata", mapped_source)
 
     def test_answer_support_mixed_claim_requires_both_source_classes(self):
         matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
