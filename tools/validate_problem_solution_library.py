@@ -1155,17 +1155,20 @@ def main() -> int:
         f"{answer_audit['must_not_claim_count']} forbidden-claim checks, "
         f"{retrieval_metrics['acceptable_top_1']}/{retrieval_metrics['query_count']} acceptable retrieval top-1 and "
         f"{retrieval_metrics['primary_top_3']}/{retrieval_metrics['query_count']} canonical retrieval top-3; "
-        f"{source_metrics['claims_with_mapped_source_top_3']}/{source_metrics['expected_fact_count']} claims retrieve a mapped source top-3, "
+        f"{source_metrics['queries_with_mapped_source_top_3']}/{source_metrics['query_count']} queries retrieve a mapped source top-3; "
+        f"{source_metrics['claims_with_mapped_source_top_3']}/{source_metrics['expected_fact_count']} facts top-3, "
         f"{source_metrics['claims_with_mapped_source_top_10']}/{source_metrics['expected_fact_count']} top-10; "
         f"first-party evidence top-5 (all evidence-bearing claims): {source_metrics['evidence_claims_with_evidence_top_5']}/{source_metrics['claims_with_first_party_evidence']}; "
-        f"pure evidence claims top-5: {source_metrics['pure_first_party_evidence_top_5']}/{source_metrics['pure_first_party_claim_count']}; "
-        f"mixed evidence claims top-5: {source_metrics['mixed_claim_evidence_top_5']}/{source_metrics['mixed_claim_count']}; "
+        f"pure evidence top-5/top-10: {source_metrics['pure_first_party_evidence_top_5']}/{source_metrics['pure_first_party_claim_count']} and {source_metrics['pure_first_party_evidence_top_10']}/{source_metrics['pure_first_party_claim_count']}; "
+        f"mixed evidence top-5: {source_metrics['mixed_claim_evidence_top_5']}/{source_metrics['mixed_claim_count']}; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     for weak in source_retrieval.get("weak_claims_top_10", []):
         print("SOURCE_RETRIEVAL_WEAK_FACT " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
-    for weak in source_retrieval.get("weak_evidence_top_5", []):
-        print("SOURCE_RETRIEVAL_WEAK_EVIDENCE " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
+    for weak in source_retrieval.get("weak_pure_evidence_top_5", []):
+        print("SOURCE_RETRIEVAL_WEAK_PURE_EVIDENCE " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
+    for weak in source_retrieval.get("weak_mixed_evidence_top_5", []):
+        print("SOURCE_RETRIEVAL_WEAK_MIXED_EVIDENCE " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
     return 0
 
 
