@@ -132,3 +132,5 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - ../research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md — человекочитаемый итог review всех 46 answer texts, покрытия 112 ожидаемых фактов и проверки 54 must_not_claim ограничений.
 
 - AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json — воспроизводимый лексический BM25-baseline по 44 секциям пяти внутренних answer packs для всех 46 запросов; 45/46 canonical top-1, 46/46 canonical top-3 и 46/46 top-1 с одной явно разрешённой альтернативой. Не измеряет retrieval во внешних AI-платформах.
+
+- ../research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md — описание лексического retrieval-baseline для 46 benchmark-запросов, найденных коллизий и ограничений локального BM25.
