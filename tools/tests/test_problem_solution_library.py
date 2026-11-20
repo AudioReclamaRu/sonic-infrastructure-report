@@ -5,7 +5,7 @@ from pathlib import Path
 from tools.validate_problem_solution_library import validate
 from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
 from tools.ai_discovery_source_retrieval import REPORT as SOURCE_RETRIEVAL_REPORT, evaluate as evaluate_source_retrieval, validate_report as validate_source_retrieval_report
-from tools.ai_discovery_answer_support import UNIT_DISPOSITIONS, evaluate as evaluate_answer_support, extract_answer_units
+from tools.ai_discovery_answer_support import ROOT, UNIT_DISPOSITIONS, evaluate as evaluate_answer_support, extract_answer_units
 from tools.ai_discovery_answer_support_review import evaluate as evaluate_answer_support_review
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
@@ -412,6 +412,45 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.assertTrue(units["Q-01"]["all_required_classes_top_3"])
         self.assertTrue(units["AR-SERVICE-01"]["all_required_classes_top_3"])
         self.assertEqual(result["status"], "candidate_retrieval_only")
+
+    def test_dispositions_use_the_narrowest_semantically_relevant_source_class(self):
+        asset = json.loads((ROOT / UNIT_DISPOSITIONS).read_text(encoding="utf-8"))
+        by_id = {item["unit_id"]: item for item in asset["dispositions"]}
+
+        # Public page limitations should not inherit an unrelated internal release standard.
+        for unit_id in ("AR-BRAND-01::06", "AR-BRAND-02::06", "AR-SERVICE-13::03", "AR-SERVICE-13::04"):
+            self.assertEqual(by_id[unit_id]["required_source_classes"], ["first_party_evidence"])
+        self.assertNotIn("standards/responsible-release.md", by_id["AR-BRAND-01::06"]["source_refs"])
+        self.assertNotIn("standards/responsible-release.md", by_id["AR-SERVICE-13::04"]["source_refs"])
+
+        # Chronomer snapshot caveats are supported by the dated first-party snapshot itself.
+        for unit_id in ("AR-PROBLEM-04::05", "AR-PROBLEM-06::04", "AR-PROBLEM-06::05"):
+            self.assertEqual(by_id[unit_id]["source_refs"], ["evidence/E-2026-111.md"])
+
+        # The price instruction is internal commercial guidance, not a public page fact.
+        price = by_id["AR-SERVICE-06::05"]
+        self.assertEqual(price["category"], "internal_recommendation")
+        self.assertEqual(price["required_source_classes"], ["internal_methodology"])
+        self.assertEqual(price["source_refs"], ["entity/audio-reclama-studio.md"])
+
+        # Music and corporate-song rights guidance must use the dedicated problem methodology.
+        for unit_id in ("AR-SERVICE-05::04", "AR-PROBLEM-22::03", "AR-PROBLEM-23::04"):
+            self.assertEqual(
+                by_id[unit_id]["source_refs"],
+                ["problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"]
+            )
+
+        # AI training/cloning caution uses the explicit internal policy plus dated public snapshots.
+        ai_scope = by_id["AR-TRUST-03::14"]
+        self.assertEqual(
+            ai_scope["source_refs"],
+            [
+                "evidence/E-2026-098.md",
+                "evidence/E-2026-104.md",
+                "evidence/E-2026-110.md",
+                "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+            ]
+        )
 
     def test_low_rank_inventory_uses_distinct_denominators_and_source_text(self):
         report = evaluate_answer_support_review()
