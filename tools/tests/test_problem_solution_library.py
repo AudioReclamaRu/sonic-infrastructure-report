@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from tools.validate_problem_solution_library import validate
 from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
+from tools.ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
@@ -599,6 +600,29 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(RETRIEVAL_EVALUATION, report)
         errors = validate(self.root)
         self.assertTrue(any("retrieval evaluation is stale or inconsistent" in error for error in errors))
+
+
+    def test_claim_source_retrieval_corpus_matches_claim_matrix(self):
+        report = evaluate_source_retrieval(self.root)
+        self.assertEqual(report["metrics"]["mapped_source_documents"], 4)
+        self.assertEqual(report["metrics"]["expected_fact_count"], 4)
+        self.assertEqual(report["metrics"]["claims_with_mapped_source_top_10"], 4)
+
+    def test_claim_source_retrieval_separates_first_party_evidence(self):
+        report = evaluate_source_retrieval(self.root)
+        metrics = report["metrics"]
+        self.assertGreaterEqual(metrics["claims_with_first_party_evidence"], 1)
+        self.assertLessEqual(
+            metrics["evidence_claims_with_evidence_top_5"],
+            metrics["claims_with_first_party_evidence"],
+        )
+
+    def test_claim_source_retrieval_fails_on_missing_mapped_source(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["source_refs"] = ["guides/missing.md"]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        with self.assertRaisesRegex(ValueError, "cannot read mapped source"):
+            evaluate_source_retrieval(self.root)
 
 
 if __name__ == "__main__":
