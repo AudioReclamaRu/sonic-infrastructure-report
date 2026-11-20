@@ -139,3 +139,5 @@
 - [Аудит содержания ответов AI Discoverability](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md): ручная проверка 46 ответов, 112 expected facts и 54 must_not_claim ограничений; перечислены исправления маршрутов, границ услуг и правовых формулировок. Не является измерением AI-видимости.
 
 - [Лексическая оценка retrieval для 46 запросов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json): внутренний BM25 baseline по 44 секциям пяти answer packs — 45/46 точных маршрутов на первом месте, 46/46 в первой тройке; 46/46 допустимых top-1 с одной явно описанной альтернативой. Не является тестом внешних AI-моделей.
+
+- [Аудит качества маршрутизации и retrieval](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md): локальная проверка 44 ответных разделов для 46 RU-запросов, 45 canonical top-1 и 46 canonical top-3; метод и ограничения описаны явно.
