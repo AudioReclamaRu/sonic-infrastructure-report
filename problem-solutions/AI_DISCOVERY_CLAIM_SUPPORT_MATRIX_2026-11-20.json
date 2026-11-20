@@ -303,14 +303,17 @@
         {
           "fact_index": 1,
           "expected_fact": "Для заказа рекламного аудиоролика нужно запросить актуальный индивидуальный расчёт по официальному коммерческому маршруту; исторические цены нельзя считать действующими без повторной проверки.",
-          "support_type": "internal_methodology",
+          "support_type": "mixed",
           "source_refs": [
             "entity/audio-reclama-studio.md",
-            "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md"
+            "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+            "evidence/E-2026-094.md"
           ],
           "scope_note": "Это внутреннее правило актуализации и расчёта; страницы услуг дают коммерческий контекст, но не задают универсальную текущую цену.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Корректно переклассифицировано как внутреннее правило свежести/расчёта, не как факт, который доказывается старым снимком публичной страницы."
+          "semantic_review_note": "Корректно переклассифицировано как внутреннее правило свежести/расчёта, не как факт, который доказывается старым снимком публичной страницы.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: E-094 directly records the public FAQ ordering sequence (script, detailed brief, selected narrator(s), producer confirms price/timing after clarification); the non-staleness/individual-quote guardrail remains internal methodology."
         },
         {
           "fact_index": 2,
@@ -444,12 +447,13 @@
           "source_refs": [
             "standards/responsible-release.md",
             "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-            "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
-            "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+            "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
           ],
           "scope_note": "Это правило оценки доказательств и разделения внутренней методики и внешнего результата; публичные страницы услуг не доказывают клиентский outcome и потому удалены из источниковой привязки.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: retained protocol/standard/library documents; removed an answer-pack summary from the source set."
         }
       ]
     },
@@ -475,12 +479,13 @@
           "support_type": "mixed",
           "source_refs": [
             "guides/choosing-a-voice.md",
-            "evidence/E-2026-104.md",
-            "evidence/E-2026-109.md"
+            "evidence/E-2026-104.md"
           ],
           "scope_note": "Публичный evidence подтверждает только конкретную формулировку/отображение на дату записи; внутренний материал даёт методику/контекст и не является независимым результатом, законом или гарантией. E-2026-109 использует снимок каталога с crawl за два дня до получения; это не подтверждение текущего слота/доступности конкретного диктора.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: E-104 is the relevant first-party catalogue/casting source; E-109 is a counter snapshot and does not support narrator availability/casting."
         }
       ]
     },
@@ -494,12 +499,13 @@
           "support_type": "internal_methodology",
           "source_refs": [
             "guides/chronomer-timing.md",
-            "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
             "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: retained the Chronomer guide/recording protocol and, where applicable, E-111; removed the navigation/evidence map as a secondary summary."
         },
         {
           "fact_index": 2,
@@ -508,12 +514,13 @@
           "source_refs": [
             "evidence/E-2026-111.md",
             "guides/chronomer-timing.md",
-            "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
             "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
           ],
           "scope_note": "Публичный evidence подтверждает только конкретную формулировку/отображение на дату записи; внутренний материал даёт методику/контекст и не является независимым результатом, законом или гарантией. Evidence E-2026-111 основан на индексированном снимке с crawl за две недели до получения; live-доступность Хрономера не подтверждена.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: retained the Chronomer guide/recording protocol and, where applicable, E-111; removed the navigation/evidence map as a secondary summary."
         }
       ]
     },
@@ -776,12 +783,13 @@
           "expected_fact": "Расчёт является предварительной оценкой, фактический хронометраж зависит от исполнения и пауз.",
           "support_type": "internal_methodology",
           "source_refs": [
-            "guides/chronomer-timing.md",
-            "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+            "guides/chronomer-timing.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: the guide and indexed first-party snapshot are the relevant supports; the service evidence map is secondary navigation metadata."
         }
       ]
     },
@@ -1084,12 +1092,13 @@
           "support_type": "internal_methodology",
           "source_refs": [
             "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
-            "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
-            "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+            "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: the dedicated voice-timbre protocol and character-identity framework directly support the internal continuity/rights guidance; the voice-asset answer pack was only a synthesized reference."
         },
         {
           "fact_index": 2,
@@ -1097,12 +1106,13 @@
           "support_type": "internal_methodology",
           "source_refs": [
             "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
-            "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
-            "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+            "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: the dedicated voice-timbre protocol and character-identity framework directly support the internal continuity/rights guidance; the voice-asset answer pack was only a synthesized reference."
         },
         {
           "fact_index": 3,
@@ -1168,13 +1178,14 @@
           "support_type": "internal_methodology",
           "source_refs": [
             "problem-solutions/IVR_DESIGN_STANDARD.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
             "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: removed the same answer pack being reviewed; retained IVR design and the separate draft voice-asset operations framework/library."
         },
         {
           "fact_index": 2,
@@ -1182,13 +1193,14 @@
           "support_type": "internal_methodology",
           "source_refs": [
             "problem-solutions/IVR_DESIGN_STANDARD.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
             "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: removed the same answer pack being reviewed; retained IVR design and the separate draft voice-asset operations framework/library."
         },
         {
           "fact_index": 3,
@@ -1215,13 +1227,14 @@
           "source_refs": [
             "problem-solutions/IVR_DESIGN_STANDARD.md",
             "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
             "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: removed self-referential answer-pack support; retained operational/technical method sources and their draft status."
         },
         {
           "fact_index": 2,
@@ -1230,28 +1243,29 @@
           "source_refs": [
             "problem-solutions/IVR_DESIGN_STANDARD.md",
             "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
             "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: removed self-referential answer-pack support; retained operational/technical method sources and their draft status."
         },
         {
           "fact_index": 3,
           "expected_fact": "Страницы производства рекламных аудиороликов, голосовых приветствий/IVR и перевода/локализации подтверждают эти три отдельных направления студии.",
-          "support_type": "mixed",
+          "support_type": "first_party_evidence",
           "source_refs": [
             "evidence/E-2026-098.md",
-            "evidence/E-2026-099.md",
             "evidence/E-2026-095.md",
-            "evidence/E-2026-101.md",
-            "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+            "evidence/E-2026-101.md"
           ],
           "scope_note": "Агрегированный перечень услуг поддерживается отдельными first-party evidence records и внутренней картой страниц; карта помогает retrieval и не заменяет первичные snapshots.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Синтез нескольких service pages дополнен внутренней service evidence map и корректно классифицирован как mixed; каждый первичный факт остаётся привязан к отдельному evidence record."
+          "semantic_review_note": "Синтез нескольких service pages дополнен внутренней service evidence map и корректно классифицирован как mixed; каждый первичный факт остаётся привязан к отдельному evidence record.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: this is strictly a public service-taxonomy statement; E-098 (audio ads), E-095 (IVR) and E-101 (translation/localization) are the relevant dated first-party records. No internal methodology is needed to prove the public listings."
         }
       ]
     },
@@ -1266,12 +1280,13 @@
           "source_refs": [
             "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
             "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: the research protocol and draft character-identity framework support this internal guidance; removed the answer pack under review."
         },
         {
           "fact_index": 2,
@@ -1279,29 +1294,29 @@
           "support_type": "mixed",
           "source_refs": [
             "evidence/E-2026-104.md",
-            "evidence/E-2026-109.md",
             "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
             "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
           ],
           "scope_note": "Публичный evidence подтверждает только конкретную формулировку/отображение на дату записи; внутренний материал даёт методику/контекст и не является независимым результатом, законом или гарантией. E-2026-109 — индексированный снимок каталога с crawl за два дня до получения; конкретная доступность диктора всё равно требует проверки.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: E-104 supports the catalogue/casting and availability boundary; E-109 only records dynamic counts and is irrelevant to this assertion."
         },
         {
           "fact_index": 3,
           "expected_fact": "Внутренние frameworks по голосовой идентичности не доказывают наличие услуги AI-клонирования.",
           "support_type": "internal_methodology",
           "source_refs": [
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
-            "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
-            "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+            "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: the separate draft character-identity framework and voice-asset operations methodology support only the epistemic limit (internal frameworks are not evidence of a public cloning service); answer packs are not independent sources."
         }
       ]
     },
@@ -1376,13 +1391,14 @@
           "source_refs": [
             "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
             "problem-solutions/IVR_DESIGN_STANDARD.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
             "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: removed the answer pack being reviewed; retained AVT/IVR standards and the separate draft voice-asset operations framework."
         },
         {
           "fact_index": 2,
@@ -1391,13 +1407,14 @@
           "source_refs": [
             "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
             "problem-solutions/IVR_DESIGN_STANDARD.md",
-            "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
             "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
             "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: removed the answer pack being reviewed; retained AVT/IVR standards and the separate draft voice-asset operations framework."
         },
         {
           "fact_index": 3,
@@ -1475,12 +1492,13 @@
           "source_refs": [
             "standards/responsible-release.md",
             "canon/releasing-voice.md",
-            "corpus/kto-vypuskaet-golos.md",
-            "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+            "corpus/kto-vypuskaet-golos.md"
           ],
           "scope_note": "Это внутренняя рекомендация, методика, стандарт или entity-запись; не представлять её как публично объявленную услугу, независимую сертификацию, закон или подтверждённый клиентский результат.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: responsibility boundary is supported by responsible-release, canon and corpus documents; removed the answer pack containing the same claim."
         }
       ]
     },
@@ -1629,15 +1647,16 @@
         {
           "fact_index": 2,
           "expected_fact": "До производства нужно определить бренд/фразу, аудиторию, канал и контексты использования, длительность, язык/версии, музыкальные референсы и права.",
-          "support_type": "mixed",
+          "support_type": "internal_methodology",
           "source_refs": [
-            "evidence/E-2026-100.md",
             "standards/responsible-release.md",
             "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
           ],
           "scope_note": "Публичный evidence подтверждает только конкретную формулировку/отображение на дату записи; внутренний материал даёт методику/контекст и не является независимым результатом, законом или гарантией.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note."
+          "semantic_review_note": "Материальная релевантность содержания каждого указанного источника сверена с точным expected_fact; границы применимости зафиксированы в scope_note.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Manual source check: this is a production-brief recommendation, not a public fact about the jingle service; it belongs in the internal-methodology channel only."
         },
         {
           "fact_index": 3,
@@ -1706,13 +1725,29 @@
       "Разделять первичные публичные формулировки, внутреннюю методику и смешанные утверждения.",
       "Удалять источники соседней услуги, если они не поддерживают именно заявленный факт.",
       "Не использовать публичную страницу как доказательство внутренних процедур, клиентских KPI, правовых гарантий или отсутствия услуги.",
-      "Для динамических данных фиксировать дату получения, crawl freshness и область подсчёта."
+      "Для динамических данных фиксировать дату получения, crawl freshness и область подсчёта.",
+      "Second manual pass: read answer-section text against mapped source text; repaired 20 claim bindings/types, removed irrelevant or circular answer-pack references, and distinguished public service facts from internal guidance."
     ],
     "limitations": [
       "Это редакционно-источниковый review соответствия ссылок формулировкам, а не независимая проверка истинности всех заявлений сайта.",
       "Первичные evidence-карточки подтверждают отображение/текст страниц на дату снимка; они не подтверждают фактические результаты проектов, свободную доступность услуг или договорный объём прав.",
       "Внутренние документы подтверждают только наличие внутренней методики/позиции, а не внешний отраслевой стандарт, юридическое заключение или фактическое исполнение услуги.",
-      "Семантический review не является измерением AI visibility и не изменяет статусы benchmark."
+      "Семантический review не является измерением AI visibility и не изменяет статусы benchmark.",
+      "Manual answer-level review does not convert internal drafts into approved standards or prove client outcomes."
+    ]
+  },
+  "manual_answer_review": {
+    "status": "source_text_review_complete_with_mapping_repairs",
+    "reviewed_at": "2026-11-20",
+    "reviewed_answer_count": 46,
+    "reviewed_answer_unit_count": 285,
+    "corrected_claim_mappings_in_manual_pass": 20,
+    "method": "Manual reading of the 46 answer sections and their mapped source texts; sentence-level assertions were checked for semantic relevance, source class, freshness and circular/secondary source use. BM25 ranks were not used as evidence of support.",
+    "limitations": [
+      "This is a source-text editorial review, not legal advice or external AI-platform retrieval measurement.",
+      "AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md and CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md are drafts for expert review; recommendations based on them remain internal draft methodology.",
+      "VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md and its JSON library are internal expert-framework drafts, not an implemented service or external certification.",
+      "A mapped source can support the underlying method or public wording only within its stated date and scope; absence from a snapshot is not proof that a service does not exist."
     ]
   }
 }
