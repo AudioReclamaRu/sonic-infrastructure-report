@@ -2,7 +2,7 @@
 type: ai-discovery-answer-support-candidate-audit
 date: 2026-11-20
 lang: ru
-status: unit_level_dispositions_applied_ci_pass
+status: full_unit_level_dispositions_ci_pass
 brand: "Аудио-Реклама•ru"
 related:
   - ../tools/ai_discovery_answer_support.py
@@ -12,85 +12,87 @@ related:
   - ../research/AI_DISCOVERY_ANSWER_SUPPORT_MANUAL_REVIEW_2026-11-20.md
 ---
 
-# Candidate-аудит полноты опоры ответов — 20.11.2026
+# Unit-level answer support audit — 20.11.2026
 
 ## Что проверяется
 
-Детерминированный retrieval разбивает 46 ответных маршрутов на sentence/semicolon units. Первоначальный candidate matcher подбирает ближайший expected fact по BM25, но теперь **не переносит автоматически support type целого fact на фразу**, если для точной пары `unit_id + answer_text` есть ручное disposition.
+Детерминированный retrieval разбивает 46 ответных маршрутов на **285 sentence/semicolon units**. Для каждого фрагмента определяется собственная категория и допустимый источник. Если есть точный ручной disposition по `unit_id + answer_text`, retrieval использует именно его, а не автоматически наследует `support_type` целого expected fact.
 
-Добавлен asset `AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json`. Он задаёт для приоритетных фрагментов:
-- тип самой фразы;
-- собственный список требуемых классов источников;
-- конкретные mapped source refs;
-- дату и краткое обоснование ручной классификации.
+Полный asset: `problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json`. Каждая запись содержит:
+- точный unit ID, benchmark query ID, файл и heading;
+- исходный текст фразы;
+- category и subtype, если применимо;
+- требуемые source classes и конкретные mapped refs;
+- дату, статус и обоснование ручной классификации.
 
-Движок проверяет точное совпадение ID, текста, маршрута и heading; существование каждого source ref в mapped corpus; соответствие классов реальным путям; допустимость классов для категории. Старый или изменившийся unit ID/text приводит к fail-closed ошибке, а не к применению устаревшей ручной привязки.
+Валидатор сверяет текст, маршрут, файл и heading; проверяет существование source refs в claim-support corpus, реальный source class каждого пути и правила категории. При заявленном полном покрытии любой пропуск или text drift приводит к fail-closed ошибке.
 
-## Unit-level taxonomy
+## Unit-level taxonomy и результаты разметки
 
-| Категория | Правило источников |
-|---|---|
-| `first_party_fact` | Только датированные first-party evidence |
-| `internal_recommendation` | Только internal methodology |
-| `scope_limitation` | Явно выбранный класс или оба класса — по содержанию ограничения |
-| `source_freshness_note` | Обязателен first-party snapshot; внутренний журнал может добавлять контекст |
-| `mixed_assertion` | Одновременно first-party evidence и internal methodology |
-| `general_legal_caution` | Общее предостережение без утверждения о компании; источниковый retrieval не требуется |
-| `discourse_only` | Навигационный/дискурсивный фрагмент без самостоятельного факта; retrieval не требуется |
+| Категория | Количество | Правило маршрутизации |
+|---|---:|---|
+| `first_party_fact` | 77 | Только first-party evidence |
+| `internal_recommendation` | 115 | Только internal methodology |
+| `scope_limitation` | 58 | Явно выбранный класс/классы, подтверждающие границу |
+| `source_freshness_note` | 22 | Обязателен first-party snapshot; внутренний журнал может добавлять контекст |
+| `mixed_assertion` | 3 | Оба класса одновременно |
+| `general_legal_caution` | 4 | Общее предостережение без company-specific fact; retrieval не требуется |
+| `discourse_only` | 6 | Короткий ответ/дискурсивный фрагмент без самостоятельного факта; retrieval не требуется |
+| **Итого** | **285** | Полное покрытие извлечённых answer units |
 
-Для неразмеченных units прежний BM25 whole-fact routing сохраняется как fallback. Поэтому система не притворяется, что все 285 фраз уже вручную разобраны.
+Из 285 единиц **275** имеют source retrieval channels; **10** не требуют выдавать себя за утверждения о компании или искать к ним фиктивные источники.
+
+79 прежних приоритетных предупреждений (44 unmatched и 35 weak) сохранены и встроены в этот полный слой. Ещё 206 единиц получили отдельную ручную классификацию и источниковые границы.
 
 ## Последний CI baseline
 
-**CI HEAD:** `7de3279fa57cbd00fd3f7b1aa0959ae9afecdc7b`.
+**HEAD:** `f0416131adfc1c7e222e582d5f99718b03e1e33d`.
 
 | Метрика | Результат |
 |---|---:|
 | Benchmark queries | 46 |
-| Parsed answer units | 285 |
-| Units with lexical expected-fact candidate | 236 |
-| Units without lexical expected-fact candidate | 44 |
-| Short discourse preambles | 5 |
-| Candidate units, required classes in top-3 | 200/236 |
-| Candidate units, required classes in top-5 | 217/236 |
-| Candidate units, required classes in top-10 | 228/236 |
-| Manually dispositioned priority units | **79/79** |
+| Parsed answer units | **285** |
+| Units с lexical expected-fact candidate | 236 |
+| Units без lexical expected-fact candidate | 44 |
+| Короткие discourse preambles | 5 |
+| Manual dispositions | **285/285** |
+| Units, которым требуется retrieval | **275** |
+| Units без retrieval channel | **10** |
 | Unclassified priority units | **0** |
-| Manual dispositions with retrieval channels | 76 |
-| Manual dispositions without retrieval | 3 |
-| Manually dispositioned units with source rank below top-5 | 26 |
+| Manual dispositions с mapped source ниже top-5 | **52** |
 
-Категории 79 disposition records: 17 `first_party_fact`, 31 `internal_recommendation`, 16 `scope_limitation`, 11 `source_freshness_note`, 2 `general_legal_caution`, 1 `mixed_assertion`, 1 `discourse_only`.
+После применения unit-level source classes retrieval находит:
+- все требуемые классы в top-3 для **165** candidate units;
+- все требуемые классы в top-5 для **189** candidate units;
+- все требуемые классы в top-10 для **211** candidate units.
 
-44 units без lexical expected-fact candidate не объявляются неподтверждёнными: у них есть отдельная ручная привязка. 35 weak whole-fact candidates тоже получили собственный unit-level класс и источники. Поэтому **unclassified priority = 0**. При этом 26 manually dispositioned units всё ещё имеют mapped source ниже top-5 по lexical ranking. Их привязка не отбрасывается автоматически: низкий BM25 rank не опровергает содержательную релевантность, но показывает, где vocabulary/source summary нуждается в дальнейшем улучшении.
+Отдельные counts отражают лексическое ранжирование mapped refs. Они не доказывают, что источник семантически следует из всей фразы. 52 низкоранговых назначения остаются в диагностике как vocabulary/retrieval weak spots; сами по себе они не отменяют ручную привязку.
 
 ## Как работает fallback и что сохраняется
 
-- Для вручную разобранного unit effective `required_source_classes` берутся из disposition, а исходный `candidate_fact_support_type` остаётся в диагностике отдельно.
-- Для unit без disposition система сохраняет прежний candidate fact, его support type и ранги.
-- Для mixed unit оба канала остаются раздельными; first-party source не засчитывается вместо internal methodology и наоборот.
-- Для general legal caution/discourse unit система не выдумывает источник и не делает вид, что такой фрагмент является публичным фактом о студии.
-- Все 285 units остаются в поле человеческого контроля; ручное disposition закрывает только точные 79 фрагментов.
+- Для вручную размеченного unit effective `required_source_classes` берутся из exact disposition.
+- Исходный expected-fact candidate, его support type и source ranks сохраняются отдельно для диагностики.
+- Для единицы без disposition прежний whole-fact BM25 fallback остаётся доступен, но complete-coverage asset на текущем branch требует disposition для всех 285 извлечённых units.
+- Mixed unit требует оба канала; публичное evidence не заменяется внутренней методикой и наоборот.
+- General legal caution и discourse-only фрагменты не получают фиктивных source refs.
+- Изменение текста, ID, файла или heading делает старое disposition недействительным и останавливает validation.
 
-## Регрессионные проверки и CI
+## CI и регрессионные проверки
 
-Добавлены тесты:
-1. unit-level disposition может заменить whole-fact `mixed` на точный `first_party_evidence` канал, сохранив исходный candidate support type как отдельную диагностику;
-2. общий legal caution может явно обходиться без retrieval и без фиктивного source ref;
-3. устаревший exact answer text приводит к fail-closed ошибке.
-
-CI на HEAD `7de3279fa57cbd00fd3f7b1aa0959ae9afecdc7b`:
-- `repo-integrity`: SUCCESS, run `44742896731`;
-- `AI response and document naming gate`: SUCCESS, run `44742896776`;
+На HEAD `f0416131adfc1c7e222e582d5f99718b03e1e33d`:
+- `repo-integrity`: SUCCESS, run `44746429192`;
+- `AI response and document naming gate`: SUCCESS, run `44746429128`;
 - `AI visibility benchmark and evidence regression tests`: **15 passed**;
-- `Problem-solution knowledge regression tests`: **51 passed**;
+- `Problem-solution knowledge regression tests`: **52 passed**;
 - Problem-solution knowledge validator: PASS; 112 fact mappings, 44 source documents, 46 reviewed answer texts and 54 forbidden-claim checks.
+
+Проверяются override whole-fact classes на unit-level classes, mixed retrieval, legal/discourse no-retrieval, source-class/ref mismatches, exact text drift и неполнота asset, заявленного как полный.
 
 ## Ограничения
 
-- BM25 rank — лексическая диагностика, не semantic entailment и не доказательство корректности ответа.
-- Точный manual disposition действует только на конкретную пару unit ID и текст. При редактуре answer pack схема требует повторного рассмотрения соответствующей записи.
-- Для остальных 206 units disposition ещё не задан; top-K кандидат не становится автоматически семантически проверенным.
-- Все 46 внешних benchmark prompts остаются `not_run`; ChatGPT, Gemini, Perplexity и другие платформы не тестировались.
+- BM25 — лексическая диагностика, не semantic entailment и не proof of truth.
+- Ручная классификация охватывает точные фразы в текущих answer packs; при их редактуре записи должны быть повторно проверены.
+- Top-K — навигационный сигнал. Даже высокий rank не заменяет чтение источника и смысловую оценку.
+- Все **46 внешних benchmark prompts остаются `not_run`**. ChatGPT, Gemini, Perplexity и другие платформы не тестировались.
 
-**Итог:** source class теперь назначается уровню фразы там, где есть проверенная ручная классификация. Whole-fact fallback сохранён для неразмеченных фрагментов; 79 текущих предупреждений имеют явный disposition, 0 приоритетных units остаются неразобранными.
+**Итог:** unit-level source classes назначены всем 285 извлечённым фрагментам, 0 фрагментов остались без disposition. Полная семантическая проверка коммерческими AI-платформами не выполнялась.
