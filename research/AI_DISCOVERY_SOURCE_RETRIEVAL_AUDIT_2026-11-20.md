@@ -36,6 +36,9 @@ related:
 
 Для mixed нельзя считать внутренний методический документ заменой публичному evidence или наоборот. Первый подтверждает только то, что действительно зафиксировано в публичном snapshot; второй — внутреннюю методику, позицию или рабочий подход.
 
+
+**Recalculation 20.11.2026:** after narrowing several answer-unit dispositions to the exact supporting class, replacing broad/irrelevant mappings with the dedicated jingle/corporate-song methodology, and adding a Russian retrieval summary to the English-language Chronomer guide, the stored JSON baseline was regenerated from the current source texts. The global and class-aware figures above are repository-local BM25 diagnostics only; they do not measure external AI answers or citations.
+
 ## Reviewed baseline: global control
 
 | Метрика | Результат |
@@ -43,13 +46,13 @@ related:
 | Запросы с mapped source в top-1 | **15/46** |
 | Запросы с mapped source в top-3 | **30/46** |
 | Запросы с mapped source в top-5 | **36/46** |
-| Expected facts с mapped source в top-1 | **63/112** |
-| Expected facts с mapped source в top-3 | **97/112** |
-| Expected facts с mapped source в top-5 | **107/112** |
-| Expected facts с mapped source в top-10 | **110/112** |
-| Все facts одного запроса имеют mapped source в top-3 | **33/46** |
-| Все facts одного запроса имеют mapped source в top-5 | **41/46** |
-| Все facts одного запроса имеют mapped source в top-10 | **44/46** |
+| Expected facts с mapped source в top-1 | **64/112** |
+| Expected facts с mapped source в top-3 | **98/112** |
+| Expected facts с mapped source в top-5 | **111/112** |
+| Expected facts с mapped source в top-10 | **112/112** |
+| Все facts одного запроса имеют mapped source в top-3 | **34/46** |
+| Все facts одного запроса имеют mapped source в top-5 | **42/46** |
+| Все facts одного запроса имеют mapped source в top-10 | **46/46** |
 | Pure first-party claims: evidence в top-5 | **44/45** |
 | Pure first-party claims: evidence в top-10 | **45/45** |
 | Mixed claims: first-party evidence в top-5 (отдельный evidence-rank) | **10/15** |
@@ -61,29 +64,29 @@ Global control остаётся диагностикой широкой лекс
 | Метрика | Результат |
 |---|---:|
 | Query-channel checks | **74** |
-| Требуемый класс найден в top-1 на уровне channel | **33/74** |
+| Требуемый класс найден в top-1 на уровне channel | **32/74** |
 | Требуемый класс найден в top-3 на уровне channel | **59/74** |
 | Требуемый класс найден в top-5 на уровне channel | **65/74** |
 | Все нужные классы запроса найдены в top-1 | **12/46** |
 | Все нужные классы запроса найдены в top-3 | **31/46** |
 | Все нужные классы запроса найдены в top-5 | **37/46** |
 | Claim-channel checks | **127** (15 mixed дают по два канала) |
-| Требуемый класс найден в top-1 на уровне claim-channel | **86/127** |
-| Требуемый класс найден в top-3 на уровне claim-channel | **114/127** |
-| Требуемый класс найден в top-5 на уровне claim-channel | **123/127** |
-| Требуемый класс найден в top-10 на уровне claim-channel | **124/127** |
+| Требуемый класс найден в top-1 на уровне claim-channel | **87/127** |
+| Требуемый класс найден в top-3 на уровне claim-channel | **116/127** |
+| Требуемый класс найден в top-5 на уровне claim-channel | **126/127** |
+| Требуемый класс найден в top-10 на уровне claim-channel | **127/127** |
 | Все обязательные классы каждого fact найдены в top-1 | **73/112** |
-| Все обязательные классы каждого fact найдены в top-3 | **99/112** |
-| Все обязательные классы каждого fact найдены в top-5 | **108/112** |
-| Все обязательные классы каждого fact найдены в top-10 | **109/112** |
+| Все обязательные классы каждого fact найдены в top-3 | **101/112** |
+| Все обязательные классы каждого fact найдены в top-5 | **111/112** |
+| Все обязательные классы каждого fact найдены в top-10 | **112/112** |
 | Mixed claims: оба класса в top-1 | **4/15** |
-| Mixed claims: оба класса в top-3 | **12/15** |
-| Mixed claims: оба класса в top-5 | **14/15** |
-| Mixed claims: оба класса в top-10 | **14/15** |
+| Mixed claims: оба класса в top-3 | **13/15** |
+| Mixed claims: оба класса в top-5 | **15/15** |
+| Mixed claims: оба класса в top-10 | **15/15** |
 
 По отдельным каналам:
 - first-party evidence: 60 claim-channel checks; mapped evidence в top-5 для **60/60**;
-- internal methodology: 67 claim-channel checks; mapped methodology в top-5 для **63/67**, в top-10 для **64/67**.
+- internal methodology: 67 claim-channel checks; mapped methodology в top-5 для **66/67**, в top-10 для **67/67**.
 
 Source-class-aware top-5 не трактуется как универсальное улучшение над global control: у него другая и более строгая цель — каждый компонент утверждения должен находиться в разрешённом классе. Поэтому важен не один лучший документ, а покрытие обоих каналов для mixed.
 
