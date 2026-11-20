@@ -427,6 +427,27 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.assertEqual(metrics["retrieval_units_with_mapped_sources_top_5"], 223)
         self.assertEqual(len(report["units"]), 52)
         for unit in report["units"]:
+            compact = {
+                "id": unit["unit_id"],
+                "query": unit["benchmark_query_id"],
+                "category": unit["category"],
+                "text": unit["answer_text"],
+                "ranks": unit["best_mapped_source_rank_by_class"],
+                "sources": [
+                    {
+                        "path": source["path"],
+                        "rank": source["lexical_rank"],
+                        "excerpts": [
+                            excerpt["text"][:850]
+                            for excerpt in source["text_excerpt_candidates"][:1]
+                        ],
+                    }
+                    for review in unit["source_reviews"]
+                    for source in review["mapped_sources"]
+                ],
+            }
+            print("LOW_RANK_SOURCE_TEXT_REVIEW " + json.dumps(compact, ensure_ascii=False, sort_keys=True))
+        for unit in report["units"]:
             self.assertEqual(unit["semantic_verdict"], "pending_manual_source_text_review")
             self.assertTrue(unit["source_reviews"])
             for source_review in unit["source_reviews"]:
