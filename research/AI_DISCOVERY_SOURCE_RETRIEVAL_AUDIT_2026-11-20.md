@@ -107,9 +107,15 @@ Reviewed snapshot: problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_20
 
 ## CI status и проверяемость
 
-Последние ранее подтверждённые CI результаты относятся к более раннему коммиту PR #60, до source-class-aware изменений: repo-integrity SUCCESS; AI response and document naming gate SUCCESS; AI visibility evidence tests — 15 passed; problem-solution tests — 41 passed.
+На актуальном HEAD PR #60 (`d89b19a7427fee88c058d6c1ad86d1e38991de4e`) оба workflow завершились успешно:
+- repo-integrity: SUCCESS, run 44730675404;
+- AI response and document naming gate: SUCCESS, run 44730675513;
+- AI visibility evidence regression tests: **15 passed**;
+- problem-solution knowledge regression tests: **43 passed**;
+- AI Discovery asset integrity: PASS;
+- Problem-solution knowledge integrity: PASS, включая проверку reviewed source-retrieval baseline и class-aware метрик.
 
-Для последующих source-class-aware коммитов наличие свежего CI run/status в GitHub API не подтверждено. Поэтому тесты и новый baseline считаются подготовленными, но **не объявляются CI-passed** до запуска workflow на актуальном HEAD. Предыдущие успешные runs не являются доказательством прохождения новых изменений.
+Итоговый problem-solution validator подтвердил: 31/46 исходных запросов имеют mapped source в global top-3; 99/112 expected facts — в global top-3 и 112/112 — в global top-10; first-party evidence top-5 для всех evidence-bearing claims — 54/60; pure evidence — 44/44; class-aware facts с каждым обязательным классом в top-3 — 100/112; оба класса для mixed claims в top-3 — 14/16. Class-aware top-5 — 112/112, включая оба канала для mixed 16/16.
 
 ## Ограничения и что не измерялось
 
