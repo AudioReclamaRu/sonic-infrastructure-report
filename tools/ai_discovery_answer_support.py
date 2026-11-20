@@ -93,6 +93,10 @@ def _load_unit_dispositions(
     if asset.get("disposition_count") != len(dispositions):
         raise ValueError("answer-unit disposition_count does not match its entries")
 
+    coverage_status = asset.get("coverage_status")
+    if coverage_status not in {None, "partial_manual_review", "all_extracted_answer_units_dispositioned"}:
+        raise ValueError(f"unsupported answer-unit disposition coverage_status: {coverage_status!r}")
+
     units_by_id = {unit["unit_id"]: unit for unit in units}
     output: dict[str, dict[str, Any]] = {}
     for item in dispositions:
@@ -158,6 +162,19 @@ def _load_unit_dispositions(
             raise ValueError(f"{category} cannot claim mapped factual-source support: {unit_id}")
 
         output[unit_id] = item
+
+    if coverage_status == "all_extracted_answer_units_dispositioned":
+        expected_count = asset.get("dispositioned_all_answer_units")
+        if expected_count != len(units_by_id):
+            raise ValueError(
+                "complete answer-unit disposition count does not match extracted answer units"
+            )
+        missing_unit_ids = sorted(set(units_by_id) - set(output))
+        if missing_unit_ids:
+            raise ValueError(
+                "complete answer-unit disposition coverage has missing units: "
+                + ", ".join(missing_unit_ids[:20])
+            )
 
     return output
 
