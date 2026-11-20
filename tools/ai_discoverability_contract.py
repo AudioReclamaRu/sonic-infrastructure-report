@@ -39,7 +39,7 @@ def validate_contract(data: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(data, dict):
         return ["agent contract must be an object"]
-    if data.get("schema") != "audio-reclama/megabrain-ai-discoverability-contract/1":
+    if data.get("schema") != "megabrain/ai-discoverability-contract/1":
         errors.append("unexpected agent contract schema")
     mission = data.get("mission", {})
     if mission.get("entity") != "Аудио-Реклама•ru":
