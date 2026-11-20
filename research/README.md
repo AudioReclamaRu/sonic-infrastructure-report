@@ -46,6 +46,7 @@ related:
 - ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 17 маршрутов от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам и доказательствам.
 ## Краткие ответы для AI retrieval
 
+- ../problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md и AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json — три кратких ответа по паспорту происхождения голоса, ответственности выпуска и правам повторного использования/AI. Внутренний evaluator-side reference; авторские позиции и стандарты явно отделены от права и независимой сертификации.
 - ../problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md и AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json — 13 кратких source-grounded ответов на фиксированные commercial-service запросы и их evidence/guardrail маршруты. Внутренний evaluator-side слой, не публикация; benchmark остаётся not_run.
 - ../problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md — двенадцать самостоятельных кратких ответов с практическими шагами, точной связью с услугами и официальными источниками. Эталон для проверки retrieval, не публикация на сайте.
 

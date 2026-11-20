@@ -108,3 +108,10 @@
 - [13 кратких ответов по конкретным услугам](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md): аудиоролики, IVR, видеоозвучивание, аудиокниги, джинглы, многоязычные объявления, кастинг, локализация и расчёт стоимости; внутренний source-grounded reference pack, не публичная страница.
 - [Машинная маршрутизация 13 коммерческих запросов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json): benchmark query ID → answer heading → первичные URL → evidence → service fit → guardrails.
 - Все AR-SERVICE-01…13 остаются not_run; добавление reference pack не является результатом видимости и не разрешает предварительно загружать ответы в тестируемые платформы до blind discovery.
+
+
+## Экспертные ответы и доказательные границы
+
+- [Краткие ответы AR-TRUST-01…03](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md): паспорт происхождения голоса, кто проверяет перед выпуском, права на повторное использование и AI-копию. Внутренний reference, не юридическая консультация и не независимая сертификация.
+- [Маршрутизация трёх expertise/evidence запросов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json): точные query IDs, answer headings, knowledge-source classes, public evidence и guardrails.
+- AR-TRUST-01…03 остаются not_run до фактического blind discovery на AI-платформах.

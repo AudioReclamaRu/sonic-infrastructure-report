@@ -419,7 +419,9 @@
       "preferred_sources": [
         "standards/voice-provenance-passport.md",
         "standards/responsible-release.md",
-        "canon/releasing-voice.md"
+        "canon/releasing-voice.md",
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не заявлять сертификацию или универсальное применение."
@@ -438,7 +440,9 @@
       "preferred_sources": [
         "corpus/kto-vypuskaet-golos.md",
         "canon/releasing-voice.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не утверждать, что студия снимает с клиента его юридическую ответственность."
@@ -852,7 +856,9 @@
         "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "standards/voice-provenance-passport.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не трактовать обычное согласие на запись как автоматическое разрешение на AI training или цифровую реплику."
