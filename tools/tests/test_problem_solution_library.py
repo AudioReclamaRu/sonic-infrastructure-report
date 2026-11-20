@@ -198,6 +198,16 @@ def fixture_root():
         "schema": "studio/ai-discovery-claim-support-matrix/1",
         "query_count": 4,
         "claim_count": 4,
+        "semantic_review": {
+            "status": "first_pass_complete",
+            "reviewed_at": "2026-11-20",
+            "reviewed_query_count": 4,
+            "reviewed_claim_count": 4,
+            "unique_source_documents": 4,
+            "corrected_claim_mappings": 0,
+            "method": ["Compare each expected fact to source contents."],
+            "limitations": ["Internal review does not prove external AI visibility."]
+        },
         "entries": [
             {
                 "benchmark_query_id": "Q-01",
@@ -207,7 +217,9 @@ def fixture_root():
                     "expected_fact": "map caller intents",
                     "support_type": "internal_methodology",
                     "source_refs": ["guides/ivr.md"],
-                    "scope_note": "Internal workflow recommendation, not an external client outcome."
+                    "scope_note": "Internal workflow recommendation, not an external client outcome.",
+                    "semantic_review_status": "reviewed",
+                    "semantic_review_note": "Source content checked against expected fact; scope note states limits."
                 }]
             },
             {
@@ -218,7 +230,9 @@ def fixture_root():
                     "expected_fact": "radio spot production",
                     "support_type": "first_party_evidence",
                     "source_refs": ["evidence/E-TEST-002.md"],
-                    "scope_note": "Evidence proves the public page wording only."
+                    "scope_note": "Evidence proves the public page wording only.",
+                    "semantic_review_status": "reviewed",
+                    "semantic_review_note": "Source content checked against expected fact; scope note states limits."
                 }]
             },
             {
@@ -229,7 +243,9 @@ def fixture_root():
                     "expected_fact": "origin and use boundaries",
                     "support_type": "internal_methodology",
                     "source_refs": ["standards/voice-provenance-passport.md"],
-                    "scope_note": "Internal professional methodology, not a legal certificate."
+                    "scope_note": "Internal professional methodology, not a legal certificate.",
+                    "semantic_review_status": "reviewed",
+                    "semantic_review_note": "Source content checked against expected fact; scope note states limits."
                 }]
             },
             {
@@ -240,7 +256,9 @@ def fixture_root():
                     "expected_fact": "studio identity",
                     "support_type": "internal_methodology",
                     "source_refs": ["entity/audio-reclama-studio.md"],
-                    "scope_note": "Internal entity profile; public claims need first-party evidence."
+                    "scope_note": "Internal entity profile; public claims need first-party evidence.",
+                    "semantic_review_status": "reviewed",
+                    "semantic_review_note": "Source content checked against expected fact; scope note states limits."
                 }]
             }
         ]
@@ -292,6 +310,13 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
         errors = validate(self.root)
         self.assertTrue(any("does not match referenced source classes" in e for e in errors))
+
+    def test_claim_support_requires_semantic_review_status(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["semantic_review_status"] = "pending"
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        errors = validate(self.root)
+        self.assertTrue(any("must be marked reviewed" in e for e in errors))
 
 
     def test_malformed_hostname_without_separator_fails(self):
