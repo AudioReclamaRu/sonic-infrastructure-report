@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-19
+date: 2026-11-20
 lang: en
 related:
   - research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json
@@ -22,6 +22,12 @@ The four core buyer tasks have English master guides and localized drafts. All l
 | IVR voice prompts and telephone menus | [English](multilingual-ivr-voice-production.md) | [Español](multilingual-ivr-voice-production.es.md) | [Português](multilingual-ivr-voice-production.pt-BR.md) | [العربية](multilingual-ivr-voice-production.ar.md) |
 | Audio advertising and radio commercials | [English](audio-advertising-production.md) | [Español](audio-advertising-production.es.md) | [Português](audio-advertising-production.pt-BR.md) | [العربية](audio-advertising-production.ar.md) |
 | Video voice-over and localization | [English](video-voiceover.md) | [Español](video-voiceover.es.md) | [Português](video-voiceover.pt-BR.md) | [العربية](video-voiceover.ar.md) |
+
+## Russia-first route
+
+| Buyer task | Russian master | Status |
+|---|---|---|
+| Audiobook production | [Russian buyer route](audiobook-production.ru.md) | Repository knowledge draft; not published on the official website |
 
 ## Wave B — first-pass localized routes, 19 November 2026
 
