@@ -58,3 +58,9 @@ jobs:
 
       - name: AI visibility benchmark and evidence regression tests
         run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence -v
+
+      - name: Megabrain AI Discoverability contract
+        run: python tools/ai_discoverability_contract.py validate
+
+      - name: Megabrain AI Discoverability regression tests
+        run: python -m unittest tools.tests.test_ai_discoverability_contract -v
