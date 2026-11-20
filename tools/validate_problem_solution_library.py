@@ -1112,6 +1112,16 @@ def validate(root: Path = ROOT) -> list[str]:
 
 
 def main() -> int:
+    source_retrieval = evaluate_source_retrieval(ROOT)
+    source_retrieval_baseline = {
+        key: source_retrieval[key]
+        for key in ("schema", "date", "status", "method", "corpus", "metrics")
+    }
+    source_retrieval_baseline["baseline_review_status"] = "reviewed"
+    print(
+        "SOURCE_RETRIEVAL_BASELINE "
+        + json.dumps(source_retrieval_baseline, ensure_ascii=False, sort_keys=True)
+    )
     errors = validate(ROOT)
     if errors:
         print("Problem-solution knowledge validation FAILED:")
@@ -1144,17 +1154,7 @@ def main() -> int:
     answer_audit = json.loads((ROOT / ANSWER_COVERAGE_AUDIT).read_text(encoding="utf-8"))
     retrieval_evaluation = json.loads((ROOT / RETRIEVAL_EVALUATION).read_text(encoding="utf-8"))
     retrieval_metrics = retrieval_evaluation["metrics"]
-    source_retrieval = evaluate_source_retrieval(ROOT)
     source_metrics = source_retrieval["metrics"]
-    source_retrieval_baseline = {
-        key: source_retrieval[key]
-        for key in ("schema", "date", "status", "method", "corpus", "metrics")
-    }
-    source_retrieval_baseline["baseline_review_status"] = "reviewed"
-    print(
-        "SOURCE_RETRIEVAL_BASELINE "
-        + json.dumps(source_retrieval_baseline, ensure_ascii=False, sort_keys=True)
-    )
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
