@@ -497,9 +497,96 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
 
         query_unit_counts[query_id] = unit_number
 
+    dispositions_by_id = _load_unit_dispositions(root, units, source_documents)
+    manual_disposition_weak_rank_units: list[dict[str, Any]] = []
+    for unit in units:
+        disposition = dispositions_by_id.get(unit["unit_id"])
+        if disposition is None:
+            continue
+
+        # Preserve the whole-fact candidate as a separate diagnostic, but do not
+        # let its support_type dictate the source classes for this sentence unit.
+        unit["candidate_fact_support_type"] = unit.get("support_type")
+        unit["candidate_fact_required_source_classes"] = unit.get("required_source_classes", [])
+        unit["candidate_fact_source_ranks_by_class"] = unit.get("best_mapped_source_rank_by_class", {})
+        required_classes = disposition["required_source_classes"]
+        mapped_refs = disposition["source_refs"]
+        class_ranks: dict[str, int | None] = {}
+        class_candidates: dict[str, list[dict[str, Any]]] = {}
+
+        for source_class in required_classes:
+            documents = documents_by_class[source_class]
+            tokens, frequency, average_length = class_indexes[source_class]
+            ranked_sources = _bm25_rank(
+                unit["answer_text"], documents, tokens, frequency, average_length
+            )
+            mapped_in_class = {
+                ref for ref in mapped_refs
+                if source_documents[ref]["source_class"] == source_class
+            }
+            mapped_rank = next(
+                (
+                    rank for rank, result in enumerate(ranked_sources, start=1)
+                    if result["file"] in mapped_in_class and result["score"] > 0
+                ),
+                None,
+            )
+            class_ranks[source_class] = mapped_rank
+            class_candidates[source_class] = [
+                {
+                    "rank": rank,
+                    "file": result["file"],
+                    "is_mapped_source": result["file"] in mapped_in_class,
+                    "score": round(float(result["score"]), 6),
+                }
+                for rank, result in enumerate(ranked_sources[:5], start=1)
+            ]
+
+        unit["unit_disposition"] = {
+            "category": disposition["category"],
+            "subtype": disposition.get("subtype"),
+            "review_status": disposition["review_status"],
+            "review_date": disposition["review_date"],
+            "review_note": disposition["review_note"],
+        }
+        unit["manual_disposition_reviewed"] = True
+        unit["manual_review_required"] = False
+        unit["support_type"] = f"unit_disposition:{disposition['category']}"
+        unit["required_source_classes"] = required_classes
+        unit["mapped_source_refs_for_unit"] = mapped_refs
+        unit["retrieval_required"] = bool(required_classes)
+        unit["best_mapped_source_rank_by_class"] = class_ranks
+        unit["source_candidates_by_class"] = class_candidates
+        if required_classes:
+            unit["all_required_classes_top_3"] = all(
+                class_ranks.get(name) is not None and class_ranks[name] <= 3
+                for name in required_classes
+            )
+            unit["all_required_classes_top_5"] = all(
+                class_ranks.get(name) is not None and class_ranks[name] <= 5
+                for name in required_classes
+            )
+            unit["all_required_classes_top_10"] = all(
+                class_ranks.get(name) is not None and class_ranks[name] <= 10
+                for name in required_classes
+            )
+            if not unit["all_required_classes_top_5"]:
+                manual_disposition_weak_rank_units.append(unit)
+        else:
+            unit["all_required_classes_top_3"] = None
+            unit["all_required_classes_top_5"] = None
+            unit["all_required_classes_top_10"] = None
+
     matched_units = [unit for unit in units if unit["mapping_status"] == "candidate_match"]
-    unmatched_units = [unit for unit in units if unit["mapping_status"] == "unmatched_statement"]
+    raw_unmatched_units = [unit for unit in units if unit["mapping_status"] == "unmatched_statement"]
+    unmatched_units = [unit for unit in raw_unmatched_units if not unit.get("manual_disposition_reviewed")]
     preambles = [unit for unit in units if unit["mapping_status"] == "discourse_preamble"]
+    weak_units_top_5 = [
+        unit for unit in units
+        if unit.get("retrieval_required", bool(unit.get("required_source_classes")))
+        and unit.get("all_required_classes_top_5") is False
+        and not unit.get("manual_disposition_reviewed")
+    ]
     metrics = {
         "query_count": len(query_unit_counts),
         "answer_unit_count": len(units),
