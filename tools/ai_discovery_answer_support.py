@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
 CLAIM_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
 ANSWER_COVERAGE = "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json"
+UNIT_DISPOSITIONS = "problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json"
 SOURCE_CLASSES = ("first_party_evidence", "internal_methodology")
 SUPPORT_TYPE_CLASSES = {
     "first_party_evidence": ("first_party_evidence",),
@@ -64,6 +65,101 @@ def _required_classes(support_type: str) -> tuple[str, ...]:
         return SUPPORT_TYPE_CLASSES[support_type]
     except KeyError as exc:
         raise ValueError(f"unsupported claim support_type: {support_type!r}") from exc
+
+
+UNIT_CATEGORIES = {
+    "first_party_fact",
+    "internal_recommendation",
+    "scope_limitation",
+    "source_freshness_note",
+    "general_legal_caution",
+    "mixed_assertion",
+    "discourse_only",
+}
+
+
+def _load_unit_dispositions(
+    root: Path,
+    units: list[dict[str, Any]],
+    source_documents: dict[str, dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    """Load and fail-closed validate the human-reviewed, exact-text unit overlay."""
+    asset = _read_json(root, UNIT_DISPOSITIONS)
+    if asset.get("schema") != "studio/ai-discovery-answer-unit-dispositions/1":
+        raise ValueError("unexpected answer-unit disposition schema")
+    dispositions = asset.get("dispositions", [])
+    if not isinstance(dispositions, list):
+        raise ValueError("answer-unit dispositions must be a list")
+    if asset.get("disposition_count") != len(dispositions):
+        raise ValueError("answer-unit disposition_count does not match its entries")
+
+    units_by_id = {unit["unit_id"]: unit for unit in units}
+    output: dict[str, dict[str, Any]] = {}
+    for item in dispositions:
+        if not isinstance(item, dict):
+            raise ValueError("answer-unit disposition entries must be objects")
+        unit_id = item.get("unit_id")
+        if not isinstance(unit_id, str) or not unit_id:
+            raise ValueError("answer-unit disposition is missing a unit_id")
+        if unit_id in output:
+            raise ValueError(f"duplicate answer-unit disposition: {unit_id}")
+        unit = units_by_id.get(unit_id)
+        if unit is None:
+            raise ValueError(f"stale answer-unit disposition no longer resolves: {unit_id}")
+        if item.get("answer_text") != unit.get("answer_text"):
+            raise ValueError(f"answer-unit disposition text drift: {unit_id}")
+        for field in ("benchmark_query_id", "answer_file", "answer_heading"):
+            if item.get(field) != unit.get(field):
+                raise ValueError(f"answer-unit disposition {field} drift: {unit_id}")
+
+        category = item.get("category")
+        if category not in UNIT_CATEGORIES:
+            raise ValueError(f"unsupported answer-unit disposition category: {category!r}")
+        if item.get("review_status") != "manual_reviewed":
+            raise ValueError(f"answer-unit disposition is not manually reviewed: {unit_id}")
+        if item.get("review_date") != asset.get("updated"):
+            raise ValueError(f"answer-unit disposition review date mismatch: {unit_id}")
+        note = item.get("review_note")
+        if not isinstance(note, str) or not note.strip():
+            raise ValueError(f"answer-unit disposition lacks a review note: {unit_id}")
+
+        classes = item.get("required_source_classes")
+        refs = item.get("source_refs")
+        if not isinstance(classes, list) or not isinstance(refs, list):
+            raise ValueError(f"answer-unit disposition classes/refs must be lists: {unit_id}")
+        if len(classes) != len(set(classes)) or any(name not in SOURCE_CLASSES for name in classes):
+            raise ValueError(f"answer-unit disposition has invalid source classes: {unit_id}")
+        expected_order = [name for name in SOURCE_CLASSES if name in classes]
+        if classes != expected_order:
+            raise ValueError(f"answer-unit disposition source classes are not canonical: {unit_id}")
+        if len(refs) != len(set(refs)):
+            raise ValueError(f"answer-unit disposition has duplicate refs: {unit_id}")
+        missing = [ref for ref in refs if not isinstance(ref, str) or ref not in source_documents]
+        if missing:
+            raise ValueError(f"answer-unit disposition refs are not in the mapped corpus: {unit_id}: {missing}")
+        actual_classes = {source_documents[ref]["source_class"] for ref in refs}
+        if actual_classes != set(classes):
+            raise ValueError(
+                f"answer-unit disposition refs/classes mismatch for {unit_id}: "
+                f"{sorted(actual_classes)} != {sorted(classes)}"
+            )
+
+        if category == "first_party_fact" and classes != ["first_party_evidence"]:
+            raise ValueError(f"first_party_fact must use only first-party evidence: {unit_id}")
+        if category == "internal_recommendation" and classes != ["internal_methodology"]:
+            raise ValueError(f"internal_recommendation must use only internal methodology: {unit_id}")
+        if category == "source_freshness_note" and classes != ["first_party_evidence"]:
+            raise ValueError(f"source_freshness_note must use first-party evidence: {unit_id}")
+        if category == "mixed_assertion" and classes != list(SOURCE_CLASSES):
+            raise ValueError(f"mixed_assertion must use both source classes: {unit_id}")
+        if category == "scope_limitation" and not classes:
+            raise ValueError(f"scope_limitation requires an explicit source basis: {unit_id}")
+        if category in {"general_legal_caution", "discourse_only"} and (classes or refs):
+            raise ValueError(f"{category} cannot claim mapped factual-source support: {unit_id}")
+
+        output[unit_id] = item
+
+    return output
 
 
 def extract_answer_units(content: str, heading: str) -> list[str]:
