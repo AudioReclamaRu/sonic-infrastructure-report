@@ -458,7 +458,10 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
     def test_answer_unit_extraction_ignores_source_footers_and_splits_sentences(self):
         extracted = extract_answer_units(
             "## Heading\nOne factual sentence. A second clause; a third clause.\n"
-            "Источник: https://example.org/page\n## Next\nIgnored.",
+            "Источник: https://example.org/page\n"
+            "Публичные страницы: https://example.org/a ; evidence/E-001.md\n"
+            "Публичная услуга: https://example.org/b ; внутренняя методика: guide.md\n"
+            "## Next\nIgnored.",
             "## Heading",
         )
         self.assertEqual(
