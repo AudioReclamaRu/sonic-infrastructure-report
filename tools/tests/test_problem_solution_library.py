@@ -17,6 +17,7 @@ def fixture_root():
     (root / "problem-solutions").mkdir()
     (root / "research").mkdir()
     (root / "guides").mkdir()
+    (root / "evidence").mkdir()
     library = {
         "schema": "audio-reclama/problem-solution-library/1",
         "scenarios": [{
@@ -57,6 +58,11 @@ def fixture_root():
         encoding="utf-8",
     )
     (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
+    (root / "evidence/E-TEST-001.md").write_text(
+        "---\nid: E-TEST-001\ntype: evidence\nstatus: verified\n---\n"
+        "**Primary source:** https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
+        encoding="utf-8",
+    )
     routing = {
         "schema": "audio-reclama/problem-answer-routing/1",
         "version": "1.0.0",
@@ -75,7 +81,7 @@ def fixture_root():
             "primary_sources": [
                 "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
             ],
-            "evidence_refs": [],
+            "evidence_refs": ["evidence/E-TEST-001.md"],
             "service_fit": ["IVR voice prompts"],
             "guardrails": ["PBX administration is not implied"],
         }],
@@ -144,6 +150,32 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(ROUTING, routing)
         errors = validate(self.root)
         self.assertTrue(any("heading does not resolve" in e for e in errors))
+
+    def test_routing_entry_without_evidence_refs_fails(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["evidence_refs"] = []
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("missing required field: evidence_refs" in e for e in errors))
+
+    def test_routing_primary_source_must_be_bound_to_evidence_record(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["primary_sources"] = [
+            "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+        ]
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("is not covered by any linked evidence_refs record" in e for e in errors))
+
+    def test_evidence_record_must_identify_its_primary_source(self):
+        evidence_path = self.root / "evidence/E-TEST-001.md"
+        evidence_path.write_text(
+            "---\nid: E-TEST-001\ntype: evidence\nstatus: verified\n---\n"
+            "This record has no primary source field.\n",
+            encoding="utf-8",
+        )
+        errors = validate(self.root)
+        self.assertTrue(any("has no explicit Primary source URL" in e for e in errors))
 
     def test_routing_index_unknown_benchmark_query_fails(self):
         routing = self.read_json(ROUTING)

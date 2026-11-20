@@ -120,7 +120,7 @@ def validate(root: Path = ROOT) -> list[str]:
     markdown_cache: dict[str, str] = {}
     required_route_fields = (
         "routing_id", "intent_type", "problem", "source", "answer_references",
-        "supporting_documents", "primary_sources", "benchmark_query_ids",
+        "supporting_documents", "evidence_refs", "primary_sources", "benchmark_query_ids",
         "service_fit", "guardrails",
     )
 
@@ -213,17 +213,42 @@ def validate(root: Path = ROOT) -> list[str]:
                 if not isinstance(heading, str) or not heading or heading not in markdown_cache[answer_file]:
                     errors.append(f"{label} heading does not resolve in {answer_file}: {heading!r}")
 
+        # Bind every route's company-specific primary source to at least one
+        # repository evidence record. A URL alone is not an auditable evidence edge.
+        route_evidence_sources: set[str] = set()
         for path_field in ("supporting_documents", "evidence_refs"):
             values = entry.get(path_field)
             if not isinstance(values, list):
                 errors.append(f"routing entry {routing_id or index} {path_field} must be a list")
                 continue
+            if path_field == "evidence_refs" and not values:
+                errors.append(f"routing entry {routing_id or index} must have non-empty evidence_refs")
+                continue
             for path_index, relative_path in enumerate(values, start=1):
                 label = f"routing entry {routing_id or index} {path_field}[{path_index}]"
                 if not safe_relative_path(relative_path):
                     errors.append(f"{label} must be a safe repository-relative path")
+                elif path_field == "evidence_refs" and not relative_path.startswith("evidence/"):
+                    errors.append(f"{label} must reference a file inside evidence/")
                 elif not (root / relative_path).is_file():
                     errors.append(f"{label} does not resolve: {relative_path}")
+                elif path_field == "evidence_refs":
+                    try:
+                        evidence_text = (root / relative_path).read_text(encoding="utf-8")
+                    except OSError as exc:
+                        errors.append(f"{label} cannot read evidence record: {exc}")
+                        continue
+                    source_matches = list(re.finditer(
+                        r"^\*\*Primary source:\*\*\s*(https?://\S+)\s*$",
+                        evidence_text,
+                        flags=re.MULTILINE,
+                    ))
+                    if not source_matches:
+                        errors.append(f"{label} has no explicit Primary source URL")
+                    for match in source_matches:
+                        evidence_source = _clean_url(match.group(1))
+                        _validate_url(evidence_source, f"{label} Primary source", errors)
+                        route_evidence_sources.add(evidence_source)
 
         primary_sources = entry.get("primary_sources")
         if not isinstance(primary_sources, list) or not primary_sources:
@@ -235,6 +260,11 @@ def validate(root: Path = ROOT) -> list[str]:
                     errors.append(f"{label} must be a non-empty string")
                 elif primary_source.startswith(("https://", "http://")):
                     _validate_url(primary_source, label, errors)
+                    normalized_source = _clean_url(primary_source)
+                    if normalized_source not in route_evidence_sources:
+                        errors.append(
+                            f"{label} is not covered by any linked evidence_refs record: {primary_source}"
+                        )
                 elif not safe_relative_path(primary_source) or not (root / primary_source).is_file():
                     errors.append(f"{label} does not resolve to a safe repository-relative path: {primary_source}")
 
