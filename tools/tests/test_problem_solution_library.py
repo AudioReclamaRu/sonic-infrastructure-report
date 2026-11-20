@@ -578,6 +578,17 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "text drift"):
             evaluate_answer_support(self.root)
 
+    def test_answer_support_rejects_incomplete_declared_unit_disposition_coverage(self):
+        result = evaluate_answer_support(self.root)
+        dispositions = self.read_json(UNIT_DISPOSITIONS)
+        dispositions["coverage_status"] = "all_extracted_answer_units_dispositioned"
+        dispositions["dispositioned_all_answer_units"] = result["metrics"]["answer_unit_count"]
+        dispositions["disposition_count"] = 0
+        dispositions["dispositions"] = []
+        self.write_json(UNIT_DISPOSITIONS, dispositions)
+        with self.assertRaisesRegex(ValueError, "complete answer-unit disposition coverage has missing units"):
+            evaluate_answer_support(self.root)
+
     def test_answer_unit_extraction_ignores_source_footers_and_splits_sentences(self):
         extracted = extract_answer_units(
             "## Heading\nOne factual sentence. A second clause; a third clause.\n"
