@@ -62,6 +62,19 @@ related:
 
 Эти пересечения не следует устранять механическим удалением полезных внутренних документов или расширением claims за пределы первичного evidence.
 
+## Reviewed baseline snapshot
+
+Текущий reviewed snapshot сохранён в `problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json`. Он фиксирует не только числа метрик, но также параметры BM25, tokenizer/source-class scope и полный список 44 документов. В snapshot поле `baseline_review_status` явно отмечено как `reviewed`.
+
+CI пересчитывает retrieval по фактическому benchmark и claim-support matrix и сравнивает с этим snapshot. Несовпадение любого из полей corpus/method/metrics или отсутствие признака reviewed приводит к ошибке валидатора. Добавлены тесты на совпадающий snapshot и на отказ при устаревших метриках или непросмотренном baseline. Это предотвращает незаметный дрейф source retrieval при изменении текстов, документов, source refs или ожидаемых фактов.
+
+Последний подтверждённый CI на текущем PR head:
+- repo-integrity: SUCCESS;
+- AI response and document naming gate: SUCCESS;
+- AI visibility evidence tests: 15 passed;
+- problem-solution tests: 41 passed;
+- source retrieval baseline совпадает с текущим corpus и метриками.
+
 ## Автоматическая проверка
 
 Скрипт `tools/ai_discovery_source_retrieval.py` строит корпус из source_refs claim-support matrix, проверяет существование каждого документа, считает BM25 по исходным вопросам и по каждому expected fact отдельно, а first-party evidence ранжирует отдельно от внутренних и смешанных источников.
