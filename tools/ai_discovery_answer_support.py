@@ -30,7 +30,7 @@ CITATION_LINE = re.compile(
     r"^(?:источник(?:и)?(?:\s+знаний)?|sources?|evidence)\s*:",
     re.IGNORECASE,
 )
-SENTENCE_BOUNDARY = re.compile(r"(?<=[.!?;])\s+(?=[А-ЯЁA-Z«„0-9])")
+SENTENCE_BOUNDARY = re.compile(r"(?<=[.!?;])\s+(?=[А-Яа-яЁёA-Za-z«„0-9])")
 
 
 def _read_json(root: Path, relative_path: str) -> dict[str, Any]:
