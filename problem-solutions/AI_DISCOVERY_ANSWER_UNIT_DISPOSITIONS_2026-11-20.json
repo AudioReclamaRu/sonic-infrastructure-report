@@ -141,17 +141,15 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
         "evidence/E-2026-098.md",
-        "evidence/E-2026-107.md",
-        "standards/responsible-release.md"
+        "evidence/E-2026-107.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Публичное перечисление направлений не означает, что все работы входят в каждый проект."
+      "review_note": "Оговорку напрямую поддерживают снимки публичных страниц услуг: перечисление направлений не означает включение каждого этапа в каждый заказ."
     },
     {
       "unit_id": "AR-BRAND-01::07",
@@ -301,17 +299,15 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
         "evidence/E-2026-098.md",
-        "evidence/E-2026-107.md",
-        "standards/responsible-release.md"
+        "evidence/E-2026-107.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Наличие опубликованного направления не доказывает включение всех этапов в конкретный заказ."
+      "review_note": "Граница состава заказа прямо следует из датированных снимков публичных страниц; дополнительный внутренний стандарт выпуска не нужен для этой фразы."
     },
     {
       "unit_id": "AR-BRAND-03::01",
@@ -1560,16 +1556,14 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-111.md",
-        "guides/chronomer-timing.md"
+        "evidence/E-2026-111.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Маркетинговую формулировку страницы нельзя расширять до технической гарантии точности."
+      "review_note": "E-111 напрямую фиксирует, что маркетинговую формулировку «никогда не ошибается» нельзя расширять до технической гарантии; Chronomer guide не нужен для этой оговорки."
     },
     {
       "unit_id": "AR-PROBLEM-05::01",
@@ -1786,16 +1780,14 @@
       "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-111.md",
-        "guides/chronomer-timing.md"
+        "evidence/E-2026-111.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Метаданные snapshot указывают обход две недели назад; это требует перепроверки live-доступности, а не доказывает отказ инструмента."
+      "review_note": "Дата обхода и ограничение свежести находятся в метаданных E-111; внутренняя методика Chronomer не доказывает дату crawl."
     },
     {
       "unit_id": "AR-PROBLEM-06::05",
@@ -1806,16 +1798,14 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-111.md",
-        "guides/chronomer-timing.md"
+        "evidence/E-2026-111.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Маркетинговую формулировку страницы нельзя расширять до технической гарантии точности."
+      "review_note": "E-111 напрямую фиксирует, что маркетинговую формулировку «никогда не ошибается» нельзя расширять до технической гарантии; Chronomer guide не нужен для этой оговорки."
     },
     {
       "unit_id": "AR-PROBLEM-07::01",
@@ -3674,12 +3664,11 @@
         "internal_methodology"
       ],
       "source_refs": [
-        "standards/responsible-release.md",
-        "standards/voice-provenance-passport.md"
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Перед использованием оригинальной/сторонней композиции отдельно проверить права; это checklist, не юридическое заключение."
+      "review_note": "Профильная методика по джинглам/корпоративным песням прямо разбирает оригинальную или стороннюю музыку, авторство, права на текст/фонограмму/аранжировку и согласование мастер-версий; общий voice-passport и общий release standard были менее точными."
     },
     {
       "unit_id": "AR-PROBLEM-22::04",
@@ -3788,12 +3777,11 @@
         "internal_methodology"
       ],
       "source_refs": [
-        "standards/responsible-release.md",
-        "standards/voice-provenance-passport.md"
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Checklist по разрешениям на музыку, текст, фонограмму и аранжировку; не правовое заключение."
+      "review_note": "Профильная методика по джинглам/корпоративным песням прямо разбирает оригинальную или стороннюю музыку, авторство, права на текст/фонограмму/аранжировку и согласование мастер-версий; общий voice-passport и общий release standard были менее точными."
     },
     {
       "unit_id": "AR-PROBLEM-23::05",
@@ -3890,12 +3878,11 @@
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-098.md",
-        "evidence/E-2026-099.md"
+        "evidence/E-2026-098.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Перечисленные элементы производства — возможные компоненты, не обязательный пакет каждой цены."
+      "review_note": "E-098 перечисляет возможные компоненты производства и прямо запрещает трактовать их как обязательный состав каждого заказа или базовой цены; E-099 о сценариях не требуется."
     },
     {
       "unit_id": "AR-SERVICE-01::05",
@@ -3925,17 +3912,14 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-098.md",
-        "evidence/E-2026-099.md",
-        "standards/responsible-release.md"
+        "evidence/E-2026-098.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Состав производства и права согласуются по конкретному проекту."
+      "review_note": "E-098 прямо ограничивает состав производства и передачу прав рамками конкретного заказа/договора; соседняя страница сценариев и общий внутренний стандарт избыточны для этого публичного ограничения."
     },
     {
       "unit_id": "AR-SERVICE-02::01",
@@ -4272,12 +4256,11 @@
         "internal_methodology"
       ],
       "source_refs": [
-        "standards/responsible-release.md",
-        "standards/voice-provenance-passport.md"
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Внутренний production/right-clearance checklist для каждого музыкального проекта; не юридическое заключение."
+      "review_note": "Профильная методика по джинглам/корпоративным песням прямо разбирает оригинальную или стороннюю музыку, авторство, права на текст/фонограмму/аранжировку и согласование мастер-версий; общий voice-passport и общий release standard были менее точными."
     },
     {
       "unit_id": "AR-SERVICE-06::01",
@@ -4360,19 +4343,17 @@
       "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
       "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
       "answer_text": "Актуальную цену нужно подтвердить в текущем коммерческом маршруте.",
-      "category": "scope_limitation",
+      "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-094.md",
         "entity/audio-reclama-studio.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Цена не фиксируется этой фразой: актуальная сумма подтверждается в текущем коммерческом маршруте."
+      "review_note": "Это внутренняя коммерческая рекомендация: актуальную цену подтверждать в текущем маршруте; это не опубликованный прайс и не факт, устанавливаемый FAQ-снимком."
     },
     {
       "unit_id": "AR-SERVICE-07::01",
@@ -4931,16 +4912,14 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-106.md",
-        "standards/responsible-release.md"
+        "evidence/E-2026-106.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Имена карточек — не независимые рекомендации; из портфолио нельзя выводить KPI, бюджеты, сроки, исходы или текущие отношения."
+      "review_note": "E-106 одновременно фиксирует опубликованные карточки портфолио и прямо указывает, что они не подтверждают endorsement или текущие договорные отношения; общий стандарт выпуска не относится к этой границе."
     },
     {
       "unit_id": "AR-SERVICE-13::04",
@@ -4951,16 +4930,14 @@
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-106.md",
-        "standards/responsible-release.md"
+        "evidence/E-2026-106.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Имена карточек — не независимые рекомендации; из портфолио нельзя выводить KPI, бюджеты, сроки, исходы или текущие отношения."
+      "review_note": "E-106 прямо перечисляет неподтверждаемые KPI, бюджеты, сроки, качество и результаты; дополнительный внутренний стандарт не нужен."
     },
     {
       "unit_id": "AR-SERVICE-13::05",
@@ -5472,15 +5449,14 @@
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-104.md",
         "evidence/E-2026-098.md",
+        "evidence/E-2026-104.md",
         "evidence/E-2026-110.md",
-        "standards/responsible-release.md",
-        "standards/voice-provenance-passport.md"
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Проверенные снимки каталога и рекламной записи не описывают условия AI training/cloning; это не доказывает ни наличие, ни отсутствие отдельной услуги."
+      "review_note": "Публичные снимки E-098/E-104/E-110 подтверждают только изученный объём страниц и его границы; отдельная внутренняя методика BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY прямо различает обычную запись и AI training/synthesis/digital replica. Отсутствие на снимке не доказывает наличие или отсутствие отдельной услуги."
     }
   ],
   "dispositioned_all_answer_units": 285,
