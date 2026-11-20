@@ -557,7 +557,7 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
                 "mixed": "Requires both first_party_evidence and internal_methodology; never collapsed to a single winning document.",
             },
             "routing_policy": "support_type determines the admissible retrieval channel(s); query routing activates the union of the classes required by all mapped claims.",
-            "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 18 first-party evidence and 26 internal-methodology sources.",
+            "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 19 first-party evidence and 25 internal-methodology sources.",
             "not_a_claim": "This is not a production retriever, an external AI-platform test or a measurement of AI visibility.",
         },
         "corpus": {
