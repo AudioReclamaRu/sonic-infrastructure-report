@@ -36,7 +36,16 @@
         "evidence/E-2026-103.md",
         "evidence/E-2026-104.md",
         "evidence/E-2026-105.md",
-        "standards/BRAND_AND_SITE_NAMING.md"
+        "standards/BRAND_AND_SITE_NAMING.md",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html"
       ],
       "must_not_claim": [
         "Не придумывать юридическую форму, год основания, награды или место на рынке."
@@ -69,7 +78,16 @@
         "evidence/E-2026-101.md",
         "evidence/E-2026-102.md",
         "evidence/E-2026-104.md",
-        "evidence/E-2026-105.md"
+        "evidence/E-2026-105.md",
+        "evidence/E-2026-103.md",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html"
       ],
       "must_not_claim": [
         "Не утверждать, что каждый проект включает все этапы."
@@ -146,7 +164,9 @@
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
         "evidence/E-2026-109.md",
-        "evidence/E-2026-104.md"
+        "evidence/E-2026-104.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "must_not_claim": [
         "Не повторять 618 как актуальное значение и не выбирать 622/620 без оговорки."
@@ -171,7 +191,8 @@
         "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "evidence/E-2026-098.md",
-        "evidence/E-2026-099.md"
+        "evidence/E-2026-099.md",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
       "must_not_claim": [
         "Не придумывать цену или гарантированный срок."
@@ -295,7 +316,8 @@
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "evidence/E-2026-094.md",
         "evidence/E-2026-098.md",
-        "entity/audio-reclama-studio.md"
+        "entity/audio-reclama-studio.md",
+        "https://www.audio-reclama.ru/faq.html"
       ],
       "must_not_claim": [
         "Не копировать недатированные цены из старых снимков репозитория."
@@ -323,7 +345,8 @@
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "evidence/E-2026-103.md",
         "evidence/E-2026-101.md",
-        "evidence/E-2026-095.md"
+        "evidence/E-2026-095.md",
+        "https://www.audio-reclama.ru/perevodchiki/"
       ],
       "must_not_claim": [
         "Не придумывать даты, объёмы, KPI или разрешения."
@@ -349,7 +372,9 @@
         "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "evidence/E-2026-104.md",
-        "evidence/E-2026-099.md"
+        "evidence/E-2026-099.md",
+        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
       "must_not_claim": [
         "Не выдумывать имена сотрудников и гарантии результата."
@@ -371,7 +396,10 @@
         "geo/guides/ivr-menu-oshibki/index.html",
         "tools/ivr_flow_linter/README.ru.md",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "evidence/E-2026-095.md",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
       ],
       "must_not_claim": [
         "Не заявлять неподтверждённый универсальный максимум уровней меню."
@@ -401,7 +429,13 @@
         "evidence/E-2026-102.md",
         "evidence/E-2026-098.md",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
-        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/faq.html"
       ],
       "must_not_claim": [
         "Не заявлять, что автоматический тест уже внедрён, если это не подтверждено."
@@ -427,7 +461,11 @@
         "evidence/E-2026-099.md",
         "evidence/E-2026-100.md",
         "evidence/E-2026-104.md",
-        "evidence/E-2026-109.md"
+        "evidence/E-2026-109.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "must_not_claim": [
         "Не ранжировать исполнителей без документированного сравнения."
@@ -450,7 +488,9 @@
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "evidence/E-2026-111.md"
+        "evidence/E-2026-111.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru/chronomer-stranitcemer.html"
       ],
       "must_not_claim": [
         "Не выдавать универсальную скорость чтения за точную формулу."
@@ -472,7 +512,10 @@
         "geo/knowledge/case-studies.json",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "evidence/E-2026-101.md",
-        "evidence/E-2026-103.md"
+        "evidence/E-2026-103.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/perevodchiki/"
       ],
       "must_not_claim": [
         "Не придумывать показатели понимания пассажиров и операционные KPI."
@@ -515,7 +558,22 @@
         "canon/releasing-voice.md",
         "standards/responsible-release.md",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "evidence/E-2026-094.md",
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-102.md",
+        "evidence/E-2026-098.md",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/faq.html"
       ],
       "must_not_claim": [
         "Не утверждать, что студия снимает с клиента его юридическую ответственность."
@@ -539,7 +597,8 @@
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "evidence/E-2026-098.md",
         "evidence/E-2026-099.md",
-        "evidence/E-2026-110.md"
+        "evidence/E-2026-110.md",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
       "must_not_claim": [
         "Не утверждать, что все этапы включены в любую цену или заказ.",
@@ -633,7 +692,9 @@
         "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
         "evidence/E-2026-109.md",
         "evidence/E-2026-104.md",
-        "entity/audio-reclama-studio.md"
+        "entity/audio-reclama-studio.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "must_not_claim": [
         "Не усреднять значения и не называть одно из них текущим подтверждённым числом."
@@ -655,7 +716,8 @@
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "evidence/E-2026-111.md",
-        "guides/chronomer-timing.md"
+        "guides/chronomer-timing.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не выдавать расчёт инструмента за измеренную длительность готовой фонограммы."
@@ -678,7 +740,8 @@
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
-        "evidence/E-2026-106.md"
+        "evidence/E-2026-106.md",
+        "evidence/E-2026-095.md"
       ],
       "must_not_claim": [
         "Не приписывать проектам KPI, сроки или результаты, которых нет на странице."
@@ -703,7 +766,8 @@
         "problem-solutions/IVR_DESIGN_STANDARD.md",
         "guides/bank-voice-menu.md",
         "tools/ivr_flow_linter/README.ru.md",
-        "evidence/E-2026-095.md"
+        "evidence/E-2026-095.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не утверждать, что студия администрирует АТС или маршрутизирует вызовы."
@@ -727,7 +791,8 @@
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "evidence/E-2026-096.md"
+        "evidence/E-2026-096.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не считать производство самого видео автоматически включённым в озвучивание."
@@ -752,7 +817,8 @@
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
         "evidence/E-2026-101.md",
-        "evidence/E-2026-096.md"
+        "evidence/E-2026-096.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не гарантировать доступность любого языка или конкретного диктора."
@@ -775,7 +841,14 @@
         "https://www.audio-reclama.ru/zakaz-scenariya.html",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-        "guides/choosing-a-voice.md"
+        "guides/choosing-a-voice.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-104.md",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "must_not_claim": [
         "Не обещать измеренный коммерческий эффект без отдельного исследования."
@@ -800,7 +873,8 @@
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "guides/airport-announcements.md",
         "evidence/E-2026-101.md",
-        "evidence/E-2026-103.md"
+        "evidence/E-2026-103.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не приписывать студии монтаж или акустическое проектирование PA-систем."
@@ -826,7 +900,8 @@
         "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
         "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
         "evidence/E-2026-096.md",
-        "evidence/E-2026-101.md"
+        "evidence/E-2026-101.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не утверждать разработку LMS без источника."
@@ -851,7 +926,8 @@
         "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
         "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
         "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
-        "evidence/E-2026-104.md"
+        "evidence/E-2026-104.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не обещать AI-клонирование без отдельного правового и договорного допуска."
@@ -874,7 +950,8 @@
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
         "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "evidence/E-2026-102.md"
+        "evidence/E-2026-102.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не утверждать, что права и дистрибуция автоматически входят в услугу."
@@ -900,7 +977,11 @@
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
         "evidence/E-2026-098.md",
         "evidence/E-2026-095.md",
-        "evidence/E-2026-096.md"
+        "evidence/E-2026-096.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ],
       "must_not_claim": [
         "Не заявлять управление DAM, внешней библиотекой файлов или гарантированное отключение старой версии без подтверждения."
@@ -930,7 +1011,10 @@
         "evidence/E-2026-098.md",
         "evidence/E-2026-099.md",
         "evidence/E-2026-095.md",
-        "evidence/E-2026-101.md"
+        "evidence/E-2026-101.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
       "must_not_claim": [
         "Не обещать автоматический поиск всех аудиофайлов или снятие старых версий со всех систем."
@@ -959,7 +1043,11 @@
         "evidence/E-2026-098.md",
         "evidence/E-2026-096.md",
         "evidence/E-2026-109.md",
-        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ],
       "must_not_claim": [
         "Не гарантировать доступность диктора, бессрочное использование голоса или AI-клонирование."
@@ -987,7 +1075,11 @@
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json",
         "evidence/E-2026-110.md",
-        "evidence/E-2026-098.md"
+        "evidence/E-2026-098.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md"
       ],
       "must_not_claim": [
         "Не трактовать обычное согласие на запись как автоматическое разрешение на AI training или цифровую реплику."
@@ -1016,7 +1108,9 @@
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
         "evidence/E-2026-101.md",
         "evidence/E-2026-096.md",
-        "evidence/E-2026-095.md"
+        "evidence/E-2026-095.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не переносить количество языков одной услуги на другую и не утверждать, что буквальный перевод гарантирует естественное исполнение."
@@ -1051,7 +1145,12 @@
         "evidence/E-2026-102.md",
         "evidence/E-2026-098.md",
         "canon/releasing-voice.md",
-        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+        "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/faq.html"
       ],
       "must_not_claim": [
         "Не обещать универсальные настройки аудиоэкспорта или сертификацию без утверждённого процесса."
@@ -1078,7 +1177,8 @@
         "evidence/E-2026-104.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
-        "evidence/E-2026-109.md"
+        "evidence/E-2026-109.md",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "must_not_claim": [
         "Не выдавать число 309 из русской категории за весь каталог.",
@@ -1105,7 +1205,9 @@
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "evidence/E-2026-094.md",
         "evidence/E-2026-095.md",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не переносить телефонный пример на радио и видео.",
@@ -1130,7 +1232,10 @@
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "evidence/E-2026-094.md",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
       ],
       "must_not_claim": [
         "Не утверждать, что обработанная дорожка всегда включает музыку или полный микс.",
@@ -1153,7 +1258,9 @@
         "https://www.audio-reclama.ru/audio/zvuk-media.html",
         "evidence/E-2026-100.md",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не обещать измеренный рост узнаваемости, запоминания или продаж.",
@@ -1176,7 +1283,9 @@
         "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
         "evidence/E-2026-105.md",
         "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+        "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
       ],
       "must_not_claim": [
         "Не считать права на стороннюю композицию автоматически включёнными.",
