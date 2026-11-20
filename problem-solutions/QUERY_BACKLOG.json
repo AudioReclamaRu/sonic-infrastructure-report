@@ -265,13 +265,14 @@
       "existing_coverage": [
         "standards/responsible-release.md",
         "guides/video-voiceover.md",
-        "standards/AUDIO_MASTER_QC_AND_DELIVERY.md"
+        "standards/AUDIO_MASTER_QC_AND_DELIVERY.md",
+        "research/AUDIO_RECIPIENT_TECHNICAL_PROFILES_2026-11-20.md"
       ],
-      "action": "Connect the existing content/rights release checks to the proposed exported-file QC protocol; keep recipient-specific technical profiles open until each requirement is captured from a current first-party specification and reviewed.",
+      "action": "Use the QC protocol and source-verified profile matrix to identify what must be requested for each delivery route; collect project-specific recipient requirements before declaring any profile complete.",
       "proof_needed": [
         "professional review and owner approval of the working QC protocol",
-        "recipient-specific delivery profiles with source document, version and verification date",
-        "client/studio/integrator responsibility boundary",
+        "current recipient specifications for the actual customer systems, with source, version and verification date",
+        "confirmation of per-project delivery requirements where public profiles are incomplete or outdated",
         "approved version record and reproducible exported-file check"
       ],
       "demand_status": "existing_content_review",

@@ -3,7 +3,7 @@ type: standard
 date: 2026-11-20
 lang: ru
 status: proposed
-related: [standards/responsible-release.md, standards/verification-chain.md, problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md, problem-solutions/IVR_DESIGN_STANDARD.md, guides/video-voiceover.md]
+related: [standards/responsible-release.md, standards/verification-chain.md, problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md, problem-solutions/IVR_DESIGN_STANDARD.md, guides/video-voiceover.md, research/AUDIO_RECIPIENT_TECHNICAL_PROFILES_2026-11-20.md]
 ---
 
 # Сквозной контроль качества и приёмка готового аудиофайла
