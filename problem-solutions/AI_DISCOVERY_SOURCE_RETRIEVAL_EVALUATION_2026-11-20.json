@@ -1,27 +1,5 @@
 {
-  "schema": "studio/ai-discovery-source-retrieval-evaluation/2",
-  "date": "2026-11-20",
-  "status": "diagnostic_source_retrieval_baseline",
-  "method": {
-    "b": 0.75,
-    "k1": 1.2,
-    "name": "BM25",
-    "not_a_claim": "This is not a production retriever, an external AI-platform test or a measurement of AI visibility.",
-    "query_modes": [
-      "Control: original benchmark question against all 44 mapped source documents in one global BM25 corpus.",
-      "Routed query: rank the original question independently in each source class required by its expected facts.",
-      "Control: each exact expected_fact against all mapped source documents.",
-      "Routed fact: rank each expected_fact only in the source class required by its support_type; mixed claims use parallel evidence and methodology channels."
-    ],
-    "routing_policy": "support_type determines the admissible retrieval channel(s); query routing activates the union of the classes required by all mapped claims.",
-    "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 19 first-party evidence and 25 internal-methodology sources.",
-    "source_classes": {
-      "first_party_evidence": "Dated public-page evidence records under evidence/.",
-      "internal_methodology": "Internal methodology, entity, standards, canon, guide and technical workflow sources outside evidence/.",
-      "mixed": "Requires both first_party_evidence and internal_methodology; never collapsed to a single winning document."
-    },
-    "tokenizer": "Same fixed Russian/English tokenizer and light stemming as the answer-pack baseline."
-  },
+  "baseline_review_status": "reviewed",
   "corpus": {
     "document_count": 44,
     "documents": [
@@ -121,24 +99,45 @@
       ]
     }
   },
+  "date": "2026-11-20",
+  "method": {
+    "b": 0.75,
+    "k1": 1.2,
+    "name": "BM25",
+    "not_a_claim": "This is not a production retriever, an external AI-platform test or a measurement of AI visibility.",
+    "query_modes": [
+      "Control: original benchmark question against all 44 mapped source documents in one global BM25 corpus.",
+      "Routed query: rank the original question independently in each source class required by its expected facts.",
+      "Control: each exact expected_fact against all mapped source documents.",
+      "Routed fact: rank each expected_fact only in the source class required by its support_type; mixed claims use parallel evidence and methodology channels."
+    ],
+    "routing_policy": "support_type determines the admissible retrieval channel(s); query routing activates the union of the classes required by all mapped claims.",
+    "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 19 first-party evidence and 25 internal-methodology sources.",
+    "source_classes": {
+      "first_party_evidence": "Dated public-page evidence records under evidence/.",
+      "internal_methodology": "Internal methodology, entity, standards, canon, guide and technical workflow sources outside evidence/.",
+      "mixed": "Requires both first_party_evidence and internal_methodology; never collapsed to a single winning document."
+    },
+    "tokenizer": "Same fixed Russian/English tokenizer and light stemming as the answer-pack baseline."
+  },
   "metrics": {
-    "all_claims_have_mapped_source_top_10": 44,
-    "all_claims_have_mapped_source_top_3": 33,
-    "all_claims_have_mapped_source_top_5": 41,
+    "all_claims_have_mapped_source_top_10": 46,
+    "all_claims_have_mapped_source_top_3": 34,
+    "all_claims_have_mapped_source_top_5": 42,
     "all_evidence_claims_have_evidence_top_10": 38,
     "all_evidence_claims_have_evidence_top_5": 34,
     "claims_with_first_party_evidence": 60,
-    "claims_with_mapped_source_top_1": 63,
-    "claims_with_mapped_source_top_10": 110,
-    "claims_with_mapped_source_top_3": 97,
-    "claims_with_mapped_source_top_5": 107,
+    "claims_with_mapped_source_top_1": 64,
+    "claims_with_mapped_source_top_10": 112,
+    "claims_with_mapped_source_top_3": 98,
+    "claims_with_mapped_source_top_5": 108,
     "evidence_claims_with_evidence_top_1": 31,
     "evidence_claims_with_evidence_top_10": 58,
     "evidence_claims_with_evidence_top_3": 51,
     "evidence_claims_with_evidence_top_5": 54,
     "expected_fact_count": 112,
     "mapped_source_documents": 44,
-    "max_mapped_source_rank": 41,
+    "max_mapped_source_rank": 8,
     "max_query_mapped_source_rank": 16,
     "median_mapped_source_rank": 1,
     "mixed_claim_count": 15,
@@ -154,26 +153,27 @@
     "queries_with_mapped_source_top_5": 36,
     "query_count": 46
   },
+  "schema": "studio/ai-discovery-source-retrieval-evaluation/2",
   "source_class_aware": {
     "claim_channel_checks": 127,
-    "claim_channel_top_1": 86,
-    "claim_channel_top_10": 124,
-    "claim_channel_top_3": 114,
-    "claim_channel_top_5": 123,
+    "claim_channel_top_1": 87,
+    "claim_channel_top_10": 127,
+    "claim_channel_top_3": 116,
+    "claim_channel_top_5": 126,
     "claim_support_type_counts": {
       "first_party_evidence": 45,
       "internal_methodology": 52,
       "mixed": 15
     },
     "claims_all_required_classes_top_1": 73,
-    "claims_all_required_classes_top_10": 109,
-    "claims_all_required_classes_top_3": 99,
-    "claims_all_required_classes_top_5": 108,
+    "claims_all_required_classes_top_10": 112,
+    "claims_all_required_classes_top_3": 101,
+    "claims_all_required_classes_top_5": 111,
     "mixed_claim_count": 15,
     "mixed_claims_all_classes_top_1": 4,
-    "mixed_claims_all_classes_top_10": 14,
-    "mixed_claims_all_classes_top_3": 12,
-    "mixed_claims_all_classes_top_5": 14,
+    "mixed_claims_all_classes_top_10": 15,
+    "mixed_claims_all_classes_top_3": 13,
+    "mixed_claims_all_classes_top_5": 15,
     "per_class": {
       "first_party_evidence": {
         "claim_channel_count": 60,
@@ -189,13 +189,13 @@
       },
       "internal_methodology": {
         "claim_channel_count": 67,
-        "claim_channel_top_1": 31,
-        "claim_channel_top_10": 64,
-        "claim_channel_top_3": 54,
-        "claim_channel_top_5": 63,
+        "claim_channel_top_1": 32,
+        "claim_channel_top_10": 67,
+        "claim_channel_top_3": 56,
+        "claim_channel_top_5": 66,
         "document_count": 25,
         "query_channel_count": 34,
-        "query_channel_top_1": 11,
+        "query_channel_top_1": 10,
         "query_channel_top_3": 22,
         "query_channel_top_5": 26
       }
@@ -210,7 +210,7 @@
     "queries_all_required_classes_top_3": 31,
     "queries_all_required_classes_top_5": 37,
     "query_channel_checks": 74,
-    "query_channel_top_1": 33,
+    "query_channel_top_1": 32,
     "query_channel_top_3": 59,
     "query_channel_top_5": 65,
     "query_route_counts": {
@@ -223,5 +223,5 @@
       "internal_methodology": 25
     }
   },
-  "baseline_review_status": "reviewed"
+  "status": "diagnostic_source_retrieval_baseline"
 }
