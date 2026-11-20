@@ -101,3 +101,5 @@ related:
 - AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md — первый ручной семантический аудит 112 expected facts в 46 benchmark-запросах и 44 уникальных источников; 21 материальная ошибка привязки исправлена, оставшиеся ограничения задокументированы.
 
 - ../problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json — ручная проверка 46 подготовленных ответов: 112 expected facts покрыты, 54 must_not_claim ограничения просмотрены; внешняя AI-видимость не измерялась.
+
+- AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md — ручная проверка всех 46 answer texts: 112 ожидаемых фактов, 54 запрета и исправленные маршруты/формулировки; это не AI visibility measurement.
