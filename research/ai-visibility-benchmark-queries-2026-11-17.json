@@ -25,7 +25,8 @@
         "research/ai-discovery-brand-entity-2026-11-17.json",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "evidence/E-2026-107.md"
       ],
       "must_not_claim": [
         "Не придумывать юридическую форму, год основания, награды или место на рынке."
@@ -49,7 +50,8 @@
         "research/ai-discovery-brand-entity-2026-11-17.json",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "evidence/E-2026-107.md"
       ],
       "must_not_claim": [
         "Не утверждать, что каждый проект включает все этапы."
@@ -95,7 +97,8 @@
         "research/ai-discovery-brand-entity-2026-11-17.json",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "evidence/E-2026-108.md"
       ],
       "must_not_claim": [
         "Не придумывать email, телефон или адрес офиса."
@@ -120,7 +123,8 @@
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "evidence/E-2026-097.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "evidence/E-2026-109.md"
       ],
       "must_not_claim": [
         "Не повторять 618 как актуальное значение и не выбирать 622/620 без оговорки."
@@ -563,7 +567,8 @@
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "evidence/E-2026-097.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "evidence/E-2026-109.md"
       ],
       "must_not_claim": [
         "Не усреднять значения и не называть одно из них текущим подтверждённым числом."
@@ -598,13 +603,15 @@
       "query": "Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
       "expected_facts": [
         "Страница IVR перечисляет примеры приветствий для Ассоциации ПН РТС, HANKOOK, Ростеха, НПФ «Лукойл-Гарант» и других организаций.",
-        "Отдельные примеры IVR указаны для Ренессанс Кредит, Внуково и ABBYY."
+        "Отдельные примеры IVR указаны для Ренессанс Кредит, Внуково и ABBYY.",
+        "В снимке официальной страницы IVR от 20.11.2026 перечислены 12 примеров приветствий и три примера IVR-меню; написание имён следует сохранять как на странице."
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
         "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
+        "evidence/E-2026-106.md"
       ],
       "must_not_claim": [
         "Не приписывать проектам KPI, сроки или результаты, которых нет на странице."
@@ -945,7 +952,8 @@
         "evidence/E-2026-097.md",
         "evidence/E-2026-104.md",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "evidence/E-2026-109.md"
       ],
       "must_not_claim": [
         "Не выдавать число 309 из русской категории за весь каталог.",
