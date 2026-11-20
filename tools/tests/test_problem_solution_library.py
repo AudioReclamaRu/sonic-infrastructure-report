@@ -428,6 +428,18 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         errors = validate(self.root)
         self.assertTrue(any("has no explicit Primary source URL" in e for e in errors))
 
+    def test_evidence_record_accepts_plural_primary_source_list(self):
+        evidence_path = self.root / "evidence/E-TEST-001.md"
+        evidence_path.write_text(
+            "---\nid: E-TEST-001\ntype: evidence\nstatus: verified\n---\n"
+            "**Primary sources:**\n"
+            "- https://www.audio-reclama.ru\n"
+            "- https://www.audio-reclama.ru/diktoryi/\n",
+            encoding="utf-8",
+        )
+        errors = validate(self.root)
+        self.assertFalse(any("has no explicit HTTPS Primary source URL" in e for e in errors))
+
     def test_routing_index_unknown_benchmark_query_fails(self):
         routing = self.read_json(ROUTING)
         routing["entries"][0]["benchmark_query_ids"] = ["Q-UNKNOWN"]
