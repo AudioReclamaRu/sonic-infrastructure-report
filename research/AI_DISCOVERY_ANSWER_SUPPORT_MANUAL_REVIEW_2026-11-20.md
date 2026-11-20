@@ -2,12 +2,14 @@
 type: ai-discovery-answer-support-manual-review
 date: 2026-11-20
 lang: ru
-status: priority_units_manually_adjudicated
+status: unit_level_dispositions_applied_ci_pass
 brand: "Аудио-Реклама•ru"
 related:
   - ../research/AI_DISCOVERY_ANSWER_SUPPORT_CANDIDATE_AUDIT_2026-11-20.md
   - ../research/AI_DISCOVERY_ANSWER_MANUAL_REVIEW_2026-11-20.md
   - ../problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json
+  - ../problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json
+  - ../tools/ai_discovery_answer_support.py
   - ../problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json
 ---
 
@@ -158,3 +160,38 @@ BM25 candidate и rank здесь используются только для �
 | `AR-PROBLEM-13::03` | internal_voice_continuity_recommendation | При смене диктора оценивать узнаваемость манеры, не только тембр; `CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md` и casting comparison protocol. |
 
 Машинная сверка этой таблицы и основных блоков должна дать ровно 79 уникальных точных unit IDs: 44 unmatched и 35 weak, без пропусков.
+
+## 7. Ручные решения переведены в исполняемую unit-level схему
+
+Создан и включён в retrieval asset `problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json`. В нём 79 точных записей `unit_id + answer_text`, получивших ручную классификацию:
+
+| Категория | Количество |
+|---|---:|
+| `first_party_fact` | 17 |
+| `internal_recommendation` | 31 |
+| `scope_limitation` | 16 |
+| `source_freshness_note` | 11 |
+| `general_legal_caution` | 2 |
+| `mixed_assertion` | 1 |
+| `discourse_only` | 1 |
+
+У 76 записей есть явный retrieval channel и конкретные mapped refs. Три записи (два общих правовых предостережения и один дискурсивный фрагмент) не выдают себя за утверждения о компании и не требуют source retrieval.
+
+`tools/ai_discovery_answer_support.py` теперь:
+- при наличии точного disposition использует классы и refs конкретной фразы, а не наследует whole-fact `support_type`;
+- сохраняет прежний expected-fact candidate в отдельных диагностических полях;
+- для неразмеченных фраз оставляет прежний BM25 fallback;
+- отклоняет устаревший unit ID/text, неизвестный mapped ref, несоответствие фактического класса пути выбранному классу и неверные category rules;
+- отличает отсутствие lexical fact candidate от фактического отсутствия ручной source disposition.
+
+На CI HEAD `7de3279fa57cbd00fd3f7b1aa0959ae9afecdc7b`:
+- 285 answer units; 236 lexical expected-fact candidates; 44 units без такого кандидата;
+- 79/79 приоритетных units dispositioned; **0 unclassified priority units**;
+- effective source-class routing: top-3 **200/236**, top-5 **217/236**, top-10 **228/236**;
+- у 26 вручную размеченных retrieval units mapped source остаётся ниже top-5. Это сохранено как lexical-rank warning, а не ошибочно трактуется как семантическое опровержение ручной привязки;
+- 15 AI visibility evidence tests и 51 problem-solution tests passed.
+
+Новые regression tests проверяют: override whole-fact mixed на точный first-party fragment; general legal caution без фиктивного source channel; fail-closed при изменении exact answer text.
+
+**Граница:** это ручная классификация 79 приоритетных фрагментов, а не полная семантическая верификация всех 285 единиц. Для остальных 206 units ручная disposition пока не задана; лексический top-5 не объявляется доказательством entailment.
+
