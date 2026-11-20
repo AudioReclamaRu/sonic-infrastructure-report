@@ -47,7 +47,7 @@
 - [Доказательная карта коммерческих страниц](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md): состав отдельных услуг, публичные портфолио и точные границы (производство аудио ≠ размещение; подготовка IVR-файлов ≠ настройка АТС; озвучивание видео ≠ производство видео).
 - [Проблемно-ориентированная библиотека бизнеса](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md): одиннадцать сценариев с диагностикой, решениями, проверками и ограничениями.
 - [Маршрутный индекс ответов на проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 18 бизнес- и voice-asset сценариев, связанных с точными ответами, руководствами, первичными источниками, evidence и guardrails.
-- [Краткие самостоятельные ответы для retrieval](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md): тринадцать коротких ответов с официальными источниками; внутренняя reference-база, не опубликованные страницы.
+- [Краткие самостоятельные ответы для retrieval](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md): пятнадцать коротких ответов с официальными источниками; внутренняя reference-база, не опубликованные страницы.
 - [Техническое задание и приёмка аудиофайлов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md): требования принимающей системы, dry/processed tracks, телефонные форматы и контроль комплекта.
 - [Повторная проверка источников 18.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md): факты официальных FAQ, IVR, video, jingles, корпоративных песен, каталога и динамических счётчиков.
 - [Управление голосовыми активами](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md): шесть корпоративных задач — версии файлов, обновление изменившейся информации, единый голос бренда, права, локализация и финальный QC. Методический черновик, не отдельная DAM/телеком/юридическая услуга.
@@ -100,7 +100,7 @@
 
 - [Джинглы и звуковые подписи](https://www.audio-reclama.ru/audio/zvuk-media.html) и [корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) — две дополнительные problem-first темы с отдельными evidence E-2026-100 и E-2026-105.
 
-- [Маршрутный индекс ответов на бизнес-проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 17 маршрутов от задачи клиента к короткому ответу, сценарию, первичным URL и verified evidence; валидатор требует точного совпадения источника.
+- [Маршрутный индекс ответов на бизнес-проблемы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json): 20 маршрутов от задачи клиента к короткому ответу, сценарию, первичным URL и verified evidence; валидатор требует точного совпадения источника.
 
 
 ## Коммерческие buyer-intent ответы для AI retrieval
@@ -133,3 +133,5 @@
 - [Хрономер — evidence E-2026-111](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-111.md): индексированный снимок с crawl за две недели до получения; не доказательство текущей доступности или точности инструмента.
 
 - [Ручной семантический аудит связей факт → источник](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md): ревью 112 expected facts по 46 benchmark-запросам, проверка 44 исходных документов, исправление 21 слишком широкой или неподходящей привязки; описаны freshness и пределы доказательств.
+
+- [Аудит покрытия ответов и запрещённых утверждений](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json): ручной review всех 46 benchmark-ответов, 112 ожидаемых фактов и 54 must_not_claim ограничения. Все ответы проверены по своим разделам; это внутренняя проверка, не измерение внешней AI-видимости.
