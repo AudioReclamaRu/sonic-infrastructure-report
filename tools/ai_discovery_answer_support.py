@@ -69,8 +69,13 @@ def _required_classes(support_type: str) -> tuple[str, ...]:
 def extract_answer_units(content: str, heading: str) -> list[str]:
     """Extract sentence/semicolon units from one Markdown answer section."""
     lines = content.splitlines()
+    normalized_heading = heading.strip().lstrip("#").strip()
     heading_index = next(
-        (index for index, line in enumerate(lines) if line.strip() == heading.strip()),
+        (
+            index for index, line in enumerate(lines)
+            if line.strip() == heading.strip()
+            or line.strip().lstrip("#").strip() == normalized_heading
+        ),
         None,
     )
     if heading_index is None:
