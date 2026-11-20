@@ -1160,6 +1160,10 @@ def main() -> int:
         f"first-party evidence top-5: {source_metrics['evidence_claims_with_evidence_top_5']}/{source_metrics['claims_with_first_party_evidence']}; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
+    for weak in source_retrieval.get("weak_claims_top_10", []):
+        print("SOURCE_RETRIEVAL_WEAK_FACT " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
+    for weak in source_retrieval.get("weak_evidence_top_5", []):
+        print("SOURCE_RETRIEVAL_WEAK_EVIDENCE " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
     return 0
 
 
