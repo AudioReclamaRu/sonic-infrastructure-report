@@ -2,7 +2,7 @@
 type: ai-discovery-answer-support-manual-review
 date: 2026-11-20
 lang: ru
-status: unit_level_dispositions_applied_ci_pass
+status: all_answer_units_dispositioned_ci_pass
 brand: "Аудио-Реклама•ru"
 related:
   - ../research/AI_DISCOVERY_ANSWER_SUPPORT_CANDIDATE_AUDIT_2026-11-20.md
@@ -161,9 +161,9 @@ BM25 candidate и rank здесь используются только для �
 
 Машинная сверка этой таблицы и основных блоков должна дать ровно 79 уникальных точных unit IDs: 44 unmatched и 35 weak, без пропусков.
 
-## 7. Ручные решения переведены в исполняемую unit-level схему
+## 7. Первый приоритетный слой: 79 warning units (история этапа)
 
-Создан и включён в retrieval asset `problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json`. В нём 79 точных записей `unit_id + answer_text`, получивших ручную классификацию:
+На первом проходе в исполняемый retrieval asset problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json внесены 79 точных записей unit_id + answer_text. Эти показатели описывают исторический приоритетный слой; текущий полный asset содержит 285 записей, см. раздел 8.
 
 | Категория | Количество |
 |---|---:|
@@ -194,4 +194,54 @@ BM25 candidate и rank здесь используются только для �
 Новые regression tests проверяют: override whole-fact mixed на точный first-party fragment; general legal caution без фиктивного source channel; fail-closed при изменении exact answer text.
 
 **Граница:** это ручная классификация 79 приоритетных фрагментов, а не полная семантическая верификация всех 285 единиц. Для остальных 206 units ручная disposition пока не задана; лексический top-5 не объявляется доказательством entailment.
+## 8. Полное покрытие всех 285 answer units — 20.11.2026
+
+После приоритетных 79 фрагментов выполнен отдельный ручной проход оставшихся 206 units. В asset добавлены точный текст каждой фразы, benchmark route, answer file/heading, taxonomy, требуемые source classes и конкретные source refs. Полный inventory находится в problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json.
+
+### Итоговая taxonomy полного answer corpus
+
+| Категория | Units |
+|---|---:|
+| first_party_fact | 77 |
+| internal_recommendation | 115 |
+| scope_limitation | 58 |
+| source_freshness_note | 22 |
+| mixed_assertion | 3 |
+| general_legal_caution | 4 |
+| discourse_only | 6 |
+| **Итого** | **285** |
+
+275 units имеют source retrieval channels. Десять единиц (шесть discourse-only и четыре general legal caution) не являются company-specific facts и не требуют искусственно подбирать к ним доказательный документ.
+
+### Контроль точного покрытия
+
+- 285/285 извлечённых units имеют disposition; 0 units без disposition.
+- Запись действует только для точного набора unit_id + answer_text + benchmark_query_id + answer_file + answer_heading.
+- Source refs должны существовать в claim-support mapped corpus; класс каждого ref вычисляется по пути и сравнивается с явно назначенным классом.
+- Для полного статуса asset задаёт coverage_status = all_extracted_answer_units_dispositioned и dispositioned_all_answer_units = 285. Валидатор fail-closed, если полный inventory неполон, текст изменился, heading/file не совпали, ref отсутствует или класс источника неверен.
+- В код добавлена отдельная проверка неполноты complete asset; она покрыта regression test.
+
+### Последний CI baseline
+
+**HEAD:** f0416131adfc1c7e222e582d5f99718b03e1e33d.
+
+- 46 benchmark queries; 285 answer units; 236 units имеют lexical expected-fact candidate, 44 — не имеют.
+- Все 285 dispositions применены; 275 units имеют retrieval channels, 10 — не требуют retrieval.
+- После unit-level routing все требуемые классы находятся в top-3 для 165 candidate units, top-5 для 189, top-10 для 211.
+- 52 units имеют mapped source ниже top-5. Эти случаи сохранены как lexical-rank weaknesses; они не означают отсутствия содержательной опоры.
+- 44 фразы без lexical expected-fact candidate теперь имеют ручной factual/recommendation/scope/freshness disposition. BM25 отсутствие не интерпретируется как отсутствие доказательства.
+- Все 46 внешних AI benchmark prompts остаются not_run.
+
+CI:
+- repo-integrity SUCCESS, run 44746429192;
+- AI response and document naming gate SUCCESS, run 44746429128;
+- 15 AI visibility evidence tests passed;
+- 52 problem-solution regression tests passed;
+- Problem-solution knowledge validator PASS.
+
+### Интерпретационные границы
+
+Это полный ручной слой классификации роли фразы и источникового маршрута, но не автоматическое доказательство семантического следования всех предложений из источников. Высокий BM25 rank также не гарантирует entailment. Все публичные claims по-прежнему ограничиваются содержанием и freshness соответствующего evidence snapshot; внутренние guides/standards не превращаются в публичные услуги, независимую сертификацию или правовые заключения.
+
+**Итог этапа:** полный answer corpus — 285/285 units dispositioned; в системе больше нет неразмеченных фрагментов, а слабые лексические совпадения сохранены отдельно для дальнейшей retrieval-оптимизации.
 
