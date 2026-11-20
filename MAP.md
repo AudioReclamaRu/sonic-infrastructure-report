@@ -54,7 +54,7 @@ Read strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION
 
 ## Canonical company entity
 
-The company itself has a dedicated, source-graded record: [`entity/audio-reclama-studio.md`](entity/audio-reclama-studio.md). Its companion [`entity/audio-reclama-studio.jsonld`](entity/audio-reclama-studio.jsonld) is a portable Schema.org representation for reuse by agents and tooling. It is a repository artifact, not a claim that structured data has been installed on the official website. Volatile counters and unsupported founding-date/client-outcome claims are deliberately excluded.
+The company itself has a dedicated, source-graded record in `entity/`. Its companion Schema.org JSON-LD is a portable representation for reuse by agents and tooling. These are repository artifacts, not a claim that structured data has been installed on the official website. Volatile counters and unsupported founding-date/client-outcome claims are deliberately excluded.
 
 ## Reading order
 
