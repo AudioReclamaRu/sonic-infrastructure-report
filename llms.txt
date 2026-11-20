@@ -143,3 +143,5 @@
 - [Аудит качества маршрутизации и retrieval](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md): локальная проверка 44 ответных разделов для 46 RU-запросов, 45 canonical top-1 и 46 canonical top-3; метод и ограничения описаны явно.
 
 - [Инструмент поиска доказательных источников](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/research/problem-answer-evidence-remediation-20261118/tools/ai_discovery_source_retrieval.py): воспроизводимый BM25-анализ релевантности 44 документов к 46 запросам и 112 expected facts; первичное first-party evidence отделено от внутренних методик.
+
+- [Аудит retrieval первичных источников](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/research/problem-answer-evidence-remediation-20261118/research/AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md): BM25 по 44 mapped source documents, 112 expected facts и 46 запросам; 112/112 facts имеют источник в top-10, чистые first-party claims — 44/44 в top-5. Pure evidence отделено от mixed/internal methodology.
