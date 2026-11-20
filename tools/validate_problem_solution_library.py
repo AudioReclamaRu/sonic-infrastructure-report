@@ -11,11 +11,13 @@ try:
         evaluate as evaluate_source_retrieval,
         validate_report as validate_source_retrieval_report,
     )
+    from tools.ai_discovery_answer_support import evaluate as evaluate_answer_support
 except ImportError:
     from ai_discovery_source_retrieval import (
         evaluate as evaluate_source_retrieval,
         validate_report as validate_source_retrieval_report,
     )
+    from ai_discovery_answer_support import evaluate as evaluate_answer_support
 
 ROOT = Path(__file__).resolve().parents[1]
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
@@ -1108,6 +1110,18 @@ def validate(root: Path = ROOT) -> list[str]:
     except (ImportError, OSError, ValueError, TypeError) as exc:
         errors.append(f"AI Discovery mapped-source retrieval could not run: {exc}")
 
+    # Rank candidate sources for every answer sentence/semicolon unit. This
+    # catches stale paths and source-class mismatches, but BM25 is not proof
+    # of semantic support; unmatched units remain visible for human review.
+    try:
+        answer_support = evaluate_answer_support(root)
+        if answer_support.get("status") != "candidate_retrieval_only":
+            errors.append("AI Discovery answer-support evaluation has an unexpected status")
+        if answer_support.get("metrics", {}).get("answer_unit_count", 0) <= 0:
+            errors.append("AI Discovery answer-support evaluation found no answer units")
+    except (ImportError, OSError, ValueError, TypeError) as exc:
+        errors.append(f"AI Discovery answer-support candidate evaluation could not run: {exc}")
+
     return errors
 
 
@@ -1128,6 +1142,7 @@ def main() -> int:
         for error in errors:
             print(f" - {error}")
         return 1
+    answer_support = evaluate_answer_support(ROOT)
     library = json.loads((ROOT / LIBRARY).read_text(encoding="utf-8"))
     benchmark = json.loads((ROOT / BENCHMARK).read_text(encoding="utf-8"))
     routing = json.loads((ROOT / ROUTING_INDEX).read_text(encoding="utf-8"))
@@ -1184,6 +1199,15 @@ def main() -> int:
         f"{source_class_aware['mixed_claims_all_classes_top_3']}/{source_class_aware['mixed_claim_count']}; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
+    print(
+        "ANSWER_SUPPORT_CANDIDATE_BASELINE "
+        + json.dumps(answer_support["metrics"], ensure_ascii=False, sort_keys=True)
+    )
+    for weak in answer_support.get("weak_units_top_5", []):
+        print("ANSWER_SUPPORT_WEAK_UNIT " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
+    for unmatched in answer_support.get("unmatched_units", []):
+        print("ANSWER_SUPPORT_UNMATCHED_UNIT " + json.dumps(unmatched, ensure_ascii=False, sort_keys=True))
+    print("LIMITATION: answer-support BM25 ranks are candidates, not semantic proof.")
     for weak in source_retrieval.get("weak_claims_top_10", []):
         print("SOURCE_RETRIEVAL_WEAK_FACT " + json.dumps(weak, ensure_ascii=False, sort_keys=True))
     for weak in source_retrieval.get("weak_pure_evidence_top_5", []):
