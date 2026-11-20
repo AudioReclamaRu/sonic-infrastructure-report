@@ -317,7 +317,7 @@ def fixture_root():
     source_report = evaluate_source_retrieval(root)
     source_baseline = {
         key: source_report[key]
-        for key in ("schema", "date", "status", "method", "corpus", "metrics")
+        for key in ("schema", "date", "status", "method", "corpus", "metrics", "source_class_aware")
     }
     source_baseline["baseline_review_status"] = "reviewed"
     (root / SOURCE_RETRIEVAL_REPORT).write_text(
@@ -626,6 +626,46 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
             metrics["evidence_claims_with_evidence_top_5"],
             metrics["claims_with_first_party_evidence"],
         )
+        routed = report["source_class_aware"]
+        self.assertEqual(routed["source_class_document_counts"], {
+            "first_party_evidence": 2,
+            "internal_methodology": 2,
+        })
+        self.assertEqual(routed["query_route_counts"]["first_party_evidence_only"], 1)
+        self.assertEqual(routed["query_route_counts"]["internal_methodology_only"], 3)
+        self.assertEqual(routed["claim_support_type_counts"], {
+            "internal_methodology": 3,
+            "first_party_evidence": 1,
+        })
+
+    def test_mixed_claim_uses_parallel_evidence_and_methodology_channels(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        claim = matrix["entries"][0]["claims"][0]
+        claim["support_type"] = "mixed"
+        claim["source_refs"] = ["guides/ivr.md", "evidence/E-TEST-001.md"]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        report = evaluate_source_retrieval(self.root)
+        entry = report["entries"][0]
+        routed_claim = entry["claims"][0]
+        self.assertEqual(entry["query_source_class_route"], "parallel")
+        self.assertEqual(
+            set(routed_claim["class_aware_source_ranks"]),
+            {"first_party_evidence", "internal_methodology"},
+        )
+        self.assertEqual(
+            routed_claim["required_source_classes"],
+            ["first_party_evidence", "internal_methodology"],
+        )
+        self.assertEqual(report["source_class_aware"]["mixed_claim_count"], 1)
+
+    def test_claim_support_type_rejects_mismatched_source_classes(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["source_refs"] = [
+            "guides/ivr.md", "evidence/E-TEST-001.md"
+        ]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        with self.assertRaisesRegex(ValueError, "but support_type 'internal_methodology' requires"):
+            evaluate_source_retrieval(self.root)
 
     def test_claim_source_retrieval_fails_on_missing_mapped_source(self):
         matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
