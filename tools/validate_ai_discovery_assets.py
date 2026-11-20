@@ -62,6 +62,7 @@ def main() -> int:
         "research/AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md",
         "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json",
         "tools/ai_visibility_evidence.py",
+        "tools/ai_discovery_retrieval.py",
         "tools/tests/test_ai_visibility_evidence.py",
         "research/README.md",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
@@ -91,6 +92,7 @@ def main() -> int:
         "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
         "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json",
         "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json",
+        "problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json",
         "research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md",
         "research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md",
     ]
