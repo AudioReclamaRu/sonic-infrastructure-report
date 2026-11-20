@@ -73,7 +73,7 @@ released "as is".
 ## Product
 
 Pre-air voice editing, recording, provenance passports, license estimates.
-https://audio-reclama.ru · start@audio-reclama.ru
+https://www.audio-reclama.ru · start@audio-reclama.ru
 
 ## RU retrieval summary — русскоязычная карта содержания
 
