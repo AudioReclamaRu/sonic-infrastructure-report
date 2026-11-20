@@ -116,16 +116,16 @@ BM25 candidate и rank здесь используются только для �
 3. **Корпоративные песни и права:** снята категоричная фраза о правовом эффекте страницы. Вместо неё задан конкретный checklist прав на исходные музыку, текст, фонограмму и аранжировку с договорным уточнением.
 4. **Связи с источниками в answer footers:** публичная услуга IVR привязана к E-095; аэропортовые рекомендации — к внутреннему guide и draft AVT framework; continuity, asset inventory и technical QC получили внутренние reference refs с явным указанием их статуса.
 
-## 4. Остаточная системная проблема candidate retriever
+## 4. Проблема первого прохода, исправленная для полного корпуса
 
-В 35 weak cases заметна не только слабая лексическая релевантность, но и **перенос класса whole-fact на отдельный sentence unit**. Примеры:
+В первом проходе 35 weak cases показали не только слабую лексическую релевантность, но и **перенос класса whole-fact на отдельный sentence unit**. Например:
 
 - публичное утверждение о предложении записи IVR (`AR-PROBLEM-01::07`) наследует candidate к внутреннему IVR guide;
 - внутренние советы по выбору и непрерывности голоса (`AR-PROBLEM-03::02-04`, `AR-PROBLEM-13::02-03`) конкурируют с mixed/public catalog facts;
 - публичное описание сервисов в `AR-PROBLEM-10::05` ошибочно сопоставляется с expected fact про ROI;
 - ограничения прав и состава заказа сопоставляются с фактом существования страницы услуги.
 
-Следующий технический этап должен быть не «поднять все weak ranks», а ввести **unit-level claim taxonomy / manual disposition schema**: `first_party_fact`, `internal_recommendation`, `scope_limitation`, `source_freshness_note`, `general_legal_caution`, `discourse_only`. Для mixed answer отдельные fragments должны иметь собственный source class, а не наследовать mixed только потому, что целый expected fact mixed. До такой схемы CI warning остаётся консервативным индикатором для человека.
+В следующем проходе это требование реализовано: создан unit-level taxonomy и отдельный disposition для каждой из 285 фраз. Effective source classes теперь берутся из точного unit disposition; исходный whole-fact candidate остаётся отдельной диагностикой. Текущие 52 low-rank units не возвращают старую ошибку классификации — это только lexical-rank warnings, а не автоматическое опровержение source mapping.
 
 ## 5. Что эта проверка не означает
 
@@ -193,7 +193,7 @@ BM25 candidate и rank здесь используются только для �
 
 Новые regression tests проверяют: override whole-fact mixed на точный first-party fragment; general legal caution без фиктивного source channel; fail-closed при изменении exact answer text.
 
-**Граница:** это ручная классификация 79 приоритетных фрагментов, а не полная семантическая верификация всех 285 единиц. Для остальных 206 units ручная disposition пока не задана; лексический top-5 не объявляется доказательством entailment.
+**Граница этого исторического этапа:** тогда были размечены 79 приоритетных фрагментов; ещё 206 units оставались без disposition. Последующий полный проход и его CI-результаты зафиксированы в разделе 8. Ни старые, ни новые top-K ранги не являются доказательством entailment.
 ## 8. Полное покрытие всех 285 answer units — 20.11.2026
 
 После приоритетных 79 фрагментов выполнен отдельный ручной проход оставшихся 206 units. В asset добавлены точный текст каждой фразы, benchmark route, answer file/heading, taxonomy, требуемые source classes и конкретные source refs. Полный inventory находится в problem-solutions/AI_DISCOVERY_ANSWER_UNIT_DISPOSITIONS_2026-11-20.json.
