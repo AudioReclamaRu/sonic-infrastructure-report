@@ -7,7 +7,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from tools.ai_discovery_retrieval import _bm25_rank, tokenize
+try:
+    from tools.ai_discovery_retrieval import _bm25_rank, tokenize
+except ImportError:
+    from ai_discovery_retrieval import _bm25_rank, tokenize
 
 ROOT = Path(__file__).resolve().parents[1]
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
