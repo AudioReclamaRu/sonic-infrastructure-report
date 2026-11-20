@@ -1,0 +1,117 @@
+{
+  "schema": "audio-reclama/ai-discoverability-work-queue/1",
+  "updated": "2026-11-20",
+  "policy": "Candidates require current-state triage; this queue is not an instruction to collect data or a quota.",
+  "items": [
+    {
+      "id": "AI-DISC-2026-001",
+      "title": "Add a first-class audiobook buyer route",
+      "work_type": "add_knowledge_asset",
+      "priority": "P0",
+      "status": "ready_for_agent_triage",
+      "market": "RU",
+      "language": "ru",
+      "service": "audiobook_production",
+      "target_surface": "repository_knowledge",
+      "obstacle": "The four global commercial buyer routes omit a dedicated audiobook route, although the existing audiobook page had the strongest click and impression signal among the four measured commercial pages in the GSC slice.",
+      "evidence_refs": [
+        "research/AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md",
+        "research/AI_SERVICE_ANSWER_SURFACE_AUDIT_2026-11-20.md"
+      ],
+      "decision_to_unlock": "Whether and how to add a buyer-focused audiobook route that answers commercial questions and leads to the correct service page.",
+      "hypothesis": "A complete, source-grounded buyer route can close a known coverage gap and improve answer completeness and routing; it does not guarantee higher rankings, citations or leads.",
+      "success_criteria": [
+        "Audit current repository coverage and avoid a duplicate guide.",
+        "Explain workflow, buyer inputs, voice and casting choices, editing, quality acceptance, deliverables, rights and quote variables.",
+        "Link to the existing official audiobook service route using its exact verified URL.",
+        "Do not invent a fixed price, deadline, rights grant, client result or production capacity.",
+        "Keep Audio+ separate from corporate and individual-entrepreneur orders.",
+        "Update the appropriate index and pass repository integrity checks."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-002",
+      "title": "Enable RU consumer-UI benchmark execution through the agent environment",
+      "work_type": "measurement_integration",
+      "priority": "P1",
+      "status": "blocked_until_region_attestation_available",
+      "market": "RU",
+      "language": "ru",
+      "service": "cross_service_discovery",
+      "target_surface": "consumer_ui",
+      "obstacle": "The protocol requires verified Russian region and eligible operator evidence; the current Netherlands-based session is not a valid RU vantage.",
+      "evidence_refs": [
+        "research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md",
+        "research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md",
+        "research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md"
+      ],
+      "decision_to_unlock": "Which generic discovery and commercial buyer tasks currently fail or succeed on eligible RU consumer interfaces.",
+      "hypothesis": "An authorized and attested agent-operated RU environment can execute the frozen first-wave baseline once; reruns are needed only after meaningful changes or a defined comparison interval.",
+      "success_criteria": [
+        "Use the frozen RU prompt sets without silently editing them.",
+        "Capture full answers, surface, time, exact prompt, account state, grounding mode and source evidence.",
+        "Pass the complete region and operator attestation before labelling any observation RU.",
+        "Store blocked or unavailable states explicitly and never score them as zero visibility.",
+        "Run existing evidence validators and produce a decision-oriented summary."
+      ],
+      "autonomy_class": "authorized_external_read_only",
+      "requires_new_measurement": true,
+      "measurement_guard": {
+        "decision_to_unlock": "Prioritize the next source or knowledge improvements from observed RU retrieval failures.",
+        "minimum_sufficient_sample": "The frozen first-wave Alice AI and GigaChat generic and commercial modules; no expansion until findings change a decision.",
+        "stop_rule": "Stop if region evidence fails, access is blocked, or the initial sample yields no unresolved decision. Do not ask the owner to collect or upload observations.",
+        "cost_or_access_class": "authorized_existing_access_only_no_paid_credits"
+      },
+      "expected_effort": "medium",
+      "risk": "medium",
+      "blocker": "No independently attested RU consumer-UI execution environment is currently available in this workflow.",
+      "unblock_condition": "Megabrain has an authorized environment that passes the existing RU region and operator attestation protocol.",
+      "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-003",
+      "title": "Connect native AI citation analytics when machine access is authorized",
+      "work_type": "analytics_integration",
+      "priority": "P2",
+      "status": "blocked_until_authorized_machine_access",
+      "market": "Global",
+      "language": "en",
+      "service": "cross_service_discovery",
+      "target_surface": "bing_ai_performance",
+      "obstacle": "Bing AI Performance may provide page-level citation signals, but no verified export or authorized machine connection exists in the current workflow.",
+      "evidence_refs": [
+        "research/AI_EXTERNAL_ENTITY_AND_CITATION_SURFACE_AUDIT_2026-11-20.md"
+      ],
+      "decision_to_unlock": "Which pages and grouped grounding queries are cited in Copilot and Bing AI answers, and which source improvements should follow.",
+      "hypothesis": "An authorized low-frequency export can complement, but not replace, RU consumer-UI testing and other citation evidence.",
+      "success_criteria": [
+        "Use only an authorized existing account session or connector; never request passwords or OTPs in chat.",
+        "Read the verified property without changing the official website.",
+        "Record reporting period, metric definitions and export date.",
+        "Preserve limitations of sampled citations and grouped queries.",
+        "Run only when results can prioritize a concrete repository change."
+      ],
+      "autonomy_class": "authorized_external_read_only",
+      "requires_new_measurement": true,
+      "measurement_guard": {
+        "decision_to_unlock": "Prioritize specific pages and source gaps for Copilot and Bing discovery.",
+        "minimum_sufficient_sample": "One initial 30-day report, then rechecks only after meaningful changes or a defined review interval.",
+        "stop_rule": "Stop on missing authorization or unavailable report; record the blocker and continue repository-only tasks.",
+        "cost_or_access_class": "free_existing_account_access_only"
+      },
+      "expected_effort": "low",
+      "risk": "low",
+      "blocker": "No authorized machine-readable Bing Webmaster Tools session or export is available in the current workflow.",
+      "unblock_condition": "An approved Megabrain connector or authenticated local browser session is available without new paid spend.",
+      "validation_refs": []
+    }
+  ]
+}
