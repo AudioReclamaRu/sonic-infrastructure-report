@@ -5,6 +5,7 @@ from pathlib import Path
 from tools.validate_problem_solution_library import validate
 from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
 from tools.ai_discovery_source_retrieval import REPORT as SOURCE_RETRIEVAL_REPORT, evaluate as evaluate_source_retrieval, validate_report as validate_source_retrieval_report
+from tools.ai_discovery_answer_support import evaluate as evaluate_answer_support, extract_answer_units
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
@@ -93,31 +94,31 @@ def fixture_root():
     (root / LIBRARY).write_text(json.dumps(library), encoding="utf-8")
     (root / BENCHMARK).write_text(json.dumps(benchmark), encoding="utf-8")
     (root / REFERENCE).write_text(
-        "## IVR guide answer\nAnswer source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
+        "## IVR guide answer\nMap caller intents before naming departments.\nAnswer source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
         encoding="utf-8",
     )
     (root / PROBLEMS).write_text(
         "Answer source: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
         encoding="utf-8",
     )
-    (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
-    (root / "standards/voice-provenance-passport.md").write_text("# Voice provenance passport\n", encoding="utf-8")
-    (root / "entity/audio-reclama-studio.md").write_text("# Studio entity record\n", encoding="utf-8")
+    (root / "guides/ivr.md").write_text("# IVR guide\nMap caller intents before naming departments.\n", encoding="utf-8")
+    (root / "standards/voice-provenance-passport.md").write_text("# Voice provenance passport\nRecords origin and use boundaries.\n", encoding="utf-8")
+    (root / "entity/audio-reclama-studio.md").write_text("# Studio entity record\nThe entity record describes studio identity.\n", encoding="utf-8")
     (root / SERVICE_PACK).write_text(
-        "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?\n",
+        "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?\nThe official page describes radio spot production.\n",
         encoding="utf-8",
     )
     (root / TRUST_PACK).write_text(
-        "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?\n",
+        "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?\nThe voice provenance passport records origin and use boundaries.\n",
         encoding="utf-8",
     )
     (root / ENTITY_PACK).write_text(
-        "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?\n",
+        "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?\nThe studio entity record describes studio identity.\n",
         encoding="utf-8",
     )
     (root / "evidence/E-TEST-002.md").write_text(
         "---\nid: E-TEST-002\ntype: evidence\nstatus: verified\n---\n"
-        "**Primary source:** https://www.audio-reclama.ru/audio/radioroliki-zakaz.html\n",
+        "**Primary source:** https://www.audio-reclama.ru/audio/radioroliki-zakaz.html\nThe public first-party page describes radio spot production.\n",
         encoding="utf-8",
     )
     (root / "evidence/E-TEST-001.md").write_text(
@@ -377,6 +378,52 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
         errors = validate(self.root)
         self.assertTrue(any("must be marked reviewed" in e for e in errors))
+
+
+    def test_answer_support_candidate_evaluation_tracks_required_source_classes(self):
+        result = evaluate_answer_support(self.root)
+        metrics = result["metrics"]
+        self.assertEqual(metrics["query_count"], 4)
+        self.assertEqual(metrics["answer_unit_count"], 4)
+        self.assertEqual(metrics["units_with_expected_fact_candidate"], 4)
+        self.assertEqual(metrics["units_without_expected_fact_candidate"], 0)
+        units = {unit["benchmark_query_id"]: unit for unit in result["units"]}
+        self.assertEqual(
+            units["Q-01"]["required_source_classes"],
+            ["internal_methodology"],
+        )
+        self.assertEqual(
+            units["AR-SERVICE-01"]["required_source_classes"],
+            ["first_party_evidence"],
+        )
+        self.assertTrue(units["Q-01"]["all_required_classes_top_3"])
+        self.assertTrue(units["AR-SERVICE-01"]["all_required_classes_top_3"])
+        self.assertEqual(result["status"], "candidate_retrieval_only")
+
+    def test_answer_support_marks_unmatched_sentence_for_human_review(self):
+        answer_file = self.root / SERVICE_PACK
+        answer_file.write_text(
+            answer_file.read_text(encoding="utf-8")
+            + "Every campaign guarantees a sales increase.\n",
+            encoding="utf-8",
+        )
+        result = evaluate_answer_support(self.root)
+        unmatched = result["unmatched_units"]
+        self.assertEqual(len(unmatched), 1)
+        self.assertEqual(unmatched[0]["benchmark_query_id"], "AR-SERVICE-01")
+        self.assertIn("guarantees a sales increase", unmatched[0]["answer_text"])
+        self.assertTrue(unmatched[0]["manual_review_required"])
+
+    def test_answer_unit_extraction_ignores_source_footers_and_splits_sentences(self):
+        extracted = extract_answer_units(
+            "## Heading\nOne factual sentence. A second clause; a third clause.\n"
+            "Источник: https://example.org/page\n## Next\nIgnored.",
+            "## Heading",
+        )
+        self.assertEqual(
+            extracted,
+            ["One factual sentence.", "A second clause;", "a third clause."],
+        )
 
 
     def test_answer_coverage_must_include_every_expected_fact(self):
