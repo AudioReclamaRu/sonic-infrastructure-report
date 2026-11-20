@@ -276,8 +276,10 @@ def validate(root: Path = ROOT) -> list[str]:
                         errors.append(
                             f"{label} is not covered by any linked evidence_refs record: {primary_source}"
                         )
-                elif not safe_relative_path(primary_source) or not (root / primary_source).is_file():
-                    errors.append(f"{label} does not resolve to a safe repository-relative path: {primary_source}")
+                else:
+                    errors.append(
+                        f"{label} must be an absolute HTTPS URL; place internal repository files under supporting_documents: {primary_source}"
+                    )
 
         for field in ("service_fit", "guardrails"):
             values = entry.get(field)
