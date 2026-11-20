@@ -6,6 +6,7 @@ import re
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
+from tools.ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
 
 ROOT = Path(__file__).resolve().parents[1]
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
@@ -27,6 +28,7 @@ CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026
 CLAIM_SUPPORT_SCHEMA = "studio/ai-discovery-claim-support-matrix/1"
 ANSWER_COVERAGE_AUDIT = "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json"
 ANSWER_COVERAGE_SCHEMA = "studio/ai-discovery-answer-coverage-audit/1"
+SOURCE_RETRIEVAL_SCRIPT = "tools/ai_discovery_source_retrieval.py"
 RETRIEVAL_EVALUATION = "problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json"
 ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
@@ -1086,6 +1088,18 @@ def validate(root: Path = ROOT) -> list[str]:
     except (ImportError, OSError, ValueError) as exc:
         errors.append(f"AI Discovery retrieval evaluation could not run: {exc}")
 
+    try:
+        source_retrieval = evaluate_source_retrieval(root)
+        source_metrics = source_retrieval.get("metrics", {})
+        if source_metrics.get("mapped_source_documents") != semantic_review.get("unique_source_documents"):
+            errors.append("mapped source-retrieval corpus must match the semantic-review source-document count")
+        if source_metrics.get("expected_fact_count") != measured_claim_count:
+            errors.append("source-retrieval expected_fact_count must match the claim-support matrix")
+        if source_metrics.get("claims_with_mapped_source_top_10") != measured_claim_count:
+            errors.append("every expected fact must retrieve at least one mapped source in BM25 top-10")
+    except (ImportError, OSError, ValueError, TypeError) as exc:
+        errors.append(f"AI Discovery mapped-source retrieval could not run: {exc}")
+
     return errors
 
 
@@ -1122,6 +1136,8 @@ def main() -> int:
     answer_audit = json.loads((ROOT / ANSWER_COVERAGE_AUDIT).read_text(encoding="utf-8"))
     retrieval_evaluation = json.loads((ROOT / RETRIEVAL_EVALUATION).read_text(encoding="utf-8"))
     retrieval_metrics = retrieval_evaluation["metrics"]
+    source_retrieval = evaluate_source_retrieval(ROOT)
+    source_metrics = source_retrieval["metrics"]
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
@@ -1138,6 +1154,9 @@ def main() -> int:
         f"{answer_audit['must_not_claim_count']} forbidden-claim checks, "
         f"{retrieval_metrics['acceptable_top_1']}/{retrieval_metrics['query_count']} acceptable retrieval top-1 and "
         f"{retrieval_metrics['primary_top_3']}/{retrieval_metrics['query_count']} canonical retrieval top-3; "
+        f"{source_metrics['claims_with_mapped_source_top_3']}/{source_metrics['expected_fact_count']} claims retrieve a mapped source top-3, "
+        f"{source_metrics['claims_with_mapped_source_top_10']}/{source_metrics['expected_fact_count']} top-10; "
+        f"first-party evidence top-5: {source_metrics['evidence_claims_with_evidence_top_5']}/{source_metrics['claims_with_first_party_evidence']}; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     return 0
