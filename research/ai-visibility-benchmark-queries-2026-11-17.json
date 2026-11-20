@@ -131,7 +131,9 @@
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не придумывать цену или гарантированный срок."
@@ -152,7 +154,9 @@
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не заявлять настройку/администрирование АТС без источника."
@@ -173,7 +177,9 @@
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не обещать фиксированную цену или результат без деталей проекта."
@@ -194,7 +200,9 @@
         "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не придумывать цену или доступность."
@@ -215,7 +223,9 @@
         "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не делать вывод о правах использования без текущих условий."
@@ -237,7 +247,9 @@
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не копировать недатированные цены из старых снимков репозитория."
@@ -260,7 +272,9 @@
         "geo/knowledge/case-studies.json",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не придумывать даты, объёмы, KPI или разрешения."
@@ -282,7 +296,9 @@
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
         "research/ai-discovery-brand-entity-2026-11-17.json",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не выдумывать имена сотрудников и гарантии результата."
@@ -441,7 +457,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не утверждать, что все этапы включены в любую цену или заказ.",
@@ -462,7 +480,9 @@
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
-        "evidence/E-2026-095.md"
+        "evidence/E-2026-095.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не заявлять настройку или администрирование АТС и маршрутизации звонков без отдельного источника."
@@ -482,7 +502,9 @@
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
-        "evidence/E-2026-096.md"
+        "evidence/E-2026-096.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не утверждать, что весь набор включён в каждый проект."
@@ -501,7 +523,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/perevodchiki/",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не переносить 150+ языков на дикторскую базу или озвучивание."
@@ -562,7 +586,9 @@
       ],
       "preferred_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
       ],
       "must_not_claim": [
         "Не приписывать проектам KPI, сроки или результаты, которых нет на странице."
