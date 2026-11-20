@@ -16,6 +16,7 @@ TRUST_ROUTES = "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
 ENTITY_PACK = "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md"
 ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
 CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
+ANSWER_COVERAGE_AUDIT = "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json"
 
 
 def fixture_root():
@@ -264,6 +265,47 @@ def fixture_root():
         ]
     }
     (root / CLAIM_SUPPORT_MATRIX).write_text(json.dumps(claim_matrix), encoding="utf-8")
+    answer_routes = {
+        "Q-01": {"file": REFERENCE, "heading": "## IVR guide answer"},
+        "AR-SERVICE-01": {"file": SERVICE_PACK, "heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?"},
+        "AR-TRUST-01": {"file": TRUST_PACK, "heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?"},
+        "AR-BRAND-01": {"file": ENTITY_PACK, "heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?"},
+    }
+    answer_entries = []
+    expected_fact_count = 0
+    must_not_claim_count = 0
+    for query in benchmark["queries"]:
+        ref = answer_routes[query["id"]]
+        answer_entries.append({
+            "benchmark_query_id": query["id"],
+            "query_cluster": query["cluster"],
+            "query": query["query"],
+            "answer_references": [ref],
+            "expected_fact_checks": [
+                {"fact_index": i, "expected_fact": fact, "status": "covered",
+                 "review_note": "Fixture answer text checked against this expected fact."}
+                for i, fact in enumerate(query["expected_facts"], start=1)
+            ],
+            "must_not_claim_checks": [
+                {"claim_index": i, "must_not_claim": claim, "status": "not_asserted",
+                 "review_note": "Fixture answer does not assert the forbidden claim."}
+                for i, claim in enumerate(query["must_not_claim"], start=1)
+            ],
+            "overall_status": "pass",
+            "reviewed_at": "2026-11-20",
+            "review_method": "manual_answer_text_review",
+            "review_note": "Fixture answer coverage and forbidden claims reviewed.",
+        })
+        expected_fact_count += len(query["expected_facts"])
+        must_not_claim_count += len(query["must_not_claim"])
+    answer_audit = {
+        "schema": "studio/ai-discovery-answer-coverage-audit/1",
+        "query_count": len(answer_entries),
+        "expected_fact_count": expected_fact_count,
+        "must_not_claim_count": must_not_claim_count,
+        "entries": answer_entries,
+    }
+    (root / ANSWER_COVERAGE_AUDIT).write_text(json.dumps(answer_audit), encoding="utf-8")
     return temporary, root
 
 
@@ -317,6 +359,35 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
         errors = validate(self.root)
         self.assertTrue(any("must be marked reviewed" in e for e in errors))
+
+
+    def test_answer_coverage_must_include_every_expected_fact(self):
+        audit = self.read_json(ANSWER_COVERAGE_AUDIT)
+        audit["entries"][0]["expected_fact_checks"] = []
+        self.write_json(ANSWER_COVERAGE_AUDIT, audit)
+        errors = validate(self.root)
+        self.assertTrue(any("must check every expected fact" in e for e in errors))
+
+    def test_answer_coverage_heading_must_resolve(self):
+        audit = self.read_json(ANSWER_COVERAGE_AUDIT)
+        audit["entries"][0]["answer_references"][0]["heading"] = "## Missing answer heading"
+        self.write_json(ANSWER_COVERAGE_AUDIT, audit)
+        errors = validate(self.root)
+        self.assertTrue(any("heading does not resolve" in e for e in errors))
+
+    def test_answer_coverage_must_review_every_forbidden_claim(self):
+        audit = self.read_json(ANSWER_COVERAGE_AUDIT)
+        audit["entries"][0]["must_not_claim_checks"] = []
+        self.write_json(ANSWER_COVERAGE_AUDIT, audit)
+        errors = validate(self.root)
+        self.assertTrue(any("must check every must_not_claim" in e for e in errors))
+
+    def test_answer_coverage_rejects_unreviewed_forbidden_claim(self):
+        audit = self.read_json(ANSWER_COVERAGE_AUDIT)
+        audit["entries"][0]["must_not_claim_checks"][0]["status"] = "unchecked"
+        self.write_json(ANSWER_COVERAGE_AUDIT, audit)
+        errors = validate(self.root)
+        self.assertTrue(any("must be marked not_asserted or explicitly_guarded" in e for e in errors))
 
 
     def test_malformed_hostname_without_separator_fails(self):
