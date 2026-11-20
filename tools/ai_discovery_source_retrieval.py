@@ -189,6 +189,51 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
     query_count = len(entries)
     claim_count = len(fact_anchor_ranks)
     evidence_claim_count = len(evidence_fact_ranks)
+    query_summaries = [
+        {
+            "benchmark_query_id": entry["benchmark_query_id"],
+            "query_best_mapped_source_rank": entry["query_best_mapped_source_rank"],
+            "claims_with_mapped_source_top_3": sum(
+                claim["best_mapped_source_rank"] <= 3 for claim in entry["claims"]
+            ),
+            "claim_count": len(entry["claims"]),
+            "first_party_evidence_claims": sum(
+                claim["best_first_party_evidence_rank"] is not None for claim in entry["claims"]
+            ),
+            "first_party_evidence_top_5": sum(
+                claim["best_first_party_evidence_rank"] is not None
+                and claim["best_first_party_evidence_rank"] <= 5
+                for claim in entry["claims"]
+            ),
+        }
+        for entry in entries
+    ]
+    weak_claims_top_10 = [
+        {
+            "benchmark_query_id": entry["benchmark_query_id"],
+            "fact_index": claim["fact_index"],
+            "expected_fact": claim["expected_fact"],
+            "support_type": claim["support_type"],
+            "best_mapped_source_rank": claim["best_mapped_source_rank"],
+            "source_refs": claim["source_refs"],
+            "top_candidates": claim["top_candidates"][:5],
+        }
+        for entry in entries for claim in entry["claims"]
+        if claim["best_mapped_source_rank"] > 10
+    ]
+    weak_evidence_top_5 = [
+        {
+            "benchmark_query_id": entry["benchmark_query_id"],
+            "fact_index": claim["fact_index"],
+            "expected_fact": claim["expected_fact"],
+            "best_first_party_evidence_rank": claim["best_first_party_evidence_rank"],
+            "evidence_refs": [ref for ref in claim["source_refs"] if ref.startswith("evidence/")],
+            "top_candidates": claim["top_candidates"][:5],
+        }
+        for entry in entries for claim in entry["claims"]
+        if claim["best_first_party_evidence_rank"] is not None
+        and claim["best_first_party_evidence_rank"] > 5
+    ]
     all_fact_ranks_by_query = [
         [claim["best_mapped_source_rank"] for claim in entry["claims"]]
         for entry in entries
@@ -204,6 +249,10 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
     metrics = {
         "query_count": query_count,
         "mapped_source_documents": len(documents),
+        "queries_with_mapped_source_top_1": _count_at(query_anchor_ranks, 1),
+        "queries_with_mapped_source_top_3": _count_at(query_anchor_ranks, 3),
+        "queries_with_mapped_source_top_5": _count_at(query_anchor_ranks, 5),
+        "max_query_mapped_source_rank": max(rank for rank in query_anchor_ranks if rank is not None),
         "expected_fact_count": claim_count,
         "queries_with_mapped_source_top_1": _count_at(query_anchor_ranks, 1),
         "queries_with_mapped_source_top_3": _count_at(query_anchor_ranks, 3),
@@ -266,6 +315,9 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
         },
         "metrics": metrics,
         "entries": entries,
+        "query_summaries": query_summaries,
+        "weak_claims_top_10": weak_claims_top_10,
+        "weak_evidence_top_5": weak_evidence_top_5,
         "limitations": [
             "Source relevance is evaluated against both the user query and the fact-specific expected text; the latter is a controlled diagnostic, not text supplied by an actual searcher.",
             "A claim may map to multiple documents; the best mapped-document rank is reported and does not prove that every mapped source is needed.",
@@ -309,8 +361,17 @@ def main() -> int:
         f"{metrics['claims_with_mapped_source_top_5']}/{metrics['expected_fact_count']} fact claims have a mapped source in top-5; "
         f"{metrics['evidence_claims_with_evidence_top_5']}/{metrics['claims_with_first_party_evidence']} evidence-backed claims have first-party evidence in top-5; "
         f"all facts are covered at top-5 in {metrics['all_claims_have_mapped_source_top_5']}/{metrics['query_count']} queries; "
-        f"max mapped-source rank={metrics['max_mapped_source_rank']}."
+        f"query-level mapped source top-3: {metrics['queries_with_mapped_source_top_3']}/{metrics['query_count']}; "
+        f"all facts top-5: {metrics['all_claims_have_mapped_source_top_5']}/{metrics['query_count']}; "
+        f"max fact rank={metrics['max_mapped_source_rank']}; "
+        f"weak facts outside top-10={len(result['weak_claims_top_10'])}; "
+        f"first-party evidence outside top-5={len(result['weak_evidence_top_5'])}."
     )
+    for weak in result["weak_claims_top_10"]:
+        print(
+            "SOURCE_RETRIEVAL_WEAK_FACT "
+            + json.dumps(weak, ensure_ascii=False, sort_keys=True)
+        )
     return 0
 
 
