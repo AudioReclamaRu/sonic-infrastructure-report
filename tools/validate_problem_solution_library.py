@@ -7,9 +7,15 @@ import sys
 from pathlib import Path
 from urllib.parse import urlsplit
 try:
-    from tools.ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
+    from tools.ai_discovery_source_retrieval import (
+        evaluate as evaluate_source_retrieval,
+        validate_report as validate_source_retrieval_report,
+    )
 except ImportError:
-    from ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
+    from ai_discovery_source_retrieval import (
+        evaluate as evaluate_source_retrieval,
+        validate_report as validate_source_retrieval_report,
+    )
 
 ROOT = Path(__file__).resolve().parents[1]
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
@@ -1098,6 +1104,7 @@ def validate(root: Path = ROOT) -> list[str]:
             errors.append("mapped source-retrieval corpus must match the semantic-review source-document count")
         if source_metrics.get("expected_fact_count") != measured_claim_count:
             errors.append("source-retrieval expected_fact_count must match the claim-support matrix")
+        errors.extend(validate_source_retrieval_report(root))
     except (ImportError, OSError, ValueError, TypeError) as exc:
         errors.append(f"AI Discovery mapped-source retrieval could not run: {exc}")
 
@@ -1139,6 +1146,15 @@ def main() -> int:
     retrieval_metrics = retrieval_evaluation["metrics"]
     source_retrieval = evaluate_source_retrieval(ROOT)
     source_metrics = source_retrieval["metrics"]
+    source_retrieval_baseline = {
+        key: source_retrieval[key]
+        for key in ("schema", "date", "status", "method", "corpus", "metrics")
+    }
+    source_retrieval_baseline["baseline_review_status"] = "reviewed"
+    print(
+        "SOURCE_RETRIEVAL_BASELINE "
+        + json.dumps(source_retrieval_baseline, ensure_ascii=False, sort_keys=True)
+    )
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
