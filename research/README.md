@@ -111,3 +111,5 @@ related:
 - ../tools/ai_discovery_source_retrieval.py — BM25-проверка маршрута от benchmark query/expected fact к одному из 44 реально привязанных источников; первичные evidence и внутренние методики считаются раздельно.
 
 - AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md — BM25-проверка 44 mapped source docs по 46 запросам и 112 expected facts: все 112 имеют связанный источник в top-10, 96 — в top-3; чистые first-party claims находят snapshot в top-5 44/44. Смешанные claims измеряются отдельно.
+
+- ../problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json — reviewed BM25 snapshot source-level retrieval; CI compares current 44-document corpus and 112 facts with this baseline and fails on stale metrics.
