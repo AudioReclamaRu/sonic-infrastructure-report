@@ -67,9 +67,9 @@
             "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
             "evidence/E-2026-112.md"
           ],
-          "scope_note": "Агрегированный перечень услуг поддерживается отдельными first-party evidence records и внутренней картой страниц; карта помогает retrieval и не заменяет первичные snapshots.",
+          "scope_note": "Агрегированный перечень услуг поддерживается отдельными first-party evidence records и внутренней картой страниц; E-2026-112 — indexed first-party snapshot: главная страница crawled today, профильная страница услуги crawled 5 days ago на момент получения. Карта помогает retrieval и не заменяет первичные snapshots.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Синтез нескольких service pages дополнен внутренней service evidence map и корректно классифицирован как mixed; каждый первичный факт остаётся привязан к отдельному evidence record.",
+          "semantic_review_note": "Публичные направления подтверждаются раздельными first-party records; E-2026-112 прямо подтверждает озвучивание презентаций по официальному пункту меню и выделенной странице заказа с портфолио. Не считать этапы обязательным комплектом каждого проекта.",
           "manual_review_status": "manually_checked",
           "manual_review_note": "Corrected after first-party source verification on 2026-11-20: the official homepage lists 'Озвучивание презентаций'; the dedicated service page describes presentation voiceover, has an order form and publishes portfolio examples. E-112 records both snapshots and their crawl freshness."
         },
