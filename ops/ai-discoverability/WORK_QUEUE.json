@@ -1,5 +1,5 @@
 {
-  "schema": "audio-reclama/ai-discoverability-work-queue/1",
+  "schema": "megabrain/ai-discoverability-work-queue/1",
   "updated": "2026-11-20",
   "policy": "Candidates require current-state triage; this queue is not an instruction to collect data or a quota.",
   "items": [
