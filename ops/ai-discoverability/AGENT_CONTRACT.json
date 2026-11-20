@@ -1,0 +1,91 @@
+{
+  "schema": "audio-reclama/megabrain-ai-discoverability-contract/1",
+  "version": "1.0.0",
+  "updated": "2026-11-20",
+  "mission": {
+    "entity": "Аудио-Реклама•ru",
+    "canonical_site": "https://www.audio-reclama.ru",
+    "objective": "Increase accurate, useful and commercially relevant discovery, citation and recommendation for real buyer tasks; connect observable discovery to qualified enquiries when attribution exists.",
+    "not_objectives": [
+      "Maximize the number of collected prompts, screenshots, reports or pages",
+      "Fill a language or keyword matrix for its own sake",
+      "Claim AI visibility or commercial impact without observations"
+    ]
+  },
+  "interface": {
+    "mode": "file_based",
+    "queue_file": "ops/ai-discoverability/WORK_QUEUE.json",
+    "work_item_schema": "schemas/ai-discoverability-work-item.schema.json",
+    "required_run_outputs": ["assessment.json", "plan.json", "test-report.json", "decision-log.json"],
+    "change_unit": "one scoped obstacle and one verifiable result per branch and pull request",
+    "runtime_outputs_may_remain_local": true,
+    "never_commit_secrets_or_client_private_data": true
+  },
+  "outcome_hierarchy": [
+    "qualified_attributed_enquiries_or_deals",
+    "relevant_referral_visits_and_commercial_route_actions",
+    "accurate_generic_discovery_and_source_citations",
+    "source_quality_and_machine_retrieval_readiness"
+  ],
+  "execution_policy": {
+    "must_read_repository_instructions": true,
+    "must_check_existing_evidence_before_research": true,
+    "must_state_decision_unlocked_before_measurement": true,
+    "must_define_measurement_stop_rule": true,
+    "must_continue_independent_work_when_one_source_is_blocked": true,
+    "must_not_require_owner_to_collect_or_upload_data": true,
+    "must_not_repeat_unchanged_measurements_without_a_reason": true,
+    "must_not_treat_blocked_or_unrun_as_zero_visibility": true,
+    "must_separate_consumer_ui_model_api_and_search_results_ui": true
+  },
+  "autonomy": {
+    "allowed_without_case_by_case_owner_input": [
+      "read_repository",
+      "read_free_public_sources",
+      "inspect_analytics_available_through_authorized_connections",
+      "build_or_update_repository_knowledge_assets",
+      "write_local_tools_schemas_and_tests",
+      "run_local_validation_and_ci",
+      "create_scoped_work_branch",
+      "commit_to_work_branch",
+      "open_pull_request"
+    ],
+    "requires_explicit_owner_approval": [
+      "merge_into_main",
+      "write_to_official_website",
+      "change_cms_metadata_robots_or_sitemap",
+      "deploy_or_publish_to_any_external_surface",
+      "send_external_messages_or_contact_partners_clients_or_editors",
+      "edit_external_company_profiles",
+      "purchase_paid_services_credits_ads_or_subscriptions",
+      "accept_legal_terms_transfer_rights_or_make_exclusive_commitments",
+      "make_public_contributions_from_the_brand_account_to_third_party_repositories"
+    ],
+    "forbidden": [
+      "bypass_access_controls_or_authentication",
+      "fabricate_region_or_operator_attestation",
+      "invent_measurements_citations_customers_or_results",
+      "treat_not_tested_blocked_or_unsupported_as_zero_visibility",
+      "write_to_or_deploy_the_official_website",
+      "create_automatic_website_mirrors_or_pages_deployments",
+      "commit_credentials_secrets_or_client_private_data",
+      "perform_mass_repetitive_public_actions"
+    ]
+  },
+  "measurement_gate": {
+    "required_fields_before_run": ["decision_to_unlock", "existing_evidence_checked", "minimum_sufficient_sample", "stop_rule", "cost_or_access_class"],
+    "measurement_statuses_are_not_scores": ["NOT_TESTED", "BLOCKED_REGION", "BLOCKED_AUTH", "UNSUPPORTED_PROVIDER", "BLOCKED_NETWORK", "ERROR"],
+    "do_not_rerun_when": [
+      "the same asset and query surface have not changed",
+      "the previous result already resolves the decision",
+      "no available result could change the next action"
+    ]
+  },
+  "stop_conditions": [
+    "No higher-value supported repository action remains in the current scope",
+    "Additional data cannot change the next decision",
+    "The next step requires an approval that has not been granted",
+    "Evidence conflicts and there is no safe way to resolve the conflict",
+    "Expected maintenance cost or risk exceeds the expected benefit"
+  ]
+}
