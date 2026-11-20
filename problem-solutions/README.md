@@ -128,3 +128,5 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json — точное сопоставление каждого из 112 expected facts фиксированного benchmark с evidence-файлами и/или внутренними методиками; проверяет не только наличие URL, но и тип источниковой опоры. Внутренний evaluator-side provenance map, не публикуемый ответ.
 
 - ../research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md — ручной первый семантический проход 112 связей expected fact → source; 21 слишком широкая/неподходящая привязка исправлена, scope и остаточные ограничения задокументированы.
+
+- ../research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md — человекочитаемый итог review всех 46 answer texts, покрытия 112 ожидаемых фактов и проверки 54 must_not_claim ограничений.
