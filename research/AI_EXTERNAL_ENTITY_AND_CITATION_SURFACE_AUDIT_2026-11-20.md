@@ -7,7 +7,6 @@ related:
   - research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md
   - research/AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md
   - research/AI_SERVICE_ANSWER_SURFACE_AUDIT_2026-11-20.md
-  - entity/audio-reclama-studio.md
   - https://www.audio-reclama.ru
 ---
 
@@ -53,7 +52,7 @@ https://www2.bing.com/webmasters/help/add-and-verify-site-12184f8b
 
 Она позволяет импортировать уже подтверждённые сайты из Google Search Console. Для текущего проекта это предпочтительнее ручной DNS/HTML-верификации, поскольку Google Search Console для канонического свойства уже подключена. Сам импорт требует авторизованного действия владельца в Bing Webmaster Tools; никакие токены или пароли в чат передавать не нужно. После добавления Bing указывает, что первичная генерация аналитики обычно занимает до 48 часов.
 
-**Статус на момент аудита:** Bing Webmaster Tools не подключён к этому проекту и фактическое наличие AI Performance для audio-reclama.ru не проверено. Отчёт не запускался и показатели не предполагаются.
+**Статус на момент аудита:** Bing Webmaster Tools не подключён к этому проекту и фактическое наличие AI Performance для https://www.audio-reclama.ru не проверено. Отчёт не запускался и показатели не предполагаются.
 
 ## 2. Как теперь должна выглядеть система измерений
 
