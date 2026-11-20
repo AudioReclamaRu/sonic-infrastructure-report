@@ -35,6 +35,7 @@ Business Workflow
 |---|---|---|
 | Company entity | `entity/audio-reclama-studio.md` + `entity/audio-reclama-studio.jsonld` | Who is the studio, what does its official source currently show, and what remains unverified? |
 | Evidence | `evidence/` | With what proof does a fact stand? (E-YYYY-NNN IDs) |
+| Commercial assets | `assets/portfolio/` | Which first-party portfolio document and case descriptions can substantiate the studio's presentation? |
 | Reports | `reports/` | What changed for business today? (Daily Signal, Weekly Verdicts) |
 | Entities | `entity/` | Who and what exists on the market — as stable, linkable records |
 | Terms | `dictionary/` + `TERMINOLOGY.md` | What does a term mean here — one lived definition per term |
@@ -50,6 +51,10 @@ Business Workflow
 ## Strategic priority
 
 Read strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md first. Problem-solutions/ is the user-problem diagnostic layer. It is distinct from commercial GEO answers and enterprise guides. Its backlog begins with unmeasured hypotheses, not popularity claims. Public participation in third-party repositories follows X15: social trust, project-specific policy, verified contribution and long-term responsibility.
+
+## Official commercial portfolio
+
+The official PDF portfolio is a core first-party commercial asset. Its canonical URL and an extracted-text snapshot with a structured case index are maintained in `assets/portfolio/PORTFOLIO-2026-11-18.md`. The snapshot is not the PDF binary. Portfolio claims must remain labeled as first-party statements unless independently verified; historical volumes are not current capacity promises.
 
 ## Canonical company entity
 

@@ -24,6 +24,11 @@
 - [Джинглы](https://www.audio-reclama.ru/audio/zvuk-media.html).
 - [Корпоративные песни и гимны](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html).
 
+## Коммерческое портфолио и подтверждённые примеры работ
+
+- [Официальное портфолио: кейсы и карта компетенций](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/assets/portfolio/PORTFOLIO-2026-11-18.md): структурированный снимок содержания PDF и исходная ссылка на портфолио. Это first-party источник студии; исторические цифры не являются текущей производственной мощностью, а кейсы не равны независимым отзывам.
+- [Оригинальный PDF портфолио](https://www.audio-reclama.ru/presentation/Portfolio_Audio-Reclama.ru.pdf): канонический визуальный документ на официальном сайте.
+
 ## Карта и правила знаний
 
 - [MAP.md](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/MAP.md): архитектура связанной базы знаний.
