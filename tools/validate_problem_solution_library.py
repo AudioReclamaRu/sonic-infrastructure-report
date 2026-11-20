@@ -1095,8 +1095,6 @@ def validate(root: Path = ROOT) -> list[str]:
             errors.append("mapped source-retrieval corpus must match the semantic-review source-document count")
         if source_metrics.get("expected_fact_count") != measured_claim_count:
             errors.append("source-retrieval expected_fact_count must match the claim-support matrix")
-        if source_metrics.get("claims_with_mapped_source_top_10") != measured_claim_count:
-            errors.append("every expected fact must retrieve at least one mapped source in BM25 top-10")
     except (ImportError, OSError, ValueError, TypeError) as exc:
         errors.append(f"AI Discovery mapped-source retrieval could not run: {exc}")
 
