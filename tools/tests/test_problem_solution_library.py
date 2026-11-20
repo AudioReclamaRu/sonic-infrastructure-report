@@ -11,6 +11,8 @@ BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
 ROUTING = "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
 SERVICE_PACK = "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md"
 SERVICE_ROUTES = "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
+TRUST_PACK = "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
+TRUST_ROUTES = "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
 
 
 def fixture_root():
@@ -57,6 +59,16 @@ def fixture_root():
             "preferred_sources": ["https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"],
             "must_not_claim": ["fixed price"],
             "status": "not_run",
+        }, {
+            "id": "AR-TRUST-01",
+            "cluster": "expertise_and_evidence",
+            "language": "ru",
+            "region": "RU",
+            "query": "Что такое паспорт происхождения голоса и зачем он нужен?",
+            "expected_facts": ["origin and use boundaries"],
+            "preferred_sources": ["standards/voice-provenance-passport.md"],
+            "must_not_claim": ["independent certification"],
+            "status": "not_run",
         }],
     }
     (root / LIBRARY).write_text(json.dumps(library), encoding="utf-8")
@@ -72,6 +84,10 @@ def fixture_root():
     (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
     (root / SERVICE_PACK).write_text(
         "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?\n",
+        encoding="utf-8",
+    )
+    (root / TRUST_PACK).write_text(
+        "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?\n",
         encoding="utf-8",
     )
     (root / "evidence/E-TEST-002.md").write_text(
@@ -124,6 +140,22 @@ def fixture_root():
         }]
     }
     (root / SERVICE_ROUTES).write_text(json.dumps(service_routes), encoding="utf-8")
+    expertise_routes = {
+        "schema": "studio/ai-expertise-evidence-routing/1",
+        "entry_count": 1,
+        "entries": [{
+            "routing_id": "expertise_and_evidence/voice_provenance_passport",
+            "benchmark_query_id": "AR-TRUST-01",
+            "question": "Что такое паспорт происхождения голоса и зачем он нужен?",
+            "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+            "knowledge_sources": ["guides/ivr.md"],
+            "source_classes": ["internal_standard"],
+            "public_source_urls": [],
+            "evidence_refs": [],
+            "guardrails": ["not a legal certificate"]
+        }]
+    }
+    (root / TRUST_ROUTES).write_text(json.dumps(expertise_routes), encoding="utf-8")
     return temporary, root
 
 
@@ -198,6 +230,21 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(SERVICE_ROUTES, routes)
         errors = validate(self.root)
         self.assertTrue(any("answer heading does not resolve" in e for e in errors))
+
+    def test_expertise_evidence_query_must_have_route(self):
+        routes = self.read_json(TRUST_ROUTES)
+        routes["entries"] = []
+        routes["entry_count"] = 0
+        self.write_json(TRUST_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("expertise/evidence benchmark query is not mapped" in e for e in errors))
+
+    def test_expertise_knowledge_source_must_resolve(self):
+        routes = self.read_json(TRUST_ROUTES)
+        routes["entries"][0]["knowledge_sources"] = ["standards/missing.md"]
+        self.write_json(TRUST_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("knowledge_sources[1] does not resolve" in e for e in errors))
 
     def test_executed_benchmark_status_fails(self):
         benchmark = self.read_json(BENCHMARK)
