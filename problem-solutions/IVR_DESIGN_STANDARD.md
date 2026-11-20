@@ -2,7 +2,7 @@
 type: standard
 date: 2026-11-14
 lang: ru
-related: [problem-solutions/README.md, problem-solutions/QUERY_BACKLOG.json, guides/bank-voice-menu.md, standards/responsible-release.md]
+related: [problem-solutions/README.md, problem-solutions/QUERY_BACKLOG.json, guides/bank-voice-menu.md, standards/responsible-release.md, standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md]
 ---
 # IVR Menu Design & Release Standard — проектирование, запись, проверка
 
@@ -95,6 +95,7 @@ IVR должен помочь человеку быстро выполнить �
 1. зафиксировать тексты и маршруты;
 2. проверить факты, график, названия и обязательные уведомления;
 3. составить словарь произношения;
+   Общая карточка токена и статусы подтверждения описаны в ../standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md.
 4. проверить длину каждой реплики на слух;
 5. разделить длинные сообщения на удобные смысловые блоки;
 6. отметить паузы, произношение цифр и нестандартные сокращения;

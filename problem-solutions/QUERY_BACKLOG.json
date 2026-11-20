@@ -46,13 +46,15 @@
       "business_fit": "high",
       "existing_coverage": [
         "standards/responsible-release.md",
-        "existing IVR pages"
+        "existing IVR pages",
+        "standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md"
       ],
-      "action": "Create a practical pronunciation brief and pre-release checklist.",
+      "action": "Apply the proposed spoken-text/pronunciation standard to assemble a reusable client brief and pre-release checklist; collect only owner-cleared examples and verify number/abbreviation readings by project rather than inventing universal rules.",
       "proof_needed": [
-        "approved checklist",
-        "cleared examples",
-        "rules for numbers and abbreviations"
+        "review and approval of the standard by a qualified Russian-language editor/voice specialist and the owner",
+        "approved pronunciation records for names, numbers, dates, currencies and abbreviations from real production tasks, with permission to retain or anonymize them",
+        "a reproducible pre-release checklist that compares approved source text, spoken text and final audio",
+        "native-language review and source references for any localized examples"
       ],
       "demand_status": "unmeasured_candidate",
       "search_volume": null

@@ -3,7 +3,7 @@ type: standard
 date: 2026-11-14
 lang: ru
 status: draft_for_expert_review
-related: [entity/kirill-kalinin.md, problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md, guides/international-voice.md, guides/airport-announcements.md, corpus/kto-vypuskaet-golos.md, standards/responsible-release.md]
+related: [entity/kirill-kalinin.md, problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_2026-11-14.md, guides/international-voice.md, guides/airport-announcements.md, corpus/kto-vypuskaet-golos.md, standards/responsible-release.md, standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md]
 ---
 
 # AVT: рамка перевода и голосовой адаптации аудиовизуального материала
@@ -113,6 +113,7 @@ related: [entity/kirill-kalinin.md, problem-solutions/DZEN_TO_GIT_KNOWLEDGE_MAP_
 - Не заменять культурную адаптацию произвольной локализацией, меняющей замысел.
 - Фиксировать непереводимые игры слов, культурные аллюзии и спорные варианты в комментариях или журнале решений.
 - Имена, числа, бренды, адреса, аббревиатуры и термины выносить в отдельный pronunciation/terminology sheet.
+  Структуру записи, source_ref, spoken_form и статусы подтверждения брать из SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md; этот AVT-документ дополняет её контекстом персонажа и синхронизации.
 
 ### 5.3. Варианты и журнал решений
 Для сложных реплик допускается несколько вариантов:
