@@ -20,6 +20,7 @@ tiers, procedures, checks a machine or a human can apply.
   studio's MANIFEST ЖИВОЙ ГОЛОС).
 - `AUDIO_MASTER_QC_AND_DELIVERY.md` — proposed end-to-end quality control and acceptance protocol for the exported audio file; no universal delivery presets, recipient specification is authoritative.
 - `../research/AUDIO_RECIPIENT_TECHNICAL_PROFILES_2026-11-20.md` — source-checked recipient profiles and open gaps for audiobook platforms, broadcast, IVR and video ingest; research reference, not a studio preset.
+- `SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md` — proposed standard for separating approved written text from spoken text, source-backed pronunciation records, critical tokens, multi-language review and audio pre-release checks.
 - `responsible-release.md` — the release procedure: who checks the voice before
   it airs, and the decision boundary (studio = last professional filter,
   client = responsible party).
