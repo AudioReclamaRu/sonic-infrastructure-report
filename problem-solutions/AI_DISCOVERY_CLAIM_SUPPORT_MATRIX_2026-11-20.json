@@ -64,11 +64,14 @@
             "evidence/E-2026-104.md",
             "evidence/E-2026-105.md",
             "evidence/E-2026-107.md",
-            "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+            "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md",
+            "evidence/E-2026-112.md"
           ],
           "scope_note": "Агрегированный перечень услуг поддерживается отдельными first-party evidence records и внутренней картой страниц; карта помогает retrieval и не заменяет первичные snapshots.",
           "semantic_review_status": "reviewed",
-          "semantic_review_note": "Синтез нескольких service pages дополнен внутренней service evidence map и корректно классифицирован как mixed; каждый первичный факт остаётся привязан к отдельному evidence record."
+          "semantic_review_note": "Синтез нескольких service pages дополнен внутренней service evidence map и корректно классифицирован как mixed; каждый первичный факт остаётся привязан к отдельному evidence record.",
+          "manual_review_status": "manually_checked",
+          "manual_review_note": "Corrected after first-party source verification on 2026-11-20: the official homepage navigation explicitly lists 'Озвучивание презентаций'; a dedicated official service page describes the service, offers an order form and presents a portfolio (MaxClean, Easy Ride, CentrSvet Group, DHL). E-112 records both snapshots and crawl freshness."
         },
         {
           "fact_index": 2,
@@ -1718,7 +1721,7 @@
     "reviewed_at": "2026-11-20",
     "reviewed_query_count": 46,
     "reviewed_claim_count": 112,
-    "unique_source_documents": 43,
+    "unique_source_documents": 44,
     "corrected_claim_mappings": 24,
     "method": [
       "Compare each expected fact to source contents; manually read answer-section assertions and their mapped sources, checking semantic relevance, source class, freshness and circular/secondary source use.",
@@ -1749,6 +1752,7 @@
       "AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md and CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md are drafts for expert review; recommendations based on them remain internal draft methodology.",
       "VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md and its JSON library are internal expert-framework drafts, not an implemented service or external certification.",
       "A mapped source can support the underlying method or public wording only within its stated date and scope; absence from a snapshot is not proof that a service does not exist."
-    ]
+    ],
+    "reviewed_query_count": 46
   }
 }
