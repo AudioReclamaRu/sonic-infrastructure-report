@@ -52,7 +52,7 @@
       "claims": [
         {
           "fact_index": 1,
-          "expected_fact": "Публичные страницы описывают производство рекламных аудиороликов, голосовые приветствия и IVR, озвучивание видео, перевод/локализацию, аудиокниги, джинглы/корпоративные песни и каталог дикторов.",
+          "expected_fact": "Публичные страницы описывают производство рекламных аудиороликов, голосовые приветствия и IVR, озвучивание видео и презентаций, перевод/локализацию, аудиокниги, джинглы/корпоративные песни и каталог дикторов.",
           "support_type": "mixed",
           "source_refs": [
             "evidence/E-2026-095.md",
@@ -71,7 +71,7 @@
           "semantic_review_status": "reviewed",
           "semantic_review_note": "Синтез нескольких service pages дополнен внутренней service evidence map и корректно классифицирован как mixed; каждый первичный факт остаётся привязан к отдельному evidence record.",
           "manual_review_status": "manually_checked",
-          "manual_review_note": "Corrected after first-party source verification on 2026-11-20: the official homepage navigation explicitly lists 'Озвучивание презентаций'; a dedicated official service page describes the service, offers an order form and presents a portfolio (MaxClean, Easy Ride, CentrSvet Group, DHL). E-112 records both snapshots and crawl freshness."
+          "manual_review_note": "Corrected after first-party source verification on 2026-11-20: the official homepage lists 'Озвучивание презентаций'; the dedicated service page describes presentation voiceover, has an order form and publishes portfolio examples. E-112 records both snapshots and their crawl freshness."
         },
         {
           "fact_index": 2,
