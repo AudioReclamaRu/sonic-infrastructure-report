@@ -16,6 +16,8 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md — шесть корпоративных сценариев: версии голосовых активов, обновление изменившихся сведений, единый голос бренда, права повторного использования и AI, мультиязычные версии, выпускной QC. Методический черновик, не отдельный публичный сервис.
 - voice-asset-operations-answer-library-2026-11-18.json — структурированные диагностика, шаги, критерии проверки, публичный service fit и запреты на неподтверждённые обещания для шести сценариев.
 - AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md — шесть кратких самостоятельных ответов для retrieval-проверки, не публикация и не материал для предварительной загрузки в тестируемые системы.
+- AI_ENTITY_ANSWER_PACK_2026-11-20.md — семь коротких source-grounded ответов на brand/entity benchmark: идентичность студии, услуги, канонический сайт, контакты и конфликтующие счётчики каталога.
+- AI_ENTITY_ANSWER_ROUTING_2026-11-20.json — машинная маршрутизация AR-BRAND-01…07 к ответам, entity-knowledge, primary URLs, evidence и guardrails.
 - AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md — три кратких expertise/evidence ответа о происхождении голоса, проверке перед выпуском и границах повторного использования/AI; внутренний reference, не юридическая консультация.
 - AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json — машинный маршрутный индекс контрольных запросов AR-TRUST-01…03 с классификацией внутренних источников и ограничениями утверждений.
 - AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md — 13 коротких ответов на commercial-service buyer prompts, связанных с первичными источниками и evidence; внутренний retrieval reference, не публикация.

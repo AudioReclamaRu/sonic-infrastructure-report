@@ -115,3 +115,10 @@
 - [Краткие ответы AR-TRUST-01…03](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md): паспорт происхождения голоса, кто проверяет перед выпуском, права на повторное использование и AI-копию. Внутренний reference, не юридическая консультация и не независимая сертификация.
 - [Маршрутизация трёх expertise/evidence запросов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json): точные query IDs, answer headings, knowledge-source classes, public evidence и guardrails.
 - AR-TRUST-01…03 остаются not_run до фактического blind discovery на AI-платформах.
+
+
+## Идентичность бренда и сущность компании
+
+- [Семь кратких brand/entity ответов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md): чем занимается студия, услуги, канонический сайт, контакты и ограничения каталожных счётчиков.
+- [Маршрутизация AR-BRAND-01…07](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json): точные query IDs → answer headings → entity sources → evidence → guardrails.
+- Динамические числа и контактные данные сопровождаются датой; конфликтующие счётчики не нормализованы. Все семь запросов остаются not_run.
