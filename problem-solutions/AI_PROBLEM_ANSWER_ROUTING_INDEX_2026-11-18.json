@@ -11,7 +11,7 @@
     "Cite primary_sources and evidence_refs for company-specific claims; do not promote internal recommendations to public company claims.",
     "A problem-to-service fit is a relevance hypothesis supported by the listed page, not a guarantee of outcome or proof that every step is included in every order."
   ],
-  "entry_count": 17,
+  "entry_count": 18,
   "entries": [
     {
       "routing_id": "business_problem/ivr_confusion",
@@ -28,7 +28,9 @@
         }
       ],
       "supporting_documents": [
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "guides/bank-voice-menu.md",
+        "tools/ivr_flow_linter/README.ru.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
@@ -139,17 +141,20 @@
         }
       ],
       "supporting_documents": [
-        "guides/choosing-a-voice.md"
+        "guides/choosing-a-voice.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "https://www.audio-reclama.ru/zakaz-scenariya.html",
-        "https://www.audio-reclama.ru/audio/zvuk-media.html"
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/diktoryi/"
       ],
       "evidence_refs": [
         "evidence/E-2026-098.md",
         "evidence/E-2026-099.md",
-        "evidence/E-2026-100.md"
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-104.md"
       ],
       "service_fit": [
         "Сценарии",
@@ -164,8 +169,6 @@
       ],
       "benchmark_query_ids": [
         "AR-PROBLEM-03",
-        "AR-PROBLEM-04",
-        "AR-PROBLEM-06",
         "AR-PROBLEM-10"
       ]
     },
@@ -260,7 +263,8 @@
       ],
       "supporting_documents": [
         "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
-        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/diktoryi/"
@@ -373,13 +377,15 @@
         }
       ],
       "supporting_documents": [
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ],
       "evidence_refs": [
         "evidence/E-2026-098.md",
@@ -416,14 +422,15 @@
       ],
       "supporting_documents": [
         "problem-solutions/IVR_DESIGN_STANDARD.md",
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "https://www.audio-reclama.ru/perevodchiki/",
-        "problem-solutions/IVR_DESIGN_STANDARD.md",
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
         "https://www.audio-reclama.ru/zakaz-scenariya.html"
       ],
       "evidence_refs": [
@@ -462,14 +469,14 @@
       ],
       "supporting_documents": [
         "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
-        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/diktoryi/",
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
-        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
-        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
-        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
       ],
       "evidence_refs": [
         "evidence/E-2026-104.md",
@@ -507,16 +514,19 @@
       ],
       "supporting_documents": [
         "standards/voice-provenance-passport.md",
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
-        "standards/voice-provenance-passport.md",
-        "standards/responsible-release.md",
-        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
       ],
       "evidence_refs": [
-        "evidence/E-2026-098.md"
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-110.md"
       ],
       "service_fit": [
         "Запись аудиороликов: публичная страница упоминает передачу авторских и исключительных прав, но объём определяется договором"
@@ -547,14 +557,15 @@
       ],
       "supporting_documents": [
         "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/perevodchiki/",
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
-        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
-        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
       ],
       "evidence_refs": [
         "evidence/E-2026-101.md",
@@ -592,16 +603,16 @@
       ],
       "supporting_documents": [
         "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "standards/responsible-release.md",
+        "corpus/kto-vypuskaet-golos.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
         "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
-        "problem-solutions/IVR_DESIGN_STANDARD.md",
-        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
-        "standards/responsible-release.md",
         "https://www.audio-reclama.ru/faq.html"
       ],
       "evidence_refs": [
@@ -643,7 +654,8 @@
         }
       ],
       "supporting_documents": [
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/zvuk-media.html"
@@ -679,7 +691,8 @@
         }
       ],
       "supporting_documents": [
-        "standards/responsible-release.md"
+        "standards/responsible-release.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
       ],
       "primary_sources": [
         "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
@@ -697,6 +710,44 @@
       ],
       "benchmark_query_ids": [
         "AR-PROBLEM-23"
+      ]
+    },
+    {
+      "routing_id": "business_problem/chronomer_timing",
+      "intent_type": "business_problem",
+      "problem": "Рекламный ролик звучит как чтение текста и не запоминается",
+      "source": {
+        "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "scenario_id": "radio_ad"
+      },
+      "answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "## Как предварительно оценить хронометраж текста до записи?"
+        }
+      ],
+      "supporting_documents": [
+        "guides/chronomer-timing.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-111.md"
+      ],
+      "primary_sources": [
+        "https://www.audio-reclama.ru/chronomer-stranitcemer.html"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-04",
+        "AR-PROBLEM-06"
+      ],
+      "service_fit": [
+        "Онлайн-инструмент предварительной оценки хронометража текста",
+        "Подготовка текста к заказу аудиоролика"
+      ],
+      "guardrails": [
+        "Не считать оценку длительностью готовой фонограммы",
+        "Не повторять рекламную формулировку «никогда не ошибается» как техническую гарантию",
+        "Текущая доступность инструмента не подтверждена свежим live-read; проверять перед коммерческой рекомендацией"
       ]
     }
   ],
