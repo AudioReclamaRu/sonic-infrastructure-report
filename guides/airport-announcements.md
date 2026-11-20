@@ -46,7 +46,7 @@ Related
 - corpus/voice-market-signals-2026.en.md
 
 Footer
-Audio-Reclama.ru
+Аудио-Реклама•ru
 https://www.audio-reclama.ru/online-zakaz.html
 start@audio-reclama.ru · 8-800-700-46-52
 ## Краткая русская карта для retrieval
