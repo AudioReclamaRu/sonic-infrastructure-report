@@ -941,7 +941,8 @@ def main() -> int:
         f"{mapped_problem_count} linked problem-solving prompts, "
         f"{mapped_trust_count} linked trust prompts, "
         f"{len(benchmark['queries'])} unrun benchmark queries, "
-        f"{claim_matrix['claim_count']} fact-level source mappings; "
+        f"{claim_matrix['claim_count']} semantically reviewed fact-level source mappings across "
+        f"{semantic_review['unique_source_documents']} source documents; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     return 0
