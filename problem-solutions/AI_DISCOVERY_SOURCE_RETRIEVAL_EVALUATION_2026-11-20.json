@@ -23,7 +23,7 @@
     "tokenizer": "Same fixed Russian/English tokenizer and light stemming as the answer-pack baseline."
   },
   "corpus": {
-    "document_count": 43,
+    "document_count": 44,
     "documents": [
       "canon/releasing-voice.md",
       "corpus/kto-vypuskaet-golos.md",
@@ -46,6 +46,7 @@
       "evidence/E-2026-109.md",
       "evidence/E-2026-110.md",
       "evidence/E-2026-111.md",
+      "evidence/E-2026-112.md",
       "guides/airport-announcements.md",
       "guides/bank-voice-menu.md",
       "guides/choosing-a-voice.md",
@@ -88,7 +89,8 @@
         "evidence/E-2026-108.md",
         "evidence/E-2026-109.md",
         "evidence/E-2026-110.md",
-        "evidence/E-2026-111.md"
+        "evidence/E-2026-111.md",
+        "evidence/E-2026-112.md"
       ],
       "internal_methodology": [
         "canon/releasing-voice.md",
@@ -130,13 +132,13 @@
     "claims_with_mapped_source_top_10": 110,
     "claims_with_mapped_source_top_3": 97,
     "claims_with_mapped_source_top_5": 107,
-    "evidence_claims_with_evidence_top_1": 30,
+    "evidence_claims_with_evidence_top_1": 31,
     "evidence_claims_with_evidence_top_10": 58,
     "evidence_claims_with_evidence_top_3": 51,
     "evidence_claims_with_evidence_top_5": 54,
     "expected_fact_count": 112,
-    "mapped_source_documents": 43,
-    "max_mapped_source_rank": 40,
+    "mapped_source_documents": 44,
+    "max_mapped_source_rank": 41,
     "max_query_mapped_source_rank": 16,
     "median_mapped_source_rank": 1,
     "mixed_claim_count": 15,
@@ -149,12 +151,12 @@
     "pure_first_party_evidence_top_5": 44,
     "queries_with_mapped_source_top_1": 15,
     "queries_with_mapped_source_top_3": 29,
-    "queries_with_mapped_source_top_5": 38,
+    "queries_with_mapped_source_top_5": 36,
     "query_count": 46
   },
   "source_class_aware": {
     "claim_channel_checks": 127,
-    "claim_channel_top_1": 86,
+    "claim_channel_top_1": 87,
     "claim_channel_top_10": 124,
     "claim_channel_top_3": 114,
     "claim_channel_top_5": 123,
@@ -163,12 +165,12 @@
       "internal_methodology": 52,
       "mixed": 15
     },
-    "claims_all_required_classes_top_1": 72,
+    "claims_all_required_classes_top_1": 73,
     "claims_all_required_classes_top_10": 109,
     "claims_all_required_classes_top_3": 99,
     "claims_all_required_classes_top_5": 108,
     "mixed_claim_count": 15,
-    "mixed_claims_all_classes_top_1": 3,
+    "mixed_claims_all_classes_top_1": 4,
     "mixed_claims_all_classes_top_10": 14,
     "mixed_claims_all_classes_top_3": 12,
     "mixed_claims_all_classes_top_5": 14,
@@ -179,15 +181,15 @@
         "claim_channel_top_10": 60,
         "claim_channel_top_3": 60,
         "claim_channel_top_5": 60,
-        "document_count": 18,
+        "document_count": 19,
         "query_channel_count": 40,
-        "query_channel_top_1": 25,
+        "query_channel_top_1": 22,
         "query_channel_top_3": 37,
-        "query_channel_top_5": 40
+        "query_channel_top_5": 39
       },
       "internal_methodology": {
         "claim_channel_count": 67,
-        "claim_channel_top_1": 31,
+        "claim_channel_top_1": 32,
         "claim_channel_top_10": 64,
         "claim_channel_top_3": 54,
         "claim_channel_top_5": 63,
@@ -204,20 +206,20 @@
       "mixed": "Run the first-party evidence and internal-methodology channels in parallel; preserve both ranks and require both mapped source classes.",
       "query_routing": "A benchmark query activates every source class required by its mapped expected facts; two active classes are parallel channels, not one merged ranking."
     },
-    "queries_all_required_classes_top_1": 15,
+    "queries_all_required_classes_top_1": 12,
     "queries_all_required_classes_top_3": 31,
-    "queries_all_required_classes_top_5": 38,
+    "queries_all_required_classes_top_5": 37,
     "query_channel_checks": 74,
-    "query_channel_top_1": 35,
+    "query_channel_top_1": 32,
     "query_channel_top_3": 59,
-    "query_channel_top_5": 66,
+    "query_channel_top_5": 65,
     "query_route_counts": {
       "first_party_evidence_only": 12,
       "internal_methodology_only": 6,
       "parallel": 28
     },
     "source_class_document_counts": {
-      "first_party_evidence": 18,
+      "first_party_evidence": 19,
       "internal_methodology": 25
     }
   },
