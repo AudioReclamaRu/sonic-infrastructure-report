@@ -16,7 +16,13 @@ ROOT = Path(__file__).resolve().parents[1]
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
 CLAIM_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
 REPORT = "problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json"
-SCHEMA = "studio/ai-discovery-source-retrieval-evaluation/1"
+SCHEMA = "studio/ai-discovery-source-retrieval-evaluation/2"
+SOURCE_CLASSES = ("first_party_evidence", "internal_methodology")
+SUPPORT_TYPE_CLASSES = {
+    "first_party_evidence": ("first_party_evidence",),
+    "internal_methodology": ("internal_methodology",),
+    "mixed": ("first_party_evidence", "internal_methodology"),
+}
 
 
 def _read_json(root: Path, relative_path: str) -> dict[str, Any]:
@@ -51,6 +57,37 @@ def _best_rank(refs: list[str], positions: dict[str, int]) -> int | None:
 
 def _count_at(ranks: list[int | None], cutoff: int) -> int:
     return sum(rank is not None and rank <= cutoff for rank in ranks)
+
+
+def _source_class(relative_path: str) -> str:
+    """Classify the mapped source using its repository evidence boundary."""
+    return "first_party_evidence" if Path(relative_path).parts[0] == "evidence" else "internal_methodology"
+
+
+def _required_classes(support_type: str) -> tuple[str, ...]:
+    try:
+        return SUPPORT_TYPE_CLASSES[support_type]
+    except KeyError as exc:
+        raise ValueError(f"unsupported claim support_type: {support_type!r}") from exc
+
+
+def _build_index(
+    documents: list[dict[str, str]],
+    *,
+    index_name: str,
+) -> tuple[list[list[str]], dict[str, int], float]:
+    if not documents:
+        raise ValueError(f"source-class index is empty: {index_name}")
+    document_tokens = [tokenize(document["text"]) for document in documents]
+    if any(not terms for terms in document_tokens):
+        empty = [documents[i]["file"] for i, terms in enumerate(document_tokens) if not terms]
+        raise ValueError(f"{index_name} source documents contain no searchable terms: {empty}")
+    document_frequency: dict[str, int] = {}
+    for terms in document_tokens:
+        for term in set(terms):
+            document_frequency[term] = document_frequency.get(term, 0) + 1
+    average_length = sum(map(len, document_tokens)) / len(document_tokens)
+    return document_tokens, document_frequency, average_length
 
 
 def evaluate(root: Path = ROOT) -> dict[str, Any]:
@@ -99,15 +136,22 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             "text": relative_path + "\n" + source_text,
         })
 
-    document_tokens = [tokenize(document["text"]) for document in documents]
-    if any(not terms for terms in document_tokens):
-        empty = [documents[i]["file"] for i, terms in enumerate(document_tokens) if not terms]
-        raise ValueError(f"mapped source documents contain no searchable terms: {empty}")
-    document_frequency: dict[str, int] = {}
-    for terms in document_tokens:
-        for term in set(terms):
-            document_frequency[term] = document_frequency.get(term, 0) + 1
-    average_length = sum(map(len, document_tokens)) / len(document_tokens)
+    document_tokens, document_frequency, average_length = _build_index(
+        documents, index_name="global mapped-source"
+    )
+    documents_by_class = {
+        source_class: [
+            document for document in documents
+            if _source_class(document["file"]) == source_class
+        ]
+        for source_class in SOURCE_CLASSES
+    }
+    class_indexes = {
+        source_class: _build_index(
+            class_documents, index_name=source_class
+        )
+        for source_class, class_documents in documents_by_class.items()
+    }
 
     query_anchor_ranks: list[int | None] = []
     fact_anchor_ranks: list[int | None] = []
@@ -115,6 +159,21 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
     pure_evidence_fact_ranks: list[int | None] = []
     mixed_evidence_fact_ranks: list[int | None] = []
     all_fact_ranks: list[int | None] = []
+    query_channel_ranks_by_class: dict[str, list[int | None]] = {
+        source_class: [] for source_class in SOURCE_CLASSES
+    }
+    claim_channel_ranks_by_class: dict[str, list[int | None]] = {
+        source_class: [] for source_class in SOURCE_CLASSES
+    }
+    query_all_required_class_ranks: list[int | None] = []
+    claim_all_required_class_ranks: list[int | None] = []
+    mixed_claim_all_class_ranks: list[int | None] = []
+    support_type_counts: dict[str, int] = {}
+    query_route_counts = {
+        "first_party_evidence_only": 0,
+        "internal_methodology_only": 0,
+        "parallel": 0,
+    }
     entries: list[dict[str, Any]] = []
 
     for query_id, query in queries_by_id.items():
@@ -134,6 +193,56 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             raise ValueError(f"query {query_id} has no resolvable mapped source")
         query_anchor_ranks.append(query_anchor_rank)
 
+        query_required_classes = sorted({
+            source_class
+            for claim in claims
+            for source_class in _required_classes(claim.get("support_type"))
+        })
+        query_route = (
+            "parallel" if len(query_required_classes) == 2
+            else "first_party_evidence_only"
+            if query_required_classes == ["first_party_evidence"]
+            else "internal_methodology_only"
+        )
+        query_route_counts[query_route] += 1
+        query_class_channels: dict[str, dict[str, Any]] = {}
+        query_class_ranks: list[int] = []
+        for source_class in query_required_classes:
+            class_documents = documents_by_class[source_class]
+            class_tokens, class_frequency, class_average_length = class_indexes[source_class]
+            class_ranked, class_positions = _ranked_positions(
+                query.get("query", ""),
+                class_documents,
+                class_tokens,
+                class_frequency,
+                class_average_length,
+            )
+            class_refs = sorted({
+                ref for claim in claims
+                for ref in claim.get("source_refs", [])
+                if _source_class(ref) == source_class
+            })
+            class_rank = _best_rank(class_refs, class_positions)
+            if class_rank is None:
+                raise ValueError(
+                    f"query {query_id} has no mapped source in required class {source_class}"
+                )
+            query_channel_ranks_by_class[source_class].append(class_rank)
+            query_class_ranks.append(class_rank)
+            query_class_channels[source_class] = {
+                "best_mapped_source_rank": class_rank,
+                "top_candidates": [
+                    {
+                        "rank": rank,
+                        "file": candidate["file"],
+                        "score": round(candidate["score"], 6),
+                        "is_mapped_source": candidate["file"] in class_refs,
+                    }
+                    for rank, candidate in enumerate(class_ranked[:5], start=1)
+                ],
+            }
+        query_all_required_class_ranks.append(max(query_class_ranks))
+
         claim_results: list[dict[str, Any]] = []
         for claim in claims:
             fact_text = claim.get("expected_fact", "")
@@ -149,9 +258,24 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             fact_anchor_ranks.append(target_rank)
             all_fact_ranks.append(target_rank)
 
-            evidence_refs = [ref for ref in refs if ref.startswith("evidence/")]
-            evidence_rank = _best_rank(evidence_refs, fact_positions) if evidence_refs else None
             support_type = claim.get("support_type")
+            required_classes = _required_classes(support_type)
+            support_type_counts[support_type] = support_type_counts.get(support_type, 0) + 1
+            refs_by_class = {
+                source_class: [ref for ref in refs if _source_class(ref) == source_class]
+                for source_class in SOURCE_CLASSES
+            }
+            actual_ref_classes = {
+                source_class for source_class, class_refs in refs_by_class.items() if class_refs
+            }
+            if actual_ref_classes != set(required_classes):
+                raise ValueError(
+                    f"claim in {query_id} has source refs in {sorted(actual_ref_classes)}, "
+                    f"but support_type {support_type!r} requires {list(required_classes)}"
+                )
+
+            evidence_refs = refs_by_class["first_party_evidence"]
+            evidence_rank = _best_rank(evidence_refs, fact_positions) if evidence_refs else None
             if evidence_refs:
                 evidence_fact_ranks.append(evidence_rank)
                 if support_type == "first_party_evidence":
@@ -159,12 +283,50 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
                 elif support_type == "mixed":
                     mixed_evidence_fact_ranks.append(evidence_rank)
 
+            class_aware_source_ranks: dict[str, int] = {}
+            class_aware_candidates: dict[str, list[dict[str, Any]]] = {}
+            for source_class in required_classes:
+                class_documents = documents_by_class[source_class]
+                class_tokens, class_frequency, class_average_length = class_indexes[source_class]
+                class_ranked, class_positions = _ranked_positions(
+                    fact_text,
+                    class_documents,
+                    class_tokens,
+                    class_frequency,
+                    class_average_length,
+                )
+                class_rank = _best_rank(refs_by_class[source_class], class_positions)
+                if class_rank is None:
+                    raise ValueError(
+                        f"claim in {query_id} has no mapped source in required class {source_class}"
+                    )
+                class_aware_source_ranks[source_class] = class_rank
+                class_aware_candidates[source_class] = [
+                    {
+                        "rank": rank,
+                        "file": candidate["file"],
+                        "score": round(candidate["score"], 6),
+                        "is_mapped_source": candidate["file"] in refs_by_class[source_class],
+                    }
+                    for rank, candidate in enumerate(class_ranked[:5], start=1)
+                ]
+                claim_channel_ranks_by_class[source_class].append(class_rank)
+
+            class_aware_rank = max(class_aware_source_ranks.values())
+            claim_all_required_class_ranks.append(class_aware_rank)
+            if support_type == "mixed":
+                mixed_claim_all_class_ranks.append(class_aware_rank)
+
             claim_results.append({
                 "fact_index": claim.get("fact_index"),
                 "expected_fact": fact_text,
                 "support_type": support_type,
+                "required_source_classes": list(required_classes),
                 "source_refs": refs,
                 "best_mapped_source_rank": target_rank,
+                "best_class_aware_mapped_source_rank": class_aware_rank,
+                "class_aware_source_ranks": class_aware_source_ranks,
+                "class_aware_top_candidates": class_aware_candidates,
                 "best_first_party_evidence_rank": evidence_rank,
                 "top_candidates": [
                     {
@@ -180,6 +342,9 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
         entries.append({
             "benchmark_query_id": query_id,
             "query": query.get("query", ""),
+            "query_source_class_route": query_route,
+            "query_required_source_classes": query_required_classes,
+            "query_class_channels": query_class_channels,
             "query_best_mapped_source_rank": query_anchor_rank,
             "query_top_candidates": [
                 {
@@ -199,6 +364,12 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
     query_summaries = [
         {
             "benchmark_query_id": entry["benchmark_query_id"],
+            "query_source_class_route": entry["query_source_class_route"],
+            "query_required_source_classes": entry["query_required_source_classes"],
+            "query_class_channels": {
+                source_class: channel["best_mapped_source_rank"]
+                for source_class, channel in entry["query_class_channels"].items()
+            },
             "query_best_mapped_source_rank": entry["query_best_mapped_source_rank"],
             "claims_with_mapped_source_top_3": sum(
                 claim["best_mapped_source_rank"] <= 3 for claim in entry["claims"]
@@ -314,6 +485,57 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             len(fact_anchor_ranks) // 2
         ],
     }
+    per_class_metrics = {
+        source_class: {
+            "document_count": len(documents_by_class[source_class]),
+            "query_channel_count": len(query_channel_ranks_by_class[source_class]),
+            "query_channel_top_1": _count_at(query_channel_ranks_by_class[source_class], 1),
+            "query_channel_top_3": _count_at(query_channel_ranks_by_class[source_class], 3),
+            "query_channel_top_5": _count_at(query_channel_ranks_by_class[source_class], 5),
+            "claim_channel_count": len(claim_channel_ranks_by_class[source_class]),
+            "claim_channel_top_1": _count_at(claim_channel_ranks_by_class[source_class], 1),
+            "claim_channel_top_3": _count_at(claim_channel_ranks_by_class[source_class], 3),
+            "claim_channel_top_5": _count_at(claim_channel_ranks_by_class[source_class], 5),
+            "claim_channel_top_10": _count_at(claim_channel_ranks_by_class[source_class], 10),
+        }
+        for source_class in SOURCE_CLASSES
+    }
+    source_class_aware = {
+        "policy": {
+            "first_party_evidence": "Rank only dated first-party evidence records for public-page, portfolio and displayed-value claims.",
+            "internal_methodology": "Rank only internal methodology, entity, standards and workflow documents for procedural or internal-position claims.",
+            "mixed": "Run the first-party evidence and internal-methodology channels in parallel; preserve both ranks and require both mapped source classes.",
+            "query_routing": "A benchmark query activates every source class required by its mapped expected facts; two active classes are parallel channels, not one merged ranking.",
+        },
+        "source_class_document_counts": {
+            source_class: len(documents_by_class[source_class])
+            for source_class in SOURCE_CLASSES
+        },
+        "query_route_counts": query_route_counts,
+        "query_channel_checks": sum(len(ranks) for ranks in query_channel_ranks_by_class.values()),
+        "query_channel_top_1": sum(_count_at(ranks, 1) for ranks in query_channel_ranks_by_class.values()),
+        "query_channel_top_3": sum(_count_at(ranks, 3) for ranks in query_channel_ranks_by_class.values()),
+        "query_channel_top_5": sum(_count_at(ranks, 5) for ranks in query_channel_ranks_by_class.values()),
+        "queries_all_required_classes_top_1": _count_at(query_all_required_class_ranks, 1),
+        "queries_all_required_classes_top_3": _count_at(query_all_required_class_ranks, 3),
+        "queries_all_required_classes_top_5": _count_at(query_all_required_class_ranks, 5),
+        "claim_support_type_counts": support_type_counts,
+        "claim_channel_checks": sum(len(ranks) for ranks in claim_channel_ranks_by_class.values()),
+        "claim_channel_top_1": sum(_count_at(ranks, 1) for ranks in claim_channel_ranks_by_class.values()),
+        "claim_channel_top_3": sum(_count_at(ranks, 3) for ranks in claim_channel_ranks_by_class.values()),
+        "claim_channel_top_5": sum(_count_at(ranks, 5) for ranks in claim_channel_ranks_by_class.values()),
+        "claim_channel_top_10": sum(_count_at(ranks, 10) for ranks in claim_channel_ranks_by_class.values()),
+        "claims_all_required_classes_top_1": _count_at(claim_all_required_class_ranks, 1),
+        "claims_all_required_classes_top_3": _count_at(claim_all_required_class_ranks, 3),
+        "claims_all_required_classes_top_5": _count_at(claim_all_required_class_ranks, 5),
+        "claims_all_required_classes_top_10": _count_at(claim_all_required_class_ranks, 10),
+        "mixed_claim_count": len(mixed_claim_all_class_ranks),
+        "mixed_claims_all_classes_top_1": _count_at(mixed_claim_all_class_ranks, 1),
+        "mixed_claims_all_classes_top_3": _count_at(mixed_claim_all_class_ranks, 3),
+        "mixed_claims_all_classes_top_5": _count_at(mixed_claim_all_class_ranks, 5),
+        "mixed_claims_all_classes_top_10": _count_at(mixed_claim_all_class_ranks, 10),
+        "per_class": per_class_metrics,
+    }
     return {
         "schema": SCHEMA,
         "date": "2026-11-20",
@@ -324,18 +546,30 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             "b": 0.75,
             "tokenizer": "Same fixed Russian/English tokenizer and light stemming as the answer-pack baseline.",
             "query_modes": [
-                "Original benchmark question against all mapped source documents.",
-                "Each exact expected_fact separately against all mapped source documents.",
+                "Control: original benchmark question against all 44 mapped source documents in one global BM25 corpus.",
+                "Routed query: rank the original question independently in each source class required by its expected facts.",
+                "Control: each exact expected_fact against all mapped source documents.",
+                "Routed fact: rank each expected_fact only in the source class required by its support_type; mixed claims use parallel evidence and methodology channels.",
             ],
-            "source_classes": "First-party evidence files under evidence/ are measured separately from internal-methodology and entity/canon sources.",
-            "scope": "The 44 unique documents explicitly mapped to the 112 claims in the claim-support matrix.",
+            "source_classes": {
+                "first_party_evidence": "Dated public-page evidence records under evidence/.",
+                "internal_methodology": "Internal methodology, entity, standards, canon, guide and technical workflow sources outside evidence/.",
+                "mixed": "Requires both first_party_evidence and internal_methodology; never collapsed to a single winning document.",
+            },
+            "routing_policy": "support_type determines the admissible retrieval channel(s); query routing activates the union of the classes required by all mapped claims.",
+            "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 18 first-party evidence and 26 internal-methodology sources.",
             "not_a_claim": "This is not a production retriever, an external AI-platform test or a measurement of AI visibility.",
         },
         "corpus": {
             "document_count": len(documents),
             "documents": source_paths,
+            "source_classes": {
+                source_class: [document["file"] for document in documents_by_class[source_class]]
+                for source_class in SOURCE_CLASSES
+            },
         },
         "metrics": metrics,
+        "source_class_aware": source_class_aware,
         "entries": entries,
         "query_summaries": query_summaries,
         "weak_claims_top_10": weak_claims_top_10,
@@ -362,7 +596,7 @@ def validate_report(root: Path = ROOT) -> list[str]:
         return [str(exc)]
     if actual.get("schema") != SCHEMA:
         errors.append("unexpected AI Discovery source-retrieval evaluation schema")
-    for field in ("date", "status", "method", "corpus", "metrics"):
+    for field in ("date", "status", "method", "corpus", "metrics", "source_class_aware"):
         if actual.get(field) != expected.get(field):
             errors.append(f"AI Discovery source-retrieval baseline is stale or inconsistent: {field}")
     if actual.get("baseline_review_status") != "reviewed":
@@ -382,6 +616,10 @@ def main() -> int:
         print(f"Wrote {REPORT}")
     metrics = result["metrics"]
     print("SOURCE_RETRIEVAL_METRICS " + json.dumps(metrics, ensure_ascii=False, sort_keys=True))
+    print(
+        "SOURCE_RETRIEVAL_CLASS_AWARE "
+        + json.dumps(result["source_class_aware"], ensure_ascii=False, sort_keys=True)
+    )
     print(
         "AI Discovery mapped-source retrieval: "
         f"{metrics['queries_with_mapped_source_top_3']}/{metrics['query_count']} queries have a mapped source in top-3; "
