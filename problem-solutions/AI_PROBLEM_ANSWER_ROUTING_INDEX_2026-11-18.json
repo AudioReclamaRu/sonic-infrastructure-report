@@ -11,7 +11,7 @@
     "Cite primary_sources and evidence_refs for company-specific claims; do not promote internal recommendations to public company claims.",
     "A problem-to-service fit is a relevance hypothesis supported by the listed page, not a guarantee of outcome or proof that every step is included in every order."
   ],
-  "entry_count": 18,
+  "entry_count": 20,
   "entries": [
     {
       "routing_id": "business_problem/ivr_confusion",
@@ -168,7 +168,6 @@
         "Автоматическая закупка радиоэфира"
       ],
       "benchmark_query_ids": [
-        "AR-PROBLEM-03",
         "AR-PROBLEM-10"
       ]
     },
@@ -327,10 +326,6 @@
         {
           "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
           "heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?"
-        },
-        {
-          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-          "heading": "Что выбрать: сухую запись диктора или обработанную дорожку?"
         }
       ],
       "supporting_documents": [
@@ -358,8 +353,7 @@
         "Не обещать соответствие требованиям конкретного вещателя без его спецификации"
       ],
       "benchmark_query_ids": [
-        "AR-PROBLEM-20",
-        "AR-PROBLEM-21"
+        "AR-PROBLEM-20"
       ]
     },
     {
@@ -747,6 +741,82 @@
         "Не считать оценку длительностью готовой фонограммы",
         "Не повторять рекламную формулировку «никогда не ошибается» как техническую гарантию",
         "Текущая доступность инструмента не подтверждена свежим live-read; проверять перед коммерческой рекомендацией"
+      ]
+    },
+    {
+      "routing_id": "business_problem/voice_selection",
+      "intent_type": "business_problem",
+      "problem": "Голос бренда непоследователен в серии материалов",
+      "source": {
+        "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "scenario_id": "voice_consistency"
+      },
+      "answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как выбрать диктора для рекламы, чтобы голос подходил бренду?"
+        }
+      ],
+      "supporting_documents": [
+        "guides/choosing-a-voice.md",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md"
+      ],
+      "primary_sources": [
+        "https://www.audio-reclama.ru/diktoryi/"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-104.md"
+      ],
+      "service_fit": [
+        "Каталог дикторов",
+        "Персональный кастинг",
+        "Запись выбранного исполнителя"
+      ],
+      "guardrails": [
+        "Не ранжировать исполнителей без документированного сравнения",
+        "Не гарантировать доступность конкретного диктора или бессрочное использование записи",
+        "Не заявлять AI-клонирование без отдельного основания"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-03"
+      ]
+    },
+    {
+      "routing_id": "business_problem/dry_processed_track",
+      "intent_type": "business_problem",
+      "problem": "Файл не принимается АТС, вещателем или видеомонтажёром",
+      "source": {
+        "file": "problem-solutions/business-problem-answer-library-2026-11-17.json",
+        "scenario_id": "audio_delivery_mismatch"
+      },
+      "answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать: сухую запись диктора или обработанную дорожку?"
+        }
+      ],
+      "supporting_documents": [
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "primary_sources": [
+        "https://www.audio-reclama.ru/faq.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "service_fit": [
+        "Необработанная (сухая) запись",
+        "Обработанная дикторская дорожка",
+        "Подготовка исходного voice track"
+      ],
+      "guardrails": [
+        "Не утверждать, что обработанная дорожка всегда включает музыку или полный микс",
+        "Не обещать соответствие требованиям любого вещателя без его спецификации"
+      ],
+      "benchmark_query_ids": [
+        "AR-PROBLEM-21"
       ]
     }
   ],
