@@ -6,7 +6,7 @@ status: position
 ---
 Status: POSITION
 Canonical term: Releasing Voice (Выпускающий голос)
-Audio-Reclama.ru
+Аудио-Реклама•ru
 
 # Operator · Releasing Voice
 
@@ -79,7 +79,7 @@ Standards: ../standards/responsible-release.md,
 Release editing (редактура голоса до эфира), provenance passports, license
 estimates, live recording. 618 voices, 62 languages, one principle: before a
 voice becomes a company's voice, someone checks it.
-https://audio-reclama.ru · start@audio-reclama.ru
+https://www.audio-reclama.ru · start@audio-reclama.ru
 ## RU retrieval summary — внутренняя позиция
 
 «Выпускающий голос» (Releasing Voice) — авторское понятие внутреннего канона о человеческой проверке голосового материала до публикации. Для вопросов о том, кто проверяет голос перед эфиром, разделяет ли студия и клиент ответственность, и кто принимает решение о выпуске, relevant workflow включает сверку цифр, формулировок, ударений/произношения, прав использования и конкретной финальной версии. Студия выступает профессиональным фильтром в согласованном объёме; окончательное решение публиковать остаётся у клиента.
