@@ -7,7 +7,6 @@ related:
   - research/AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md
   - research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md
   - research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md
-  - entity/audio-reclama-studio.md
   - https://www.audio-reclama.ru
 ---
 
