@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.audio-reclama.ru/schemas/ai-discoverability-work-item.schema.json",
+  "title": "AI Discoverability Work Item",
+  "description": "Decision-oriented Megabrain work item. Measurement work must state which decision it can change and when execution stops.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "work_type", "priority", "status", "market", "language", "service", "target_surface", "obstacle", "evidence_refs", "decision_to_unlock", "hypothesis", "success_criteria", "autonomy_class", "requires_new_measurement", "measurement_guard", "expected_effort", "risk", "blocker", "unblock_condition", "validation_refs"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^AI-DISC-[0-9]{4}-[0-9]{3}$"},
+    "title": {"type": "string", "minLength": 8},
+    "work_type": {"enum": ["add_knowledge_asset", "improve_existing_asset", "fix_entity_routing", "add_proof_or_relationship", "build_validation", "measurement_integration", "analytics_integration", "verify_source", "retire_duplicate"]},
+    "priority": {"enum": ["P0", "P1", "P2", "P3"]},
+    "status": {"enum": ["candidate", "ready_for_agent_triage", "in_progress", "blocked_until_region_attestation_available", "blocked_until_authorized_machine_access", "blocked_by_owner_approval", "validated", "done", "deferred", "rejected"]},
+    "market": {"type": "string", "minLength": 2},
+    "language": {"type": "string", "minLength": 2},
+    "service": {"type": "string", "minLength": 2},
+    "target_surface": {"type": "string", "minLength": 2},
+    "obstacle": {"type": "string", "minLength": 20},
+    "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 3}, "minItems": 1, "uniqueItems": true},
+    "decision_to_unlock": {"type": "string", "minLength": 20},
+    "hypothesis": {"type": "string", "minLength": 20},
+    "success_criteria": {"type": "array", "items": {"type": "string", "minLength": 8}, "minItems": 2},
+    "autonomy_class": {"enum": ["repository_only", "authorized_external_read_only", "requires_owner_approval"]},
+    "requires_new_measurement": {"type": "boolean"},
+    "measurement_guard": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "additionalProperties": false, "required": ["decision_to_unlock", "minimum_sufficient_sample", "stop_rule", "cost_or_access_class"], "properties": {
+          "decision_to_unlock": {"type": "string", "minLength": 15},
+          "minimum_sufficient_sample": {"type": "string", "minLength": 10},
+          "stop_rule": {"type": "string", "minLength": 15},
+          "cost_or_access_class": {"type": "string", "minLength": 5}
+        }}
+      ]
+    },
+    "expected_effort": {"enum": ["low", "medium", "high"]},
+    "risk": {"enum": ["low", "medium", "high"]},
+    "blocker": {"type": ["string", "null"]},
+    "unblock_condition": {"type": ["string", "null"]},
+    "validation_refs": {"type": "array", "items": {"type": "string", "minLength": 3}, "uniqueItems": true}
+  },
+  "allOf": [
+    {"if": {"properties": {"requires_new_measurement": {"const": true}}}, "then": {"properties": {"measurement_guard": {"type": "object"}}}},
+    {"if": {"properties": {"status": {"const": "done"}}}, "then": {"properties": {"validation_refs": {"minItems": 1}}}},
+    {"if": {"properties": {"status": {"enum": ["blocked_until_region_attestation_available", "blocked_until_authorized_machine_access", "blocked_by_owner_approval"]}}}, "then": {"required": ["blocker", "unblock_condition"]}}
+  ]
+}
