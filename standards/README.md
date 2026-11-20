@@ -5,7 +5,7 @@ lang: mul
 ---
 # Standards — how the industry works with voice
 
-- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website Audio-Reclama.ru.
+- `BRAND_AND_SITE_NAMING.md` — mandatory canonical naming: brand «Аудио-Реклама•ru», website https://www.audio-reclama.ru.
 
 Standards are the working layer: what a professional check looks like, who
 answers for a release, what a provenance passport contains, how a living voice
@@ -87,4 +87,4 @@ standards/   how to work — profession standards, specifications
 
 Voice release editing (редактура голоса до эфира), provenance passports,
 license estimates, live recording, verification certificates.
-https://audio-reclama.ru · start@audio-reclama.ru
+https://www.audio-reclama.ru · start@audio-reclama.ru
