@@ -7,6 +7,7 @@ brand: "Аудио-Реклама•ru"
 related:
   - ../tools/ai_discovery_source_retrieval.py
   - ../problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json
+  - ../problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json
   - ../research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md
 ---
 
@@ -23,15 +24,15 @@ related:
 
 ## Классы и routing policy
 
-| Класс | Допустимый корпус | Claims |
+| Класс | Допустимый корпус | Expected facts |
 |---|---|---:|
-| first_party_evidence | Датированные first-party snapshots в evidence/ | 44 |
+| first_party_evidence | Датированные first-party snapshots в evidence/ | 45 |
 | internal_methodology | Внутренние методики, entity/canon/standards/guides и технические документы | 52 |
-| mixed | Оба класса одновременно; каждый канал должен найти свой mapped source | 16 |
+| mixed | Оба класса одновременно; каждый канал должен найти свой mapped source | 15 |
 
-Корпус: **18 first-party evidence документов + 26 internal-methodology документов**.
+Корпус: **19 first-party evidence документов + 25 internal-methodology документов**.
 
-Уровень маршрутизации 46 исходных вопросов: 12 evidence-only, 7 internal-methodology-only, 27 parallel (оба класса).
+Уровень маршрутизации 46 исходных вопросов: 12 evidence-only, 6 internal-methodology-only, 28 parallel (оба класса).
 
 Для mixed нельзя считать внутренний методический документ заменой публичному evidence или наоборот. Первый подтверждает только то, что действительно зафиксировано в публичном snapshot; второй — внутреннюю методику, позицию или рабочий подход.
 
@@ -39,44 +40,56 @@ related:
 
 | Метрика | Результат |
 |---|---:|
-| Запросы с mapped source в top-3 | **31/46** |
-| Запросы с mapped source в top-5 | **40/46** |
-| Expected facts с mapped source в top-1 | **65/112** |
-| Expected facts с mapped source в top-3 | **99/112** |
-| Expected facts с mapped source в top-5 | **112/112** |
-| Expected facts с mapped source в top-10 | **112/112** |
-| Все facts одного запроса имеют mapped source в top-3 | **35/46** |
-| Все facts одного запроса имеют mapped source в top-5 | **46/46** |
-| Pure first-party claims: snapshot в top-5 | **44/44** |
-| Mixed claims: first-party evidence в top-5 (отдельный evidence-rank) | **10/16** |
+| Запросы с mapped source в top-1 | **15/46** |
+| Запросы с mapped source в top-3 | **29/46** |
+| Запросы с mapped source в top-5 | **36/46** |
+| Expected facts с mapped source в top-1 | **63/112** |
+| Expected facts с mapped source в top-3 | **97/112** |
+| Expected facts с mapped source в top-5 | **107/112** |
+| Expected facts с mapped source в top-10 | **110/112** |
+| Все facts одного запроса имеют mapped source в top-3 | **33/46** |
+| Все facts одного запроса имеют mapped source в top-5 | **41/46** |
+| Все facts одного запроса имеют mapped source в top-10 | **44/46** |
+| Pure first-party claims: evidence в top-5 | **44/45** |
+| Pure first-party claims: evidence в top-10 | **45/45** |
+| Mixed claims: first-party evidence в top-5 (отдельный evidence-rank) | **10/15** |
 
-Global control остаётся полезной диагностикой широкой лексической близости, но сам по себе не гарантирует, что найден документ правильного epistemic/source class.
+Global control остаётся диагностикой широкой лексической близости. Высокий ранг в общем корпусе сам по себе не гарантирует, что найден документ правильного epistemic/source class.
 
 ## Reviewed baseline: source-class-aware retrieval
 
 | Метрика | Результат |
 |---|---:|
-| Query-channel checks | **73** |
-| Требуемый класс найден в top-3 на уровне channel | **62/73** |
-| Все нужные классы запроса найдены в top-3 | **35/46** |
-| Все нужные классы запроса найдены в top-5 | **41/46** |
-| Claim-channel checks | **128** (16 mixed дают по два канала) |
-| Требуемый класс найден в top-3 на уровне channel | **116/128** |
-| Требуемый класс найден в top-5 на уровне channel | **128/128** |
-| Все требуемые классы каждого fact найдены в top-3 | **100/112** |
-| Все требуемые классы каждого fact найдены в top-5 | **112/112** |
-| Все требуемые классы каждого fact найдены в top-10 | **112/112** |
-| Mixed claims: оба класса в top-3 | **14/16** |
-| Mixed claims: оба класса в top-5 | **16/16** |
-| Mixed claims: оба класса в top-10 | **16/16** |
+| Query-channel checks | **74** |
+| Требуемый класс найден в top-1 на уровне channel | **32/74** |
+| Требуемый класс найден в top-3 на уровне channel | **59/74** |
+| Требуемый класс найден в top-5 на уровне channel | **65/74** |
+| Все нужные классы запроса найдены в top-1 | **12/46** |
+| Все нужные классы запроса найдены в top-3 | **31/46** |
+| Все нужные классы запроса найдены в top-5 | **37/46** |
+| Claim-channel checks | **127** (15 mixed дают по два канала) |
+| Требуемый класс найден в top-1 на уровне claim-channel | **86/127** |
+| Требуемый класс найден в top-3 на уровне claim-channel | **114/127** |
+| Требуемый класс найден в top-5 на уровне claim-channel | **123/127** |
+| Требуемый класс найден в top-10 на уровне claim-channel | **124/127** |
+| Все обязательные классы каждого fact найдены в top-1 | **73/112** |
+| Все обязательные классы каждого fact найдены в top-3 | **99/112** |
+| Все обязательные классы каждого fact найдены в top-5 | **108/112** |
+| Все обязательные классы каждого fact найдены в top-10 | **109/112** |
+| Mixed claims: оба класса в top-1 | **4/15** |
+| Mixed claims: оба класса в top-3 | **12/15** |
+| Mixed claims: оба класса в top-5 | **14/15** |
+| Mixed claims: оба класса в top-10 | **14/15** |
 
-По отдельным каналам: first-party evidence — **60/60** evidence-bearing claim channels в top-5; internal methodology — **68/68** internal claim channels в top-5.
+По отдельным каналам:
+- first-party evidence: 60 claim-channel checks; mapped evidence в top-5 для **60/60**;
+- internal methodology: 67 claim-channel checks; mapped methodology в top-5 для **63/67**, в top-10 для **64/67**.
 
 Source-class-aware top-5 не трактуется как универсальное улучшение над global control: у него другая и более строгая цель — каждый компонент утверждения должен находиться в разрешённом классе. Поэтому важен не один лучший документ, а покрытие обоих каналов для mixed.
 
 ## Точечные retrieval-remediation изменения
 
-После первого class-aware прогона выявлены лексические расхождения между формулировками expected facts и текстами mapped sources. Добавлены строго разграниченные summary/metadata blocks, без изменения исходной фактической части:
+В корпус добавлены строго разграниченные summary/metadata blocks, не выдаваемые за первичные утверждения страницы:
 
 - guides/choosing-a-voice.md: русская навигационная карта выбора голоса по задаче и контексту; подчёркивает отсутствие универсального рейтинга и то, что каталог не гарантирует доступность конкретного диктора.
 - canon/releasing-voice.md и corpus/kto-vypuskaet-golos.md: русские summaries о проверке перед эфиром, разграничении профессионального контроля студии и окончательного решения клиента.
@@ -85,37 +98,25 @@ Source-class-aware top-5 не трактуется как универсальн
 - evidence/E-2026-103.md: явно помеченный navigation metadata block о URL страницы, отделённый от публичной цитаты/наблюдений.
 - evidence/E-2026-108.md: поисковые метаданные контактного блока главной страницы, отдельно от зафиксированных значений и даты снимка.
 
-Эти дополнения подняли общий BM25 coverage и закрыли ранее слабые fact-level маршруты. В новом reviewed snapshot **нет expected fact, у которого mapped source в обязательном классе находится ниже top-5**. При этом 11 исходных широких формулировок запросов всё ещё имеют один channel ниже top-3; это query-level lexical mismatch, не отсутствие источника по отдельным expected facts.
+Ни один retrieval summary не считается новым first-party claim и не повышает внутреннюю методику до публичного evidence.
 
 ## Остаточные пересечения и их интерпретация
 
-- **AR-BRAND-01 — идентичность студии.** Внутренний entity record и evidence snapshots решают разные задачи: identity record агрегирует описание, а dated snapshots подтверждают конкретные публичные страницы.
-- **AR-BRAND-02 / AR-PROBLEM-16 — агрегированный перечень услуг.** Внутренняя Service Evidence Map помогает собрать страницы в перечень; сами first-party snapshots подтверждают отдельные направления.
-- **AR-BRAND-03 — канонический URL.** Внутренний naming standard задаёт правило бренда/адреса; E-2026-103 фиксирует контекст чтения главной страницы по каноническому адресу. Navigation metadata прямо помечены как metadata, а не текст страницы.
-- **AR-PROBLEM-20 — формат файла IVR.** Внутренний technical brief и IVR standard объясняют технические ограничения; публичный FAQ snapshot подтверждает только опубликованные инструкции/примеры.
-- **AR-PROBLEM-22 — бриф джингла.** Внутренняя библиотека закономерно поднимается выше публичной страницы для комплексного творческого брифа; публичная страница подтверждает заявленный формат/услугу, но не весь рабочий процесс.
+- **AR-BRAND-01 / AR-BRAND-02 — identity и перечень услуг.** Entity record агрегирует описание; отдельные snapshots подтверждают каждую публичную страницу/услугу. Для видеопродакшна нужен E-107, для озвучивания видео — E-096, для озвучивания презентаций — E-112.
+- **AR-BRAND-03 — канонический URL.** Naming standard задаёт внутреннее правило бренда/адреса; E-2026-103 и E-2026-108 фиксируют официальный homepage в dated snapshots. Navigation metadata не цитируются как текст самой страницы.
+- **AR-BRAND-05/06/07 — счётчики каталога.** E-097 и E-109 фиксируют 622 и 620 одновременно на главной, 62 языка и 309 в русском фильтре; E-104 объясняет область каталожной страницы. Старое значение 308 с неустановленной свежестью не объясняет расхождение и остаётся отдельным наблюдением.
+- **AR-PROBLEM-20 — формат файла IVR.** E-094 подтверждает опубликованные FAQ-примеры; technical brief и IVR standard объясняют ограничения, но не заменяют спецификацию принимающей АТС.
+- **AR-PROBLEM-22 / AR-PROBLEM-23 — творческий бриф и права.** Внутренняя библиотека даёт рекомендации; E-100/E-105 подтверждают публичное наличие направлений, но не полный рабочий процесс и не объём прав на стороннее произведение.
 
 Эти случаи не следует устранять механическим удалением внутренних документов, повышением их до first-party evidence или расширением claims сверх источников.
 
 ## Claim-source review и baseline integrity
 
-Начальная ручная проверка исправила 21 слишком широкую/неподходящую привязку. Три последующие классификационные/источниковые корректировки довели cumulative corrected_claim_mappings до **24**. Retrieval summaries и навигационные metadata не посчитаны как новые first-party claims и не увеличивают число семантических исправлений.
+Начальная ручная проверка исправила 21 слишком широкую/неподходящую привязку. Последующие классификационные/источниковые корректировки довели cumulative corrected_claim_mappings до **24**. В отдельных sentence units source class может отличаться от класса целого expected fact; для них нужен отдельный unit-level disposition, а не дублирование обоих каналов на каждой части предложения.
 
-Reviewed snapshot: problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json (schema v2). Он фиксирует полный список и классы 44 mapped docs, параметры global BM25 control, class-aware routing policy, query-level и claim-level ranks/candidates и раздельные метрики для first-party evidence, internal methodology и mixed claims.
+Reviewed snapshot: problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json (schema v2). Он фиксирует список и классы 44 mapped docs, параметры global BM25 control, class-aware routing policy, query-level и claim-level ranks/candidates и раздельные метрики.
 
 Валидатор пересчитывает baseline из текущих source texts, benchmark и claim-support matrix; любой drift corpus/method/metrics требует явного human-reviewed snapshot update. Тесты включают corpus и claim counts, классовые разбиения, parallel retrieval для mixed, fail-closed при несовпадении support_type и mapped source classes, а также stale/unreviewed snapshot rejection.
-
-## CI status и проверяемость
-
-Source-class-aware code, retrieval summaries and final audit passed both CI workflows in the completed validation sequence:
-- repo-integrity: SUCCESS, run 44731060149 (commit 52dbe94e617a729733db9a953b89256274665f76);
-- AI response and document naming gate: SUCCESS, run 44731060170;
-- AI visibility evidence regression tests: **15 passed**;
-- problem-solution knowledge regression tests: **43 passed**;
-- AI Discovery asset integrity: PASS;
-- Problem-solution knowledge integrity: PASS, включая проверку reviewed source-retrieval baseline и class-aware метрик.
-
-Итоговый problem-solution validator подтвердил: 31/46 исходных запросов имеют mapped source в global top-3; 99/112 expected facts — в global top-3 и 112/112 — в global top-10; first-party evidence top-5 для всех evidence-bearing claims — 54/60; pure evidence — 44/44; class-aware facts с каждым обязательным классом в top-3 — 100/112; оба класса для mixed claims в top-3 — 14/16. Class-aware top-5 — 112/112, включая оба канала для mixed 16/16.
 
 ## Ограничения и что не измерялось
 
