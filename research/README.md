@@ -107,3 +107,5 @@ related:
 - ../problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json — BM25 lexical baseline для 46 запросов по 44 секциям answer packs: 45 canonical top-1, 46 canonical top-3, 46 acceptable top-1 с одной явно объяснённой альтернативой. Это не тест внешних AI-платформ.
 
 - AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md — локальный BM25-baseline по 44 разделам пяти answer packs для всех 46 запросов: 45 canonical top-1, 46 canonical top-3; подробно описано единственное допустимое пересечение и ограничения метода.
+
+- ../tools/ai_discovery_source_retrieval.py — BM25-проверка маршрута от benchmark query/expected fact к одному из 44 реально привязанных источников; первичные evidence и внутренние методики считаются раздельно.
