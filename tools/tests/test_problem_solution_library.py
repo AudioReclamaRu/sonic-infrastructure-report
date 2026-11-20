@@ -459,12 +459,12 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.assertEqual(metrics["retrieval_required_unit_count"], 275)
         self.assertEqual(metrics["no_retrieval_unit_count"], 10)
         self.assertEqual(metrics["units_with_expected_fact_candidate"], 236)
-        self.assertEqual(metrics["candidate_units_all_required_classes_top_3"], 165)
-        self.assertEqual(metrics["candidate_units_all_required_classes_top_5"], 189)
-        self.assertEqual(metrics["candidate_units_all_required_classes_top_10"], 211)
-        self.assertEqual(metrics["low_rank_unit_count"], 52)
-        self.assertEqual(metrics["retrieval_units_with_mapped_sources_top_5"], 223)
-        self.assertEqual(len(report["units"]), 52)
+        self.assertEqual(metrics["candidate_units_all_required_classes_top_3"], 176)
+        self.assertEqual(metrics["candidate_units_all_required_classes_top_5"], 201)
+        self.assertEqual(metrics["candidate_units_all_required_classes_top_10"], 221)
+        self.assertEqual(metrics["low_rank_unit_count"], 38)
+        self.assertEqual(metrics["retrieval_units_with_mapped_sources_top_5"], 237)
+        self.assertEqual(len(report["units"]), 38)
         for unit in report["units"]:
             compact = {
                 "id": unit["unit_id"],
