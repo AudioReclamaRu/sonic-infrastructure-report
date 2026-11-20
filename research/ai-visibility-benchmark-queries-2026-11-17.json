@@ -59,7 +59,7 @@
       "region": "RU",
       "query": "Какие услуги оказывает «Аудио-Реклама•ru»?",
       "expected_facts": [
-        "Публичные страницы описывают производство рекламных аудиороликов, голосовые приветствия и IVR, озвучивание видео, перевод/локализацию, аудиокниги, джинглы/корпоративные песни и каталог дикторов.",
+        "Публичные страницы описывают производство рекламных аудиороликов, голосовые приветствия и IVR, озвучивание видео и презентаций, перевод/локализацию, аудиокниги, джинглы/корпоративные песни и каталог дикторов.",
         "Разделять аудиопроизводство, видеопроизводство и вспомогательные этапы."
       ],
       "preferred_sources": [
@@ -87,7 +87,8 @@
         "https://www.audio-reclama.ru/audio/zvuk-media.html",
         "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
         "https://www.audio-reclama.ru/perevodchiki/",
-        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html"
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+        "evidence/E-2026-112.md"
       ],
       "must_not_claim": [
         "Не утверждать, что каждый проект включает все этапы."
