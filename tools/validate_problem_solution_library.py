@@ -25,6 +25,8 @@ ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
 ENTITY_ROUTING_SCHEMA = "studio/ai-entity-answer-routing/1"
 CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
 CLAIM_SUPPORT_SCHEMA = "studio/ai-discovery-claim-support-matrix/1"
+ANSWER_COVERAGE_AUDIT = "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json"
+ANSWER_COVERAGE_SCHEMA = "studio/ai-discovery-answer-coverage-audit/1"
 ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
 CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
@@ -900,6 +902,153 @@ def validate(root: Path = ROOT) -> list[str]:
     if not isinstance(semantic_review.get("corrected_claim_mappings"), int) or semantic_review.get("corrected_claim_mappings") < 0:
         errors.append("semantic review corrected_claim_mappings must be a non-negative integer")
 
+    # Check that every benchmark answer actually covers its expected facts and
+    # that each forbidden-claim rule was reviewed against a resolvable answer section.
+    answer_audit = _read_json(root / ANSWER_COVERAGE_AUDIT, errors, ANSWER_COVERAGE_AUDIT) or {}
+    if answer_audit.get("schema") != ANSWER_COVERAGE_SCHEMA:
+        errors.append("unexpected AI discovery answer-coverage audit schema")
+    answer_entries = answer_audit.get("entries", [])
+    if not isinstance(answer_entries, list):
+        errors.append("AI discovery answer-coverage audit entries must be a list")
+        answer_entries = []
+    if answer_audit.get("query_count") != len(queries):
+        errors.append("answer-coverage audit query_count must equal benchmark query count")
+    if len(answer_entries) != len(queries):
+        errors.append("answer-coverage audit must contain exactly one entry per benchmark query")
+
+    answer_benchmark_ids: list[str] = []
+    expected_fact_total = 0
+    must_not_claim_total = 0
+    reviewed_answer_files: set[str] = set()
+    answer_text_cache: dict[str, str] = {}
+    for entry_index, entry in enumerate(answer_entries, start=1):
+        if not isinstance(entry, dict):
+            errors.append(f"answer-coverage entry {entry_index} must be an object")
+            continue
+        query_id = entry.get("benchmark_query_id")
+        if not isinstance(query_id, str) or not query_id:
+            errors.append(f"answer-coverage entry {entry_index} missing benchmark_query_id")
+            continue
+        answer_benchmark_ids.append(query_id)
+        query = benchmark_by_id.get(query_id)
+        if query is None:
+            errors.append(f"answer-coverage audit references unknown benchmark query: {query_id}")
+            continue
+        if entry.get("query_cluster") != query.get("cluster"):
+            errors.append(f"answer-coverage cluster does not match benchmark query {query_id}")
+        if entry.get("query") != query.get("query"):
+            errors.append(f"answer-coverage query text does not match benchmark query {query_id}")
+        if entry.get("overall_status") != "pass":
+            errors.append(f"answer-coverage entry {query_id} is not marked pass")
+        if entry.get("review_method") != "manual_answer_text_review":
+            errors.append(f"answer-coverage entry {query_id} must record manual_answer_text_review")
+        if entry.get("reviewed_at") != "2026-11-20":
+            errors.append(f"answer-coverage entry {query_id} has an unexpected review date")
+
+        answer_refs = entry.get("answer_references")
+        if not isinstance(answer_refs, list) or not answer_refs:
+            errors.append(f"answer-coverage entry {query_id} must have answer_references")
+            answer_refs = []
+        for ref_index, answer_ref in enumerate(answer_refs, start=1):
+            label = f"answer-coverage {query_id} answer_references[{ref_index}]"
+            if not isinstance(answer_ref, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            answer_file = answer_ref.get("file")
+            heading = answer_ref.get("heading")
+            if not safe_relative_path(answer_file) or not (root / answer_file).is_file():
+                errors.append(f"{label} does not resolve to a safe repository file: {answer_file}")
+                continue
+            reviewed_answer_files.add(answer_file)
+            if answer_file not in answer_text_cache:
+                try:
+                    answer_text_cache[answer_file] = (root / answer_file).read_text(encoding="utf-8")
+                except OSError as exc:
+                    errors.append(f"{label} cannot read {answer_file}: {exc}")
+                    answer_text_cache[answer_file] = ""
+            if not isinstance(heading, str) or not heading or heading not in answer_text_cache[answer_file]:
+                errors.append(f"{label} heading does not resolve in {answer_file}: {heading!r}")
+
+        fact_checks = entry.get("expected_fact_checks")
+        expected_facts = query.get("expected_facts", [])
+        if not isinstance(fact_checks, list):
+            errors.append(f"answer-coverage expected_fact_checks must be a list for {query_id}")
+            fact_checks = []
+        expected_fact_total += len(fact_checks)
+        if len(fact_checks) != len(expected_facts):
+            errors.append(
+                f"answer-coverage must check every expected fact for {query_id}: "
+                f"expected {len(expected_facts)}, found {len(fact_checks)}"
+            )
+        seen_fact_indices: set[int] = set()
+        for fact_index, fact_check in enumerate(fact_checks, start=1):
+            label = f"answer-coverage {query_id} fact {fact_index}"
+            if not isinstance(fact_check, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            index_value = fact_check.get("fact_index")
+            if not isinstance(index_value, int) or index_value < 1 or index_value > len(expected_facts):
+                errors.append(f"{label} has invalid fact_index: {index_value!r}")
+            elif index_value in seen_fact_indices:
+                errors.append(f"{label} duplicates fact_index {index_value}")
+            else:
+                seen_fact_indices.add(index_value)
+                if fact_check.get("expected_fact") != expected_facts[index_value - 1]:
+                    errors.append(f"{label} text does not match benchmark expected_facts[{index_value}]")
+            if fact_check.get("status") != "covered":
+                errors.append(f"{label} must be marked covered")
+            review_note = fact_check.get("review_note")
+            if not isinstance(review_note, str) or not review_note.strip():
+                errors.append(f"{label} must have a non-empty review_note")
+
+        forbidden_checks = entry.get("must_not_claim_checks")
+        forbidden_claims = query.get("must_not_claim", [])
+        if not isinstance(forbidden_checks, list):
+            errors.append(f"answer-coverage must_not_claim_checks must be a list for {query_id}")
+            forbidden_checks = []
+        must_not_claim_total += len(forbidden_checks)
+        if len(forbidden_checks) != len(forbidden_claims):
+            errors.append(
+                f"answer-coverage must check every must_not_claim for {query_id}: "
+                f"expected {len(forbidden_claims)}, found {len(forbidden_checks)}"
+            )
+        seen_forbidden_indices: set[int] = set()
+        for forbidden_index, forbidden_check in enumerate(forbidden_checks, start=1):
+            label = f"answer-coverage {query_id} must_not_claim {forbidden_index}"
+            if not isinstance(forbidden_check, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            index_value = forbidden_check.get("claim_index")
+            if not isinstance(index_value, int) or index_value < 1 or index_value > len(forbidden_claims):
+                errors.append(f"{label} has invalid claim_index: {index_value!r}")
+            elif index_value in seen_forbidden_indices:
+                errors.append(f"{label} duplicates claim_index {index_value}")
+            else:
+                seen_forbidden_indices.add(index_value)
+                if forbidden_check.get("must_not_claim") != forbidden_claims[index_value - 1]:
+                    errors.append(f"{label} text does not match benchmark must_not_claim[{index_value}]")
+            if forbidden_check.get("status") not in {"not_asserted", "explicitly_guarded"}:
+                errors.append(f"{label} must be marked not_asserted or explicitly_guarded")
+            review_note = forbidden_check.get("review_note")
+            if not isinstance(review_note, str) or not review_note.strip():
+                errors.append(f"{label} must have a non-empty review_note")
+        note = entry.get("review_note")
+        if not isinstance(note, str) or not note.strip():
+            errors.append(f"answer-coverage entry {query_id} must have a non-empty review_note")
+
+    if len(answer_benchmark_ids) != len(set(answer_benchmark_ids)):
+        errors.append("answer-coverage benchmark_query_ids must be unique")
+    for query_id in sorted(set(benchmark_by_id) - set(answer_benchmark_ids)):
+        errors.append(f"benchmark query has no answer-coverage review: {query_id}")
+    for query_id in sorted(set(answer_benchmark_ids) - set(benchmark_by_id)):
+        errors.append(f"answer-coverage references unknown benchmark query: {query_id}")
+    expected_fact_count = sum(len(q.get("expected_facts", [])) for q in queries)
+    must_not_claim_count = sum(len(q.get("must_not_claim", [])) for q in queries)
+    if answer_audit.get("expected_fact_count") != expected_fact_count or expected_fact_total != expected_fact_count:
+        errors.append("answer-coverage expected_fact_count must match all benchmark expected_facts")
+    if answer_audit.get("must_not_claim_count") != must_not_claim_count or must_not_claim_total != must_not_claim_count:
+        errors.append("answer-coverage must_not_claim_count must match all benchmark must_not_claims")
+
     return errors
 
 
@@ -943,7 +1092,10 @@ def main() -> int:
         f"{mapped_trust_count} linked trust prompts, "
         f"{len(benchmark['queries'])} unrun benchmark queries, "
         f"{claim_matrix['claim_count']} semantically reviewed fact-level source mappings across "
-        f"{semantic_review['unique_source_documents']} source documents; "
+        f"{semantic_review['unique_source_documents']} source documents, "
+        f"{answer_audit['query_count']} reviewed answer texts, "
+        f"{answer_audit['expected_fact_count']} expected facts covered and "
+        f"{answer_audit['must_not_claim_count']} forbidden-claim checks; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     return 0
