@@ -6,7 +6,10 @@ import re
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
-from tools.ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
+try:
+    from tools.ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
+except ImportError:
+    from ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
 
 ROOT = Path(__file__).resolve().parents[1]
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
