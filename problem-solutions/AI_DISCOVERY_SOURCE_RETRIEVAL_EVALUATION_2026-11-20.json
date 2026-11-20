@@ -156,7 +156,7 @@
   },
   "source_class_aware": {
     "claim_channel_checks": 127,
-    "claim_channel_top_1": 87,
+    "claim_channel_top_1": 86,
     "claim_channel_top_10": 124,
     "claim_channel_top_3": 114,
     "claim_channel_top_5": 123,
@@ -189,7 +189,7 @@
       },
       "internal_methodology": {
         "claim_channel_count": 67,
-        "claim_channel_top_1": 32,
+        "claim_channel_top_1": 31,
         "claim_channel_top_10": 64,
         "claim_channel_top_3": 54,
         "claim_channel_top_5": 63,
