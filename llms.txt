@@ -124,3 +124,10 @@
 - Динамические числа и контактные данные сопровождаются датой; конфликтующие счётчики не нормализованы. Все семь запросов остаются not_run.
 
 - [Карта доказательной поддержки каждого ожидаемого факта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json): 112 связей между каждым expected fact из 46 RU benchmark-запросов и конкретными evidence/внутренними методическими источниками; различает публичное evidence и внутреннюю профессиональную позицию. Внутренняя evaluator-side карта, не предварительно загружается в тестируемые AI-платформы.
+
+- [IVR-портфолио — evidence E-2026-106](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-106.md): снимок 20.11.2026 с примерами голосовых приветствий и IVR-меню; подтверждает только названия карточек на странице, не endorsements или результаты.
+- [Видеопродакшн — evidence E-2026-107](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-107.md): отдельная страница видеопроизводства; снимок с crawl за пять дней до получения.
+- [Контакты главной — evidence E-2026-108](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-108.md): телефон, email и часы в снимке 20.11.2026; доступность и офис не гарантируются.
+- [Счётчики каталога — evidence E-2026-109](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-109.md): повторное наблюдение 622/620/62 и русского фильтра 309; это отображение страниц, не аудит базы профилей.
+- [Права на аудиоролики — evidence E-2026-110](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-110.md): снимок 20.11.2026 с формулировкой о передаче авторских и исключительных прав; конкретный объём определяется договором.
+- [Хрономер — evidence E-2026-111](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-111.md): индексированный снимок с crawl за две недели до получения; не доказательство текущей доступности или точности инструмента.
