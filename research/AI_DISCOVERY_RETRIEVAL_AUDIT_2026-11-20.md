@@ -61,6 +61,10 @@ related:
 
 В problem-solution validator добавлена сверка сохранённого отчёта с результатом текущего запуска. CI отклоняет устаревший snapshot, если изменились заголовки, тексты, корпуса, ranking или метрики. Регрессионные тесты проверяют русскую нормализацию, top ranking по запросу и обнаружение устаревшего отчёта.
 
+## Автоматическая проверка
+
+Validator повторно рассчитывает BM25 ranking и сравнивает его с сохранённым JSON snapshot. Последний CI: repo-integrity и naming gate — SUCCESS; AI visibility evidence tests — 15 passed; problem-solution tests — 36 passed. Problem-solution validator подтвердил 46/46 acceptable top-1 и 46/46 canonical top-3.
+
 ## Границы интерпретации
 
 - Кандидатный корпус ограничен 44 разделами пяти answer packs. Первичные страницы сайта, evidence-файлы и остальная база знаний не ранжировались.
