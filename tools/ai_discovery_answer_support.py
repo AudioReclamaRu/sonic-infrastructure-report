@@ -27,7 +27,7 @@ SUPPORT_TYPE_CLASSES = {
     "mixed": ("first_party_evidence", "internal_methodology"),
 }
 CITATION_LINE = re.compile(
-    r"^(?:(?:answer\s+)?sources?|источник(?:и)?(?:\s+знаний)?|evidence)\s*:",
+    r"^(?:(?:answer\s+)?sources?|источник(?:и)?(?:\s+знаний)?|evidence|публичн\w*\s+(?:страниц\w*|услуг\w*|портфолио))\s*:",
     re.IGNORECASE,
 )
 SENTENCE_BOUNDARY = re.compile(r"(?<=[.!?;])\s+(?=[А-Яа-яЁёA-Za-z«„0-9])")
