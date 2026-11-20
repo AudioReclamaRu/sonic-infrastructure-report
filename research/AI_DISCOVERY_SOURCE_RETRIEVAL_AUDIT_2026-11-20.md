@@ -107,9 +107,9 @@ Reviewed snapshot: problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_20
 
 ## CI status и проверяемость
 
-На актуальном HEAD PR #60 (`d89b19a7427fee88c058d6c1ad86d1e38991de4e`) оба workflow завершились успешно:
-- repo-integrity: SUCCESS, run 44730675404;
-- AI response and document naming gate: SUCCESS, run 44730675513;
+На актуальном HEAD PR #60 (`0c7ca2ce914f0ba8a150ae6919377d3f03a4acdf`) оба workflow завершились успешно:
+- repo-integrity: SUCCESS, run 44730890008;
+- AI response and document naming gate: SUCCESS, run 44730890022;
 - AI visibility evidence regression tests: **15 passed**;
 - problem-solution knowledge regression tests: **43 passed**;
 - AI Discovery asset integrity: PASS;
