@@ -79,6 +79,8 @@ def main() -> int:
         "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
         "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
         "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -153,6 +155,7 @@ def main() -> int:
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "evidence/E-2026-094.md", "evidence/E-2026-095.md", "evidence/E-2026-096.md", "evidence/E-2026-097.md",
         "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
     ]
     for rel in source_paths:
         source_text = (ROOT / rel).read_text(encoding="utf-8")
@@ -242,6 +245,8 @@ def main() -> int:
         "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
         "evidence/E-2026-094.md", "evidence/E-2026-095.md", "evidence/E-2026-096.md", "evidence/E-2026-097.md",
         "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
     ]
     for rel in llms_required_paths:
         if rel not in llms:
