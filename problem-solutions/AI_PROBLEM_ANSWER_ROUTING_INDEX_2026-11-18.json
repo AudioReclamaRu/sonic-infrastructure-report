@@ -821,7 +821,7 @@
     {
       "routing_id": "voice_asset_operation/pronunciation_verification",
       "intent_type": "voice_asset_operation",
-      "problem": "Нужно проверить произношение имён, чисел и названий в готовом голосовом сообщении до выпуска",
+      "problem": "Перед выпуском нужно проверить, что финальный голосовой файл точен по содержанию и подходит принимающей системе.",
       "source": {
         "file": "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
         "scenario_id": "final_audio_release_qc"
