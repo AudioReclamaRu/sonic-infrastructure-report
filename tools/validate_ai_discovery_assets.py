@@ -98,6 +98,8 @@ def main() -> int:
         "tools/ai_discovery_source_retrieval.py",
         "research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md",
         "research/AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md",
+        "research/AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md",
+        "research/AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md",
         "research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md",
     ]
     for rel in required:
