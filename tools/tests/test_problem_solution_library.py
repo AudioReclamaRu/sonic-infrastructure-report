@@ -9,6 +9,8 @@ REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
 PROBLEMS = "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
 ROUTING = "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
+SERVICE_PACK = "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md"
+SERVICE_ROUTES = "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
 
 
 def fixture_root():
@@ -45,6 +47,16 @@ def fixture_root():
             ],
             "must_not_claim": ["PBX setup"],
             "status": "not_run",
+        }, {
+            "id": "AR-SERVICE-01",
+            "cluster": "commercial_service",
+            "language": "ru",
+            "region": "RU",
+            "query": "Где заказать запись рекламного аудиоролика и что может входить в производство?",
+            "expected_facts": ["radio spot production"],
+            "preferred_sources": ["https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"],
+            "must_not_claim": ["fixed price"],
+            "status": "not_run",
         }],
     }
     (root / LIBRARY).write_text(json.dumps(library), encoding="utf-8")
@@ -58,6 +70,15 @@ def fixture_root():
         encoding="utf-8",
     )
     (root / "guides/ivr.md").write_text("# IVR guide\n", encoding="utf-8")
+    (root / SERVICE_PACK).write_text(
+        "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?\n",
+        encoding="utf-8",
+    )
+    (root / "evidence/E-TEST-002.md").write_text(
+        "---\nid: E-TEST-002\ntype: evidence\nstatus: verified\n---\n"
+        "**Primary source:** https://www.audio-reclama.ru/audio/radioroliki-zakaz.html\n",
+        encoding="utf-8",
+    )
     (root / "evidence/E-TEST-001.md").write_text(
         "---\nid: E-TEST-001\ntype: evidence\nstatus: verified\n---\n"
         "**Primary source:** https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
@@ -87,6 +108,22 @@ def fixture_root():
         }],
     }
     (root / ROUTING).write_text(json.dumps(routing), encoding="utf-8")
+    service_routes = {
+        "schema": "studio/ai-commercial-service-routing/1",
+        "entry_count": 1,
+        "entries": [{
+            "routing_id": "commercial_service/audio_advertising",
+            "benchmark_query_id": "AR-SERVICE-01",
+            "question": "Где заказать запись рекламного аудиоролика и что может входить в производство?",
+            "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+            "primary_sources": ["https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"],
+            "evidence_refs": ["evidence/E-TEST-002.md"],
+            "supporting_documents": [],
+            "service_fit": ["radio ad production"],
+            "guardrails": ["no fixed price"]
+        }]
+    }
+    (root / SERVICE_ROUTES).write_text(json.dumps(service_routes), encoding="utf-8")
     return temporary, root
 
 
@@ -137,6 +174,30 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(LIBRARY, library)
         errors = validate(self.root)
         self.assertTrue(any("evidence reference does not resolve" in e for e in errors))
+
+    def test_commercial_service_query_must_have_a_route(self):
+        routes = self.read_json(SERVICE_ROUTES)
+        routes["entries"] = []
+        routes["entry_count"] = 0
+        self.write_json(SERVICE_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("commercial-service benchmark query is not mapped" in e for e in errors))
+
+    def test_commercial_service_primary_source_must_be_bound_to_evidence(self):
+        routes = self.read_json(SERVICE_ROUTES)
+        routes["entries"][0]["primary_sources"] = [
+            "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+        ]
+        self.write_json(SERVICE_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("is not covered by any linked evidence_refs record" in e for e in errors))
+
+    def test_commercial_service_heading_must_resolve(self):
+        routes = self.read_json(SERVICE_ROUTES)
+        routes["entries"][0]["answer_heading"] = "## Missing commercial answer"
+        self.write_json(SERVICE_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("answer heading does not resolve" in e for e in errors))
 
     def test_executed_benchmark_status_fails(self):
         benchmark = self.read_json(BENCHMARK)

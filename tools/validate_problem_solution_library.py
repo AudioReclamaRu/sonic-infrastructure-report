@@ -14,6 +14,9 @@ PROBLEM_LIBRARY = "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-
 BENCHMARK = "research/ai-visibility-benchmark-queries-2026-11-17.json"
 VOICE_ASSET_LIBRARY = "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
 ROUTING_INDEX = "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json"
+COMMERCIAL_SERVICE_ROUTES = "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
+COMMERCIAL_SERVICE_PACK = "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md"
+COMMERCIAL_SERVICE_SCHEMA = "studio/ai-commercial-service-routing/1"
 ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
 CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
@@ -341,6 +344,124 @@ def validate(root: Path = ROOT) -> list[str]:
     mapped_problem_queries = set(routing_benchmark_query_ids) & problem_query_ids
     for query_id in sorted(problem_query_ids - mapped_problem_queries):
         errors.append(f"problem-solving benchmark query is not mapped to an answer route: {query_id}")
+
+    # Every commercial-service benchmark query needs a concise, source-grounded
+    # answer route. This is separate from problem-solving routes: buyers asking
+    # "does the studio provide X?" need direct service answers as well as playbooks.
+    service_routes = _read_json(root / COMMERCIAL_SERVICE_ROUTES, errors, COMMERCIAL_SERVICE_ROUTES) or {}
+    if service_routes.get("schema") != COMMERCIAL_SERVICE_SCHEMA:
+        errors.append("unexpected commercial service routing schema")
+    service_entries = service_routes.get("entries", [])
+    if not isinstance(service_entries, list) or not service_entries:
+        errors.append("commercial service routing index must contain entries")
+        service_entries = []
+    if service_routes.get("entry_count") != len(service_entries):
+        errors.append("commercial service routing entry_count must equal actual entries")
+    try:
+        service_pack = (root / COMMERCIAL_SERVICE_PACK).read_text(encoding="utf-8")
+    except OSError as exc:
+        errors.append(f"cannot read commercial service answer pack: {exc}")
+        service_pack = ""
+
+    service_query_map = {
+        query.get("id"): query for query in queries
+        if isinstance(query, dict) and query.get("cluster") == "commercial_service"
+        and isinstance(query.get("id"), str)
+    }
+    routed_service_ids: list[str] = []
+    service_route_ids: list[str] = []
+    for route_index, route in enumerate(service_entries, start=1):
+        if not isinstance(route, dict):
+            errors.append(f"commercial service route {route_index} must be an object")
+            continue
+        for field in ("routing_id", "benchmark_query_id", "question", "answer_heading",
+                      "primary_sources", "evidence_refs", "service_fit", "guardrails"):
+            if field not in route or route[field] in (None, "", []):
+                errors.append(f"commercial service route {route_index} missing required field: {field}")
+        routing_id = route.get("routing_id")
+        if isinstance(routing_id, str) and routing_id:
+            service_route_ids.append(routing_id)
+        query_id = route.get("benchmark_query_id")
+        if isinstance(query_id, str) and query_id:
+            routed_service_ids.append(query_id)
+        query = service_query_map.get(query_id)
+        if query is None:
+            errors.append(
+                f"commercial service route {routing_id or route_index} references unknown or non-commercial benchmark query: {query_id}"
+            )
+        elif query.get("query") != route.get("question"):
+            errors.append(
+                f"commercial service route {routing_id or route_index} question does not match benchmark query {query_id}"
+            )
+        heading = route.get("answer_heading")
+        if not isinstance(heading, str) or not heading or heading not in service_pack:
+            errors.append(f"commercial service route {routing_id or route_index} answer heading does not resolve: {heading!r}")
+
+        evidence_sources: set[str] = set()
+        evidence_refs = route.get("evidence_refs")
+        if not isinstance(evidence_refs, list) or not evidence_refs:
+            errors.append(f"commercial service route {routing_id or route_index} must have evidence_refs")
+            evidence_refs = []
+        for evidence_index, evidence_ref in enumerate(evidence_refs, start=1):
+            label = f"commercial service route {routing_id or route_index} evidence_refs[{evidence_index}]"
+            if not safe_relative_path(evidence_ref) or not evidence_ref.startswith("evidence/"):
+                errors.append(f"{label} must be a safe path inside evidence/")
+            elif not (root / evidence_ref).is_file():
+                errors.append(f"{label} does not resolve: {evidence_ref}")
+            else:
+                try:
+                    evidence_text = (root / evidence_ref).read_text(encoding="utf-8")
+                except OSError as exc:
+                    errors.append(f"{label} cannot be read: {exc}")
+                    continue
+                evidence_lines = [
+                    line for line in evidence_text.splitlines()
+                    if line.startswith("**Primary source:**")
+                ]
+                if not evidence_lines:
+                    errors.append(f"{label} has no explicit Primary source URL")
+                for evidence_line in evidence_lines:
+                    source_url = _clean_url(evidence_line.split("**Primary source:**", 1)[1].strip())
+                    _validate_url(source_url, f"{label} Primary source", errors)
+                    evidence_sources.add(source_url)
+
+        primary_sources = route.get("primary_sources")
+        if not isinstance(primary_sources, list) or not primary_sources:
+            errors.append(f"commercial service route {routing_id or route_index} must have primary_sources")
+            primary_sources = []
+        for source_index, source_url in enumerate(primary_sources, start=1):
+            label = f"commercial service route {routing_id or route_index} primary_sources[{source_index}]"
+            if not isinstance(source_url, str) or not source_url.startswith("https://"):
+                errors.append(f"{label} must be an absolute HTTPS URL")
+                continue
+            _validate_url(source_url, label, errors)
+            if _clean_url(source_url) not in evidence_sources:
+                errors.append(f"{label} is not covered by any linked evidence_refs record: {source_url}")
+
+        supporting_documents = route.get("supporting_documents", [])
+        if not isinstance(supporting_documents, list):
+            errors.append(f"commercial service route {routing_id or route_index} supporting_documents must be a list")
+        else:
+            for support_index, support_path in enumerate(supporting_documents, start=1):
+                label = f"commercial service route {routing_id or route_index} supporting_documents[{support_index}]"
+                if not safe_relative_path(support_path) or not (root / support_path).is_file():
+                    errors.append(f"{label} does not resolve to a safe repository file: {support_path}")
+
+        for field in ("service_fit", "guardrails"):
+            values = route.get(field)
+            if not isinstance(values, list) or not values:
+                errors.append(f"commercial service route {routing_id or route_index} {field} must be a non-empty list")
+
+    if len(service_route_ids) != len(set(service_route_ids)):
+        errors.append("commercial service routing IDs must be unique")
+    if len(routed_service_ids) != len(set(routed_service_ids)):
+        errors.append("commercial service benchmark query IDs must be unique")
+    missing_service_routes = sorted(set(service_query_map) - set(routed_service_ids))
+    for query_id in missing_service_routes:
+        errors.append(f"commercial-service benchmark query is not mapped to an answer route: {query_id}")
+    unknown_service_routes = sorted(set(routed_service_ids) - set(service_query_map))
+    for query_id in unknown_service_routes:
+        errors.append(f"commercial service routing index references unknown query: {query_id}")
 
     return errors
 
