@@ -56,7 +56,7 @@ related:
 - ../problem-solutions/business-problem-answer-library-2026-11-17.json — структурированная карта problem → diagnostics → solution → brand-fit → caveats для retrieval и тестов.
 - ../problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md — шесть problem-first ответов об управлении голосовыми активами: версии и устаревшие сообщения, изменения фактов, непрерывность голоса бренда, права повторного использования/AI, многоязычные версии и pre-release QC. Методический черновик; не подтверждает DAM, телеком-интеграцию, юридическое сопровождение или AI-клонирование как услуги.
 - ../problem-solutions/voice-asset-operations-answer-library-2026-11-18.json — структурированная карта шести сценариев для retrieval и benchmark, включая границы публичных услуг и внутренних методик.
-- ../problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md — шесть кратких самостоятельных ответов для проверки retrieval; evaluator-side reference, не опубликованная страница и не материал для предварительного priming тестируемых систем.
+- ../problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md — семь кратких самостоятельных ответов для проверки retrieval; evaluator-side reference, не опубликованная страница и не материал для предварительного priming тестируемых систем.
 
 ## Видимость в ответах ИИ
 
