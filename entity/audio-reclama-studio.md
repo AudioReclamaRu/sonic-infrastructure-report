@@ -40,6 +40,7 @@ related:
 | Запись аудиокниг | https://www.audio-reclama.ru/audio/sozdanie-audioknig.html |
 | Джинглы и звуковые решения | https://www.audio-reclama.ru/audio/zvuk-media.html |
 | Корпоративные песни и гимны | https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html |
+| Озвучивание презентаций | https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html |
 | Озвучивание презентаций, Audio+, сценарии, переводчики, дикторы и видеопродакшн | Представлены в навигации официального сайта; детали сверять на соответствующей актуальной странице |
 
 ## Публичные проектные упоминания
