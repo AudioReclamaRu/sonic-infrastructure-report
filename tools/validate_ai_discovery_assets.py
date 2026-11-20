@@ -63,6 +63,7 @@ def main() -> int:
         "research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json",
         "tools/ai_visibility_evidence.py",
         "tools/ai_discovery_retrieval.py",
+        "tools/ai_discovery_source_retrieval.py",
         "tools/tests/test_ai_visibility_evidence.py",
         "research/README.md",
         "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
