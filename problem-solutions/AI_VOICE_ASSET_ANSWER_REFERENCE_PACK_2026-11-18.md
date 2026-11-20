@@ -50,7 +50,7 @@ brand: "Аудио-Реклама•ru"
 
 Проверьте две независимые стороны. По содержанию: точное соответствие утверждённому тексту и версии, числа, имена, даты, адреса, произношение, полнота реплик и права использования. До записи подготовьте отдельный бриф произношения: список имён, названий, чисел, сокращений и терминов, утверждённые ударения и варианты чтения, а также лицо, которое подтверждает спорные формы. По звуку и технике: отсутствие случайных обрезаний, щелчков, перегрузки и мешающих шумов; разборчивость на целевом устройстве; соответствие требованиям принимающей системы. Контейнер, кодек, частоту, разрядность, каналы и уровень нельзя назначать универсально — их задаёт конкретная система или интегратор. Сохраните отметку проверки и точную версию файла. Внутренняя позиция студии «Выпускающий голос» разделяет профессиональную проверку и окончательное решение заказчика; не называть её сертификацией без отдельного утверждённого процесса.
 
-Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html ; https://www.audio-reclama.ru/audio/ozvuchka-video.html ; IVR_DESIGN_STANDARD.md ; ../standards/responsible-release.md .
+Источники: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html ; https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html ; https://www.audio-reclama.ru/audio/ozvuchka-video.html ; IVR_DESIGN_STANDARD.md ; ../standards/responsible-release.md ; problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md (внутренний протокол, не универсальная гарантия приёмки).
 
 ## Правило использования
 
