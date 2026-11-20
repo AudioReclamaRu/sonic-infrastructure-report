@@ -126,6 +126,12 @@ def fixture_root():
         "**Primary source:** https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html\n",
         encoding="utf-8",
     )
+    (root / "evidence/E-TEST-003.md").write_text(
+        "---\nid: E-TEST-003\ntype: evidence\nstatus: verified\n---\n"
+        "**Primary source:** https://www.audio-reclama.ru/\n"
+        "The official first-party homepage identifies the studio identity as audio production.\n",
+        encoding="utf-8",
+    )
     routing = {
         "schema": "audio-reclama/problem-answer-routing/1",
         "version": "1.0.0",
@@ -399,6 +405,41 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.assertTrue(units["Q-01"]["all_required_classes_top_3"])
         self.assertTrue(units["AR-SERVICE-01"]["all_required_classes_top_3"])
         self.assertEqual(result["status"], "candidate_retrieval_only")
+
+    def test_answer_support_mixed_claim_requires_both_source_classes(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        brand_entry = next(
+            entry for entry in matrix["entries"]
+            if entry["benchmark_query_id"] == "AR-BRAND-01"
+        )
+        claim = brand_entry["claims"][0]
+        claim["support_type"] = "mixed"
+        claim["source_refs"] = [
+            "evidence/E-TEST-003.md",
+            "entity/audio-reclama-studio.md",
+        ]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        unit = next(
+            item for item in evaluate_answer_support(self.root)["units"]
+            if item["benchmark_query_id"] == "AR-BRAND-01"
+        )
+        self.assertEqual(
+            unit["required_source_classes"],
+            ["first_party_evidence", "internal_methodology"],
+        )
+        self.assertTrue(unit["all_required_classes_top_3"])
+        self.assertTrue(unit["source_candidates_by_class"]["first_party_evidence"][0]["is_mapped_source"])
+        self.assertTrue(unit["source_candidates_by_class"]["internal_methodology"][0]["is_mapped_source"])
+
+    def test_answer_support_rejects_mismatched_claim_source_classes(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        matrix["entries"][0]["claims"][0]["source_refs"] = [
+            "guides/ivr.md",
+            "evidence/E-TEST-001.md",
+        ]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+        with self.assertRaisesRegex(ValueError, "source classes"):
+            evaluate_answer_support(self.root)
 
     def test_answer_support_marks_unmatched_sentence_for_human_review(self):
         answer_file = self.root / SERVICE_PACK
