@@ -1,8 +1,8 @@
 {
   "schema": "studio/ai-discovery-answer-unit-dispositions/1",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "updated": "2026-11-20",
-  "purpose": "Human-reviewed unit-level dispositions override whole-expected-fact source-class inheritance for the exact answer fragments listed here. This is a provenance and routing overlay, not automatic semantic entailment.",
+  "purpose": "Human-reviewed unit-level dispositions for every extracted answer unit. Each exact unit_id and answer_text has its own category, required source classes and source refs; this is a source-routing overlay, not automatic semantic proof.",
   "taxonomy": [
     "first_party_fact",
     "internal_recommendation",
@@ -15,7 +15,7 @@
   "benchmark_file": "research/ai-visibility-benchmark-queries-2026-11-17.json",
   "claim_support_matrix_file": "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json",
   "answer_coverage_file": "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json",
-  "disposition_count": 79,
+  "disposition_count": 285,
   "dispositioned_priority_units": 79,
   "policy": {
     "first_party_fact": "Requires only first_party_evidence sources.",
@@ -27,6 +27,62 @@
     "discourse_only": "No independent factual assertion; no source retrieval is required."
   },
   "dispositions": [
+    {
+      "unit_id": "AR-BRAND-01::01",
+      "category": "mixed_assertion",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "entity/audio-reclama-studio.md",
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-103.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Сводная идентификация студии сопоставлена с entity record и публичными страницами услуг; это не независимый аудит юрлица."
+    },
+    {
+      "unit_id": "AR-BRAND-01::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/BRAND_AND_SITE_NAMING.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя норма различения бренда, официального домена, аккаунта и каталога."
+    },
+    {
+      "unit_id": "AR-BRAND-01::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-102.md",
+        "evidence/E-2026-105.md",
+        "evidence/E-2026-107.md",
+        "evidence/E-2026-112.md",
+        "evidence/E-2026-104.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Сводное перечисление публично опубликованных направлений. Каждая позиция ограничена соответствующей страницей и её датированным snapshot."
+    },
     {
       "unit_id": "AR-BRAND-01::04",
       "benchmark_query_id": "AR-BRAND-01",
@@ -63,6 +119,27 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Разграничение видеопроизводства и озвучивания готового видео; источники подтверждают разные услуги, не автоматический состав проекта."
+    },
+    {
+      "unit_id": "AR-BRAND-01::06",
+      "benchmark_query_id": "AR-BRAND-01",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+      "answer_text": "Это описание опубликованных направлений, а не утверждение, что каждая услуга входит в любой проект.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-107.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичное перечисление направлений не означает, что все работы входят в каждый проект."
     },
     {
       "unit_id": "AR-BRAND-01::07",
@@ -102,6 +179,29 @@
       "review_note": "Официальный homepage и canonical URL в снимках сайта."
     },
     {
+      "unit_id": "AR-BRAND-02::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-102.md",
+        "evidence/E-2026-105.md",
+        "evidence/E-2026-107.md",
+        "evidence/E-2026-112.md",
+        "evidence/E-2026-104.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Сводное перечисление публично опубликованных направлений. Каждая позиция ограничена соответствующей страницей и её датированным snapshot."
+    },
+    {
       "unit_id": "AR-BRAND-02::02",
       "benchmark_query_id": "AR-BRAND-02",
       "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
@@ -118,6 +218,36 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Отдельная страница видеопродакшна; не смешивать с озвучиванием готового видео."
+    },
+    {
+      "unit_id": "AR-BRAND-02::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-107.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы подтверждают два различных направления: озвучивание готового видео и видеопроизводство."
+    },
+    {
+      "unit_id": "AR-BRAND-02::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рекомендация описывает возможные производственные компоненты проектного брифа, а не гарантированный пакет каждой услуги."
     },
     {
       "unit_id": "AR-BRAND-02::05",
@@ -139,6 +269,37 @@
       "review_note": "Состав конкретного проекта является предметом брифа и договорного согласования."
     },
     {
+      "unit_id": "AR-BRAND-02::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-107.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Наличие опубликованного направления не доказывает включение всех этапов в конкретный заказ."
+    },
+    {
+      "unit_id": "AR-BRAND-03::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Официальный URL зафиксирован на снимке главной страницы."
+    },
+    {
       "unit_id": "AR-BRAND-03::02",
       "benchmark_query_id": "AR-BRAND-03",
       "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
@@ -158,6 +319,50 @@
       "review_note": "Не подменять официальный домен репозиторием или технической площадкой."
     },
     {
+      "unit_id": "AR-BRAND-03::03",
+      "category": "mixed_assertion",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md",
+        "standards/BRAND_AND_SITE_NAMING.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичный URL и внутренняя политика канонического написания бренда рассматриваются как разные, но связанные поля."
+    },
+    {
+      "unit_id": "AR-BRAND-04::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Опубликованный маршрут связи и контактные данные зафиксированы на снимке главной страницы 20.11.2026; это не гарантия доступности каналов."
+    },
+    {
+      "unit_id": "AR-BRAND-04::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Опубликованный маршрут связи и контактные данные зафиксированы на снимке главной страницы 20.11.2026; это не гарантия доступности каналов."
+    },
+    {
       "unit_id": "AR-BRAND-04::03",
       "benchmark_query_id": "AR-BRAND-04",
       "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
@@ -174,6 +379,129 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Формулировка о бесплатном звонке по России зафиксирована в homepage snapshot; не гарантия доступности линии."
+    },
+    {
+      "unit_id": "AR-BRAND-04::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Снимок подтверждает отображение контактов, но не реальную доступность телефона/почты и не SLA ответа."
+    },
+    {
+      "unit_id": "AR-BRAND-04::05",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Контакты динамические; перед срочным или юридически значимым применением нужен повторный просмотр текущей страницы."
+    },
+    {
+      "unit_id": "AR-BRAND-04::06",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-108.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отсутствие адреса в одном homepage snapshot не доказывает наличие или отсутствие офиса либо физического присутствия."
+    },
+    {
+      "unit_id": "AR-BRAND-05::01",
+      "benchmark_query_id": "AR-BRAND-05",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Не называть одно точное текущее общее число без свежей сверки и определения метрики.",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
+    },
+    {
+      "unit_id": "AR-BRAND-05::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отображённые значения главной и каталога зафиксированы в snapshot; 309 относится к русскому фильтру, 622/620 — два разных общих блока."
+    },
+    {
+      "unit_id": "AR-BRAND-05::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отображённые значения главной и каталога зафиксированы в snapshot; 309 относится к русскому фильтру, 622/620 — два разных общих блока."
+    },
+    {
+      "unit_id": "AR-BRAND-05::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отображённые значения главной и каталога зафиксированы в snapshot; 309 относится к русскому фильтру, 622/620 — два разных общих блока."
+    },
+    {
+      "unit_id": "AR-BRAND-05::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Область подсчёта 309 ограничена выбранной русской категорией каталога."
     },
     {
       "unit_id": "AR-BRAND-05::06",
@@ -230,29 +558,105 @@
       "review_note": "Исторические значения и более раннее 308 сохраняются как отдельные observations с указанной неопределённостью свежести; причина расхождений не выдумывается."
     },
     {
-      "unit_id": "AR-SERVICE-02::03",
-      "benchmark_query_id": "AR-SERVICE-02",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
-      "answer_text": "Там же заявлены запись на 62 языках и подготовка аудиофайлов для последующей загрузки в систему.",
+      "unit_id": "AR-BRAND-05::09",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Безопасная формулировка сохраняет дату и конфликт общих счётчиков; единая общая метрика не нормализована."
+    },
+    {
+      "unit_id": "AR-BRAND-06::01",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-095.md"
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Публичная страница голосовых приветствий/IVR описывает запись на языках и подготовку файлов."
+      "review_note": "В двух homepage snapshots отображаются одновременно 622 и 620; значение относится к наблюдаемому интерфейсу, не к базе каталога."
     },
     {
-      "unit_id": "AR-SERVICE-02::05",
-      "benchmark_query_id": "AR-SERVICE-02",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
-      "answer_text": "Администрирование АТС, настройка маршрутов, SIP/CRM-интеграция и управление очередями не следуют из этого описания и согласуются с владельцем телефонной системы отдельно.",
+      "unit_id": "AR-BRAND-06::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Страница каталога в snapshot показывает 309 при русском фильтре."
+    },
+    {
+      "unit_id": "AR-BRAND-06::03",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Число 309 относится к отдельной русской категории, а не всему каталогу."
+    },
+    {
+      "unit_id": "AR-BRAND-06::04",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Ранее извлечённое 308 имеет неустановленную свежесть и хранится как отдельное наблюдение."
+    },
+    {
+      "unit_id": "AR-BRAND-06::05",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_text": "Общее число не нормализовано;",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
+    },
+    {
+      "unit_id": "AR-BRAND-06::06",
       "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
@@ -260,124 +664,312 @@
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-095.md",
-        "problem-solutions/IVR_DESIGN_STANDARD.md"
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Описание записи и подготовки файлов не является доказательством настройки АТС, маршрутов, SIP/CRM или очередей."
+      "review_note": "Нельзя усреднять конфликтующие интерфейсные счётчики или объявлять один общим без определения метрики владельцем."
     },
     {
-      "unit_id": "AR-SERVICE-03::03",
-      "benchmark_query_id": "AR-SERVICE-03",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
-      "answer_text": "Выбор зависит от того, нужна ли отдельная голосовая дорожка, дубляж с адаптацией реплик или более широкое звуковое оформление.",
-      "category": "first_party_fact",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-096.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Публично описанные варианты озвучивания и звукового решения для видео."
-    },
-    {
-      "unit_id": "AR-SERVICE-03::04",
-      "benchmark_query_id": "AR-SERVICE-03",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
-      "answer_text": "Подготовка всего видеоряда, монтаж изображения и публикация ролика не должны подразумеваться автоматически.",
-      "category": "scope_limitation",
+      "unit_id": "AR-BRAND-06::07",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Не называть одно точное текущее общее число без свежей сверки и определения метрики.",
+      "category": "source_freshness_note",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence",
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-096.md",
-        "evidence/E-2026-107.md",
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Различать аудио для существующего видео и самостоятельный видеопродакшн; не подразумевать все этапы автоматически."
+      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
     },
     {
-      "unit_id": "AR-SERVICE-04::04",
-      "benchmark_query_id": "AR-SERVICE-04",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
-      "answer_text": "отдельно описаны образовательные и другие речевые форматы.",
+      "unit_id": "AR-BRAND-06::08",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-102.md"
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Публичное описание аудиокниг и речевых форматов."
+      "review_note": "В двух homepage snapshots отображаются одновременно 622 и 620; значение относится к наблюдаемому интерфейсу, не к базе каталога."
     },
     {
-      "unit_id": "AR-SERVICE-05::01",
-      "benchmark_query_id": "AR-SERVICE-05",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
-      "answer_text": "На официальном сайте представлены два отдельных направления.",
+      "unit_id": "AR-BRAND-06::09",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-100.md",
-        "evidence/E-2026-105.md"
+        "evidence/E-2026-109.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "На сайте описаны отдельные направления джинглов/звукового оформления и корпоративных песен."
+      "review_note": "Публичный snapshot фиксирует отображение 62 языков и русского фильтра 309."
     },
     {
-      "unit_id": "AR-SERVICE-06::02",
-      "benchmark_query_id": "AR-SERVICE-06",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
-      "answer_text": "В FAQ «Аудио-Реклама•ru» описан процесс: заказчик передаёт сценарий, подробное техническое задание и имя выбранного диктора или дикторов;",
+      "unit_id": "AR-BRAND-06::10",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-094.md"
+        "evidence/E-2026-109.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "FAQ фиксирует процесс: сценарий, подробное ТЗ и выбор диктора; стоимость и сроки сообщает продюсер после уточнений."
+      "review_note": "Страница каталога в snapshot показывает 309 при русском фильтре."
     },
     {
-      "unit_id": "AR-SERVICE-06::03",
-      "benchmark_query_id": "AR-SERVICE-06",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
-      "answer_text": "после уточнений продюсер сообщает стоимость и сроки.",
+      "unit_id": "AR-BRAND-06::11",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Число 309 относится к отдельной русской категории, а не всему каталогу."
+    },
+    {
+      "unit_id": "AR-BRAND-06::12",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "Отдельный более ранний извлечённый снимок с неясной датой обхода показывал 308;",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Исторические значения и более раннее 308 сохраняются как отдельные observations с указанной неопределённостью свежести; причина расхождений не выдумывается."
+    },
+    {
+      "unit_id": "AR-BRAND-06::13",
+      "benchmark_query_id": "AR-BRAND-06",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_text": "это наблюдение сохраняется отдельно, но не позволяет объяснить расхождение.",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Исторические значения и более раннее 308 сохраняются как отдельные observations с указанной неопределённостью свежести; причина расхождений не выдумывается."
+    },
+    {
+      "unit_id": "AR-BRAND-06::14",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Исторические 619/621/794 относятся к разным снимкам и не являются текущим значением."
+    },
+    {
+      "unit_id": "AR-BRAND-06::15",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Итоговая формулировка сохраняет 62 языка и отсутствие нормализованного общего счётчика."
+    },
+    {
+      "unit_id": "AR-BRAND-07::01",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "Это показатели, отображённые в двух снимках с разной областью подсчёта.",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Разные значения счётчиков зафиксированы в разных снимках и относятся к разным областям подсчёта."
+    },
+    {
+      "unit_id": "AR-BRAND-07::02",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-094.md"
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "FAQ фиксирует процесс: сценарий, подробное ТЗ и выбор диктора; стоимость и сроки сообщает продюсер после уточнений."
+      "review_note": "Наблюдение 622/620/62/309 и повторный snapshot 20.11.2026; 309 — значение русской категории."
+    },
+    {
+      "unit_id": "AR-BRAND-07::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Наблюдение 622/620/62/309 и повторный snapshot 20.11.2026; 309 — значение русской категории."
+    },
+    {
+      "unit_id": "AR-BRAND-07::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Наблюдение 622/620/62/309 и повторный snapshot 20.11.2026; 309 — значение русской категории."
+    },
+    {
+      "unit_id": "AR-BRAND-07::05",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "308 сохранено как историческое извлечённое значение с неопределённой датой обхода."
+    },
+    {
+      "unit_id": "AR-BRAND-07::06",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Снимки не раскрывают методику расчёта и не объясняют расхождение; общая метрика не нормализована."
+    },
+    {
+      "unit_id": "AR-BRAND-07::07",
+      "benchmark_query_id": "AR-BRAND-07",
+      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_text": "её нельзя угадывать.",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
+    },
+    {
+      "unit_id": "AR-BRAND-07::08",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Снимки не раскрывают методику расчёта и не объясняют расхождение; общая метрика не нормализована."
+    },
+    {
+      "unit_id": "AR-BRAND-07::09",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-109.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Наблюдение 622/620/62/309 и повторный snapshot 20.11.2026; 309 — значение русской категории."
     },
     {
       "unit_id": "AR-PROBLEM-01::01",
@@ -399,6 +991,21 @@
       "review_note": "Рекомендация проектировать меню от задач и намерений звонящего."
     },
     {
+      "unit_id": "AR-PROBLEM-01::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "guides/bank-voice-menu.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Проектировать IVR от задач звонящего и заранее определить переходы, ошибки, молчание и нерабочее время."
+    },
+    {
       "unit_id": "AR-PROBLEM-01::03",
       "benchmark_query_id": "AR-PROBLEM-01",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -416,6 +1023,21 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Сценарная проверка и прослушивание на целевом устройстве — внутренняя release-практика."
+    },
+    {
+      "unit_id": "AR-PROBLEM-01::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "tools/ivr_flow_linter/README.ru.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Описание статических проверок linter; это проверка JSON-графа, не реальная АТС или телефонный вызов."
     },
     {
       "unit_id": "AR-PROBLEM-01::05",
@@ -456,6 +1078,24 @@
       "review_note": "Тестовый вызов и проход сценариев необходимы отдельно от статического анализа."
     },
     {
+      "unit_id": "AR-PROBLEM-01::07",
+      "benchmark_query_id": "AR-PROBLEM-01",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "«Аудио-Реклама•ru» предлагает запись голосовых приветствий, IVR-меню, автоответчиков и автоинформаторов, а также подготовку файлов для загрузки в систему.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичное описание записи голосовых приветствий, IVR, автоответчиков и подготовки файлов."
+    },
+    {
       "unit_id": "AR-PROBLEM-01::08",
       "benchmark_query_id": "AR-PROBLEM-01",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -493,443 +1133,7 @@
       "review_note": "Pronunciation brief как часть подготовки и проверки записи."
     },
     {
-      "unit_id": "AR-PROBLEM-04::05",
-      "benchmark_query_id": "AR-PROBLEM-04",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
-      "answer_text": "Не повторяйте маркетинговое утверждение страницы «никогда не ошибается» как техническую гарантию.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-111.md",
-        "guides/chronomer-timing.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Маркетинговую формулировку страницы нельзя расширять до технической гарантии точности."
-    },
-    {
-      "unit_id": "AR-PROBLEM-05::01",
-      "benchmark_query_id": "AR-PROBLEM-05",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
-      "answer_text": "Сначала определите зоны воспроизведения, аудиторию, языки и типы сообщений.",
-      "category": "internal_recommendation",
-      "subtype": "accessibility_and_multilingual_quality",
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "guides/airport-announcements.md",
-        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
-    },
-    {
-      "unit_id": "AR-PROBLEM-05::06",
-      "benchmark_query_id": "AR-PROBLEM-05",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
-      "answer_text": "Для критической информации предусмотрите альтернативный доступный канал, если это необходимо.",
-      "category": "internal_recommendation",
-      "subtype": "accessibility_and_multilingual_quality",
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "guides/airport-announcements.md",
-        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
-    },
-    {
-      "unit_id": "AR-TRUST-02::07",
-      "benchmark_query_id": "AR-TRUST-02",
-      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
-      "answer_text": "договор и применимое право определяют юридические обязанности участников.",
-      "category": "general_legal_caution",
-      "subtype": null,
-      "required_source_classes": [],
-      "source_refs": [],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Общая оговорка, не утверждение о конкретной услуге или правовой позиции студии; не заменяет юридическую консультацию."
-    },
-    {
-      "unit_id": "AR-SERVICE-11::03",
-      "benchmark_query_id": "AR-SERVICE-11",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
-      "answer_text": "Эти элементы подтверждают звуковые направления, но не означают, что весь список входит в каждый проект или что студия обязательно производит само видео.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-096.md",
-        "evidence/E-2026-107.md",
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Звуковые направления не означают, что полный видеоряд входит в каждый проект или что видео производится автоматически."
-    },
-    {
-      "unit_id": "AR-SERVICE-11::04",
-      "benchmark_query_id": "AR-SERVICE-11",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
-      "answer_text": "Нужный объём сверяется с монтажом и техническим заданием.",
-      "category": "internal_recommendation",
-      "subtype": null,
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
-        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Согласование нужного объёма по монтажу и ТЗ."
-    },
-    {
-      "unit_id": "AR-BRAND-06::12",
-      "benchmark_query_id": "AR-BRAND-06",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
-      "answer_text": "Отдельный более ранний извлечённый снимок с неясной датой обхода показывал 308;",
-      "category": "source_freshness_note",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-109.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Исторические значения и более раннее 308 сохраняются как отдельные observations с указанной неопределённостью свежести; причина расхождений не выдумывается."
-    },
-    {
-      "unit_id": "AR-BRAND-06::13",
-      "benchmark_query_id": "AR-BRAND-06",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
-      "answer_text": "это наблюдение сохраняется отдельно, но не позволяет объяснить расхождение.",
-      "category": "source_freshness_note",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-109.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Исторические значения и более раннее 308 сохраняются как отдельные observations с указанной неопределённостью свежести; причина расхождений не выдумывается."
-    },
-    {
-      "unit_id": "AR-PROBLEM-06::05",
-      "benchmark_query_id": "AR-PROBLEM-06",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
-      "answer_text": "Не повторяйте маркетинговое утверждение страницы «никогда не ошибается» как техническую гарантию.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-111.md",
-        "guides/chronomer-timing.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Маркетинговую формулировку страницы нельзя расширять до технической гарантии точности."
-    },
-    {
-      "unit_id": "AR-PROBLEM-07::06",
-      "benchmark_query_id": "AR-PROBLEM-07",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
-      "answer_text": "для выпуска нужен тестовый вызов и проход всех сценариев.",
-      "category": "internal_recommendation",
-      "subtype": null,
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "problem-solutions/IVR_DESIGN_STANDARD.md",
-        "tools/ivr_flow_linter/README.ru.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Тестовый вызов и проход сценариев необходимы отдельно от статического анализа."
-    },
-    {
-      "unit_id": "AR-PROBLEM-08::01",
-      "benchmark_query_id": "AR-PROBLEM-08",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
-      "answer_text": "Если голос сопровождает изображение и не должен совпадать с артикуляцией, обычно рассматривают закадровую озвучку.",
-      "category": "internal_recommendation",
-      "subtype": null,
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Рабочее различие voice-over и синхронной реплики."
-    },
-    {
-      "unit_id": "AR-PROBLEM-11::03",
-      "benchmark_query_id": "AR-PROBLEM-11",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
-      "answer_text": "унифицируйте терминологию, произношение названий, чисел и направлений.",
-      "category": "internal_recommendation",
-      "subtype": "accessibility_and_multilingual_quality",
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "guides/airport-announcements.md",
-        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
-    },
-    {
-      "unit_id": "AR-PROBLEM-11::06",
-      "benchmark_query_id": "AR-PROBLEM-11",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
-      "answer_text": "Для критической информации предусмотрите альтернативный доступный канал, если это необходимо.",
-      "category": "internal_recommendation",
-      "subtype": "accessibility_and_multilingual_quality",
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "guides/airport-announcements.md",
-        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
-    },
-    {
-      "unit_id": "AR-PROBLEM-16::04",
-      "benchmark_query_id": "AR-PROBLEM-16",
-      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
-      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
-      "answer_text": "Поиск всех мест использования требует действующего реестра или инвентаризации с владельцами систем: автоматическое обнаружение всех копий не предполагается.",
-      "category": "internal_recommendation",
-      "subtype": null,
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
-        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Учет копий требует реестра и владельцев систем; автоматическое обнаружение не заявляется."
-    },
-    {
-      "unit_id": "AR-TRUST-03::05",
-      "benchmark_query_id": "AR-TRUST-03",
-      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
-      "answer_text": "возможность монтажа, обработки и создания производных версий;",
-      "category": "internal_recommendation",
-      "subtype": null,
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
-        "standards/responsible-release.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Объём прав на монтаж, обработку и производные версии — предмет отдельного письменного согласования."
-    },
-    {
-      "unit_id": "AR-PROBLEM-19::01",
-      "benchmark_query_id": "AR-PROBLEM-19",
-      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
-      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
-      "answer_text": "Проверьте две независимые стороны.",
-      "category": "discourse_only",
-      "subtype": null,
-      "required_source_classes": [],
-      "source_refs": [],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Навигационная фраза, не самостоятельное проверяемое утверждение."
-    },
-    {
-      "unit_id": "AR-PROBLEM-19::04",
-      "benchmark_query_id": "AR-PROBLEM-19",
-      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
-      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
-      "answer_text": "По звуку и технике: отсутствие случайных обрезаний, щелчков, перегрузки и мешающих шумов;",
-      "category": "internal_recommendation",
-      "subtype": null,
-      "required_source_classes": [
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Внутренний технический QC checklist, не внешний сертификат качества."
-    },
-    {
-      "unit_id": "AR-BRAND-07::01",
-      "benchmark_query_id": "AR-BRAND-07",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
-      "answer_text": "Это показатели, отображённые в двух снимках с разной областью подсчёта.",
-      "category": "source_freshness_note",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-097.md",
-        "evidence/E-2026-109.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Разные значения счётчиков зафиксированы в разных снимках и относятся к разным областям подсчёта."
-    },
-    {
-      "unit_id": "AR-PROBLEM-21::02",
-      "benchmark_query_id": "AR-PROBLEM-21",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
-      "answer_text": "она нужна, когда дальнейшую обработку выполняет ваш звукорежиссёр.",
-      "category": "first_party_fact",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-094.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "FAQ описывает сухую запись как дорожку для последующей обработки заказчиком/его звукорежиссёром."
-    },
-    {
-      "unit_id": "AR-BRAND-01::06",
-      "benchmark_query_id": "AR-BRAND-01",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
-      "answer_text": "Это описание опубликованных направлений, а не утверждение, что каждая услуга входит в любой проект.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-098.md",
-        "evidence/E-2026-107.md",
-        "standards/responsible-release.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Публичное перечисление направлений не означает, что все работы входят в каждый проект."
-    },
-    {
-      "unit_id": "AR-BRAND-05::01",
-      "benchmark_query_id": "AR-BRAND-05",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
-      "answer_text": "Не называть одно точное текущее общее число без свежей сверки и определения метрики.",
-      "category": "source_freshness_note",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-097.md",
-        "evidence/E-2026-109.md",
-        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
-    },
-    {
-      "unit_id": "AR-SERVICE-01::04",
-      "benchmark_query_id": "AR-SERVICE-01",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
-      "answer_text": "Это возможные элементы проекта, а не обязательный комплект в каждой цене.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-098.md",
-        "evidence/E-2026-099.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Перечисленные элементы производства — возможные компоненты, не обязательный пакет каждой цены."
-    },
-    {
-      "unit_id": "AR-SERVICE-01::06",
-      "benchmark_query_id": "AR-SERVICE-01",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
-      "answer_text": "точный состав производства и права согласуются отдельно.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-098.md",
-        "evidence/E-2026-099.md",
-        "standards/responsible-release.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Состав производства и права согласуются по конкретному проекту."
-    },
-    {
-      "unit_id": "AR-SERVICE-06::04",
-      "benchmark_query_id": "AR-SERVICE-06",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
-      "answer_text": "Для расчёта подготовьте текст, длительность, желаемую подачу, музыку и эффекты, объём прав, число версий и требования к файлу.",
+      "unit_id": "AR-PROBLEM-02::02",
       "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
@@ -941,66 +1145,22 @@
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Перечень полей для индивидуального брифа и расчёта — внутренний практический checklist."
+      "review_note": "Pronunciation brief и финальное прослушивание конкретной версии по утверждённому тексту."
     },
     {
-      "unit_id": "AR-SERVICE-06::05",
-      "benchmark_query_id": "AR-SERVICE-06",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
-      "answer_text": "Актуальную цену нужно подтвердить в текущем коммерческом маршруте.",
-      "category": "scope_limitation",
+      "unit_id": "AR-PROBLEM-02::03",
+      "category": "internal_recommendation",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-094.md",
-        "entity/audio-reclama-studio.md"
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Цена не фиксируется этой фразой: актуальная сумма подтверждается в текущем коммерческом маршруте."
-    },
-    {
-      "unit_id": "AR-SERVICE-07::03",
-      "benchmark_query_id": "AR-SERVICE-07",
-      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
-      "answer_text": "Это подтверждает релевантный опыт и направления производства, но не проектирование или монтаж аэропортовой PA-системы, управление расписанием объявлений или интеграцию с системой оператора.",
-      "category": "scope_limitation",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
-      ],
-      "source_refs": [
-        "evidence/E-2026-101.md",
-        "evidence/E-2026-103.md",
-        "guides/airport-announcements.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Портфолио подтверждает многоязычный аудиопроект, не PA-проектирование, интеграцию или управление системой."
-    },
-    {
-      "unit_id": "AR-PROBLEM-01::07",
-      "benchmark_query_id": "AR-PROBLEM-01",
-      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
-      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
-      "answer_text": "«Аудио-Реклама•ru» предлагает запись голосовых приветствий, IVR-меню, автоответчиков и автоинформаторов, а также подготовку файлов для загрузки в систему.",
-      "category": "first_party_fact",
-      "subtype": null,
-      "required_source_classes": [
-        "first_party_evidence"
-      ],
-      "source_refs": [
-        "evidence/E-2026-095.md"
-      ],
-      "review_status": "manual_reviewed",
-      "review_date": "2026-11-20",
-      "review_note": "Публичное описание записи голосовых приветствий, IVR, автоответчиков и подготовки файлов."
+      "review_note": "Pronunciation brief и финальное прослушивание конкретной версии по утверждённому тексту."
     },
     {
       "unit_id": "AR-PROBLEM-02::04",
@@ -1020,6 +1180,36 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "После изменений повторно прослушивать именно затронутую версию."
+    },
+    {
+      "unit_id": "AR-PROBLEM-02::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Описан рекомендуемый контрольный процесс, а не автоматизированный тест или доказательство результата клиентского проекта."
+    },
+    {
+      "unit_id": "AR-PROBLEM-03::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/choosing-a-voice.md",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Выбор голоса начинается с задачи, которую должен выполнять голос в канале."
     },
     {
       "unit_id": "AR-PROBLEM-03::02",
@@ -1135,6 +1325,20 @@
       "review_note": "Индексированный snapshot страницы Хрономера показывает инструмент с выбором темпа и языка; отмечена freshness snapshot."
     },
     {
+      "unit_id": "AR-PROBLEM-04::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-111.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Индексированный snapshot страницы Хрономера описывает инструмент и выбор темпа/языка; ограничение snapshot freshness сохраняется."
+    },
+    {
       "unit_id": "AR-PROBLEM-04::03",
       "benchmark_query_id": "AR-PROBLEM-04",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -1172,6 +1376,90 @@
       "review_note": "Указанная crawl freshness — свойство snapshot, не подтверждение live-доступности инструмента."
     },
     {
+      "unit_id": "AR-PROBLEM-04::05",
+      "benchmark_query_id": "AR-PROBLEM-04",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+      "answer_text": "Не повторяйте маркетинговое утверждение страницы «никогда не ошибается» как техническую гарантию.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-111.md",
+        "guides/chronomer-timing.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Маркетинговую формулировку страницы нельзя расширять до технической гарантии точности."
+    },
+    {
+      "unit_id": "AR-PROBLEM-05::01",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Сначала определите зоны воспроизведения, аудиторию, языки и типы сообщений.",
+      "category": "internal_recommendation",
+      "subtype": "accessibility_and_multilingual_quality",
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-05::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-05::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-05::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
       "unit_id": "AR-PROBLEM-05::05",
       "benchmark_query_id": "AR-PROBLEM-05",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -1190,85 +1478,67 @@
       "review_note": "Проверка записи в целевом или близком пространстве воспроизведения."
     },
     {
-      "unit_id": "AR-TRUST-01::02",
-      "benchmark_query_id": "AR-TRUST-01",
-      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
-      "answer_text": "В методике «Аудио-Реклама•ru» он нужен, чтобы можно было установить, кто и на каком основании создал запись, где и как её разрешено использовать и какая версия прошла проверку.",
+      "unit_id": "AR-PROBLEM-05::06",
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Для критической информации предусмотрите альтернативный доступный канал, если это необходимо.",
       "category": "internal_recommendation",
-      "subtype": null,
+      "subtype": "accessibility_and_multilingual_quality",
       "required_source_classes": [
         "internal_methodology"
       ],
       "source_refs": [
-        "standards/voice-provenance-passport.md",
-        "standards/responsible-release.md"
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Паспорт описывает внутреннюю методику происхождения и использования записи; не независимая сертификация."
+      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
     },
     {
-      "unit_id": "AR-TRUST-02::04",
-      "benchmark_query_id": "AR-TRUST-02",
-      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
-      "answer_text": "В документах «Аудио-Реклама•ru» студия описывает себя как последний профессиональный фильтр, но не подменяет клиента как ответственную за содержание сторону.",
-      "category": "internal_recommendation",
+      "unit_id": "AR-PROBLEM-05::07",
+      "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "corpus/kto-vypuskaet-golos.md",
-        "canon/releasing-voice.md",
-        "standards/responsible-release.md"
+        "evidence/E-2026-103.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Внутренняя позиция о профессиональной проверке и ответственности клиента."
+      "review_note": "Homepage portfolio snapshot подтверждает пример информационных объявлений для аэропорта Внуково на 11 языках."
     },
     {
-      "unit_id": "AR-BRAND-06::05",
-      "benchmark_query_id": "AR-BRAND-06",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
-      "answer_text": "Общее число не нормализовано;",
-      "category": "source_freshness_note",
+      "unit_id": "AR-PROBLEM-05::08",
+      "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence",
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-097.md",
-        "evidence/E-2026-109.md",
-        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+        "evidence/E-2026-103.md",
+        "guides/airport-announcements.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
+      "review_note": "Портфолио подтверждает аудиопроект, но не PA-проектирование, монтаж или интеграцию системы."
     },
     {
-      "unit_id": "AR-BRAND-06::07",
-      "benchmark_query_id": "AR-BRAND-06",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
-      "answer_text": "Не называть одно точное текущее общее число без свежей сверки и определения метрики.",
-      "category": "source_freshness_note",
+      "unit_id": "AR-PROBLEM-06::01",
+      "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
-        "first_party_evidence",
-        "internal_methodology"
+        "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-097.md",
-        "evidence/E-2026-109.md",
-        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+        "evidence/E-2026-111.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
+      "review_note": "Индексированный snapshot страницы Хрономера описывает инструмент и выбор темпа/языка; ограничение snapshot freshness сохраняется."
     },
     {
       "unit_id": "AR-PROBLEM-06::02",
@@ -1308,6 +1578,243 @@
       "review_note": "Расчёт предварителен; фактическая длительность зависит от подачи, пауз и произношения."
     },
     {
+      "unit_id": "AR-PROBLEM-06::04",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-111.md",
+        "guides/chronomer-timing.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Метаданные snapshot указывают обход две недели назад; это требует перепроверки live-доступности, а не доказывает отказ инструмента."
+    },
+    {
+      "unit_id": "AR-PROBLEM-06::05",
+      "benchmark_query_id": "AR-PROBLEM-06",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+      "answer_text": "Не повторяйте маркетинговое утверждение страницы «никогда не ошибается» как техническую гарантию.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-111.md",
+        "guides/chronomer-timing.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Маркетинговую формулировку страницы нельзя расширять до технической гарантии точности."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "guides/bank-voice-menu.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Проектировать IVR от задач звонящего и заранее определить переходы, ошибки, молчание и нерабочее время."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "guides/bank-voice-menu.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Проектировать IVR от задач звонящего и заранее определить переходы, ошибки, молчание и нерабочее время."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Ручной проход IVR-маршрутов и прослушивание на типовом телефоне — release recommendation."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "tools/ivr_flow_linter/README.ru.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Описание статических проверок linter; это проверка JSON-графа, не реальная АТС или телефонный вызов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "tools/ivr_flow_linter/README.ru.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "PASS статического линтера не проверяет PBX, клавиши, реальный вызов или качество записи."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::06",
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как сделать голосовое меню IVR понятным клиенту?",
+      "answer_text": "для выпуска нужен тестовый вызов и проход всех сценариев.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "tools/ivr_flow_linter/README.ru.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Тестовый вызов и проход сценариев необходимы отдельно от статического анализа."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::07",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная IVR-страница подтверждает перечисленные направления записи и подготовки файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-07::08",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичное описание подготовки файлов не включает автоматически настройку АТС/маршрутизации."
+    },
+    {
+      "unit_id": "AR-PROBLEM-08::01",
+      "benchmark_query_id": "AR-PROBLEM-08",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+      "answer_text": "Если голос сопровождает изображение и не должен совпадать с артикуляцией, обычно рассматривают закадровую озвучку.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочее различие voice-over и синхронной реплики."
+    },
+    {
+      "unit_id": "AR-PROBLEM-08::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Синхронный дубляж/lip-sync требует монтажного материала, таймкодов, текста и терминологии в брифе."
+    },
+    {
+      "unit_id": "AR-PROBLEM-08::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Синхронный дубляж/lip-sync требует монтажного материала, таймкодов, текста и терминологии в брифе."
+    },
+    {
+      "unit_id": "AR-PROBLEM-08::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница подтверждает voice-over, casting, dubbing/lip-sync и звуковое оформление."
+    },
+    {
+      "unit_id": "AR-PROBLEM-09::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Master-текст, рынки, глоссарий, устная адаптация и проверка каждой языковой версии — рабочая локализационная методика."
+    },
+    {
       "unit_id": "AR-PROBLEM-09::02",
       "benchmark_query_id": "AR-PROBLEM-09",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -1324,6 +1831,116 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Внутренняя AVT методика по неизменяемым фактам и юридическим оговоркам; draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-09::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Master-текст, рынки, глоссарий, устная адаптация и проверка каждой языковой версии — рабочая локализационная методика."
+    },
+    {
+      "unit_id": "AR-PROBLEM-09::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-096.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы подтверждают перевод/локализацию и озвучивание; конкретный объём не выводится автоматически."
+    },
+    {
+      "unit_id": "AR-PROBLEM-09::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Конкретный язык и исполнитель не гарантируются общим описанием услуги и подтверждаются отдельно."
+    },
+    {
+      "unit_id": "AR-PROBLEM-10::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "guides/choosing-a-voice.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рекомендации по ясности рекламного аудиоролика: одна ведущая мысль, аудитория, контекст, действие, хронометраж и разборчивость."
+    },
+    {
+      "unit_id": "AR-PROBLEM-10::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "guides/choosing-a-voice.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рекомендации по ясности рекламного аудиоролика: одна ведущая мысль, аудитория, контекст, действие, хронометраж и разборчивость."
+    },
+    {
+      "unit_id": "AR-PROBLEM-10::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "guides/choosing-a-voice.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рекомендации по ясности рекламного аудиоролика: одна ведущая мысль, аудитория, контекст, действие, хронометраж и разборчивость."
+    },
+    {
+      "unit_id": "AR-PROBLEM-10::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Прослушивание выявляет понятность, но само по себе не доказывает рост продаж или ROI."
     },
     {
       "unit_id": "AR-PROBLEM-10::05",
@@ -1346,6 +1963,150 @@
       "review_note": "Публичные страницы подтверждают сценарии, запись аудиороликов, кастинг и саунд-дизайн."
     },
     {
+      "unit_id": "AR-PROBLEM-11::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::03",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "унифицируйте терминологию, произношение названий, чисел и направлений.",
+      "category": "internal_recommendation",
+      "subtype": "accessibility_and_multilingual_quality",
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по краткости объявлений, единству терминологии, локализации, таймингу и проверке в целевой акустике; AVT framework остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::06",
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+      "answer_text": "Для критической информации предусмотрите альтернативный доступный канал, если это необходимо.",
+      "category": "internal_recommendation",
+      "subtype": "accessibility_and_multilingual_quality",
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренние рекомендации по подготовке многоязычных объявлений, терминам и доступности; AVT документ остаётся draft_for_expert_review."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::07",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-103.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Homepage portfolio snapshot подтверждает пример информационных объявлений для аэропорта Внуково на 11 языках."
+    },
+    {
+      "unit_id": "AR-PROBLEM-11::08",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-103.md",
+        "guides/airport-announcements.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Портфолио подтверждает аудиопроект, но не PA-проектирование, монтаж или интеграцию системы."
+    },
+    {
+      "unit_id": "AR-PROBLEM-12::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Методика подготовки e-learning: модули, экранные элементы, произношение, темп и версионирование."
+    },
+    {
       "unit_id": "AR-PROBLEM-12::02",
       "benchmark_query_id": "AR-PROBLEM-12",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -1363,6 +2124,68 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Проверка соответствия записи актуальной версии курса — рабочая рекомендация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-12::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Методика подготовки e-learning: модули, экранные элементы, произношение, темп и версионирование."
+    },
+    {
+      "unit_id": "AR-PROBLEM-12::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-101.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы подтверждают озвучивание видео и мультимедийную локализацию/e-learning."
+    },
+    {
+      "unit_id": "AR-PROBLEM-12::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Поддержка конкретной LMS или автоматизированного экспорта не следует из опубликованного описания озвучивания/локализации."
+    },
+    {
+      "unit_id": "AR-PROBLEM-13::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "guides/choosing-a-voice.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя рекомендация по фиксации тембра, роли, темпа, произношения и локализации."
     },
     {
       "unit_id": "AR-PROBLEM-13::02",
@@ -1403,6 +2226,387 @@
       "review_note": "Voice continuity и сравнение манеры исполнения — внутренняя методика, не утверждение публичного каталога."
     },
     {
+      "unit_id": "AR-PROBLEM-13::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Обычная запись не равна автоматическому разрешению на AI-training или цифровую реплику; проверять отдельное согласие и права."
+    },
+    {
+      "unit_id": "AR-PROBLEM-13::05",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-104.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичный каталог дикторов может быть отправной точкой для кастинга; он не гарантирует доступность исполнителя."
+    },
+    {
+      "unit_id": "AR-PROBLEM-14::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Подготовка и контроль аудиокниги: права, словарь, структура, тестовый фрагмент, полнота и последовательность."
+    },
+    {
+      "unit_id": "AR-PROBLEM-14::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Подготовка и контроль аудиокниги: права, словарь, структура, тестовый фрагмент, полнота и последовательность."
+    },
+    {
+      "unit_id": "AR-PROBLEM-14::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-102.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница указывает производство аудиокниг."
+    },
+    {
+      "unit_id": "AR-PROBLEM-14::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-102.md",
+        "standards/responsible-release.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Права, цена, сроки и распространение требуют отдельного согласования по проекту."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика реестра аудиоактивов, версий и контроля замены/отключения файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика реестра аудиоактивов, версий и контроля замены/отключения файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика реестра аудиоактивов, версий и контроля замены/отключения файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Реестр — организационная методика и не подтверждение отдельной коммерческой DAM-услуги."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Наличие файла не доказывает его публикацию/отключение; реестр сам не подключается к внешним платформам и не управляет ими."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Наличие файла не доказывает его публикацию/отключение; реестр сам не подключается к внешним платформам и не управляет ими."
+    },
+    {
+      "unit_id": "AR-PROBLEM-15::07",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-098.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы подтверждают запись аудиороликов, IVR-приветствия и озвучивание видео."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая методика распространения изменений в master-текстах и локализованных аудиоверсиях."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая методика распространения изменений в master-текстах и локализованных аудиоверсиях."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая методика распространения изменений в master-текстах и локализованных аудиоверсиях."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::04",
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+      "answer_text": "Поиск всех мест использования требует действующего реестра или инвентаризации с владельцами систем: автоматическое обнаружение всех копий не предполагается.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Учет копий требует реестра и владельцев систем; автоматическое обнаружение не заявляется."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Сверка файлов по каналам и отключение старых версий — действия владельцев систем/интеграторов, не автоматическое действие студии."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Сверка файлов по каналам и отключение старых версий — действия владельцев систем/интеграторов, не автоматическое действие студии."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::07",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-101.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы подтверждают сценарии, рекламную запись, IVR и перевод/локализацию."
+    },
+    {
+      "unit_id": "AR-PROBLEM-16::08",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md",
+        "corpus/kto-vypuskaet-golos.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя схема ответственности: клиент утверждает факты и дату изменений."
+    },
+    {
+      "unit_id": "AR-PROBLEM-17::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "guides/choosing-a-voice.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика непрерывности голоса и сравнения кандидатов по задаче, а не только по тембру."
+    },
+    {
+      "unit_id": "AR-PROBLEM-17::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "guides/choosing-a-voice.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика непрерывности голоса и сравнения кандидатов по задаче, а не только по тембру."
+    },
+    {
+      "unit_id": "AR-PROBLEM-17::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "research/VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md",
+        "guides/choosing-a-voice.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика непрерывности голоса и сравнения кандидатов по задаче, а не только по тембру."
+    },
+    {
       "unit_id": "AR-PROBLEM-17::04",
       "benchmark_query_id": "AR-PROBLEM-17",
       "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
@@ -1424,22 +2628,311 @@
       "review_note": "Фраза соединяет публичный факт каталога/кастинга и внутреннюю рекомендацию о пригодности и непрерывности исполнителя."
     },
     {
-      "unit_id": "AR-TRUST-03::11",
-      "benchmark_query_id": "AR-TRUST-03",
-      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
-      "answer_text": "В снимке официальной страницы рекламных аудиороликов от 20.11.2026 прямо указана «передача авторских и исключительных прав» (E-2026-110).",
+      "unit_id": "AR-PROBLEM-17::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-104.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Каталог не передаёт бессрочные права повторного использования; объём прав определяется отдельно."
+    },
+    {
+      "unit_id": "AR-PROBLEM-17::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md",
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md",
+        "evidence/E-2026-104.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний framework описывает методику, но не является публичным предложением AI-клонирования; каталог не доказывает такую услугу."
+    },
+    {
+      "unit_id": "AR-PROBLEM-17::07",
       "category": "first_party_fact",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence"
       ],
       "source_refs": [
-        "evidence/E-2026-110.md"
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-096.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Точная публичная формулировка о передаче авторских и исключительных прав; конкретный объём не выводится из неё."
+      "review_note": "Публичные страницы подтверждают каталог/кастинг, рекламные аудиоролики и озвучивание видео."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика master-текста, локализации, глоссария, языковой проверки и связи производных файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика master-текста, локализации, глоссария, языковой проверки и связи производных файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика master-текста, локализации, глоссария, языковой проверки и связи производных файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика master-текста, локализации, глоссария, языковой проверки и связи производных файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя методика master-текста, локализации, глоссария, языковой проверки и связи производных файлов."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::06",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы описывают перевод/локализацию, озвучивание видео и многоязычные голосовые приветствия."
+    },
+    {
+      "unit_id": "AR-PROBLEM-18::07",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-095.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичное описание направлений не гарантирует конкретный язык, региональный вариант или доступность конкретного исполнителя."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::01",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "Проверьте две независимые стороны.",
+      "category": "discourse_only",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Навигационная фраза, не самостоятельное проверяемое утверждение."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Содержательный и технический QC, pronunciation brief, целевое устройство, system-specific format и version control — внутренняя методика/протокол, не сертификация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Содержательный и технический QC, pronunciation brief, целевое устройство, system-specific format и version control — внутренняя методика/протокол, не сертификация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::04",
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "answer_file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+      "answer_heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "answer_text": "По звуку и технике: отсутствие случайных обрезаний, щелчков, перегрузки и мешающих шумов;",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний технический QC checklist, не внешний сертификат качества."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Содержательный и технический QC, pronunciation brief, целевое устройство, system-specific format и version control — внутренняя методика/протокол, не сертификация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::06",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Содержательный и технический QC, pronunciation brief, целевое устройство, system-specific format и version control — внутренняя методика/протокол, не сертификация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::07",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Содержательный и технический QC, pronunciation brief, целевое устройство, system-specific format и version control — внутренняя методика/протокол, не сертификация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::08",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Содержательный и технический QC, pronunciation brief, целевое устройство, system-specific format и version control — внутренняя методика/протокол, не сертификация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-19::09",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "canon/releasing-voice.md",
+        "corpus/kto-vypuskaet-golos.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя позиция «Выпускающий голос» разграничивает контроль студии и финальное решение заказчика."
     },
     {
       "unit_id": "AR-PROBLEM-19::10",
@@ -1462,25 +2955,126 @@
       "review_note": "Внутреннюю процедуру нельзя называть независимой сертификацией."
     },
     {
-      "unit_id": "AR-BRAND-07::07",
-      "benchmark_query_id": "AR-BRAND-07",
-      "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
-      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
-      "answer_text": "её нельзя угадывать.",
-      "category": "source_freshness_note",
+      "unit_id": "AR-PROBLEM-20::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Формат IVR определяется спецификацией конкретной АТС/IP-телефонии; параметры нужно получить у поставщика или интегратора."
+    },
+    {
+      "unit_id": "AR-PROBLEM-20::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Формат IVR определяется спецификацией конкретной АТС/IP-телефонии; параметры нужно получить у поставщика или интегратора."
+    },
+    {
+      "unit_id": "AR-PROBLEM-20::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "FAQ приводит пример WAV/PCM, 8 кГц, 8 бит, G.711 A-law и сообщает о конвертации готового файла."
+    },
+    {
+      "unit_id": "AR-PROBLEM-20::04",
+      "category": "scope_limitation",
       "subtype": null,
       "required_source_classes": [
         "first_party_evidence",
         "internal_methodology"
       ],
       "source_refs": [
-        "evidence/E-2026-097.md",
-        "evidence/E-2026-109.md",
-        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+        "evidence/E-2026-094.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
       ],
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
-      "review_note": "Конфликт счётчиков сохраняется; нельзя сводить значения без определения метрики и свежей проверки."
+      "review_note": "Параметры FAQ — пример для конкретной ситуации, не универсальный preset для любой PBX."
+    },
+    {
+      "unit_id": "AR-PROBLEM-20::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Подготовка файла не подтверждает настройку самой АТС или маршрутизацию."
+    },
+    {
+      "unit_id": "AR-PROBLEM-21::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "FAQ различает сухую запись без обработки и обработанную дорожку без музыкального оформления."
+    },
+    {
+      "unit_id": "AR-PROBLEM-21::02",
+      "benchmark_query_id": "AR-PROBLEM-21",
+      "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "answer_heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+      "answer_text": "она нужна, когда дальнейшую обработку выполняет ваш звукорежиссёр.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "FAQ описывает сухую запись как дорожку для последующей обработки заказчиком/его звукорежиссёром."
+    },
+    {
+      "unit_id": "AR-PROBLEM-21::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "FAQ различает сухую запись без обработки и обработанную дорожку без музыкального оформления."
     },
     {
       "unit_id": "AR-PROBLEM-21::04",
@@ -1502,6 +3096,158 @@
       "review_note": "Согласовать ожидаемый тип результата до заказа; не считать все варианты взаимозаменяемыми."
     },
     {
+      "unit_id": "AR-PROBLEM-21::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Слово «эфирное» не является доказательством соответствия требованиям конкретного вещателя."
+    },
+    {
+      "unit_id": "AR-PROBLEM-22::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний creative brief для определения роли, аудитории, формата, языка и музыкальных референсов джингла."
+    },
+    {
+      "unit_id": "AR-PROBLEM-22::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний creative brief для определения роли, аудитории, формата, языка и музыкальных референсов джингла."
+    },
+    {
+      "unit_id": "AR-PROBLEM-22::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Перед использованием оригинальной/сторонней композиции отдельно проверить права; это checklist, не юридическое заключение."
+    },
+    {
+      "unit_id": "AR-PROBLEM-22::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-100.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница перечисляет радиоджинглы, музыкальные мотивы и рекламные пропевки."
+    },
+    {
+      "unit_id": "AR-PROBLEM-22::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-100.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичное наличие джингла не доказывает гарантированный рост запоминания, продаж или ROI."
+    },
+    {
+      "unit_id": "AR-PROBLEM-23::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний бриф: цель, аудитория, согласованные факты/фразы, стиль, авторская композиция или адаптация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-23::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний бриф: цель, аудитория, согласованные факты/фразы, стиль, авторская композиция или адаптация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-23::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний бриф: цель, аудитория, согласованные факты/фразы, стиль, авторская композиция или адаптация."
+    },
+    {
+      "unit_id": "AR-PROBLEM-23::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Checklist по разрешениям на музыку, текст, фонограмму и аранжировку; не правовое заключение."
+    },
+    {
       "unit_id": "AR-PROBLEM-23::05",
       "benchmark_query_id": "AR-PROBLEM-23",
       "answer_file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
@@ -1514,6 +3260,1405 @@
       "review_status": "manual_reviewed",
       "review_date": "2026-11-20",
       "review_note": "Общий договорный caution; не юридическое заключение или специальное утверждение о правах студии."
+    },
+    {
+      "unit_id": "AR-PROBLEM-23::06",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-105.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница описывает авторские корпоративные песни/гимны и адаптации для корпоративных мероприятий."
+    },
+    {
+      "unit_id": "AR-SERVICE-01::01",
+      "category": "discourse_only",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Короткий ответ «Да» — дискурсивный ответ на вопрос, не отдельная единица факта."
+    },
+    {
+      "unit_id": "AR-SERVICE-01::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница описывает производство рекламных аудиороликов."
+    },
+    {
+      "unit_id": "AR-SERVICE-01::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Перечисленные компоненты подтверждаются страницами рекламных роликов и сценарной подготовки; не переносить на каждый пакет."
+    },
+    {
+      "unit_id": "AR-SERVICE-01::04",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_text": "Это возможные элементы проекта, а не обязательный комплект в каждой цене.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Перечисленные элементы производства — возможные компоненты, не обязательный пакет каждой цены."
+    },
+    {
+      "unit_id": "AR-SERVICE-01::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний бриф для расчёта рекламного ролика: задача, длительность, аудитория, голос, музыка и канал."
+    },
+    {
+      "unit_id": "AR-SERVICE-01::06",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_text": "точный состав производства и права согласуются отдельно.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Состав производства и права согласуются по конкретному проекту."
+    },
+    {
+      "unit_id": "AR-SERVICE-02::01",
+      "category": "discourse_only",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Короткий ответ «Да» — дискурсивный ответ на вопрос, не отдельная единица факта."
+    },
+    {
+      "unit_id": "AR-SERVICE-02::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница подтверждает приветствия, IVR, автоответчики/автоинформаторы и подготовку голосовых файлов."
+    },
+    {
+      "unit_id": "AR-SERVICE-02::03",
+      "benchmark_query_id": "AR-SERVICE-02",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "answer_text": "Там же заявлены запись на 62 языках и подготовка аудиофайлов для последующей загрузки в систему.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница голосовых приветствий/IVR описывает запись на языках и подготовку файлов."
+    },
+    {
+      "unit_id": "AR-SERVICE-02::04",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница подтверждает приветствия, IVR, автоответчики/автоинформаторы и подготовку голосовых файлов."
+    },
+    {
+      "unit_id": "AR-SERVICE-02::05",
+      "benchmark_query_id": "AR-SERVICE-02",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "answer_text": "Администрирование АТС, настройка маршрутов, SIP/CRM-интеграция и управление очередями не следуют из этого описания и согласуются с владельцем телефонной системы отдельно.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Описание записи и подготовки файлов не является доказательством настройки АТС, маршрутов, SIP/CRM или очередей."
+    },
+    {
+      "unit_id": "AR-SERVICE-03::01",
+      "category": "discourse_only",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Короткий ответ «Да» — дискурсивный ответ на вопрос, не отдельная единица факта."
+    },
+    {
+      "unit_id": "AR-SERVICE-03::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница озвучивания видео перечисляет voice-over, casting, dubbing/lip-sync и звуковые компоненты."
+    },
+    {
+      "unit_id": "AR-SERVICE-03::03",
+      "benchmark_query_id": "AR-SERVICE-03",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+      "answer_text": "Выбор зависит от того, нужна ли отдельная голосовая дорожка, дубляж с адаптацией реплик или более широкое звуковое оформление.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публично описанные варианты озвучивания и звукового решения для видео."
+    },
+    {
+      "unit_id": "AR-SERVICE-03::04",
+      "benchmark_query_id": "AR-SERVICE-03",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+      "answer_text": "Подготовка всего видеоряда, монтаж изображения и публикация ролика не должны подразумеваться автоматически.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-107.md",
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Различать аудио для существующего видео и самостоятельный видеопродакшн; не подразумевать все этапы автоматически."
+    },
+    {
+      "unit_id": "AR-SERVICE-04::01",
+      "category": "discourse_only",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Короткий ответ «Да» — дискурсивный ответ на вопрос, не отдельная единица факта."
+    },
+    {
+      "unit_id": "AR-SERVICE-04::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-102.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница описывает производство аудиокниг и варианты исполнения."
+    },
+    {
+      "unit_id": "AR-SERVICE-04::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-102.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница описывает производство аудиокниг и варианты исполнения."
+    },
+    {
+      "unit_id": "AR-SERVICE-04::04",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "answer_text": "отдельно описаны образовательные и другие речевые форматы.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-102.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичное описание аудиокниг и речевых форматов."
+    },
+    {
+      "unit_id": "AR-SERVICE-04::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Предзаказный checklist по объёму текста, исполнению, правам, структуре, платформе и комплекту файлов."
+    },
+    {
+      "unit_id": "AR-SERVICE-04::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-102.md",
+        "entity/audio-reclama-studio.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Стоимость, сроки и доступность конкретного исполнителя требуют проверки для конкретного проекта; публичное описание услуги не задаёт эти параметры."
+    },
+    {
+      "unit_id": "AR-SERVICE-05::01",
+      "benchmark_query_id": "AR-SERVICE-05",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "answer_text": "На официальном сайте представлены два отдельных направления.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-105.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "На сайте описаны отдельные направления джинглов/звукового оформления и корпоративных песен."
+    },
+    {
+      "unit_id": "AR-SERVICE-05::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-100.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница звукового оформления перечисляет джинглы, музыкальные мотивы и рекламные пропевки."
+    },
+    {
+      "unit_id": "AR-SERVICE-05::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-105.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отдельная публичная страница описывает корпоративные песни/гимны и адаптации для мероприятий."
+    },
+    {
+      "unit_id": "AR-SERVICE-05::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний production/right-clearance checklist для каждого музыкального проекта; не юридическое заключение."
+    },
+    {
+      "unit_id": "AR-SERVICE-06::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "entity/audio-reclama-studio.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Не переносить исторические примеры цен в текущую смету; запрашивать актуальный расчёт по действующему коммерческому маршруту."
+    },
+    {
+      "unit_id": "AR-SERVICE-06::02",
+      "benchmark_query_id": "AR-SERVICE-06",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+      "answer_text": "В FAQ «Аудио-Реклама•ru» описан процесс: заказчик передаёт сценарий, подробное техническое задание и имя выбранного диктора или дикторов;",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "FAQ фиксирует процесс: сценарий, подробное ТЗ и выбор диктора; стоимость и сроки сообщает продюсер после уточнений."
+    },
+    {
+      "unit_id": "AR-SERVICE-06::03",
+      "benchmark_query_id": "AR-SERVICE-06",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+      "answer_text": "после уточнений продюсер сообщает стоимость и сроки.",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "FAQ фиксирует процесс: сценарий, подробное ТЗ и выбор диктора; стоимость и сроки сообщает продюсер после уточнений."
+    },
+    {
+      "unit_id": "AR-SERVICE-06::04",
+      "benchmark_query_id": "AR-SERVICE-06",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+      "answer_text": "Для расчёта подготовьте текст, длительность, желаемую подачу, музыку и эффекты, объём прав, число версий и требования к файлу.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Перечень полей для индивидуального брифа и расчёта — внутренний практический checklist."
+    },
+    {
+      "unit_id": "AR-SERVICE-06::05",
+      "benchmark_query_id": "AR-SERVICE-06",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+      "answer_text": "Актуальную цену нужно подтвердить в текущем коммерческом маршруте.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-094.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Цена не фиксируется этой фразой: актуальная сумма подтверждается в текущем коммерческом маршруте."
+    },
+    {
+      "unit_id": "AR-SERVICE-07::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-103.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Homepage portfolio snapshot содержит пример информационных объявлений для Внуково на 11 языках."
+    },
+    {
+      "unit_id": "AR-SERVICE-07::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы подтверждают перевод/локализацию мультимедиа и многоязычную подготовку IVR-аудио."
+    },
+    {
+      "unit_id": "AR-SERVICE-07::03",
+      "benchmark_query_id": "AR-SERVICE-07",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "answer_text": "Это подтверждает релевантный опыт и направления производства, но не проектирование или монтаж аэропортовой PA-системы, управление расписанием объявлений или интеграцию с системой оператора.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-103.md",
+        "guides/airport-announcements.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Портфолио подтверждает многоязычный аудиопроект, не PA-проектирование, интеграцию или управление системой."
+    },
+    {
+      "unit_id": "AR-SERVICE-07::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "guides/airport-announcements.md",
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Язык, региональный вариант и принимающий технический маршрут следует зафиксировать в брифе; AVT framework остаётся draft."
+    },
+    {
+      "unit_id": "AR-SERVICE-08::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-099.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичные страницы каталога и сценариев описывают соответствующие направления."
+    },
+    {
+      "unit_id": "AR-SERVICE-08::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-104.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Каталог описывает профессиональные голоса, кастинг и варианты записи; конкретная доступность подтверждается отдельно."
+    },
+    {
+      "unit_id": "AR-SERVICE-08::03",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-099.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница описывает сценарии для радио, видео и автоответчиков."
+    },
+    {
+      "unit_id": "AR-SERVICE-08::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "entity/audio-reclama-studio.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Маршрут заказа может быть собран под требуемый клиенту этап; это рекомендация по выбору объёма."
+    },
+    {
+      "unit_id": "AR-SERVICE-08::05",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-104.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Каталог не гарантирует свободный слот, цену или включение сценария в пакет."
+    },
+    {
+      "unit_id": "AR-SERVICE-09::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-110.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница роликов и snapshot E-110 фиксируют перечисленные этапы и точную формулировку о правах."
+    },
+    {
+      "unit_id": "AR-SERVICE-09::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-099.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Страница сценариев подтверждает самостоятельное направление написания текста."
+    },
+    {
+      "unit_id": "AR-SERVICE-09::03",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отдельные этапы не следует считать обязательной частью каждого заказа или базовой цены."
+    },
+    {
+      "unit_id": "AR-SERVICE-09::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-110.md",
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная формулировка не определяет объект, территорию, срок, способы использования и исключения; их нужно проверять по договору и правам."
+    },
+    {
+      "unit_id": "AR-SERVICE-09::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Предзаказный бриф и проверка прав/мастера/формата передачи — внутренняя рабочая рекомендация."
+    },
+    {
+      "unit_id": "AR-SERVICE-09::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Отдельные этапы не следует считать обязательной частью каждого заказа или базовой цены."
+    },
+    {
+      "unit_id": "AR-SERVICE-10::01",
+      "category": "discourse_only",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Короткий ответ «Да» — дискурсивный ответ на вопрос, не отдельная единица факта."
+    },
+    {
+      "unit_id": "AR-SERVICE-10::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная IVR-страница указывает меню, приветствия и подготовку файлов для последующей загрузки."
+    },
+    {
+      "unit_id": "AR-SERVICE-10::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Точную спецификацию файла нужно получать от администратора АТС или интегратора."
+    },
+    {
+      "unit_id": "AR-SERVICE-10::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "problem-solutions/IVR_DESIGN_STANDARD.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Подготовка звукового файла сама по себе не означает настройку АТС, загрузку на платформу или маршрутизацию."
+    },
+    {
+      "unit_id": "AR-SERVICE-11::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница озвучивания видео описывает перечисленные звуковые этапы и примеры работ."
+    },
+    {
+      "unit_id": "AR-SERVICE-11::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная страница озвучивания видео описывает перечисленные звуковые этапы и примеры работ."
+    },
+    {
+      "unit_id": "AR-SERVICE-11::03",
+      "benchmark_query_id": "AR-SERVICE-11",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "answer_text": "Эти элементы подтверждают звуковые направления, но не означают, что весь список входит в каждый проект или что студия обязательно производит само видео.",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-107.md",
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Звуковые направления не означают, что полный видеоряд входит в каждый проект или что видео производится автоматически."
+    },
+    {
+      "unit_id": "AR-SERVICE-11::04",
+      "benchmark_query_id": "AR-SERVICE-11",
+      "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "answer_text": "Нужный объём сверяется с монтажом и техническим заданием.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md",
+        "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Согласование нужного объёма по монтажу и ТЗ."
+    },
+    {
+      "unit_id": "AR-SERVICE-12::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Страница переводчиков описывает перевод текстов и мультимедийную локализацию, адаптацию к озвучиванию/дубляжу."
+    },
+    {
+      "unit_id": "AR-SERVICE-12::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Страница переводчиков описывает перевод текстов и мультимедийную локализацию, адаптацию к озвучиванию/дубляжу."
+    },
+    {
+      "unit_id": "AR-SERVICE-12::03",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-101.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Формулировка «более 150 языков» относится к локализации мобильных приложений и не переносится на каталог дикторов, IVR или аудиозапись."
+    },
+    {
+      "unit_id": "AR-SERVICE-12::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md",
+        "guides/airport-announcements.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Конкретный язык и региональный вариант подтверждаются и фиксируются в проектном брифе."
+    },
+    {
+      "unit_id": "AR-SERVICE-13::01",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-106.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Snapshot портфолио IVR перечисляет 12 примеров приветствий и три примера меню; это список карточек самой страницы."
+    },
+    {
+      "unit_id": "AR-SERVICE-13::02",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-106.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Snapshot портфолио IVR перечисляет 12 примеров приветствий и три примера меню; это список карточек самой страницы."
+    },
+    {
+      "unit_id": "AR-SERVICE-13::03",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-106.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Имена карточек — не независимые рекомендации; из портфолио нельзя выводить KPI, бюджеты, сроки, исходы или текущие отношения."
+    },
+    {
+      "unit_id": "AR-SERVICE-13::04",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-106.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Имена карточек — не независимые рекомендации; из портфолио нельзя выводить KPI, бюджеты, сроки, исходы или текущие отношения."
+    },
+    {
+      "unit_id": "AR-SERVICE-13::05",
+      "category": "source_freshness_note",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-106.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Датированный snapshot фиксирует то, что показывала страница на 20.11.2026."
+    },
+    {
+      "unit_id": "AR-SERVICE-13::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-106.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "E-095 подтверждает содержание услуги IVR, а E-106 — отдельное портфолио; эти виды утверждений не смешиваются."
+    },
+    {
+      "unit_id": "AR-TRUST-01::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Паспорт происхождения голоса и его границы описаны как внутренняя методика; это не независимая сертификация или юридическая гарантия."
+    },
+    {
+      "unit_id": "AR-TRUST-01::02",
+      "benchmark_query_id": "AR-TRUST-01",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+      "answer_text": "В методике «Аудио-Реклама•ru» он нужен, чтобы можно было установить, кто и на каком основании создал запись, где и как её разрешено использовать и какая версия прошла проверку.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Паспорт описывает внутреннюю методику происхождения и использования записи; не независимая сертификация."
+    },
+    {
+      "unit_id": "AR-TRUST-01::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Паспорт происхождения голоса и его границы описаны как внутренняя методика; это не независимая сертификация или юридическая гарантия."
+    },
+    {
+      "unit_id": "AR-TRUST-01::04",
+      "category": "general_legal_caution",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Проектные правовые основания зависят от договора и применимого права; это общее предостережение, не заключение студии."
+    },
+    {
+      "unit_id": "AR-TRUST-02::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md",
+        "corpus/kto-vypuskaet-golos.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя схема разделения профессиональной проверки, фактического подтверждения и утверждения релиза."
+    },
+    {
+      "unit_id": "AR-TRUST-02::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md",
+        "corpus/kto-vypuskaet-golos.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя схема разделения профессиональной проверки, фактического подтверждения и утверждения релиза."
+    },
+    {
+      "unit_id": "AR-TRUST-02::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md",
+        "corpus/kto-vypuskaet-golos.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя схема разделения профессиональной проверки, фактического подтверждения и утверждения релиза."
+    },
+    {
+      "unit_id": "AR-TRUST-02::04",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "В документах «Аудио-Реклама•ru» студия описывает себя как последний профессиональный фильтр, но не подменяет клиента как ответственную за содержание сторону.",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "corpus/kto-vypuskaet-golos.md",
+        "canon/releasing-voice.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя позиция о профессиональной проверке и ответственности клиента."
+    },
+    {
+      "unit_id": "AR-TRUST-02::05",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md",
+        "corpus/kto-vypuskaet-golos.md",
+        "problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренняя схема разделения профессиональной проверки, фактического подтверждения и утверждения релиза."
+    },
+    {
+      "unit_id": "AR-TRUST-02::06",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "corpus/kto-vypuskaet-golos.md",
+        "canon/releasing-voice.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Фраза обозначает внутреннюю позицию и рабочую процедуру студии, а не универсальный отраслевой стандарт."
+    },
+    {
+      "unit_id": "AR-TRUST-02::07",
+      "benchmark_query_id": "AR-TRUST-02",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "answer_text": "договор и применимое право определяют юридические обязанности участников.",
+      "category": "general_legal_caution",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Общая оговорка, не утверждение о конкретной услуге или правовой позиции студии; не заменяет юридическую консультацию."
+    },
+    {
+      "unit_id": "AR-TRUST-03::01",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::02",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::03",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::04",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::05",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "возможность монтажа, обработки и создания производных версий;",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Объём прав на монтаж, обработку и производные версии — предмет отдельного письменного согласования."
+    },
+    {
+      "unit_id": "AR-TRUST-03::06",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::07",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::08",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::09",
+      "category": "general_legal_caution",
+      "subtype": null,
+      "required_source_classes": [],
+      "source_refs": [],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "При споре требуется индивидуальная консультация специалиста по применимому праву; это общее предостережение."
+    },
+    {
+      "unit_id": "AR-TRUST-03::10",
+      "category": "internal_recommendation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md",
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Рабочая проверка согласий и прав по отдельным объектам/способам использования; не выдавать внутренний checklist за юридическую консультацию или вывод о конкретном договоре."
+    },
+    {
+      "unit_id": "AR-TRUST-03::11",
+      "benchmark_query_id": "AR-TRUST-03",
+      "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_text": "В снимке официальной страницы рекламных аудиороликов от 20.11.2026 прямо указана «передача авторских и исключительных прав» (E-2026-110).",
+      "category": "first_party_fact",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence"
+      ],
+      "source_refs": [
+        "evidence/E-2026-110.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Точная публичная формулировка о передаче авторских и исключительных прав; конкретный объём не выводится из неё."
+    },
+    {
+      "unit_id": "AR-TRUST-03::12",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-110.md",
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Публичная формулировка о передаче прав не раскрывает конкретные параметры, объекты, сроки и исключения."
+    },
+    {
+      "unit_id": "AR-TRUST-03::13",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Внутренний паспорт/правила фиксируют границы процесса, но не подменяют договорную проверку и юридическое заключение."
+    },
+    {
+      "unit_id": "AR-TRUST-03::14",
+      "category": "scope_limitation",
+      "subtype": null,
+      "required_source_classes": [
+        "first_party_evidence",
+        "internal_methodology"
+      ],
+      "source_refs": [
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-110.md",
+        "standards/responsible-release.md",
+        "standards/voice-provenance-passport.md"
+      ],
+      "review_status": "manual_reviewed",
+      "review_date": "2026-11-20",
+      "review_note": "Проверенные снимки каталога и рекламной записи не описывают условия AI training/cloning; это не доказывает ни наличие, ни отсутствие отдельной услуги."
     }
-  ]
+  ],
+  "dispositioned_all_answer_units": 285,
+  "coverage_status": "all_extracted_answer_units_dispositioned"
 }
