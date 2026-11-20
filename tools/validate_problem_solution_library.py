@@ -729,6 +729,21 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append("claim-support matrix query_count must equal benchmark query count")
     if len(claim_entries) != len(queries):
         errors.append("claim-support matrix must contain exactly one entry per benchmark query")
+    semantic_review = claim_matrix.get("semantic_review", {})
+    if not isinstance(semantic_review, dict):
+        errors.append("claim-support matrix semantic_review must be an object")
+        semantic_review = {}
+    if semantic_review.get("status") != "first_pass_complete":
+        errors.append("claim-support matrix must record a completed first-pass semantic review")
+    if semantic_review.get("reviewed_at") != "2026-11-20":
+        errors.append("claim-support matrix semantic review must have the expected review date")
+    if semantic_review.get("reviewed_query_count") != len(queries):
+        errors.append("semantic review must cover every benchmark query")
+    if semantic_review.get("reviewed_claim_count") != claim_matrix.get("claim_count"):
+        errors.append("semantic review claim count must match the claim-support matrix")
+    for review_field in ("method", "limitations"):
+        if not isinstance(semantic_review.get(review_field), list) or not semantic_review.get(review_field):
+            errors.append(f"semantic review must include non-empty {review_field}")
 
     benchmark_by_id = {
         query.get("id"): query for query in queries
@@ -736,6 +751,8 @@ def validate(root: Path = ROOT) -> list[str]:
     }
     claim_query_ids: list[str] = []
     measured_claim_count = 0
+    reviewed_claim_count = 0
+    referenced_source_paths: set[str] = set()
     allowed_support_types = {"first_party_evidence", "internal_methodology", "mixed"}
     for entry_index, entry in enumerate(claim_entries, start=1):
         if not isinstance(entry, dict):
@@ -785,6 +802,13 @@ def validate(root: Path = ROOT) -> list[str]:
             scope_note = claim.get("scope_note")
             if not isinstance(scope_note, str) or not scope_note.strip():
                 errors.append(f"{label} must have a non-empty scope_note")
+            if claim.get("semantic_review_status") != "reviewed":
+                errors.append(f"{label} must be marked reviewed after source-semantic review")
+            review_note = claim.get("semantic_review_note")
+            if not isinstance(review_note, str) or not review_note.strip():
+                errors.append(f"{label} must have a non-empty semantic_review_note")
+            else:
+                reviewed_claim_count += 1
             source_refs = claim.get("source_refs")
             if not isinstance(source_refs, list) or not source_refs:
                 errors.append(f"{label} must have source_refs")
@@ -794,6 +818,8 @@ def validate(root: Path = ROOT) -> list[str]:
             internal_sources_count = 0
             for source_index, source_path in enumerate(source_refs, start=1):
                 source_label = f"{label} source_refs[{source_index}]"
+                if isinstance(source_path, str):
+                    referenced_source_paths.add(source_path)
                 if not safe_relative_path(source_path) or not (root / source_path).is_file():
                     errors.append(f"{source_label} does not resolve to a safe repository file: {source_path}")
                     continue
@@ -863,6 +889,16 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append(
             f"claim-support matrix claim_count must equal actual mapped facts ({measured_claim_count})"
         )
+    if semantic_review.get("reviewed_claim_count") != reviewed_claim_count:
+        errors.append(
+            f"semantic review must mark every claim reviewed ({reviewed_claim_count} marked)"
+        )
+    if semantic_review.get("unique_source_documents") != len(referenced_source_paths):
+        errors.append(
+            "semantic review unique_source_documents must equal the actual unique claim source count"
+        )
+    if not isinstance(semantic_review.get("corrected_claim_mappings"), int) or semantic_review.get("corrected_claim_mappings") < 0:
+        errors.append("semantic review corrected_claim_mappings must be a non-negative integer")
 
     return errors
 
