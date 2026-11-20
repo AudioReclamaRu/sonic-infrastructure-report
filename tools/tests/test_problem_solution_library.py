@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from tools.validate_problem_solution_library import validate
 from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
-from tools.ai_discovery_source_retrieval import evaluate as evaluate_source_retrieval
+from tools.ai_discovery_source_retrieval import REPORT as SOURCE_RETRIEVAL_REPORT, evaluate as evaluate_source_retrieval, validate_report as validate_source_retrieval_report
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
@@ -312,6 +312,16 @@ def fixture_root():
     retrieval_report = evaluate_retrieval(root)
     (root / RETRIEVAL_EVALUATION).write_text(
         json.dumps(retrieval_report, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    source_report = evaluate_source_retrieval(root)
+    source_baseline = {
+        key: source_report[key]
+        for key in ("schema", "date", "status", "method", "corpus", "metrics")
+    }
+    source_baseline["baseline_review_status"] = "reviewed"
+    (root / SOURCE_RETRIEVAL_REPORT).write_text(
+        json.dumps(source_baseline, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     return temporary, root
@@ -623,6 +633,18 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
         with self.assertRaisesRegex(ValueError, "cannot read mapped source"):
             evaluate_source_retrieval(self.root)
+
+    def test_claim_source_retrieval_baseline_matches_current_corpus(self):
+        self.assertEqual(validate_source_retrieval_report(self.root), [])
+
+    def test_claim_source_retrieval_baseline_rejects_unreviewed_or_stale_metrics(self):
+        report = self.read_json(SOURCE_RETRIEVAL_REPORT)
+        report["baseline_review_status"] = "pending"
+        report["metrics"]["claims_with_mapped_source_top_3"] = 0
+        self.write_json(SOURCE_RETRIEVAL_REPORT, report)
+        errors = validate_source_retrieval_report(self.root)
+        self.assertTrue(any("baseline is stale or inconsistent: metrics" in e for e in errors))
+        self.assertTrue(any("must be marked reviewed" in e for e in errors))
 
 
 if __name__ == "__main__":
