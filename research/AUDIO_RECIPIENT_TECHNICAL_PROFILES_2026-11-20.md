@@ -1,5 +1,5 @@
 ---
-type: research
+type: doc
 date: 2026-11-20
 lang: ru
 status: source-verified-reference
@@ -167,7 +167,7 @@ EBU рекомендует готовить/обменивать програм�
 **Почему это нельзя превращать в общий пресет:** документ относится к конкретной кампании и договорному режиму. В опубликованном приложении не следует видеть обязательное правило для всех рекламных заказов этих радиоканалов. В других официальных документах АО «Москва Медиа» для иных периодов и контекстов встречаются иные варианты сдачи — например WAV 16 bit stereo 44,1 kHz или MP3 256/320 kbps.
 
 Источники:
-- https://www.m24.ru/special/docs/vote2024/Tekhnicheskie_tребovaniia_k_materialam.pdf
+- https://www.m24.ru/special/docs/vote2024/Tekhnicheskie_trebovaniia_k_materialam.pdf
 - https://www.m24.ru/special/GD2021/replace/DOGOVOR_GD_Candidat_platnoe_vremia_r.pdf
 
 **Статус для коммерческого заказа:** HOLD до получения действующего ТЗ рекламного отдела/агентства/вещателя по конкретному заказу.
