@@ -1,0 +1,1564 @@
+{
+  "schema": "studio/ai-discovery-retrieval-evaluation/1",
+  "date": "2026-11-20",
+  "status": "diagnostic_lexical_baseline",
+  "method": {
+    "name": "BM25",
+    "k1": 1.2,
+    "b": 0.75,
+    "tokenizer": "Unicode Russian/English tokenization, common stopword removal, light Russian suffix stemming",
+    "scope": "Only answer sections in the five internal evaluator-side answer packs referenced by the answer-coverage audit.",
+    "not_a_claim": "This is not a production retriever, embedding benchmark, external AI-platform test or measurement of AI visibility."
+  },
+  "corpus": {
+    "answer_file_count": 5,
+    "candidate_section_count": 44,
+    "answer_files": [
+      "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+      "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+      "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+      "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+      "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md"
+    ]
+  },
+  "metrics": {
+    "query_count": 46,
+    "primary_top_1": 45,
+    "primary_top_3": 46,
+    "acceptable_top_1": 46,
+    "acceptable_top_3": 46,
+    "primary_mrr": 0.98913
+  },
+  "entries": [
+    {
+      "benchmark_query_id": "AR-BRAND-01",
+      "query": "Чем занимается компания «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 5.637335
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?",
+          "score": 3.995701
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить корпоративную песню или гимн для компании?",
+          "score": 3.159361
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-BRAND-02",
+      "query": "Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+          "score": 5.745707
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+          "score": 2.353172
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить один ролик для нескольких языков?",
+          "score": 2.199197
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-BRAND-03",
+      "query": "Какой официальный сайт компании «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?",
+          "score": 9.710238
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 6.545276
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+          "score": 4.279635
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-BRAND-04",
+      "query": "Как связаться с «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+          "score": 3.626884
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?",
+          "score": 0.801854
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 0.613264
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-BRAND-05",
+      "query": "Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+          "score": 12.714195
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+          "score": 4.378189
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+          "score": 4.358922
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-01",
+      "query": "Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 16.810695
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+          "score": 7.044367
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 5.431485
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-02",
+      "query": "Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+          "score": 16.214062
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+          "score": 7.138583
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+          "score": 5.514284
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-03",
+      "query": "Можно ли заказать озвучивание видеоролика?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+          "score": 8.204613
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+          "score": 4.436223
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 4.239157
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-04",
+      "query": "Записывает ли студия аудиокниги?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+          "score": 8.919291
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что согласовать перед записью аудиокниги?",
+          "score": 3.543663
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 3.023268
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-05",
+      "query": "Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+          "score": 13.476278
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+          "score": 7.187487
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить корпоративную песню или гимн для компании?",
+          "score": 6.58059
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-06",
+      "query": "Сколько стоит заказать озвучку рекламного ролика?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+          "score": 15.643851
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+          "score": 7.63755
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 7.108817
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-07",
+      "query": "Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+          "score": 16.124932
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+          "score": 11.43435
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить один ролик для нескольких языков?",
+          "score": 7.422694
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-08",
+      "query": "Кто помогает с подбором диктора и сценарием?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+          "score": 12.138394
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Почему рекламный аудиоролик плохо воспринимается на слух?",
+          "score": 3.817955
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+          "score": 1.240447
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-01",
+      "query": "Как сделать голосовое меню IVR понятным для клиента?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сделать голосовое меню IVR понятным клиенту?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сделать голосовое меню IVR понятным клиенту?",
+          "score": 15.857988
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+          "score": 4.983341
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+          "score": 4.311633
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-02",
+      "query": "Как проверить произношение имён, чисел и названий в голосовом сообщении?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как проверить произношение имён, чисел и названий в голосовом сообщении?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как проверить произношение имён, чисел и названий в голосовом сообщении?",
+          "score": 17.67921
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+          "score": 9.672912
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+          "score": 7.898357
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-03",
+      "query": "Как выбрать диктора для рекламы, чтобы голос подходил бренду?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как выбрать диктора для рекламы, чтобы голос подходил бренду?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как выбрать диктора для рекламы, чтобы голос подходил бренду?",
+          "score": 11.37816
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+          "score": 5.76032
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+          "score": 5.541037
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-04",
+      "query": "Как рассчитать длительность рекламного аудиоролика по тексту?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+          "score": 11.757184
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 6.78858
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+          "score": 5.493838
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-05",
+      "query": "Как проверить, что многоязычные объявления в аэропорту одинаково понятны?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить объявления для аэропорта или большого общественного пространства?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+          "score": 7.804208
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+          "score": 6.579242
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+          "score": 6.346245
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-TRUST-01",
+      "query": "Что такое паспорт происхождения голоса и зачем он нужен?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+          "score": 18.345936
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Какие права нужно проверить перед повторным использованием записи диктора или созданием AI-копии голоса?",
+          "score": 6.251419
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+          "score": 5.045361
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-TRUST-02",
+      "query": "Кто должен проверять голосовой материал перед публикацией?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+          "score": 16.452434
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+          "score": 3.794476
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+          "score": 3.776637
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-09",
+      "query": "Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+          "score": 12.988515
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 5.686476
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+          "score": 5.44172
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-10",
+      "query": "Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+          "score": 19.997128
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+          "score": 13.143388
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сделать голосовое меню IVR понятным клиенту?",
+          "score": 9.767862
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-11",
+      "query": "Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+          "score": 13.285942
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить озвучивание e-learning?",
+          "score": 6.644518
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+          "score": 4.758458
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-12",
+      "query": "Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+          "score": 19.665366
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить один ролик для нескольких языков?",
+          "score": 6.212218
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+          "score": 5.4494
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-BRAND-06",
+      "query": "Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+          "reason": "После добавления исторических значений 619, 621 и 794 общий ответ по базе покрывает все три expected facts AR-BRAND-06; поисковая система может законно показать его выше узкого ответа о каталоге. Канонический route AR-BRAND-06 остаётся отдельным."
+        }
+      ],
+      "primary_target_rank": 2,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+          "score": 6.488318
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+          "score": 6.334426
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+          "score": 4.358922
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-06",
+      "query": "Как предварительно рассчитать длительность рекламного текста перед записью диктора?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как предварительно рассчитать хронометраж текста и длительность рекламного аудиоролика до записи?",
+          "score": 15.136264
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+          "score": 6.617537
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 6.568174
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-SERVICE-13",
+      "query": "Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+          "score": 15.114955
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+          "score": 5.416576
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+          "score": 5.174986
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-07",
+      "query": "Как спроектировать голосовое меню IVR, чтобы клиент не терялся и мог попасть к оператору?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сделать голосовое меню IVR понятным клиенту?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сделать голосовое меню IVR понятным клиенту?",
+          "score": 14.032109
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+          "score": 4.983341
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+          "score": 4.398468
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-08",
+      "query": "Как выбрать между voice-over, дубляжом и lip-sync для рекламного или обучающего видео?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+          "score": 18.389564
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+          "score": 7.765487
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+          "score": 7.577876
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-09",
+      "query": "Как организовать локализацию одного видеоролика для нескольких стран?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить один ролик для нескольких языков?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить один ролик для нескольких языков?",
+          "score": 4.993086
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+          "score": 4.595006
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+          "score": 3.985558
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-10",
+      "query": "Почему рекламный аудиоролик может быть непонятен слушателю и как это проверить?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Почему рекламный аудиоролик плохо воспринимается на слух?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Почему рекламный аудиоролик плохо воспринимается на слух?",
+          "score": 7.927909
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+          "score": 4.436144
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 4.279235
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-11",
+      "query": "Как подготовить многоязычные объявления для аэропорта или общественного пространства?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить объявления для аэропорта или большого общественного пространства?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить объявления для аэропорта или большого общественного пространства?",
+          "score": 17.242443
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+          "score": 8.431159
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+          "score": 3.173123
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-12",
+      "query": "Как подготовить сценарий и запись голоса для e-learning или обучающего видео?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить озвучивание e-learning?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить озвучивание e-learning?",
+          "score": 9.051861
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+          "score": 5.090518
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+          "score": 4.42442
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-13",
+      "query": "Как сохранить единый голос бренда в серии роликов и IVR?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сохранить единый голос бренда в разных роликах и IVR?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сохранить единый голос бренда в разных роликах и IVR?",
+          "score": 17.097468
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+          "score": 9.614279
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 4.285094
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-14",
+      "query": "Что нужно согласовать перед записью аудиокниги?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что согласовать перед записью аудиокниги?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что согласовать перед записью аудиокниги?",
+          "score": 8.993047
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+          "score": 3.494853
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить озвучивание e-learning?",
+          "score": 3.421968
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-15",
+      "query": "Как компании вести версии голосовых файлов, чтобы не выпустить устаревшее приветствие или рекламное сообщение?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+          "score": 14.320631
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+          "score": 6.904568
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+          "score": 4.803409
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-16",
+      "query": "Что нужно пересмотреть в голосовых сообщениях, если изменились цены, адрес, график или условия услуги?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Что делать с голосовыми сообщениями, если изменились цена, адрес или график?",
+          "score": 14.571197
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+          "score": 6.462631
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+          "score": 5.757003
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-17",
+      "query": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как сохранить единый голос бренда в рекламе, IVR, видео и обучающих материалах?",
+          "score": 15.693335
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сохранить единый голос бренда в разных роликах и IVR?",
+          "score": 13.752607
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 5.122492
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-TRUST-03",
+      "query": "Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+          "score": 14.722579
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+          "score": 7.521057
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Какие права нужно проверить перед повторным использованием записи диктора или созданием AI-копии голоса?",
+          "score": 7.325077
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-18",
+      "query": "Как локализовать голосовые сообщения на несколько языков и не допустить расхождения цифр, имён и условий?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как локализовать голосовые сообщения на несколько языков без расхождения фактов?",
+          "score": 14.437665
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+          "score": 5.608962
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+          "score": 5.118952
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-19",
+      "query": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Что проверить в финальных голосовых файлах перед выпуском в рекламу или телефонную систему?",
+          "score": 15.584294
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md",
+          "heading": "Как организовать версии голосовых файлов, чтобы не выпустить устаревшее сообщение?",
+          "score": 8.201853
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как сделать голосовое меню IVR понятным клиенту?",
+          "score": 6.875198
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-BRAND-07",
+      "query": "Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+          "score": 35.515269
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+          "score": 23.890099
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+          "score": 21.332821
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-20",
+      "query": "Как понять, какой аудиоформат нужен для голосового меню АТС и кто должен подтвердить технические параметры?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Какой аудиоформат нужен для IVR и кто определяет параметры?",
+          "score": 12.483491
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+          "score": 9.75865
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+          "score": 8.482686
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-21",
+      "query": "Чем отличается сухая запись диктора от готовой обработанной дорожки и что выбрать для монтажа?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать: сухую запись диктора или обработанную дорожку?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+          "score": 13.857223
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+          "score": 6.402641
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать для видео: voice-over, дубляж или lip-sync?",
+          "score": 5.853202
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-22",
+      "query": "Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "## Когда бизнесу нужен рекламный джингл и что подготовить для его создания?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Когда бизнесу нужен рекламный джингл и что подготовить для его создания?",
+          "score": 22.226426
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Что выбрать: сухую запись диктора или обработанную дорожку?",
+          "score": 5.532064
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 4.381085
+        }
+      ]
+    },
+    {
+      "benchmark_query_id": "AR-PROBLEM-23",
+      "query": "Как подготовить корпоративную песню или гимн для компании?",
+      "primary_answer_references": [
+        {
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "## Как подготовить корпоративную песню или гимн для компании?"
+        }
+      ],
+      "retrieval_alternatives": [],
+      "primary_target_rank": 1,
+      "acceptable_target_rank": 1,
+      "top_candidates": [
+        {
+          "rank": 1,
+          "file": "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md",
+          "heading": "Как подготовить корпоративную песню или гимн для компании?",
+          "score": 15.279762
+        },
+        {
+          "rank": 2,
+          "file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+          "score": 6.251838
+        },
+        {
+          "rank": 3,
+          "file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+          "heading": "AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+          "score": 6.139397
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The candidate corpus is deliberately limited to internal answer-pack sections; primary evidence pages and the wider repository knowledge corpus are not ranked here.",
+    "The tokenizer and stemmer are lightweight deterministic heuristics, not a Russian morphological analyzer.",
+    "Explicit retrieval alternatives are accepted only when separately documented and resolved; they do not replace the canonical answer route.",
+    "A lexical rank does not predict semantic retrieval by a particular commercial AI model."
+  ]
+}

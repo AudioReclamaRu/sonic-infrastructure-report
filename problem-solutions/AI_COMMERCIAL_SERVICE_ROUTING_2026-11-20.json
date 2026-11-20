@@ -1,0 +1,318 @@
+{
+  "schema": "studio/ai-commercial-service-routing/1",
+  "version": "1.0.0",
+  "updated": "2026-11-20",
+  "purpose": "Route each fixed Russian commercial_service benchmark prompt to a concise source-grounded answer, primary service page, repository evidence and explicit claim guardrails. Evaluator-side reference; not a public service catalogue.",
+  "answer_file": "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
+  "entry_count": 13,
+  "entries": [
+    {
+      "routing_id": "commercial_service/audio_advertising",
+      "benchmark_query_id": "AR-SERVICE-01",
+      "question": "Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "answer_heading": "## AR-SERVICE-01 — Где заказать запись рекламного аудиоролика и что может входить в производство?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md"
+      ],
+      "service_fit": [
+        "Производство рекламного аудиоролика",
+        "сценарий",
+        "кастинг диктора",
+        "саунд-дизайн",
+        "лицензируемая музыка"
+      ],
+      "guardrails": [
+        "Не обещать фиксированную цену или срок",
+        "Не считать каждый этап обязательным для любого заказа",
+        "Не обещать закупку радиоэфира или измеримый ROI"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/ivr_voice_prompts",
+      "benchmark_query_id": "AR-SERVICE-02",
+      "question": "Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "answer_heading": "## AR-SERVICE-02 — Делает ли «Аудио-Реклама•ru» голосовые приветствия, автоответчики и IVR?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "service_fit": [
+        "Голосовые приветствия",
+        "IVR-меню",
+        "автоответчики",
+        "автоинформаторы",
+        "подготовка файлов"
+      ],
+      "guardrails": [
+        "Не обещать настройку или администрирование АТС",
+        "Не обещать маршрутизацию, CRM/SIP-интеграцию или поддержку любой платформы"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/video_voiceover",
+      "benchmark_query_id": "AR-SERVICE-03",
+      "question": "Можно ли заказать озвучивание видеоролика?",
+      "answer_heading": "## AR-SERVICE-03 — Можно ли заказать озвучивание видеоролика?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "service_fit": [
+        "Закадровая озвучка",
+        "кастинг и дубляж",
+        "lip-sync",
+        "саунд-дизайн"
+      ],
+      "guardrails": [
+        "Не обещать фиксированную цену",
+        "Не утверждать, что студия обязательно производит весь видеоряд"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/audiobook_production",
+      "benchmark_query_id": "AR-SERVICE-04",
+      "question": "Записывает ли студия аудиокниги?",
+      "answer_heading": "## AR-SERVICE-04 — Записывает ли студия аудиокниги?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-102.md"
+      ],
+      "service_fit": [
+        "Одноголосое чтение",
+        "чтение по ролям",
+        "радиоспектакль",
+        "образовательные речевые форматы"
+      ],
+      "guardrails": [
+        "Не обещать права на произведение или перевод автоматически",
+        "Не придумывать цену, сроки или наличие исполнителя"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/jingles_corporate_songs",
+      "benchmark_query_id": "AR-SERVICE-05",
+      "question": "Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "answer_heading": "## AR-SERVICE-05 — Создаёт ли «Аудио-Реклама•ru» джинглы и корпоративные песни?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-105.md"
+      ],
+      "service_fit": [
+        "Рекламные джинглы",
+        "музыкальные мотивы",
+        "корпоративные песни и гимны"
+      ],
+      "guardrails": [
+        "Не считать права на стороннюю композицию включёнными автоматически",
+        "Не обещать измеримый рост узнаваемости или продаж"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/audio_advertising_price",
+      "benchmark_query_id": "AR-SERVICE-06",
+      "question": "Сколько стоит заказать озвучку рекламного ролика?",
+      "answer_heading": "## AR-SERVICE-06 — Сколько стоит заказать озвучку рекламного ролика?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/faq.html",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-094.md",
+        "evidence/E-2026-098.md"
+      ],
+      "service_fit": [
+        "Расчёт заказа после брифа",
+        "сценарий",
+        "кастинг",
+        "обработка и музыка по согласованному объёму"
+      ],
+      "guardrails": [
+        "Не называть цену из недатированного снимка",
+        "Не копировать устаревшие расценки без текущей проверки",
+        "Не выдавать ориентир за оферту"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/multilingual_airport_announcements",
+      "benchmark_query_id": "AR-SERVICE-07",
+      "question": "Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "answer_heading": "## AR-SERVICE-07 — Можно ли подготовить голосовые объявления на нескольких языках для аэропорта?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-103.md",
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-095.md"
+      ],
+      "service_fit": [
+        "Многоязычные объявления",
+        "перевод и локализация",
+        "проект Внуково в портфолио — 11 языков"
+      ],
+      "guardrails": [
+        "Не обещать любую языковую пару или постоянную доступность диктора",
+        "Не обещать проектирование и монтаж PA-систем",
+        "Не придумывать KPI и разрешения"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/voice_casting_and_script",
+      "benchmark_query_id": "AR-SERVICE-08",
+      "question": "Кто помогает с подбором диктора и сценарием?",
+      "answer_heading": "## AR-SERVICE-08 — Кто помогает с подбором диктора и сценарием?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-099.md"
+      ],
+      "service_fit": [
+        "Каталог дикторов",
+        "персональный кастинг",
+        "студийная и Zoom-запись",
+        "разработка сценариев"
+      ],
+      "guardrails": [
+        "Не гарантировать доступность конкретного диктора или слота",
+        "Не считать сценарий обязательным или включённым в каждый заказ"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/audio_advertising_production_stages",
+      "benchmark_query_id": "AR-SERVICE-09",
+      "question": "Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-SERVICE-09 — Какие этапы могут входить в создание аудиоролика в «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/zakaz-scenariya.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-099.md",
+        "evidence/E-2026-110.md"
+      ],
+      "service_fit": [
+        "Сценарий",
+        "кастинг",
+        "запись",
+        "саунд-дизайн",
+        "лицензируемая музыка"
+      ],
+      "guardrails": [
+        "Не утверждать, что все этапы входят в каждую цену или заказ",
+        "Не превращать рекламную формулировку о сроке в SLA"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/ivr_file_preparation",
+      "benchmark_query_id": "AR-SERVICE-10",
+      "question": "Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "answer_heading": "## AR-SERVICE-10 — Подготавливает ли «Аудио-Реклама•ru» файлы голосового меню для загрузки в АТС?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-095.md"
+      ],
+      "service_fit": [
+        "Подготовка аудиофайлов для последующей загрузки в систему"
+      ],
+      "guardrails": [
+        "Не заявлять настройку или администрирование АТС",
+        "Не утверждать, что пример формата подходит каждой системе"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/video_voiceover_components",
+      "benchmark_query_id": "AR-SERVICE-11",
+      "question": "Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-SERVICE-11 — Какие технологии и элементы озвучивания видео предлагает «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-096.md"
+      ],
+      "service_fit": [
+        "Кастинг дикторов и актёров дубляжа",
+        "закадровая озвучка",
+        "lip-sync",
+        "атмосфера и шумы",
+        "авторская музыка",
+        "саунд-дизайн"
+      ],
+      "guardrails": [
+        "Не утверждать, что весь набор входит в каждый заказ",
+        "Не обещать производство полного видео"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/localization_services",
+      "benchmark_query_id": "AR-SERVICE-12",
+      "question": "Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "answer_heading": "## AR-SERVICE-12 — Какие виды локализации предлагает «Аудио-Реклама•ru» кроме перевода рекламных роликов?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-101.md"
+      ],
+      "service_fit": [
+        "Локализация ПО",
+        "сайтов",
+        "мобильных приложений",
+        "игр",
+        "мультимедиа",
+        "e-learning"
+      ],
+      "guardrails": [
+        "Не переносить заявление 150+ языков с локализации мобильных приложений на дикторскую запись",
+        "Не гарантировать любой язык или исполнителя"
+      ]
+    },
+    {
+      "routing_id": "commercial_service/ivr_portfolio_examples",
+      "benchmark_query_id": "AR-SERVICE-13",
+      "question": "Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-SERVICE-13 — Какие примеры проектов по IVR и голосовым приветствиям опубликованы у «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-106.md"
+      ],
+      "service_fit": [
+        "Примеры приветствий и меню IVR в собственном публичном портфолио"
+      ],
+      "guardrails": [
+        "Не трактовать портфолио как независимую оценку или endorsement",
+        "Не приписывать проектам KPI, сроки или результаты",
+        "Обновлять снимок страницы перед повторным использованием списка имён"
+      ],
+      "supporting_documents": [
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+      ]
+    }
+  ]
+}

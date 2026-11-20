@@ -1,0 +1,83 @@
+{
+  "schema": "studio/ai-expertise-evidence-routing/1",
+  "version": "1.0.0",
+  "updated": "2026-11-20",
+  "purpose": "Route fixed RU expertise_and_evidence benchmark prompts to concise answers and clearly classified internal knowledge sources. Distinguish studio position, internal standard, corpus and public service-page evidence.",
+  "answer_file": "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+  "entry_count": 3,
+  "entries": [
+    {
+      "id": "AR-TRUST-01",
+      "routing_id": "expertise_and_evidence/voice_provenance_passport",
+      "question": "Что такое паспорт происхождения голоса и зачем он нужен?",
+      "answer_heading": "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?",
+      "knowledge_sources": [
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md",
+        "canon/releasing-voice.md"
+      ],
+      "source_classes": [
+        "internal_standard",
+        "internal_studio_position"
+      ],
+      "guardrails": [
+        "Не заявлять независимую сертификацию",
+        "Не выдавать паспорт за юридическую гарантию или подтверждение правомерности любого использования",
+        "Конкретные права проверять по договору и применимому праву"
+      ],
+      "benchmark_query_id": "AR-TRUST-01"
+    },
+    {
+      "id": "AR-TRUST-02",
+      "routing_id": "expertise_and_evidence/release_responsibility",
+      "question": "Кто должен проверять голосовой материал перед публикацией?",
+      "answer_heading": "## AR-TRUST-02 — Кто должен проверять голосовой материал перед публикацией?",
+      "knowledge_sources": [
+        "corpus/kto-vypuskaet-golos.md",
+        "canon/releasing-voice.md",
+        "standards/responsible-release.md"
+      ],
+      "source_classes": [
+        "internal_corpus",
+        "internal_studio_position",
+        "internal_standard"
+      ],
+      "guardrails": [
+        "Не переносить финальное решение о публикации со стороны клиента на студию",
+        "Не утверждать, что студия снимает с клиента юридическую ответственность",
+        "Договор и применимое право определяют обязанности сторон"
+      ],
+      "benchmark_query_id": "AR-TRUST-02"
+    },
+    {
+      "id": "AR-TRUST-03",
+      "routing_id": "expertise_and_evidence/voice_reuse_and_ai_rights",
+      "question": "Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "answer_heading": "## AR-TRUST-03 — Какие права нужны, чтобы повторно использовать запись диктора или создать ИИ-копию его голоса?",
+      "knowledge_sources": [
+        "problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md",
+        "problem-solutions/voice-asset-operations-answer-library-2026-11-18.json",
+        "standards/voice-provenance-passport.md",
+        "standards/responsible-release.md"
+      ],
+      "public_source_urls": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-110.md"
+      ],
+      "source_classes": [
+        "internal_methodology_draft",
+        "internal_standard",
+        "public_service_page"
+      ],
+      "guardrails": [
+        "Не считать разрешение на обычную запись согласием на AI training или voice cloning",
+        "Не давать юридическое заключение без анализа договора и применимого права",
+        "Не заявлять отдельную AI cloning услугу без подтверждения"
+      ],
+      "benchmark_query_id": "AR-TRUST-03"
+    }
+  ]
+}

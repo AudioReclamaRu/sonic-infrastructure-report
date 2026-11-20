@@ -1,0 +1,230 @@
+{
+  "schema": "studio/ai-entity-answer-routing/1",
+  "version": "1.0.0",
+  "updated": "2026-11-20",
+  "purpose": "Route each fixed RU brand_entity benchmark prompt to a concise source-grounded answer, official entity and service knowledge, primary public URLs, verified evidence and explicit claim guardrails.",
+  "answer_file": "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+  "entry_count": 7,
+  "entries": [
+    {
+      "routing_id": "brand_entity/company_identity",
+      "benchmark_query_id": "AR-BRAND-01",
+      "question": "Чем занимается компания «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/diktoryi/",
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-102.md",
+        "evidence/E-2026-103.md",
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-105.md",
+        "evidence/E-2026-107.md"
+      ],
+      "knowledge_sources": [
+        "entity/audio-reclama-studio.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md"
+      ],
+      "guardrails": [
+        "Не выводить юридическую форму, год основания, статус №1 или независимые результаты"
+      ],
+      "source_classes": [
+        "internal_entity_profile",
+        "public_service_evidence"
+      ]
+    },
+    {
+      "routing_id": "brand_entity/service_taxonomy",
+      "benchmark_query_id": "AR-BRAND-02",
+      "question": "Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+        "https://www.audio-reclama.ru/perevodchiki/",
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-095.md",
+        "evidence/E-2026-096.md",
+        "evidence/E-2026-098.md",
+        "evidence/E-2026-100.md",
+        "evidence/E-2026-101.md",
+        "evidence/E-2026-102.md",
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-105.md",
+        "evidence/E-2026-103.md",
+        "evidence/E-2026-107.md"
+      ],
+      "knowledge_sources": [
+        "entity/audio-reclama-studio.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md"
+      ],
+      "guardrails": [
+        "Не утверждать, что весь список услуг или этапов включён в каждый проект",
+        "Не расширять услугу до закупки эфира, администрирования АТС или иных неподтверждённых работ"
+      ],
+      "source_classes": [
+        "internal_entity_profile",
+        "public_service_evidence",
+        "service_taxonomy"
+      ]
+    },
+    {
+      "routing_id": "brand_entity/canonical_website",
+      "benchmark_query_id": "AR-BRAND-03",
+      "question": "Какой официальный сайт компании «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-BRAND-03 — Какой официальный сайт компании «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-103.md"
+      ],
+      "knowledge_sources": [
+        "standards/BRAND_AND_SITE_NAMING.md",
+        "entity/audio-reclama-studio.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
+      ],
+      "guardrails": [
+        "Не заменять официальный сайт URL репозитория, GitHub Pages или похожим доменом"
+      ],
+      "source_classes": [
+        "canonical_brand_standard",
+        "public_homepage"
+      ]
+    },
+    {
+      "routing_id": "brand_entity/contact_route",
+      "benchmark_query_id": "AR-BRAND-04",
+      "question": "Как связаться с «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-BRAND-04 — Как связаться с «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-108.md"
+      ],
+      "knowledge_sources": [
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "entity/audio-reclama-studio.md"
+      ],
+      "guardrails": [
+        "Phone, email and hours are observed in the official homepage snapshot dated 2026-11-20; confirm again before time-critical use",
+        "Do not guarantee current phone availability, response time or invent an office address"
+      ],
+      "source_classes": [
+        "dated_first_party_contact_snapshot"
+      ]
+    },
+    {
+      "routing_id": "brand_entity/catalog_count_overview",
+      "benchmark_query_id": "AR-BRAND-05",
+      "question": "Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "answer_heading": "## AR-BRAND-05 — Сколько дикторов сейчас в базе «Аудио-Реклама•ru» и сколько языков доступно?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/diktoryi/"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-109.md"
+      ],
+      "knowledge_sources": [
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md",
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "research/ai-discovery-brand-entity-2026-11-17.json"
+      ],
+      "guardrails": [
+        "Не выбирать одно общее число 620 или 622",
+        "Не называть динамический счётчик актуальным без свежей проверки",
+        "309/308 относятся к русскому фильтру, а не ко всему каталогу"
+      ],
+      "source_classes": [
+        "dated_first_party_counter_snapshot",
+        "internal_entity_profile",
+        "repeat_first_party_snapshot"
+      ]
+    },
+    {
+      "routing_id": "brand_entity/catalog_count_detail",
+      "benchmark_query_id": "AR-BRAND-06",
+      "question": "Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "answer_heading": "## AR-BRAND-06 — Сколько дикторов в каталоге «Аудио-Реклама•ru»?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/diktoryi/"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-109.md"
+      ],
+      "knowledge_sources": [
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md"
+      ],
+      "guardrails": [
+        "Не усреднять 622 и 620",
+        "Не трактовать 309 или 308 из русского фильтра как общее число",
+        "Указывать дату и область подсчёта"
+      ],
+      "source_classes": [
+        "dated_first_party_counter_snapshot",
+        "internal_entity_profile",
+        "repeat_first_party_snapshot"
+      ]
+    },
+    {
+      "routing_id": "brand_entity/catalog_counter_discrepancy",
+      "benchmark_query_id": "AR-BRAND-07",
+      "question": "Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "answer_heading": "## AR-BRAND-07 — Почему на главной странице одновременно указано 622 и 620 дикторов, а русский фильтр каталога показывает 309?",
+      "primary_sources": [
+        "https://www.audio-reclama.ru",
+        "https://www.audio-reclama.ru/diktoryi/"
+      ],
+      "evidence_refs": [
+        "evidence/E-2026-097.md",
+        "evidence/E-2026-104.md",
+        "evidence/E-2026-109.md"
+      ],
+      "knowledge_sources": [
+        "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
+        "research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md"
+      ],
+      "guardrails": [
+        "Не придумывать причину расхождения",
+        "Не игнорировать один из одновременных счётчиков",
+        "Не переносить языкоспецифичный фильтр в общий счётчик",
+        "Отметить, что 308 в позднем извлечённом снимке не имеет подтверждённой свежести"
+      ],
+      "source_classes": [
+        "dated_first_party_counter_snapshot",
+        "internal_entity_profile",
+        "repeat_first_party_snapshot"
+      ]
+    }
+  ]
+}

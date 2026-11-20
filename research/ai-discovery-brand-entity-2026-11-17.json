@@ -135,14 +135,22 @@
     "countries_claimed": 182,
     "continents_claimed": 5,
     "voice_actor_count": null,
-    "voice_actor_count_note": "Не нормализовать общее число: исторические снимки показывали 619, 620, 621, 622 и 794. На 18.11.2026 главная показывает 622, а каталог показывает 309 в русском фильтре; это разные области подсчёта. Требуется определение метрики владельцем.",
+    "voice_actor_count_note": "Не нормализовать общее число. На главной странице при одной проверке 18.11.2026 одновременно отображались 622 и 620 дикторов; в каталоге 309 относится к русскому фильтру. Исторические снимки также показывали 619, 621 и 794. Единая методика и область подсчёта не опубликованы; требуется определение владельца.",
     "counter_observations": [
       {
         "observed_at": "2026-11-18",
         "source": "https://www.audio-reclama.ru",
         "displayed_claim": "622 диктора; 62 языка",
-        "scope": "headline on homepage",
-        "note": "first-party page claim; not independent count audit",
+        "scope": "homepage counter block A",
+        "note": "first-party page claim; not independent count audit; another general count on the same page displays 620",
+        "evidence_file": "evidence/E-2026-097.md"
+      },
+      {
+        "observed_at": "2026-11-18",
+        "source": "https://www.audio-reclama.ru",
+        "displayed_claim": "620 дикторов; 5 континентов; 182 страны; 62 языка",
+        "scope": "homepage counter block B",
+        "note": "second general counter visible simultaneously with 622; no metric definition explaining the difference",
         "evidence_file": "evidence/E-2026-097.md"
       },
       {

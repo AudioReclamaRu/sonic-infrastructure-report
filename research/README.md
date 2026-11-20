@@ -37,28 +37,31 @@ related:
 ## Целостность и свежая доказательная база
 
 - AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md — аудит зависимостей PR, структуры benchmark, повреждённых URL и конфликтов evidence-ID в старых открытых ветках.
-- AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md — повторная проверка FAQ, IVR, видеоозвучивания и каталога дикторов; только заявления официальных страниц, с датой и ограничениями.
-- ../evidence/E-2026-094.md … ../evidence/E-2026-097.md — уникальные записи FAQ, IVR, видео и счётчиков каталога; номера выбраны после проверки открытых PR.
+- AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md — повторная проверка FAQ, IVR, видео, аудиороликов, сценариев, джинглов, локализации, аудиокниг, портфолио и каталога дикторов; только заявления официальных страниц, с датой и ограничениями.
+- ../evidence/E-2026-094.md … ../evidence/E-2026-105.md — записи FAQ, IVR, видео, динамических счётчиков, рекламных роликов, сценариев, джинглов, локализации, аудиокниг, портфолио и каталога дикторов; номера выбраны после проверки открытых PR.
 - ../problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md — подготовка ТЗ и приёмка файлов для телефонных, видео-, радио- и иных систем.
 
 ## Problem-first knowledge для бизнес-задач
 
-- ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 15 маршрутов от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам, доказательствам и benchmark-запросам; все 21 problem-solving prompt связан как минимум с одним маршрутом.
+- ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 21 маршрут от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам и доказательствам.
 ## Краткие ответы для AI retrieval
 
-- ../problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md — восемь самостоятельных кратких ответов с практическими шагами, точной связью с услугами и официальными источниками. Эталон для проверки retrieval, не публикация на сайте.
+- ../problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md и AI_ENTITY_ANSWER_ROUTING_2026-11-20.json — семь кратких brand/entity ответов: что делает студия, какие услуги перечислены, официальный сайт, контактный маршрут и динамические счётчики каталога с датированными ограничениями.
+- ../problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md и AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json — три кратких ответа по паспорту происхождения голоса, ответственности выпуска и правам повторного использования/AI. Внутренний evaluator-side reference; авторские позиции и стандарты явно отделены от права и независимой сертификации.
+- ../problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md и AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json — 13 кратких source-grounded ответов на фиксированные commercial-service запросы и их evidence/guardrail маршруты. Внутренний evaluator-side слой, не публикация; benchmark остаётся not_run.
+- ../problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md — четырнадцать самостоятельных кратких ответов с практическими шагами, точной связью с услугами и официальными источниками. Эталон для проверки retrieval, не публикация на сайте.
 
 
-- ../problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md — практическая библиотека из восьми клиентских сценариев с диагностикой, решением, проверкой результата и границами компетенций; экспертный черновик, не публичная публикация.
+- ../problem-solutions/BUSINESS_PROBLEM_AUDIO_ANSWER_LIBRARY_2026-11-17.md — практическая библиотека из одиннадцати клиентских сценариев с диагностикой, решением, проверкой результата и границами компетенций; экспертный черновик, не публичная публикация.
 - ../problem-solutions/business-problem-answer-library-2026-11-17.json — структурированная карта problem → diagnostics → solution → brand-fit → caveats для retrieval и тестов.
 - ../problem-solutions/VOICE_ASSET_OPERATIONS_ANSWER_PACK_2026-11-18.md — шесть problem-first ответов об управлении голосовыми активами: версии и устаревшие сообщения, изменения фактов, непрерывность голоса бренда, права повторного использования/AI, многоязычные версии и pre-release QC. Методический черновик; не подтверждает DAM, телеком-интеграцию, юридическое сопровождение или AI-клонирование как услуги.
 - ../problem-solutions/voice-asset-operations-answer-library-2026-11-18.json — структурированная карта шести сценариев для retrieval и benchmark, включая границы публичных услуг и внутренних методик.
-- ../problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md — шесть кратких самостоятельных ответов для проверки retrieval; evaluator-side reference, не опубликованная страница и не материал для предварительного priming тестируемых систем.
+- ../problem-solutions/AI_VOICE_ASSET_ANSWER_REFERENCE_PACK_2026-11-18.md — семь кратких самостоятельных ответов для проверки retrieval; evaluator-side reference, не опубликованная страница и не материал для предварительного priming тестируемых систем.
 
 ## Видимость в ответах ИИ
 
 - AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
-- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 44 запросов (7 brand/entity, 13 commercial-service, 21 problem-solving, 3 expertise/evidence) с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
+- ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 46 запросов (7 brand/entity, 13 commercial-service, 23 problem-solving, 3 expertise/evidence) с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
 - AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
@@ -73,7 +76,7 @@ related:
 ## Доказательная карта коммерческих страниц
 
 - AI_DISCOVERY_SERVICE_EVIDENCE_MAP_2026-11-17.md — детализация отдельных официальных страниц: состав аудиопродакшна, IVR и подготовка файлов, озвучивание видео (закадр/lip-sync/саунд-дизайн), перевод и локализация ПО/мультимедиа/e-learning, каталог дикторов, Хрономер, сценарии, джинглы и корпоративные песни. Содержит публичные примеры портфолио и источниковые ограничения.
-- Отдельно зафиксировано расхождение счётчиков дикторов на разных страницах: 619, 620, 621, 622 и 794; не выбирать одно число без единого определения метрики и сверки владельцем.
+- Отдельно зафиксировано одновременное расхождение общих счётчиков 622/620 на главной и отдельный русский фильтр 309; исторические наблюдения также включают 619, 621 и 794; не выбирать одно число без единого определения метрики и сверки владельцем.
 - Документ предназначен для evaluator-side проверки фактов; он не публикуется на сайте и не должен предварительно загружаться в тестируемые AI-системы перед blind discovery.
 
 ## Поле внимания и внешние поверхности
@@ -92,3 +95,21 @@ related:
 - Не выдавать внешний случай за клиентский кейс студии.
 - Не заявлять тест или benchmark завершённым, пока не сохранены исходные данные, метод, версии, условия и результат.
 - При переходе проекта в стандарт, инструмент или эксперимент связать документы и обновить статусы, не удаляя исходную историю.
+
+- ../problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json — 112 точных связей expected fact → evidence и/или внутренний методический источник для всех 46 benchmark-запросов; содержит тип опоры и ограничения свежести. Валидатор сверяет полный охват и разрешение каждого source ref.
+
+- AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md — первый ручной семантический аудит 112 expected facts в 46 benchmark-запросах и 44 уникальных источников; 21 материальная ошибка привязки исправлена, оставшиеся ограничения задокументированы.
+
+- ../problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json — ручная проверка 46 подготовленных ответов: 112 expected facts покрыты, 54 must_not_claim ограничения просмотрены; внешняя AI-видимость не измерялась.
+
+- AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md — ручная проверка всех 46 answer texts: 112 ожидаемых фактов, 54 запрета и исправленные маршруты/формулировки; это не AI visibility measurement.
+
+- ../problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json — BM25 lexical baseline для 46 запросов по 44 секциям answer packs: 45 canonical top-1, 46 canonical top-3, 46 acceptable top-1 с одной явно объяснённой альтернативой. Это не тест внешних AI-платформ.
+
+- AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md — локальный BM25-baseline по 44 разделам пяти answer packs для всех 46 запросов: 45 canonical top-1, 46 canonical top-3; подробно описано единственное допустимое пересечение и ограничения метода.
+
+- ../tools/ai_discovery_source_retrieval.py — BM25-проверка маршрута от benchmark query/expected fact к одному из 44 реально привязанных источников; первичные evidence и внутренние методики считаются раздельно.
+
+- AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md — BM25-проверка 44 mapped source docs по 46 запросам и 112 expected facts: все 112 имеют связанный источник в top-10, 96 — в top-3; чистые first-party claims находят snapshot в top-5 44/44. Смешанные claims измеряются отдельно.
+
+- ../problem-solutions/AI_DISCOVERY_SOURCE_RETRIEVAL_EVALUATION_2026-11-20.json — reviewed BM25 snapshot source-level retrieval; CI compares current 44-document corpus and 112 facts with this baseline and fails on stale metrics.
