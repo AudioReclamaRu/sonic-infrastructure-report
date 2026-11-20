@@ -70,6 +70,10 @@ def main() -> int:
         "research/AI_DISCOVERY_SOURCE_RECHECK_2026-11-18.md",
         "research/AI_DISCOVERY_KNOWLEDGE_INTEGRITY_AUDIT_2026-11-18.md",
         "evidence/E-2026-094.md", "evidence/E-2026-095.md", "evidence/E-2026-096.md", "evidence/E-2026-097.md",
+        "evidence/E-2026-098.md", "evidence/E-2026-099.md", "evidence/E-2026-100.md", "evidence/E-2026-101.md",
+        "evidence/E-2026-102.md", "evidence/E-2026-103.md", "evidence/E-2026-104.md", "evidence/E-2026-105.md",
+        "evidence/E-2026-106.md", "evidence/E-2026-107.md", "evidence/E-2026-108.md", "evidence/E-2026-109.md",
+        "evidence/E-2026-110.md", "evidence/E-2026-111.md",
         "problem-solutions/AUDIO_DELIVERY_TECHNICAL_BRIEF_2026-11-18.md",
         "tools/validate_problem_solution_library.py",
         "problem-solutions/business-problem-answer-library-2026-11-17.json",
@@ -85,6 +89,7 @@ def main() -> int:
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -257,6 +262,9 @@ def main() -> int:
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json",
         "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
+        "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json",
+        "evidence/E-2026-106.md", "evidence/E-2026-107.md", "evidence/E-2026-108.md",
+        "evidence/E-2026-109.md", "evidence/E-2026-110.md", "evidence/E-2026-111.md",
     ]
     for rel in llms_required_paths:
         if rel not in llms:
