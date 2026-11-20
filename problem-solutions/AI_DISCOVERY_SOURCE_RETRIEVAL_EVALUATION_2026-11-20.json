@@ -14,7 +14,7 @@
       "Routed fact: rank each expected_fact only in the source class required by its support_type; mixed claims use parallel evidence and methodology channels."
     ],
     "routing_policy": "support_type determines the admissible retrieval channel(s); query routing activates the union of the classes required by all mapped claims.",
-    "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 18 first-party evidence and 26 internal-methodology sources.",
+    "scope": "The unique documents explicitly mapped to the claims in the claim-support matrix; current corpus is split into 19 first-party evidence and 25 internal-methodology sources.",
     "source_classes": {
       "first_party_evidence": "Dated public-page evidence records under evidence/.",
       "internal_methodology": "Internal methodology, entity, standards, canon, guide and technical workflow sources outside evidence/.",
