@@ -5,7 +5,7 @@ from pathlib import Path
 from tools.validate_problem_solution_library import validate
 from tools.ai_discovery_retrieval import REPORT as RETRIEVAL_REPORT, evaluate as evaluate_retrieval, tokenize, _bm25_rank
 from tools.ai_discovery_source_retrieval import REPORT as SOURCE_RETRIEVAL_REPORT, evaluate as evaluate_source_retrieval, validate_report as validate_source_retrieval_report
-from tools.ai_discovery_answer_support import evaluate as evaluate_answer_support, extract_answer_units
+from tools.ai_discovery_answer_support import UNIT_DISPOSITIONS, evaluate as evaluate_answer_support, extract_answer_units
 
 LIBRARY = "problem-solutions/business-problem-answer-library-2026-11-17.json"
 REFERENCE = "problem-solutions/AI_ANSWER_REFERENCE_PACK_2026-11-17.md"
@@ -316,6 +316,12 @@ def fixture_root():
         "entries": answer_entries,
     }
     (root / ANSWER_COVERAGE_AUDIT).write_text(json.dumps(answer_audit), encoding="utf-8")
+    (root / UNIT_DISPOSITIONS).write_text(json.dumps({
+        "schema": "studio/ai-discovery-answer-unit-dispositions/1",
+        "updated": "2026-11-20",
+        "disposition_count": 0,
+        "dispositions": [],
+    }), encoding="utf-8")
     retrieval_report = evaluate_retrieval(root)
     (root / RETRIEVAL_EVALUATION).write_text(
         json.dumps(retrieval_report, ensure_ascii=False, indent=2) + "\n",
@@ -454,6 +460,123 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         self.assertEqual(unmatched[0]["benchmark_query_id"], "AR-SERVICE-01")
         self.assertIn("guarantees a sales increase", unmatched[0]["answer_text"])
         self.assertTrue(unmatched[0]["manual_review_required"])
+
+    def test_answer_support_uses_unit_disposition_instead_of_whole_fact_classes(self):
+        matrix = self.read_json(CLAIM_SUPPORT_MATRIX)
+        service = next(
+            entry for entry in matrix["entries"]
+            if entry["benchmark_query_id"] == "AR-SERVICE-01"
+        )
+        service["claims"][0]["support_type"] = "mixed"
+        service["claims"][0]["source_refs"] = [
+            "evidence/E-TEST-002.md",
+            "guides/ivr.md",
+        ]
+        self.write_json(CLAIM_SUPPORT_MATRIX, matrix)
+
+        baseline = evaluate_answer_support(self.root)
+        unit = next(
+            item for item in baseline["units"]
+            if item["unit_id"] == "AR-SERVICE-01::01"
+        )
+        self.assertEqual(
+            unit["required_source_classes"],
+            ["first_party_evidence", "internal_methodology"],
+        )
+
+        dispositions = self.read_json(UNIT_DISPOSITIONS)
+        dispositions["disposition_count"] = 1
+        dispositions["dispositions"] = [{
+            "unit_id": unit["unit_id"],
+            "benchmark_query_id": unit["benchmark_query_id"],
+            "answer_file": unit["answer_file"],
+            "answer_heading": unit["answer_heading"],
+            "answer_text": unit["answer_text"],
+            "category": "first_party_fact",
+            "required_source_classes": ["first_party_evidence"],
+            "source_refs": ["evidence/E-TEST-002.md"],
+            "review_status": "manual_reviewed",
+            "review_date": "2026-11-20",
+            "review_note": "This exact sentence states a public service fact.",
+        }]
+        self.write_json(UNIT_DISPOSITIONS, dispositions)
+
+        result = evaluate_answer_support(self.root)
+        unit = next(
+            item for item in result["units"]
+            if item["unit_id"] == "AR-SERVICE-01::01"
+        )
+        self.assertEqual(
+            unit["candidate_fact_required_source_classes"],
+            ["first_party_evidence", "internal_methodology"],
+        )
+        self.assertEqual(unit["required_source_classes"], ["first_party_evidence"])
+        self.assertEqual(unit["unit_disposition"]["category"], "first_party_fact")
+        self.assertFalse(unit["manual_review_required"])
+        self.assertEqual(result["metrics"]["manual_disposition_unit_count"], 1)
+
+    def test_answer_support_general_legal_caution_does_not_force_a_source_channel(self):
+        trust_file = self.root / TRUST_PACK
+        trust_file.write_text(
+            trust_file.read_text(encoding="utf-8")
+            + "Any project-specific legal conclusion requires separate advice.\n",
+            encoding="utf-8",
+        )
+        result = evaluate_answer_support(self.root)
+        unit = next(
+            item for item in result["units"]
+            if item["unit_id"] == "AR-TRUST-01::02"
+        )
+        dispositions = self.read_json(UNIT_DISPOSITIONS)
+        dispositions["disposition_count"] = 1
+        dispositions["dispositions"] = [{
+            "unit_id": unit["unit_id"],
+            "benchmark_query_id": unit["benchmark_query_id"],
+            "answer_file": unit["answer_file"],
+            "answer_heading": unit["answer_heading"],
+            "answer_text": unit["answer_text"],
+            "category": "general_legal_caution",
+            "required_source_classes": [],
+            "source_refs": [],
+            "review_status": "manual_reviewed",
+            "review_date": "2026-11-20",
+            "review_note": "Generic caution only; it makes no company-specific factual claim.",
+        }]
+        self.write_json(UNIT_DISPOSITIONS, dispositions)
+        result = evaluate_answer_support(self.root)
+        unit = next(
+            item for item in result["units"]
+            if item["unit_id"] == "AR-TRUST-01::02"
+        )
+        self.assertFalse(unit["retrieval_required"])
+        self.assertEqual(unit["required_source_classes"], [])
+        self.assertIsNone(unit["all_required_classes_top_5"])
+        self.assertFalse(unit["manual_review_required"])
+
+    def test_answer_support_rejects_stale_unit_disposition_text(self):
+        result = evaluate_answer_support(self.root)
+        unit = next(
+            item for item in result["units"]
+            if item["unit_id"] == "AR-SERVICE-01::01"
+        )
+        dispositions = self.read_json(UNIT_DISPOSITIONS)
+        dispositions["disposition_count"] = 1
+        dispositions["dispositions"] = [{
+            "unit_id": unit["unit_id"],
+            "benchmark_query_id": unit["benchmark_query_id"],
+            "answer_file": unit["answer_file"],
+            "answer_heading": unit["answer_heading"],
+            "answer_text": "This text was not in the answer pack.",
+            "category": "first_party_fact",
+            "required_source_classes": ["first_party_evidence"],
+            "source_refs": ["evidence/E-TEST-002.md"],
+            "review_status": "manual_reviewed",
+            "review_date": "2026-11-20",
+            "review_note": "Test stale disposition protection.",
+        }]
+        self.write_json(UNIT_DISPOSITIONS, dispositions)
+        with self.assertRaisesRegex(ValueError, "text drift"):
+            evaluate_answer_support(self.root)
 
     def test_answer_unit_extraction_ignores_source_footers_and_splits_sentences(self):
         extracted = extract_answer_units(
