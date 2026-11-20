@@ -23,6 +23,8 @@ EXPERTISE_ROUTING_SCHEMA = "studio/ai-expertise-evidence-routing/1"
 ENTITY_ANSWER_PACK = "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md"
 ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
 ENTITY_ROUTING_SCHEMA = "studio/ai-entity-answer-routing/1"
+CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026-11-20.json"
+CLAIM_SUPPORT_SCHEMA = "studio/ai-discovery-claim-support-matrix/1"
 ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
 CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
@@ -710,6 +712,143 @@ def validate(root: Path = ROOT) -> list[str]:
     unknown_entity_routes = sorted(set(routed_entity_ids) - set(entity_query_map))
     for query_id in unknown_entity_routes:
         errors.append(f"brand/entity routing index references unknown query: {query_id}")
+
+
+    # Every benchmark expected fact must resolve to explicit, typed source references.
+    # This prevents a route from passing merely because it has an evidence file somewhere.
+    claim_matrix = _read_json(root / CLAIM_SUPPORT_MATRIX, errors, CLAIM_SUPPORT_MATRIX) or {}
+    if claim_matrix.get("schema") != CLAIM_SUPPORT_SCHEMA:
+        errors.append("unexpected AI discovery claim-support matrix schema")
+    claim_entries = claim_matrix.get("entries", [])
+    if not isinstance(claim_entries, list):
+        errors.append("AI discovery claim-support matrix entries must be a list")
+        claim_entries = []
+    if claim_matrix.get("query_count") != len(queries):
+        errors.append("claim-support matrix query_count must equal benchmark query count")
+    if len(claim_entries) != len(queries):
+        errors.append("claim-support matrix must contain exactly one entry per benchmark query")
+
+    benchmark_by_id = {
+        query.get("id"): query for query in queries
+        if isinstance(query, dict) and isinstance(query.get("id"), str)
+    }
+    claim_query_ids: list[str] = []
+    measured_claim_count = 0
+    allowed_support_types = {"first_party_evidence", "internal_methodology", "mixed"}
+    for entry_index, entry in enumerate(claim_entries, start=1):
+        if not isinstance(entry, dict):
+            errors.append(f"claim-support matrix entry {entry_index} must be an object")
+            continue
+        query_id = entry.get("benchmark_query_id")
+        if not isinstance(query_id, str) or not query_id:
+            errors.append(f"claim-support matrix entry {entry_index} missing benchmark_query_id")
+            continue
+        claim_query_ids.append(query_id)
+        query = benchmark_by_id.get(query_id)
+        if query is None:
+            errors.append(f"claim-support matrix references unknown benchmark query: {query_id}")
+            continue
+        if entry.get("query_cluster") != query.get("cluster"):
+            errors.append(f"claim-support matrix cluster does not match benchmark query {query_id}")
+        claims = entry.get("claims")
+        if not isinstance(claims, list):
+            errors.append(f"claim-support matrix claims must be a list for {query_id}")
+            continue
+        expected_facts = query.get("expected_facts", [])
+        measured_claim_count += len(claims)
+        if len(claims) != len(expected_facts):
+            errors.append(
+                f"claim-support matrix must map every expected fact exactly once for {query_id}: "
+                f"expected {len(expected_facts)}, found {len(claims)}"
+            )
+        seen_fact_indices: set[int] = set()
+        for claim_index, claim in enumerate(claims, start=1):
+            label = f"claim-support {query_id} fact {claim_index}"
+            if not isinstance(claim, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            fact_index = claim.get("fact_index")
+            if not isinstance(fact_index, int) or fact_index < 1 or fact_index > len(expected_facts):
+                errors.append(f"{label} has invalid fact_index: {fact_index!r}")
+            elif fact_index in seen_fact_indices:
+                errors.append(f"{label} duplicates fact_index {fact_index}")
+            else:
+                seen_fact_indices.add(fact_index)
+                if claim.get("expected_fact") != expected_facts[fact_index - 1]:
+                    errors.append(f"{label} text does not exactly match benchmark expected_facts[{fact_index}]")
+
+            support_type = claim.get("support_type")
+            if support_type not in allowed_support_types:
+                errors.append(f"{label} has unsupported support_type: {support_type!r}")
+            scope_note = claim.get("scope_note")
+            if not isinstance(scope_note, str) or not scope_note.strip():
+                errors.append(f"{label} must have a non-empty scope_note")
+            source_refs = claim.get("source_refs")
+            if not isinstance(source_refs, list) or not source_refs:
+                errors.append(f"{label} must have source_refs")
+                source_refs = []
+
+            evidence_sources_count = 0
+            internal_sources_count = 0
+            for source_index, source_path in enumerate(source_refs, start=1):
+                source_label = f"{label} source_refs[{source_index}]"
+                if not safe_relative_path(source_path) or not (root / source_path).is_file():
+                    errors.append(f"{source_label} does not resolve to a safe repository file: {source_path}")
+                    continue
+                if source_path not in query.get("preferred_sources", []):
+                    errors.append(f"{source_label} is not declared in benchmark preferred_sources: {source_path}")
+                if source_path.startswith("evidence/"):
+                    evidence_sources_count += 1
+                    try:
+                        evidence_text = (root / source_path).read_text(encoding="utf-8")
+                    except OSError as exc:
+                        errors.append(f"{source_label} cannot be read: {exc}")
+                        continue
+                    if not re.search(
+                        r"^\*\*Primary source:\*\*\s*https://\S+",
+                        evidence_text,
+                        flags=re.MULTILINE,
+                    ):
+                        errors.append(f"{source_label} has no explicit HTTPS Primary source URL")
+                    status_match = re.search(r"^status:\s*([a-zA-Z0-9_-]+)\s*$", evidence_text, flags=re.MULTILINE)
+                    evidence_status = status_match.group(1) if status_match else ""
+                    if evidence_status not in {
+                        "verified", "verified_first_party_snapshot", "indexed_first_party_snapshot"
+                    }:
+                        errors.append(f"{source_label} has unsupported or missing evidence status: {evidence_status!r}")
+                    if evidence_status == "indexed_first_party_snapshot":
+                        note = scope_note.lower() if isinstance(scope_note, str) else ""
+                        if "индексирован" not in note and "crawl" not in note:
+                            errors.append(
+                                f"{label} must disclose indexed/crawl freshness when using {source_path}"
+                            )
+                else:
+                    internal_sources_count += 1
+
+            expected_support_type = (
+                "mixed" if evidence_sources_count and internal_sources_count
+                else "first_party_evidence" if evidence_sources_count
+                else "internal_methodology" if internal_sources_count
+                else None
+            )
+            if expected_support_type and support_type != expected_support_type:
+                errors.append(
+                    f"{label} support_type {support_type!r} does not match referenced source classes "
+                    f"({expected_support_type})"
+                )
+
+    if len(claim_query_ids) != len(set(claim_query_ids)):
+        errors.append("claim-support matrix benchmark_query_ids must be unique")
+    missing_claim_queries = sorted(set(benchmark_by_id) - set(claim_query_ids))
+    for query_id in missing_claim_queries:
+        errors.append(f"benchmark expected facts have no claim-support entry: {query_id}")
+    unknown_claim_queries = sorted(set(claim_query_ids) - set(benchmark_by_id))
+    for query_id in unknown_claim_queries:
+        errors.append(f"claim-support matrix references unknown benchmark query: {query_id}")
+    if claim_matrix.get("claim_count") != measured_claim_count:
+        errors.append(
+            f"claim-support matrix claim_count must equal actual mapped facts ({measured_claim_count})"
+        )
 
     return errors
 
