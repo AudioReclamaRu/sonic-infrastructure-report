@@ -81,7 +81,7 @@ GPT-Live сделал голос интерфейсом. AI-дубляж ста�
 
 ## КОНТАКТ И ПРОДУКТ
 
-https://audio-reclama.ru · start@audio-reclama.ru — редактура голоса до эфира,
+https://www.audio-reclama.ru · start@audio-reclama.ru — редактура голоса до эфира,
 запись, паспорта происхождения, расчёт лицензии.
 ## Краткая карта для retrieval
 
