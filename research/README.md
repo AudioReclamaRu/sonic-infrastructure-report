@@ -48,6 +48,7 @@ related:
 - AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md — связь RU Google Search Console query→page данных по четырём коммерческим страницам с неизменёнными generic/brand-service AI benchmark-модулями; обосновывает отдельные ценовые prompts для IVR, видео и аудиокниг. GSC — поисковый сигнал, не AI-видимость.
 - ai-visibility-ru-commercial-price-extension-2026-11-20.json — отдельный аддитивный набор из трёх небрендированных RU price-intent вопросов. Не изменяет 29-вопросный generic baseline; все вопросы пока NOT_RUN.
 - AI_SERVICE_ANSWER_SURFACE_AUDIT_2026-11-20.md — read-only разбор четырёх коммерческих страниц как источников ответов ИИ: видимые доказательства, границы услуг, не подтверждённые цены/сроки/технические обещания, GSC-приоритеты и осторожность из-за возраста HTML-crawl.
+- AI_EXTERNAL_ENTITY_AND_CITATION_SURFACE_AUDIT_2026-11-20.md — Bing AI Performance как дополнительная native citation-аналитика; сравнение с Alice SoV/GSC/consumer UI; факт-чек публичных профилей AllAdvertising и Cinematch; независимое подтверждение проекта с золотом WOW Awards 2018. Bing пока не подключён, профили не редактировались.
 
 ## Поисковая видимость и качество обхода
 
