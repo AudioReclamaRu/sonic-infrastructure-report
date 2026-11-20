@@ -186,6 +186,18 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
     query_count = len(entries)
     claim_count = len(fact_anchor_ranks)
     evidence_claim_count = len(evidence_fact_ranks)
+    all_fact_ranks_by_query = [
+        [claim["best_mapped_source_rank"] for claim in entry["claims"]]
+        for entry in entries
+    ]
+    evidence_fact_ranks_by_query = [
+        [
+            claim["best_first_party_evidence_rank"]
+            for claim in entry["claims"]
+            if claim["best_first_party_evidence_rank"] is not None
+        ]
+        for entry in entries
+    ]
     metrics = {
         "query_count": query_count,
         "mapped_source_documents": len(documents),
@@ -211,6 +223,22 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
             all(claim["best_mapped_source_rank"] <= 5 for claim in entry["claims"])
             for entry in entries
         ),
+        "all_claims_have_mapped_source_top_10": sum(
+            all(claim["best_mapped_source_rank"] <= 10 for claim in entry["claims"])
+            for entry in entries
+        ),
+        "all_evidence_claims_have_evidence_top_5": sum(
+            bool(ranks) and all(rank is not None and rank <= 5 for rank in ranks)
+            for ranks in evidence_fact_ranks_by_query
+        ),
+        "all_evidence_claims_have_evidence_top_10": sum(
+            bool(ranks) and all(rank is not None and rank <= 10 for rank in ranks)
+            for ranks in evidence_fact_ranks_by_query
+        ),
+        "max_mapped_source_rank": max(rank for rank in fact_anchor_ranks if rank is not None),
+        "median_mapped_source_rank": sorted(rank for rank in fact_anchor_ranks if rank is not None)[
+            len(fact_anchor_ranks) // 2
+        ],
     }
     return {
         "schema": SCHEMA,
@@ -276,7 +304,9 @@ def main() -> int:
         "AI Discovery mapped-source retrieval: "
         f"{metrics['queries_with_mapped_source_top_3']}/{metrics['query_count']} queries have a mapped source in top-3; "
         f"{metrics['claims_with_mapped_source_top_5']}/{metrics['expected_fact_count']} fact claims have a mapped source in top-5; "
-        f"{metrics['evidence_claims_with_evidence_top_5']}/{metrics['claims_with_first_party_evidence']} evidence-backed claims have first-party evidence in top-5."
+        f"{metrics['evidence_claims_with_evidence_top_5']}/{metrics['claims_with_first_party_evidence']} evidence-backed claims have first-party evidence in top-5; "
+        f"all facts are covered at top-5 in {metrics['all_claims_have_mapped_source_top_5']}/{metrics['query_count']} queries; "
+        f"max mapped-source rank={metrics['max_mapped_source_rank']}."
     )
     return 0
 
