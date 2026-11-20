@@ -13,6 +13,8 @@ SERVICE_PACK = "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.m
 SERVICE_ROUTES = "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json"
 TRUST_PACK = "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
 TRUST_ROUTES = "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
+ENTITY_PACK = "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md"
+ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
 
 
 def fixture_root():
@@ -70,6 +72,16 @@ def fixture_root():
             "preferred_sources": ["standards/voice-provenance-passport.md"],
             "must_not_claim": ["independent certification"],
             "status": "not_run",
+        }, {
+            "id": "AR-BRAND-01",
+            "cluster": "brand_entity",
+            "language": "ru",
+            "region": "RU",
+            "query": "Чем занимается компания «Аудио-Реклама•ru»?",
+            "expected_facts": ["studio identity"],
+            "preferred_sources": ["entity/audio-reclama-studio.md"],
+            "must_not_claim": ["unverified legal form"],
+            "status": "not_run",
         }],
     }
     (root / LIBRARY).write_text(json.dumps(library), encoding="utf-8")
@@ -90,6 +102,10 @@ def fixture_root():
     )
     (root / TRUST_PACK).write_text(
         "## AR-TRUST-01 — Что такое паспорт происхождения голоса и зачем он нужен?\n",
+        encoding="utf-8",
+    )
+    (root / ENTITY_PACK).write_text(
+        "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?\n",
         encoding="utf-8",
     )
     (root / "evidence/E-TEST-002.md").write_text(
@@ -158,6 +174,23 @@ def fixture_root():
         }]
     }
     (root / TRUST_ROUTES).write_text(json.dumps(expertise_routes), encoding="utf-8")
+    entity_routes = {
+        "schema": "studio/ai-entity-answer-routing/1",
+        "entry_count": 1,
+        "entries": [{
+            "routing_id": "brand_entity/company_identity",
+            "benchmark_query_id": "AR-BRAND-01",
+            "question": "Чем занимается компания «Аудио-Реклама•ru»?",
+            "answer_heading": "## AR-BRAND-01 — Чем занимается компания «Аудио-Реклама•ru»?",
+            "knowledge_sources": ["guides/ivr.md"],
+            "source_classes": ["internal_entity_record"],
+            "public_source_urls": [],
+            "evidence_refs": [],
+            "primary_sources": [],
+            "guardrails": ["no unverified claims"]
+        }]
+    }
+    (root / ENTITY_ROUTES).write_text(json.dumps(entity_routes), encoding="utf-8")
     return temporary, root
 
 
@@ -245,6 +278,21 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         routes = self.read_json(TRUST_ROUTES)
         routes["entries"][0]["knowledge_sources"] = ["standards/missing.md"]
         self.write_json(TRUST_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("knowledge_sources[1] does not resolve" in e for e in errors))
+
+    def test_brand_entity_query_must_have_route(self):
+        routes = self.read_json(ENTITY_ROUTES)
+        routes["entries"] = []
+        routes["entry_count"] = 0
+        self.write_json(ENTITY_ROUTES, routes)
+        errors = validate(self.root)
+        self.assertTrue(any("brand/entity benchmark query is not mapped" in e for e in errors))
+
+    def test_brand_entity_knowledge_source_must_resolve(self):
+        routes = self.read_json(ENTITY_ROUTES)
+        routes["entries"][0]["knowledge_sources"] = ["entity/missing.md"]
+        self.write_json(ENTITY_ROUTES, routes)
         errors = validate(self.root)
         self.assertTrue(any("knowledge_sources[1] does not resolve" in e for e in errors))
 

@@ -20,6 +20,9 @@ COMMERCIAL_SERVICE_SCHEMA = "studio/ai-commercial-service-routing/1"
 EXPERTISE_ANSWER_PACK = "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md"
 EXPERTISE_ROUTES = "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json"
 EXPERTISE_ROUTING_SCHEMA = "studio/ai-expertise-evidence-routing/1"
+ENTITY_ANSWER_PACK = "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md"
+ENTITY_ROUTES = "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json"
+ENTITY_ROUTING_SCHEMA = "studio/ai-entity-answer-routing/1"
 ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
 CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
@@ -587,6 +590,127 @@ def validate(root: Path = ROOT) -> list[str]:
     for query_id in unknown_expertise_routes:
         errors.append(f"expertise/evidence routing index references unknown query: {query_id}")
 
+    # Route all brand/entity benchmark prompts to exact, evidence-aware entity
+    # answers. Dated snapshots for contacts and counters must retain their caveats.
+    entity_routes = _read_json(root / ENTITY_ROUTES, errors, ENTITY_ROUTES) or {}
+    if entity_routes.get("schema") != ENTITY_ROUTING_SCHEMA:
+        errors.append("unexpected brand/entity routing schema")
+    entity_entries = entity_routes.get("entries", [])
+    if not isinstance(entity_entries, list) or not entity_entries:
+        errors.append("brand/entity routing index must contain entries")
+        entity_entries = []
+    if entity_routes.get("entry_count") != len(entity_entries):
+        errors.append("brand/entity routing entry_count must equal actual entries")
+    try:
+        entity_pack = (root / ENTITY_ANSWER_PACK).read_text(encoding="utf-8")
+    except OSError as exc:
+        errors.append(f"cannot read brand/entity answer pack: {exc}")
+        entity_pack = ""
+
+    entity_query_map = {
+        query.get("id"): query for query in queries
+        if isinstance(query, dict) and query.get("cluster") == "brand_entity"
+        and isinstance(query.get("id"), str)
+    }
+    routed_entity_ids: list[str] = []
+    entity_route_ids: list[str] = []
+    for route_index, route in enumerate(entity_entries, start=1):
+        if not isinstance(route, dict):
+            errors.append(f"brand/entity route {route_index} must be an object")
+            continue
+        for field in ("routing_id", "benchmark_query_id", "question", "answer_heading",
+                      "knowledge_sources", "guardrails"):
+            if field not in route or route[field] in (None, "", []):
+                errors.append(f"brand/entity route {route_index} missing required field: {field}")
+        routing_id = route.get("routing_id")
+        if isinstance(routing_id, str) and routing_id:
+            entity_route_ids.append(routing_id)
+        query_id = route.get("benchmark_query_id")
+        if isinstance(query_id, str) and query_id:
+            routed_entity_ids.append(query_id)
+        query = entity_query_map.get(query_id)
+        if query is None:
+            errors.append(
+                f"brand/entity route {routing_id or route_index} references unknown or non-brand benchmark query: {query_id}"
+            )
+        elif query.get("query") != route.get("question"):
+            errors.append(
+                f"brand/entity route {routing_id or route_index} question does not match benchmark query {query_id}"
+            )
+        heading = route.get("answer_heading")
+        if not isinstance(heading, str) or not heading or heading not in entity_pack:
+            errors.append(f"brand/entity route {routing_id or route_index} answer heading does not resolve: {heading!r}")
+
+        knowledge_sources = route.get("knowledge_sources")
+        if not isinstance(knowledge_sources, list) or not knowledge_sources:
+            errors.append(f"brand/entity route {routing_id or route_index} must have knowledge_sources")
+        else:
+            for source_index, source_path in enumerate(knowledge_sources, start=1):
+                label = f"brand/entity route {routing_id or route_index} knowledge_sources[{source_index}]"
+                if not safe_relative_path(source_path) or not (root / source_path).is_file():
+                    errors.append(f"{label} does not resolve to a safe repository file: {source_path}")
+
+        source_classes = route.get("source_classes", [])
+        if not isinstance(source_classes, list) or not source_classes:
+            errors.append(f"brand/entity route {routing_id or route_index} source_classes must be a non-empty list")
+
+        evidence_sources: set[str] = set()
+        evidence_refs = route.get("evidence_refs", [])
+        if not isinstance(evidence_refs, list):
+            errors.append(f"brand/entity route {routing_id or route_index} evidence_refs must be a list")
+            evidence_refs = []
+        for evidence_index, evidence_ref in enumerate(evidence_refs, start=1):
+            label = f"brand/entity route {routing_id or route_index} evidence_refs[{evidence_index}]"
+            if not safe_relative_path(evidence_ref) or not evidence_ref.startswith("evidence/"):
+                errors.append(f"{label} must be a safe path inside evidence/")
+            elif not (root / evidence_ref).is_file():
+                errors.append(f"{label} does not resolve: {evidence_ref}")
+            else:
+                try:
+                    evidence_text = (root / evidence_ref).read_text(encoding="utf-8")
+                except OSError as exc:
+                    errors.append(f"{label} cannot be read: {exc}")
+                    continue
+                evidence_lines = [
+                    line for line in evidence_text.splitlines()
+                    if line.startswith("**Primary source:**") or line.startswith("- https://")
+                ]
+                if not evidence_lines:
+                    errors.append(f"{label} has no explicit Primary source URL")
+                for evidence_line in evidence_lines:
+                    source_value = evidence_line.split("**Primary source:**", 1)[1].strip() if evidence_line.startswith("**Primary source:**") else evidence_line.lstrip("- ").strip()
+                    source_url = _clean_url(source_value)
+                    _validate_url(source_url, f"{label} Primary source", errors)
+                    evidence_sources.add(source_url)
+
+        primary_sources = route.get("primary_sources", [])
+        if not isinstance(primary_sources, list):
+            errors.append(f"brand/entity route {routing_id or route_index} primary_sources must be a list")
+            primary_sources = []
+        for source_index, source_url in enumerate(primary_sources, start=1):
+            label = f"brand/entity route {routing_id or route_index} primary_sources[{source_index}]"
+            if not isinstance(source_url, str) or not source_url.startswith("https://"):
+                errors.append(f"{label} must be an absolute HTTPS URL")
+                continue
+            _validate_url(source_url, label, errors)
+            if _clean_url(source_url) not in evidence_sources:
+                errors.append(f"{label} is not covered by any linked evidence_refs record: {source_url}")
+
+        guardrails = route.get("guardrails")
+        if not isinstance(guardrails, list) or not guardrails:
+            errors.append(f"brand/entity route {routing_id or route_index} guardrails must be a non-empty list")
+
+    if len(entity_route_ids) != len(set(entity_route_ids)):
+        errors.append("brand/entity routing IDs must be unique")
+    if len(routed_entity_ids) != len(set(routed_entity_ids)):
+        errors.append("brand/entity benchmark query IDs must be unique")
+    missing_entity_routes = sorted(set(entity_query_map) - set(routed_entity_ids))
+    for query_id in missing_entity_routes:
+        errors.append(f"brand/entity benchmark query is not mapped to an answer route: {query_id}")
+    unknown_entity_routes = sorted(set(routed_entity_ids) - set(entity_query_map))
+    for query_id in unknown_entity_routes:
+        errors.append(f"brand/entity routing index references unknown query: {query_id}")
+
     return errors
 
 
@@ -603,11 +727,13 @@ def main() -> int:
     mapped_query_count = len({query_id for entry in routing["entries"] for query_id in entry.get("benchmark_query_ids", [])})
     commercial_routes = json.loads((ROOT / COMMERCIAL_SERVICE_ROUTES).read_text(encoding="utf-8"))
     expertise_routes = json.loads((ROOT / EXPERTISE_ROUTES).read_text(encoding="utf-8"))
+    entity_routes = json.loads((ROOT / ENTITY_ROUTES).read_text(encoding="utf-8"))
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
         f"{len(commercial_routes['entries'])} commercial-service routes, "
         f"{len(expertise_routes['entries'])} expertise/evidence routes, "
+        f"{len(entity_routes['entries'])} brand/entity routes, "
         f"{mapped_query_count} linked problem prompts, "
         f"{len(benchmark['queries'])} unrun benchmark queries; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
