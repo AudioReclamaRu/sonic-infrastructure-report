@@ -806,12 +806,24 @@ def validate(root: Path = ROOT) -> list[str]:
                     except OSError as exc:
                         errors.append(f"{source_label} cannot be read: {exc}")
                         continue
-                    if not re.search(
-                        r"^\*\*Primary source:\*\*\s*https://\S+",
-                        evidence_text,
-                        flags=re.MULTILINE,
-                    ):
+                    source_lines = [
+                        line.strip() for line in evidence_text.splitlines()
+                        if line.startswith("**Primary source:**")
+                        or line.startswith("**Primary sources:**")
+                        or line.startswith("- https://")
+                    ]
+                    source_urls = []
+                    for source_line in source_lines:
+                        if source_line.startswith("**Primary source:**"):
+                            value = source_line.split("**Primary source:**", 1)[1].strip()
+                            if value.startswith("https://"):
+                                source_urls.append(_clean_url(value))
+                        elif source_line.startswith("- https://"):
+                            source_urls.append(_clean_url(source_line[2:].strip()))
+                    if not source_urls:
                         errors.append(f"{source_label} has no explicit HTTPS Primary source URL")
+                    for source_url in source_urls:
+                        _validate_url(source_url, f"{source_label} Primary source", errors)
                     status_match = re.search(r"^status:\s*([a-zA-Z0-9_-]+)\s*$", evidence_text, flags=re.MULTILINE)
                     evidence_status = status_match.group(1) if status_match else ""
                     if evidence_status not in {
