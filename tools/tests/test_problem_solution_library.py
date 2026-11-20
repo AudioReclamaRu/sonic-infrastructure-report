@@ -411,6 +411,13 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
         errors = validate(self.root)
         self.assertTrue(any("is not covered by any linked evidence_refs record" in e for e in errors))
 
+    def test_primary_source_cannot_be_an_internal_repository_file(self):
+        routing = self.read_json(ROUTING)
+        routing["entries"][0]["primary_sources"] = ["guides/ivr.md"]
+        self.write_json(ROUTING, routing)
+        errors = validate(self.root)
+        self.assertTrue(any("must be an absolute HTTPS URL" in e for e in errors))
+
     def test_evidence_record_must_identify_its_primary_source(self):
         evidence_path = self.root / "evidence/E-TEST-001.md"
         evidence_path.write_text(
