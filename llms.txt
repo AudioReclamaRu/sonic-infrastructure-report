@@ -131,3 +131,5 @@
 - [Счётчики каталога — evidence E-2026-109](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-109.md): повторное наблюдение 622/620/62 и русского фильтра 309; это отображение страниц, не аудит базы профилей.
 - [Права на аудиоролики — evidence E-2026-110](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-110.md): снимок 20.11.2026 с формулировкой о передаче авторских и исключительных прав; конкретный объём определяется договором.
 - [Хрономер — evidence E-2026-111](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/evidence/E-2026-111.md): индексированный снимок с crawl за две недели до получения; не доказательство текущей доступности или точности инструмента.
+
+- [Ручной семантический аудит связей факт → источник](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_CLAIM_SOURCE_SEMANTIC_AUDIT_2026-11-20.md): ревью 112 expected facts по 46 benchmark-запросам, проверка 44 исходных документов, исправление 21 слишком широкой или неподходящей привязки; описаны freshness и пределы доказательств.
