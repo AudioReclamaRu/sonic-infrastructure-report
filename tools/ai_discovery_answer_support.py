@@ -587,47 +587,79 @@ def evaluate(root: Path = ROOT) -> dict[str, Any]:
         and unit.get("all_required_classes_top_5") is False
         and not unit.get("manual_disposition_reviewed")
     ]
+    dispositioned_units = [unit for unit in units if unit.get("manual_disposition_reviewed")]
+    disposition_counts = {
+        category: sum(
+            unit.get("unit_disposition", {}).get("category") == category
+            for unit in dispositioned_units
+        )
+        for category in sorted(UNIT_CATEGORIES)
+    }
+    retrieval_dispositioned_units = [
+        unit for unit in dispositioned_units if unit.get("retrieval_required")
+    ]
     metrics = {
         "query_count": len(query_unit_counts),
         "answer_unit_count": len(units),
         "units_with_expected_fact_candidate": len(matched_units),
-        "units_without_expected_fact_candidate": len(unmatched_units),
+        "units_without_expected_fact_candidate": len(raw_unmatched_units),
         "short_discourse_preambles": len(preambles),
         "candidate_units_all_required_classes_top_3": sum(
-            bool(unit.get("all_required_classes_top_3")) for unit in matched_units
+            bool(unit.get("all_required_classes_top_3"))
+            for unit in matched_units
+            if unit.get("retrieval_required", True)
         ),
         "candidate_units_all_required_classes_top_5": sum(
-            bool(unit.get("all_required_classes_top_5")) for unit in matched_units
+            bool(unit.get("all_required_classes_top_5"))
+            for unit in matched_units
+            if unit.get("retrieval_required", True)
         ),
         "candidate_units_all_required_classes_top_10": sum(
-            bool(unit.get("all_required_classes_top_10")) for unit in matched_units
+            bool(unit.get("all_required_classes_top_10"))
+            for unit in matched_units
+            if unit.get("retrieval_required", True)
         ),
         "candidate_units_by_support_type": {
-            support_type: sum(unit.get("support_type") == support_type for unit in matched_units)
+            support_type: sum(
+                unit.get("candidate_fact_support_type", unit.get("support_type")) == support_type
+                for unit in matched_units
+            )
             for support_type in SUPPORT_TYPE_CLASSES
         },
+        "manual_disposition_unit_count": len(dispositioned_units),
+        "manual_disposition_by_category": disposition_counts,
+        "manual_disposition_retrieval_unit_count": len(retrieval_dispositioned_units),
+        "manual_disposition_no_retrieval_unit_count": len(dispositioned_units) - len(retrieval_dispositioned_units),
+        "manual_disposition_unmatched_unit_count": sum(
+            unit["mapping_status"] == "unmatched_statement" for unit in dispositioned_units
+        ),
+        "manual_disposition_weak_rank_unit_count": len(manual_disposition_weak_rank_units),
+        "unclassified_priority_unit_count": len(unmatched_units) + len(weak_units_top_5),
         "answer_units_by_query": query_unit_counts,
     }
     return {
-        "schema": "studio/ai-discovery-answer-support-candidate-evaluation/1",
+        "schema": "studio/ai-discovery-answer-support-candidate-evaluation/2",
         "status": "candidate_retrieval_only",
         "method": (
             "Split each referenced answer section into sentence/semicolon units; "
-            "BM25-rank each unit against that query's mapped expected facts; then "
-            "rank the selected fact's mapped sources in the complete index for each "
-            "source class required by that fact."
+            "use an exact reviewed unit-level disposition when present; otherwise "
+            "retain the whole-fact BM25 candidate as a fallback. Rank only the source "
+            "classes explicitly required by the effective unit-level disposition or "
+            "by the expected fact when no disposition exists."
         ),
+        "unit_disposition_asset": UNIT_DISPOSITIONS,
         "metrics": metrics,
         "units": units,
-        "weak_units_top_5": [
-            unit for unit in matched_units
-            if not unit.get("all_required_classes_top_5")
-        ],
+        "weak_units_top_5": weak_units_top_5,
+        "manual_disposition_weak_rank_units": manual_disposition_weak_rank_units,
         "unmatched_units": unmatched_units,
+        "manually_dispositioned_unmatched_units": [
+            unit for unit in raw_unmatched_units if unit.get("manual_disposition_reviewed")
+        ],
         "limitations": [
             "A BM25 match is a lexical retrieval candidate, not semantic entailment or proof that a source supports the whole sentence.",
             "A sentence may contain multiple assertions; sentence/semicolon segmentation does not replace human atomic-claim review.",
-            "Unmatched units may be recommendations, scope limits, citation context or factual claims; they remain unclassified until human review.",
+            "The exact-text unit-disposition overlay classifies only the reviewed fragments; all other answer units remain subject to human review even when a BM25 candidate exists.",
             "A mapped source ranking highly does not prove that it supports the assertion; the source text still requires semantic inspection.",
             "Source ranks are restricted to the repository's mapped corpus and do not measure web-wide discovery.",
             "The diagnostic does not test ChatGPT, Gemini, Perplexity or any external AI platform.",
@@ -650,6 +682,8 @@ def main() -> int:
         print("ANSWER_SUPPORT_WEAK_UNIT " + json.dumps(unit, ensure_ascii=False, sort_keys=True))
     for unit in result["unmatched_units"]:
         print("ANSWER_SUPPORT_UNMATCHED_UNIT " + json.dumps(unit, ensure_ascii=False, sort_keys=True))
+    for unit in result["manual_disposition_weak_rank_units"]:
+        print("ANSWER_SUPPORT_MANUAL_DISPOSITION_WEAK_RANK_UNIT " + json.dumps(unit, ensure_ascii=False, sort_keys=True))
     print("LIMITATION: BM25 candidate ranking is not semantic proof.")
     return 0
 
