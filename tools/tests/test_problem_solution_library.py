@@ -310,7 +310,7 @@ def fixture_root():
     (root / ANSWER_COVERAGE_AUDIT).write_text(json.dumps(answer_audit), encoding="utf-8")
     retrieval_report = evaluate_retrieval(root)
     (root / RETRIEVAL_EVALUATION).write_text(
-        json.dumps(retrieval_report, ensure_ascii=False, indent=2) + "\\n",
+        json.dumps(retrieval_report, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     return temporary, root
