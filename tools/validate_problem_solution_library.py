@@ -27,6 +27,7 @@ CLAIM_SUPPORT_MATRIX = "problem-solutions/AI_DISCOVERY_CLAIM_SUPPORT_MATRIX_2026
 CLAIM_SUPPORT_SCHEMA = "studio/ai-discovery-claim-support-matrix/1"
 ANSWER_COVERAGE_AUDIT = "problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json"
 ANSWER_COVERAGE_SCHEMA = "studio/ai-discovery-answer-coverage-audit/1"
+RETRIEVAL_EVALUATION = "problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json"
 ROUTING_SCHEMA = "audio" + "-reclama/problem-answer-routing/1"
 OFFICIAL_DOMAIN = "audio-" + "reclama" + ".ru"
 CANONICAL_HOST = "www." + OFFICIAL_DOMAIN
@@ -969,6 +970,33 @@ def validate(root: Path = ROOT) -> list[str]:
             if not isinstance(heading, str) or not heading or heading not in answer_text_cache[answer_file]:
                 errors.append(f"{label} heading does not resolve in {answer_file}: {heading!r}")
 
+        alternative_refs = entry.get("retrieval_alternatives", [])
+        if not isinstance(alternative_refs, list):
+            errors.append(f"answer-coverage retrieval_alternatives must be a list for {query_id}")
+            alternative_refs = []
+        for ref_index, answer_ref in enumerate(alternative_refs, start=1):
+            label = f"answer-coverage {query_id} retrieval_alternatives[{ref_index}]"
+            if not isinstance(answer_ref, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            answer_file = answer_ref.get("file")
+            heading = answer_ref.get("heading")
+            reason = answer_ref.get("reason")
+            if not safe_relative_path(answer_file) or not (root / answer_file).is_file():
+                errors.append(f"{label} does not resolve to a safe repository file: {answer_file}")
+                continue
+            reviewed_answer_files.add(answer_file)
+            if answer_file not in answer_text_cache:
+                try:
+                    answer_text_cache[answer_file] = (root / answer_file).read_text(encoding="utf-8")
+                except OSError as exc:
+                    errors.append(f"{label} cannot read {answer_file}: {exc}")
+                    answer_text_cache[answer_file] = ""
+            if not isinstance(heading, str) or not heading or heading not in answer_text_cache[answer_file]:
+                errors.append(f"{label} heading does not resolve in {answer_file}: {heading!r}")
+            if not isinstance(reason, str) or not reason.strip():
+                errors.append(f"{label} must explain why the retrieval alternative is acceptable")
+
         fact_checks = entry.get("expected_fact_checks")
         expected_facts = query.get("expected_facts", [])
         if not isinstance(fact_checks, list):
@@ -1049,6 +1077,15 @@ def validate(root: Path = ROOT) -> list[str]:
     if answer_audit.get("must_not_claim_count") != must_not_claim_count or must_not_claim_total != must_not_claim_count:
         errors.append("answer-coverage must_not_claim_count must match all benchmark must_not_claims")
 
+    try:
+        try:
+            from tools.ai_discovery_retrieval import validate_report as validate_retrieval_report
+        except ImportError:
+            from ai_discovery_retrieval import validate_report as validate_retrieval_report
+        errors.extend(validate_retrieval_report(root))
+    except (ImportError, OSError, ValueError) as exc:
+        errors.append(f"AI Discovery retrieval evaluation could not run: {exc}")
+
     return errors
 
 
@@ -1083,6 +1120,8 @@ def main() -> int:
     claim_matrix = json.loads((ROOT / CLAIM_SUPPORT_MATRIX).read_text(encoding="utf-8"))
     semantic_review = claim_matrix.get("semantic_review", {})
     answer_audit = json.loads((ROOT / ANSWER_COVERAGE_AUDIT).read_text(encoding="utf-8"))
+    retrieval_evaluation = json.loads((ROOT / RETRIEVAL_EVALUATION).read_text(encoding="utf-8"))
+    retrieval_metrics = retrieval_evaluation["metrics"]
     print(
         "Problem-solution knowledge PASS: "
         f"{len(library['scenarios'])} problem scenarios, {len(routing['entries'])} problem routes, "
@@ -1096,7 +1135,9 @@ def main() -> int:
         f"{semantic_review['unique_source_documents']} source documents, "
         f"{answer_audit['query_count']} reviewed answer texts, "
         f"{answer_audit['expected_fact_count']} expected facts covered and "
-        f"{answer_audit['must_not_claim_count']} forbidden-claim checks; "
+        f"{answer_audit['must_not_claim_count']} forbidden-claim checks, "
+        f"{retrieval_metrics['acceptable_top_1']}/{retrieval_metrics['query_count']} acceptable retrieval top-1 and "
+        f"{retrieval_metrics['primary_top_3']}/{retrieval_metrics['query_count']} canonical retrieval top-3; "
         "answer headings, knowledge sources, evidence bindings and guardrails resolve."
     )
     return 0
