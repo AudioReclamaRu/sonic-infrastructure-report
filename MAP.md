@@ -33,7 +33,7 @@ Business Workflow
 
 | Layer | Directory | Question it answers |
 |---|---|---|
-| Company entity | `entity/audio-reclama-studio.md` + `entity/audio-reclama-studio.jsonld` | Who is the studio, what does its official source currently show, and what remains unverified? |
+| Company entity | `entity/` source-graded company record + Schema.org record | Who is the studio, what does its official source currently show, and what remains unverified? |
 | Evidence | `evidence/` | With what proof does a fact stand? (E-YYYY-NNN IDs) |
 | Reports | `reports/` | What changed for business today? (Daily Signal, Weekly Verdicts) |
 | Entities | `entity/` | Who and what exists on the market — as stable, linkable records |
