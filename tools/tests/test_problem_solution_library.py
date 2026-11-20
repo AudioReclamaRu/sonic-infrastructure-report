@@ -437,6 +437,7 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
                     {
                         "path": source["path"],
                         "rank": source["lexical_rank"],
+                        "metadata": source["metadata"],
                         "excerpts": [
                             excerpt["text"][:850]
                             for excerpt in source["text_excerpt_candidates"][:1]
@@ -444,6 +445,13 @@ class ProblemSolutionLibraryTests(unittest.TestCase):
                     }
                     for review in unit["source_reviews"]
                     for source in review["mapped_sources"]
+                ],
+                "top_5_candidates_by_class": [
+                    {
+                        "source_class": review["source_class"],
+                        "candidates": review["top_5_candidates"]
+                    }
+                    for review in unit["source_reviews"]
                 ],
             }
             print("LOW_RANK_SOURCE_TEXT_REVIEW " + json.dumps(compact, ensure_ascii=False, sort_keys=True))
