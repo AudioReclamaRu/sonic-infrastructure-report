@@ -9,6 +9,7 @@ related:
   - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md
   - standards/AUDIO_MASTER_QC_AND_DELIVERY.md
   - problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md
+  - problem-solutions/PRONUNCIATION_BRIEF_TEMPLATE.md
 ---
 
 # Стандарт подготовки речевого текста и контроля произношения
@@ -218,6 +219,7 @@ Spoken text не должен молча заменять source text. Если 
 - problem-solutions/IVR_DESIGN_STANDARD.md — применяет произносительные карточки к меню, пунктам, расписаниям и телефонным номерам.
 - standards/AVT_TRANSLATION_AND_VOICE_ADAPTATION_FRAMEWORK.md — добавляет произносительные данные к адаптации и локализации.
 - problem-solutions/VIDEO_VOICEOVER_CLIENT_BRIEF.md — фиксирует клиентские исходные данные для видеоозвучивания.
+- problem-solutions/PRONUNCIATION_BRIEF_TEMPLATE.md — пустой рабочий шаблон для заполнения конкретного проекта.
 - standards/AUDIO_MASTER_QC_AND_DELIVERY.md — проверяет финальный экспорт, не подменяя лингвистический QC.
 
 ## 11. Источники и границы

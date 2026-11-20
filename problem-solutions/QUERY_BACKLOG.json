@@ -47,7 +47,8 @@
       "existing_coverage": [
         "standards/responsible-release.md",
         "existing IVR pages",
-        "standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md"
+        "standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md",
+        "problem-solutions/PRONUNCIATION_BRIEF_TEMPLATE.md"
       ],
       "action": "Apply the proposed spoken-text/pronunciation standard to assemble a reusable client brief and pre-release checklist; collect only owner-cleared examples and verify number/abbreviation readings by project rather than inventing universal rules.",
       "proof_needed": [
