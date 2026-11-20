@@ -24,7 +24,7 @@ related:
 
 BM25 candidate и rank здесь используются только для обнаружения возможных рассогласований. Ни совпадение слов, ни отсутствие кандидата не являются доказательством истинности/ложности утверждения. Итог этого файла — ручная классификация роли фразы и подходящего канала, а не заявление о формальной автоматической проверке entailment.
 
-## 1. 45 unmatched units: ручные disposition
+## 1. 44 unmatched units: ручные disposition
 
 ### Публичные факты, подтверждаемые first-party snapshots
 
@@ -74,7 +74,7 @@ BM25 candidate и rank здесь используются только для �
 | `AR-PROBLEM-04::05`, `AR-PROBLEM-06::05` | Предупреждение не превращать маркетинговую фразу «никогда не ошибается» в техническую гарантию; сохранять рядом с dated snapshot E-2026-111 и его freshness caveat. |
 | `AR-TRUST-02::07` | Общее напоминание, что юридические обязанности зависят от договора и применимого права. Не представлять как юридическое заключение студии. |
 
-## 2. 36 weak units: правильный уровень утверждения и источник
+## 2. 35 weak units: правильный уровень утверждения и источник
 
 ### First-party evidence, mixed claims или источник для публичного фрагмента
 
@@ -116,7 +116,7 @@ BM25 candidate и rank здесь используются только для �
 
 ## 4. Остаточная системная проблема candidate retriever
 
-В 36 weak cases заметна не только слабая лексическая релевантность, но и **перенос класса whole-fact на отдельный sentence unit**. Примеры:
+В 35 weak cases заметна не только слабая лексическая релевантность, но и **перенос класса whole-fact на отдельный sentence unit**. Примеры:
 
 - публичное утверждение о предложении записи IVR (`AR-PROBLEM-01::07`) наследует candidate к внутреннему IVR guide;
 - внутренние советы по выбору и непрерывности голоса (`AR-PROBLEM-03::02-04`, `AR-PROBLEM-13::02-03`) конкурируют с mixed/public catalog facts;
@@ -134,3 +134,27 @@ BM25 candidate и rank здесь используются только для �
 - 46 внешних benchmark prompts остаются `not_run`; visibility, ranks, citations и реальное retrieval в ChatGPT/Gemini/Perplexity не измерялись.
 
 **Итог:** ручная disposition-классификация 79 приоритетных единиц завершена; найденные ошибки формулировок исправлены. Модель sentence-level candidate retrieval пока требует доработки, потому что смешивает классификацию whole-fact и конкретной фразы.
+
+## 6. Точный индекс units, которые ранее были показаны диапазонами
+
+Ниже раскрыты все ID, которые в таблицах выше были обозначены сокращённо через `::03`, `::05` и аналогичные ссылки без повторения полного префикса. Эти 15 точных ID входят в общие 44 unmatched и 35 weak units, а не добавляются сверх 79.
+
+| Unit ID | Класс фразы | Ручное disposition / опора |
+|---|---|---|
+| `AR-PROBLEM-01::03` | internal_recommendation | Пройти каждый IVR-маршрут и прослушать меню на телефонном динамике; внутренние IVR_DESIGN_STANDARD и `guides/bank-voice-menu.md`. |
+| `AR-PROBLEM-01::05` | scope_limitation | Статический линтер не проверяет реальную АТС, клавиши, звонок и аудиокачество; `tools/ivr_flow_linter/README.ru.md` плюс IVR_DESIGN_STANDARD. |
+| `AR-PROBLEM-01::06` | internal_recommendation | Тестовый вызов и проход сценариев — этап проверки заказчиком/интегратором; внутренний IVR_DESIGN_STANDARD. |
+| `AR-PROBLEM-01::08` | scope_limitation | Настройка АТС и маршрутизация отделены от записи голосовых файлов; граница внутреннего IVR_DESIGN_STANDARD, а не утверждение об отсутствии услуги. |
+| `AR-PROBLEM-05::06` | accessibility_safety_recommendation | Альтернативный доступный канал для критической информации — рекомендация по проектированию объявлений; `guides/airport-announcements.md` и draft AVT framework. |
+| `AR-SERVICE-11::04` | internal_recommendation | Конкретный объём работ определяется монтажом и ТЗ; использовать как scope advice, не самостоятельный факт ассортимента. |
+| `AR-PROBLEM-11::06` | accessibility_safety_recommendation | Тот же принцип альтернативного канала для критических объявлений; `guides/airport-announcements.md` и draft AVT framework. |
+| `AR-PROBLEM-19::04` | internal_quality_control | Проверка обрезаний, щелчков, перегрузки и шумов; `problem-solutions/VOICE_RECORDING_TEST_PROTOCOL.md`. |
+| `AR-SERVICE-01::06` | scope_limitation | Производственный состав и права согласуются по конкретному проекту; E-098/E-099 и contract-scope notes. |
+| `AR-SERVICE-06::05` | internal_commercial_process_recommendation | Актуальную цену подтверждать в текущем коммерческом маршруте; E-094 описывает путь запроса расчёта, внутренняя запись описывает текущую практику. Не выдавать это за опубликованный прайс. |
+| `AR-PROBLEM-03::03` | internal_casting_recommendation | Составить кастинг-бриф с ролью, регистром, темпом, произношением и reference fragment; `guides/choosing-a-voice.md` и casting protocol. |
+| `AR-PROBLEM-03::04` | internal_casting_recommendation | Сравнивать кандидатов на одном тексте по критериям задачи; `guides/choosing-a-voice.md` и `VOICE_TIMBRE_AND_CASTING_COMPARISON_PROTOCOL_2026-11-14.md`. |
+| `AR-PROBLEM-03::06` | first_party_boundary_plus_internal_advice | Каталог/кастинг описан в E-104; наличие конкретного диктора, слот и права повторного использования требуют отдельного подтверждения. Не трактовать каталог как гарантию. |
+| `AR-PROBLEM-04::04` | source_freshness_note | Отметка «две недели назад» — freshness metadata E-111; это основание перепроверить live-доступность, а не доказательство текущей работы инструмента. |
+| `AR-PROBLEM-13::03` | internal_voice_continuity_recommendation | При смене диктора оценивать узнаваемость манеры, не только тембр; `CHARACTER_VOICE_IDENTITY_AND_CONTINUITY_FRAMEWORK.md` и casting comparison protocol. |
+
+Машинная сверка этой таблицы и основных блоков должна дать ровно 79 уникальных точных unit IDs: 44 unmatched и 35 weak, без пропусков.
