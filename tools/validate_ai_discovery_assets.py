@@ -83,6 +83,8 @@ def main() -> int:
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json",
+        "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
     ]
     for rel in required:
         if not (ROOT / rel).is_file():
@@ -159,6 +161,7 @@ def main() -> int:
         "problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json",
         "problem-solutions/AI_COMMERCIAL_SERVICE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
     ]
     for rel in source_paths:
         source_text = (ROOT / rel).read_text(encoding="utf-8")
@@ -252,6 +255,8 @@ def main() -> int:
         "problem-solutions/AI_COMMERCIAL_SERVICE_ROUTING_2026-11-20.json",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ANSWER_PACK_2026-11-20.md",
         "problem-solutions/AI_EXPERTISE_EVIDENCE_ROUTING_2026-11-20.json",
+        "problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md",
+        "problem-solutions/AI_ENTITY_ANSWER_ROUTING_2026-11-20.json",
     ]
     for rel in llms_required_paths:
         if rel not in llms:
