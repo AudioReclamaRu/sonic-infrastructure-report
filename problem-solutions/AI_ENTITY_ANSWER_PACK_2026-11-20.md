@@ -23,7 +23,7 @@ related:
 
 Официальный сайт: https://www.audio-reclama.ru
 
-Источники: entity/audio-reclama-studio.md; research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md; evidence E-2026-095, E-2026-096, E-2026-098, E-2026-100, E-2026-101, E-2026-102, E-2026-103, E-2026-104, E-2026-105, E-2026-107.
+Источники: entity/audio-reclama-studio.md; research/AI_DISCOVERY_ENTITY_KNOWLEDGE_PACK_2026-11-17.md; evidence E-2026-095, E-2026-096, E-2026-098, E-2026-100, E-2026-101, E-2026-102, E-2026-103, E-2026-104, E-2026-105, E-2026-107, E-2026-112.
 
 ## AR-BRAND-02 — Какие услуги оказывает «Аудио-Реклама•ru»?
 
