@@ -43,7 +43,7 @@ related:
 
 ## Problem-first knowledge для бизнес-задач
 
-- ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 20 маршрутов от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам и доказательствам.
+- ../problem-solutions/AI_PROBLEM_ANSWER_ROUTING_INDEX_2026-11-18.json — 21 маршрут от формулировки проблемы к конкретному ответу, структурированному сценарию, профессиональным документам и доказательствам.
 ## Краткие ответы для AI retrieval
 
 - ../problem-solutions/AI_ENTITY_ANSWER_PACK_2026-11-20.md и AI_ENTITY_ANSWER_ROUTING_2026-11-20.json — семь кратких brand/entity ответов: что делает студия, какие услуги перечислены, официальный сайт, контактный маршрут и динамические счётчики каталога с датированными ограничениями.
@@ -103,3 +103,5 @@ related:
 - ../problem-solutions/AI_DISCOVERY_ANSWER_COVERAGE_AUDIT_2026-11-20.json — ручная проверка 46 подготовленных ответов: 112 expected facts покрыты, 54 must_not_claim ограничения просмотрены; внешняя AI-видимость не измерялась.
 
 - AI_DISCOVERY_ANSWER_CONTENT_AUDIT_2026-11-20.md — ручная проверка всех 46 answer texts: 112 ожидаемых фактов, 54 запрета и исправленные маршруты/формулировки; это не AI visibility measurement.
+
+- ../problem-solutions/AI_DISCOVERY_RETRIEVAL_EVALUATION_2026-11-20.json — BM25 lexical baseline для 46 запросов по 44 секциям answer packs: 45 canonical top-1, 46 canonical top-3, 46 acceptable top-1 с одной явно объяснённой альтернативой. Это не тест внешних AI-платформ.
