@@ -136,3 +136,5 @@ related: [strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md, problem-solutions/TEM
 - ../research/AI_DISCOVERY_RETRIEVAL_AUDIT_2026-11-20.md — описание лексического retrieval-baseline для 46 benchmark-запросов, найденных коллизий и ограничений локального BM25.
 
 - ../tools/ai_discovery_source_retrieval.py — воспроизводимый BM25-аудит 44 документов claim-support matrix: отдельно ранжирует по запросу и по каждому expected fact, различает первичные evidence-снимки и внутренние методики. Это локальный диагностический baseline, не внешний AI retrieval test.
+
+- ../research/AI_DISCOVERY_SOURCE_RETRIEVAL_AUDIT_2026-11-20.md — отчёт о поиске первичных evidence snapshots и внутренних источников для 112 claim-level facts; различает pure first-party, internal methodology и mixed support.
