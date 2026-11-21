@@ -1,6 +1,6 @@
 ---
 type: guide
-date: 2026-11-19
+date: 2026-11-21
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
@@ -22,6 +22,7 @@ A production-ready audio advertisement needs more than a recorded voice. The wor
 The public audio-advertising service of «Аудио-Реклама•ru» lists script work, voice casting, sound design, licensed music and transfer of rights among its production elements. The owner confirmed on 19 November 2026 that the studio can organize voice production for any language group worldwide through its international network of collaborators. Each campaign brief defines the target locale, audience, voice, language adaptation, usage rights, delivery formats and schedule.
 
 - [Audio-advertising and radio-spot service](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+- [Advertising scriptwriting](https://www.audio-reclama.ru/zakaz-scenariya.html)
 - [Jingles and sound solutions](https://www.audio-reclama.ru/audio/zvuk-media.html)
 
 ## Start with the communication job

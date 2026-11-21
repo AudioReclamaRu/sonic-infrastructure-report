@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-20
+date: 2026-11-21
 lang: en
 related:
   - research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json
@@ -47,6 +47,15 @@ The four core buyer tasks have English master guides and localized drafts. All l
 - [Voice provenance passport](voice-provenance-passport.md).
 - [International voice and the address of a claim](international-voice.md).
 - [Timing a script before ordering](chronomer-timing.md).
+
+## Additional professional audio service destinations
+
+These official service pages are linked here as destinations; this index does not imply a separate buyer guide or confirm current commercial terms for each service.
+
+- [Corporate songs and anthems](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) — a distinct service page with portfolio examples and an order form. No standalone repository buyer guide is maintained yet.
+- [Video production](https://www.audio-reclama.ru/video/videoroliki-zakaz.html) — a separate top-navigation destination from video voice-over. The homepage link is confirmed, but direct retrieval of this service page returned a cache miss; current page content and scope remain NOT_TESTED.
+
+The [audio advertising production guide](audio-advertising-production.md) already links separately to [jingles and sound solutions](https://www.audio-reclama.ru/audio/zvuk-media.html).
 
 ## Query-intent map
 
