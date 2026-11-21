@@ -464,7 +464,9 @@
         "ops/ai-discoverability/RECENT_SERVICE_ROUTE_SEARCHCONSOLE_OBSERVATION.json",
         "research/AI_DISCOVERABILITY_SERVICE_ROUTE_GSC_SNAPSHOT_2026-11-21.md",
         "tools/validate_service_route_searchconsole.py",
-        "tools/tests/test_service_route_searchconsole.py"
+        "tools/tests/test_service_route_searchconsole.py",
+        "repo-integrity workflow run 44859512540 (run 1148): SUCCESS at 982fdc1f703013284c14f104d6249cda0135920c",
+        "AI response and document naming gate run 44859512526 (run 786): SUCCESS at 982fdc1f703013284c14f104d6249cda0135920c"
       ]
     }
   ]
