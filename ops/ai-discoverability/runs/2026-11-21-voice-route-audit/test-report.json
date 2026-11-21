@@ -1,0 +1,57 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-voice-route-audit",
+  "status": "repository_audit_complete_ci_pending",
+  "checks": [
+    {
+      "name": "Canonical brand/site references reviewed",
+      "status": "pass",
+      "scope": "new report, README and queue content authored to repository naming standard"
+    },
+    {
+      "name": "Existing voice guide and buyer-route inventory",
+      "status": "pass",
+      "scope": "repository files inspected"
+    },
+    {
+      "name": "GEO route link inventory",
+      "status": "pass",
+      "scope": "static source HTML inspected; no inference of public availability"
+    },
+    {
+      "name": "Audio+ B2C boundary",
+      "status": "evidence_found_recheck_required",
+      "scope": "separate open research PR #67 contains saved offer review; not freshly re-read from current live offer"
+    },
+    {
+      "name": "Official service page freshness",
+      "status": "not_tested",
+      "scope": "available HTML snapshots show crawl ages of approximately 3–5 months"
+    },
+    {
+      "name": "GEO Pages live serving/indexing",
+      "status": "not_tested",
+      "scope": "public URLs were not retrievable via current web read path"
+    },
+    {
+      "name": "Form submission and CRM/analytics behavior",
+      "status": "not_tested",
+      "scope": "no test submissions or live interactions performed"
+    },
+    {
+      "name": "External website edits, publication or deployment",
+      "status": "not_performed",
+      "scope": "read-only boundary preserved"
+    },
+    {
+      "name": "GitHub Actions CI for new commit",
+      "status": "pending",
+      "scope": "expected after PR creation"
+    }
+  ],
+  "no_claims": [
+    "No claim of current live GEO publication or indexation.",
+    "No claim of form submission success or lead conversion.",
+    "No claim that the current Audio+ offer/price is unchanged from the saved 2026-11-20 review."
+  ]
+}

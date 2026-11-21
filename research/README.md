@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-17
+date: 2026-11-21
 lang: ru
 related:
   - AGENTS.md
@@ -54,6 +54,7 @@ related:
 - AI_SERVICE_ANSWER_SURFACE_AUDIT_2026-11-20.md — read-only разбор четырёх коммерческих страниц как источников ответов ИИ: видимые доказательства, границы услуг, не подтверждённые цены/сроки/технические обещания, GSC-приоритеты и осторожность из-за возраста HTML-crawl.
 - AI_EXTERNAL_ENTITY_AND_CITATION_SURFACE_AUDIT_2026-11-20.md — Bing AI Performance как дополнительная native citation-аналитика; сравнение с Alice SoV/GSC/consumer UI; факт-чек публичных профилей AllAdvertising и Cinematch; независимое подтверждение проекта с золотом WOW Awards 2018. Bing пока не подключён, профили не редактировались.
 - AI_DISCOVERABILITY_FIRST_PARTY_REFERRAL_AND_HOST_BASELINE_2026-11-21.md — read-only срез Яндекс Метрики, UTM-сигнала chatgpt.com, коммерческих входных путей и расхождений GA4/GSC/host; отдельно фиксирует нестабильность количества строк и unmapped goal IDs, поэтому не объявляет tagged visits лидами.
+- AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md — source-backed карта пути «каталог → профиль → бриф → профессиональная услуга» и pre-publication риск смешения коротких Audio+ тарифов с бизнес-ответами; отдельно маркирует stale HTML snapshots и непроверенную публикацию GEO Pages.
 
 ## Поисковая видимость и качество обхода
 
