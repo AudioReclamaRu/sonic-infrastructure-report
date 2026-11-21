@@ -56,6 +56,7 @@ related:
 - AI_DISCOVERABILITY_FIRST_PARTY_REFERRAL_AND_HOST_BASELINE_2026-11-21.md — read-only срез Яндекс Метрики, UTM-сигнала chatgpt.com, коммерческих входных путей и расхождений GA4/GSC/host; отдельно фиксирует нестабильность количества строк и unmapped goal IDs, поэтому не объявляет tagged visits лидами.
 - AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md — source-backed карта пути «каталог → профиль → бриф → профессиональная услуга» и pre-publication риск смешения коротких Audio+ тарифов с бизнес-ответами; отдельно маркирует stale HTML snapshots и непроверенную публикацию GEO Pages.
 - AI_DISCOVERABILITY_AUDIO_PLUS_B2B_ROUTE_AUDIT_2026-11-21.md — разбор смешения B2C-коротких заказов Audio+ и профессиональных B2B-маршрутов в GEO; источник генерации, типизация цен, JSON-LD/FAQ, границы доказательств и условия допуска к правкам.
+- AI_DISCOVERABILITY_AUDIO_PLUS_B2B_ROUTE_AUDIT_2026-11-21.md — репозиторный аудит смешения Audio+ и профессиональных услуг; addendum фиксирует ограничения покупателя, модель прав, границы переделок и конфликт источников об исправлениях.
 
 ## Поисковая видимость и качество обхода
 

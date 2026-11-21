@@ -177,3 +177,48 @@ related:
 
 Даже после этого GitHub Pages deployment, публикация и любые изменения основного сайта останутся отдельными действиями, требующими отдельного явного разрешения.
 
+
+
+## Addendum — product terms, rights and scope boundary (2026-11-21)
+
+### New primary-source distinction
+
+The available published Audio+ offer text defines the buyer as a natural person and explicitly says the service is not intended for legal entities and individual entrepreneurs. The offer page snapshot is approximately five months old and its visible publication date is 17 June 2016. It is therefore recorded as a **stale official-source snapshot**, not as a fresh confirmation of terms on 21 November 2026. Source: https://audio.plus/offer.html.
+
+In the same available offer snapshot:
+- a telephone greeting is described as one delivered version without alternate takes;
+- the order is paid in advance;
+- text changes after payment are not permitted;
+- the service says it does not provide reworking or remaking previously recorded audio;
+- section 16.1 says the exclusive right to the result belongs to the service, while the buyer receives a simple (non-exclusive) licence with the stated sublicensing right.
+
+The Audio+ product page snapshot (approximately four months old in the opened page) exposes a self-service selection among an auto-attendant, audio commercial and video voice-over; one order is one file/one complete thought; the text limit displayed is 90 words. It also displays an edit/correction/add-sounds charge. Because this product page and the offer page have different crawl ages, none of these figures or statements is promoted to a fresh commercial promise. Sources: https://audio.plus/ and https://audio.plus/offer.html.
+
+### A material source conflict — do not harmonize silently
+
+The Audio+ product page displays a paid change/correction/add-sounds option, while the available offer snapshot says the text cannot be changed after payment and that previously recorded materials are not reworked or remade. The two texts may refer to different stages or types of correction, but the sources do not define that distinction clearly enough to conclude. Record this as an **unresolved product-page / offer-text conflict**. Do not promise that an edit is available or quote its fee as current until the owner confirms the current contract and what the product-page option covers.
+
+### Rights are not interchangeable
+
+The Audio+ offer snapshot states that the exclusive right remains with the service and grants the buyer a simple (non-exclusive) licence under its wording. The professional radio-production page separately advertises transfer of author's and exclusive rights among its production elements. This is an important product boundary: never copy the rights statement from one route into the other. The radio page wording is a public service-page statement; the exact transfer scope, territory, term, media, music rights and contractual exclusions still need to be confirmed in the project contract. Sources: https://audio.plus/offer.html and https://www.audio-reclama.ru/audio/radioroliki-zakaz.html.
+
+### Professional routes have project briefs and different observable scopes
+
+- Radio production: the public service page lists scenario, voice casting, sound design, licensed music and rights transfer; the order form asks about whether a script exists, the type of audio commercial, voice, music, duration, text and comments.
+- Video voice-over: the public page lists voice/dubbing casting, ambience and effects, original music, sound design, voice-over and lip-sync, with a separate project brief for video type, voice, text and files.
+- IVR: the public page lists IVR menus, auto-attendants and auto-informers, says it can prepare files for upload into a system in 62 languages, and provides a project form.
+- Presentation voice-over and full video production remain separate destinations in the service route register. The snapshots available for these pages do not justify importing Audio+ price/rights assumptions into them.
+
+These are page-level service descriptions and form fields, not promises that every listed element is included in every quote or that an end-to-end integration is included. Sources: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html, https://www.audio-reclama.ru/audio/ozvuchka-video.html and https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html.
+
+### Updated decision
+
+The boundary is not simply “B2C price versus B2B price”. It has at least five independent dimensions that must remain separate in machine-readable knowledge:
+
+1. buyer eligibility / contracting party;
+2. fulfillment model (self-service short order versus project brief);
+3. scope and output granularity (one short file versus a project package);
+4. revision / rework rules;
+5. intellectual-property and usage-rights model.
+
+Created the internal-only `ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json` register and an offline validator/test suite. They preserve source age and unresolved conflicts rather than turning the snapshots into current terms. The public GEO files, generator, price JSON and FAQ JSON remain untouched.
