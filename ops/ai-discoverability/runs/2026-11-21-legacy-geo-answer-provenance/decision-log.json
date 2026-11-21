@@ -1,0 +1,26 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-legacy-geo-answer-provenance",
+  "decisions": [
+    {
+      "decision": "Classify the seven residual answer directories as unmanaged legacy static HTML, not automatically as manually authored or deletable pages.",
+      "basis": "Their paths are absent from both the two explicit build_pages page() routes and six literal EXTRA_ANSWERS entries, while Git history records their separate additions."
+    },
+    {
+      "decision": "Treat first/last commit provenance as repository history, not proof of the process that rendered each HTML file.",
+      "basis": "The relevant commits do not consistently contain a corresponding builder source registration."
+    },
+    {
+      "decision": "Keep the seven pages visible in the sitemap inventory but absent from llms.txt as a recorded mismatch, not an automatic recommendation to add them.",
+      "basis": "The current sitemap recursively includes index.html while _write_llms enumerates only hardcoded and data-driven generator slugs."
+    },
+    {
+      "decision": "Treat 2026-11-15 sitemap lastmod as a global build date, not page-level freshness.",
+      "basis": "_write_sitemap inserts one UPDATED value into every URL entry; last known legacy file changes predate this global date."
+    },
+    {
+      "decision": "Do not remove, rewrite, redirect, publish or deploy any legacy URL in this run.",
+      "basis": "Those actions affect public-facing GEO outputs and require an explicit owner decision; current commercial terms are also not freshly confirmed."
+    }
+  ]
+}
