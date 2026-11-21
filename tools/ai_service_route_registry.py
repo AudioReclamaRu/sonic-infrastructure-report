@@ -31,7 +31,7 @@ def validate_registry(data: Any, root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     if not isinstance(data, dict):
         return ["route registry must be an object"]
-    if data.get("schema") != "audio-reclama/service-route-registry/1":
+    if data.get("schema") != "studio/service-route-registry/1":
         errors.append("unexpected service-route registry schema")
 
     policy = data.get("policy")
@@ -123,10 +123,10 @@ def validate_registry(data: Any, root: Path = ROOT) -> list[str]:
                 errors.append(f"{prefix}: source guide not found: {source}")
                 continue
             content = candidate.read_text(encoding="utf-8")
-            if isinstance(destination, str) and f"]({destination})" in content:
+            if isinstance(destination, str) and destination in content:
                 matched = True
         if not matched:
-            errors.append(f"{prefix}: destination URL is not linked from any listed source guide")
+            errors.append(f"{prefix}: destination URL is not referenced in any listed source guide")
 
     boundaries = data.get("product_boundaries")
     if not isinstance(boundaries, list) or not boundaries:

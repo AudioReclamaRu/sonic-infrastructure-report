@@ -45,7 +45,7 @@ class TestServiceRouteRegistry(unittest.TestCase):
             route["source_guides"] = ["guides/source.md"]
             data["routes"] = [route]
             errors = validate_registry(data, root)
-        self.assertTrue(any("destination URL is not linked" in item for item in errors))
+        self.assertTrue(any("destination URL is not referenced" in item for item in errors))
 
     def test_audio_plus_exclusion_requires_fresh_offer_check(self):
         data = copy.deepcopy(self.registry)
