@@ -1,6 +1,6 @@
 {
   "schema": "megabrain/ai-discoverability-work-queue/1",
-  "updated": "2026-11-21",
+  "updated": "2026-11-20",
   "policy": "Candidates require current-state triage; this queue is not an instruction to collect data or a quota.",
   "items": [
     {
@@ -8,7 +8,7 @@
       "title": "Add a first-class audiobook buyer route",
       "work_type": "add_knowledge_asset",
       "priority": "P0",
-      "status": "done",
+      "status": "ready_for_agent_triage",
       "market": "RU",
       "language": "ru",
       "service": "audiobook_production",
@@ -35,12 +35,7 @@
       "risk": "low",
       "blocker": null,
       "unblock_condition": null,
-      "validation_refs": [
-        "guides/audiobook-production.ru.md",
-        "guides/README.md",
-        "repo-integrity workflow run 44687714466: SUCCESS at commit 242174d04d068cff0f5f857cc18c09b9b44ab7d0",
-        "AI response and document naming gate run 44687714460: SUCCESS at commit 242174d04d068cff0f5f857cc18c09b9b44ab7d0"
-      ]
+      "validation_refs": []
     },
     {
       "id": "AI-DISC-2026-002",
@@ -117,179 +112,6 @@
       "blocker": "No authorized machine-readable Bing Webmaster Tools session or export is available in the current workflow.",
       "unblock_condition": "An approved Megabrain connector or authenticated local browser session is available without new paid spend.",
       "validation_refs": []
-    },
-    {
-      "id": "AI-DISC-2026-004",
-      "title": "Restore crawlability of existing English case and buyer routes",
-      "work_type": "fix_entity_routing",
-      "priority": "P0",
-      "status": "blocked_by_owner_approval",
-      "market": "Global",
-      "language": "en",
-      "service": "cross_service_discovery",
-      "target_surface": "official_website_indexability",
-      "obstacle": "Google Search Console's latest stored crawl states still report /en/project/vnukovo.html as BLOCKED_ROBOTS_TXT, /en/ as indexed despite robots blocking, and /en/online-zakaz.html as unknown to Google. A 19 November 2026 live snapshot also found that the sitemap exposed only /en/ from the English section and recorded restrictive /en/* robots rules; this snapshot requires fresh live verification before any change.",
-      "evidence_refs": [
-        "research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md",
-        "research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md"
-      ],
-      "decision_to_unlock": "Which specific robots, sitemap, canonical, hreflang or response-layer change is required to make the existing public English case and buyer routes fetchable and eligible for indexing?",
-      "hypothesis": "If the existing English case and order pages are publicly intended, return valid responses, and are made consistently crawlable with matching canonical and sitemap signals, Google can re-fetch those proof routes. This does not guarantee indexing, ranking or AI citations.",
-      "success_criteria": [
-        "Capture current robots.txt and sitemap.xml with retrieval time, HTTP status and all applicable User-agent groups before proposing a change.",
-        "Run a five-URL live check for /en/, /en/project/vnukovo.html, /en/project/abbyy.html, /en/project/braun.html and /en/online-zakaz.html; record HTTP/redirect, robots, meta and X-Robots-Tag, canonical and page readiness.",
-        "After explicit owner approval, apply only the minimum robots/sitemap/template changes needed for public, approved, indexable EN pages; do not expose private or unfinished routes.",
-        "Verify self-canonical and reciprocal hreflang only for real language equivalents; align Organization identity and Open Graph URL/name without inventing offices or unverified sameAs profiles.",
-        "Re-run Google URL Inspection Live Test and record the result; count indexing only after Google reports a subsequent successful crawl/index state, not when a sitemap is merely submitted."
-      ],
-      "autonomy_class": "requires_owner_approval",
-      "requires_new_measurement": true,
-      "measurement_guard": {
-        "decision_to_unlock": "Determine whether the English evidence routes are currently blocked and identify the smallest justified technical correction.",
-        "minimum_sufficient_sample": "One fresh robots.txt and sitemap.xml snapshot plus the five named EN URLs in a Google URL Inspection Live Test, with HTTP, redirect, robots, metadata and canonical evidence.",
-        "stop_rule": "Do not write to the website before explicit owner approval. Stop or re-scope if fresh checks no longer reproduce the stored blocked/unknown states, if any page is not approved for public indexing, or if the relevant response layer cannot be verified. Do not repeat the run without a material change.",
-        "cost_or_access_class": "existing authorized site access and free Google Search Console only; no paid credits, subscriptions or third-party scans"
-      },
-      "expected_effort": "medium",
-      "risk": "medium",
-      "blocker": "Official-site changes require explicit owner approval. The current workflow could not retrieve live robots.txt or sitemap.xml; the 19 November snapshot and GSC last-crawl records must be refreshed before implementation.",
-      "unblock_condition": "The owner explicitly approves this scoped website change, and an authorized live read/deployment path is available for the exact pages and files in scope.",
-      "validation_refs": [
-        "research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md",
-        "research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md"
-      ]
-    },
-    {
-      "id": "AI-DISC-2026-005",
-      "title": "Reconcile first-party analytics host, goal mapping and extraction reliability",
-      "work_type": "analytics_integration",
-      "priority": "P0",
-      "status": "blocked_until_authorized_machine_access",
-      "market": "Global",
-      "language": "multi",
-      "service": "cross_service_discovery",
-      "target_surface": "first_party_measurement",
-      "obstacle": "The read-only Yandex Metrica connector returns different row counts for the same period when different field sets are requested; a repeatable four-slice extract still shows all session start URLs using a host variant without www while the canonical site property uses www. Goal IDs are present but their names, types and firing conditions are not available in the current export. GA4 session and event pulls for 17–20 November returned no rows. The data cannot yet support a verified discovery-to-lead funnel.",
-      "evidence_refs": [
-        "research/AI_DISCOVERABILITY_FIRST_PARTY_REFERRAL_AND_HOST_BASELINE_2026-11-21.md",
-        "research/AI_DISCOVERABILITY_EN_INDEXABILITY_P0_EXECUTION_BRIEF_2026-11-21.md",
-        "research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md"
-      ],
-      "decision_to_unlock": "Can Search Console, Yandex Metrica and GA4 be reconciled into one trustworthy host-normalized funnel, and which goal events genuinely represent contact or qualified enquiry actions?",
-      "hypothesis": "A reproducible export schema, verified host behavior and a native goal dictionary will separate acquisition, route engagement and real contact actions; this will expose whether the current blank GA4 read is a tag/access issue or a connector/property issue.",
-      "success_criteria": [
-        "Re-run identical Metrica date windows and identical field schemas; preserve request parameters, row counts, extraction timestamps and pagination details so record-count drift is measurable.",
-        "Use the authorized native goal list to map every active Metrica goal ID to name, type, status, firing condition and last verification date; do not count unmapped IDs as leads.",
-        "Read-only test both host variants for the homepage and the five P0 commercial/English routes; record HTTP response, redirect target, canonical, tracker IDs and duplicate pageview behavior.",
-        "Use authorized GA4 Realtime/DebugView or an equivalent read-only signal to verify page_view, hostname, source/medium, form events and successful contact actions; do not infer zero traffic from an empty connector response.",
-        "Publish a revised baseline only after the denominator, host normalization and goal semantics pass explicit reproducibility checks; keep search clicks, AI-tagged URLs, citations, contacts and qualified enquiries separate."
-      ],
-      "autonomy_class": "authorized_external_read_only",
-      "requires_new_measurement": true,
-      "measurement_guard": {
-        "decision_to_unlock": "Determine whether the current data can support a reliable source-to-service-to-contact funnel and identify the smallest instrumentation correction.",
-        "minimum_sufficient_sample": "One reproducible 5-day Metrica extraction repeated twice with identical fields, the complete active goal dictionary, one read-only host check for the homepage and five priority URLs, and one GA4 Realtime/DebugView test covering pageview and actual contact action.",
-        "stop_rule": "Stop if the required native read-only authorization is unavailable, if the connector cannot return stable rows, or if an action cannot be distinguished from a page view. Do not ask for passwords or OTPs; record BLOCKED_AUTH and continue repository-only routing work.",
-        "cost_or_access_class": "existing authorized accounts and free read-only access only; no paid APIs, credits, subscriptions or third-party scans"
-      },
-      "expected_effort": "medium",
-      "risk": "medium",
-      "blocker": "The current connector surface does not expose a verified goal dictionary or reliable GA4 event sample, and its Metrica row counts vary with the requested field schema.",
-      "unblock_condition": "An existing authorized read-only native Metrica goal-list and GA4 Realtime/DebugView access path is available, and repeatable exports can be produced without new paid spend.",
-      "validation_refs": [
-        "research/AI_DISCOVERABILITY_FIRST_PARTY_REFERRAL_AND_HOST_BASELINE_2026-11-21.md"
-      ]
-    },
-    {
-      "id": "AI-DISC-2026-006",
-      "title": "Audit existing voice-discovery to professional-service routes",
-      "work_type": "verify_source",
-      "priority": "P1",
-      "status": "validated",
-      "market": "Global",
-      "language": "multi",
-      "service": "voice_selection_and_audio_production",
-      "target_surface": "commercial_route_integrity",
-      "obstacle": "The observed ChatGPT-tagged sample lands mainly on existing voice-directory and individual voice-profile pages. The repository already contains a voice-selection guide and a GEO voice-selection route, but the full path from profile discovery to the correct professional buyer route has not been checked end to end.",
-      "evidence_refs": [
-        "research/AI_DISCOVERABILITY_FIRST_PARTY_REFERRAL_AND_HOST_BASELINE_2026-11-21.md",
-        "guides/choosing-a-voice.md",
-        "problem-solutions/README.md",
-        "research/AI_SERVICE_ANSWER_SURFACE_AUDIT_2026-11-20.md"
-      ],
-      "decision_to_unlock": "Do existing public voice-profile and voice-selection pages provide a clear, task-matched route from choosing a voice to commissioning a radio, video, IVR or multilingual project, or is a specific link/brief step missing?",
-      "hypothesis": "A small, well-placed route map using existing pages and guides may improve commercial navigation without publishing another general voice-selection article or turning every catalogue visit into an irrelevant sales path.",
-      "success_criteria": [
-        "Inspect the existing guide, GEO route, voice catalogue templates, relevant service pages and order/brief endpoints before drafting anything new.",
-        "Map only verified links and distinguish a voice demo/profile visit from a buyer's service intent.",
-        "For radio, video, IVR and multilingual work, identify the existing destination and the minimal contextual next step appropriate to that intent.",
-        "Do not create a duplicate guide, invent a new checkout, claim that all catalogue visits are commercial, or route corporate buyers into the separate B2C Audio+ path.",
-        "Deliver a source-backed route map and an owner-ready minimum-change proposal; do not edit the official website or publish externally."
-      ],
-      "autonomy_class": "repository_only",
-      "requires_new_measurement": false,
-      "measurement_guard": null,
-      "expected_effort": "medium",
-      "risk": "low",
-      "blocker": null,
-      "unblock_condition": null,
-      "validation_refs": [
-        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
-        "guides/choosing-a-voice.md",
-        "guides/README.md",
-        "guides/audio-advertising-production.md",
-        "guides/video-voiceover.md",
-        "guides/multilingual-ivr-voice-production.md",
-        "guides/audiobook-production.ru.md",
-        "geo/guides/kak-vybrat-golos/index.html",
-        "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
-        "geo/answers/ozvuchka-dlya-video-cena/index.html",
-        "geo/answers/ivr-privetstvie-cena/index.html"
-      ]
-    },
-    {
-      "id": "AI-DISC-2026-007",
-      "title": "Separate Audio+ short-order pricing from professional business routes in GEO answers",
-      "work_type": "fix_entity_routing",
-      "priority": "P1",
-      "status": "candidate",
-      "market": "RU",
-      "language": "ru",
-      "service": "b2b_b2c_route_integrity",
-      "target_surface": "repository_geo_static_assets",
-      "obstacle": "Several GEO answer assets are framed under the business voice-production surface but present Audio+ short-order pricing for radio/video/presentation/text intents and link only to the separate Audio+ product route. Prior read-only offer research records Audio+ as a product for individual buyers, explicitly not legal entities or individual entrepreneurs. The GEO Pages serving state and current offer have not been freshly verified, so no live misrouting is asserted.",
-      "evidence_refs": [
-        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
-        "geo/index.html",
-        "geo/llms.txt",
-        "geo/answers/index.html",
-        "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
-        "geo/answers/ozvuchka-dlya-video-cena/index.html",
-        "geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html",
-        "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
-        "geo/answers/ivr-privetstvie-cena/index.html",
-        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/67"
-      ],
-      "decision_to_unlock": "Which existing short-price answers should remain explicitly scoped to Audio+ individual orders, and where must a professional B2B buyer be routed to the matching studio service page instead?",
-      "hypothesis": "Explicit audience labels, a clear boundary around Audio+ and direct links to the appropriate professional service pages can preserve the short-order product path while preventing companies and individual entrepreneurs from treating it as the default studio route.",
-      "success_criteria": [
-        "Re-check the current published Audio+ offer and price/word limits before changing any commercial statement; retain the 2026-11-15 values only as dated historical observations until confirmed.",
-        "Make the Audio+ individual-buyer scope explicit wherever a short-order price is presented, provided the current offer still supports that wording.",
-        "Add the relevant professional radio and video service destinations to the corresponding business-intent answers without representing Audio+ as an alternative for legal entities or individual entrepreneurs.",
-        "Keep the IVR individual-calculation route linked to the official IVR service and review audiobook/navigation answers for equally clear professional destinations.",
-        "Align geo/index.html, geo/llms.txt, geo/answers/index.html and affected answer pages so the audience, price scope and destination do not contradict one another.",
-        "Do not deploy GitHub Pages, publish externally, change the official website or merge to main; retain repository-only status unless separately authorized."
-      ],
-      "autonomy_class": "repository_only",
-      "requires_new_measurement": false,
-      "measurement_guard": null,
-      "expected_effort": "medium",
-      "risk": "medium",
-      "blocker": "The GitHub Pages URLs were not retrievable through the current public read path, and the live Audio+ offer/prices were not freshly revalidated. The current files therefore establish a repository-content risk, not proof of a live public defect.",
-      "unblock_condition": "An authorized fresh read of the current Audio+ offer and confirmation of the intended serving state for the GEO assets are available; any external deployment remains subject to separate owner approval.",
-      "validation_refs": [
-        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md"
-      ]
     }
   ]
 }
