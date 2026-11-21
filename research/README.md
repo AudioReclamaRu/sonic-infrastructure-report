@@ -43,6 +43,17 @@ related:
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
 - ../tools/ai_visibility_evidence.py — офлайн-проверка полных observation records и согласованности ссылок CSV ↔ JSON по уникальному observation_id.
 
+## Привлечение внимания и переходов на сайт
+
+- SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md — план на основе фактических данных Search Console/GA4: какие страницы уже получают внимание, где есть коммерческий спрос, где нет надёжного измерения и какие поверхности развивать.
+- ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — приоритетный реестр каналов, публичных присутствий, каталогов и редакционных возможностей; статусы не подразумевают, что профили уже заявлены или изменены.
+- OWNER_READY_SITE_ATTENTION_FIXES_2026-11-19.md — подготовленные задания по усилению сайта на случай отдельного разрешения; официальный сайт не редактировался.
+
+- SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md — новые P0/P1 находки по самостоятельному домену Audio+, GSC URL Inspection англоязычных кейсов, видеоархиву YouTube и карточке AllAdvertising; зафиксированы статусы, ограничения свежести и безопасный план действий.\n- AI_DISCOVERABILITY_EN_INDEXABILITY_P0_EXECUTION_BRIEF_2026-11-21.md — точечная проверка EN URL Inspection, коммерческих GSC сигналов и owner-ready последовательность устранения robots/sitemap/canonical/hreflang барьеров. Состояния Google привязаны к датам последнего обхода; live-изменения сайта не выполнялись.
+- ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — обновлён 20.11.2026 новыми точками привлечения внимания и статусами Audio+, YouTube, RUTUBE, AllAdvertising и EN URL Inspection.
+- EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.md — мастер-реестр внешних профилей и реальных/предполагаемых прав редактирования; разделяет Metricool, owner-confirmed Dzen/VC.ru, публичные площадки и кандидатов.
+- EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.csv — машинно-читаемая таблица тех же поверхностей. Это единственная каноническая CSV-версия.
+
 ## Поисковая видимость и качество обхода
 
 - READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный live-аудит sitemap, коммерческих страниц и каталога дикторов. Зафиксированы 1 186 уникальных URL, 2 подтверждённых 404-профиля в sitemap, один redirecting URL и несогласованные публичные счётчики каталога; это не полный crawl и не отчёт Search Console/Яндекс Вебмастера.

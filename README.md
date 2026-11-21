@@ -22,6 +22,8 @@ Russian-language instructions: [Проверка логики IVR-меню](tool
 
 **Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
 
+**Site attention programme:** current Search Console findings, channel priorities, owner-ready site fixes and unpublished media drafts are indexed in [the attention execution plan](strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md), [the distribution workspace](distribution/README.md) and [the attention opportunity register](research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv).
+
 This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
 
 The knowledge model keeps source-backed facts, professional specifications, research proposals and authorial positions separate. A proposal or synthetic example is never presented as a completed studio test or client case.
@@ -88,7 +90,7 @@ strategy/              strategic development contracts
   ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
   STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md  roles and boundaries of website, Git and Dzen
   PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md  problem-first strategy for «Аудио-Реклама•ru»
-research/              reproducible research plans and benchmark programmes
+research/              reproducible research plans, attention register and benchmark programmes
   AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md  global AI visibility protocol
   ai-visibility-global-market-matrix-2026-11-17.json  country/language/platform seed matrix
   ai-visibility-benchmark-queries-2026-11-17.json  fixed RU query module
@@ -222,3 +224,6 @@ The first execution market is Russia (`ru-RU`). The fixed 20-question Russian br
 
 
 The Russian measurement workflow is prepared but not executed: [operational runbook](research/RU_AI_OBSERVATION_RUNBOOK_2026-11-17.md) and [348-row observation queue](research/ai-visibility-ru-observation-queue-2026-11-17.csv) cover 29 generic prompts across 12 platform surfaces. Rows remain `NOT_TESTED` until collected from a verified Russian regional vantage point.
+
+
+**New site-attention findings (20 Nov 2026):** the current discovery pass now includes the separate Audio+ checkout domain, its B2C offer boundary, the historical YouTube reach assets, AllAdvertising profile and Google URL Inspection states for English case pages. See [the breakthrough report](research/SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md), [the updated attention register](research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv) and [the Audio+ / video draft kit](distribution/AUDIO_PLUS_YOUTUBE_AND_PROFILE_KIT_2026-11-20.md). No public changes were made.
