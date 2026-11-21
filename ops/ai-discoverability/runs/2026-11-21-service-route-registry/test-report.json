@@ -1,7 +1,7 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-service-route-registry",
-  "status": "local_checks_pass_ci_pending",
+  "status": "passed_on_audited_content_commit",
   "checks": [
     {
       "name": "Service-route registry validation",
@@ -20,8 +20,12 @@
     },
     {
       "name": "Repository CI",
-      "status": "pending",
-      "detail": "The jingle and corporate-song route additions require a fresh CI run on the updated PR head."
+      "status": "pass",
+      "detail": "Both required workflows succeeded on the audited content commit.",
+      "evidence": [
+        "repo-integrity run 44854543587: SUCCESS",
+        "AI response and document naming gate run 44854543585: SUCCESS"
+      ]
     },
     {
       "name": "Live destination checks",
@@ -41,5 +45,18 @@
     "No claim of leads, conversions, AI citations or ranking improvements.",
     "No claim that the indexed presentation service HTML was freshly retrieved; direct retrieval returned a cache miss.",
     "No claim that current prices, rights terms, deliverables, deadlines or form behavior on the jingle or corporate-song pages were freshly verified."
-  ]
+  ],
+  "audited_content_commit_sha": "9e4bdaad82b4b56ef3ec4f37786d9c8fa074d9d5",
+  "workflow_summary": {
+    "audited_content_commit_sha": "9e4bdaad82b4b56ef3ec4f37786d9c8fa074d9d5",
+    "repo_integrity": {
+      "run_id": 44854543587,
+      "status": "success"
+    },
+    "ai_response_document_naming": {
+      "run_id": 44854543585,
+      "status": "success"
+    },
+    "note": "The following commit records these successful checks; CI is rerun on the final PR head."
+  }
 }

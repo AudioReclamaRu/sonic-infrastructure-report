@@ -4,7 +4,7 @@
   "decisions": [
     {
       "decision": "Represent only URLs already found as links in existing source guides.",
-      "basis": "All eight destinations were extracted from existing buyer-guide Markdown; the registry does not invent new destination pages."
+      "basis": "All eleven destinations are linked from existing buyer guides or the guide index; no destination page was invented by the registry."
     },
     {
       "decision": "Keep route kinds distinct.",
