@@ -32,7 +32,7 @@
     {
       "step": 6,
       "action": "Wire CI and queue item; open a draft PR stacked on provenance PR #78.",
-      "result": "pending"
+      "result": "completed_draft_pr_opened_ci_passed"
     }
   ],
   "outputs": [
@@ -47,5 +47,17 @@
     ".github/workflows/repo-integrity.yml",
     "research/README.md",
     "ops/ai-discoverability/WORK_QUEUE.json"
-  ]
+  ],
+  "final_pr": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4"
+  },
+  "final_ci": {
+    "repo_integrity_run": 44858872844,
+    "naming_gate_run": 44858872728
+  }
 }
