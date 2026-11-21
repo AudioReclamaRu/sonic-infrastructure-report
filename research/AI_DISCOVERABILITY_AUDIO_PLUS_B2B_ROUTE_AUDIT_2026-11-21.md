@@ -1,0 +1,224 @@
+---
+type: research_audit
+date: 2026-11-21
+lang: ru
+status: repository_only_prepublication_audit
+related:
+  - ops/ai-discoverability/WORK_QUEUE.json
+  - ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json
+  - tools/build_geo_site.py
+  - knowledge/pricing/prices.json
+  - knowledge/faq/faq.json
+  - research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md
+---
+
+# Audio+ и профессиональные B2B-маршруты: аудит границ в GEO-слое
+
+**Задача:** AI-DISC-2026-007  
+**Дата анализа:** 2026-11-21  
+**Статус:** внутренняя проверка файлов репозитория; подготовка к решению владельца. Не является подтверждением публичной ошибки или разрешением на публикацию.
+
+## 1. Вывод
+
+В текущей структуре GEO-источников смешаны два разных маршрута:
+
+1. **Audio+** — короткий самостоятельный заказ с ограничениями по объёму и одному итоговому файлу. Доступная редакция оферты определяет покупателя как физическое лицо и исключает юридических лиц и ИП.
+2. **Профессиональные услуги студии** — проекты для бизнеса и организаций: радиореклама, сценарии, джинглы, корпоративные песни, видео-производство и озвучивание, презентации, IVR, локализация, аудиокниги и другие задачи с индивидуальным брифом.
+
+Это разделение подтверждается навигацией официального сайта, где Audio+ показан отдельным пунктом рядом с профессиональными направлениями, а также текстом доступной оферты Audio+. Однако снимок самой оферты устарел примерно на пять месяцев. Поэтому её ограничение по аудитории — сильное основание для проверки и безопасной маршрутизации, но не свежая юридическая верификация условий на 21.11.2026.
+
+**Подтверждённая проблема:** противоречие находится в файлах репозитория и источнике генерации GEO-слоя. В нескольких ответах, озаглавленных как цены на рекламу, видео и презентации, тариф Audio+ представлен как цена соответствующей коммерческой услуги, а структурированные данные маркируют предложение Audio+ как Offer профессионального Service компании. На хабе «для бизнеса» и в машиночитаемом слое цены также приведены без явной квалификации аудитории.
+
+**Не подтверждено:** что GitHub Pages сейчас отдаёт именно эти файлы, что поисковые системы их индексируют или что реальные пользователи уже получили ошибочную рекомендацию. Доступность опубликованной GEO-поверхности через имеющийся read-only веб-доступ осталась NOT_TESTED. Это не доказательство её недоступности.
+
+## 2. Что подтверждают внешние первичные страницы
+
+### 2.1. Audio+ как самостоятельный короткий продукт
+
+Снимок главной страницы Audio+ был проиндексирован на неделе, предшествовавшей проверке. В нём показаны отдельные сценарии автоответчика, аудиоролика и озвучивания видео, лимит текста до 90 слов, принцип «один заказ — один файл», пакеты заказов и отдельная плата за исправления/дополнения. Это описание короткого self-service-процесса, а не полный регламент профессионального проекта. Снимок страницы не заменяет тест заказа или договорную проверку.
+
+Источник: https://audio.plus/
+
+### 2.2. Ограничение аудитории в оферте
+
+Доступный снимок страницы оферты (crawl age около пяти месяцев) определяет покупателя как физическое лицо и указывает, что сервис не предназначен для юридических лиц и индивидуальных предпринимателей. В документе также описан заказ выбранного аудиоматериала в рамках заданных вариантов и условий, а не универсальный заказ на комплексное производство или постпроизводственную доработку.
+
+Источник: https://audio.plus/offer.html
+
+Из-за возраста снимка перед любым новым публичным утверждением об аудитории, лимитах, составе результата, правках или цене необходимо заново сверить полный текст действующей оферты и страницу оформления. Здесь не делается юридический вывод за пределами буквального содержания доступного снимка.
+
+### 2.3. Профессиональные услуги представлены отдельно
+
+Снимок навигации официального сайта показывает отдельные направления — сценарии, перевод, дикторские голоса, аудиопроизводство и видеопроизводство. В аудионаправлении отдельно перечислены радиоролики, IVR, озвучивание видео, аудиокниги, джинглы, корпоративные песни/гимны и озвучивание презентаций; Audio+ вынесен отдельно.
+
+Источник: https://www.audio-reclama.ru
+
+Навигация подтверждает наличие отдельных пунктов назначения, но сама по себе не устанавливает актуальные цены, договорные условия, права, сроки или полный состав каждой услуги.
+
+## 3. Что найдено внутри репозитория
+
+### 3.1. Источники генерации
+
+Ключевой source of truth для основной GEO-сборки — `tools/build_geo_site.py`. Скрипт явно объявляет, что генерирует `geo/`, и записывает HTML, JSON-LD, `llms.txt`, sitemap и другие выходные файлы. В нём:
+
+- `hub_body` позиционирует страницу как «Голос для бизнеса» и подставляет общую таблицу `price_rows()`;
+- `price_rows()` берёт все записи из `knowledge/pricing/prices.json` со статусом `ok`;
+- `offer_items()` превращает те же записи в список Schema.org `Offer`;
+- страница `ceny/` помещает весь этот список в `OfferCatalog` объекта `Service` с названием «Озвучка рекламы, видео и голосовых меню IVR»;
+- общие FAQ берутся из `knowledge/faq/faq.json` и повторно встраиваются на разных страницах;
+- `llms.txt` генерируется тем же скриптом и перечисляет цену Audio+ в общем коммерческом слое студии.
+
+Следствие: исправление только выходного `geo/index.html` или отдельного `index.html` не устранит источник противоречия при следующей сборке. Изменять сгенерированные страницы без изменения источника генерации нельзя.
+
+### 3.2. Модель цен не содержит аудиторию
+
+`knowledge/pricing/prices.json` использует `entity_id` общей сущности студии. Записи Audio+ и профессионального IVR лежат в одном массиве цен. Записи Audio+ имеют статус `ok`, цену и короткое описание одного файла до 90 слов, но структура не содержит поля аудитории/допустимого типа покупателя или явного разделения Product vs Service.
+
+`tools/build_geo_site.py` затем включает каждую запись со статусом `ok` в общий ценовой блок и в `OfferCatalog` профессиональной услуги. Так возникает архитектурное смешение даже до того, как конкретный ответ будет прочитан человеком или моделью.
+
+Данные ценовых записей датированы наблюдениями 20.10.2026; FAQ имеет смешанные даты 20.10 и 06.11.2026. Сами записи не являются доказательством текущей цены на 21.11.2026.
+
+### 3.3. Общий FAQ загрязняет страницы с отдельным коммерческим намерением
+
+`knowledge/faq/faq.json` содержит вопросы и ответы о цене Audio+, лимите 90 слов, правках и контактах Audio+, а также отдельный вопрос об индивидуальной стоимости IVR. Генератор использует общий `faq_jsonld()` и для хаба, страницы цен, общей FAQ и страницы индивидуального расчёта IVR.
+
+Поэтому даже когда видимый ответ на IVR-странице говорит об индивидуальном расчёте и ведёт на профессиональную IVR-страницу, её JSON-LD может одновременно включать цену Audio+ и ограничения короткого заказа. Структурированный слой в таком случае не ограничен темой конкретной страницы.
+
+### 3.4. Конкретные конфликтующие или неоднозначные маршруты
+
+| Файл/источник | Наблюдение в текущем содержимом репозитория | Проблема маршрутизации |
+|---|---|---|
+| `geo/index.html` и источник в `tools/build_geo_site.py` | Хаб говорит «для бизнеса», но включает прайс Audio+ | B2C-короткий продукт не отделён от B2B-обслуживания |
+| `geo/llms.txt` и генератор | Общее описание студии для бизнеса; Audio+ цены и пакеты стоят в общей секции цен | Машиночитаемый слой не сообщает аудиторию продукта |
+| `geo/ceny/index.html` и генератор | OfferCatalog всех `status=ok` цен помещён внутрь объекта профессионального Service | Продуктовые тарифы могут восприниматься как цены этой услуги студии |
+| `geo/faq/index.html` и `knowledge/faq/faq.json` | Общие вопросы о коротком заказе и тарифах | Нет ограничения на аудиторию вопроса; общий FAQ используется повторно |
+| `geo/answers/ozvuchka-reklamy-na-radio-cena/index.html` | Радиоролик до 90 слов оценён через Audio+; в JSON-LD создан Offer внутри Service студии | Короткий тариф выдаётся за цену профессиональной радиорекламы |
+| `geo/answers/ozvuchka-dlya-video-cena/index.html` | Озвучивание видео напрямую оценивается по тарифу Audio+ | Не различены короткий self-service и проектное видео-озвучивание |
+| `geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html` | Цена Audio+ представлена как ответ на стоимость рекламного ролика | Смешаны услуга рекламного производства и цена отдельного короткого файла |
+| `geo/answers/ozvuchka-dlya-prezentacii-cena/index.html` | Цена Audio+ и Offer привязаны к озвучиванию презентации | Не используется отдельный маршрут услуги презентационной озвучки |
+| `geo/answers/ozvuchka-tekst-cena/index.html` и `ozvuchka-rolika-cena/index.html` | Короткая цена Audio+ изложена как общий ответ для текста/ролика; используются Service/Offer структуры | Неизвестно, подходит ли посетитель по аудитории и задаче |
+| `geo/answers/ozvuchka-dlya-socsetey-cena/index.html` и соответствующий блок `EXTRA_ANSWERS` | Разовые короткие видео отнесены к Audio+, бренд-голос — к индивидуальному проекту | Не отделены личный заказ, заказ организации и долгосрочный бренд-проект |
+| `geo/answers/ozvuchka-pozdravleniya-cena/` в `EXTRA_ANSWERS` | Ответ включает персональные и корпоративные поздравления в одном коротком тарифе | «Корпоративное» обещание конфликтует с ограничением аудитории в доступной оферте |
+| `geo/answers/ozvuchka-obuchayushchego-kursa-cena/` | Для коротких промо-роликов курса предлагается Audio+ | Не указано, что возможность зависит от допустимого типа покупателя |
+| `geo/answers/golos-dlya-navigatsii-cena/` | Комплект навигации считается индивидуально, но отдельные фразы могут быть Audio+ | Аудиторная граница не обозначена даже для исключения |
+| `geo/answers/ozvuchka-audioknigi-cena/` | Аудиокнига правильно отнесена к индивидуальному расчёту; Audio+ упоминается как неподходящая короткая модель | Основной маршрут корректен, но справочная ссылка всё ещё соседствует с коротким продуктом без аудиторной оговорки |
+
+Часть отдельных HTML-ответов (например, страницы радио, видео и презентации) не находится среди нынешних элементов `EXTRA_ANSWERS`. До следующей генерации нужно установить их происхождение и жизненный цикл: legacy-выход, ручная страница или результат другого инструмента. Их наличие в `geo/` само по себе не делает их частью текущего генератора.
+
+### 3.5. IVR — пример правильного основного маршрута, но с общим FAQ
+
+Видимое тело IVR-ответа указывает на индивидуальный расчёт и ведёт к профессиональной IVR-странице. Это правильное различие по намерению. Однако общий FAQ в JSON-LD снова может подмешать тарифы Audio+. Следовательно, исправление должно касаться не только текста каждой страницы, но и тематической применимости FAQ-данных.
+
+## 4. Предлагаемая целевая модель
+
+Рекомендация — не удалять Audio+ и не сводить все запросы к одной форме. Нужны три явно различных состояния.
+
+### A. Короткий самостоятельный заказ Audio+
+
+Показывать короткие тарифы, лимит слов, правила файлов и путь оформления только после свежей проверки действующей оферты. Если ограничение «только физические лица» сохраняется, прямо обозначать продукт как предназначенный для соответствующего индивидуального покупателя; не предлагать этот тариф юридическим лицам и ИП.
+
+### B. Профессиональный проект для бизнеса/организации
+
+Если задача пользователя относится к рекламной кампании, видео/презентации, IVR, корпоративному аудио, серии объявлений, локализации или длинной форме — вести к релевантному профессиональному сервису и индивидуальному брифу. Не переносить тариф Audio+ на этот маршрут без явного подтверждения применимости из текущего официального источника.
+
+### C. Неопределённая задача или аудитория
+
+Не выдавать фиксированную цену и не назначать Audio+ по умолчанию. Коротко объяснить, что способ и стоимость зависят от типа заказа и допустимости сервиса, затем предложить уточнить задачу через официальный профессиональный маршрут либо общую форму. Не маскировать отсутствие данных универсальным тарифом.
+
+### Маршрутизация B2B через существующий реестр
+
+Использовать уже созданный `ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json`, не изобретая новых URL:
+
+- радиореклама — `https://www.audio-reclama.ru/audio/radioroliki-zakaz.html`;
+- текст рекламного сценария — `https://www.audio-reclama.ru/zakaz-scenariya.html`;
+- джингл — `https://www.audio-reclama.ru/audio/zvuk-media.html`;
+- корпоративная песня/гимн — `https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html`;
+- видеопроизводство — `https://www.audio-reclama.ru/video/videoroliki-zakaz.html`;
+- озвучивание видео — `https://www.audio-reclama.ru/audio/ozvuchka-video.html`;
+- озвучивание презентации — `https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html`;
+- телефонное приветствие и IVR — `https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html`;
+- локализация — `https://www.audio-reclama.ru/perevodchiki/`;
+- аудиокнига — `https://www.audio-reclama.ru/audio/sozdanie-audioknig.html`.
+
+Реестр фиксирует существование URL в исходных руководствах, но не подтверждает актуальную доступность страниц, их цены или условия. Перед изменением публичных текстов возраст каждого коммерческого снимка нужно оценить отдельно.
+
+## 5. Минимальная программа исправления после разрешения
+
+1. **Обновить источник цен.** Добавить явные поля типа предложения и аудитории/допуска покупателя; отделить продукт Audio+ от профессиональных услуг. Не использовать один общий `entity_id`/тип сущности как основание для включения всех цен в один Service.
+2. **Разделить генерацию Schema.org.** Не включать тарифы Audio+ в OfferCatalog профессионального Service, если первичный источник не подтверждает такую принадлежность. Offer, Product и Service должны описывать фактические разные объекты; точную схему согласовать с проверенной структурой продукта и договором.
+3. **Разделить общий хаб и таблицу цен.** Показать два самостоятельных блока с аудиторией и разными маршрутами; не давать впечатление, что короткая цена — прайс на комплексное корпоративное производство.
+4. **Исправить общий FAQ.** Разделить вопросы про Audio+ и профессиональные услуги. Генерировать FAQPage только из вопросов, реально показанных и подходящих конкретной странице; не подмешивать тарифы Audio+ в IVR или другие независимые сервисные ответы.
+5. **Пересмотреть короткие ответы.** Радио, ролик, видео и презентацию направлять в соответствующие профессиональные страницы. Audio+ оставлять отдельной альтернативой только при подтверждённой аудитории и условиях. Для текста, соцсетей, поздравлений, промо курса и отдельных навигационных фраз проверять задачу и покупателя, а не выдавать один тариф на всех.
+6. **Сверить legacy-HTML.** Установить источник файлов, не перечисленных в `EXTRA_ANSWERS`, чтобы их не перезаписывать и не оставлять в противоречии с новым генератором.
+7. **Тестировать результат до публикации.** Сборка в изолированной среде, точный diff, проверка JSON-LD против видимого текста, canonical/URL и sitemap. Деплой не является частью этой задачи.
+
+## 6. Границы доказательств и статусы
+
+| Проверка | Статус | Что известно |
+|---|---|---|
+| Содержимое GEO-файлов в Git | OBSERVED | Содержимое получено из ветки `main` |
+| Источник генерации основной сборки | OBSERVED | `tools/build_geo_site.py` записывает хаб, цены, FAQ, ответы и `llms.txt` |
+| Структура данных цены/FAQ | OBSERVED | JSON содержит даты наблюдения и Audio+ значения; аудитория отдельным полем не задана |
+| Текст оферты Audio+ | STALE_SNAPSHOT | Последний доступный crawl около пяти месяцев; ограничения покупателя видны, свежесть не подтверждена |
+| Главная страница Audio+ | RECENT_SEARCH_SNAPSHOT | Поисковый crawl — на неделе перед анализом; краткий продукт, лимит 90 слов, один файл и пакеты видны в снимке |
+| Навигация официального сайта | STALE_SNAPSHOT | Crawl около трёх месяцев; Audio+ выделен отдельно от профессиональных направлений |
+| Live serving GitHub Pages | NOT_TESTED | Read-only веб-путь не смог открыть запрошенные GEO URL; это не трактуется как 404 или outage |
+| Фактическое AI-цитирование, индексация и переходы | NOT_TESTED | Нет новой выборки или данных, которые позволяли бы оценить эффект |
+| Конверсия, формы и заказы | NOT_TESTED | Формы не отправлялись, заказ не создавался |
+
+## 7. Решение и условия возобновления
+
+**Решение:** аудит репозитория завершён; кандидат AI-DISC-2026-007 переведён в `blocked_by_owner_approval`. Подготовлен точный перечень мест и безопасная модель маршрутизации. Производственные GEO-файлы и генератор не изменялись.
+
+**Для продолжения правок необходимо одновременно:**
+- явное разрешение владельца на конкретные GEO-исходники в репозитории;
+- свежая сверка действующей оферты Audio+ и фактической страницы заказа;
+- установленное происхождение legacy-страниц, не входящих в текущий список генератора.
+
+Даже после этого GitHub Pages deployment, публикация и любые изменения основного сайта останутся отдельными действиями, требующими отдельного явного разрешения.
+
+
+
+## Addendum — product terms, rights and scope boundary (2026-11-21)
+
+### New primary-source distinction
+
+The available published Audio+ offer text defines the buyer as a natural person and explicitly says the service is not intended for legal entities and individual entrepreneurs. The offer page snapshot is approximately five months old and its visible publication date is 17 June 2016. It is therefore recorded as a **stale official-source snapshot**, not as a fresh confirmation of terms on 21 November 2026. Source: https://audio.plus/offer.html.
+
+In the same available offer snapshot:
+- a telephone greeting is described as one delivered version without alternate takes;
+- the order is paid in advance;
+- text changes after payment are not permitted;
+- the service says it does not provide reworking or remaking previously recorded audio;
+- section 16.1 says the exclusive right to the result belongs to the service, while the buyer receives a simple (non-exclusive) licence with the stated sublicensing right.
+
+The Audio+ product page snapshot (approximately four months old in the opened page) exposes a self-service selection among an auto-attendant, audio commercial and video voice-over; one order is one file/one complete thought; the text limit displayed is 90 words. It also displays an edit/correction/add-sounds charge. Because this product page and the offer page have different crawl ages, none of these figures or statements is promoted to a fresh commercial promise. Sources: https://audio.plus/ and https://audio.plus/offer.html.
+
+### A material source conflict — do not harmonize silently
+
+The Audio+ product page displays a paid change/correction/add-sounds option, while the available offer snapshot says the text cannot be changed after payment and that previously recorded materials are not reworked or remade. The two texts may refer to different stages or types of correction, but the sources do not define that distinction clearly enough to conclude. Record this as an **unresolved product-page / offer-text conflict**. Do not promise that an edit is available or quote its fee as current until the owner confirms the current contract and what the product-page option covers.
+
+### Rights are not interchangeable
+
+The Audio+ offer snapshot states that the exclusive right remains with the service and grants the buyer a simple (non-exclusive) licence under its wording. The professional radio-production page separately advertises transfer of author's and exclusive rights among its production elements. This is an important product boundary: never copy the rights statement from one route into the other. The radio page wording is a public service-page statement; the exact transfer scope, territory, term, media, music rights and contractual exclusions still need to be confirmed in the project contract. Sources: https://audio.plus/offer.html and https://www.audio-reclama.ru/audio/radioroliki-zakaz.html.
+
+### Professional routes have project briefs and different observable scopes
+
+- Radio production: the public service page lists scenario, voice casting, sound design, licensed music and rights transfer; the order form asks about whether a script exists, the type of audio commercial, voice, music, duration, text and comments.
+- Video voice-over: the public page lists voice/dubbing casting, ambience and effects, original music, sound design, voice-over and lip-sync, with a separate project brief for video type, voice, text and files.
+- IVR: the public page lists IVR menus, auto-attendants and auto-informers, says it can prepare files for upload into a system in 62 languages, and provides a project form.
+- Presentation voice-over and full video production remain separate destinations in the service route register. The snapshots available for these pages do not justify importing Audio+ price/rights assumptions into them.
+
+These are page-level service descriptions and form fields, not promises that every listed element is included in every quote or that an end-to-end integration is included. Sources: https://www.audio-reclama.ru/audio/radioroliki-zakaz.html, https://www.audio-reclama.ru/audio/ozvuchka-video.html and https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html.
+
+### Updated decision
+
+The boundary is not simply “B2C price versus B2B price”. It has at least five independent dimensions that must remain separate in machine-readable knowledge:
+
+1. buyer eligibility / contracting party;
+2. fulfillment model (self-service short order versus project brief);
+3. scope and output granularity (one short file versus a project package);
+4. revision / rework rules;
+5. intellectual-property and usage-rights model.
+
+Created the internal-only `ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json` register and an offline validator/test suite. They preserve source age and unresolved conflicts rather than turning the snapshots into current terms. The public GEO files, generator, price JSON and FAQ JSON remain untouched.

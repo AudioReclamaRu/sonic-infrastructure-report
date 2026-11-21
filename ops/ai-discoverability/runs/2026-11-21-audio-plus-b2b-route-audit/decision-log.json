@@ -1,0 +1,50 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-audio-plus-b2b-route-audit",
+  "decisions": [
+    {
+      "decision": "Treat this as a repository-content risk, not a verified live public defect.",
+      "basis": "Live GEO serving/indexing could not be tested; inaccessible reader results are NOT_TESTED, not zero availability."
+    },
+    {
+      "decision": "Use tools/build_geo_site.py as the source of truth for the main GEO hub, prices, FAQ, data-driven answers and llms.txt.",
+      "basis": "The builder explicitly writes the geo output directory and generates these surfaces from prices/FAQ JSON and the EXTRA_ANSWERS registry."
+    },
+    {
+      "decision": "Do not combine all status=ok price entries into one professional Service OfferCatalog by default.",
+      "basis": "Current price data has a common company entity_id and no audience/product-vs-service field; available Audio+ offer snapshot states individual purchasers only."
+    },
+    {
+      "decision": "Keep Audio+ distinct from professional services and require an eligibility gate before displaying its tariff.",
+      "basis": "The service route registry contains ten professional tasks and deliberately excludes Audio+ from professional-project defaults."
+    },
+    {
+      "decision": "Treat legacy answer HTML outside EXTRA_ANSWERS as separate provenance work.",
+      "basis": "Those files exist in the static geo directory but are absent from the currently fetched generator answer list; do not assume that a rebuild updates them correctly."
+    },
+    {
+      "decision": "Use page-specific FAQ data rather than a shared Audio+ FAQ on every generated page.",
+      "basis": "The builder uses faq_jsonld() for general and service-specific pages, including the separate IVR answer."
+    },
+    {
+      "decision": "Do not edit GEO files or deploy Pages in this run.",
+      "basis": "Repository autonomy contract requires explicit owner approval for external publication; approval has not been given."
+    },
+    {
+      "decision": "Treat buyer eligibility, fulfillment model, output granularity, revision/rework rules and rights as separate product/service boundary dimensions.",
+      "basis": "The available Audio+ offer snapshot describes an individual buyer, one-version/short-order terms, restrictions on changes and rework, and a non-exclusive licence; professional project pages describe separate brief and rights elements."
+    },
+    {
+      "decision": "Do not silently resolve the Audio+ edit option versus offer-text conflict.",
+      "basis": "The product page displays a paid change/correction/add-sounds option while the offer snapshot restricts post-payment text changes and reworking completed audio; the snapshots do not reconcile these statements."
+    },
+    {
+      "decision": "Do not transfer Audio+ rights wording to professional services or vice versa.",
+      "basis": "Audio+ offer section 16.1 states a non-exclusive licence model; the radio-production page separately advertises transfer of author's and exclusive rights. Exact project contract scope remains unverified."
+    },
+    {
+      "decision": "Treat the offer and product-page commercial details as stale observations.",
+      "basis": "Offer crawl age about five months with visible publication date in 2016; opened product-page snapshot about four months. No current price, eligibility or revision entitlement is asserted."
+    }
+  ]
+}
