@@ -360,6 +360,51 @@
         "AI response and document naming gate run 44857451641 (run 764): SUCCESS at 49b1490f5332967987689337a12d878623056a5c",
         "draft PR #77: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/77"
       ]
+    },
+    {
+      "id": "AI-DISC-2026-009",
+      "title": "Establish provenance and source ownership for legacy GEO answer HTML",
+      "work_type": "verify_source",
+      "priority": "P1",
+      "status": "validated",
+      "market": "RU",
+      "language": "ru",
+      "service": "geo_answer_page_source_management",
+      "target_surface": "repository_geo_static_assets",
+      "obstacle": "The repository contains 15 answer HTML directories but the current builder explicitly emits two and data-drives six. Seven remaining static pages are not managed by the current generator; their listing differs across answers/index.html, geo/llms.txt and geo/sitemap.xml.",
+      "evidence_refs": [
+        "tools/build_geo_site.py",
+        "geo/answers/index.html",
+        "geo/llms.txt",
+        "geo/sitemap.xml",
+        "ops/ai-discoverability/LEGACY_ANSWER_PROVENANCE.json",
+        "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_PROVENANCE_2026-11-21.md"
+      ],
+      "decision_to_unlock": "For each of the seven legacy answer URLs, should it be retained and source-managed, rewritten from current approved facts, redirected or retired, and how should sitemap lastmod be tied to real content changes?",
+      "hypothesis": "An offline provenance inventory and regression gate will prevent unmanaged static answer pages and discovery-surface mismatches from being mistaken for current generator output or silently erased by future maintenance.",
+      "success_criteria": [
+        "Extract hardcoded and data-driven answer slugs from the current Python generator without executing it.",
+        "Register every remaining answer directory as a legacy page with first/last Git commit provenance and current generator status.",
+        "Reconcile the answer index, geo/llms.txt and sitemap membership for every legacy path.",
+        "Preserve the distinction between sitemap global UPDATED build date and actual per-file content-change date.",
+        "Keep live serving, deployment, current commercial terms and indexing explicitly not_tested or unconfirmed.",
+        "Add offline validation and regression tests to repo-integrity CI without modifying GEO outputs."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": [
+        "ops/ai-discoverability/LEGACY_ANSWER_PROVENANCE.json",
+        "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_PROVENANCE_2026-11-21.md",
+        "tools/legacy_geo_answer_provenance.py",
+        "tools/tests/test_legacy_geo_answer_provenance.py",
+        "repo-integrity workflow (awaiting pull-request CI)",
+        "AI response and document naming gate (awaiting pull-request CI)"
+      ]
     }
   ]
 }
