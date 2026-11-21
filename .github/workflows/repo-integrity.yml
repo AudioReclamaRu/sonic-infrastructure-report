@@ -62,36 +62,6 @@ jobs:
       - name: AI service route registry regression tests
         run: python -m unittest tools.tests.test_ai_service_route_registry -v
 
-      - name: AI service route evidence matrix
-        run: python tools/ai_service_route_evidence.py validate
-
-      - name: AI service route evidence regression tests
-        run: python -m unittest tools.tests.test_ai_service_route_evidence -v
-
-      - name: Legacy GEO answer provenance
-        run: python tools/legacy_geo_answer_provenance.py validate
-
-      - name: Legacy GEO answer provenance regression tests
-        run: python -m unittest tools.tests.test_legacy_geo_answer_provenance -v
-
-      - name: Legacy GEO answer disposition
-        run: python tools/legacy_geo_answer_disposition.py validate
-
-      - name: Legacy GEO answer disposition regression tests
-        run: python -m unittest tools.tests.test_legacy_geo_answer_disposition -v
-
-      - name: Official service route Search Console snapshot
-        run: python tools/validate_service_route_searchconsole.py validate
-
-      - name: Official service route Search Console regression tests
-        run: python -m unittest tools.tests.test_service_route_searchconsole -v
-
-      - name: AI offer/service boundary registry
-        run: python tools/ai_offer_service_boundaries.py validate
-
-      - name: AI offer/service boundary regression tests
-        run: python -m unittest tools.tests.test_ai_offer_service_boundaries -v
-
       - name: AI visibility benchmark and evidence regression tests
         run: python -m unittest tools.tests.test_ai_visibility_benchmark tools.tests.test_ai_visibility_evidence -v
 

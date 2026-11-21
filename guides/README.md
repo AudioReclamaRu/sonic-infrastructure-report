@@ -23,12 +23,6 @@ The four core buyer tasks have English master guides and localized drafts. All l
 | Audio advertising and radio commercials | [English](audio-advertising-production.md) | [Español](audio-advertising-production.es.md) | [Português](audio-advertising-production.pt-BR.md) | [العربية](audio-advertising-production.ar.md) |
 | Video voice-over and localization | [English](video-voiceover.md) | [Español](video-voiceover.es.md) | [Português](video-voiceover.pt-BR.md) | [العربية](video-voiceover.ar.md) |
 
-## Russia-first route
-
-| Buyer task | Russian master | Status |
-|---|---|---|
-| Audiobook production | [Russian buyer route](audiobook-production.ru.md) | Repository knowledge draft; not published on the official website |
-
 ## Wave B — first-pass localized routes, 19 November 2026
 
 | Buyer task | Türkçe (tr-TR) | Deutsch (de-DE) | Français (fr-FR) | 日本語 (ja-JP) | 한국어 (ko-KR) | 简体中文 (zh-Hans / zh-CN orientation) |
@@ -40,6 +34,27 @@ The four core buyer tasks have English master guides and localized drafts. All l
 
 **Regional limits:** de-DE, fr-FR, tr-TR, ja-JP and ko-KR are first-draft locale baselines, not universal text for every country or language community. The Chinese set is a Simplified Chinese / zh-CN-oriented draft; it does not replace Traditional Chinese, Cantonese or other regional variants. Native-language review and market adaptation remain required.
 
+## Russia-first commercial buyer routes — 21 November 2026
+
+| Buyer task | English master | Russian buyer answer | GSC evidence, 22 Oct–18 Nov 2026 | Status |
+|---|---|---|---|---|
+| Audiobook production | [English](audiobook-production.md) | [Русский](audiobook-production.ru.md) | 31 clicks / 290 impressions / 10.69% CTR on the official service page | EN/RU repository drafts; not published |
+| Radio and audio advertising production | [English](audio-advertising-production.md) | [Русский](audio-advertising-production.ru.md) | 4 clicks / 277 impressions / 1.44% CTR; separate WOW Awards 2018 Gold project evidence | EN/RU repository drafts; Audio+ boundary explicit; not published |
+| IVR voice production | [English](multilingual-ivr-voice-production.md) | [Русский](multilingual-ivr-voice-production.ru.md) | 4 clicks / 459 impressions / 0.87% CTR on the official service page | EN/RU repository drafts; diagnostic IVR content remains a separate intent; not published |
+
+These GSC figures are organic Google Search observations, not AI visibility, citations, leads or revenue. The routes do not change the frozen generic/brand benchmark prompts, which remain NOT_RUN. The legacy GEO static price artifacts have not been edited; their public deployment/indexation is unverified.
+
+For the exact prompt-ID → answer → source → boundary relationship, use the [machine-readable RU buyer-answer route map](../research/AI_DISCOVERABILITY_RU_BUYER_ANSWER_ROUTE_MAP_2026-11-21.json). It reuses existing prompt IDs; it does not create or run new benchmark questions.
+
+Google URL Inspection on 21 November returned PASS for all seven tested official homepage/service URLs. This confirms Google indexability only; access for other AI crawlers still needs a separate check. See the [inspection report](../research/AI_DISCOVERABILITY_GSC_INDEX_INSPECTION_2026-11-21.md).
+
+Benchmark-status crosswalk (frozen question text; no prompt edits):
+- **Radio:** RU-GEN-AD-01—06, including RU-GEN-AD-05 price intent — all NOT_RUN.
+- **IVR:** RU-GEN-IVR-01—04 plus RU-COST-IVR-01 — all NOT_RUN.
+- **Audiobooks:** RU-GEN-AUDIOBOOK-01/02 plus RU-COST-AUDIOBOOK-01 — all NOT_RUN.
+
+Modules: [RU generic discovery questions](../research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json) and [RU price-intent extension](../research/ai-visibility-ru-commercial-price-extension-2026-11-20.json). These are planned prompts, not observed AI answers or evidence of prompt demand.
+
 ## Related enterprise guides
 
 - [Bank IVR voice prompts: release checks](bank-voice-menu.md) — banking-specific companion to the general multilingual IVR route.
@@ -47,15 +62,6 @@ The four core buyer tasks have English master guides and localized drafts. All l
 - [Voice provenance passport](voice-provenance-passport.md).
 - [International voice and the address of a claim](international-voice.md).
 - [Timing a script before ordering](chronomer-timing.md).
-
-## Additional professional audio service destinations
-
-These official service pages are linked here as destinations; this index does not imply a separate buyer guide or confirm current commercial terms for each service.
-
-- [Corporate songs and anthems](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) — a distinct service page with portfolio examples and an order form. No standalone repository buyer guide is maintained yet.
-- [Video production](https://www.audio-reclama.ru/video/videoroliki-zakaz.html) — a separate top-navigation destination from video voice-over. The homepage link is confirmed, but direct retrieval of this service page returned a cache miss; current page content and scope remain NOT_TESTED.
-
-The [audio advertising production guide](audio-advertising-production.md) already links separately to [jingles and sound solutions](https://www.audio-reclama.ru/audio/zvuk-media.html).
 
 ## Query-intent map
 
