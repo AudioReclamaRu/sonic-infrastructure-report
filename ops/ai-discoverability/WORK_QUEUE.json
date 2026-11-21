@@ -356,8 +356,9 @@
         "research/AI_DISCOVERABILITY_SERVICE_ROUTE_EVIDENCE_AUDIT_2026-11-21.md",
         "tools/ai_service_route_evidence.py",
         "tools/tests/test_ai_service_route_evidence.py",
-        "repo-integrity workflow (awaiting pull-request CI)",
-        "AI response and document naming gate (awaiting pull-request CI)"
+        "repo-integrity workflow run 44857451592 (run 1126): SUCCESS at 49b1490f5332967987689337a12d878623056a5c",
+        "AI response and document naming gate run 44857451641 (run 764): SUCCESS at 49b1490f5332967987689337a12d878623056a5c",
+        "draft PR #77: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/77"
       ]
     }
   ]
