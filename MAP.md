@@ -33,7 +33,7 @@ Business Workflow
 
 | Layer | Directory | Question it answers |
 |---|---|---|
-| Company entity | `entity/audio-reclama-studio.md` + `entity/audio-reclama-studio.jsonld` | Who is the studio, what does its official source currently show, and what remains unverified? |
+| Company entity | `entity/` source-graded company record + Schema.org record | Who is the studio, what does its official source currently show, and what remains unverified? |
 | Evidence | `evidence/` | With what proof does a fact stand? (E-YYYY-NNN IDs) |
 | Reports | `reports/` | What changed for business today? (Daily Signal, Weekly Verdicts) |
 | Entities | `entity/` | Who and what exists on the market — as stable, linkable records |
@@ -46,14 +46,15 @@ Business Workflow
 | Business Workflow | `USE_CASES.md` | Who reaches for which layer, and when |
 | Publishing | `feed/` + `publisher.py` | What did we publish, and how (schedule, concept gate, covers) |
 | Open-source participation | `standards/X15-OPEN-SOURCE-COMMUNITY.md` + `strategy/ATTENTION_ACQUISITION_SYSTEM.md` | How to contribute to external projects through trust and useful work, not advertising |
+| AI Discoverability operations | `ops/ai-discoverability/` + `strategy/AI_DISCOVERABILITY_AUTONOMOUS_OPERATING_MODEL_2026-11-20.md` | How does Megabrain choose, execute, validate and stop improvements toward useful discovery? |
 
 ## Strategic priority
 
-Read strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md first. Problem-solutions/ is the user-problem diagnostic layer. It is distinct from commercial GEO answers and enterprise guides. Its backlog begins with unmeasured hypotheses, not popularity claims. Public participation in third-party repositories follows X15: social trust, project-specific policy, verified contribution and long-term responsibility.
+Read strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION_SYSTEM.md, standards/X15-OPEN-SOURCE-COMMUNITY.md, strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md and problem-solutions/README.md first. The AI Discoverability operating model and file-based Megabrain contract define the execution loop, its autonomy boundaries, measurement gates and stop rules. Problem-solutions/ is the user-problem diagnostic layer. It is distinct from commercial GEO answers and enterprise guides. Its backlog begins with unmeasured hypotheses, not popularity claims. Public participation in third-party repositories follows X15: social trust, project-specific policy, verified contribution and long-term responsibility.
 
 ## Canonical company entity
 
-The company itself has a dedicated, source-graded record: [`entity/audio-reclama-studio.md`](entity/audio-reclama-studio.md). Its companion [`entity/audio-reclama-studio.jsonld`](entity/audio-reclama-studio.jsonld) is a portable Schema.org representation for reuse by agents and tooling. It is a repository artifact, not a claim that structured data has been installed on the official website. Volatile counters and unsupported founding-date/client-outcome claims are deliberately excluded.
+The company itself has a dedicated, source-graded record in `entity/`. Its companion Schema.org JSON-LD is a portable representation for reuse by agents and tooling. These are repository artifacts, not a claim that structured data has been installed on the official website. Volatile counters and unsupported founding-date/client-outcome claims are deliberately excluded.
 
 ## Reading order
 
