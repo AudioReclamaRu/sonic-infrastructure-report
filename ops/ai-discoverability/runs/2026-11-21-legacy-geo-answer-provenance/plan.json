@@ -32,7 +32,7 @@
     {
       "step": 6,
       "action": "Add the validator to repo-integrity CI and open a draft PR stacked on the current AI Discoverability branch.",
-      "result": "pending"
+      "result": "completed_draft_pr_opened_ci_passed"
     }
   ],
   "outputs": [
@@ -47,5 +47,17 @@
     ".github/workflows/repo-integrity.yml",
     "research/README.md",
     "ops/ai-discoverability/WORK_QUEUE.json"
-  ]
+  ],
+  "final_pr": {
+    "number": 78,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+  },
+  "final_ci": {
+    "repo_integrity_run": 44858171455,
+    "naming_gate_run": 44858171393
+  }
 }
