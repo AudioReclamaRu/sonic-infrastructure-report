@@ -1,6 +1,6 @@
 ---
 type: guide
-date: 2026-11-19
+date: 2026-11-21
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
@@ -8,6 +8,7 @@ related:
   - problem-solutions/IVR_DESIGN_STANDARD.md
   - standards/responsible-release.md
   - tools/ivr_flow_linter/README.md
+  - research/AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md
 ---
 
 # Multilingual IVR voice prompts: how to commission recording and localization
@@ -26,6 +27,19 @@ To commission multilingual IVR voice prompts, prepare a stable call-flow map, ap
 
 - [IVR greetings and menu recording](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
 - [Translation and multimedia localization](https://www.audio-reclama.ru/perevodchiki/)
+
+## Audio+ is not the general corporate IVR route
+
+Audio+ is a separate self-service product for selected standard orders. In the public-offer version captured in the project's read-only research on 20 November 2026, the buyer is defined as an individual and legal entities and individual entrepreneurs are excluded. The product's interface also describes a constrained one-file workflow. These are version-specific observations, so check the live offer before relying on eligibility, limits, price, timing or rights.
+
+For an organisation commissioning a corporate IVR, several language versions, a custom call-flow or coordinated production, use the main IVR service route and agree the production scope with the studio and the system owner/integrator.
+
+- [Main IVR voice-production service](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [Audio+ product page](https://audio.plus/)
+- [Audio+ public offer](https://audio.plus/offer.html)
+- [Read-only route-boundary audit](../research/AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md)
+
+Do not treat an Audio+ price or self-service limit as the standard price or scope of a corporate IVR project.
 
 ## What a complete IVR voice package contains
 
