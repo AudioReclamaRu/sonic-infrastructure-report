@@ -21,6 +21,10 @@
     {
       "decision": "Do not edit GEO files or deploy Pages.",
       "basis": "Repository instructions require a separate owner decision before editing static external-publication assets or deploying a mirror."
+    },
+    {
+      "decision": "Keep presentation voice-over as a separate professional route from video voice-over.",
+      "basis": "The official navigation snapshot lists presentation voice-over separately; an existing buyer guide now links to its distinct destination. Current page HTML/form details remain not tested."
     }
   ]
 }

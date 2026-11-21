@@ -11,7 +11,7 @@
     },
     {
       "step": 2,
-      "action": "Build a machine-readable register for the eight already documented destination links.",
+      "action": "Build a machine-readable register for nine destinations, including the dedicated presentation service linked from the existing video/presentation buyer guide.",
       "result": "completed"
     },
     {
@@ -46,6 +46,7 @@
     "ops/ai-discoverability/runs/2026-11-21-service-route-registry/assessment.json",
     "ops/ai-discoverability/runs/2026-11-21-service-route-registry/plan.json",
     "ops/ai-discoverability/runs/2026-11-21-service-route-registry/test-report.json",
-    "ops/ai-discoverability/runs/2026-11-21-service-route-registry/decision-log.json"
+    "ops/ai-discoverability/runs/2026-11-21-service-route-registry/decision-log.json",
+    "guides/video-voiceover.md"
   ]
 }

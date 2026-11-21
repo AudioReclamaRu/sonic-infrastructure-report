@@ -222,7 +222,7 @@
       "success_criteria": [
         "Inspect the existing guide, GEO route, voice catalogue templates, relevant service pages and order/brief endpoints before drafting anything new.",
         "Map only verified links and distinguish a voice demo/profile visit from a buyer's service intent.",
-        "For radio, video, IVR and multilingual work, identify the existing destination and the minimal contextual next step appropriate to that intent.",
+        "For radio, video, presentation, IVR and multilingual work, identify the existing destination and the minimal contextual next step appropriate to that intent.",
         "Do not create a duplicate guide, invent a new checkout, claim that all catalogue visits are commercial, or route corporate buyers into the separate B2C Audio+ path.",
         "Deliver a source-backed route map and an owner-ready minimum-change proposal; do not edit the official website or publish externally."
       ],
@@ -280,7 +280,7 @@
         "Re-check the current published Audio+ offer and price/word limits before changing any commercial statement; retain the 2026-11-15 values only as dated historical observations until confirmed.",
         "Use the source-guide-backed service route registry as the canonical internal map; do not infer live URL availability from repository links.",
         "Make the Audio+ individual-buyer scope explicit wherever a short-order price is presented, provided the current offer still supports that wording.",
-        "Add the relevant professional radio and video service destinations to the corresponding business-intent answers without representing Audio+ as an alternative for legal entities or individual entrepreneurs.",
+        "Add the relevant professional radio, video and presentation service destinations to the corresponding business-intent answers without representing Audio+ as an alternative for legal entities or individual entrepreneurs.",
         "Keep the short-order Audio+ product outside professional-service destinations until the current primary offer has been rechecked.",
         "Keep the IVR individual-calculation route linked to the official IVR service and review audiobook/navigation answers for equally clear professional destinations.",
         "Align geo/index.html, geo/llms.txt, geo/answers/index.html and affected answer pages so the audience, price scope and destination do not contradict one another.",
@@ -297,7 +297,8 @@
         "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
         "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
         "tools/ai_service_route_registry.py",
-        "tools/tests/test_ai_service_route_registry.py"
+        "tools/tests/test_ai_service_route_registry.py",
+        "guides/video-voiceover.md"
       ]
     }
   ]

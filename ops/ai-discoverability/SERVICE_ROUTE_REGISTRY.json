@@ -59,6 +59,18 @@
       "scope_note": "Audio scope is determined by the project brief; this route does not imply that picture editing or every video-post service is included."
     },
     {
+      "id": "presentation_voiceover_production",
+      "task": "Commission voice-over specifically for a narrated presentation",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+      "source_guides": [
+        "guides/video-voiceover.md"
+      ],
+      "link_role": "primary_service_for_presentation_tasks",
+      "scope_note": "A separate presentation service entry is listed apart from video voice-over. Confirm current scope and deliverables in the project brief; this route is not a public price or service-SLA statement."
+    },
+    {
       "id": "ivr_voice_production",
       "task": "Commission telephone greetings, IVR prompts and menu recordings",
       "route_kind": "professional_service",

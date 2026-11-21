@@ -47,6 +47,14 @@ class TestServiceRouteRegistry(unittest.TestCase):
             errors = validate_registry(data, root)
         self.assertTrue(any("destination URL is not referenced" in item for item in errors))
 
+    def test_presentation_route_is_distinct_from_video_route(self):
+        routes = {item["id"]: item for item in self.registry["routes"]}
+        presentation = routes["presentation_voiceover_production"]
+        video = routes["video_voiceover_production"]
+        self.assertNotEqual(presentation["destination_url"], video["destination_url"])
+        self.assertEqual(presentation["route_kind"], "professional_service")
+        self.assertEqual(presentation["audience_class"], "professional_project")
+
     def test_audio_plus_exclusion_requires_fresh_offer_check(self):
         data = copy.deepcopy(self.registry)
         data["product_boundaries"][0]["current_offer_recheck_required"] = False

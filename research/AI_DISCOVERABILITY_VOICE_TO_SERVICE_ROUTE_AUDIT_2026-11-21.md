@@ -152,3 +152,11 @@ related:
 - Added `tools/ai_service_route_registry.py` and regression tests. They verify that the documented URLs use the canonical HTTPS host, appear as links in the listed source guides, and do not route a professional project to the short-order Audio+ product.
 - The short-order product is explicitly kept outside professional destinations. The saved offer review remains historical and must be rechecked against the current primary offer before any commercial copy changes.
 - The check is repository-only. It does not issue HTTP requests, submit forms, inspect live Pages, establish indexing or authorize any deployment.
+
+
+## Addendum — separate presentation voice-over route (2026-11-21)
+
+- The official video-service navigation snapshot lists presentation voice-over as a separate service entry from video voice-over and Audio+. The indexed presentation page is titled as a dedicated presentation voice-over service; direct page retrieval returned a cache miss, so its current HTML and form details are **NOT_TESTED**. <Cite ref="turn927983view1"/> <Cite ref="turn181883search2"/>
+- Updated the existing draft `guides/video-voiceover.md` to link the dedicated presentation destination for briefs whose primary deliverable is a narrated presentation rather than a video voice track. No new guide was created and the existing guide remains an unpublished draft.
+- Extended `SERVICE_ROUTE_REGISTRY.json` to **nine destinations**, including **six professional-service routes**: radio, video, presentation, IVR, multilingual localization and audiobooks. The validator checks the presentation destination against the existing guide's exact link.
+- Repository-only change. No live URL, service scope, quote, delivery SLA, form behavior, public GEO page or deployment was verified or changed.

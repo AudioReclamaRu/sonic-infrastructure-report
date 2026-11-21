@@ -1,6 +1,6 @@
 ---
 type: guide
-date: 2026-11-19
+date: 2026-11-21
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
@@ -23,6 +23,9 @@ To commission video voice-over or multilingual localization, provide the current
 
 - [Video voice-over service](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
 - [Translation and multimedia localization](https://www.audio-reclama.ru/perevodchiki/)
+- [Presentation voice-over](https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html)
+
+For a presentation whose primary deliverable is a narrated slide deck rather than a video voice track, use the dedicated presentation service route. Confirm the expected output and project scope in the brief.
 
 ## First choose the right voice treatment
 
