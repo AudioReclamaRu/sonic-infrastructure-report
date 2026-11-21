@@ -18,7 +18,7 @@
       "official_product_url": "https://audio.plus/",
       "official_offer_url": "https://audio.plus/offer.html",
       "audience": {
-        "observed_statement": "The available offer text defines the buyer as a natural person and says the service is not intended for legal entities and individual entrepreneurs.",
+        "observed_statement": "Покупатель — физическое лицо (данный сервис не предназначен для юридических лиц и ИП).",
         "source_status": "stale_official_snapshot",
         "retrieved_on": "2026-11-21",
         "page_published_date": "2016-06-17",
