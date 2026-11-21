@@ -1,5 +1,5 @@
 ---
-type: research_audit
+type: doc
 date: 2026-11-21
 lang: ru
 status: repository_only_source_snapshot_audit
