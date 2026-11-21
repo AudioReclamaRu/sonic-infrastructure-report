@@ -11,7 +11,7 @@
     },
     {
       "step": 2,
-      "action": "Build a machine-readable register for eleven existing destinations, including the linked jingle service and the corporate songs/anthems page in the service index.",
+      "action": "Build a machine-readable register for thirteen existing destinations, including scriptwriting and the separate full-video-production URL in existing guide/index routes.",
       "result": "completed"
     },
     {
@@ -48,6 +48,7 @@
     "ops/ai-discoverability/runs/2026-11-21-service-route-registry/test-report.json",
     "ops/ai-discoverability/runs/2026-11-21-service-route-registry/decision-log.json",
     "guides/video-voiceover.md",
-    "guides/README.md"
+    "guides/README.md",
+    "guides/audio-advertising-production.md"
   ]
 }

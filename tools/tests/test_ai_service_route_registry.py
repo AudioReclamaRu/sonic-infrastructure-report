@@ -73,6 +73,22 @@ class TestServiceRouteRegistry(unittest.TestCase):
         self.assertEqual(anthem["source_guides"], ["guides/README.md"])
         self.assertEqual(anthem["route_kind"], "professional_service")
 
+    def test_scriptwriting_has_own_professional_destination(self):
+        routes = {item["id"]: item for item in self.registry["routes"]}
+        scriptwriting = routes["scriptwriting"]
+        radio = routes["radio_advertising_production"]
+        self.assertNotEqual(scriptwriting["destination_url"], radio["destination_url"])
+        self.assertEqual(scriptwriting["source_guides"], ["guides/audio-advertising-production.md"])
+        self.assertEqual(scriptwriting["route_kind"], "professional_service")
+
+    def test_video_production_is_distinct_from_video_voiceover(self):
+        routes = {item["id"]: item for item in self.registry["routes"]}
+        production = routes["video_production"]
+        voiceover = routes["video_voiceover_production"]
+        self.assertNotEqual(production["destination_url"], voiceover["destination_url"])
+        self.assertEqual(production["source_guides"], ["guides/README.md"])
+        self.assertEqual(production["route_kind"], "professional_service")
+
     def test_audio_plus_exclusion_requires_fresh_offer_check(self):
         data = copy.deepcopy(self.registry)
         data["product_boundaries"][0]["current_offer_recheck_required"] = False

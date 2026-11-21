@@ -169,3 +169,13 @@ related:
 - Extended the internal registry to **eleven destinations**, including **eight professional-service routes**: radio advertising, jingles, corporate songs/anthems, video voice-over, presentation voice-over, IVR, multilingual localization and audiobooks. The remaining routes cover voice discovery, general order intake and a supporting airport case reference.
 - These are route-level links only. No current prices, contractual terms, turnaround promises, rights scope or form behavior are inferred from search snippets. Service scope and current commercial terms still require direct review before any buyer-facing copy changes.
 - Repository-only change. No public GEO asset, official website page or external profile was edited or deployed.
+
+
+## Addendum — scenario writing and separate video production route (2026-11-21)
+
+- The official “Scripts” navigation item links to a dedicated scenario-writing page. Its available HTML snapshot describes scripts for radio, video and telephone greetings and presents an expanded brief with duration, product/service, audience, message, channels and reference fields. This crawl is approximately eight months old, so current scope, revisions, rights and commercial terms remain unverified: https://www.audio-reclama.ru/zakaz-scenariya.html.
+- The existing audio-advertising buyer guide now links directly to the scriptwriting page; no new guide was created.
+- The official homepage links “Video Production” as a separate top-level destination from audio production and video voice-over. The destination URL is confirmed by the homepage navigation, but direct retrieval returned a cache miss. Its current content and scope remain **NOT_TESTED**: https://www.audio-reclama.ru/video/videoroliki-zakaz.html.
+- The registry now contains **thirteen destinations**, including **ten professional-service routes**: radio advertising, scriptwriting, jingles, corporate songs/anthems, video voice-over, full video production, presentation voice-over, IVR, multilingual localization and audiobooks. It retains separate entries for voice discovery, general order intake and a supporting airport case reference.
+- The distinction matters: a video voice-over order is not presumed to include full video production; scriptwriting is a separate service step; the route registry records destinations, not bundled service scope.
+- Repository-only change. No official website, public GEO asset, external profile or GitHub Pages deployment was modified.

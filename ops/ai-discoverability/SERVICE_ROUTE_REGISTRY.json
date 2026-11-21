@@ -47,6 +47,18 @@
       "scope_note": "Professional production brief; do not transfer short-order product pricing or terms to this route."
     },
     {
+      "id": "scriptwriting",
+      "task": "Commission a written advertising script for radio, video or telephone greeting",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+      "source_guides": [
+        "guides/audio-advertising-production.md"
+      ],
+      "link_role": "primary_service_for_scriptwriting_tasks",
+      "scope_note": "The indexed page presents a dedicated scenario-writing brief for radio, video and telephone greeting scripts. The available HTML crawl is approximately eight months old; current workflow, revisions, rights and commercial terms must be rechecked."
+    },
+    {
       "id": "jingle_production",
       "task": "Commission a creative jingle, musical signature or short radio programme identifier",
       "route_kind": "professional_service",
@@ -69,6 +81,18 @@
       ],
       "link_role": "primary_service",
       "scope_note": "Audio scope is determined by the project brief; this route does not imply that picture editing or every video-post service is included."
+    },
+    {
+      "id": "video_production",
+      "task": "Commission full video production rather than voice-over only",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+      "source_guides": [
+        "guides/README.md"
+      ],
+      "link_role": "distinct_video_production_service_destination",
+      "scope_note": "A separate Video Production URL is linked from the official homepage navigation. Direct retrieval of the page returned a cache miss; do not infer current production scope, deliverables, rights, pricing or form behavior from the menu link alone."
     },
     {
       "id": "presentation_voiceover_production",

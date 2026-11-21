@@ -1,17 +1,17 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-service-route-registry",
-  "status": "passed_on_audited_content_commit",
+  "status": "local_checks_pass_ci_pending",
   "checks": [
     {
       "name": "Service-route registry validation",
       "status": "pass",
-      "detail": "11 route entries (8 professional services, 2 discovery/intake destinations and 1 supporting case reference) map to exact URLs in six buyer guides plus the service index."
+      "detail": "13 route entries (10 professional services, 2 discovery/intake destinations and 1 supporting case reference) map to exact URLs in six buyer guides plus the service index."
     },
     {
       "name": "Service-route registry regression tests",
       "status": "pass",
-      "detail": "10 regression tests: registry validity, duplicate IDs, canonical host, Audio+ exclusion, source-guide link presence, presentation/video separation, jingle/radio separation, corporate-song index route, offer freshness and read-only/no-deploy guard."
+      "detail": "12 regression tests: registry validity, duplicate IDs, canonical host, Audio+ exclusion, source-guide link presence, presentation/video distinction, jingle/radio distinction, corporate-song index route, scriptwriting/radio distinction, video-production/voice-over distinction, offer freshness and read-only/no-deploy guard."
     },
     {
       "name": "Python syntax/import check",
@@ -20,12 +20,8 @@
     },
     {
       "name": "Repository CI",
-      "status": "pass",
-      "detail": "Both required workflows succeeded on the audited content commit.",
-      "evidence": [
-        "repo-integrity run 44854543587: SUCCESS",
-        "AI response and document naming gate run 44854543585: SUCCESS"
-      ]
+      "status": "pending",
+      "detail": "The scriptwriting and separate video-production routes require a fresh CI run on the updated PR head."
     },
     {
       "name": "Live destination checks",
@@ -44,19 +40,8 @@
     "No claim that the present Audio+ offer still matches the saved 2026-11-20 snapshot.",
     "No claim of leads, conversions, AI citations or ranking improvements.",
     "No claim that the indexed presentation service HTML was freshly retrieved; direct retrieval returned a cache miss.",
-    "No claim that current prices, rights terms, deliverables, deadlines or form behavior on the jingle or corporate-song pages were freshly verified."
-  ],
-  "audited_content_commit_sha": "9e4bdaad82b4b56ef3ec4f37786d9c8fa074d9d5",
-  "workflow_summary": {
-    "audited_content_commit_sha": "9e4bdaad82b4b56ef3ec4f37786d9c8fa074d9d5",
-    "repo_integrity": {
-      "run_id": 44854543587,
-      "status": "success"
-    },
-    "ai_response_document_naming": {
-      "run_id": 44854543585,
-      "status": "success"
-    },
-    "note": "The following commit records these successful checks; CI is rerun on the final PR head."
-  }
+    "No claim that current prices, rights terms, deliverables, deadlines or form behavior on the jingle or corporate-song pages were freshly verified.",
+    "No claim that the separate video-production page was retrieved; direct retrieval returned a cache miss.",
+    "No claim that the scenario-writing page snapshot, approximately eight months old, still describes current scope or terms."
+  ]
 }

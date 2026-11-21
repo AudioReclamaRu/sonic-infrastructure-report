@@ -33,6 +33,14 @@
     {
       "decision": "Register corporate songs and anthems as a separate professional service destination, but do not invent a standalone buyer guide.",
       "basis": "The official page presents corporate songs/anthems and a request form; the existing guides index is an appropriate route pointer until a buyer guide is justified."
+    },
+    {
+      "decision": "Register advertising scriptwriting separately from radio-spot production.",
+      "basis": "The official Scripts navigation item links to a dedicated scenario-writing page that presents a separate written-script brief covering radio, video and telephone-greeting tasks; its HTML snapshot is old and requires freshness review."
+    },
+    {
+      "decision": "Keep full video production separate from video voice-over.",
+      "basis": "The official homepage top navigation exposes a separate Video Production URL. The URL is a grounded destination, but its live page body was unavailable and is not used to infer deliverables or scope."
     }
   ]
 }
