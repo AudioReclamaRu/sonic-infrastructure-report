@@ -3,9 +3,9 @@
   "run_id": "2026-11-21-audio-plus-b2b-route-audit",
   "date": "2026-11-21",
   "work_item": "AI-DISC-2026-007",
-  "status": "repository_audit_completed_ci_passed_owner_approval_required",
+  "status": "repository_audit_and_boundary_registry_completed_ci_passed_owner_approval_required",
   "decision_to_unlock": "Determine where Audio+ may be presented as an individual short-order product and where professional buyers must follow the dedicated studio service route, while correcting the source data and markup only after approval.",
-  "finding": "The repository's business-facing GEO hub, price page, shared FAQ and multiple short-price answer pages mix Audio+ tariffs with professional-service answers. The generator folds all status=ok price entries into the OfferCatalog of a company Service, while pricing/FAQ source data has no buyer-audience field. The available offer snapshot excludes legal entities and individual entrepreneurs, but that offer snapshot is about five months old. GEO public serving remains NOT_TESTED.",
+  "finding": "The repository's business-facing GEO hub, price page, shared FAQ and multiple short-price answer pages mix Audio+ tariffs with professional-service answers. The generator folds all status=ok price entries into the OfferCatalog of a company Service, while pricing/FAQ source data has no buyer-audience field. The available offer snapshot excludes legal entities and individual entrepreneurs, but that offer snapshot is about five months old. GEO public serving remains NOT_TESTED. A second internal boundary registry now separates buyer eligibility, fulfillment, output granularity, revisions/rework and rights. It captures the stale offer's individual-only eligibility and non-exclusive licence wording, a separate professional-radio page's advertised rights-transfer wording, and the unresolved conflict between the product page's paid edit option and the offer clauses on changes/rework.",
   "evidence": [
     "tools/build_geo_site.py",
     "knowledge/pricing/prices.json",
@@ -20,7 +20,10 @@
     "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
     "geo/answers/ozvuchka-tekst-cena/index.html",
     "geo/answers/ozvuchka-rolika-cena/index.html",
-    "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json"
+    "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+    "ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json",
+    "tools/ai_offer_service_boundaries.py",
+    "tools/tests/test_ai_offer_service_boundaries.py"
   ],
   "limitations": [
     "Repository contents were inspected read-only. No GEO HTML, source JSON, generator, official website or metadata was changed.",
@@ -29,8 +32,12 @@
     "The public homepage navigation snapshot is about three months old and is used only to establish separate navigation destinations.",
     "Public GEO serving state, indexing, AI retrieval, forms, actual orders, leads and conversions were not tested.",
     "Several answer HTML files are not listed in the current EXTRA_ANSWERS generator array; their provenance must be established before regeneration or removal.",
-    "No measured AI discovery or conversion impact is claimed."
+    "No measured AI discovery or conversion impact is claimed.",
+    "The Audio+ offer snapshot displays publication date 2016-06-17 and was crawled approximately five months before retrieval; it is not fresh confirmation of current buyer eligibility, rights or revision terms.",
+    "The Audio+ product page snapshot was approximately four months old in the opened source; displayed short-order limits and edit options are recorded as stale observations.",
+    "The product page's paid edit/correction option and offer clauses on post-payment text changes/reworking recorded audio are inconsistent or insufficiently reconciled; no contractual interpretation is made.",
+    "The professional radio page advertises transfer of author and exclusive rights, but its page-level wording is not confirmation of the exact contract scope for a particular project."
   ],
   "next_decision": "Obtain explicit approval for a scoped repository GEO source change and refresh the current Audio+ offer; keep deployment separately gated.",
-  "final_commit_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a"
+  "final_commit_sha": "e1d352d90be7e3d47c616e11ff873f6032ff23d6"
 }
