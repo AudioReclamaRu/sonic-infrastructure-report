@@ -1,0 +1,30 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-service-route-evidence-audit",
+  "decisions": [
+    {
+      "decision": "Keep the 10 professional service route identities separate from voice-discovery, general-intake and case-reference routes.",
+      "basis": "The existing SERVICE_ROUTE_REGISTRY gives those destinations distinct route_kind values."
+    },
+    {
+      "decision": "Treat direct page snapshots and search-index excerpts as observations with reported crawl ages, not live HTTP verification.",
+      "basis": "The retrieval tool reports cache ages; two direct reads returned cache miss while search results still exposed indexed excerpts."
+    },
+    {
+      "decision": "Keep current scope, current commercial terms and project-specific rights unconfirmed for all ten routes.",
+      "basis": "The inspected pages are cached/indexed content, not current contracts or verified live project briefs."
+    },
+    {
+      "decision": "Retain radio-page rights-transfer wording only as a page-level observation.",
+      "basis": "A service-page bullet is not a contract-level determination of medium, territory, term, exclusivity or sublicensing."
+    },
+    {
+      "decision": "Maintain the distinctions between full video production, video voice-over and presentation voice-over.",
+      "basis": "Each has a separate route; their page snapshots describe different and partially overlapping work."
+    },
+    {
+      "decision": "Do not edit GEO outputs or the official website and do not deploy Pages.",
+      "basis": "The task is a repository-only evidence audit and no external publication approval was given."
+    }
+  ]
+}
