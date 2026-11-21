@@ -29,6 +29,22 @@
     {
       "decision": "Do not edit GEO files or deploy Pages in this run.",
       "basis": "Repository autonomy contract requires explicit owner approval for external publication; approval has not been given."
+    },
+    {
+      "decision": "Treat buyer eligibility, fulfillment model, output granularity, revision/rework rules and rights as separate product/service boundary dimensions.",
+      "basis": "The available Audio+ offer snapshot describes an individual buyer, one-version/short-order terms, restrictions on changes and rework, and a non-exclusive licence; professional project pages describe separate brief and rights elements."
+    },
+    {
+      "decision": "Do not silently resolve the Audio+ edit option versus offer-text conflict.",
+      "basis": "The product page displays a paid change/correction/add-sounds option while the offer snapshot restricts post-payment text changes and reworking completed audio; the snapshots do not reconcile these statements."
+    },
+    {
+      "decision": "Do not transfer Audio+ rights wording to professional services or vice versa.",
+      "basis": "Audio+ offer section 16.1 states a non-exclusive licence model; the radio-production page separately advertises transfer of author's and exclusive rights. Exact project contract scope remains unverified."
+    },
+    {
+      "decision": "Treat the offer and product-page commercial details as stale observations.",
+      "basis": "Offer crawl age about five months with visible publication date in 2016; opened product-page snapshot about four months. No current price, eligibility or revision entitlement is asserted."
     }
   ]
 }
