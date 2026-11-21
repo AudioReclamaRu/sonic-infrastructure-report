@@ -38,6 +38,21 @@
       "step": 7,
       "action": "Open a scoped draft PR stacked on service-route-registry branch; run CI and record final head checks.",
       "result": "completed_ci_passed"
+    },
+    {
+      "step": 8,
+      "action": "Encode product/service audience, delivery, revision and rights distinctions in an internal-only JSON registry and offline validator.",
+      "result": "completed"
+    },
+    {
+      "step": 9,
+      "action": "Add regression tests and integrate the boundary validator into repo-integrity CI.",
+      "result": "completed_ci_passed"
+    },
+    {
+      "step": 10,
+      "action": "Record exact CI results and the initial validator correction in the run package.",
+      "result": "completed"
     }
   ],
   "outputs": [
@@ -47,7 +62,10 @@
     "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/assessment.json",
     "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/plan.json",
     "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/test-report.json",
-    "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/decision-log.json"
+    "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/decision-log.json",
+    "ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json",
+    "tools/ai_offer_service_boundaries.py",
+    "tools/tests/test_ai_offer_service_boundaries.py"
   ],
   "final_pr": {
     "number": 76,
@@ -55,6 +73,6 @@
     "state": "open",
     "draft": true,
     "merged": false,
-    "head_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a"
+    "head_sha": "e1d352d90be7e3d47c616e11ff873f6032ff23d6"
   }
 }
