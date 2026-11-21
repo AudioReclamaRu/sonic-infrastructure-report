@@ -1,38 +1,86 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-legacy-geo-answer-provenance",
-  "status": "awaiting_pull_request_ci",
+  "status": "passed_on_audited_pr_head",
   "checks": [
     {
-      "name": "Generator coverage",
-      "status": "pending_ci",
-      "detail": "AST extraction should identify exactly two explicit and six data-driven answer routes."
+      "name": "Generator route extraction",
+      "status": "pass",
+      "detail": "AST extraction found exactly two literal page routes and six literal EXTRA_ANSWERS routes."
     },
     {
-      "name": "Legacy provenance",
-      "status": "pending_ci",
-      "detail": "Seven unmanaged static answer paths are registered with first/last recorded Git commits and current generator status."
+      "name": "Legacy page provenance",
+      "status": "pass",
+      "detail": "Seven residual directories are registered as legacy static HTML with first/last recorded commit provenance; no manual authorship or delete permission is inferred."
     },
     {
       "name": "Discovery-surface reconciliation",
-      "status": "pending_ci",
-      "detail": "Answer index, geo/llms and sitemap membership and the global lastmod rule are tested against current source files."
+      "status": "pass",
+      "detail": "Five legacy URLs link from geo/answers/index.html, none are listed in geo/llms.txt, and all seven appear in geo/sitemap.xml."
     },
     {
-      "name": "Regression tests",
-      "status": "pending_ci",
-      "detail": "Ten positive/negative regression tests will run in repo-integrity CI."
+      "name": "Global sitemap lastmod boundary",
+      "status": "pass",
+      "detail": "Validator preserves that 2026-11-15 is a global UPDATED build date, not a per-file content-modification date."
     },
     {
-      "name": "External changes",
+      "name": "Legacy GEO answer provenance validator",
+      "status": "pass",
+      "detail": "Repo-integrity step 17 passed.",
+      "evidence": [
+        "repo-integrity run 1130 (44858171455): SUCCESS",
+        "head a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+      ]
+    },
+    {
+      "name": "Legacy GEO answer provenance regression tests",
+      "status": "pass",
+      "detail": "All 10 regression tests passed in repo-integrity step 18.",
+      "evidence": [
+        "repo-integrity run 1130 (44858171455): SUCCESS",
+        "head a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+      ]
+    },
+    {
+      "name": "Repository integrity",
+      "status": "pass",
+      "detail": "Full repo-integrity workflow completed successfully.",
+      "evidence": [
+        "repo-integrity run 1130 (44858171455): SUCCESS",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858171455"
+      ]
+    },
+    {
+      "name": "AI response/document naming gate",
+      "status": "pass",
+      "detail": "Every changed text artifact and response-text gate passed.",
+      "evidence": [
+        "AI response and document naming gate run 768 (44858171393): SUCCESS",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858171393"
+      ]
+    },
+    {
+      "name": "Public output and external actions",
       "status": "not_performed",
-      "detail": "No GEO output, generator, website, Pages deployment, form submission or external publication."
+      "detail": "No geo/ output, builder, official site, forms, Pages deployment, redirect, deletion or external publication changed."
     }
   ],
   "no_claims": [
-    "No claim that any GitHub Pages URL is currently served.",
-    "No claim that static page prices or terms remain current.",
-    "No claim that sitemap lastmod represents per-file content modification.",
-    "No traffic, indexing, AI citation or conversion impact claim."
-  ]
+    "No claim that any historical GitHub Pages canonical URL is currently served.",
+    "No claim that historical short-order prices or conditions remain current.",
+    "No claim that the global sitemap lastmod is an actual content-change timestamp for each legacy page.",
+    "No indexing, search, AI-citation, referral or conversion impact claim.",
+    "No decision to retain, rewrite, redirect or retire any legacy URL."
+  ],
+  "audited_commit_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724",
+  "pull_request": {
+    "number": 78,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "base": "ai-discoverability/service-route-evidence-audit-20261121",
+    "head_branch": "ai-discoverability/legacy-geo-answer-provenance-20261121",
+    "head_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+  }
 }
