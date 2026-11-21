@@ -1,0 +1,23 @@
+{
+  "schema": "megabrain/ai-discoverability-run-assessment/1",
+  "run_id": "2026-11-21-service-route-evidence-audit",
+  "date": "2026-11-21",
+  "work_item": "AI-DISC-2026-008",
+  "status": "repository_only_route_evidence_audit_completed_ci_pending",
+  "decision_to_unlock": "Which professional service routes have enough current evidence for task matching, and which page claims or project terms need refresh before public buyer-facing edits?",
+  "finding": "All ten professional_service destinations in SERVICE_ROUTE_REGISTRY were matched to a read-only official-page snapshot or search-index excerpt. Reported crawl age ranges from about one week to eight months; some direct reads return cache miss. These observations support route identity and limited page-level scope, but do not confirm live HTTP, forms, current commercial terms, delivery scope or project-specific rights.",
+  "evidence": [
+    "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+    "ops/ai-discoverability/SERVICE_ROUTE_EVIDENCE_MATRIX.json",
+    "research/AI_DISCOVERABILITY_SERVICE_ROUTE_EVIDENCE_AUDIT_2026-11-21.md",
+    "Official page snapshots and index excerpts retrieved 2026-11-21"
+  ],
+  "limitations": [
+    "Crawl ages are approximate retrieval metadata, not exact source publication dates.",
+    "Cache misses are not HTTP 404 or proof of outage.",
+    "Current scope, prices, terms, rights and form workflows were not verified.",
+    "No GEO output, official website, profile, form or deployment was changed.",
+    "No search ranking, AI citation, referral, enquiry or conversion impact was measured."
+  ],
+  "next_decision": "Use the refresh priorities in the evidence matrix before changing any service-specific public answer or contractual claim."
+}
