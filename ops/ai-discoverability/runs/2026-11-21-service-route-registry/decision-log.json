@@ -1,0 +1,46 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-service-route-registry",
+  "decisions": [
+    {
+      "decision": "Represent only URLs already found as links in existing source guides.",
+      "basis": "All eleven destinations are linked from existing buyer guides or the guide index; no destination page was invented by the registry."
+    },
+    {
+      "decision": "Keep route kinds distinct.",
+      "basis": "A voice catalogue, generic intake page, professional service page and case reference serve different stages and should not be treated as interchangeable."
+    },
+    {
+      "decision": "Keep Audio+ outside professional project defaults.",
+      "basis": "Saved offer research in PR #67 describes an individual-buyer boundary; freshness still requires a current primary-source recheck."
+    },
+    {
+      "decision": "Validate repository links, not live URLs.",
+      "basis": "The validator is offline by design and cannot establish HTTP status, indexation, forms or production availability."
+    },
+    {
+      "decision": "Do not edit GEO files or deploy Pages.",
+      "basis": "Repository instructions require a separate owner decision before editing static external-publication assets or deploying a mirror."
+    },
+    {
+      "decision": "Keep presentation voice-over as a separate professional route from video voice-over.",
+      "basis": "The official navigation snapshot lists presentation voice-over separately; an existing buyer guide now links to its distinct destination. Current page HTML/form details remain not tested."
+    },
+    {
+      "decision": "Register jingle creation as a distinct professional service route.",
+      "basis": "The existing audio-advertising guide already links to the official jingles service, which has a separate jingle request form in the indexed page snapshot."
+    },
+    {
+      "decision": "Register corporate songs and anthems as a separate professional service destination, but do not invent a standalone buyer guide.",
+      "basis": "The official page presents corporate songs/anthems and a request form; the existing guides index is an appropriate route pointer until a buyer guide is justified."
+    },
+    {
+      "decision": "Register advertising scriptwriting separately from radio-spot production.",
+      "basis": "The official Scripts navigation item links to a dedicated scenario-writing page that presents a separate written-script brief covering radio, video and telephone-greeting tasks; its HTML snapshot is old and requires freshness review."
+    },
+    {
+      "decision": "Keep full video production separate from video voice-over.",
+      "basis": "The official homepage top navigation exposes a separate Video Production URL. The URL is a grounded destination, but its live page body was unavailable and is not used to infer deliverables or scope."
+    }
+  ]
+}

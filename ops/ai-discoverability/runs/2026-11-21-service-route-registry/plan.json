@@ -1,0 +1,54 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-service-route-registry",
+  "scope": "repository_only",
+  "base_ref": "ai-discoverability/voice-to-service-route-audit-20261121",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Read current repository, naming, response-release and distribution constraints; inspect existing buyer-guide service links.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Build a machine-readable register for thirteen existing destinations, including scriptwriting and the separate full-video-production URL in existing guide/index routes.",
+      "result": "completed"
+    },
+    {
+      "step": 3,
+      "action": "Add offline validation for canonical host, source-guide link presence, route classification and Audio+ separation.",
+      "result": "completed"
+    },
+    {
+      "step": 4,
+      "action": "Add regression tests and integrate the validator into repository CI.",
+      "result": "completed_ci_passed_on_audited_content_commit"
+    },
+    {
+      "step": 5,
+      "action": "Update the task queue, operating README and audit addendum; create scoped PR.",
+      "result": "completed"
+    },
+    {
+      "step": 6,
+      "action": "Do not edit public GEO files, publish, deploy Pages or merge.",
+      "result": "complied"
+    }
+  ],
+  "outputs": [
+    "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+    "tools/ai_service_route_registry.py",
+    "tools/tests/test_ai_service_route_registry.py",
+    "ops/ai-discoverability/WORK_QUEUE.json",
+    ".github/workflows/repo-integrity.yml",
+    "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
+    "ops/ai-discoverability/README.md",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-registry/assessment.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-registry/plan.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-registry/test-report.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-registry/decision-log.json",
+    "guides/video-voiceover.md",
+    "guides/README.md",
+    "guides/audio-advertising-production.md"
+  ]
+}
