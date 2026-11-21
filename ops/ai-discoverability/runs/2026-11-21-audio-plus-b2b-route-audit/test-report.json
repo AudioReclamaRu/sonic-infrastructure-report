@@ -1,7 +1,7 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-audio-plus-b2b-route-audit",
-  "status": "pending_ci",
+  "status": "passed_on_audited_commit",
   "checks": [
     {
       "name": "Repository source audit",
@@ -35,8 +35,12 @@
     },
     {
       "name": "Repository CI",
-      "status": "pending",
-      "detail": "Awaiting pull-request workflows on the new branch."
+      "status": "pass",
+      "detail": "Both required workflows succeeded on the audited content commit; a documentation-only run-record commit will trigger CI again.",
+      "evidence": [
+        "repo-integrity run 44855719665 (run 1119): SUCCESS",
+        "AI response and document naming gate run 44855719306 (run 757): SUCCESS"
+      ]
     },
     {
       "name": "Official website/GEO output/Pages deployment",
@@ -50,5 +54,20 @@
     "No claim that the latest Audio+ terms still exclude legal entities and individual entrepreneurs until the current offer is re-read.",
     "No claim that the listed 1990 RUB price, package rates, 90-word limit or 790 RUB edit fee are contractually current.",
     "No claim of improved AI citations, search ranking, referral traffic, qualified enquiries or sales."
+  ],
+  "audited_commit_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a",
+  "remediation_history": [
+    {
+      "commit_sha": "616c91203883b362d07f2b0c8eec8630a1038b75",
+      "gate": "AI response and document naming gate",
+      "status": "failure",
+      "reason": "A truncated Latin identifier contained the disallowed partial company-name form."
+    },
+    {
+      "commit_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a",
+      "gate": "AI response and document naming gate",
+      "status": "success",
+      "resolution": "Reworded the identifier in the research report; the changed-artifact check and response-text gate both passed."
+    }
   ]
 }
