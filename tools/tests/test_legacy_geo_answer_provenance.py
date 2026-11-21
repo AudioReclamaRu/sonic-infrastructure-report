@@ -89,7 +89,7 @@ class TestLegacyGeoAnswerProvenance(unittest.TestCase):
     def test_all_legacy_pages_are_not_in_the_llms_answer_list(self):
         self.assertFalse(any(item["listed_in_geo_llms"] for item in self.registry["legacy_pages"]))
 
-    def test_unindexed_pages_are_still_in_the_sitemap(self):
+    def test_legacy_pages_unlisted_in_llms_remain_in_the_sitemap(self):
         for item in self.registry["legacy_pages"]:
             self.assertTrue(item["present_in_current_sitemap"])
 
