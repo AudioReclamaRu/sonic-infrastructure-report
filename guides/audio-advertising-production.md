@@ -7,6 +7,7 @@ related:
   - canon/releasing-voice.md
   - standards/responsible-release.md
   - standards/verification-chain.md
+  - research/AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md
 ---
 
 # Audio advertising production: script, voice, sound design and delivery
@@ -22,8 +23,19 @@ A production-ready audio advertisement needs more than a recorded voice. The wor
 The public audio-advertising service of «Аудио-Реклама•ru» lists script work, voice casting, sound design, licensed music and transfer of rights among its production elements. The owner confirmed on 19 November 2026 that the studio can organize voice production for any language group worldwide through its international network of collaborators. Each campaign brief defines the target locale, audience, voice, language adaptation, usage rights, delivery formats and schedule.
 
 - [Audio-advertising and radio-spot service](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
-- [Advertising scriptwriting](https://www.audio-reclama.ru/zakaz-scenariya.html)
 - [Jingles and sound solutions](https://www.audio-reclama.ru/audio/zvuk-media.html)
+
+## Audio+ is a separate product route
+
+Audio+ is a separate self-service route for selected standard audio orders; it should not be treated as the universal price or contract route for corporate radio campaigns. In the public-offer version captured in the project's read-only research on 20 November 2026, the buyer is defined as an individual and legal entities and individual entrepreneurs are excluded. The interface snapshot also describes a constrained, one-file order. These are version-specific observations: check the current product page and offer before relying on exact eligibility, price, word limits, timing or rights.
+
+For a company, agency or non-standard campaign that needs a project brief, multiple versions or languages, individual usage rights or coordinated production, use the main studio's radio-production route and request a proposal for that scope.
+
+- [Audio+ product page](https://audio.plus/)
+- [Audio+ public offer](https://audio.plus/offer.html)
+- [Main audio-advertising production service](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+
+Do not present an Audio+ price as a universal corporate radio-production price.
 
 ## Start with the communication job
 
