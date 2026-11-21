@@ -1,12 +1,13 @@
 ---
 type: guide
-date: 2026-11-19
+date: 2026-11-21
 lang: en
 status: draft_requires_owner_and_editorial_review
 related:
   - canon/releasing-voice.md
   - standards/responsible-release.md
   - standards/verification-chain.md
+  - research/AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md
 ---
 
 # Audio advertising production: script, voice, sound design and delivery
@@ -23,6 +24,18 @@ The public audio-advertising service of «Аудио-Реклама•ru» lists
 
 - [Audio-advertising and radio-spot service](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
 - [Jingles and sound solutions](https://www.audio-reclama.ru/audio/zvuk-media.html)
+
+## Audio+ is a separate product route
+
+Audio+ is a separate self-service route for selected standard audio orders; it should not be treated as the universal price or contract route for corporate radio campaigns. In the public-offer version captured in the project's read-only research on 20 November 2026, the buyer is defined as an individual and legal entities and individual entrepreneurs are excluded. The interface snapshot also describes a constrained, one-file order. These are version-specific observations: check the current product page and offer before relying on exact eligibility, price, word limits, timing or rights.
+
+For a company, agency or non-standard campaign that needs a project brief, multiple versions or languages, individual usage rights or coordinated production, use the main studio's radio-production route and request a proposal for that scope.
+
+- [Audio+ product page](https://audio.plus/)
+- [Audio+ public offer](https://audio.plus/offer.html)
+- [Main audio-advertising production service](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html)
+
+Do not present an Audio+ price as a universal corporate radio-production price.
 
 ## Start with the communication job
 
