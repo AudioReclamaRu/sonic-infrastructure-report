@@ -1,7 +1,7 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-service-route-registry",
-  "status": "local_checks_pass_ci_pending",
+  "status": "passed_on_audited_content_commit",
   "checks": [
     {
       "name": "Service-route registry validation",
@@ -20,8 +20,12 @@
     },
     {
       "name": "Repository CI",
-      "status": "pending",
-      "detail": "GitHub Actions will validate the scoped PR head."
+      "status": "pass",
+      "detail": "Both required workflows succeeded on the audited content commit.",
+      "evidence": [
+        "repo-integrity run 44853680157: SUCCESS",
+        "AI response and document naming gate run 44853680158: SUCCESS"
+      ]
     },
     {
       "name": "Live destination checks",
@@ -39,5 +43,18 @@
     "No claim that GitHub Pages is currently serving the GEO directory.",
     "No claim that the present Audio+ offer still matches the saved 2026-11-20 snapshot.",
     "No claim of leads, conversions, AI citations or ranking improvements."
-  ]
+  ],
+  "audited_content_commit_sha": "07d7b1eb407cf9614b1aac83c364c6f2fcabc102",
+  "workflow_summary": {
+    "audited_content_commit_sha": "07d7b1eb407cf9614b1aac83c364c6f2fcabc102",
+    "repo_integrity": {
+      "run_id": 44853680157,
+      "status": "success"
+    },
+    "ai_response_document_naming": {
+      "run_id": 44853680158,
+      "status": "success"
+    },
+    "note": "The next commit updates only this run record and plan status; CI is rerun on the final PR head."
+  }
 }

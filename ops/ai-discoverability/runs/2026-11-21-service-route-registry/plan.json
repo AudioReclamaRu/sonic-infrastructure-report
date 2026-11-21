@@ -22,7 +22,7 @@
     {
       "step": 4,
       "action": "Add regression tests and integrate the validator into repository CI.",
-      "result": "completed_locally_ci_pending"
+      "result": "completed_ci_passed_on_audited_content_commit"
     },
     {
       "step": 5,
