@@ -49,7 +49,7 @@ related:
 - ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — приоритетный реестр каналов, публичных присутствий, каталогов и редакционных возможностей; статусы не подразумевают, что профили уже заявлены или изменены.
 - OWNER_READY_SITE_ATTENTION_FIXES_2026-11-19.md — подготовленные задания по усилению сайта на случай отдельного разрешения; официальный сайт не редактировался.
 
-- SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md — новые P0/P1 находки по самостоятельному домену Audio+, GSC URL Inspection англоязычных кейсов, видеоархиву YouTube и карточке AllAdvertising; зафиксированы статусы, ограничения свежести и безопасный план действий.
+- SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md — новые P0/P1 находки по самостоятельному домену Audio+, GSC URL Inspection англоязычных кейсов, видеоархиву YouTube и карточке AllAdvertising; зафиксированы статусы, ограничения свежести и безопасный план действий.\n- AI_DISCOVERABILITY_EN_INDEXABILITY_P0_EXECUTION_BRIEF_2026-11-21.md — точечная проверка EN URL Inspection, коммерческих GSC сигналов и owner-ready последовательность устранения robots/sitemap/canonical/hreflang барьеров. Состояния Google привязаны к датам последнего обхода; live-изменения сайта не выполнялись.
 - ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — обновлён 20.11.2026 новыми точками привлечения внимания и статусами Audio+, YouTube, RUTUBE, AllAdvertising и EN URL Inspection.
 - EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.md — мастер-реестр внешних профилей и реальных/предполагаемых прав редактирования; разделяет Metricool, owner-confirmed Dzen/VC.ru, публичные площадки и кандидатов.
 - EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.csv — машинно-читаемая таблица тех же поверхностей. Это единственная каноническая CSV-версия.
