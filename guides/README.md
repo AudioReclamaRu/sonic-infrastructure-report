@@ -38,7 +38,7 @@ The four core buyer tasks have English master guides and localized drafts. All l
 
 | Buyer task | English master | Measurement context | Status |
 |---|---|---|---|
-| Audiobook production: narration, casting and finished audio | [Audiobook production](audiobook-production.md) | Google Search Console, 22 Oct–18 Nov 2026: 31 clicks / 290 impressions / 10.69% CTR on the official audiobook service page | Repository draft; not localized or published |
+| Audiobook production: narration, casting and finished audio | [English](audiobook-production.md) · [Русский](audiobook-production.ru.md) | Google Search Console, 22 Oct–18 Nov 2026: 31 clicks / 290 impressions / 10.69% CTR on the official audiobook service page | English and Russian repository drafts; not published |
 
 This route is separate from the frozen four-route × ten-language commercial query map. The existing RU discovery questions RU-GEN-AUDIOBOOK-01/02 and the additive price question RU-COST-AUDIOBOOK-01 already cover the topic; all remain NOT_RUN. GSC is an organic-search signal, not AI visibility or proof of demand in AI assistants. Prices and delivery terms in older page snapshots are not treated as current.
 
