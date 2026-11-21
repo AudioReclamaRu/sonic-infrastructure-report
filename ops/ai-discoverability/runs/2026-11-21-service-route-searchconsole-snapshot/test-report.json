@@ -1,0 +1,48 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-service-route-searchconsole-snapshot",
+  "status": "awaiting_pull_request_ci",
+  "checks": [
+    {
+      "name": "Search Console scope",
+      "status": "pending_ci",
+      "detail": "Ten page-level rows must map exactly to the ten professional_service destinations in SERVICE_ROUTE_REGISTRY."
+    },
+    {
+      "name": "Page total arithmetic",
+      "status": "pending_ci",
+      "detail": "The 48-click and 1,256-impression totals and weighted CTR must reconcile to the individual page rows."
+    },
+    {
+      "name": "History restriction",
+      "status": "pending_ci",
+      "detail": "The unavailable 12-month request and current 27-day scope must remain explicit; no paid upgrade."
+    },
+    {
+      "name": "Legacy URL boundary",
+      "status": "pending_ci",
+      "detail": "Official-service GSC metrics must not be attributed to seven GitHub Pages legacy answer URLs."
+    },
+    {
+      "name": "GA4 empty response",
+      "status": "pending_ci",
+      "detail": "Empty GA4 result must not be described as zero traffic."
+    },
+    {
+      "name": "Regression tests",
+      "status": "pending_ci",
+      "detail": "Six tests cover valid snapshot, totals, unknown routes, legacy scope, history limit and GA4 interpretation."
+    },
+    {
+      "name": "External changes",
+      "status": "not_performed",
+      "detail": "No official site, GEO asset, analytics setting, tag, form, profile or deployment changed."
+    }
+  ],
+  "no_claims": [
+    "No annual Search Console trend is available from this extraction.",
+    "No direct performance result exists for the legacy GitHub Pages answer URLs.",
+    "No claim of zero traffic from the GA4 empty return.",
+    "No AI citations, lead conversions or sales were measured."
+  ]
+}
