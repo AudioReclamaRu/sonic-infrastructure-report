@@ -37,7 +37,7 @@
     {
       "step": 7,
       "action": "Open a draft PR stacked on the latest AI Discoverability evidence branch and let required CI validate it.",
-      "result": "pending"
+      "result": "completed_draft_pr_opened_ci_passed"
     }
   ],
   "outputs": [
@@ -52,5 +52,17 @@
     "tools/ai_service_route_evidence.py",
     "tools/tests/test_ai_service_route_evidence.py",
     ".github/workflows/repo-integrity.yml"
-  ]
+  ],
+  "final_pr": {
+    "number": 77,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/77",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "49b1490f5332967987689337a12d878623056a5c"
+  },
+  "final_ci": {
+    "repo_integrity_run": 44857451592,
+    "naming_gate_run": 44857451641
+  }
 }
