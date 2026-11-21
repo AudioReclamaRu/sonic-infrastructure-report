@@ -1,0 +1,76 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-voice-route-audit",
+  "status": "passed_on_audited_commit",
+  "checks": [
+    {
+      "name": "Canonical brand/site references reviewed",
+      "status": "pass",
+      "scope": "new report, README and queue content authored to repository naming standard"
+    },
+    {
+      "name": "Existing voice guide and buyer-route inventory",
+      "status": "pass",
+      "scope": "repository files inspected"
+    },
+    {
+      "name": "GEO route link inventory",
+      "status": "pass",
+      "scope": "static source HTML inspected; no inference of public availability"
+    },
+    {
+      "name": "Audio+ B2C boundary",
+      "status": "evidence_found_recheck_required",
+      "scope": "separate open research PR #67 contains saved offer review; not freshly re-read from current live offer"
+    },
+    {
+      "name": "Official service page freshness",
+      "status": "not_tested",
+      "scope": "available HTML snapshots show crawl ages of approximately 3–5 months"
+    },
+    {
+      "name": "GEO Pages live serving/indexing",
+      "status": "not_tested",
+      "scope": "public URLs were not retrievable via current web read path"
+    },
+    {
+      "name": "Form submission and CRM/analytics behavior",
+      "status": "not_tested",
+      "scope": "no test submissions or live interactions performed"
+    },
+    {
+      "name": "External website edits, publication or deployment",
+      "status": "not_performed",
+      "scope": "read-only boundary preserved"
+    },
+    {
+      "name": "GitHub Actions CI for new commit",
+      "status": "pass",
+      "scope": "both required workflows succeeded on the audited content commit",
+      "evidence": [
+        "repo-integrity run 44853053806: success",
+        "AI response and document naming gate run 44853053825: success"
+      ]
+    }
+  ],
+  "no_claims": [
+    "No claim of current live GEO publication or indexation.",
+    "No claim of form submission success or lead conversion.",
+    "No claim that the current Audio+ offer/price is unchanged from the saved 2026-11-20 review."
+  ],
+  "audited_commit_sha": "9f39c8ffeb5a6c7a109e92b84f660fb49c433f16",
+  "workflow_summary": {
+    "audited_commit_sha": "9f39c8ffeb5a6c7a109e92b84f660fb49c433f16",
+    "repo_integrity": {
+      "run_id": 44853053806,
+      "status": "success",
+      "job": "integrity"
+    },
+    "response_document_naming": {
+      "run_id": 44853053825,
+      "status": "success",
+      "job": "canonical-naming"
+    },
+    "note": "This file records successful checks for the audited content commit. The subsequent commit that records these results is independently rechecked by the PR workflows; current PR head status is authoritative."
+  }
+}
