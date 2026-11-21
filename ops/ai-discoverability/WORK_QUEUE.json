@@ -205,7 +205,7 @@
       "title": "Audit existing voice-discovery to professional-service routes",
       "work_type": "verify_source",
       "priority": "P1",
-      "status": "candidate",
+      "status": "validated",
       "market": "Global",
       "language": "multi",
       "service": "voice_selection_and_audio_production",
@@ -234,7 +234,61 @@
       "blocker": null,
       "unblock_condition": null,
       "validation_refs": [
-        "research/AI_DISCOVERABILITY_FIRST_PARTY_REFERRAL_AND_HOST_BASELINE_2026-11-21.md"
+        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
+        "guides/choosing-a-voice.md",
+        "guides/README.md",
+        "guides/audio-advertising-production.md",
+        "guides/video-voiceover.md",
+        "guides/multilingual-ivr-voice-production.md",
+        "guides/audiobook-production.ru.md",
+        "geo/guides/kak-vybrat-golos/index.html",
+        "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
+        "geo/answers/ozvuchka-dlya-video-cena/index.html",
+        "geo/answers/ivr-privetstvie-cena/index.html"
+      ]
+    },
+    {
+      "id": "AI-DISC-2026-007",
+      "title": "Separate Audio+ short-order pricing from professional business routes in GEO answers",
+      "work_type": "fix_entity_routing",
+      "priority": "P1",
+      "status": "candidate",
+      "market": "RU",
+      "language": "ru",
+      "service": "b2b_b2c_route_integrity",
+      "target_surface": "repository_geo_static_assets",
+      "obstacle": "Several GEO answer assets are framed under the business voice-production surface but present Audio+ short-order pricing for radio/video/presentation/text intents and link only to the separate Audio+ product route. Prior read-only offer research records Audio+ as a product for individual buyers, explicitly not legal entities or individual entrepreneurs. The GEO Pages serving state and current offer have not been freshly verified, so no live misrouting is asserted.",
+      "evidence_refs": [
+        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
+        "geo/index.html",
+        "geo/llms.txt",
+        "geo/answers/index.html",
+        "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
+        "geo/answers/ozvuchka-dlya-video-cena/index.html",
+        "geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html",
+        "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
+        "geo/answers/ivr-privetstvie-cena/index.html",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/67"
+      ],
+      "decision_to_unlock": "Which existing short-price answers should remain explicitly scoped to Audio+ individual orders, and where must a professional B2B buyer be routed to the matching studio service page instead?",
+      "hypothesis": "Explicit audience labels, a clear boundary around Audio+ and direct links to the appropriate professional service pages can preserve the short-order product path while preventing companies and individual entrepreneurs from treating it as the default studio route.",
+      "success_criteria": [
+        "Re-check the current published Audio+ offer and price/word limits before changing any commercial statement; retain the 2026-11-15 values only as dated historical observations until confirmed.",
+        "Make the Audio+ individual-buyer scope explicit wherever a short-order price is presented, provided the current offer still supports that wording.",
+        "Add the relevant professional radio and video service destinations to the corresponding business-intent answers without representing Audio+ as an alternative for legal entities or individual entrepreneurs.",
+        "Keep the IVR individual-calculation route linked to the official IVR service and review audiobook/navigation answers for equally clear professional destinations.",
+        "Align geo/index.html, geo/llms.txt, geo/answers/index.html and affected answer pages so the audience, price scope and destination do not contradict one another.",
+        "Do not deploy GitHub Pages, publish externally, change the official website or merge to main; retain repository-only status unless separately authorized."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "medium",
+      "blocker": "The GitHub Pages URLs were not retrievable through the current public read path, and the live Audio+ offer/prices were not freshly revalidated. The current files therefore establish a repository-content risk, not proof of a live public defect.",
+      "unblock_condition": "An authorized fresh read of the current Audio+ offer and confirmation of the intended serving state for the GEO assets are available; any external deployment remains subject to separate owner approval.",
+      "validation_refs": [
+        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md"
       ]
     }
   ]

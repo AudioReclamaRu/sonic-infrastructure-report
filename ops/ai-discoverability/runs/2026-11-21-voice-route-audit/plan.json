@@ -1,0 +1,47 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-voice-route-audit",
+  "scope": "repository_only",
+  "base_ref": "ai-discoverability/first-party-referral-host-baseline-20261121",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Read repository instructions, brand/release standards, operating contract, work queue, and relevant source indexes.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Inspect existing voice-selection guides, service buyer routes and relevant GEO static HTML assets.",
+      "result": "completed"
+    },
+    {
+      "step": 3,
+      "action": "Compare the official catalogue/profile/order and service-page snapshots with the repository GEO links.",
+      "result": "completed"
+    },
+    {
+      "step": 4,
+      "action": "Check the saved Audio+ audience boundary in the separate read-only research PR.",
+      "result": "completed_with_primary_recheck_required"
+    },
+    {
+      "step": 5,
+      "action": "Record the route map, freshness limits, queue disposition and next scoped task.",
+      "result": "completed"
+    },
+    {
+      "step": 6,
+      "action": "Do not submit forms, edit external surfaces, deploy Pages or merge.",
+      "result": "complied"
+    }
+  ],
+  "outputs": [
+    "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
+    "research/README.md",
+    "ops/ai-discoverability/WORK_QUEUE.json",
+    "ops/ai-discoverability/runs/2026-11-21-voice-route-audit/assessment.json",
+    "ops/ai-discoverability/runs/2026-11-21-voice-route-audit/plan.json",
+    "ops/ai-discoverability/runs/2026-11-21-voice-route-audit/test-report.json",
+    "ops/ai-discoverability/runs/2026-11-21-voice-route-audit/decision-log.json"
+  ]
+}
