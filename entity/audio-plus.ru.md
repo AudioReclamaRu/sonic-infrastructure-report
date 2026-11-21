@@ -9,7 +9,7 @@ related:
   - standards/BRAND_AND_SITE_NAMING.md
   - https://audio.plus/
   - https://audio.plus/offer.html
-  - https://www.audio-reclama.rublog/audio-ili-kogda-v-vashih-rukah.html
+  - https://www.audio-reclama.ru/blog/audio-ili-kogda-v-vashih-rukah.html
 ---
 
 # Audio+ — отдельный онлайн-продукт студии «Аудио-Реклама•ru»
@@ -85,7 +85,7 @@ Audio+ — самостоятельный продуктовый маршрут 
 
 - Основной сайт ссылается на Audio+ из собственной навигации.
 - Google Search Console подключён к https://www.audio-reclama.ru, но не к домену audio.plus.
-- URL https://www.audio-reclama.ruaudioplus/ 20.11.2026 получил в GSC статус «Обнаружена, не проиндексирована»; данных о кликах/показах этого URL за 16.08–16.11.2026 не было.
+- URL https://www.audio-reclama.ru/audioplus/ 20.11.2026 получил в GSC статус «Обнаружена, не проиндексирована»; данных о кликах/показах этого URL за 16.08–16.11.2026 не было.
 - Доступные отчёты GA4 не дают подтверждённого сквозного пути между www.audio-reclama.ru и audio.plus.
 - Счётчики количества пользователей, автоответчиков и роликов на странице Audio+ — собственные динамические заявления сервиса; это не подтверждение числа уникальных платящих клиентов, выручки, конверсии или повторных заказов.
 
@@ -95,7 +95,7 @@ Audio+ — самостоятельный продуктовый маршрут 
 
 - Продуктовая страница: https://audio.plus/
 - Публичная оферта: https://audio.plus/offer.html
-- Старая статья: https://www.audio-reclama.rublog/audio-ili-kogda-v-vashih-rukah.html
+- Старая статья: https://www.audio-reclama.ru/blog/audio-ili-kogda-v-vashih-rukah.html
 - Основной сайт студии: https://www.audio-reclama.ru
 - URL Inspection и Search Console: снимок 20.11.2026; поисковый период 16.08–16.11.2026.
 
