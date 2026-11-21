@@ -44,6 +44,8 @@ The four core buyer tasks have English master guides and localized drafts. All l
 
 These GSC figures are organic Google Search observations, not AI visibility, citations, leads or revenue. The routes do not change the frozen generic/brand benchmark prompts, which remain NOT_RUN. The legacy GEO static price artifacts have not been edited; their public deployment/indexation is unverified.
 
+For the exact prompt-ID → answer → source → boundary relationship, use the [machine-readable RU buyer-answer route map](../research/AI_DISCOVERABILITY_RU_BUYER_ANSWER_ROUTE_MAP_2026-11-21.json). It reuses existing prompt IDs; it does not create or run new benchmark questions.
+
 Benchmark-status crosswalk (frozen question text; no prompt edits):
 - **Radio:** RU-GEN-AD-01—06, including RU-GEN-AD-05 price intent — all NOT_RUN.
 - **IVR:** RU-GEN-IVR-01—04 plus RU-COST-IVR-01 — all NOT_RUN.
