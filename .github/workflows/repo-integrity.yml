@@ -68,6 +68,12 @@ jobs:
       - name: AI service route evidence regression tests
         run: python -m unittest tools.tests.test_ai_service_route_evidence -v
 
+      - name: Legacy GEO answer provenance
+        run: python tools/legacy_geo_answer_provenance.py validate
+
+      - name: Legacy GEO answer provenance regression tests
+        run: python -m unittest tools.tests.test_legacy_geo_answer_provenance -v
+
       - name: AI offer/service boundary registry
         run: python tools/ai_offer_service_boundaries.py validate
 
