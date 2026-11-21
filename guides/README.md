@@ -62,6 +62,8 @@ Modules: [RU generic discovery questions](../research/ai-visibility-ru-generic-d
 - [Voice provenance passport](voice-provenance-passport.md).
 - [International voice and the address of a claim](international-voice.md).
 - [Timing a script before ordering](chronomer-timing.md).
+- [Order a corporate video production](https://www.audio-reclama.ru/video/videoroliki-zakaz.html) — official video-production order route for finished-picture localization projects.
+- [Corporate anthems and songs](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) — official corporate anthem/song production route.
 
 ## Query-intent map
 

@@ -22,6 +22,7 @@ To commission video voice-over or multilingual localization, provide the current
 «Аудио-Реклама•ru» publicly lists voice casting and dubbing actors, ambience and effects, original music, sound design, off-screen voice-over and lip-sync among the elements of its video-voice service. The owner confirmed on 19 November 2026 that the studio can organize production for any language group worldwide through its international collaborator network. The brief defines the precise language/locale, accent, voice, adaptation, picture version, rights and delivery formats.
 
 - [Video voice-over service](https://www.audio-reclama.ru/audio/ozvuchka-video.html)
+- [Presentation voice-over service](https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html)
 - [Translation and multimedia localization](https://www.audio-reclama.ru/perevodchiki/)
 
 ## First choose the right voice treatment

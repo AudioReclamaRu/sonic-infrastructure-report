@@ -58,7 +58,7 @@ Translate the campaign objective into a clear listener-facing message. Identify 
 
 ### 2. Script and timing
 
-Write for the ear. Use one clear idea, natural spoken syntax and a call to action that can be understood on first hearing. Estimate duration from the actual spoken text and performance pace; do not assume that a word count always maps to the same number of seconds across languages.
+Write for the ear. Use one clear idea, natural spoken syntax and a call to action that can be understood on first hearing. Estimate duration from the actual spoken text and performance pace; do not assume that a word count always maps to the same number of seconds across languages. If the client prefers to supply or order the script separately, the dedicated script-order route is [Заказ сценария](https://www.audio-reclama.ru/zakaz-scenariya.html); scriptwriting then becomes an explicit scope item in the brief.
 
 For multilingual campaigns, each locale may require a different script length or creative adaptation. Preserve the intended message and mandatory information, not the exact sentence structure of the source language.
 
