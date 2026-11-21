@@ -1,0 +1,29 @@
+{
+  "schema": "megabrain/ai-discoverability-run-assessment/1",
+  "run_id": "2026-11-21-voice-route-audit",
+  "date": "2026-11-21",
+  "work_item": "AI-DISC-2026-006",
+  "status": "validated_with_live_scope_limitations",
+  "decision_to_unlock": "Determine whether existing voice discovery routes already reach the correct professional service pages and whether GEO assets keep individual Audio+ orders separate from B2B production.",
+  "finding": "The official-site HTML snapshots show an existing catalogue/profile/request path and dedicated professional radio/video forms. Repository GEO answers contain a separate audience-segmentation risk: several short-price pages route radio/video intent to Audio+ while the surface is labelled for business.",
+  "evidence": [
+    "guides/choosing-a-voice.md",
+    "guides/README.md",
+    "guides/audio-advertising-production.md",
+    "guides/video-voiceover.md",
+    "guides/multilingual-ivr-voice-production.md",
+    "guides/audiobook-production.ru.md",
+    "geo/guides/kak-vybrat-golos/index.html",
+    "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
+    "geo/answers/ozvuchka-dlya-video-cena/index.html",
+    "geo/answers/ivr-privetstvie-cena/index.html",
+    "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/67"
+  ],
+  "limitations": [
+    "Official service pages were served from cached HTML crawls aged approximately 3–5 months.",
+    "The GitHub Pages GEO URLs could not be retrieved in this read-only run; deployment and indexing are not established.",
+    "No order form was submitted and no CRM, event, payment, or conversion behavior was tested.",
+    "The Audio+ offer boundary is from a separately saved 2026-11-20 review in open PR #67 and needs fresh primary-source confirmation before any price or offer edit."
+  ],
+  "next_decision": "Prepare a repository-only revision of existing GEO assets to distinguish short individual Audio+ orders from the corresponding B2B studio-service route; do not deploy."
+}

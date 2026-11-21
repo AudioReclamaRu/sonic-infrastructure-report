@@ -1,0 +1,144 @@
+{
+  "schema": "ai-visibility/query-module/1",
+  "version": "1.0.0",
+  "created": "2026-11-20",
+  "market": {
+    "country_code": "RU",
+    "country": "Russia",
+    "priority": "P0_primary_market",
+    "interface_locale": "ru-RU",
+    "prompt_language": "ru",
+    "answer_language": "ru"
+  },
+  "status": "not_run",
+  "purpose": "Additive, unbranded price-intent extension derived from final-state Google Search Console query-to-page observations for the four commercial service pages. This module complements but does not replace or modify the frozen 29-prompt generic RU discovery baseline.",
+  "experiment_rules": [
+    "Do not include the brand name, domain, GitHub repository or a hint to the entity corpus in generic price-intent prompts.",
+    "Keep this extension as a separate prompt set and report its results separately from the frozen 29-prompt generic baseline; do not pool the rates.",
+    "Run each prompt in a fresh session on each platform and record exact platform surface, date/time, account state, verified region, search/grounding mode and full answer.",
+    "Do not count blocked access, unsupported products or errors as zero visibility; use explicit blocked/unsupported/error statuses.",
+    "Do not merge consumer UI and model API observations.",
+    "When asked about price, use only a currently verified public price with capture date and currency. If no public price is verified, explain the inputs needed for a quote; never invent a fixed price, deadline or guarantee.",
+    "The prompt wording is fixed after collection begins. Any wording change requires a new module version."
+  ],
+  "platform_execution_order": [
+    {
+      "priority": 1,
+      "id": "yandex_alice_ai",
+      "surface": "Alice AI consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run",
+      "note": "First RU P0 platform. Verify Russian region and exact consumer answer mode."
+    },
+    {
+      "priority": 2,
+      "id": "sber_gigachat",
+      "surface": "GigaChat consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run",
+      "note": "Second RU P0 platform. Verify Russian region and exact consumer answer mode."
+    },
+    {
+      "priority": 3,
+      "id": "chatgpt",
+      "surface": "ChatGPT consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 4,
+      "id": "gemini",
+      "surface": "Gemini consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 5,
+      "id": "perplexity",
+      "surface": "Perplexity consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 6,
+      "id": "deepseek",
+      "surface": "DeepSeek consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 7,
+      "id": "claude",
+      "surface": "Claude consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 8,
+      "id": "microsoft_copilot",
+      "surface": "Microsoft Copilot consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 9,
+      "id": "grok",
+      "surface": "Grok consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 10,
+      "id": "google_ai_overviews",
+      "surface": "Google Search AI Overviews",
+      "measurement_mode": "search_results_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 11,
+      "id": "google_ai_mode",
+      "surface": "Google Search AI Mode",
+      "measurement_mode": "search_results_ui",
+      "status": "not_run"
+    },
+    {
+      "priority": 12,
+      "id": "meta_ai",
+      "surface": "Meta AI consumer interface",
+      "measurement_mode": "consumer_ui",
+      "status": "not_run"
+    }
+  ],
+  "queries": [
+    {
+      "id": "RU-COST-IVR-01",
+      "cluster": "ivr_and_telephony",
+      "query": "Сколько стоит записать голосовое приветствие или меню IVR для компании и от чего зависит стоимость?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial_cost",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-COST-VIDEO-01",
+      "cluster": "video_voiceover",
+      "query": "Сколько стоит профессиональная озвучка рекламного или корпоративного видеоролика и что влияет на смету?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial_cost",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    },
+    {
+      "id": "RU-COST-AUDIOBOOK-01",
+      "cluster": "audiobooks",
+      "query": "Сколько стоит заказать озвучку аудиокниги, например книги объёмом около 300 страниц, и как рассчитывают стоимость?",
+      "language": "ru",
+      "region": "RU",
+      "intent": "generic_commercial_cost",
+      "brand_in_prompt": false,
+      "status": "not_run"
+    }
+  ]
+}

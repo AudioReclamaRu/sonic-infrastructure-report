@@ -1,0 +1,184 @@
+{
+  "schema": "studio/service-route-registry/1",
+  "updated": "2026-11-21",
+  "status": "repository_only_source_guide_link_inventory",
+  "policy": {
+    "official_site_is_read_only": true,
+    "external_publication_authorized": false,
+    "github_pages_deployment_authorized": false,
+    "route_links_are_live_checked": false,
+    "purpose": "Map existing buyer-guide intents to their documented official destinations and prevent professional project routes from defaulting to the separate short-order Audio+ product."
+  },
+  "routes": [
+    {
+      "id": "voice_catalogue",
+      "task": "Shortlist and audition professional voices",
+      "route_kind": "voice_discovery",
+      "audience_class": "voice_selection",
+      "destination_url": "https://www.audio-reclama.ru/diktoryi/",
+      "source_guides": [
+        "guides/choosing-a-voice.md"
+      ],
+      "link_role": "catalogue_and_demos",
+      "scope_note": "A catalogue visit supports discovery and audition; it does not establish commercial intent or a completed enquiry."
+    },
+    {
+      "id": "general_voice_order_intake",
+      "task": "Start a general voice-production brief when the service is not yet classified",
+      "route_kind": "general_intake",
+      "audience_class": "general_intake",
+      "destination_url": "https://www.audio-reclama.ru/online-zakaz.html",
+      "source_guides": [
+        "guides/choosing-a-voice.md"
+      ],
+      "link_role": "general_intake",
+      "scope_note": "Fallback intake only; use the task-specific professional destination when the buyer already knows the service required."
+    },
+    {
+      "id": "radio_advertising_production",
+      "task": "Commission a radio commercial or advertising audio spot",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+      "source_guides": [
+        "guides/audio-advertising-production.md"
+      ],
+      "link_role": "primary_service",
+      "scope_note": "Professional production brief; do not transfer short-order product pricing or terms to this route."
+    },
+    {
+      "id": "scriptwriting",
+      "task": "Commission a written advertising script for radio, video or telephone greeting",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+      "source_guides": [
+        "guides/audio-advertising-production.md"
+      ],
+      "link_role": "primary_service_for_scriptwriting_tasks",
+      "scope_note": "The indexed page presents a dedicated scenario-writing brief for radio, video and telephone greeting scripts. The available HTML crawl is approximately eight months old; current workflow, revisions, rights and commercial terms must be rechecked."
+    },
+    {
+      "id": "jingle_production",
+      "task": "Commission a creative jingle, musical signature or short radio programme identifier",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+      "source_guides": [
+        "guides/audio-advertising-production.md"
+      ],
+      "link_role": "primary_service_for_jingle_tasks",
+      "scope_note": "The indexed page describes jingle creation and includes a jingle order form. Current scope, deliverables, rights and commercial terms must be confirmed in the project brief."
+    },
+    {
+      "id": "video_voiceover_production",
+      "task": "Commission voice-over, dubbing-related audio or multilingual video localization",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+      "source_guides": [
+        "guides/video-voiceover.md"
+      ],
+      "link_role": "primary_service",
+      "scope_note": "Audio scope is determined by the project brief; this route does not imply that picture editing or every video-post service is included."
+    },
+    {
+      "id": "video_production",
+      "task": "Commission full video production rather than voice-over only",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+      "source_guides": [
+        "guides/README.md"
+      ],
+      "link_role": "distinct_video_production_service_destination",
+      "scope_note": "A separate Video Production URL is linked from the official homepage navigation. Direct retrieval of the page returned a cache miss; do not infer current production scope, deliverables, rights, pricing or form behavior from the menu link alone."
+    },
+    {
+      "id": "presentation_voiceover_production",
+      "task": "Commission voice-over specifically for a narrated presentation",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+      "source_guides": [
+        "guides/video-voiceover.md"
+      ],
+      "link_role": "primary_service_for_presentation_tasks",
+      "scope_note": "A separate presentation service entry is listed apart from video voice-over. Confirm current scope and deliverables in the project brief; this route is not a public price or service-SLA statement."
+    },
+    {
+      "id": "ivr_voice_production",
+      "task": "Commission telephone greetings, IVR prompts and menu recordings",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "source_guides": [
+        "guides/multilingual-ivr-voice-production.md"
+      ],
+      "link_role": "primary_service",
+      "scope_note": "Recording and preparing audio files are distinct from PBX configuration, telephony routing and live system integration."
+    },
+    {
+      "id": "multilingual_localization",
+      "task": "Commission translation and multimedia localization for voice or video projects",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/perevodchiki/",
+      "source_guides": [
+        "guides/video-voiceover.md",
+        "guides/multilingual-ivr-voice-production.md",
+        "guides/airport-announcements.md"
+      ],
+      "link_role": "supporting_or_primary_service_by_task",
+      "scope_note": "Language, locale, adaptation, casting, review and rights are defined per project; global coordination does not imply local offices in every market."
+    },
+    {
+      "id": "audiobook_production",
+      "task": "Commission audiobook narration, role-based performance or a staged audio production",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+      "source_guides": [
+        "guides/audiobook-production.ru.md"
+      ],
+      "link_role": "primary_service",
+      "scope_note": "The brief determines text volume, format, number of performers, editing, deliverables and rights; no universal price is asserted."
+    },
+    {
+      "id": "corporate_song_anthem_production",
+      "task": "Commission an original corporate song or anthem",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+      "source_guides": [
+        "guides/README.md"
+      ],
+      "link_role": "standalone_service_destination_in_guide_index",
+      "scope_note": "The indexed page presents corporate songs and anthems, portfolio examples and an order form. No standalone repository buyer guide exists yet; workflow, deliverables, rights and current commercial terms are not inferred."
+    },
+    {
+      "id": "airport_announcements_vnukovo_case",
+      "task": "Review a published airport-announcement project example",
+      "route_kind": "case_reference",
+      "audience_class": "proof_reference",
+      "destination_url": "https://www.audio-reclama.ru/project/vnukovo.html",
+      "source_guides": [
+        "guides/airport-announcements.md"
+      ],
+      "link_role": "supporting_case_not_checkout",
+      "scope_note": "This is a case reference, not a dedicated airport-announcement order form or proof of current scope beyond the linked public example."
+    }
+  ],
+  "product_boundaries": [
+    {
+      "id": "audio_plus_short_order",
+      "product": "Audio+",
+      "classification": "separate_short_order_product",
+      "destination_url": null,
+      "professional_route_default": false,
+      "current_offer_recheck_required": true,
+      "evidence_status": "saved_2026-11-20_offer_review_only_not_freshly_reverified",
+      "scope_note": "Do not use the short-order product as the default destination or price basis for professional project routes. Confirm the current primary offer and audience before changing any commercial wording."
+    }
+  ]
+}

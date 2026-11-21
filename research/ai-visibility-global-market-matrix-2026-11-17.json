@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "created": "2026-11-17",
   "status": "design_only_not_executed",
-  "purpose": "Seed market/language cells for a reproducible worldwide AI visibility benchmark. This is a sampling plan, not a statement that every platform is available in every country or that every listed language is currently commercially serviceable.",
+  "purpose": "Seed market/language/platform cells for a reproducible worldwide AI visibility benchmark. This is a measurement sampling plan, not a statement about production language coverage or the availability of AI platforms in every country.",
   "global_scope": {
     "target": "Any potential client in any country worldwide; no country ceiling.",
     "first_priority": [
@@ -23,7 +23,7 @@
     ],
     "coverage_rule": "The markets below are the first structured sampling wave, not an exhaustive country list. Add further countries and languages when demand, historical customers, service capacity, platform access or useful regional AI coverage justify them. Do not use this seed list to exclude the rest of the world.",
     "language_rule": "Each locale is a separate test cell. A country's dominant language, a customer's language and the platform UI language may differ; store them independently.",
-    "serviceability_rule": "A benchmark locale is not a promise that the studio can fulfil every language. Verify voice talent, translation/localization, rights, delivery, payments and contractual feasibility before making a commercial claim."
+    "serviceability_rule": "OWNER-CONFIRMED 2026-11-19: Аудио-Реклама•ru can organize production for any language group worldwide through its international network of collaborators. Benchmark locales and provider coverage are measurement dimensions, not limits on production availability. Each project brief specifies its language variant, dialect/accent, script, voice/collaborator requirements, rights, deliverables, technical requirements, approvals and schedule. This statement does not imply physical offices or branches in every country."
   },
   "market_groups": [
     {

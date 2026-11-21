@@ -1,6 +1,6 @@
 {
-  "schema": "audio-reclama/problem-solutions-backlog/1",
-  "updated": "2026-11-14",
+  "schema": "studio-knowledge/problem-solutions-backlog/1",
+  "updated": "2026-11-20",
   "purpose": "Initial problem-led topic hypotheses. Not a measured popularity ranking.",
   "policy": {
     "priority_is_not_search_volume": "P0/P1/P2 reflect strategic fit and proof potential, not measured frequency.",
@@ -46,13 +46,16 @@
       "business_fit": "high",
       "existing_coverage": [
         "standards/responsible-release.md",
-        "existing IVR pages"
+        "existing IVR pages",
+        "standards/SPOKEN_TEXT_AND_PRONUNCIATION_CONTROL.md",
+        "problem-solutions/PRONUNCIATION_BRIEF_TEMPLATE.md"
       ],
-      "action": "Create a practical pronunciation brief and pre-release checklist.",
+      "action": "Apply the proposed spoken-text/pronunciation standard to assemble a reusable client brief and pre-release checklist; collect only owner-cleared examples and verify number/abbreviation readings by project rather than inventing universal rules.",
       "proof_needed": [
-        "approved checklist",
-        "cleared examples",
-        "rules for numbers and abbreviations"
+        "review and approval of the standard by a qualified Russian-language editor/voice specialist and the owner",
+        "approved pronunciation records for names, numbers, dates, currencies and abbreviations from real production tasks, with permission to retain or anonymize them",
+        "a reproducible pre-release checklist that compares approved source text, spoken text and final audio",
+        "native-language review and source references for any localized examples"
       ],
       "demand_status": "unmeasured_candidate",
       "search_volume": null
@@ -264,13 +267,16 @@
       "business_fit": "high",
       "existing_coverage": [
         "standards/responsible-release.md",
-        "guides/video-voiceover.md"
+        "guides/video-voiceover.md",
+        "standards/AUDIO_MASTER_QC_AND_DELIVERY.md",
+        "research/AUDIO_RECIPIENT_TECHNICAL_PROFILES_2026-11-20.md"
       ],
-      "action": "Turn the existing release standard into a practical checklist.",
+      "action": "Use the QC protocol and source-verified profile matrix to identify what must be requested for each delivery route; collect project-specific recipient requirements before declaring any profile complete.",
       "proof_needed": [
-        "approved release checklist",
-        "client/studio responsibilities",
-        "version record"
+        "professional review and owner approval of the working QC protocol",
+        "current recipient specifications for the actual customer systems, with source, version and verification date",
+        "confirmation of per-project delivery requirements where public profiles are incomplete or outdated",
+        "approved version record and reproducible exported-file check"
       ],
       "demand_status": "existing_content_review",
       "search_volume": null

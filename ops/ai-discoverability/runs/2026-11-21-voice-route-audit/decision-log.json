@@ -1,0 +1,30 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-voice-route-audit",
+  "decisions": [
+    {
+      "decision": "Do not create another generic voice-selection guide.",
+      "basis": "An English enterprise voice guide and a RU GEO checklist already exist; professional task guides are also indexed."
+    },
+    {
+      "decision": "Treat the catalogue → profile → selected-voice request path as present in the available official HTML snapshot.",
+      "basis": "Representative profile snapshot contains an order action and fields for voice, task, text and files; freshness and form submission are not verified."
+    },
+    {
+      "decision": "Use dedicated service pages as the preferred B2B destinations for radio, video, IVR, multilingual and audiobook work.",
+      "basis": "Existing service pages and buyer guides document task-specific service scope and briefs."
+    },
+    {
+      "decision": "Flag the GEO Audio+ vs B2B distinction as a P1 repository risk, not a proven public defect.",
+      "basis": "The static GEO source files route several broad business-intent labels to short Audio+ pricing; public serving and current offer were not reverified."
+    },
+    {
+      "decision": "Mark AI-DISC-2026-006 validated and add AI-DISC-2026-007 as candidate.",
+      "basis": "Route audit delivered; follow-up requires refreshed offer and serving-state checks before editing GEO copy."
+    },
+    {
+      "decision": "Do not publish, deploy or merge.",
+      "basis": "External publication/deployment and merge require separate owner approval."
+    }
+  ]
+}

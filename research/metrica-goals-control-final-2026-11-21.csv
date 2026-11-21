@@ -1,0 +1,19 @@
+group,id,found,match_count,level,parent_goal_id,parent_goal_name,name,type,goal_source,status,conditions_json
+sitewide_control_sample_filter,196138348,True,1,top,,,Автоцель: отправка формы,form,auto,Active,[]
+sitewide_control_sample_filter,245247724,True,1,top,,,Автоцель: заполнил контактные данные,contact_data,auto,Active,[]
+sitewide_control_sample_filter,339058736,True,1,top,,,Автоцель: отправил контактные данные,contact_data_sent,auto,Active,[]
+sitewide_control_sample_filter,233561977,True,1,top,,,Автоцель: отправка формы заявки,action,auto,Active,"[{""type"": ""regexp"", ""url"": ""^ym\\-submit\\-lead(?:\\-[0-9]+|form)?$""}]"
+sitewide_control_sample_filter,47559229,True,1,top,,,Заказ обратного звонка,action,user,Active,"[{""type"": ""exact"", ""url"": ""recall""}]"
+sitewide_control_sample_filter,35137209,True,1,top,,,Заказ с личной страницы диктора,action,user,Active,"[{""type"": ""exact"", ""url"": ""voice_page""}]"
+sitewide_control_sample_filter,40911079,True,1,top,,,Заказа с базы дикторов,action,user,Active,"[{""type"": ""exact"", ""url"": ""voice-order""}]"
+sitewide_control_sample_filter,140905951,True,1,top,,,Обращение. База дикторов,action,user,Active,"[{""type"": ""exact"", ""url"": ""voice-order""}]"
+sitewide_control_sample_filter,140906170,True,1,top,,,Обращение. Личная стр. диктора,action,user,Active,"[{""type"": ""exact"", ""url"": ""voice_page""}]"
+explicit_final_goals,31170913,True,1,step_3,31170904,Быстрый заказ,Пользователь отправил заявку,url,user,Active,"[{""type"": ""action"", ""url"": ""sent_a_request""}]"
+explicit_final_goals,31170925,True,1,step_3,31170916,Отправка сообщения через форму обратной связи,Пользователь отправил сообщение,url,user,Active,"[{""type"": ""action"", ""url"": ""sent_the_message""}]"
+explicit_final_goals,31171819,True,1,step_2,31171813,Отправка заявки через форму - заказать обратный звонок,Пользователь ввёл данные и нажал на кнопку - жду звнока,url,user,Active,"[{""type"": ""action"", ""url"": ""send_a_request_for_a_call""}]"
+explicit_final_goals,31171828,True,1,step_2,31171822,Заявка со страницы - Аудио+,Пользователь совершил заказ,url,user,Active,"[{""type"": ""action"", ""url"": ""audioplus""}]"
+explicit_final_goals,31171837,True,1,step_2,31171831,Заявка со страницы - калькулятор стоимости услуг,Пользователь выбрал услугу и совершил заказ,url,user,Active,"[{""type"": ""action"", ""url"": ""click_order_service""}]"
+explicit_final_goals,140931244,True,1,step_2,140931238,Заказ после перехода из Базы дикторов,Сделали заказ,url,user,Active,"[{""type"": ""action"", ""url"": ""quick-order""}]"
+explicit_final_goals,151231081,True,1,step_2,151231075,Переход с главной в заказ и оформление,Оформили заказ,url,user,Active,"[{""type"": ""action"", ""url"": ""quick-order""}]"
+explicit_final_goals,325063778,True,1,top,,,Автоцель Jivo: офлайн-сообщение,action,auto,Active,"[{""type"": ""exact"", ""url"": ""Jivo_Offline_message_sent""}]"
+explicit_final_goals,16988375,True,1,top,,,Заказ. Аудио+,action,user,Active,"[{""type"": ""exact"", ""url"": ""audioplus""}]"

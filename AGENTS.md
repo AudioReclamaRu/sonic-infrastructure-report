@@ -19,6 +19,8 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling, distri
 10. problem-solutions/OWN_CONTENT_AUDIT_2026-11-14.md
 11. problem-solutions/REFERENCE_MODELS.md
 12. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
+13. strategy/AI_DISCOVERABILITY_AUTONOMOUS_OPERATING_MODEL_2026-11-20.md — autonomous AI Discoverability objective, operating loop and stop rules.
+14. ops/ai-discoverability/README.md, AGENT_CONTRACT.json and WORK_QUEUE.json — the file-based Megabrain execution interface.
 
 Canonical names are mandatory everywhere: the company, brand and studio are «Аудио-Реклама•ru»; the canonical homepage URL is https://www.audio-reclama.ru (www, no trailing slash). Never use the website address as the company or studio name. Before EVERY user-visible reply about the company and before EVERY document release, read standards/BRAND_AND_SITE_NAMING.md and standards/AI_RESPONSE_RELEASE_GATE.md, then check the final text with tools/check_ai_response_naming.py --stdin or --file. Follow the fail-closed rule.
 
@@ -26,7 +28,7 @@ We are building a connected, evidence-backed expert knowledge infrastructure, no
 
 **Distribution boundary:** the repository is the canonical, versioned knowledge base and operating memory; update it directly when useful work is supported. The website https://www.audio-reclama.ru is read-only for this workflow: inspect it as the official source of company context, services and current commercial facts, but never edit it, publish to it, or deploy changes to it. Do not create or run GitHub Pages deployments or other web mirrors from this repository. Dzen is a distinct editorial surface of the studio: prepare a separate native editorial adaptation when a publication need is selected or the owner requests it; do not mirror the repository, auto-publish, or assume a commit equals publication. At publication time, identify a supported posting route and verify the resulting public URL before calling it published. Preserve the four observed Dzen streams (commercial/service, craft/education, market/technology, authorial/philosophical); do not force every item into a sales CTA. The Telegram channel «Культура Голоса» is a separate optional venue and must never be conflated with Dzen or its publishing process. Third-party open-source contributions remain governed by standards/X15-OPEN-SOURCE-COMMUNITY.md and must be useful independently of the brand. No mass automated comments, issues, PRs, stars or follows.
 
-Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance are secondary signals, not the architecture's purpose.
+Diagnose before prescribing; use evidence; distinguish facts from hypotheses; never invent demand, tests, cases or services. Search and channel performance are secondary signals, not the architecture's purpose. For AI Discoverability work, Megabrain must triage the machine-readable work queue, select one decision-oriented task, execute and validate it autonomously within the declared boundaries, and must never ask the owner to collect or upload routine observations. Run `python tools/ai_discoverability_contract.py validate` and its regression tests when changing this contract or queue.
 
 
 # AGENTS.md — how to work in this repository

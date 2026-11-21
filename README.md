@@ -13,7 +13,7 @@ The repository covers:
 - **Russian speech technology:** test design for TTS, pronunciation, names, numbers, prosody and multilingual voice workflows.
 - **Enterprise audio production:** advertising, voice recording, localization and video voiceover, within the studio's documented service scope.
 
-**Start with:** [MAP.md](MAP.md) for the knowledge architecture, [llms.txt](llms.txt) for machine-readable navigation, and [FACT-METHOD.md](FACT-METHOD.md) for evidence status and verification rules.
+**Start with:** [MAP.md](MAP.md) for the knowledge architecture, [llms.txt](llms.txt) for machine-readable navigation, the [deep AI Discoverability technical and semantic audit](research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md), the [four global commercial buyer routes](guides/README.md), [multilingual commercial query map](research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json), [multilingual roadmap](research/AI_DISCOVERABILITY_LANGUAGE_ROADMAP_2026-11-19.md), the [multilingual entity-profile directory](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity), and [FACT-METHOD.md](FACT-METHOD.md).
 
 **Runnable utility:** [IVR Flow Linter](tools/ivr_flow_linter/README.md) checks a declared IVR graph for missing routes, dead ends, unreachable nodes, fallback gaps and optional operator escape. It is a static graph check—not a PBX integration or live telephone test.
 Russian-language instructions: [Проверка логики IVR-меню](tools/ivr_flow_linter/README.ru.md).
@@ -85,6 +85,8 @@ feed/                  editorial publishing layer (channel schedule + covers)
   README.md                       editorial + manifest contract
   images/                         generated covers + manifest.json (single source of truth)
   tests/                          generator contract tests
+ops/ai-discoverability/  Megabrain file-based AI Discoverability operating contract and work queue
+schemas/                 machine-readable data contracts, including AI Discoverability work items
 strategy/              strategic development contracts
   EXPERT_KNOWLEDGE_INFRASTRUCTURE.md      architecture of the connected knowledge base
   ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
@@ -111,6 +113,7 @@ guides/                high-intent landing pages (search surface)
   choosing-a-voice.md             choosing a voice in the synthetic era
   voice-provenance-passport.md    provenance passport and its use
   video-voiceover.md              video/presentation voiceover: final version
+  audiobook-production.ru.md     Russian buyer route: audiobook production and quote preparation (repository draft)
   chronomer-timing.md             free timing calculator before ordering
   international-voice.md          international voice: obligation with address
 dictionary/            canonical term definitions (5 live terms)
@@ -123,6 +126,7 @@ ar-notes/              «Аудио-Реклама•ru» Research Notes (short,
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
 tools/ivr_flow_linter/  static IVR call-flow graph linter (Python, no dependencies)
+tools/ai_discoverability_contract.py  offline validator for Megabrain's autonomy contract and work queue
 ```
 
 ## The layers

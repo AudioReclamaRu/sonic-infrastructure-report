@@ -1,0 +1,93 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-legacy-answer-disposition",
+  "status": "passed_on_validated_pr_head",
+  "checks": [
+    {
+      "name": "Seven-page coverage",
+      "status": "pass",
+      "detail": "All seven legacy pages from LEGACY_ANSWER_PROVENANCE have exactly one disposition and unchanged repository path."
+    },
+    {
+      "name": "Conservative URL policy",
+      "status": "pass",
+      "detail": "All seven URLs remain stable; zero immediate redirects or retirements are recommended."
+    },
+    {
+      "name": "Audio+ term boundary",
+      "status": "pass",
+      "detail": "Natural-person eligibility, the 2016 offer publication date, the 790 ₽ option and separate change/defect-correction/rework operations remain distinct; interpretation is unresolved."
+    },
+    {
+      "name": "Professional route mapping",
+      "status": "pass",
+      "detail": "All assigned route IDs exist in SERVICE_ROUTE_REGISTRY; Audio+ remains a separate conditional short-order product path."
+    },
+    {
+      "name": "Legacy answer disposition validator",
+      "status": "pass",
+      "detail": "Repo-integrity step 19 passed.",
+      "evidence": [
+        "repo-integrity run 1136 (44858872844)",
+        "head 2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4"
+      ]
+    },
+    {
+      "name": "Legacy answer disposition regression tests",
+      "status": "pass",
+      "detail": "All 9 tests passed in repo-integrity step 20.",
+      "evidence": [
+        "repo-integrity run 1136 (44858872844)",
+        "head 2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4"
+      ]
+    },
+    {
+      "name": "Repository integrity",
+      "status": "pass",
+      "detail": "Full workflow completed successfully.",
+      "evidence": [
+        "repo-integrity run 1136 (44858872844)",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858872844"
+      ]
+    },
+    {
+      "name": "AI response and document naming gate",
+      "status": "pass",
+      "detail": "All changed text artifacts and response-text validation passed.",
+      "evidence": [
+        "AI response and document naming gate run 774 (44858872728)",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858872728"
+      ]
+    },
+    {
+      "name": "Public website/GEO and external actions",
+      "status": "not_performed",
+      "detail": "No geo/ output, generator, prices/FAQ source, official site, redirect, deletion, form submission, public publication or Pages deployment."
+    }
+  ],
+  "no_claims": [
+    "No claim that the old offer is newly revised or freshly authenticated as a legal document.",
+    "No current price or current product scope is asserted from a search-index result.",
+    "No claim that any legacy URL is currently served or indexed.",
+    "No page-level search/referral/citation demand or impact is claimed.",
+    "No redirect, page retirement or public rewrite is authorized by this matrix."
+  ],
+  "remediation_history": [
+    {
+      "head": "b591b0aec6089db9e846b75760946e6e060b02db",
+      "status": "test_assertion_failure",
+      "detail": "Validator correctly rejected a resolved correction-term status, but the negative test expected the status token rather than the validator's diagnostic sentence. The diagnostic was made explicit; no evidence rule or production data changed."
+    }
+  ],
+  "audited_commit_sha": "2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4",
+  "pull_request": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "base": "ai-discoverability/legacy-geo-answer-provenance-20261121",
+    "head_branch": "ai-discoverability/legacy-answer-disposition-20261121",
+    "head_sha": "2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4"
+  }
+}

@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-17
+date: 2026-11-21
 lang: ru
 related:
   - AGENTS.md
@@ -11,6 +11,10 @@ related:
 # Research — исследовательские планы и внешние кейсы
 
 Этот каталог хранит исследовательские материалы, которые ещё не стали проверенными внутренними стандартами, завершёнными экспериментами или подтверждёнными услугами. У каждого объекта свой статус и собственные ограничения.
+
+## Аудиодоставка и приёмка
+
+- AUDIO_RECIPIENT_TECHNICAL_PROFILES_2026-11-20.md — срез первичных правил для Google Play Books, ЛитРес, ACX, EBU, отдельных договорных профилей радио/ТВ, российских IVR/АТС (МегаФон, Zadarma, МТС Exolve, MANGO OFFICE, Ростелеком), Twilio, Asterisk и YouTube Content Manager. Разделяет платформенные правила, рекомендации, исторические документы, особенности отдельных API и неизвестные параметры; не является универсальным пресетом или утверждённым стандартом.
 
 ## Голос и персонаж
 
@@ -53,6 +57,17 @@ related:
 - ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — обновлён 20.11.2026 новыми точками привлечения внимания и статусами Audio+, YouTube, RUTUBE, AllAdvertising и EN URL Inspection.
 - EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.md — мастер-реестр внешних профилей и реальных/предполагаемых прав редактирования; разделяет Metricool, owner-confirmed Dzen/VC.ru, публичные площадки и кандидатов.
 - EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.csv — машинно-читаемая таблица тех же поверхностей. Это единственная каноническая CSV-версия.
+
+- AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md — read-only audit of legacy GEO answer artifacts that blur Audio+ short-order pricing with the studio's corporate radio-production route. Deployment/indexation of the old static URLs is UNVERIFIED; no HTML was modified.
+- AI_DISCOVERABILITY_GSC_INDEX_INSPECTION_2026-11-21.md — read-only Google URL Inspection of seven RU service/home URLs: 7/7 PASS, robots allowed, indexing allowed, successful fetch and matching www canonical. This is Google indexability only; OAI-SearchBot/Bingbot access and AI citations remain NOT_TESTED.
+- AI_DISCOVERABILITY_RU_BUYER_ANSWER_ROUTE_MAP_2026-11-21.json — machine-readable crosswalk from existing frozen RU generic/price benchmark IDs to the correct official service source, buyer guide, evidence and commercial boundary. Route map only; the prompts remain NOT_RUN and no AI answers are claimed.
+- AI_DISCOVERABILITY_COMMERCIAL_ROUTE_REFRESH_2026-11-21.md — read-only refresh of ten professional service routes in connected GSC for 2026-10-22—2026-11-18. Reprioritizes audiobook production from page/query evidence, keeps radio and IVR as follow-up routes, and explicitly separates Google organic signals from AI citation, leads and revenue.
+- AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md — первый исполнимый цикл AI-Discoverability: фактический RU GSC query→page срез, очередь Alice AI/GigaChat, SoV в Яндекс Вебмастере, обязательная региональная аттестация и запрет на подмену RU-измерений US/en трекером.
+- ALICE_AI_EXPORT_SOURCE_ANALYSIS_2026-11-20.md — read-only разбор 177 строк пользовательской выгрузки источников Алисы AI: доля присутствия по этому файлу, распределение собственных URL, смещение в справочные/дикторские запросы, примеры маршрутизации к статьям вместо коммерческих страниц и следующие проверки. Не является полным корпусом ответов или официальным SoV.
+- AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md — связь RU Google Search Console query→page данных по четырём коммерческим страницам с неизменёнными generic/brand-service AI benchmark-модулями; обосновывает отдельные ценовые prompts для IVR, видео и аудиокниг. GSC — поисковый сигнал, не AI-видимость.
+- ai-visibility-ru-commercial-price-extension-2026-11-20.json — отдельный аддитивный набор из трёх небрендированных RU price-intent вопросов. Не изменяет 29-вопросный generic baseline; все вопросы пока NOT_RUN.
+- AI_SERVICE_ANSWER_SURFACE_AUDIT_2026-11-20.md — read-only разбор четырёх коммерческих страниц как источников ответов ИИ: видимые доказательства, границы услуг, не подтверждённые цены/сроки/технические обещания, GSC-приоритеты и осторожность из-за возраста HTML-crawl.
+- AI_EXTERNAL_ENTITY_AND_CITATION_SURFACE_AUDIT_2026-11-20.md — Bing AI Performance как дополнительная native citation-аналитика; сравнение с Alice SoV/GSC/consumer UI; факт-чек публичных профилей AllAdvertising и Cinematch; независимое подтверждение проекта с золотом WOW Awards 2018. Bing пока не подключён, профили не редактировались.
 
 ## Поисковая видимость и качество обхода
 

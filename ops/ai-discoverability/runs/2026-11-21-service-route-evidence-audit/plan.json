@@ -1,0 +1,68 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-service-route-evidence-audit",
+  "scope": "repository_only_official_source_snapshot_audit",
+  "base_ref": "ai-discoverability/audio-plus-b2b-route-audit-20261121",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Read the mandatory brand, release, evidence, strategy, problem-led and distribution standards on main; inspect existing route registry, queue, guides and indexes.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Identify all ten professional_service route IDs and check for an existing route-evidence matrix before creating another asset.",
+      "result": "completed"
+    },
+    {
+      "step": 3,
+      "action": "Inspect official service-page snapshots and indexed excerpts using read-only retrieval; preserve the reported crawl ages and retrieval failures.",
+      "result": "completed_with_freshness_limits"
+    },
+    {
+      "step": 4,
+      "action": "Separate route identity, observed page-level scope, current terms, rights and live HTTP/form evidence.",
+      "result": "completed"
+    },
+    {
+      "step": 5,
+      "action": "Create a machine-readable evidence matrix, offline validator, regression tests and a human-readable audit.",
+      "result": "completed"
+    },
+    {
+      "step": 6,
+      "action": "Update research index, work queue, run records and repo-integrity workflow; keep official site and all public GEO assets unchanged.",
+      "result": "completed"
+    },
+    {
+      "step": 7,
+      "action": "Open a draft PR stacked on the latest AI Discoverability evidence branch and let required CI validate it.",
+      "result": "completed_draft_pr_opened_ci_passed"
+    }
+  ],
+  "outputs": [
+    "research/AI_DISCOVERABILITY_SERVICE_ROUTE_EVIDENCE_AUDIT_2026-11-21.md",
+    "research/README.md",
+    "ops/ai-discoverability/SERVICE_ROUTE_EVIDENCE_MATRIX.json",
+    "ops/ai-discoverability/WORK_QUEUE.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-evidence-audit/assessment.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-evidence-audit/plan.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-evidence-audit/test-report.json",
+    "ops/ai-discoverability/runs/2026-11-21-service-route-evidence-audit/decision-log.json",
+    "tools/ai_service_route_evidence.py",
+    "tools/tests/test_ai_service_route_evidence.py",
+    ".github/workflows/repo-integrity.yml"
+  ],
+  "final_pr": {
+    "number": 77,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/77",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "49b1490f5332967987689337a12d878623056a5c"
+  },
+  "final_ci": {
+    "repo_integrity_run": 44857451592,
+    "naming_gate_run": 44857451641
+  }
+}
