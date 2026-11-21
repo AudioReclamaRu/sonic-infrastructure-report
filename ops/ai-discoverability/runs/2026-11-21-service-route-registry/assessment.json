@@ -1,0 +1,25 @@
+{
+  "schema": "megabrain/ai-discoverability-run-assessment/1",
+  "run_id": "2026-11-21-service-route-registry",
+  "date": "2026-11-21",
+  "work_item": "AI-DISC-2026-006",
+  "status": "repository_registry_and_offline_validator_completed",
+  "decision_to_unlock": "Provide one maintainable internal reference for task-to-service destinations and prevent professional-project routes from silently inheriting the short-order Audio+ product path.",
+  "finding": "Eight existing destinations are linked from six buyer-guide files and can be recorded as voice discovery, general intake, professional service or a supporting case reference. Five are task-specific professional service destinations. The Audio+ short-order product remains an explicit exclusion with a historical-offer freshness warning.",
+  "evidence": [
+    "guides/choosing-a-voice.md",
+    "guides/audio-advertising-production.md",
+    "guides/video-voiceover.md",
+    "guides/multilingual-ivr-voice-production.md",
+    "guides/audiobook-production.ru.md",
+    "guides/airport-announcements.md",
+    "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md"
+  ],
+  "limitations": [
+    "All route matches are checked in repository Markdown source only.",
+    "No HTTP requests, redirects, live HTML, page availability, indexing or form submissions are checked.",
+    "The saved Audio+ offer evidence is dated 2026-11-20 and is not freshly reverified against the current primary offer.",
+    "No GEO/Pages asset is modified and no deployment is authorized."
+  ],
+  "next_decision": "Use the registry for any approved future changes to GEO answer routing, but first recheck the current offer and confirm the intended public serving state."
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-service-route-registry",
+  "status": "local_checks_pass_ci_pending",
+  "checks": [
+    {
+      "name": "Service-route registry validation",
+      "status": "pass",
+      "detail": "8 route entries match Markdown links in 6 listed source guides."
+    },
+    {
+      "name": "Service-route registry regression tests",
+      "status": "pass",
+      "detail": "7 tests passed: registry validity, duplicate IDs, canonical host, Audio+ exclusion, link presence, offer freshness and read-only/no-deploy guard."
+    },
+    {
+      "name": "Python syntax/import check",
+      "status": "pass",
+      "detail": "Validator and test module compiled/imported successfully in a local test harness."
+    },
+    {
+      "name": "Repository CI",
+      "status": "pending",
+      "detail": "GitHub Actions will validate the scoped PR head."
+    },
+    {
+      "name": "Live destination checks",
+      "status": "not_tested",
+      "detail": "No HTTP request or browser verification; route registry deliberately does not imply live availability."
+    },
+    {
+      "name": "External website/GEO/Pages edits or deployment",
+      "status": "not_performed",
+      "detail": "Public surfaces remain read-only; no deployment or publication."
+    }
+  ],
+  "no_claims": [
+    "No claim that the listed service URLs currently return a successful HTTP response.",
+    "No claim that GitHub Pages is currently serving the GEO directory.",
+    "No claim that the present Audio+ offer still matches the saved 2026-11-20 snapshot.",
+    "No claim of leads, conversions, AI citations or ranking improvements."
+  ]
+}

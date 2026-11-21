@@ -8,6 +8,8 @@ related:
   - ops/ai-discoverability/WORK_QUEUE.json
   - schemas/ai-discoverability-work-item.schema.json
   - tools/ai_discoverability_contract.py
+  - ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json
+  - tools/ai_service_route_registry.py
 ---
 # Контракт Мегамозга: AI Discoverability
 
@@ -34,9 +36,9 @@ related:
 
 ## Проверки
 
-Из корня репозитория выполнить: python tools/ai_discoverability_contract.py validate и python -m unittest tools.tests.test_ai_discoverability_contract -v.
+Из корня репозитория выполнить: python tools/ai_discoverability_contract.py validate; python -m unittest tools.tests.test_ai_discoverability_contract -v; python tools/ai_service_route_registry.py validate; python -m unittest tools.tests.test_ai_service_route_registry -v.
 
-Валидатор не обращается к сети, не использует учётные данные, платные API или сессии платформ. Он проверяет форму контракта и очереди, а не исполняет benchmark и не доказывает внешнюю AI-видимость.
+Валидатор не обращается к сети, не использует учётные данные, платные API или сессии платформ. Он проверяет форму контракта и очереди, а маршрутный валидатор — соответствие внутренних guide-ссылок реестру и разделение профессиональных маршрутов от короткого Audio+ заказа. Ни один из них не проверяет HTTP-доступность, формы, конверсии, индексацию или внешнюю AI-видимость.
 
 ## Допуск новых задач
 

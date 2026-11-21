@@ -144,3 +144,11 @@ related:
 - `AI-DISC-2026-007` — `candidate / P1`: разделить B2C Audio+ короткие заказы и B2B ответы о профессиональном производстве; сначала обновить подтверждение оферты и serving state.
 - Новых общих guides и новых checkout-маршрутов не создано.
 - Официальный сайт, Audio+, внешние профили и GitHub Pages не изменялись; deploy и merge не выполнялись.
+
+
+## Addendum — route registry and regression gate (2026-11-21)
+
+- Added [SERVICE_ROUTE_REGISTRY.json](../ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json): eight destinations already linked from source guides, classified as voice discovery, general intake, professional service or supporting case reference.
+- Added `tools/ai_service_route_registry.py` and regression tests. They verify that the documented URLs use the canonical HTTPS host, appear as links in the listed source guides, and do not route a professional project to the short-order Audio+ product.
+- The short-order product is explicitly kept outside professional destinations. The saved offer review remains historical and must be rechecked against the current primary offer before any commercial copy changes.
+- The check is repository-only. It does not issue HTTP requests, submit forms, inspect live Pages, establish indexing or authorize any deployment.

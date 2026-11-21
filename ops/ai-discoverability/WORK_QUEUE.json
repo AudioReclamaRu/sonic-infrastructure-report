@@ -244,7 +244,10 @@
         "geo/guides/kak-vybrat-golos/index.html",
         "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
         "geo/answers/ozvuchka-dlya-video-cena/index.html",
-        "geo/answers/ivr-privetstvie-cena/index.html"
+        "geo/answers/ivr-privetstvie-cena/index.html",
+        "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+        "tools/ai_service_route_registry.py",
+        "tools/tests/test_ai_service_route_registry.py"
       ]
     },
     {
@@ -268,14 +271,17 @@
         "geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html",
         "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
         "geo/answers/ivr-privetstvie-cena/index.html",
-        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/67"
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/67",
+        "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json"
       ],
       "decision_to_unlock": "Which existing short-price answers should remain explicitly scoped to Audio+ individual orders, and where must a professional B2B buyer be routed to the matching studio service page instead?",
       "hypothesis": "Explicit audience labels, a clear boundary around Audio+ and direct links to the appropriate professional service pages can preserve the short-order product path while preventing companies and individual entrepreneurs from treating it as the default studio route.",
       "success_criteria": [
         "Re-check the current published Audio+ offer and price/word limits before changing any commercial statement; retain the 2026-11-15 values only as dated historical observations until confirmed.",
+        "Use the source-guide-backed service route registry as the canonical internal map; do not infer live URL availability from repository links.",
         "Make the Audio+ individual-buyer scope explicit wherever a short-order price is presented, provided the current offer still supports that wording.",
         "Add the relevant professional radio and video service destinations to the corresponding business-intent answers without representing Audio+ as an alternative for legal entities or individual entrepreneurs.",
+        "Keep the short-order Audio+ product outside professional-service destinations until the current primary offer has been rechecked.",
         "Keep the IVR individual-calculation route linked to the official IVR service and review audiobook/navigation answers for equally clear professional destinations.",
         "Align geo/index.html, geo/llms.txt, geo/answers/index.html and affected answer pages so the audience, price scope and destination do not contradict one another.",
         "Do not deploy GitHub Pages, publish externally, change the official website or merge to main; retain repository-only status unless separately authorized."
@@ -288,7 +294,10 @@
       "blocker": "The GitHub Pages URLs were not retrievable through the current public read path, and the live Audio+ offer/prices were not freshly revalidated. The current files therefore establish a repository-content risk, not proof of a live public defect.",
       "unblock_condition": "An authorized fresh read of the current Audio+ offer and confirmation of the intended serving state for the GEO assets are available; any external deployment remains subject to separate owner approval.",
       "validation_refs": [
-        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md"
+        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
+        "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+        "tools/ai_service_route_registry.py",
+        "tools/tests/test_ai_service_route_registry.py"
       ]
     }
   ]

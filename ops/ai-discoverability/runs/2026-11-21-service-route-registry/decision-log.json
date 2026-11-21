@@ -1,0 +1,26 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-service-route-registry",
+  "decisions": [
+    {
+      "decision": "Represent only URLs already found as links in existing source guides.",
+      "basis": "All eight destinations were extracted from existing buyer-guide Markdown; the registry does not invent new destination pages."
+    },
+    {
+      "decision": "Keep route kinds distinct.",
+      "basis": "A voice catalogue, generic intake page, professional service page and case reference serve different stages and should not be treated as interchangeable."
+    },
+    {
+      "decision": "Keep Audio+ outside professional project defaults.",
+      "basis": "Saved offer research in PR #67 describes an individual-buyer boundary; freshness still requires a current primary-source recheck."
+    },
+    {
+      "decision": "Validate repository links, not live URLs.",
+      "basis": "The validator is offline by design and cannot establish HTTP status, indexation, forms or production availability."
+    },
+    {
+      "decision": "Do not edit GEO files or deploy Pages.",
+      "basis": "Repository instructions require a separate owner decision before editing static external-publication assets or deploying a mirror."
+    }
+  ]
+}
