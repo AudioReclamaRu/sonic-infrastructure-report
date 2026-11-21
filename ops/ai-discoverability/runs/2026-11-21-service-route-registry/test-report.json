@@ -1,7 +1,7 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-service-route-registry",
-  "status": "local_checks_pass_ci_pending",
+  "status": "passed_on_audited_content_commit",
   "checks": [
     {
       "name": "Service-route registry validation",
@@ -11,7 +11,7 @@
     {
       "name": "Service-route registry regression tests",
       "status": "pass",
-      "detail": "12 regression tests: registry validity, duplicate IDs, canonical host, Audio+ exclusion, source-guide link presence, presentation/video distinction, jingle/radio distinction, corporate-song index route, scriptwriting/radio distinction, video-production/voice-over distinction, offer freshness and read-only/no-deploy guard."
+      "detail": "12 regression tests passed: registry validity, duplicate IDs, canonical host, Audio+ exclusion, source-guide link presence, presentation/video distinction, jingle/radio distinction, corporate-song index route, scriptwriting/radio distinction, video-production/voice-over distinction, offer freshness and read-only/no-deploy guard."
     },
     {
       "name": "Python syntax/import check",
@@ -20,8 +20,12 @@
     },
     {
       "name": "Repository CI",
-      "status": "pending",
-      "detail": "The scriptwriting and separate video-production routes require a fresh CI run on the updated PR head."
+      "status": "pass",
+      "detail": "Both required workflows succeeded on the audited content commit.",
+      "evidence": [
+        "repo-integrity run 44854864552: SUCCESS",
+        "AI response and document naming gate run 44854864547: SUCCESS"
+      ]
     },
     {
       "name": "Live destination checks",
@@ -43,5 +47,18 @@
     "No claim that current prices, rights terms, deliverables, deadlines or form behavior on the jingle or corporate-song pages were freshly verified.",
     "No claim that the separate video-production page was retrieved; direct retrieval returned a cache miss.",
     "No claim that the scenario-writing page snapshot, approximately eight months old, still describes current scope or terms."
-  ]
+  ],
+  "audited_content_commit_sha": "0a4ae0fe53529bcde2276ecab52b8093d90ede08",
+  "workflow_summary": {
+    "audited_content_commit_sha": "0a4ae0fe53529bcde2276ecab52b8093d90ede08",
+    "repo_integrity": {
+      "run_id": 44854864552,
+      "status": "success"
+    },
+    "ai_response_document_naming": {
+      "run_id": 44854864547,
+      "status": "success"
+    },
+    "note": "The next commit records these checks; GitHub Actions will rerun on the final PR head."
+  }
 }
