@@ -34,6 +34,12 @@ The four core buyer tasks have English master guides and localized drafts. All l
 
 **Regional limits:** de-DE, fr-FR, tr-TR, ja-JP and ko-KR are first-draft locale baselines, not universal text for every country or language community. The Chinese set is a Simplified Chinese / zh-CN-oriented draft; it does not replace Traditional Chinese, Cantonese or other regional variants. Native-language review and market adaptation remain required.
 
+## Evidence-led candidate route — radio advertising production (21 November 2026)
+
+| Radio and audio advertising production | [English](audio-advertising-production.md) · [Русский](audio-advertising-production.ru.md) | Google Search Console, 22 Oct–18 Nov 2026: 4 clicks / 277 impressions on the official service page; one WOW Awards 2018 radio-advertising Gold record | English and Russian repository drafts; not published; Audio+ boundary explicitly separated |
+
+This route distinguishes the project-based studio service from the separate Audio+ self-service product. The old GEO static price artifact remains unchanged; its public deployment/indexation is unverified. The route is a repository knowledge asset, not a published landing page.
+
 ## Evidence-led candidate route — audiobook production (21 November 2026)
 
 | Buyer task | English master | Measurement context | Status |
