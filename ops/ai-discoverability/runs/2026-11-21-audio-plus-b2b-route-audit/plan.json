@@ -1,0 +1,52 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-audio-plus-b2b-route-audit",
+  "scope": "repository_only_audit_and_decision_package",
+  "base_ref": "ai-discoverability/service-route-registry-20261121",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Read repository and AI Discoverability autonomy constraints; confirm PR #75 remains open and unmerged.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Inspect the GEO source generator, price/FAQ inputs, generated hub/pricing/FAQ/llms assets and legacy answer files.",
+      "result": "completed"
+    },
+    {
+      "step": 3,
+      "action": "Read official Audio+ offer/product pages and official-site navigation through public read-only sources; record snapshot age.",
+      "result": "completed_with_freshness_limits"
+    },
+    {
+      "step": 4,
+      "action": "Map B2C short-order usage and professional buyer tasks to the existing service registry; identify source-level JSON-LD and FAQ mixing.",
+      "result": "completed"
+    },
+    {
+      "step": 5,
+      "action": "Create a repository-only audit, update the queue to owner-approval blocked and record decision/test evidence.",
+      "result": "completed"
+    },
+    {
+      "step": 6,
+      "action": "Do not modify geo/, the generator, pricing/FAQ source files, the official website, public profiles or Pages deployment.",
+      "result": "complied"
+    },
+    {
+      "step": 7,
+      "action": "Open a scoped draft PR stacked on service-route-registry branch; run CI and record final head checks.",
+      "result": "pending"
+    }
+  ],
+  "outputs": [
+    "research/AI_DISCOVERABILITY_AUDIO_PLUS_B2B_ROUTE_AUDIT_2026-11-21.md",
+    "research/README.md",
+    "ops/ai-discoverability/WORK_QUEUE.json",
+    "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/assessment.json",
+    "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/plan.json",
+    "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/test-report.json",
+    "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/decision-log.json"
+  ]
+}

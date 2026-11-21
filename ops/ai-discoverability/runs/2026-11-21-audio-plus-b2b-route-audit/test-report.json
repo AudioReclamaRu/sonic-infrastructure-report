@@ -1,0 +1,54 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-audio-plus-b2b-route-audit",
+  "status": "pending_ci",
+  "checks": [
+    {
+      "name": "Repository source audit",
+      "status": "pass",
+      "detail": "Inspected generator, pricing/FAQ JSON, business-facing hub, price/FAQ/llms assets, short-order answers and legacy static answer files."
+    },
+    {
+      "name": "Service-route cross-reference",
+      "status": "pass",
+      "detail": "Professional intent destinations are drawn from the existing SERVICE_ROUTE_REGISTRY; no new service URL or checkout route is invented."
+    },
+    {
+      "name": "Offer freshness",
+      "status": "not_tested",
+      "detail": "The Audio+ offer was readable only as a snapshot crawled about five months earlier. Fresh contractual terms and buyer eligibility are not asserted."
+    },
+    {
+      "name": "Audio+ product page snapshot",
+      "status": "observed_recent_snapshot",
+      "detail": "Search index crawl was from the week before 2026-11-21; one-file, up-to-90-word short-order form and product packages were visible. This is not a live form or price acceptance test."
+    },
+    {
+      "name": "Public GEO serving",
+      "status": "not_tested",
+      "detail": "The current web read path could not retrieve the GEO Pages URLs. This is not evidence of a 404 or outage."
+    },
+    {
+      "name": "Local generator/test run",
+      "status": "not_run",
+      "detail": "No build or generation was run because current work was limited to read-only auditing and no public-source changes were authorized."
+    },
+    {
+      "name": "Repository CI",
+      "status": "pending",
+      "detail": "Awaiting pull-request workflows on the new branch."
+    },
+    {
+      "name": "Official website/GEO output/Pages deployment",
+      "status": "not_performed",
+      "detail": "No site write, output-file update, external publication, form submission, deployment or merge."
+    }
+  ],
+  "no_claims": [
+    "No claim that the GEO static files are currently served publicly.",
+    "No claim that live users have been misrouted or received incorrect prices.",
+    "No claim that the latest Audio+ terms still exclude legal entities and individual entrepreneurs until the current offer is re-read.",
+    "No claim that the listed 1990 RUB price, package rates, 90-word limit or 790 RUB edit fee are contractually current.",
+    "No claim of improved AI citations, search ranking, referral traffic, qualified enquiries or sales."
+  ]
+}

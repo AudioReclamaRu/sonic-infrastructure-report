@@ -1,0 +1,35 @@
+{
+  "schema": "megabrain/ai-discoverability-run-assessment/1",
+  "run_id": "2026-11-21-audio-plus-b2b-route-audit",
+  "date": "2026-11-21",
+  "work_item": "AI-DISC-2026-007",
+  "status": "repository_audit_completed_owner_approval_required",
+  "decision_to_unlock": "Determine where Audio+ may be presented as an individual short-order product and where professional buyers must follow the dedicated studio service route, while correcting the source data and markup only after approval.",
+  "finding": "The repository's business-facing GEO hub, price page, shared FAQ and multiple short-price answer pages mix Audio+ tariffs with professional-service answers. The generator folds all status=ok price entries into the OfferCatalog of a company Service, while pricing/FAQ source data has no buyer-audience field. The available offer snapshot excludes legal entities and individual entrepreneurs, but that offer snapshot is about five months old. GEO public serving remains NOT_TESTED.",
+  "evidence": [
+    "tools/build_geo_site.py",
+    "knowledge/pricing/prices.json",
+    "knowledge/faq/faq.json",
+    "geo/index.html",
+    "geo/llms.txt",
+    "geo/ceny/index.html",
+    "geo/faq/index.html",
+    "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
+    "geo/answers/ozvuchka-dlya-video-cena/index.html",
+    "geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html",
+    "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
+    "geo/answers/ozvuchka-tekst-cena/index.html",
+    "geo/answers/ozvuchka-rolika-cena/index.html",
+    "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json"
+  ],
+  "limitations": [
+    "Repository contents were inspected read-only. No GEO HTML, source JSON, generator, official website or metadata was changed.",
+    "The offer page snapshot is about five months old; its audience and contractual conditions require fresh verification before buyer-facing updates.",
+    "The Audio+ homepage snapshot is from the week before 2026-11-21; crawl age is not a live HTTP guarantee.",
+    "The public homepage navigation snapshot is about three months old and is used only to establish separate navigation destinations.",
+    "Public GEO serving state, indexing, AI retrieval, forms, actual orders, leads and conversions were not tested.",
+    "Several answer HTML files are not listed in the current EXTRA_ANSWERS generator array; their provenance must be established before regeneration or removal.",
+    "No measured AI discovery or conversion impact is claimed."
+  ],
+  "next_decision": "Obtain explicit approval for a scoped repository GEO source change and refresh the current Audio+ offer; keep deployment separately gated."
+}
