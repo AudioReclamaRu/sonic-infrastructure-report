@@ -1,53 +1,56 @@
 ---
 type: guide
-date: 2026-09-11
+date: 2026-11-19
 lang: en
-related: [canon/releasing-voice.md, corpus/edison-blind-test.en.md, interfaces/INTERFACE-001-voice-provenance.md, standards/responsible-release.md]
+status: draft_requires_owner_and_editorial_review
+related:
+  - guides/multilingual-ivr-voice-production.md
+  - problem-solutions/IVR_DESIGN_STANDARD.md
+  - standards/responsible-release.md
+  - standards/verification-chain.md
 ---
-# Voice for a bank: what to verify before air
 
-**Type:** guide · **Audience:** enterprise (banks, fintech) · **Last updated:** 2026-09-11
-**Status:** live · **Language of record:** EN
+# Bank IVR voice prompts: what to verify before release
 
-The question is not «how do we record a voice menu». It is «what is checked
-before the line goes on air». In a blinded study most listeners could not tell
-a synthetic voice from a live narrator (corpus/edison-blind-test.en.md). So a
-voice menu no longer sells on how it sounds. It sells on what a human verified
-before release.
+**Audience:** banks, fintech companies and regulated customer-service teams  
+**Purpose:** sector-specific checks for banking phone greetings and IVR prompts  
+**Status:** banking-specific companion to the multilingual IVR production route
 
-## The verification list (before the voice menu goes on air)
+A bank IVR is both a voice experience and a controlled customer-information channel. Before any prompt is recorded, the bank must approve the menu logic, exact wording, figures, disclosures, hours and escalation paths. The recording must match the approved text and the configured telephone journey.
 
-- **Figures.** Phone numbers, rates, menus, dates. Synthesis reads an error and
-  a correct number with identical confidence.
-- **Wording.** Legal phrases, disclaimers, client options — word for word.
-- **Stress and intonation.** IVR is heard, not read; a misplaced stress changes
-  the meaning of a contractual phrase.
-- **Usage rights.** Language versions, territories, term, exclusivity — the
-  rights to keep the recording on air.
-- **Final version.** The exact recording that was released, frozen and
-  documented (standards/verification-chain.md).
+For the complete multilingual voice-production workflow, see [Multilingual IVR voice prompts](multilingual-ivr-voice-production.md). This page focuses on the additional release checks relevant to banking language and content.
 
-The decision to publish remains with the bank. The studio's work is that the
-decision is made on verified material (canon/releasing-voice.md).
+## Banking-specific release checks
 
-## Live route
+- **Numbers and identifiers:** verify phone numbers, extension numbers, rates, dates, hours and any figures that callers hear. The bank supplies and approves the authoritative values.
+- **Product and account wording:** use the bank-approved names and terminology. Do not paraphrase regulated or contractual language during recording.
+- **Disclosures and notices:** confirm required legal, privacy, security and customer-information wording with the bank's responsible owner.
+- **Pronunciation and stress:** check names, acronyms, financial terms and numbers in each locale. A different stress pattern can alter meaning or sound unprofessional.
+- **Language continuity:** when a caller chooses a language, the configured system should preserve that choice through the relevant menus and transfer paths.
+- **Accessibility and human support:** the bank defines the routes available to customers who cannot use the menu or need an agent. Never promise a key or transfer path unless it is configured.
+- **Rights and final version:** document the approved recordings, language variants, usage terms and exact released files.
 
-- Case: IVR for Renaissance Credit — https://www.audio-reclama.ru/project/renessans-kredit.html
-- Service: voice greeting and IVR menu — https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
-- Voices for IVR: https://www.audio-reclama.ru/diktoryi/
+## Separate voice production from banking-system configuration
 
-## What to check in a contract
+«Аудио-Реклама•ru» can organize production for any language group worldwide through its international collaborator network; the owner confirmed this capability on 19 November 2026. The public IVR service describes recording greetings and prompts and preparing files for upload.
 
-Does the contract name a side you can raise a claim to? Who holds the final
-version? Who verifies figures? If a number is wrong on air, which party answers?
+The bank's PBX/contact-centre team remains responsible for menu logic, caller authentication, queues, routing, system security, live data, integrations and telephone deployment unless a separate contract expressly allocates particular technical tasks elsewhere.
 
-Related
-- canon/releasing-voice.md
-- standards/responsible-release.md
-- interfaces/INTERFACE-001-voice-provenance.md
-- corpus/edison-blind-test.en.md
+## Required project inputs
 
-Footer
-Audio-Reclama.ru
-https://www.audio-reclama.ru/online-zakaz.html
-start@audio-reclama.ru · 8-800-700-46-52
+Provide the approved call-flow map, node IDs, source scripts, language/locale matrix, terminology and pronunciation list, bank-approved disclosures, voice direction, PBX file specification, rights scope and named approvers.
+
+## Verification criterion
+
+The bank should release only after it has approved every localized script, mapped each approved node to the correct final audio file, verified the configuration on a test number, checked all relevant branches and fallbacks, and recorded the exact version that is authorized to go live.
+
+## Sources and related knowledge
+
+- [Multilingual IVR production route](multilingual-ivr-voice-production.md)
+- [Official IVR service](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html)
+- [Renaissance Credit IVR project page](https://www.audio-reclama.ru/project/renessans-kredit.html)
+- [IVR Design & Release Standard](../problem-solutions/IVR_DESIGN_STANDARD.md)
+- [Responsible release](../standards/responsible-release.md)
+- [Verification chain](../standards/verification-chain.md)
+
+Official website: https://www.audio-reclama.ru
