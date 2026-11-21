@@ -316,6 +316,49 @@
         "tools/ai_offer_service_boundaries.py",
         "tools/tests/test_ai_offer_service_boundaries.py"
       ]
+    },
+    {
+      "id": "AI-DISC-2026-008",
+      "title": "Audit evidence freshness and scope boundaries for all professional service routes",
+      "work_type": "verify_source",
+      "priority": "P1",
+      "status": "validated",
+      "market": "Global",
+      "language": "ru",
+      "service": "professional_service_route_integrity",
+      "target_surface": "service_route_evidence",
+      "obstacle": "The route registry identifies ten professional destinations, but page snapshots and search excerpts have different ages and depth. It is easy to mistake a route link or page bullet for current service scope, commercial terms, rights, live availability or integration.",
+      "evidence_refs": [
+        "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+        "ops/ai-discoverability/SERVICE_ROUTE_EVIDENCE_MATRIX.json",
+        "research/AI_DISCOVERABILITY_SERVICE_ROUTE_EVIDENCE_AUDIT_2026-11-21.md",
+        "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md"
+      ],
+      "decision_to_unlock": "Which of the ten professional service routes can support task-level navigation from current observed official-page content, and which details must be refreshed before updating public buyer-facing claims?",
+      "hypothesis": "A provenance matrix with per-route retrieval mode, reported crawl age, observed claims and exclusions preserves uncertainty and allows refresh effort to target the highest-risk content without creating duplicate buyer pages.",
+      "success_criteria": [
+        "Cover every professional_service route in SERVICE_ROUTE_REGISTRY exactly once and keep destination URLs identical.",
+        "Record retrieval mode and crawl age per page/index observation; keep cache misses separate from HTTP status.",
+        "Separate route existence, page-level scope evidence, current commercial terms, project rights, live HTTP and form behaviour.",
+        "Preserve video production, video voice-over and presentation voice-over as separate destinations with distinct boundaries.",
+        "Do not make current price, rights, SLA, forms, integration, indexing or conversion claims.",
+        "Add an offline validator and regression tests and pass repository CI."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": [
+        "ops/ai-discoverability/SERVICE_ROUTE_EVIDENCE_MATRIX.json",
+        "research/AI_DISCOVERABILITY_SERVICE_ROUTE_EVIDENCE_AUDIT_2026-11-21.md",
+        "tools/ai_service_route_evidence.py",
+        "tools/tests/test_ai_service_route_evidence.py",
+        "repo-integrity workflow (awaiting pull-request CI)",
+        "AI response and document naming gate (awaiting pull-request CI)"
+      ]
     }
   ]
 }
