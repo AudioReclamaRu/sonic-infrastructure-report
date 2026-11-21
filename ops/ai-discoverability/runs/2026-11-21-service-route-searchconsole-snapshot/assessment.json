@@ -3,7 +3,7 @@
   "run_id": "2026-11-21-service-route-searchconsole-snapshot",
   "date": "2026-11-21",
   "work_item": "AI-DISC-2026-010",
-  "status": "read_only_searchconsole_snapshot_captured_ci_pending",
+  "status": "read_only_searchconsole_snapshot_captured_ci_passed",
   "decision_to_unlock": "Use observed queries and page-level impressions/clicks on official professional-service routes to preserve route distinctions and decide whether any further page-level performance evidence can be obtained without paid access.",
   "finding": "A 27-day read-only Google Search Console extraction for the ten official professional-service route URLs returned 1,256 impressions and 48 clicks. A separate query-level extraction returned 122 rows; 17 selected examples are preserved. The attempt to retrieve a one-year range was blocked by the current Windsor.ai trial history limit. A same-period GA4 extraction for those ten landing paths returned no rows; this is not interpreted as zero traffic. None of the seven legacy GitHub Pages answer URLs were measured.",
   "evidence": [
@@ -20,5 +20,36 @@
     "GA4 returned an empty response for the requested landing-page extraction; no zero-traffic inference is made.",
     "No paid plan upgrade or purchase was performed."
   ],
-  "next_decision": "Keep all seven legacy URLs stable; use this as contextual evidence for official route relevance, not as a basis for redirects or page consolidation."
+  "next_decision": "Keep all seven legacy URLs stable; use this as contextual evidence for official route relevance, not as a basis for redirects or page consolidation.",
+  "final_commit_sha": "982fdc1f703013284c14f104d6249cda0135920c",
+  "ci": [
+    {
+      "workflow": "repo-integrity",
+      "run_number": 1148,
+      "run_id": 44859512540,
+      "conclusion": "success",
+      "steps": [
+        "Official service route Search Console snapshot",
+        "Official service route Search Console regression tests"
+      ]
+    },
+    {
+      "workflow": "AI response and document naming gate",
+      "run_number": 786,
+      "run_id": 44859512526,
+      "conclusion": "success",
+      "steps": [
+        "Check every changed text artifact",
+        "Exercise the response-text gate"
+      ]
+    }
+  ],
+  "pull_request": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "982fdc1f703013284c14f104d6249cda0135920c"
+  }
 }
