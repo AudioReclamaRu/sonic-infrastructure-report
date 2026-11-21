@@ -1,0 +1,26 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-service-route-searchconsole-snapshot",
+  "decisions": [
+    {
+      "decision": "Keep professional service page metrics separate from legacy static answer page metrics.",
+      "basis": "The Search Console property is the official site property while historical legacy canonical URLs point to the GitHub Pages host; those legacy URLs were not included in the extraction."
+    },
+    {
+      "decision": "Use page-level Search Console totals as the aggregate measure; keep query-level rows as a separate sample.",
+      "basis": "The query-level extraction returned 122 rows and is not guaranteed to sum identically to the selected page-level aggregate."
+    },
+    {
+      "decision": "Do not infer zero traffic from an empty GA4 response.",
+      "basis": "The connector returned a done response with no data rows for the ten landing paths; this may reflect extraction/property/event availability."
+    },
+    {
+      "decision": "Stop rather than pay for longer history.",
+      "basis": "The connector reported that the current trial includes only the last 30 days; paid expansion was not authorized or performed."
+    },
+    {
+      "decision": "Do not use these observations to redirect or retire the legacy pages.",
+      "basis": "The metrics measure related official service routes, not the seven target legacy URLs."
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "schema": "studio/legacy-geo-answer-disposition/1",
+  "observed_on": "2026-11-21",
+  "status": "internal_recommendation_not_publication_approval",
+  "policy": {
+    "official_site_is_read_only": true,
+    "geo_static_output_is_read_only": true,
+    "external_publication_authorized": false,
+    "github_pages_deployment_authorized": false,
+    "redirect_or_retirement_authorized": false,
+    "current_audio_plus_contractual_terms_confirmed": false,
+    "page_level_traffic_and_referral_evidence_available": false
+  },
+  "source_freshness": {
+    "product_homepage": {
+      "search_index_age": "last week",
+      "opened_page_age": "about four months",
+      "status": "retrieval_age_conflict",
+      "visible_observations": [
+        "The indexed result lists 1,990 ₽ headline, product order types, 90-word limit, one-file/one-thought rule, 790 ₽ edit/change/add-sounds option and package totals."
+      ]
+    },
+    "offer": {
+      "search_index_age": "last month",
+      "opened_page_age": "about five months",
+      "visible_publication_date": "2016-06-17",
+      "status": "retrieval_age_conflict_and_old_visible_publication_date",
+      "visible_observations": [
+        "Natural-person buyer only; legal entities and individual entrepreneurs excluded in the retrieved text.",
+        "One version/no alternate takes is stated for defined output types.",
+        "Text cannot be changed after payment; no rework of previously recorded material; no changes after work begins.",
+        "A reasoned complaint and correction route is stated for two working days after delivery.",
+        "Exclusive right remains with the service; buyer receives a simple non-exclusive licence with sublicensing right, as worded in clause 16.1."
+      ]
+    },
+    "correction_terms": {
+      "status": "interpretation_not_resolved",
+      "dimensions": [
+        "Pre-production customer text changes: clauses 3.4 and 3.8.1 restrict changes after payment / after work starts.",
+        "Reworking a previously recorded audio item: clause 3.5 says this is not provided within the offer.",
+        "Defect/quality complaint: clause 3.11 provides a motivated-complaint and correction route within two working days after delivery.",
+        "Product-page fee: the home-page index excerpt advertises a 790 ₽ change/correction/add-sounds option, without clearly mapping the fee to the clause 3.11 complaint route or the clause 3.5 rework restriction."
+      ],
+      "conclusion": "Do not call this a proven direct contradiction or silently reconcile it. Treat customer-requested edit/add-on, correction of service defects and re-recording/rework as three separate operations pending owner confirmation."
+    },
+    "scope_difference": {
+      "status": "not_fully_reconciled",
+      "note": "The product homepage indexed excerpt includes a video voice-over selection. The opened offer definitions explicitly describe greetings, informational audio spots and congratulatory spots, but do not explicitly name the video voice-over selection. This needs a current written scope clarification before describing video voice-over as contractually covered by the short-order product."
+    },
+    "source_observations": [
+      {
+        "source": "https://audio.plus/",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "last week",
+        "status": "indexed_extract",
+        "observes": [
+          "Hero shows 1,990 ₽ headline for voiceover/audio-roll service.",
+          "Product flow lists auto-attendant, audio ad and video voice-over choices.",
+          "The page lists a maximum of 90 words, one order/one file/one complete thought, and a 790 ₽ change/correction/add-sounds option.",
+          "Package rows show per-order rates and package totals."
+        ],
+        "limits": [
+          "Search-index freshness is not live verification of page state or checkout.",
+          "An opened extraction of the same homepage reported a crawl age of about four months; retrieval freshness indicators conflict."
+        ]
+      },
+      {
+        "source": "https://audio.plus/offer.html",
+        "retrieval": "search_index_result_and_opened_page",
+        "reported_crawl_age": "search result: last month; opened page: about five months",
+        "status": "conflicting_retrieval_freshness",
+        "observes": [
+          "Offer is visibly dated 17 June 2016.",
+          "Clause 1.1 defines the buyer as a natural person and says the service is not intended for legal entities and individual entrepreneurs.",
+          "Clauses 3.4 and 3.8.1 prohibit changing the text after payment / after the order enters work; clause 3.5 excludes reworking previously recorded audio.",
+          "Clause 3.11 provides a separate route for a reasoned complaint with necessary corrections within two working days after delivery.",
+          "Clauses 16.1 state that the service retains exclusive rights and grants the buyer a simple non-exclusive licence with a right to sublicense, as worded in the offer."
+        ],
+        "limits": [
+          "The crawled page text is not a current signed agreement or legal interpretation.",
+          "Search and opened-page age metadata conflict; the printed 2016 publication date remains visible.",
+          "The offer does not clearly state how the 790 ₽ product-page edit/add-sounds option interacts with the 3.5/3.11 terms."
+        ]
+      },
+      {
+        "source": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "last month",
+        "status": "indexed_extract",
+        "observes": [
+          "Radio production page lists scripts, voice casting, sound design, licensed music, portfolio categories and a project form.",
+          "The page lists transfer of author's and exclusive rights among service elements."
+        ],
+        "limits": [
+          "The exact contractual right grant for each project, territory, media, term and sublicensing remains project-specific and unverified."
+        ]
+      },
+      {
+        "source": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "last month",
+        "status": "indexed_extract",
+        "observes": [
+          "Video voice-over page lists casting of announcers and dubbing actors, ambience and effects, original music, sound design, voice-over and lip-sync.",
+          "A project form asks for video type, voice, text and files."
+        ],
+        "limits": [
+          "Does not prove full video production or picture editing is included in an audio voice-over order."
+        ]
+      },
+      {
+        "source": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "last week",
+        "status": "indexed_extract",
+        "observes": [
+          "Full video page lists advertising video, shooting, character animation, logo animation, YouTube editing and subtitles."
+        ],
+        "limits": [
+          "An index excerpt is not a live inspection of page, forms, exact bundle or contract."
+        ]
+      },
+      {
+        "source": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "about four months",
+        "status": "aged_indexed_extract",
+        "observes": [
+          "Presentation page excerpt lists script creation, business-film narration, audio mastering and editing of video and audio materials, portfolio and project form."
+        ],
+        "limits": [
+          "Direct opening earlier returned a cache miss; no live HTTP or form state is inferred."
+        ]
+      },
+      {
+        "source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "last month",
+        "status": "indexed_extract",
+        "observes": [
+          "IVR page lists greetings, IVR menus, auto-attendants and auto-informers; says audio files can be prepared for upload into a system and advertises 62 languages."
+        ],
+        "limits": [
+          "File preparation does not establish PBX configuration, call routing or telephony integration; the language count is a dated page claim."
+        ]
+      },
+      {
+        "source": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+        "retrieval": "search_index_result",
+        "reported_crawl_age": "last week",
+        "status": "indexed_extract",
+        "observes": [
+          "Scriptwriting page describes scripts for radio, video and telephone auto-attendant scenarios."
+        ],
+        "limits": [
+          "Current prices, revision workflow, rights and service SLAs are not established by the excerpt."
+        ]
+      }
+    ]
+  },
+  "disposition_principles": [
+    "Keep all seven historical URLs stable for now; do not delete or redirect without page-level performance, citation/referral and canonical evidence.",
+    "Replace the default universal short-order price interpretation with an explicit audience-and-scope decision before any public edit.",
+    "Use the professional service registry for organizational/project tasks and preserve each distinct service destination.",
+    "Treat Audio+ as a separate product, not the default professional service route; its natural-person eligibility remains conditional on a current primary-source verification.",
+    "Do not carry the Audio+ non-exclusive licence into professional service routes, or the professional radio page's rights wording into Audio+.",
+    "No public GEO page rewrite is authorized by this recommendation matrix."
+  ],
+  "pages": [
+    {
+      "slug": "golosovoe-obyavlenie-cena",
+      "repository_path": "geo/answers/golosovoe-obyavlenie-cena/index.html",
+      "historical_repository_copy": "One short voice announcement up to 90 words was presented against Audio+ 1,990 ₽ and package prices.",
+      "query_intent": "A single spoken announcement; the context and intended playback destination are not sufficiently specific.",
+      "observed_ambiguity": "The page does not clearly distinguish a personal one-file order from a company announcement, multi-file campaign or an announcement integrated into telephone/venue systems.",
+      "recommended_disposition": "retain_url_rewrite_as_qualified_short_order_or_project_router",
+      "recommended_next_content": "Explain the two branches without making a blanket claim: (a) a single small order only when the buyer and item fit the current Audio+ offer; (b) organizational, repeated, multi-file or system-connected announcements use a professional project brief. Do not assign an Audio+ tariff to a company buyer.",
+      "professional_route_ids": [
+        "general_voice_order_intake",
+        "ivr_voice_production"
+      ],
+      "audio_plus_path": "conditional_only_after_current_offer_confirms_the_exact_announcement_type_and_buyer_is_eligible",
+      "redirect_or_retire": "not_recommended_now",
+      "required_before_public_edit": [
+        "Freshly verify whether the current product order types include this exact announcement use case.",
+        "Verify the intended channel: retail/venue announcement, telephone greeting, IVR file set or another format.",
+        "Confirm the current buyer eligibility and current price."
+      ],
+      "rationale": "The intent may be a one-file product request or a professional/system task. The existing source does not support one universal price or destination."
+    },
+    {
+      "slug": "ozvuchka-dlya-prezentacii-cena",
+      "repository_path": "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
+      "historical_repository_copy": "The title and body position a presentation voice-over as Audio+ 1,990 ₽ for up to 90 words.",
+      "query_intent": "Voice-over for a presentation, usually an assembled project deliverable.",
+      "observed_ambiguity": "The historical price answer is attached to a short-order product while a distinct presentation professional-service destination exists.",
+      "recommended_disposition": "retain_url_rewrite_to_professional_presentation_route",
+      "recommended_next_content": "Use the presentation project brief as the primary route. Explain that price depends on the presentation structure, amount of text, number of versions/languages and the selected audio/video work only where those variables are confirmed by the current brief. Remove any universal Audio+ price from this intent.",
+      "professional_route_ids": [
+        "presentation_voiceover_production"
+      ],
+      "audio_plus_path": "do_not_use_as_default; only discuss if the owner confirms that a specific personal one-file product order covers this use case",
+      "redirect_or_retire": "not_recommended_now",
+      "required_before_public_edit": [
+        "Refresh the presentation service page and current project brief.",
+        "Confirm which video editing elements are part of a selected presentation project, rather than universal inclusions.",
+        "Do not publish a price or scope promise without current source evidence."
+      ],
+      "rationale": "The current route registry already has a dedicated presentation service. The old answer is a clear candidate for a service-route rewrite, not a page deletion."
+    },
+    {
+      "slug": "ozvuchka-dlya-video-cena",
+      "repository_path": "geo/answers/ozvuchka-dlya-video-cena/index.html",
+      "historical_repository_copy": "A very short static page states Audio+ 1,990 ₽ for a video voice-over up to 90 words, with 790 ₽ for a change.",
+      "query_intent": "Could mean a single personal video voice-over file, professional dubbing/lip-sync, multilingual voice-over or a full video-production task.",
+      "observed_ambiguity": "The product landing page indexed recently lists video voice-over as a selection option, but the opened product-page snapshot is older; the offer definitions enumerate greetings, informational audio ads and congratulatory clips without explicitly naming video voice-over. Professional video voice-over and full video production are separate routes.",
+      "recommended_disposition": "retain_url_rewrite_as_explicit_product_vs_project_split",
+      "recommended_next_content": "Make the primary distinction by buyer and scope: a short single-file order only if the current offer explicitly allows this buyer and video task; professional video voice-over routes to its project brief; full shooting/editing/animation routes to full video production. Avoid one universal price.",
+      "professional_route_ids": [
+        "video_voiceover_production",
+        "video_production"
+      ],
+      "audio_plus_path": "conditional_only; current product-page option and offer definitions must be reconciled before it is promoted as an eligible Audio+ task",
+      "redirect_or_retire": "not_recommended_now",
+      "required_before_public_edit": [
+        "Confirm that video voice-over is within the current offer's contractual scope, not merely a form option.",
+        "Confirm whether any buyer restrictions still apply to all product tasks.",
+        "Separate audio dubbing/lip-sync from picture editing and full production."
+      ],
+      "rationale": "Three distinct work scopes exist, two professional destination routes already exist, and the product page and offer do not describe the same level of detail."
+    },
+    {
+      "slug": "ozvuchka-reklamnogo-rolika-cena",
+      "repository_path": "geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html",
+      "historical_repository_copy": "The short answer states an Audio+ price for a commercial spot under 90 words and a paid change option.",
+      "query_intent": "Commercial voice-over/advertising audio; medium may be radio, retail playback, social/video or another campaign.",
+      "observed_ambiguity": "The phrase 'advertising spot' is not a unique production scope. Audio+ offer defines an informational audio spot for radio and retail, while the professional radio page offers scripts, casting, sound design, licensed music and rights language.",
+      "recommended_disposition": "retain_url_rewrite_as_medium_and_buyer_qualifier",
+      "recommended_next_content": "Ask/route by intended medium and buyer. Eligible personal one-file informational spot may be routed to Audio+ only after offer confirmation; business campaign, script/casting/sound design or usage-rights scope routes to professional radio production or the relevant video service.",
+      "professional_route_ids": [
+        "radio_advertising_production",
+        "video_voiceover_production",
+        "video_production"
+      ],
+      "audio_plus_path": "conditional_only_for_exact_informational_spot_type_and_eligible_natural_person",
+      "redirect_or_retire": "not_recommended_now",
+      "required_before_public_edit": [
+        "Confirm which Audio+ audio spot types and intended placements are covered.",
+        "Separate radio/retail audio from video voice-over and full video production.",
+        "Verify project-level rights language before any promise."
+      ],
+      "rationale": "An ambiguous commercial term should not receive a flat short-order tariff when the professional page describes a broader project service."
+    },
+    {
+      "slug": "ozvuchka-reklamy-na-radio-cena",
+      "repository_path": "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
+      "historical_repository_copy": "The historical page presents a radio spot under 90 words as Audio+ 1,990 ₽ and lists a paid correction amount.",
+      "query_intent": "Radio advertising production and/or a one-file informational spot.",
+      "observed_ambiguity": "The short product offer defines an informational spot for radio/retail, but limits the purchaser to a natural person; the professional studio radio page is a separate project route and lists a broader production scope.",
+      "recommended_disposition": "retain_url_rewrite_as_two_buyer_paths",
+      "recommended_next_content": "Keep the radio-specific intent. Present the professional radio production brief as the business/project route. Mention Audio+ only as a separate short-order path for eligible individual buyers if the current offer and product page are freshly reconciled; do not describe it as the price of professional radio production.",
+      "professional_route_ids": [
+        "radio_advertising_production"
+      ],
+      "audio_plus_path": "conditional_only_for_eligible_natural_person_and_confirmed_short_informational_spot",
+      "redirect_or_retire": "not_recommended_now",
+      "required_before_public_edit": [
+        "Refresh current radio page scope and commercial brief.",
+        "Confirm current Audio+ buyer eligibility and the exact definition of informational radio spot.",
+        "Keep rights model separate: the Audio+ offer and professional page describe different rights wording."
+      ],
+      "rationale": "This page has a task-specific professional destination and should not be collapsed into a generic clip page."
+    },
+    {
+      "slug": "ozvuchka-rolika-cena",
+      "repository_path": "geo/answers/ozvuchka-rolika-cena/index.html",
+      "historical_repository_copy": "The page offers a broad 'clip voice-over' answer using Audio+ pricing and package amounts.",
+      "query_intent": "Ambiguous: could be an advertising clip, radio spot, video clip, announcement or general text.",
+      "observed_ambiguity": "The term 'ролик' overlaps strongly with the separate advertising-spot, radio and video pages; its medium and deliverable are not determined by the slug or short text.",
+      "recommended_disposition": "retain_url_hold_consolidation_until_query_and_referral_evidence",
+      "recommended_next_content": "Do not invent a new universal service. Use a brief chooser that routes radio, video voice-over and full video tasks to their distinct existing destinations. Keep the URL until page-level query, referral and citation data can support a consolidation decision.",
+      "professional_route_ids": [
+        "radio_advertising_production",
+        "video_voiceover_production",
+        "video_production",
+        "general_voice_order_intake"
+      ],
+      "audio_plus_path": "do_not_assign_by_default; only after buyer eligibility and exact product task are established",
+      "redirect_or_retire": "defer_until_page_level_search_and_referral_evidence",
+      "required_before_public_edit": [
+        "Read page-level Search Console/analytics and any external citation/backlink evidence when authorized.",
+        "Choose one canonical sibling only if overlap is confirmed by evidence and a redirect map is approved.",
+        "Verify that no distinct user task is lost by consolidation."
+      ],
+      "rationale": "It is the strongest consolidation candidate, but no page-level performance evidence has been supplied to justify retiring or redirecting it."
+    },
+    {
+      "slug": "ozvuchka-tekst-cena",
+      "repository_path": "geo/answers/ozvuchka-tekst-cena/index.html",
+      "historical_repository_copy": "The page gives a generic text voice-over answer using Audio+ order and package amounts.",
+      "query_intent": "A text is to be spoken; the required format, number of files, use case and buyer type are unspecified.",
+      "observed_ambiguity": "The Audio+ offer defines particular product outputs (greeting, informational audio spot, congratulatory clip), while the site order form presents other selectable audio purposes; no universal generic text-voiceover entitlement is established by the inspected offer snapshot.",
+      "recommended_disposition": "retain_url_rewrite_as_scope_qualifier_no_generic_fixed_price",
+      "recommended_next_content": "Explain the variables first: purpose, number of finished thoughts/files, length, delivery format and whether this is a professional project. Use general professional intake when the task does not fit a confirmed short-order product type. Do not present the Audio+ tariff as the generic price of reading any text.",
+      "professional_route_ids": [
+        "general_voice_order_intake"
+      ],
+      "audio_plus_path": "only_if_current_offer_and_order_flow_confirm_this_exact_generic_text_type_for_an_eligible_natural_person",
+      "redirect_or_retire": "not_recommended_now",
+      "required_before_public_edit": [
+        "Confirm the current offer's product-type definitions against the current order form.",
+        "Confirm current buyer eligibility and length/file constraints.",
+        "Do not invent a generic narration service price."
+      ],
+      "rationale": "The current source evidence does not define generic arbitrary-text narration as a universal Audio+ or professional fixed-price service."
+    }
+  ],
+  "summary": {
+    "page_count": 7,
+    "recommended_keep_urls": 7,
+    "recommended_immediate_redirects": 0,
+    "consolidation_candidates": [
+      "ozvuchka-rolika-cena"
+    ],
+    "project_route_rewrites": [
+      "ozvuchka-dlya-prezentacii-cena",
+      "ozvuchka-dlya-video-cena",
+      "ozvuchka-reklamnogo-rolika-cena",
+      "ozvuchka-reklamy-na-radio-cena"
+    ],
+    "scope_qualification_rewrites": [
+      "golosovoe-obyavlenie-cena",
+      "ozvuchka-tekst-cena"
+    ],
+    "page_level_traffic_data_required_before_consolidation": true
+  }
+}
