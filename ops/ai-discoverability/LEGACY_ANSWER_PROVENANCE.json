@@ -13,16 +13,16 @@
   "source_model": {
     "generator_path": "tools/build_geo_site.py",
     "hardcoded_answer_slugs": [
-      "skolko-stoit-ozvuchka",
-      "ivr-privetstvie-cena"
+      "ivr-privetstvie-cena",
+      "skolko-stoit-ozvuchka"
     ],
     "data_driven_answer_slugs": [
-      "skolko-stoit-minuta-ozvuchki",
-      "ozvuchka-pozdravleniya-cena",
-      "ozvuchka-dlya-socsetey-cena",
+      "golos-dlya-navigatsii-cena",
       "ozvuchka-audioknigi-cena",
+      "ozvuchka-dlya-socsetey-cena",
       "ozvuchka-obuchayushchego-kursa-cena",
-      "golos-dlya-navigatsii-cena"
+      "ozvuchka-pozdravleniya-cena",
+      "skolko-stoit-minuta-ozvuchki"
     ],
     "legacy_answer_slugs": [
       "golosovoe-obyavlenie-cena",
