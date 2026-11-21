@@ -60,6 +60,7 @@ related:
 - AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_PROVENANCE_2026-11-21.md — история семи старых HTML-ответов вне текущего генератора; сверка генератора, каталога ответов, llms.txt и sitemap, включая глобальный lastmod.
 - AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_DISPOSITION_2026-11-21.md — рекомендуемое решение по каждому из семи legacy URL, разведение короткого Audio+ и профессиональных заказов, свежесть индексированных источников и стоп-условия для redirect/retire.
 - AI_DISCOVERABILITY_SERVICE_ROUTE_GSC_SNAPSHOT_2026-11-21.md — 27-дневный read-only срез Search Console по десяти официальным профессиональным URL, 1 256 показов и 48 кликов; legacy GitHub Pages URL не измерялись, история ограничена текущим пробным доступом.
+- AI_DISCOVERABILITY_SERVICE_ROUTE_METRICA_DRILLDOWN_2026-11-21.md — единосхемный 27-дневный read-only срез 118 визитов по десяти профессиональным путям; 88 визитов содержат Goal ID, но карта целей не получена, а поля order/call не подтверждают заявку.
 - AI_DISCOVERABILITY_AUDIO_PLUS_B2B_ROUTE_AUDIT_2026-11-21.md — репозиторный аудит смешения Audio+ и профессиональных услуг; addendum фиксирует ограничения покупателя, модель прав, границы переделок и конфликт источников об исправлениях.
 
 ## Поисковая видимость и качество обхода
