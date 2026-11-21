@@ -1,0 +1,96 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-service-route-searchconsole-snapshot",
+  "status": "passed_on_final_pr_head",
+  "checks": [
+    {
+      "name": "Search Console route scope",
+      "status": "pass",
+      "detail": "All ten rows map exactly to the ten professional_service destinations in SERVICE_ROUTE_REGISTRY."
+    },
+    {
+      "name": "Page-level arithmetic",
+      "status": "pass",
+      "detail": "48 clicks, 1,256 impressions and weighted CTR reconcile to the ten route rows."
+    },
+    {
+      "name": "History restriction",
+      "status": "pass",
+      "detail": "The year-long request limitation and 27-day available window are preserved; no paid upgrade was performed."
+    },
+    {
+      "name": "Legacy URL boundary",
+      "status": "pass",
+      "detail": "The validator blocks attribution of official-service route metrics to GitHub Pages legacy answer URLs."
+    },
+    {
+      "name": "GA4 empty response semantics",
+      "status": "pass",
+      "detail": "The empty GA4 response is explicitly retained as not evidence of zero traffic."
+    },
+    {
+      "name": "Search Console snapshot validator",
+      "status": "pass",
+      "detail": "Repo-integrity workflow step 21 passed.",
+      "evidence": [
+        "repo-integrity run 1148 (44859512540)",
+        "head 982fdc1f703013284c14f104d6249cda0135920c"
+      ]
+    },
+    {
+      "name": "Search Console snapshot regression tests",
+      "status": "pass",
+      "detail": "All six regression tests passed in repo-integrity workflow step 22.",
+      "evidence": [
+        "repo-integrity run 1148 (44859512540)",
+        "head 982fdc1f703013284c14f104d6249cda0135920c"
+      ]
+    },
+    {
+      "name": "Repository integrity",
+      "status": "pass",
+      "detail": "Full repo-integrity workflow completed successfully.",
+      "evidence": [
+        "repo-integrity run 1148 (44859512540)",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44859512540"
+      ]
+    },
+    {
+      "name": "AI response/document naming gate",
+      "status": "pass",
+      "detail": "All changed text artifacts passed after replacing the GA4 display label with its technical account ID.",
+      "evidence": [
+        "AI response and document naming gate run 786 (44859512526)",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44859512526"
+      ]
+    },
+    {
+      "name": "External changes",
+      "status": "not_performed",
+      "detail": "No paid upgrade, official site edit, analytics setting/tag change, form submission, public GEO change or deployment."
+    }
+  ],
+  "no_claims": [
+    "No one-year Search Console trend was available under the current trial history limit.",
+    "No direct performance result exists for any legacy GitHub Pages answer URL.",
+    "No zero-traffic inference is made from the empty GA4 response.",
+    "No lead, deal, conversion or AI citation measurement is claimed.",
+    "No redirect or retirement decision is authorized by this data."
+  ],
+  "final_commit_sha": "982fdc1f703013284c14f104d6249cda0135920c",
+  "pull_request": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "982fdc1f703013284c14f104d6249cda0135920c"
+  },
+  "remediation_history": [
+    {
+      "commit": "58a3d16d4d3099ef0ab6622c76345950703f2fd9",
+      "status": "naming_gate_failure",
+      "detail": "A connector display label for the GA4 property contained a noncanonical host string. The display label was removed from the record and replaced with the technical account ID; the observed empty-row state was preserved."
+    }
+  ]
+}

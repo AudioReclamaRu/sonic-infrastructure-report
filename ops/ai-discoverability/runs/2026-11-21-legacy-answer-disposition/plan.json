@@ -1,0 +1,63 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-legacy-answer-disposition",
+  "scope": "repository_only_decision_matrix_and_source_freshness_update",
+  "base_ref": "ai-discoverability/legacy-geo-answer-provenance-20261121",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Refresh mandatory company standards and inspect the latest route and legacy provenance PRs.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Recheck official Audio+ and professional service search-index observations; compare with older opened-page crawl ages.",
+      "result": "completed_with_retrieval_age_conflict"
+    },
+    {
+      "step": 3,
+      "action": "Review all seven legacy page contents and match buyer intents to existing routes without inventing a new service.",
+      "result": "completed"
+    },
+    {
+      "step": 4,
+      "action": "Prepare page-by-page conservative disposition and owner clarification list; keep URLs stable and avoid irreversible actions.",
+      "result": "completed"
+    },
+    {
+      "step": 5,
+      "action": "Create an internal decision registry, report, validator, regression tests and Megabrain run package.",
+      "result": "completed"
+    },
+    {
+      "step": 6,
+      "action": "Wire CI and queue item; open a draft PR stacked on provenance PR #78.",
+      "result": "completed_draft_pr_opened_ci_passed"
+    }
+  ],
+  "outputs": [
+    "ops/ai-discoverability/LEGACY_ANSWER_DISPOSITION.json",
+    "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_DISPOSITION_2026-11-21.md",
+    "tools/legacy_geo_answer_disposition.py",
+    "tools/tests/test_legacy_geo_answer_disposition.py",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-answer-disposition/assessment.json",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-answer-disposition/plan.json",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-answer-disposition/test-report.json",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-answer-disposition/decision-log.json",
+    ".github/workflows/repo-integrity.yml",
+    "research/README.md",
+    "ops/ai-discoverability/WORK_QUEUE.json"
+  ],
+  "final_pr": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4"
+  },
+  "final_ci": {
+    "repo_integrity_run": 44858872844,
+    "naming_gate_run": 44858872728
+  }
+}

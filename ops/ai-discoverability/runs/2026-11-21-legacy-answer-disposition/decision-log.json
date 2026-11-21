@@ -1,0 +1,30 @@
+{
+  "schema": "megabrain/ai-discoverability-run-decision-log/1",
+  "run_id": "2026-11-21-legacy-answer-disposition",
+  "decisions": [
+    {
+      "decision": "Keep all seven legacy URLs stable for now.",
+      "basis": "No complete page-level Search Console, referral, backlinks or AI-citation evidence supports consolidation or retirement; stable URLs preserve the option to rewrite."
+    },
+    {
+      "decision": "Rewrite the presentation and task-specific professional answers toward their dedicated professional routes.",
+      "basis": "The route registry and indexed official page extracts show separate presentation, video voice-over, video production and radio-production destinations."
+    },
+    {
+      "decision": "Treat Audio+ as an eligibility-gated short-order path, not a universal price basis.",
+      "basis": "The offer text explicitly defines a natural-person purchaser and excludes legal entities and individual entrepreneurs."
+    },
+    {
+      "decision": "Separate the 790 ₽ product-page option from defect corrections and rework.",
+      "basis": "The product-page wording, offer clauses 3.4/3.5/3.8.1 and defect-correction clause 3.11 address different operations but do not fully define their interaction."
+    },
+    {
+      "decision": "Do not claim that Audio+ video voice-over is contractually covered until the offer's defined outputs and the order-form option are reconciled.",
+      "basis": "The home-page search excerpt includes a video option while offer definitions list greetings, informational audio spots and congratulatory clips."
+    },
+    {
+      "decision": "Do not remove or redirect legacy files in this run.",
+      "basis": "The task is internal decision support; GEO and external publication remain read-only and separately gated."
+    }
+  ]
+}

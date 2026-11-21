@@ -1,0 +1,61 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-service-route-searchconsole-snapshot",
+  "scope": "read_only_existing_connector_data_no_site_write",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Read repository, brand, response-release, expert-knowledge, problem-led and distribution standards.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Inspect connected read-only Search Console and GA4 accounts and discover exact valid fields.",
+      "result": "completed"
+    },
+    {
+      "step": 3,
+      "action": "Attempt the previous 12-month decision-useful range; respect trial history limit without upgrade.",
+      "result": "blocked_by_current_trial_history_limit"
+    },
+    {
+      "step": 4,
+      "action": "Retrieve the maximum useful recent official service-route page aggregate and separate query-level sample.",
+      "result": "completed_27_day_window"
+    },
+    {
+      "step": 5,
+      "action": "Cross-check the same ten professional landing paths through GA4 without interpreting an empty return as zero activity.",
+      "result": "completed_empty_response"
+    },
+    {
+      "step": 6,
+      "action": "Store the exact extraction scope, rows, arithmetic, query examples, restrictions and limitations in Git.",
+      "result": "completed"
+    },
+    {
+      "step": 7,
+      "action": "Add offline validator/tests, integrate CI and attach the observation to the existing disposition item.",
+      "result": "completed_ci_passed"
+    }
+  ],
+  "outputs": [
+    "ops/ai-discoverability/RECENT_SERVICE_ROUTE_SEARCHCONSOLE_OBSERVATION.json",
+    "research/AI_DISCOVERABILITY_SERVICE_ROUTE_GSC_SNAPSHOT_2026-11-21.md",
+    "tools/validate_service_route_searchconsole.py",
+    "tools/tests/test_service_route_searchconsole.py"
+  ],
+  "final_commit_sha": "982fdc1f703013284c14f104d6249cda0135920c",
+  "final_ci": {
+    "repo_integrity_run": 44859512540,
+    "naming_gate_run": 44859512526
+  },
+  "pull_request": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "982fdc1f703013284c14f104d6249cda0135920c"
+  }
+}
