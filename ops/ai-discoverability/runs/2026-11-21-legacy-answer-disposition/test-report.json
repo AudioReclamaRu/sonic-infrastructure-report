@@ -1,0 +1,43 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-legacy-answer-disposition",
+  "status": "awaiting_pull_request_ci",
+  "checks": [
+    {
+      "name": "Seven-page coverage",
+      "status": "pending_ci",
+      "detail": "Each legacy page from the provenance registry receives exactly one recommendation and unchanged canonical route path."
+    },
+    {
+      "name": "Conservative URL policy",
+      "status": "pending_ci",
+      "detail": "All seven URLs remain stable; no immediate redirect or retirement is recommended."
+    },
+    {
+      "name": "Audio+ term boundary",
+      "status": "pending_ci",
+      "detail": "Natural-person eligibility, the 2016 offer date, the 790 ₽ option and three distinct correction/rework operations remain separate and unresolved."
+    },
+    {
+      "name": "Service route mapping",
+      "status": "pending_ci",
+      "detail": "Every professional route ID must exist in SERVICE_ROUTE_REGISTRY; Audio+ remains a separate conditional product path."
+    },
+    {
+      "name": "Regression tests",
+      "status": "pending_ci",
+      "detail": "Nine tests cover missing pages, unknown routes, redirect actions, buyer eligibility, dated offer, edit-term ambiguity and video scope."
+    },
+    {
+      "name": "External changes",
+      "status": "not_performed",
+      "detail": "No geo/ output, builder, official site, form submission, redirect, deletion or Pages deployment."
+    }
+  ],
+  "no_claims": [
+    "No claim that the 2016 offer is newly revised or currently verified as a legal text.",
+    "No current price/contract/right claim from a search-index result.",
+    "No claim that any of the seven URLs is live or indexed.",
+    "No claim that overlapping pages should be redirected without page-level performance evidence."
+  ]
+}
