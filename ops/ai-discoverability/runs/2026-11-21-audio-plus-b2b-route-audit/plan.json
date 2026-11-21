@@ -37,7 +37,7 @@
     {
       "step": 7,
       "action": "Open a scoped draft PR stacked on service-route-registry branch; run CI and record final head checks.",
-      "result": "pending"
+      "result": "completed_ci_passed"
     }
   ],
   "outputs": [
@@ -48,5 +48,13 @@
     "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/plan.json",
     "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/test-report.json",
     "ops/ai-discoverability/runs/2026-11-21-audio-plus-b2b-route-audit/decision-log.json"
-  ]
+  ],
+  "final_pr": {
+    "number": 76,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/76",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a"
+  }
 }
