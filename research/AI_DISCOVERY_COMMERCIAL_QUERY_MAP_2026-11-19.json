@@ -1,0 +1,384 @@
+{
+  "schema": "studio/ai-discovery-commercial-intent-map/1",
+  "created": "2026-11-19",
+  "status": "planned_generic_prompts_not_tested",
+  "purpose": "Unbranded, natural-language buyer questions used to design four global commercial discovery routes. This is an editorial/query-intent map, not measured search demand, not a set of observed AI answers and not an executable benchmark queue.",
+  "entity": "ENTITY-AR-STUDIO-001",
+  "production_capability": {
+    "status": "owner_confirmed",
+    "date": "2026-11-19",
+    "statement": "Аудио-Реклама•ru can organize production for any language group anywhere in the world through its international network of collaborators.",
+    "not_implied": [
+      "physical offices in every country",
+      "a local legal entity in every market",
+      "one dialect or voice suitable for every region"
+    ]
+  },
+  "locales": {
+    "en": "English — international discovery baseline; adapt to en-US/en-GB when buyer wording materially differs",
+    "es": "Spanish — neutral international draft; adapt to es-ES, es-MX and other markets through native review",
+    "pt-BR": "Brazilian Portuguese — pt-BR draft; do not reuse as pt-PT without adaptation",
+    "ar": "Modern Standard Arabic — cross-market draft; local dialect and market requirements are specified per project",
+    "tr": "Turkish — tr-TR working draft; adapt regional terminology and buyer vocabulary through native review",
+    "de": "German — de-DE working draft; adapt de-AT/de-CH when requirements differ",
+    "fr": "French — fr-FR working draft; adapt fr-CA and other regional markets separately",
+    "ja": "Japanese — ja-JP working draft; native review required",
+    "ko": "Korean — ko-KR working draft; native review required",
+    "zh-Hans": "Simplified Chinese working draft, zh-CN orientation; does not substitute Traditional Chinese, Cantonese or other regional variants"
+  },
+  "rules": [
+    "Prompts are generic and contain no company or brand name.",
+    "Prompts are drafts for language-native review, not measured demand.",
+    "Keep query language, user country, interface locale, platform and service language separate.",
+    "Do not add these prompts to the fixed Russian benchmark module; localized modules must be versioned separately.",
+    "Do not treat missing observations as zero visibility.",
+    "A route can describe worldwide production capability without implying local offices.",
+    "Wave B localized guide drafts are first-pass drafts only; all six locales require native-language editorial review before external release."
+  ],
+  "routes": [
+    {
+      "id": "multilingual-airport-announcements",
+      "buyer_job": "Commission multilingual airport, transport-hub and public-venue announcements.",
+      "english_guide": "guides/airport-announcements.md",
+      "localized_guides": {
+        "es": "guides/airport-announcements.es.md",
+        "pt-BR": "guides/airport-announcements.pt-BR.md",
+        "ar": "guides/airport-announcements.ar.md",
+        "tr": "guides/airport-announcements.tr.md",
+        "de": "guides/airport-announcements.de.md",
+        "fr": "guides/airport-announcements.fr.md",
+        "ja": "guides/airport-announcements.ja.md",
+        "ko": "guides/airport-announcements.ko.md",
+        "zh-Hans": "guides/airport-announcements.zh-Hans.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/project/vnukovo.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "prompts": {
+        "en": [
+          "How do we commission airport announcements in multiple languages?",
+          "What should an airport include in a multilingual public-address voice production brief?",
+          "Who prepares the voice files for an airport announcement system?",
+          "How should airport names, gates, times and emergency messages be checked across languages?"
+        ],
+        "es": [
+          "¿Cómo contratar anuncios de aeropuerto en varios idiomas?",
+          "¿Qué debe incluir un brief para producir mensajes multilingües por megafonía?",
+          "¿Quién prepara los archivos de voz para el sistema de anuncios de un aeropuerto?",
+          "¿Cómo comprobar nombres, puertas, horarios y mensajes de emergencia en cada idioma?"
+        ],
+        "pt-BR": [
+          "Como contratar anúncios de aeroporto em vários idiomas?",
+          "O que incluir no briefing para produzir mensagens multilíngues por alto-falantes?",
+          "Quem prepara os arquivos de voz para o sistema de anúncios do aeroporto?",
+          "Como conferir nomes, portões, horários e mensagens de emergência em cada idioma?"
+        ],
+        "ar": [
+          "كيف يمكن التعاقد على إنتاج إعلانات المطارات بعدة لغات؟",
+          "ما المعلومات المطلوبة لإعداد موجز إنتاج رسائل متعددة اللغات عبر مكبرات الصوت؟",
+          "من يجهز الملفات الصوتية لنظام الإعلانات في المطار؟",
+          "كيف يتم التحقق من أسماء البوابات والمواعيد ورسائل الطوارئ في كل لغة؟"
+        ],
+        "tr": [
+          "Birden fazla dilde havalimanı anonsları nasıl hazırlatılır?",
+          "Çok dilli havalimanı anonsları için üretim brifinde hangi bilgiler olmalı?",
+          "Havalimanı anons sistemi için ses dosyalarını kim hazırlar?",
+          "Kapı, saat ve güvenlik anonslarının farklı dillerde doğruluğu nasıl kontrol edilir?"
+        ],
+        "de": [
+          "Wie lässt man Flughafenansagen in mehreren Sprachen produzieren?",
+          "Welche Angaben gehören in ein Briefing für mehrsprachige Flughafendurchsagen?",
+          "Wer bereitet die Audiodateien für das Durchsagesystem eines Flughafens vor?",
+          "Wie werden Gates, Zeiten und Sicherheitshinweise in allen Sprachfassungen geprüft?"
+        ],
+        "fr": [
+          "Comment faire produire des annonces d’aéroport en plusieurs langues ?",
+          "Que doit contenir un brief pour des annonces multilingues de transport ?",
+          "Qui prépare les fichiers audio destinés au système de diffusion d’un aéroport ?",
+          "Comment vérifier les portes, horaires et consignes de sécurité dans chaque langue ?"
+        ],
+        "ja": [
+          "空港の案内放送を複数の言語で制作するには、何を準備すればよいですか？",
+          "多言語の空港アナウンスを依頼する際、ブリーフに何を含めるべきですか？",
+          "空港放送システム用の音声ファイルは誰が準備しますか？",
+          "搭乗口、時刻、安全案内を各言語でどう確認しますか？"
+        ],
+        "ko": [
+          "공항 안내방송을 여러 언어로 제작하려면 무엇을 준비해야 하나요?",
+          "다국어 공항 안내방송 제작 브리프에는 어떤 정보가 필요하나요?",
+          "공항 방송 시스템에 넣을 음성 파일은 누가 준비하나요?",
+          "탑승구, 시간과 안전 안내를 각 언어에서 어떻게 검수하나요?"
+        ],
+        "zh-Hans": [
+          "如何委托制作多语种机场广播？",
+          "多语种机场广播项目简报应包含哪些信息？",
+          "机场广播系统所需的音频文件由谁准备？",
+          "如何核对不同语言版本中的登机口、时间和安全提示？"
+        ]
+      }
+    },
+    {
+      "id": "multilingual-ivr-voice-production",
+      "buyer_job": "Commission IVR greetings, menu prompts and automated telephone announcements in multiple languages.",
+      "english_guide": "guides/multilingual-ivr-voice-production.md",
+      "localized_guides": {
+        "es": "guides/multilingual-ivr-voice-production.es.md",
+        "pt-BR": "guides/multilingual-ivr-voice-production.pt-BR.md",
+        "ar": "guides/multilingual-ivr-voice-production.ar.md",
+        "tr": "guides/multilingual-ivr-voice-production.tr.md",
+        "de": "guides/multilingual-ivr-voice-production.de.md",
+        "fr": "guides/multilingual-ivr-voice-production.fr.md",
+        "ja": "guides/multilingual-ivr-voice-production.ja.md",
+        "ko": "guides/multilingual-ivr-voice-production.ko.md",
+        "zh-Hans": "guides/multilingual-ivr-voice-production.zh-Hans.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "prompts": {
+        "en": [
+          "Where can we order multilingual IVR voice prompts?",
+          "What does an IVR voice recording studio need before recording a telephone menu?",
+          "Does IVR voice production include PBX setup and call routing?",
+          "How do we test localized greetings and menu prompts after they are uploaded?"
+        ],
+        "es": [
+          "¿Dónde encargar saludos y mensajes IVR en varios idiomas?",
+          "¿Qué necesita un estudio antes de grabar un menú telefónico?",
+          "¿La producción de voces IVR incluye configurar la central telefónica?",
+          "¿Cómo probar los saludos y menús localizados después de cargarlos?"
+        ],
+        "pt-BR": [
+          "Onde contratar saudações e mensagens IVR em vários idiomas?",
+          "O que um estúdio precisa antes de gravar um menu telefônico?",
+          "A produção de voz IVR inclui configurar a central telefônica?",
+          "Como testar saudações e menus localizados depois do upload?"
+        ],
+        "ar": [
+          "أين يمكن طلب تحيات ورسائل IVR بعدة لغات؟",
+          "ما المعلومات التي يحتاجها الاستوديو قبل تسجيل قائمة هاتفية؟",
+          "هل يشمل إنتاج رسائل IVR إعداد المقسم الهاتفي ومسارات الاتصال؟",
+          "كيف نختبر التحيات والقوائم الموطنة بعد تحميلها إلى النظام؟"
+        ],
+        "tr": [
+          "Birden fazla dilde IVR seslendirmesi nereden sipariş edilir?",
+          "Telefon menüsü kaydı öncesinde stüdyoya hangi bilgiler verilmelidir?",
+          "IVR ses üretimi PBX kurulumu ve çağrı yönlendirmesini de kapsar mı?",
+          "Yerelleştirilmiş telefon menüsü yüklendikten sonra nasıl test edilir?"
+        ],
+        "de": [
+          "Wo kann man mehrsprachige IVR-Ansagen produzieren lassen?",
+          "Welche Informationen benötigt ein Studio vor der Aufnahme eines Telefonmenüs?",
+          "Umfasst die IVR-Sprachproduktion auch PBX-Konfiguration und Anrufrouting?",
+          "Wie testet man lokalisierte Telefonmenüs nach dem Import?"
+        ],
+        "fr": [
+          "Où commander des messages vocaux IVR en plusieurs langues ?",
+          "Quelles informations fournir avant l’enregistrement d’un menu téléphonique ?",
+          "La production des voix IVR comprend-elle la configuration du PBX et le routage des appels ?",
+          "Comment tester les menus téléphoniques localisés après leur import ?"
+        ],
+        "ja": [
+          "多言語IVRの音声収録はどこに依頼できますか？",
+          "電話メニューの収録前にスタジオへ何を渡すべきですか？",
+          "IVR音声制作にはPBX設定や着信ルーティングも含まれますか？",
+          "ローカライズした電話メニューをシステム登録後にどうテストしますか？"
+        ],
+        "ko": [
+          "다국어 IVR 음성은 어디에 의뢰할 수 있나요?",
+          "전화 메뉴 녹음 전에 스튜디오에 어떤 정보를 제공해야 하나요?",
+          "IVR 음성 제작에 PBX 설정과 통화 라우팅도 포함되나요?",
+          "현지화된 전화 메뉴를 업로드한 뒤 어떻게 테스트하나요?"
+        ],
+        "zh-Hans": [
+          "在哪里可以委托制作多语种IVR语音？",
+          "录制电话菜单前应向制作团队提供哪些信息？",
+          "IVR语音制作是否包含PBX配置和呼叫路由？",
+          "本地化电话菜单导入系统后应如何测试？"
+        ]
+      }
+    },
+    {
+      "id": "audio-advertising-production",
+      "buyer_job": "Commission radio commercials, audio advertisements and multilingual campaign spots.",
+      "english_guide": "guides/audio-advertising-production.md",
+      "localized_guides": {
+        "es": "guides/audio-advertising-production.es.md",
+        "pt-BR": "guides/audio-advertising-production.pt-BR.md",
+        "ar": "guides/audio-advertising-production.ar.md",
+        "tr": "guides/audio-advertising-production.tr.md",
+        "de": "guides/audio-advertising-production.de.md",
+        "fr": "guides/audio-advertising-production.fr.md",
+        "ja": "guides/audio-advertising-production.ja.md",
+        "ko": "guides/audio-advertising-production.ko.md",
+        "zh-Hans": "guides/audio-advertising-production.zh-Hans.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/zvuk-media.html"
+      ],
+      "prompts": {
+        "en": [
+          "Where can we commission a professionally produced radio commercial?",
+          "What is included in audio advertising production from script to final master?",
+          "How do we adapt one audio advertisement for several language markets?",
+          "What music rights and technical delivery details should an audio ad include?"
+        ],
+        "es": [
+          "¿Dónde encargar un anuncio de radio producido profesionalmente?",
+          "¿Qué incluye la producción de publicidad sonora desde el guion hasta el máster?",
+          "¿Cómo adaptar un anuncio de audio a varios mercados lingüísticos?",
+          "¿Qué derechos musicales y requisitos técnicos debe incluir la entrega?"
+        ],
+        "pt-BR": [
+          "Onde contratar um comercial de rádio produzido profissionalmente?",
+          "O que está incluído na produção de publicidade em áudio, do roteiro ao master?",
+          "Como adaptar um anúncio de áudio para vários mercados linguísticos?",
+          "Quais direitos musicais e requisitos técnicos devem acompanhar a entrega?"
+        ],
+        "ar": [
+          "أين يمكن طلب إنتاج إعلان إذاعي احترافي؟",
+          "ماذا يشمل إنتاج الإعلان الصوتي من النص إلى النسخة النهائية؟",
+          "كيف يمكن تكييف إعلان صوتي لعدة أسواق لغوية؟",
+          "ما حقوق الموسيقى والمتطلبات التقنية التي يجب تحديدها عند التسليم؟"
+        ],
+        "tr": [
+          "Profesyonel radyo reklamı üretimi nasıl sipariş edilir?",
+          "Sesli reklam üretimine metinden son miks aşamasına kadar neler dahildir?",
+          "Tek bir sesli reklamı farklı dil pazarlarına nasıl uyarlarsınız?",
+          "Sesli reklam tesliminde müzik hakları ve teknik şartlar nasıl belirlenir?"
+        ],
+        "de": [
+          "Wie beauftragt man die Produktion eines professionellen Radiospots?",
+          "Was umfasst Audiowerbung von der Texterstellung bis zum finalen Mix?",
+          "Wie wird ein Audiowerbespot für mehrere Sprachmärkte lokalisiert?",
+          "Welche Musikrechte und technischen Vorgaben gehören zur Lieferung eines Audiowerbespots?"
+        ],
+        "fr": [
+          "Comment commander la production d’un spot radio professionnel ?",
+          "Que comprend la production audio, du script au mix final ?",
+          "Comment adapter une publicité audio à plusieurs marchés linguistiques ?",
+          "Quels droits musicaux et paramètres techniques prévoir à la livraison ?"
+        ],
+        "ja": [
+          "プロ品質のラジオCMはどのように発注しますか？",
+          "台本から最終ミックスまで、音声広告制作には何が含まれますか？",
+          "一つの音声広告を複数の言語市場向けにどうローカライズしますか？",
+          "音声広告の納品時に音楽の権利と技術仕様をどう確認しますか？"
+        ],
+        "ko": [
+          "전문 라디오 광고 제작은 어떻게 의뢰하나요?",
+          "대본부터 최종 믹스까지 오디오 광고 제작에는 무엇이 포함되나요?",
+          "하나의 오디오 광고를 여러 언어 시장에 맞게 어떻게 현지화하나요?",
+          "오디오 광고 납품 시 음악 권리와 기술 사양은 어떻게 정하나요?"
+        ],
+        "zh-Hans": [
+          "如何委托制作专业广播广告？",
+          "从脚本到最终混音，音频广告制作通常包括哪些工作？",
+          "如何将一条音频广告本地化到多个语言市场？",
+          "音频广告交付时应如何明确音乐版权和技术规格？"
+        ]
+      }
+    },
+    {
+      "id": "multilingual-video-voiceover",
+      "buyer_job": "Commission video voice-over, dubbing-related production and multilingual audiovisual localization.",
+      "english_guide": "guides/video-voiceover.md",
+      "localized_guides": {
+        "es": "guides/video-voiceover.es.md",
+        "pt-BR": "guides/video-voiceover.pt-BR.md",
+        "ar": "guides/video-voiceover.ar.md",
+        "tr": "guides/video-voiceover.tr.md",
+        "de": "guides/video-voiceover.de.md",
+        "fr": "guides/video-voiceover.fr.md",
+        "ja": "guides/video-voiceover.ja.md",
+        "ko": "guides/video-voiceover.ko.md",
+        "zh-Hans": "guides/video-voiceover.zh-Hans.md"
+      },
+      "source_urls": [
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/perevodchiki/"
+      ],
+      "prompts": {
+        "en": [
+          "Where can we order video voice-over in another language?",
+          "What is the difference between video voice-over, dubbing and lip-sync?",
+          "How do we localize a video for several countries and language variants?",
+          "What should we send a studio before commissioning multilingual dubbing?"
+        ],
+        "es": [
+          "¿Dónde encargar locución de vídeo en otro idioma?",
+          "¿Cuál es la diferencia entre voz en off, doblaje y sincronización labial?",
+          "¿Cómo localizar un vídeo para varios países y variantes lingüísticas?",
+          "¿Qué debemos enviar antes de contratar un doblaje multilingüe?"
+        ],
+        "pt-BR": [
+          "Onde contratar locução de vídeo em outro idioma?",
+          "Qual é a diferença entre voz em off, dublagem e sincronização labial?",
+          "Como localizar um vídeo para vários países e variantes linguísticas?",
+          "O que enviar antes de contratar uma dublagem multilíngue?"
+        ],
+        "ar": [
+          "أين يمكن طلب تعليق صوتي للفيديو بلغة أخرى؟",
+          "ما الفرق بين التعليق الصوتي والدبلجة ومزامنة الشفاه؟",
+          "كيف نوطن فيديو لعدة دول ومتغيرات لغوية؟",
+          "ما المواد التي يجب إرسالها قبل التعاقد على دبلجة متعددة اللغات؟"
+        ],
+        "tr": [
+          "Başka bir dilde video seslendirmesi nereden sipariş edilir?",
+          "Video voice-over, dublaj ve dudak senkronu arasındaki fark nedir?",
+          "Bir videoyu birden fazla ülke ve dil varyantı için nasıl yerelleştirirsiniz?",
+          "Çok dilli dublaj sipariş etmeden önce stüdyoya hangi dosyalar gönderilmelidir?"
+        ],
+        "de": [
+          "Wo kann man ein Video in einer anderen Sprache vertonen lassen?",
+          "Was ist der Unterschied zwischen Voice-over, Synchronisation und Lip-Sync?",
+          "Wie lokalisiert man ein Video für mehrere Länder und Sprachvarianten?",
+          "Welche Dateien sollte man vor einem mehrsprachigen Synchronauftrag bereitstellen?"
+        ],
+        "fr": [
+          "Où commander une voix off vidéo dans une autre langue ?",
+          "Quelle différence entre voix off, doublage et synchronisation labiale ?",
+          "Comment localiser une vidéo pour plusieurs pays et variantes linguistiques ?",
+          "Quels fichiers fournir avant de commander un doublage multilingue ?"
+        ],
+        "ja": [
+          "別の言語での映像ナレーションはどこに依頼できますか？",
+          "映像ナレーション、吹替、リップシンクの違いは何ですか？",
+          "複数の国や言語変種向けに映像をどうローカライズしますか？",
+          "多言語吹替を依頼する前に、どの素材を制作会社へ送るべきですか？"
+        ],
+        "ko": [
+          "다른 언어의 영상 보이스오버는 어디에 의뢰할 수 있나요?",
+          "영상 보이스오버, 더빙과 립싱크의 차이는 무엇인가요?",
+          "여러 국가와 언어 변형에 맞춰 영상을 어떻게 현지화하나요?",
+          "다국어 더빙을 의뢰하기 전에 어떤 파일을 스튜디오에 보내야 하나요?"
+        ],
+        "zh-Hans": [
+          "在哪里可以委托制作其他语言的视频配音？",
+          "视频旁白、配音和口型同步有什么区别？",
+          "如何将一部视频本地化为多个国家和语言版本？",
+          "委托多语种配音前应向制作团队提供哪些素材？"
+        ]
+      }
+    }
+  ],
+  "measurement": {
+    "status": "not_tested",
+    "note": "No search-volume, AI-platform or citation observations are contained in this map. Select validated prompts later for separately versioned measurement cells."
+  },
+  "language_wave_b": {
+    "status": "first_pass_routes_added_native_review_pending",
+    "languages": [
+      "tr-TR",
+      "de-DE",
+      "fr-FR",
+      "ja-JP",
+      "ko-KR",
+      "zh-Hans"
+    ],
+    "note": "The four buyer routes have first-pass localized drafts for these languages in the repository. None is approved for external release; native-language editorial review is required. This is not measured demand or proof of AI visibility."
+  }
+}

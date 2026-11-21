@@ -10,6 +10,21 @@
 - [Стандарт названия бренда и сайта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/BRAND_AND_SITE_NAMING.md).
 - [Шлюз проверки ответов и документов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/AI_RESPONSE_RELEASE_GATE.md).
 
+
+## English-language entity profile
+
+- [English entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): international-facing description, service map, first-party portfolio references, and language/routing limitations.
+- [Organization JSON-LD and entity records](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): machine-readable repository companions; not installed on the official website.
+
+## Localized entity profiles and language strategy
+
+- [Spanish entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity).
+- [Brazilian Portuguese entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity).
+- [Arabic entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity).
+- [Multilingual AI Discoverability Roadmap](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_LANGUAGE_ROADMAP_2026-11-19.md): language waves for AI-content and measurement priorities. Production capability is owner-confirmed worldwide for any language group; the waves do not restrict production.
+- [Deep technical and semantic AI Discoverability audit](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md): live audit of robots, sitemap, English/localized routes, entity identity, structured data, AI crawler controls and first-party measurement surfaces.
+
+
 ## Цитирование репозитория
 
 - [CITATION.cff](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/CITATION.cff): метаданные для корректного цитирования репозитория; лицензия корпуса — CC BY 4.0.
@@ -32,6 +47,20 @@
 - [Проблемно-ориентированная стратегия](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/strategy/PROBLEM_FIRST_AUDIO_GROWTH_MANIFEST.md).
 - [Экспертная инфраструктура знаний](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md).
 
+
+## Global commercial buyer routes
+
+- [Multilingual airport and public-address announcements](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/airport-announcements.md) — project workflow, Vnukovo evidence, handover and responsibility boundaries.
+- [Multilingual IVR voice production](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/multilingual-ivr-voice-production.md) — scripts, language variants, recording, file handover and PBX boundary.
+- [Russian IVR buyer answer](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/multilingual-ivr-voice-production.ru.md) — corporate IVR recording brief, language checks, file acceptance and the PBX/system-integrator boundary.
+- [Audio advertising production](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/audio-advertising-production.md) — script, voice, sound design, music rights and delivery.
+- [Radio and audio advertising production (RU)](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/audio-advertising-production.ru.md) — corporate production brief, creative/recording workflow, rights, delivery, and the separate Audio+ self-service boundary.
+- [Audio+ versus corporate radio route audit](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md) — legacy GEO price ambiguity, evidence, unverified static-page status and proposed owner-approved corrections.
+- [Audiobook production (EN)](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/audiobook-production.md) and [Russian buyer answer](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/audiobook-production.ru.md) — narration formats, production brief, rights, acceptance checks and price-query boundaries.
+- [Video voice-over and localization](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/video-voiceover.md) — voice-over, dubbing, lip-sync, localization and quality control.
+- [All language versions and commercial buyer routes](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/README.md) — English plus first-pass Spanish, Brazilian Portuguese, Arabic, Turkish, German, French, Japanese, Korean and Simplified Chinese drafts; native-language review remains pending.
+- [Generic multilingual commercial query map](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json) — generic buyer prompts across ten language sets, all planned and untested; not search-volume data or observed AI citations.
+
 ## Профессиональные руководства и инструменты
 
 - [Выбор диктора](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/guides/choosing-a-voice.md).
@@ -52,6 +81,8 @@
 - [Глобальный протокол AI Visibility Benchmark](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md): все регионы мира, глобальные и региональные платформы, UI/API, языки и интенты.
 - [Глобальная матрица рынков, языков и платформ](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-global-market-matrix-2026-11-17.json): первая волна ячеек для проверки, не исчерпывающий список стран.
 - [RU-контрольные запросы](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-queries-2026-11-17.json): отдельный фиксированный модуль из 20 русскоязычных вопросов; ещё не прогнан.
+- [RU buyer-answer route map](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_RU_BUYER_ANSWER_ROUTE_MAP_2026-11-21.json): links frozen RU generic/price prompt IDs to the right buyer guides, official sources, evidence and product boundaries; prompts remain NOT_RUN.
+- [Google RU page index-inspection snapshot](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_DISCOVERABILITY_GSC_INDEX_INSPECTION_2026-11-21.md): seven official URLs returned Google URL Inspection PASS/robots allowed/index allowed. This does not verify OAI-SearchBot access or AI citations.
 - [Шаблон журнала прогонов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/ai-visibility-benchmark-template.csv).
 - [Baseline 11.11.2026](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/geo/reports/visibility-baseline-2026-11-11.md): ограниченный поисковый прогон, не baseline всех AI-платформ.
 - [Протокол измерения спроса и поискового эффекта](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/problem-solutions/MEASUREMENT_PROTOCOL.md).
