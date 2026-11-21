@@ -1,0 +1,81 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-service-route-evidence-audit",
+  "status": "passed_on_final_pr_head",
+  "checks": [
+    {
+      "name": "Professional route coverage",
+      "status": "pass",
+      "detail": "All 10 professional_service routes are represented exactly once and each destination matches SERVICE_ROUTE_REGISTRY."
+    },
+    {
+      "name": "Snapshot freshness preservation",
+      "status": "pass",
+      "detail": "Per-source retrieval mode and reported approximate crawl age are retained; cache_miss has no crawl-age assertion and is not equated with HTTP status."
+    },
+    {
+      "name": "Currentness and rights boundaries",
+      "status": "pass",
+      "detail": "All 10 routes explicitly preserve current service scope, current commercial terms and current rights as unconfirmed; live HTTP and form submission remain not_tested."
+    },
+    {
+      "name": "AI service route evidence matrix validator",
+      "status": "pass",
+      "detail": "Repo-integrity workflow step 15 passed.",
+      "evidence": [
+        "repo-integrity run 1126 (44857451592): SUCCESS",
+        "head 49b1490f5332967987689337a12d878623056a5c"
+      ]
+    },
+    {
+      "name": "AI service route evidence regression tests",
+      "status": "pass",
+      "detail": "All 9 new regression tests passed in repo-integrity workflow step 16.",
+      "evidence": [
+        "repo-integrity run 1126 (44857451592): SUCCESS",
+        "head 49b1490f5332967987689337a12d878623056a5c"
+      ]
+    },
+    {
+      "name": "Repository integrity",
+      "status": "pass",
+      "detail": "The full repo-integrity workflow completed successfully, including service route, Audio+ boundary and Megabrain contract checks.",
+      "evidence": [
+        "repo-integrity run 1126 (44857451592): SUCCESS",
+        "workflow run URL: https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44857451592"
+      ]
+    },
+    {
+      "name": "AI response and document naming gate",
+      "status": "pass",
+      "detail": "All changed text artifacts and the response-text gate passed.",
+      "evidence": [
+        "AI response and document naming gate run 764 (44857451641): SUCCESS",
+        "workflow run URL: https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44857451641"
+      ]
+    },
+    {
+      "name": "Official website and external publication",
+      "status": "not_performed",
+      "detail": "No site changes, GEO public asset updates, form submissions, external publication, Pages deployment or merge to main."
+    }
+  ],
+  "no_claims": [
+    "No claim that all route pages are currently served or accessible.",
+    "No claim of current pricing, contractual terms, deliverables, rights, production capacity or service-level commitments.",
+    "No claim that cache misses are 404s or outages.",
+    "No claim of AI discovery, search ranking, referral or conversion improvement.",
+    "No claim that any form was submitted or that an enquiry was created."
+  ],
+  "audited_commit_sha": "49b1490f5332967987689337a12d878623056a5c",
+  "pull_request": {
+    "number": 77,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/77",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "base": "ai-discoverability/audio-plus-b2b-route-audit-20261121",
+    "head_branch": "ai-discoverability/service-route-evidence-audit-20261121",
+    "head_sha": "49b1490f5332967987689337a12d878623056a5c"
+  }
+}
