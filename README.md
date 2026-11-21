@@ -83,6 +83,8 @@ feed/                  editorial publishing layer (channel schedule + covers)
   README.md                       editorial + manifest contract
   images/                         generated covers + manifest.json (single source of truth)
   tests/                          generator contract tests
+ops/ai-discoverability/  Megabrain file-based AI Discoverability operating contract and work queue
+schemas/                 machine-readable data contracts, including AI Discoverability work items
 strategy/              strategic development contracts
   EXPERT_KNOWLEDGE_INFRASTRUCTURE.md      architecture of the connected knowledge base
   ATTENTION_ACQUISITION_SYSTEM.md         attention acquisition priorities and channels
@@ -121,6 +123,7 @@ ar-notes/              «Аудио-Реклама•ru» Research Notes (short,
 interfaces/            Interface Cards — one concept per page (INTERFACE-NNN)
 catalog/               voice catalog infrastructure (taxonomy + template)
 tools/ivr_flow_linter/  static IVR call-flow graph linter (Python, no dependencies)
+tools/ai_discoverability_contract.py  offline validator for Megabrain's autonomy contract and work queue
 ```
 
 ## The layers
