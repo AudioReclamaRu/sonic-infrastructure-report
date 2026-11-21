@@ -21,20 +21,20 @@
     "No GEO output, generator, official site, CMS or Pages deployment was modified."
   ],
   "next_decision": "Owner must choose retain, source-manage, redirect or retire for each legacy answer URL before any corresponding output change or deployment.",
-  "final_commit_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724",
+  "final_commit_sha": "c35e1aa9e9d9545c599aeff30be98fc2ba33ac12",
   "final_pr": {
     "number": 78,
     "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78",
     "state": "open",
     "draft": true,
     "merged": false,
-    "head_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+    "head_sha": "c35e1aa9e9d9545c599aeff30be98fc2ba33ac12"
   },
   "ci": [
     {
       "workflow": "repo-integrity",
-      "run_number": 1130,
-      "run_id": 44858171455,
+      "run_number": 1131,
+      "run_id": 44858238396,
       "conclusion": "success",
       "steps": [
         "Legacy GEO answer provenance",
@@ -43,8 +43,8 @@
     },
     {
       "workflow": "AI response and document naming gate",
-      "run_number": 768,
-      "run_id": 44858171393,
+      "run_number": 769,
+      "run_id": 44858238464,
       "conclusion": "success",
       "steps": [
         "Check every changed text artifact",
