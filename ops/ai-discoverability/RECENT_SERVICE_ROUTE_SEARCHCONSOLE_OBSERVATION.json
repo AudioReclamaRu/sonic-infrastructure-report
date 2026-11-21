@@ -1,0 +1,306 @@
+{
+  "schema": "studio/official-service-route-searchconsole-snapshot/1",
+  "observed_on": "2026-11-21",
+  "source": {
+    "product": "Google Search Console",
+    "access": "read_only_via_existing_Windsor.ai_connection",
+    "property": "https://www.audio-reclama.ru/",
+    "date_from": "2026-10-22",
+    "date_to": "2026-11-17",
+    "calendar_days": 27,
+    "include_fresh_data": false,
+    "page_level_fields": [
+      "page",
+      "clicks",
+      "impressions",
+      "ctr",
+      "position"
+    ],
+    "query_level_fields": [
+      "page",
+      "query",
+      "clicks",
+      "impressions",
+      "ctr",
+      "position"
+    ],
+    "page_level_rows": 10,
+    "query_level_rows": 122,
+    "selected_query_rows": 17,
+    "long_range_attempt": {
+      "date_from": "2025-11-01",
+      "date_to": "2026-11-17",
+      "status": "blocked_by_current_trial_history_limit",
+      "detail": "The connected trial includes only the last 30 days of data history. No upgrade or payment was performed."
+    }
+  },
+  "scope": {
+    "observed_urls": "Ten official professional-service destination URLs in SERVICE_ROUTE_REGISTRY.",
+    "legacy_static_pages": "Not measured. The legacy HTML canonical URLs point to the GitHub Pages host, outside the selected official-site Search Console property.",
+    "route_metrics_do_not_measure_legacy_answer_url_performance": true,
+    "no_conversion_claim": true,
+    "no_ai_citation_claim": true
+  },
+  "page_level_totals": {
+    "pages": 10,
+    "clicks": 48,
+    "impressions": 1256,
+    "weighted_ctr": 0.03821656050955414,
+    "note": "Totals cover only the ten selected official professional-service URL rows, not the entire property."
+  },
+  "pages": [
+    {
+      "route_id": "audiobook_production",
+      "url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+      "clicks": 31,
+      "impressions": 280,
+      "ctr": 0.1107,
+      "average_position": 23.9357
+    },
+    {
+      "route_id": "ivr_voice_production",
+      "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "clicks": 4,
+      "impressions": 449,
+      "ctr": 0.0089,
+      "average_position": 31.7973
+    },
+    {
+      "route_id": "radio_advertising_production",
+      "url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+      "clicks": 4,
+      "impressions": 165,
+      "ctr": 0.0242,
+      "average_position": 11
+    },
+    {
+      "route_id": "jingle_production",
+      "url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+      "clicks": 3,
+      "impressions": 106,
+      "ctr": 0.0283,
+      "average_position": 22.2264
+    },
+    {
+      "route_id": "scriptwriting",
+      "url": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+      "clicks": 3,
+      "impressions": 89,
+      "ctr": 0.0337,
+      "average_position": 11.0899
+    },
+    {
+      "route_id": "video_voiceover_production",
+      "url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+      "clicks": 2,
+      "impressions": 56,
+      "ctr": 0.0357,
+      "average_position": 30.0179
+    },
+    {
+      "route_id": "multilingual_localization",
+      "url": "https://www.audio-reclama.ru/perevodchiki/",
+      "clicks": 1,
+      "impressions": 89,
+      "ctr": 0.0112,
+      "average_position": 9.4157
+    },
+    {
+      "route_id": "corporate_song_anthem_production",
+      "url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "average_position": 13.6429
+    },
+    {
+      "route_id": "presentation_voiceover_production",
+      "url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "average_position": 5.4
+    },
+    {
+      "route_id": "video_production",
+      "url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "average_position": 6.6667
+    }
+  ],
+  "query_level": {
+    "total_rows_returned": 122,
+    "selected_rows": [
+      {
+        "route_id": "audiobook_production",
+        "query": "озвучка книги цена",
+        "clicks": 5,
+        "impressions": 29,
+        "ctr": 0.1724,
+        "average_position": 12.4828
+      },
+      {
+        "route_id": "audiobook_production",
+        "query": "сколько стоит озвучить книгу 300 страниц",
+        "clicks": 5,
+        "impressions": 14,
+        "ctr": 0.3571,
+        "average_position": 44.0714
+      },
+      {
+        "route_id": "audiobook_production",
+        "query": "сколько стоит озвучка аудиокниги",
+        "clicks": 5,
+        "impressions": 29,
+        "ctr": 0.1724,
+        "average_position": 19.4138
+      },
+      {
+        "route_id": "ivr_voice_production",
+        "query": "записать голосовое приветствие для компании",
+        "clicks": 2,
+        "impressions": 22,
+        "ctr": 0.0909,
+        "average_position": 22.7727
+      },
+      {
+        "route_id": "ivr_voice_production",
+        "query": "записать голосовое меню для атс",
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "average_position": 41.5
+      },
+      {
+        "route_id": "ivr_voice_production",
+        "query": "текст для голосового меню",
+        "clicks": 0,
+        "impressions": 25,
+        "ctr": 0,
+        "average_position": 62.76
+      },
+      {
+        "route_id": "radio_advertising_production",
+        "query": "заказать аудиоролик для застройщика",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "average_position": 3
+      },
+      {
+        "route_id": "radio_advertising_production",
+        "query": "заказать радиоролик",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "average_position": 6.1667
+      },
+      {
+        "route_id": "radio_advertising_production",
+        "query": "заказать рекламный аудиоролик",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "average_position": 5.3333
+      },
+      {
+        "route_id": "video_voiceover_production",
+        "query": "озвучка ролика стоимость",
+        "clicks": 2,
+        "impressions": 22,
+        "ctr": 0.0909,
+        "average_position": 49.7273
+      },
+      {
+        "route_id": "video_voiceover_production",
+        "query": "озвучить рекламный ролик",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "average_position": 45
+      },
+      {
+        "route_id": "video_voiceover_production",
+        "query": "озвучка видеороликов цена",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "average_position": 21
+      },
+      {
+        "route_id": "scriptwriting",
+        "query": "сценарий рекламы",
+        "clicks": 2,
+        "impressions": 14,
+        "ctr": 0.1429,
+        "average_position": 7.8571
+      },
+      {
+        "route_id": "scriptwriting",
+        "query": "сценарий для рекламы",
+        "clicks": 1,
+        "impressions": 13,
+        "ctr": 0.0769,
+        "average_position": 7.3846
+      },
+      {
+        "route_id": "scriptwriting",
+        "query": "сценарий промо ролика",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "average_position": 8.2857
+      },
+      {
+        "route_id": "jingle_production",
+        "query": "заказать джингл",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "average_position": 7
+      },
+      {
+        "route_id": "multilingual_localization",
+        "query": "переводчик с озвучкой",
+        "clicks": 0,
+        "impressions": 22,
+        "ctr": 0,
+        "average_position": 11.5
+      }
+    ],
+    "note": "Selected query examples are a separate extraction. Do not sum them to reconcile page-level totals."
+  },
+  "cross_source_check": {
+    "connector": "Google Analytics 4",
+    "property": "audio-reclama.ru",
+    "date_from": "2026-10-22",
+    "date_to": "2026-11-17",
+    "requested_fields": [
+      "landing_page_plus_query_string",
+      "session_default_channel_group",
+      "session_source_medium",
+      "sessions",
+      "active_users",
+      "engagement_rate",
+      "bounce_rate"
+    ],
+    "target_paths_count": 10,
+    "status": "done_empty_response",
+    "rows": 0,
+    "interpretation": "No rows were returned for this extraction. This is not evidence of zero traffic and is not used as a denominator or a performance score."
+  },
+  "decision_use": [
+    "Use the page aggregate only as a recent official-service route visibility signal.",
+    "The official video voice-over page has the query 'озвучка ролика стоимость' in the selected query extract; this supports the relevance of the professional route, but does not measure the legacy 'ozvuchka-rolika-cena' page.",
+    "Radio, IVR, scriptwriting and audiobook pages show distinct user query clusters in the selected examples.",
+    "Do not redirect legacy answer URLs based on related professional-route metrics."
+  ],
+  "policy": {
+    "no_paid_upgrade_or_spend": true,
+    "no_property_or_site_changes": true,
+    "no_form_submission": true,
+    "no_publication_or_deployment": true
+  }
+}
