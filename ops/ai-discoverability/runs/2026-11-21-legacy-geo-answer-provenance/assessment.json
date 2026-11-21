@@ -3,7 +3,7 @@
   "run_id": "2026-11-21-legacy-geo-answer-provenance",
   "date": "2026-11-21",
   "work_item": "AI-DISC-2026-009",
-  "status": "repository_only_provenance_audit_completed_ci_pending",
+  "status": "repository_only_provenance_audit_completed_ci_passed",
   "decision_to_unlock": "Which committed GEO answer pages are controlled by the current generator, which are unmanaged static legacy files, and how do answer-index, llms and sitemap inclusion differ?",
   "finding": "The repository contains 15 answer directories. The current builder emits 2 explicit answer pages and 6 EXTRA_ANSWERS pages. Seven additional HTML directories are not managed by the current builder. Five are linked by geo/answers/index.html, none are listed in geo/llms.txt, and all seven are included in geo/sitemap.xml. The sitemap uses one global UPDATED value (2026-11-15) for all URLs, not a per-file content-change date.",
   "evidence": [
@@ -20,5 +20,36 @@
     "The provenance audit does not validate current offer prices, terms or rights.",
     "No GEO output, generator, official site, CMS or Pages deployment was modified."
   ],
-  "next_decision": "Owner must choose retain, source-manage, redirect or retire for each legacy answer URL before any corresponding output change or deployment."
+  "next_decision": "Owner must choose retain, source-manage, redirect or retire for each legacy answer URL before any corresponding output change or deployment.",
+  "final_commit_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724",
+  "final_pr": {
+    "number": 78,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+  },
+  "ci": [
+    {
+      "workflow": "repo-integrity",
+      "run_number": 1130,
+      "run_id": 44858171455,
+      "conclusion": "success",
+      "steps": [
+        "Legacy GEO answer provenance",
+        "Legacy GEO answer provenance regression tests"
+      ]
+    },
+    {
+      "workflow": "AI response and document naming gate",
+      "run_number": 768,
+      "run_id": 44858171393,
+      "conclusion": "success",
+      "steps": [
+        "Check every changed text artifact",
+        "Exercise the response-text gate"
+      ]
+    }
+  ]
 }
