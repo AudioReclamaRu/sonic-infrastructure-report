@@ -36,7 +36,7 @@
     {
       "step": 7,
       "action": "Add offline validator/tests, integrate CI and attach the observation to the existing disposition item.",
-      "result": "pending"
+      "result": "completed_ci_passed"
     }
   ],
   "outputs": [
@@ -44,5 +44,18 @@
     "research/AI_DISCOVERABILITY_SERVICE_ROUTE_GSC_SNAPSHOT_2026-11-21.md",
     "tools/validate_service_route_searchconsole.py",
     "tools/tests/test_service_route_searchconsole.py"
-  ]
+  ],
+  "final_commit_sha": "982fdc1f703013284c14f104d6249cda0135920c",
+  "final_ci": {
+    "repo_integrity_run": 44859512540,
+    "naming_gate_run": 44859512526
+  },
+  "pull_request": {
+    "number": 79,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "982fdc1f703013284c14f104d6249cda0135920c"
+  }
 }
