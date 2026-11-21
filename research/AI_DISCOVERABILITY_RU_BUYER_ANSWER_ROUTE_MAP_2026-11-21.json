@@ -1,0 +1,457 @@
+{
+  "schema": "sonic-infrastructure/ai-discoverability/answer-route-map/1",
+  "version": "1.0.0",
+  "created": "2026-11-21",
+  "language": "ru",
+  "market": {
+    "country_code": "RU",
+    "interface_locale": "ru-RU",
+    "prompt_language": "ru"
+  },
+  "status": "routing_map_only_not_ai_observations",
+  "purpose": "Connect existing frozen Russian generic and price-intent benchmark IDs to the correct buyer-answer guide, primary service source, internal methods and commercial boundaries. This file does not add, rewrite or execute prompts.",
+  "source_policy": [
+    "Benchmark prompt wording is owned by the referenced immutable query modules; this map stores IDs only.",
+    "Google Search Console page and query metrics are ordinary organic-search observations, not AI visibility, leads or revenue.",
+    "Service-page snapshots and third-party offer snapshots are source observations; verify current terms and prices before any quotation or publication.",
+    "AI answer collection is NOT_RUN until a compliant regional consumer-UI session and evidence record exist.",
+    "Audio+ is a separate self-service product and must not be presented as the universal corporate studio service or price.",
+    "Repository guides are knowledge assets and are not published landing pages on the official website."
+  ],
+  "benchmark_modules": [
+    {
+      "path": "research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json",
+      "module_status": "not_run",
+      "immutable": true
+    },
+    {
+      "path": "research/ai-visibility-ru-commercial-price-extension-2026-11-20.json",
+      "module_status": "not_run",
+      "immutable": true
+    }
+  ],
+  "routes": [
+    {
+      "id": "RU-ROUTE-RADIO-001",
+      "cluster": "commercial_audio",
+      "buyer_task": "Commission a corporate radio commercial or audio advertising production project.",
+      "query_refs": [
+        "RU-GEN-AD-01",
+        "RU-GEN-AD-02",
+        "RU-GEN-AD-03",
+        "RU-GEN-AD-04",
+        "RU-GEN-AD-05",
+        "RU-GEN-AD-06"
+      ],
+      "primary_service_source": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+      "repository_answers": [
+        "guides/audio-advertising-production.md",
+        "guides/audio-advertising-production.ru.md"
+      ],
+      "supporting_knowledge": [
+        "guides/README.md",
+        "research/AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md",
+        "entity/audio-plus.ru.md",
+        "entity/audio-plus.jsonld"
+      ],
+      "independent_proof": [
+        {
+          "source": "https://wowfest.ru/archive/2018/",
+          "fact_scope": "One named radio-advertising project, one Gold award, one year/category attribution.",
+          "limitation": "Does not establish universal quality, campaign performance, ROI or future outcomes."
+        },
+        {
+          "source": "https://repa-pr.ru/obyavleny-pobediteli-premii-wow-awards/",
+          "fact_scope": "Secondary industry publication about the 2018 award results.",
+          "limitation": "Corroboration of the specific archive result, not independent performance evidence."
+        }
+      ],
+      "gsc_page_snapshot": {
+        "period_start": "2026-10-22",
+        "period_end": "2026-11-18",
+        "timezone": "Pacific Time",
+        "clicks": 4,
+        "impressions": 277,
+        "ctr": 0.0144,
+        "average_position": 9.7,
+        "source_type": "Google Search Console organic web search",
+        "interpretation": "Page-level organic-search signal only; not AI citation or conversion data."
+      },
+      "useful_query_examples": [
+        {
+          "query": "запись аудиоролика",
+          "clicks": 1,
+          "impressions": 12,
+          "average_position": 10.4
+        },
+        {
+          "query": "запись аудиороликов для рекламы",
+          "clicks": 1,
+          "impressions": 12,
+          "average_position": 10.2
+        },
+        {
+          "query": "аудиореклама заказать",
+          "clicks": 0,
+          "impressions": 8,
+          "average_position": 8.4
+        },
+        {
+          "query": "заказать аудиоролик",
+          "clicks": 0,
+          "impressions": 10,
+          "average_position": 5.9
+        },
+        {
+          "query": "заказать радиоролик",
+          "clicks": 0,
+          "impressions": 8,
+          "average_position": 8.8
+        }
+      ],
+      "commercial_boundaries": [
+        "Do not infer a single universal corporate radio-production tariff from the separate Audio+ self-service product.",
+        "The Audio+ offer snapshot captured in the project on 2026-11-20 defines its buyer as an individual and excludes legal entities and individual entrepreneurs; confirm the live offer before relying on this version-specific status.",
+        "Scriptwriting, casting, sound design, licensed music, delivery and rights must be itemized in the current project proposal.",
+        "Media planning, airtime purchase and campaign placement are not automatically included.",
+        "Do not promise a universal one-day turnaround; confirm the schedule for the actual brief."
+      ],
+      "ai_answer_routing_rule": "For a company, agency or non-standard campaign, use the main corporate radio-production service and the project brief. Route a short self-service order to Audio+ only after checking current buyer eligibility and offer terms.",
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-30T05:38:02Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
+    },
+    {
+      "id": "RU-ROUTE-IVR-001",
+      "cluster": "ivr_and_telephony",
+      "buyer_task": "Commission voice recordings for a corporate IVR, telephone greeting or automated announcement.",
+      "query_refs": [
+        "RU-GEN-IVR-01",
+        "RU-GEN-IVR-02",
+        "RU-GEN-IVR-03",
+        "RU-GEN-IVR-04",
+        "RU-COST-IVR-01"
+      ],
+      "primary_service_source": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "supporting_service_source": "https://www.audio-reclama.ru/perevodchiki/",
+      "repository_answers": [
+        "guides/multilingual-ivr-voice-production.md",
+        "guides/multilingual-ivr-voice-production.ru.md",
+        "guides/bank-voice-menu.md"
+      ],
+      "methods_and_tools": [
+        "problem-solutions/IVR_DESIGN_STANDARD.md",
+        "tools/ivr_flow_linter/README.md",
+        "tools/ivr_flow_linter/README.ru.md"
+      ],
+      "gsc_page_snapshot": {
+        "period_start": "2026-10-22",
+        "period_end": "2026-11-18",
+        "timezone": "Pacific Time",
+        "clicks": 4,
+        "impressions": 459,
+        "ctr": 0.0087,
+        "average_position": 31.5,
+        "source_type": "Google Search Console organic web search",
+        "interpretation": "Page-level organic-search signal only; mixed search intent is possible."
+      },
+      "useful_query_examples": [
+        {
+          "query": "записать голосовое приветствие для компании",
+          "clicks": 2,
+          "impressions": 22,
+          "average_position": 22.8
+        },
+        {
+          "query": "голосовое приветствие для атс",
+          "clicks": 1,
+          "impressions": 16,
+          "average_position": 27.8
+        },
+        {
+          "query": "запись ivr",
+          "clicks": 1,
+          "impressions": 27,
+          "average_position": 41.5
+        },
+        {
+          "query": "ivr приветствия",
+          "clicks": 0,
+          "impressions": 10,
+          "average_position": 20.8
+        }
+      ],
+      "commercial_boundaries": [
+        "The studio's audio-production scope includes agreed voice assets and prepared files; this does not by itself prove PBX installation or configuration.",
+        "PBX routes, queues, SIP, CRM/contact-centre integration, upload, schedules and live call-flow testing belong to the system owner/integrator unless separately contracted.",
+        "Do not label audio files as a working IVR system until the configured call journey is tested.",
+        "Audio+ is separate from the corporate IVR service. The offer version recorded on 2026-11-20 excludes legal entities and individual entrepreneurs; verify the current offer before relying on that snapshot.",
+        "Use the receiving PBX's actual codec, sample-rate, channel, level, naming and duration requirements; there is no universal file specification."
+      ],
+      "ai_answer_routing_rule": "For corporate IVR production, route to the main IVR service and explain the recording-versus-telephony boundary. Audio+ is not the universal route for legal entities, custom menus or system integration.",
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T10:54:52Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
+    },
+    {
+      "id": "RU-ROUTE-AUDIOBOOK-001",
+      "cluster": "audiobooks",
+      "buyer_task": "Commission an audiobook, role-based performance, dramatized audio, summary or training narration.",
+      "query_refs": [
+        "RU-GEN-AUDIOBOOK-01",
+        "RU-GEN-AUDIOBOOK-02",
+        "RU-COST-AUDIOBOOK-01"
+      ],
+      "primary_service_source": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+      "repository_answers": [
+        "guides/audiobook-production.md",
+        "guides/audiobook-production.ru.md"
+      ],
+      "gsc_page_snapshot": {
+        "period_start": "2026-10-22",
+        "period_end": "2026-11-18",
+        "timezone": "Pacific Time",
+        "clicks": 31,
+        "impressions": 290,
+        "ctr": 0.1069,
+        "average_position": 23.5,
+        "source_type": "Google Search Console organic web search",
+        "interpretation": "Page-level organic-search signal only; not a measure of AI demand, leads or completed orders."
+      },
+      "useful_query_examples": [
+        {
+          "query": "озвучка книги цена",
+          "clicks": 5,
+          "impressions": 30,
+          "average_position": 12.3
+        },
+        {
+          "query": "сколько стоит озвучить книгу 300 страниц",
+          "clicks": 5,
+          "impressions": 14,
+          "average_position": 44.1
+        },
+        {
+          "query": "сколько стоит озвучка аудиокниги",
+          "clicks": 5,
+          "impressions": 29,
+          "average_position": 19.4
+        },
+        {
+          "query": "заказать озвучку книги",
+          "clicks": 4,
+          "impressions": 28,
+          "average_position": 19.7
+        }
+      ],
+      "commercial_boundaries": [
+        "Do not calculate a universal price from printed page count alone.",
+        "Separate single-narrator, role-based, dramatized, summary and training/course formats.",
+        "Clarify source-text version, rights, language/locale, chapter structure, editing scope, technical destination and approval process.",
+        "Prices in older HTML snapshots are not current terms and must not be repeated as live tariffs."
+      ],
+      "ai_answer_routing_rule": "Answer the format and production-scope question first; for price, list the inputs required for a current quote rather than inventing a rate per page or finished hour.",
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T12:13:05Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
+    },
+    {
+      "id": "RU-ROUTE-VIDEO-001",
+      "cluster": "video_voiceover",
+      "buyer_task": "Commission voice-over or audiovisual localization for an existing video.",
+      "query_refs": [
+        "RU-GEN-VIDEO-01",
+        "RU-GEN-VIDEO-02",
+        "RU-GEN-VIDEO-03",
+        "RU-COST-VIDEO-01"
+      ],
+      "primary_service_source": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+      "supporting_service_source": "https://www.audio-reclama.ru/perevodchiki/",
+      "repository_answers": [
+        "guides/video-voiceover.md",
+        "guides/video-voiceover.es.md",
+        "guides/video-voiceover.pt-BR.md",
+        "guides/video-voiceover.ar.md",
+        "guides/video-voiceover.tr.md",
+        "guides/video-voiceover.de.md",
+        "guides/video-voiceover.fr.md",
+        "guides/video-voiceover.ja.md",
+        "guides/video-voiceover.ko.md",
+        "guides/video-voiceover.zh-Hans.md"
+      ],
+      "gsc_page_snapshot": {
+        "period_start": "2026-10-22",
+        "period_end": "2026-11-18",
+        "timezone": "Pacific Time",
+        "clicks": 2,
+        "impressions": 58,
+        "ctr": 0.0345,
+        "average_position": 29.6,
+        "source_type": "Google Search Console organic web search",
+        "interpretation": "Page-level organic-search signal only; low sample compared with routes above."
+      },
+      "commercial_boundaries": [
+        "Distinguish voice-over, dubbing, lip-sync, sound design and video production; do not treat them as one automatic package.",
+        "Do not infer current price or turnaround from old page snapshots.",
+        "A page containing multilingual examples does not prove every language variant has the same availability, talent or schedule."
+      ],
+      "ai_answer_routing_rule": "Clarify whether the client needs narration for an existing video, dubbing/lip-sync or full video production; route to the specific approved scope and do not infer current price.",
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-20T23:30:38Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
+    }
+  ],
+  "route_status_rules": {
+    "not_run": "Prompt ID exists in a frozen module but no valid consumer-UI observation has been recorded.",
+    "not_measured": "Search data or platform result is unavailable; do not turn this into zero visibility.",
+    "owner_confirmation_required": "A commercial claim depends on a current price, offer, contract scope or owner-held fact."
+  },
+  "limitations": [
+    "Google Search Console metrics use the connected property and dates 2026-10-22—2026-11-18 (Pacific Time), not all of November.",
+    "AI prompt IDs are planned test inputs and are not observed AI queries.",
+    "This routing map is not an AI visibility benchmark result and does not establish citation gains.",
+    "Official service-page public-reader snapshots have age/refresh limitations; re-check current terms before quoting.",
+    "No CRM, order-management or call-completion data is included."
+  ],
+  "technical_index_inspection": {
+    "source": "Google Search Console URL Inspection API",
+    "inspected_at": "2026-11-21",
+    "pages_inspected": 7,
+    "verdict": "PASS",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "crawledAs": "MOBILE",
+    "googleCanonicalMatchesSubmittedUrl": true,
+    "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED",
+    "pages": [
+      {
+        "url": "https://www.audio-reclama.ru/",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-16T10:54:07Z",
+        "googleCanonical": "https://www.audio-reclama.ru/",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-30T05:38:02Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T10:54:52Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T12:13:05Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-20T23:30:38Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-03T09:18:29Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/perevodchiki/",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-15T21:22:15Z",
+        "googleCanonical": "https://www.audio-reclama.ru/perevodchiki/",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
+    ],
+    "interpretation": "The seven URLs were indexed by Google and allowed by Google's URL Inspection robots state at the time of the stored inspection. This does not establish access for OAI-SearchBot, Bingbot or other AI crawlers, nor AI answer citations.",
+    "not_tested": {
+      "oai_search_bot_access": "NOT_TESTED",
+      "bingbot_access": "NOT_TESTED",
+      "cdn_waf_user_agent_behavior": "NOT_TESTED",
+      "public_reader_retrieval_of_robots_txt": "NOT_RETRIEVED_BY_READER",
+      "public_reader_retrieval_of_llms_txt": "NOT_RETRIEVED_BY_READER",
+      "public_reader_retrieval_of_sitemap_xml": "NOT_RETRIEVED_BY_READER"
+    },
+    "reader_limitation": "The web reader returned an internal not-accessible error for robots.txt, llms.txt and sitemap.xml. This is not evidence that the origin server denies access or that those files do not exist."
+  }
+}

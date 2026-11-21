@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-17
+date: 2026-11-21
 lang: ru
 related:
   - AGENTS.md
@@ -43,6 +43,10 @@ related:
 - AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json — JSON Schema первичной записи полного ответа и источников; CSV остаётся компактным индексом.
 - ../tools/ai_visibility_evidence.py — офлайн-проверка полных observation records и согласованности ссылок CSV ↔ JSON по уникальному observation_id.
 
+- AI_DISCOVERY_AUDIO_PLUS_ROUTE_BOUNDARY_AUDIT_2026-11-21.md — read-only audit of legacy GEO answer artifacts that blur Audio+ short-order pricing with the studio's corporate radio-production route. Deployment/indexation of the old static URLs is UNVERIFIED; no HTML was modified.
+- AI_DISCOVERABILITY_GSC_INDEX_INSPECTION_2026-11-21.md — read-only Google URL Inspection of seven RU service/home URLs: 7/7 PASS, robots allowed, indexing allowed, successful fetch and matching www canonical. This is Google indexability only; OAI-SearchBot/Bingbot access and AI citations remain NOT_TESTED.
+- AI_DISCOVERABILITY_RU_BUYER_ANSWER_ROUTE_MAP_2026-11-21.json — machine-readable crosswalk from existing frozen RU generic/price benchmark IDs to the correct official service source, buyer guide, evidence and commercial boundary. Route map only; the prompts remain NOT_RUN and no AI answers are claimed.
+- AI_DISCOVERABILITY_COMMERCIAL_ROUTE_REFRESH_2026-11-21.md — read-only refresh of ten professional service routes in connected GSC for 2026-10-22—2026-11-18. Reprioritizes audiobook production from page/query evidence, keeps radio and IVR as follow-up routes, and explicitly separates Google organic signals from AI citation, leads and revenue.
 - AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md — первый исполнимый цикл AI-Discoverability: фактический RU GSC query→page срез, очередь Alice AI/GigaChat, SoV в Яндекс Вебмастере, обязательная региональная аттестация и запрет на подмену RU-измерений US/en трекером.
 - ALICE_AI_EXPORT_SOURCE_ANALYSIS_2026-11-20.md — read-only разбор 177 строк пользовательской выгрузки источников Алисы AI: доля присутствия по этому файлу, распределение собственных URL, смещение в справочные/дикторские запросы, примеры маршрутизации к статьям вместо коммерческих страниц и следующие проверки. Не является полным корпусом ответов или официальным SoV.
 - AI_COMMERCIAL_PROMPT_COVERAGE_MAP_2026-11-20.md — связь RU Google Search Console query→page данных по четырём коммерческим страницам с неизменёнными generic/brand-service AI benchmark-модулями; обосновывает отдельные ценовые prompts для IVR, видео и аудиокниг. GSC — поисковый сигнал, не AI-видимость.
