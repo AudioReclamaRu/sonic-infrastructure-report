@@ -28,8 +28,8 @@
       "status": "pass",
       "detail": "Repo-integrity step 17 passed.",
       "evidence": [
-        "repo-integrity run 1130 (44858171455): SUCCESS",
-        "head a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+        "repo-integrity run 1131 (44858238396): SUCCESS",
+        "head c35e1aa9e9d9545c599aeff30be98fc2ba33ac12"
       ]
     },
     {
@@ -37,8 +37,8 @@
       "status": "pass",
       "detail": "All 10 regression tests passed in repo-integrity step 18.",
       "evidence": [
-        "repo-integrity run 1130 (44858171455): SUCCESS",
-        "head a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+        "repo-integrity run 1131 (44858238396): SUCCESS",
+        "head c35e1aa9e9d9545c599aeff30be98fc2ba33ac12"
       ]
     },
     {
@@ -46,8 +46,8 @@
       "status": "pass",
       "detail": "Full repo-integrity workflow completed successfully.",
       "evidence": [
-        "repo-integrity run 1130 (44858171455): SUCCESS",
-        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858171455"
+        "repo-integrity run 1131 (44858238396): SUCCESS",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858238396"
       ]
     },
     {
@@ -55,8 +55,8 @@
       "status": "pass",
       "detail": "Every changed text artifact and response-text gate passed.",
       "evidence": [
-        "AI response and document naming gate run 768 (44858171393): SUCCESS",
-        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858171393"
+        "AI response and document naming gate run 769 (44858238464): SUCCESS",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/44858238464"
       ]
     },
     {
@@ -72,7 +72,7 @@
     "No indexing, search, AI-citation, referral or conversion impact claim.",
     "No decision to retain, rewrite, redirect or retire any legacy URL."
   ],
-  "audited_commit_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724",
+  "audited_commit_sha": "c35e1aa9e9d9545c599aeff30be98fc2ba33ac12",
   "pull_request": {
     "number": 78,
     "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78",
@@ -81,6 +81,6 @@
     "merged": false,
     "base": "ai-discoverability/service-route-evidence-audit-20261121",
     "head_branch": "ai-discoverability/legacy-geo-answer-provenance-20261121",
-    "head_sha": "a868a902cf4b2e1824e5a3b8c4799211f0fe3724"
+    "head_sha": "c35e1aa9e9d9545c599aeff30be98fc2ba33ac12"
   }
 }
