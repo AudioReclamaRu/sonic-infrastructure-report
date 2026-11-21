@@ -1,6 +1,6 @@
 {
   "schema": "megabrain/ai-discoverability-work-queue/1",
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "policy": "Candidates require current-state triage; this queue is not an instruction to collect data or a quota.",
   "items": [
     {
@@ -117,6 +117,47 @@
       "blocker": "No authorized machine-readable Bing Webmaster Tools session or export is available in the current workflow.",
       "unblock_condition": "An approved Megabrain connector or authenticated local browser session is available without new paid spend.",
       "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-004",
+      "title": "Restore crawlability of existing English case and buyer routes",
+      "work_type": "fix_entity_routing",
+      "priority": "P0",
+      "status": "blocked_by_owner_approval",
+      "market": "Global",
+      "language": "en",
+      "service": "cross_service_discovery",
+      "target_surface": "official_website_indexability",
+      "obstacle": "Google Search Console's latest stored crawl states still report /en/project/vnukovo.html as BLOCKED_ROBOTS_TXT, /en/ as indexed despite robots blocking, and /en/online-zakaz.html as unknown to Google. A 19 November 2026 live snapshot also found that the sitemap exposed only /en/ from the English section and recorded restrictive /en/* robots rules; this snapshot requires fresh live verification before any change.",
+      "evidence_refs": [
+        "research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md",
+        "research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md"
+      ],
+      "decision_to_unlock": "Which specific robots, sitemap, canonical, hreflang or response-layer change is required to make the existing public English case and buyer routes fetchable and eligible for indexing?",
+      "hypothesis": "If the existing English case and order pages are publicly intended, return valid responses, and are made consistently crawlable with matching canonical and sitemap signals, Google can re-fetch those proof routes. This does not guarantee indexing, ranking or AI citations.",
+      "success_criteria": [
+        "Capture current robots.txt and sitemap.xml with retrieval time, HTTP status and all applicable User-agent groups before proposing a change.",
+        "Run a five-URL live check for /en/, /en/project/vnukovo.html, /en/project/abbyy.html, /en/project/braun.html and /en/online-zakaz.html; record HTTP/redirect, robots, meta and X-Robots-Tag, canonical and page readiness.",
+        "After explicit owner approval, apply only the minimum robots/sitemap/template changes needed for public, approved, indexable EN pages; do not expose private or unfinished routes.",
+        "Verify self-canonical and reciprocal hreflang only for real language equivalents; align Organization identity and Open Graph URL/name without inventing offices or unverified sameAs profiles.",
+        "Re-run Google URL Inspection Live Test and record the result; count indexing only after Google reports a subsequent successful crawl/index state, not when a sitemap is merely submitted."
+      ],
+      "autonomy_class": "requires_owner_approval",
+      "requires_new_measurement": true,
+      "measurement_guard": {
+        "decision_to_unlock": "Determine whether the English evidence routes are currently blocked and identify the smallest justified technical correction.",
+        "minimum_sufficient_sample": "One fresh robots.txt and sitemap.xml snapshot plus the five named EN URLs in a Google URL Inspection Live Test, with HTTP, redirect, robots, metadata and canonical evidence.",
+        "stop_rule": "Do not write to the website before explicit owner approval. Stop or re-scope if fresh checks no longer reproduce the stored blocked/unknown states, if any page is not approved for public indexing, or if the relevant response layer cannot be verified. Do not repeat the run without a material change.",
+        "cost_or_access_class": "existing authorized site access and free Google Search Console only; no paid credits, subscriptions or third-party scans"
+      },
+      "expected_effort": "medium",
+      "risk": "medium",
+      "blocker": "Official-site changes require explicit owner approval. The current workflow could not retrieve live robots.txt or sitemap.xml; the 19 November snapshot and GSC last-crawl records must be refreshed before implementation.",
+      "unblock_condition": "The owner explicitly approves this scoped website change, and an authorized live read/deployment path is available for the exact pages and files in scope.",
+      "validation_refs": [
+        "research/AI_DISCOVERABILITY_TECHNICAL_SEMANTIC_AUDIT_2026-11-19.md",
+        "research/AI_DISCOVERABILITY_MEASUREMENT_EXECUTION_BRIEF_2026-11-20.md"
+      ]
     }
   ]
 }
