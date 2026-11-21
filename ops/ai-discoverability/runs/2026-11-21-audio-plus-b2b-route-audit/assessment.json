@@ -3,7 +3,7 @@
   "run_id": "2026-11-21-audio-plus-b2b-route-audit",
   "date": "2026-11-21",
   "work_item": "AI-DISC-2026-007",
-  "status": "repository_audit_completed_owner_approval_required",
+  "status": "repository_audit_completed_ci_passed_owner_approval_required",
   "decision_to_unlock": "Determine where Audio+ may be presented as an individual short-order product and where professional buyers must follow the dedicated studio service route, while correcting the source data and markup only after approval.",
   "finding": "The repository's business-facing GEO hub, price page, shared FAQ and multiple short-price answer pages mix Audio+ tariffs with professional-service answers. The generator folds all status=ok price entries into the OfferCatalog of a company Service, while pricing/FAQ source data has no buyer-audience field. The available offer snapshot excludes legal entities and individual entrepreneurs, but that offer snapshot is about five months old. GEO public serving remains NOT_TESTED.",
   "evidence": [
@@ -31,5 +31,6 @@
     "Several answer HTML files are not listed in the current EXTRA_ANSWERS generator array; their provenance must be established before regeneration or removal.",
     "No measured AI discovery or conversion impact is claimed."
   ],
-  "next_decision": "Obtain explicit approval for a scoped repository GEO source change and refresh the current Audio+ offer; keep deployment separately gated."
+  "next_decision": "Obtain explicit approval for a scoped repository GEO source change and refresh the current Audio+ offer; keep deployment separately gated.",
+  "final_commit_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a"
 }
