@@ -406,6 +406,56 @@
         "AI response and document naming gate run 44858238464 (run 769): SUCCESS at c35e1aa9e9d9545c599aeff30be98fc2ba33ac12",
         "draft PR #78: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78"
       ]
+    },
+    {
+      "id": "AI-DISC-2026-010",
+      "title": "Prepare conservative disposition and buyer routing for seven legacy GEO answers",
+      "work_type": "verify_source",
+      "priority": "P1",
+      "status": "validated",
+      "market": "RU",
+      "language": "ru",
+      "service": "audio_plus_and_professional_buyer_routing",
+      "target_surface": "legacy_geo_answer_pages",
+      "obstacle": "Seven static GEO answer pages sit outside the current builder. Their historical copy maps distinct and ambiguous user intents to Audio+ short-order pricing, while the official offer and product page have different evidence freshness and scope wording.",
+      "evidence_refs": [
+        "ops/ai-discoverability/LEGACY_ANSWER_PROVENANCE.json",
+        "ops/ai-discoverability/LEGACY_ANSWER_DISPOSITION.json",
+        "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_DISPOSITION_2026-11-21.md",
+        "https://audio.plus/",
+        "https://audio.plus/offer.html",
+        "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+        "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+      ],
+      "decision_to_unlock": "Which of the seven existing URLs should be rewritten to a short-order product path, a professional service route or a task chooser, and what evidence is required before any URL consolidation or redirect?",
+      "hypothesis": "A conservative page-by-page disposition that preserves current URLs, separates buyer eligibility and task scope, and waits for page-level performance data before consolidation can reduce false price-to-service associations without losing existing route history.",
+      "success_criteria": [
+        "Cover all seven unmanaged legacy answer pages exactly once and retain each existing URL pending evidence.",
+        "Assign only verified professional route IDs and keep Audio+ as a separate conditional short-order product path.",
+        "Record current search-index and opened-page freshness differences for the Audio+ homepage and offer.",
+        "Separate post-payment text changes, defect correction within the offer's complaint window, and paid modifications/add-sounds; do not resolve the fee interpretation without owner evidence.",
+        "Keep Audio+ video-voiceover contract scope unconfirmed until the offer definitions and order-form option are reconciled.",
+        "Do not recommend redirects or deletion until page-level Search Console, referral and external-citation evidence has been inspected.",
+        "Add an offline validator and regression tests; pass repo-integrity and naming gates."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": [
+        "ops/ai-discoverability/LEGACY_ANSWER_DISPOSITION.json",
+        "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_DISPOSITION_2026-11-21.md",
+        "tools/legacy_geo_answer_disposition.py",
+        "tools/tests/test_legacy_geo_answer_disposition.py",
+        "repo-integrity workflow (awaiting pull-request CI)",
+        "AI response and document naming gate (awaiting pull-request CI)"
+      ]
     }
   ]
 }
