@@ -47,6 +47,18 @@
       "scope_note": "Professional production brief; do not transfer short-order product pricing or terms to this route."
     },
     {
+      "id": "jingle_production",
+      "task": "Commission a creative jingle, musical signature or short radio programme identifier",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+      "source_guides": [
+        "guides/audio-advertising-production.md"
+      ],
+      "link_role": "primary_service_for_jingle_tasks",
+      "scope_note": "The indexed page describes jingle creation and includes a jingle order form. Current scope, deliverables, rights and commercial terms must be confirmed in the project brief."
+    },
+    {
       "id": "video_voiceover_production",
       "task": "Commission voice-over, dubbing-related audio or multilingual video localization",
       "route_kind": "professional_service",
@@ -107,6 +119,18 @@
       ],
       "link_role": "primary_service",
       "scope_note": "The brief determines text volume, format, number of performers, editing, deliverables and rights; no universal price is asserted."
+    },
+    {
+      "id": "corporate_song_anthem_production",
+      "task": "Commission an original corporate song or anthem",
+      "route_kind": "professional_service",
+      "audience_class": "professional_project",
+      "destination_url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+      "source_guides": [
+        "guides/README.md"
+      ],
+      "link_role": "standalone_service_destination_in_guide_index",
+      "scope_note": "The indexed page presents corporate songs and anthems, portfolio examples and an order form. No standalone repository buyer guide exists yet; workflow, deliverables, rights and current commercial terms are not inferred."
     },
     {
       "id": "airport_announcements_vnukovo_case",

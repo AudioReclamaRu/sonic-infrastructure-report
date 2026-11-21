@@ -25,6 +25,14 @@
     {
       "decision": "Keep presentation voice-over as a separate professional route from video voice-over.",
       "basis": "The official navigation snapshot lists presentation voice-over separately; an existing buyer guide now links to its distinct destination. Current page HTML/form details remain not tested."
+    },
+    {
+      "decision": "Register jingle creation as a distinct professional service route.",
+      "basis": "The existing audio-advertising guide already links to the official jingles service, which has a separate jingle request form in the indexed page snapshot."
+    },
+    {
+      "decision": "Register corporate songs and anthems as a separate professional service destination, but do not invent a standalone buyer guide.",
+      "basis": "The official page presents corporate songs/anthems and a request form; the existing guides index is an appropriate route pointer until a buyer guide is justified."
     }
   ]
 }

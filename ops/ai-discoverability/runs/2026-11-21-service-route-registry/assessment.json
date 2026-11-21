@@ -5,7 +5,7 @@
   "work_item": "AI-DISC-2026-006",
   "status": "repository_registry_and_offline_validator_completed",
   "decision_to_unlock": "Provide one maintainable internal reference for task-to-service destinations and prevent professional-project routes from silently inheriting the short-order Audio+ product path.",
-  "finding": "Nine existing destinations are mapped across the buyer-guide set: voice discovery, general intake, six professional service routes (radio, video, presentation, IVR, localization and audiobooks) and one supporting case reference. The Audio+ short-order product remains explicitly excluded from professional-project defaults; the saved offer boundary is historical and requires a fresh primary-source check.",
+  "finding": "Eleven destinations are now mapped across six buyer guides and the guide index: voice discovery, general intake, eight professional service routes (radio, jingles, corporate songs/anthems, video, presentation, IVR, localization and audiobooks), and one supporting airport case reference. Audio+ short-order remains explicitly excluded from professional project defaults.",
   "evidence": [
     "guides/choosing-a-voice.md",
     "guides/audio-advertising-production.md",
@@ -13,14 +13,16 @@
     "guides/multilingual-ivr-voice-production.md",
     "guides/audiobook-production.ru.md",
     "guides/airport-announcements.md",
-    "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md"
+    "research/AI_DISCOVERABILITY_VOICE_TO_SERVICE_ROUTE_AUDIT_2026-11-21.md",
+    "guides/README.md"
   ],
   "limitations": [
     "All route matches are checked in repository Markdown source only.",
     "No HTTP requests, redirects, live HTML, page availability, indexing or form submissions are checked.",
     "The saved Audio+ offer evidence is dated 2026-11-20 and is not freshly reverified against the current primary offer.",
     "No GEO/Pages asset is modified and no deployment is authorized.",
-    "The presentation-service destination was found in the official navigation/search snapshot, but direct retrieval returned a cache miss; current page HTML and form details remain NOT_TESTED."
+    "The presentation-service destination was found in the official navigation/search snapshot, but direct retrieval returned a cache miss; current page HTML and form details remain NOT_TESTED.",
+    "Corporate songs/anthems are linked from the guide index because no standalone buyer guide exists in the repository. Jingle and corporate-song page scope and current commercial terms were not freshly verified from page HTML."
   ],
   "next_decision": "Use the registry for any approved future changes to GEO answer routing, but first recheck the current offer and confirm the intended public serving state."
 }

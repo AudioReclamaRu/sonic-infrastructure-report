@@ -160,3 +160,12 @@ related:
 - Updated the existing draft `guides/video-voiceover.md` to link the dedicated presentation destination for briefs whose primary deliverable is a narrated presentation rather than a video voice track. No new guide was created and the existing guide remains an unpublished draft.
 - Extended `SERVICE_ROUTE_REGISTRY.json` to **nine destinations**, including **six professional-service routes**: radio, video, presentation, IVR, multilingual localization and audiobooks. The validator checks the presentation destination against the existing guide's exact link.
 - Repository-only change. No live URL, service scope, quote, delivery SLA, form behavior, public GEO page or deployment was verified or changed.
+
+
+## Addendum — jingles and corporate songs as distinct service routes (2026-11-21)
+
+- The indexed official jingle-service page describes radio jingles, musical motifs, programme jingles and advertising vocal hooks, and presents an explicit order form. The existing audio-advertising buyer guide already links to it: https://www.audio-reclama.ru/audio/zvuk-media.html. The search-index snapshot was crawled last month.
+- The indexed official corporate songs/anthems page is a separate service destination with portfolio examples and an order form: https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html. The repository guide index now links to it transparently as a service destination without pretending a standalone buyer guide exists. The search-index snapshot was crawled last week.
+- Extended the internal registry to **eleven destinations**, including **eight professional-service routes**: radio advertising, jingles, corporate songs/anthems, video voice-over, presentation voice-over, IVR, multilingual localization and audiobooks. The remaining routes cover voice discovery, general order intake and a supporting airport case reference.
+- These are route-level links only. No current prices, contractual terms, turnaround promises, rights scope or form behavior are inferred from search snippets. Service scope and current commercial terms still require direct review before any buyer-facing copy changes.
+- Repository-only change. No public GEO asset, official website page or external profile was edited or deployed.
