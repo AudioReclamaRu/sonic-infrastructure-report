@@ -77,7 +77,7 @@ def validate(data:Any,provenance:Any,routes:Any)->list[str]:
   if sf.get("offer",{}).get("visible_publication_date")!="2016-06-17": errors.append("offer publication date must remain visible")
   corr=sf.get("correction_terms")
   if not isinstance(corr,dict) or corr.get("status")!="interpretation_not_resolved":
-   errors.append("790 ₽ correction/rework interpretation must remain unresolved")
+   errors.append("source_freshness.correction_terms.status must remain interpretation_not_resolved")
   elif len(corr.get("dimensions",[]))<3: errors.append("correction terms must separate three distinct operations")
   scope=sf.get("scope_difference")
   if not isinstance(scope,dict) or scope.get("status")!="not_fully_reconciled": errors.append("Audio+ video scope difference must remain unresolved")
