@@ -1,0 +1,179 @@
+{
+  "schema": "studio/legacy-geo-answer-provenance/1",
+  "observed_on": "2026-11-21",
+  "status": "repository_only_static_output_provenance_audit",
+  "policy": {
+    "official_site_is_read_only": true,
+    "geo_static_output_is_read_only": true,
+    "external_publication_authorized": false,
+    "github_pages_deployment_authorized": false,
+    "live_public_serving_status": "not_tested",
+    "commercial_claims_currently_confirmed": false
+  },
+  "source_model": {
+    "generator_path": "tools/build_geo_site.py",
+    "hardcoded_answer_slugs": [
+      "skolko-stoit-ozvuchka",
+      "ivr-privetstvie-cena"
+    ],
+    "data_driven_answer_slugs": [
+      "skolko-stoit-minuta-ozvuchki",
+      "ozvuchka-pozdravleniya-cena",
+      "ozvuchka-dlya-socsetey-cena",
+      "ozvuchka-audioknigi-cena",
+      "ozvuchka-obuchayushchego-kursa-cena",
+      "golos-dlya-navigatsii-cena"
+    ],
+    "legacy_answer_slugs": [
+      "golosovoe-obyavlenie-cena",
+      "ozvuchka-dlya-prezentacii-cena",
+      "ozvuchka-dlya-video-cena",
+      "ozvuchka-reklamnogo-rolika-cena",
+      "ozvuchka-reklamy-na-radio-cena",
+      "ozvuchka-rolika-cena",
+      "ozvuchka-tekst-cena"
+    ],
+    "sitemap_discovery_rule": "_discover_urls recursively includes every index.html under the output directory.",
+    "sitemap_lastmod_rule": "_write_sitemap applies the single global UPDATED date to every URL rather than reading per-file content-change dates.",
+    "answers_index_management": "geo/answers/index.html is not emitted by build_pages in the inspected current builder.",
+    "llms_management": "_write_llms emits the two hardcoded answer routes and the six EXTRA_ANSWERS routes; it does not enumerate legacy static answer directories."
+  },
+  "current_snapshot": {
+    "answer_directories": 15,
+    "builder_managed_answer_pages": 8,
+    "legacy_static_unmanaged_pages": 7,
+    "answers_index_links": 7,
+    "geo_llms_answer_links": 8,
+    "sitemap_answer_pages": 15,
+    "sitemap_lastmod_for_legacy_pages": "2026-11-15",
+    "canonical_base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
+    "note": "These are repository-source observations only. A canonical URL embedded in a file does not establish that the page is live or deployed."
+  },
+  "legacy_pages": [
+    {
+      "slug": "golosovoe-obyavlenie-cena",
+      "path": "geo/answers/golosovoe-obyavlenie-cena/index.html",
+      "introduced_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "introduced_at": "2026-11-06T02:27:27Z",
+      "introduction_commit_message": "geo: add attributed blog-facts knowledge registry (23 facts) and cross-links for AEO/GEO",
+      "last_changed_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "last_changed_at": "2026-11-06T02:27:27Z",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": true,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golosovoe-obyavlenie-cena/",
+      "file_bytes": 4683
+    },
+    {
+      "slug": "ozvuchka-dlya-prezentacii-cena",
+      "path": "geo/answers/ozvuchka-dlya-prezentacii-cena/index.html",
+      "introduced_in_commit": "0b7ba3126fb6816760a9bcfb1ec4d66bf5800a0c",
+      "introduced_at": "2026-11-11T18:55:13Z",
+      "introduction_commit_message": "geo: rebuild surface from knowledge (IVR pricing softened per phase-3 scope rules); CI builds GEO fresh on deploy (fail-fast, no swallowed errors)",
+      "last_changed_in_commit": "0b7ba3126fb6816760a9bcfb1ec4d66bf5800a0c",
+      "last_changed_at": "2026-11-11T18:55:13Z",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": true,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-prezentacii-cena/",
+      "file_bytes": 4041
+    },
+    {
+      "slug": "ozvuchka-dlya-video-cena",
+      "path": "geo/answers/ozvuchka-dlya-video-cena/index.html",
+      "introduced_in_commit": "8975a0d8f8fa675008bc445a0b0437dc906adf3f",
+      "introduced_at": "2026-10-31T08:38:27Z",
+      "introduction_commit_message": "GEO: add 2 answer pages + llms.txt links",
+      "last_changed_in_commit": "f25cd699f7f106a1d6661abdb03df3b680ecfe23",
+      "last_changed_at": "2026-11-11T19:21:13Z",
+      "last_change_commit_message": "geo: +6 data-driven answer pages with per-page FAQPage schema (minute/greeting/social/audiobook/course/navigation); llms-full.txt generated in CI and deployed; llms Answers section now data-driven; canonicals fixed on 2 hand pages; voice counts framed as live DB with snapshot dates",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": false,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-video-cena/",
+      "file_bytes": 684
+    },
+    {
+      "slug": "ozvuchka-reklamnogo-rolika-cena",
+      "path": "geo/answers/ozvuchka-reklamnogo-rolika-cena/index.html",
+      "introduced_in_commit": "8975a0d8f8fa675008bc445a0b0437dc906adf3f",
+      "introduced_at": "2026-10-31T08:38:27Z",
+      "introduction_commit_message": "GEO: add 2 answer pages + llms.txt links",
+      "last_changed_in_commit": "f25cd699f7f106a1d6661abdb03df3b680ecfe23",
+      "last_changed_at": "2026-11-11T19:21:13Z",
+      "last_change_commit_message": "geo: +6 data-driven answer pages with per-page FAQPage schema (minute/greeting/social/audiobook/course/navigation); llms-full.txt generated in CI and deployed; llms Answers section now data-driven; canonicals fixed on 2 hand pages; voice counts framed as live DB with snapshot dates",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": false,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamnogo-rolika-cena/",
+      "file_bytes": 765
+    },
+    {
+      "slug": "ozvuchka-reklamy-na-radio-cena",
+      "path": "geo/answers/ozvuchka-reklamy-na-radio-cena/index.html",
+      "introduced_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "introduced_at": "2026-11-06T02:27:27Z",
+      "introduction_commit_message": "geo: add attributed blog-facts knowledge registry (23 facts) and cross-links for AEO/GEO",
+      "last_changed_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "last_changed_at": "2026-11-06T02:27:27Z",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": true,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamy-na-radio-cena/",
+      "file_bytes": 4518
+    },
+    {
+      "slug": "ozvuchka-rolika-cena",
+      "path": "geo/answers/ozvuchka-rolika-cena/index.html",
+      "introduced_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "introduced_at": "2026-11-06T02:27:27Z",
+      "introduction_commit_message": "geo: add attributed blog-facts knowledge registry (23 facts) and cross-links for AEO/GEO",
+      "last_changed_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "last_changed_at": "2026-11-06T02:27:27Z",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": true,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-rolika-cena/",
+      "file_bytes": 4830
+    },
+    {
+      "slug": "ozvuchka-tekst-cena",
+      "path": "geo/answers/ozvuchka-tekst-cena/index.html",
+      "introduced_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "introduced_at": "2026-11-06T02:27:27Z",
+      "introduction_commit_message": "geo: add attributed blog-facts knowledge registry (23 facts) and cross-links for AEO/GEO",
+      "last_changed_in_commit": "510e87785c9849cbddb40795b7b2e52e6f36782a",
+      "last_changed_at": "2026-11-06T02:27:27Z",
+      "current_generator_class": "legacy_static_html_not_managed_by_current_builder",
+      "linked_from_answers_index": true,
+      "listed_in_geo_llms": false,
+      "present_in_current_sitemap": true,
+      "sitemap_lastmod": "2026-11-15",
+      "canonical_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-tekst-cena/",
+      "file_bytes": 4455
+    }
+  ],
+  "risks": [
+    "Seven committed answer HTML files are not emitted by the current build_geo_site.py generator; a successful build therefore does not reconcile their contents with current source data.",
+    "Five of the seven legacy pages are linked from geo/answers/index.html; two are absent from that index. All seven are included in the current source sitemap, while none are listed in the current geo/llms.txt answer section.",
+    "The sitemap assigns the global UPDATED date 2026-11-15 to all discovered URLs, including legacy files whose latest recorded Git changes are 2026-10-31 or 2026-11-06. This is a build-date stamp, not a per-file content-change record.",
+    "The legacy HTML files embed canonical URLs under the historical GitHub Pages namespace; that does not prove live public serving or current authorization to deploy.",
+    "Legacy page text contains short-order product pricing in broad task-answer routes. The values and current eligibility are not revalidated here; this audit does not treat them as current commercial terms."
+  ],
+  "required_owner_decisions": [
+    "Decide whether each legacy URL should be retained, retired, redirected, or rewritten only after a source-of-truth and current offer review.",
+    "Approve any changes to GEO static outputs or a GitHub Pages deployment separately; neither is authorized by this provenance audit."
+  ]
+}
