@@ -1,0 +1,43 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-service-route-evidence-audit",
+  "status": "awaiting_pull_request_ci",
+  "checks": [
+    {
+      "name": "Service route coverage",
+      "status": "pending_ci",
+      "detail": "The matrix is intended to cover each professional_service route exactly once and match its canonical destination."
+    },
+    {
+      "name": "Snapshot freshness preservation",
+      "status": "pending_ci",
+      "detail": "Reported crawl ages and retrieval modes are retained; cache misses remain separate from HTTP status."
+    },
+    {
+      "name": "Currentness and rights guardrails",
+      "status": "pending_ci",
+      "detail": "The validator rejects promotion of stale observations to current scope, contract terms, rights or live HTTP/form states."
+    },
+    {
+      "name": "Regression tests",
+      "status": "pending_ci",
+      "detail": "Nine negative/positive checks will run under repo-integrity CI."
+    },
+    {
+      "name": "Naming gate",
+      "status": "pending_ci",
+      "detail": "The repository naming checks will run under the required workflow."
+    },
+    {
+      "name": "External changes",
+      "status": "not_performed",
+      "detail": "No official-site edit, form submission, profile change, public publication or Pages deployment."
+    }
+  ],
+  "no_claims": [
+    "No claim that all route pages are currently served or accessible.",
+    "No claim of current pricing, commercial terms, rights or production capacity.",
+    "No claim that cache misses are 404s or outages.",
+    "No claim of AI discovery, ranking, referral or conversion improvement."
+  ]
+}
