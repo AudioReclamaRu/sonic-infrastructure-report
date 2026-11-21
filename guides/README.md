@@ -34,19 +34,15 @@ The four core buyer tasks have English master guides and localized drafts. All l
 
 **Regional limits:** de-DE, fr-FR, tr-TR, ja-JP and ko-KR are first-draft locale baselines, not universal text for every country or language community. The Chinese set is a Simplified Chinese / zh-CN-oriented draft; it does not replace Traditional Chinese, Cantonese or other regional variants. Native-language review and market adaptation remain required.
 
-## Evidence-led candidate route — radio advertising production (21 November 2026)
+## Russia-first commercial buyer routes — 21 November 2026
 
-| Radio and audio advertising production | [English](audio-advertising-production.md) · [Русский](audio-advertising-production.ru.md) | Google Search Console, 22 Oct–18 Nov 2026: 4 clicks / 277 impressions on the official service page; one WOW Awards 2018 radio-advertising Gold record | English and Russian repository drafts; not published; Audio+ boundary explicitly separated |
+| Buyer task | English master | Russian buyer answer | GSC evidence, 22 Oct–18 Nov 2026 | Status |
+|---|---|---|---|---|
+| Audiobook production | [English](audiobook-production.md) | [Русский](audiobook-production.ru.md) | 31 clicks / 290 impressions / 10.69% CTR on the official service page | EN/RU repository drafts; not published |
+| Radio and audio advertising production | [English](audio-advertising-production.md) | [Русский](audio-advertising-production.ru.md) | 4 clicks / 277 impressions / 1.44% CTR; separate WOW Awards 2018 Gold project evidence | EN/RU repository drafts; Audio+ boundary explicit; not published |
+| IVR voice production | [English](multilingual-ivr-voice-production.md) | [Русский](multilingual-ivr-voice-production.ru.md) | 4 clicks / 459 impressions / 0.87% CTR on the official service page | EN/RU repository drafts; diagnostic IVR content remains a separate intent; not published |
 
-This route distinguishes the project-based studio service from the separate Audio+ self-service product. The old GEO static price artifact remains unchanged; its public deployment/indexation is unverified. The route is a repository knowledge asset, not a published landing page.
-
-## Evidence-led candidate route — audiobook production (21 November 2026)
-
-| Buyer task | English master | Measurement context | Status |
-|---|---|---|---|
-| Audiobook production: narration, casting and finished audio | [English](audiobook-production.md) · [Русский](audiobook-production.ru.md) | Google Search Console, 22 Oct–18 Nov 2026: 31 clicks / 290 impressions / 10.69% CTR on the official audiobook service page | English and Russian repository drafts; not published |
-
-This route is separate from the frozen four-route × ten-language commercial query map. The existing RU discovery questions RU-GEN-AUDIOBOOK-01/02 and the additive price question RU-COST-AUDIOBOOK-01 already cover the topic; all remain NOT_RUN. GSC is an organic-search signal, not AI visibility or proof of demand in AI assistants. Prices and delivery terms in older page snapshots are not treated as current.
+These GSC figures are organic Google Search observations, not AI visibility, citations, leads or revenue. The routes do not change the frozen generic/brand benchmark prompts, which remain NOT_RUN. The legacy GEO static price artifacts have not been edited; their public deployment/indexation is unverified.
 
 ## Related enterprise guides
 
