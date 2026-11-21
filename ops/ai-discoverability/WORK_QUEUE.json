@@ -428,7 +428,11 @@
         "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
         "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
         "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
-        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html"
+        "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "ops/ai-discoverability/RECENT_SERVICE_ROUTE_SEARCHCONSOLE_OBSERVATION.json",
+        "research/AI_DISCOVERABILITY_SERVICE_ROUTE_GSC_SNAPSHOT_2026-11-21.md",
+        "tools/validate_service_route_searchconsole.py",
+        "tools/tests/test_service_route_searchconsole.py"
       ],
       "decision_to_unlock": "Which of the seven existing URLs should be rewritten to a short-order product path, a professional service route or a task chooser, and what evidence is required before any URL consolidation or redirect?",
       "hypothesis": "A conservative page-by-page disposition that preserves current URLs, separates buyer eligibility and task scope, and waits for page-level performance data before consolidation can reduce false price-to-service associations without losing existing route history.",
@@ -439,7 +443,8 @@
         "Separate post-payment text changes, defect correction within the offer's complaint window, and paid modifications/add-sounds; do not resolve the fee interpretation without owner evidence.",
         "Keep Audio+ video-voiceover contract scope unconfirmed until the offer definitions and order-form option are reconciled.",
         "Do not recommend redirects or deletion until page-level Search Console, referral and external-citation evidence has been inspected.",
-        "Add an offline validator and regression tests; pass repo-integrity and naming gates."
+        "Add an offline validator and regression tests; pass repo-integrity and naming gates.",
+        "Use official service-route Search Console observations only as contextual evidence; do not attribute those metrics to the legacy GitHub Pages answer URLs."
       ],
       "autonomy_class": "repository_only",
       "requires_new_measurement": false,
@@ -455,7 +460,11 @@
         "tools/tests/test_legacy_geo_answer_disposition.py",
         "repo-integrity workflow run 44858872844 (run 1136): SUCCESS at 2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4",
         "AI response and document naming gate run 44858872728 (run 774): SUCCESS at 2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4",
-        "draft PR #79: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79"
+        "draft PR #79: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79",
+        "ops/ai-discoverability/RECENT_SERVICE_ROUTE_SEARCHCONSOLE_OBSERVATION.json",
+        "research/AI_DISCOVERABILITY_SERVICE_ROUTE_GSC_SNAPSHOT_2026-11-21.md",
+        "tools/validate_service_route_searchconsole.py",
+        "tools/tests/test_service_route_searchconsole.py"
       ]
     }
   ]
