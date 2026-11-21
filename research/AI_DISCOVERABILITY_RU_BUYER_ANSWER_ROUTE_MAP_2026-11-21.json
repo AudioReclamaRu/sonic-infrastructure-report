@@ -117,7 +117,19 @@
         "Do not promise a universal one-day turnaround; confirm the schedule for the actual brief."
       ],
       "ai_answer_routing_rule": "For a company, agency or non-standard campaign, use the main corporate radio-production service and the project brief. Route a short self-service order to Audio+ only after checking current buyer eligibility and offer terms.",
-      "benchmark_status": "not_run"
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-30T05:38:02Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
     },
     {
       "id": "RU-ROUTE-IVR-001",
@@ -187,7 +199,19 @@
         "Use the receiving PBX's actual codec, sample-rate, channel, level, naming and duration requirements; there is no universal file specification."
       ],
       "ai_answer_routing_rule": "For corporate IVR production, route to the main IVR service and explain the recording-versus-telephony boundary. Audio+ is not the universal route for legal entities, custom menus or system integration.",
-      "benchmark_status": "not_run"
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T10:54:52Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
     },
     {
       "id": "RU-ROUTE-AUDIOBOOK-001",
@@ -247,7 +271,19 @@
         "Prices in older HTML snapshots are not current terms and must not be repeated as live tariffs."
       ],
       "ai_answer_routing_rule": "Answer the format and production-scope question first; for price, list the inputs required for a current quote rather than inventing a rate per page or finished hour.",
-      "benchmark_status": "not_run"
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T12:13:05Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
     },
     {
       "id": "RU-ROUTE-VIDEO-001",
@@ -290,7 +326,19 @@
         "A page containing multilingual examples does not prove every language variant has the same availability, talent or schedule."
       ],
       "ai_answer_routing_rule": "Clarify whether the client needs narration for an existing video, dubbing/lip-sync or full video production; route to the specific approved scope and do not infer current price.",
-      "benchmark_status": "not_run"
+      "benchmark_status": "not_run",
+      "index_inspection": {
+        "source": "Google Search Console URL Inspection API",
+        "inspected_at": "2026-11-21",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-20T23:30:38Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
     }
   ],
   "route_status_rules": {
@@ -304,5 +352,106 @@
     "This routing map is not an AI visibility benchmark result and does not establish citation gains.",
     "Official service-page public-reader snapshots have age/refresh limitations; re-check current terms before quoting.",
     "No CRM, order-management or call-completion data is included."
-  ]
+  ],
+  "technical_index_inspection": {
+    "source": "Google Search Console URL Inspection API",
+    "inspected_at": "2026-11-21",
+    "pages_inspected": 7,
+    "verdict": "PASS",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "crawledAs": "MOBILE",
+    "googleCanonicalMatchesSubmittedUrl": true,
+    "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED",
+    "pages": [
+      {
+        "url": "https://www.audio-reclama.ru/",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-16T10:54:07Z",
+        "googleCanonical": "https://www.audio-reclama.ru/",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-30T05:38:02Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T10:54:52Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-10T12:13:05Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-10-20T23:30:38Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-03T09:18:29Z",
+        "googleCanonical": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      },
+      {
+        "url": "https://www.audio-reclama.ru/perevodchiki/",
+        "verdict": "PASS",
+        "robotsTxtState": "ALLOWED",
+        "indexingState": "INDEXING_ALLOWED",
+        "pageFetchState": "SUCCESSFUL",
+        "lastCrawlTime": "2026-11-15T21:22:15Z",
+        "googleCanonical": "https://www.audio-reclama.ru/perevodchiki/",
+        "crawledAs": "MOBILE",
+        "mobileUsabilityVerdict": "VERDICT_UNSPECIFIED"
+      }
+    ],
+    "interpretation": "The seven URLs were indexed by Google and allowed by Google's URL Inspection robots state at the time of the stored inspection. This does not establish access for OAI-SearchBot, Bingbot or other AI crawlers, nor AI answer citations.",
+    "not_tested": {
+      "oai_search_bot_access": "NOT_TESTED",
+      "bingbot_access": "NOT_TESTED",
+      "cdn_waf_user_agent_behavior": "NOT_TESTED",
+      "public_reader_retrieval_of_robots_txt": "NOT_RETRIEVED_BY_READER",
+      "public_reader_retrieval_of_llms_txt": "NOT_RETRIEVED_BY_READER",
+      "public_reader_retrieval_of_sitemap_xml": "NOT_RETRIEVED_BY_READER"
+    },
+    "reader_limitation": "The web reader returned an internal not-accessible error for robots.txt, llms.txt and sitemap.xml. This is not evidence that the origin server denies access or that those files do not exist."
+  }
 }
