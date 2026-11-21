@@ -274,7 +274,6 @@
   },
   "cross_source_check": {
     "connector": "Google Analytics 4",
-    "property": "audio-reclama.ru",
     "date_from": "2026-10-22",
     "date_to": "2026-11-17",
     "requested_fields": [
@@ -289,7 +288,9 @@
     "target_paths_count": 10,
     "status": "done_empty_response",
     "rows": 0,
-    "interpretation": "No rows were returned for this extraction. This is not evidence of zero traffic and is not used as a denominator or a performance score."
+    "interpretation": "No rows were returned for this extraction. This is not evidence of zero traffic and is not used as a denominator or a performance score.",
+    "property_account_id": "564827393",
+    "property_label": "connected GA4 property; legacy display label intentionally omitted"
   },
   "decision_use": [
     "Use the page aggregate only as a recent official-service route visibility signal.",
