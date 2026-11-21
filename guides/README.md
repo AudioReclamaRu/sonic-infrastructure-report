@@ -1,6 +1,6 @@
 ---
 type: index
-date: 2026-11-19
+date: 2026-11-21
 lang: en
 related:
   - research/AI_DISCOVERY_COMMERCIAL_QUERY_MAP_2026-11-19.json
@@ -33,6 +33,14 @@ The four core buyer tasks have English master guides and localized drafts. All l
 | Video voice-over | [TR](video-voiceover.tr.md) | [DE](video-voiceover.de.md) | [FR](video-voiceover.fr.md) | [JA](video-voiceover.ja.md) | [KO](video-voiceover.ko.md) | [中文](video-voiceover.zh-Hans.md) |
 
 **Regional limits:** de-DE, fr-FR, tr-TR, ja-JP and ko-KR are first-draft locale baselines, not universal text for every country or language community. The Chinese set is a Simplified Chinese / zh-CN-oriented draft; it does not replace Traditional Chinese, Cantonese or other regional variants. Native-language review and market adaptation remain required.
+
+## Evidence-led candidate route — audiobook production (21 November 2026)
+
+| Buyer task | English master | Measurement context | Status |
+|---|---|---|---|
+| Audiobook production: narration, casting and finished audio | [Audiobook production](audiobook-production.md) | Google Search Console, 22 Oct–18 Nov 2026: 31 clicks / 290 impressions / 10.69% CTR on the official audiobook service page | Repository draft; not localized or published |
+
+This route is separate from the frozen four-route × ten-language commercial query map. The existing RU discovery questions RU-GEN-AUDIOBOOK-01/02 and the additive price question RU-COST-AUDIOBOOK-01 already cover the topic; all remain NOT_RUN. GSC is an organic-search signal, not AI visibility or proof of demand in AI assistants. Prices and delivery terms in older page snapshots are not treated as current.
 
 ## Related enterprise guides
 
