@@ -13,7 +13,7 @@ related:
 # Проверка индексации коммерческих маршрутов через Google Search Console
 
 **Дата чтения:** 21.11.2026  
-**Источник:** URL Inspection API через подключённое Google Search Console property https://www.audio-reclama.ru/.  
+**Источник:** URL Inspection API через подключённое Google Search Console property https://www.audio-reclama.ru.  
 **Режим:** только чтение; URL Inspection показывает сохранённое состояние Google, не выполняет live crawl и не меняет сайт.
 
 ## 1. Результат
