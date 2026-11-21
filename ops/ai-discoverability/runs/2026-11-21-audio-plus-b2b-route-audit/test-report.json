@@ -15,13 +15,13 @@
     },
     {
       "name": "Offer freshness",
-      "status": "not_tested",
-      "detail": "The Audio+ offer was readable only as a snapshot crawled about five months earlier. Fresh contractual terms and buyer eligibility are not asserted."
+      "status": "stale_snapshot",
+      "detail": "The official offer page snapshot is about five months old and displays a publication date of 2016-06-17; it shows individual-only buyer scope, non-exclusive licence wording, prepayment and revision/rework restrictions, but does not verify current terms."
     },
     {
       "name": "Audio+ product page snapshot",
-      "status": "observed_recent_snapshot",
-      "detail": "Search index crawl was from the week before 2026-11-21; one-file, up-to-90-word short-order form and product packages were visible. This is not a live form or price acceptance test."
+      "status": "stale_snapshot",
+      "detail": "The opened official product page snapshot is about four months old; it displays one-file/one-thought, up to 90 words and a paid edit/correction/add-sounds option. Do not treat price or fee as current."
     },
     {
       "name": "Public GEO serving",
@@ -36,16 +36,26 @@
     {
       "name": "Repository CI",
       "status": "pass",
-      "detail": "Both required workflows succeeded on the audited content commit; a documentation-only run-record commit will trigger CI again.",
+      "detail": "Both required workflows succeeded on the final audited commit, including the new offer/service boundary registry and 7 regression tests.",
       "evidence": [
-        "repo-integrity run 44855719665 (run 1119): SUCCESS",
-        "AI response and document naming gate run 44855719306 (run 757): SUCCESS"
+        "repo-integrity run 44856706466 (run 1123): SUCCESS",
+        "AI response and document naming gate run 44856706473 (run 761): SUCCESS"
       ]
     },
     {
       "name": "Official website/GEO output/Pages deployment",
       "status": "not_performed",
       "detail": "No site write, output-file update, external publication, form submission, deployment or merge."
+    },
+    {
+      "name": "Offer/service boundary registry validation",
+      "status": "pass",
+      "detail": "Audio+ remains a short-order product; freshness and buyer eligibility remain explicitly unconfirmed; professional examples must match SERVICE_ROUTE_REGISTRY; product and professional rights statements cannot be collapsed; the edit/rework source conflict remains unresolved."
+    },
+    {
+      "name": "Offer/service boundary regression tests",
+      "status": "pass",
+      "detail": "7 regression tests passed: valid registry, Audio+ short-order product classification, stale buyer eligibility cannot be promoted to current, edit/rework conflict stays open, non-exclusive licence stays distinct, professional routes match the route registry, and professional rights are not inferred from Audio+."
     }
   ],
   "no_claims": [
@@ -53,9 +63,13 @@
     "No claim that live users have been misrouted or received incorrect prices.",
     "No claim that the latest Audio+ terms still exclude legal entities and individual entrepreneurs until the current offer is re-read.",
     "No claim that the listed 1990 RUB price, package rates, 90-word limit or 790 RUB edit fee are contractually current.",
-    "No claim of improved AI citations, search ranking, referral traffic, qualified enquiries or sales."
+    "No claim of improved AI citations, search ranking, referral traffic, qualified enquiries or sales.",
+    "No claim that the 2016-published Audio+ offer snapshot remains the current contract without a fresh primary-source check.",
+    "No claim that the product-page paid edit/correction option overrides the offer's restrictions on changing text after payment or reworking recorded audio.",
+    "No claim that professional radio projects always include transfer of every intellectual-property right in all territories/media/terms; the public page wording is not a project-specific contract.",
+    "No claim that the B2C licence scope and professional-service rights scope are interchangeable."
   ],
-  "audited_commit_sha": "d49eedb8bf2b6c6eaee7a07e6902a4fe6f61152a",
+  "audited_commit_sha": "e1d352d90be7e3d47c616e11ff873f6032ff23d6",
   "remediation_history": [
     {
       "commit_sha": "616c91203883b362d07f2b0c8eec8630a1038b75",
@@ -68,6 +82,18 @@
       "gate": "AI response and document naming gate",
       "status": "success",
       "resolution": "Reworded the identifier in the research report; the changed-artifact check and response-text gate both passed."
+    },
+    {
+      "commit_sha": "4384013e75e62817bae9165476cce34e08819d28",
+      "gate": "repo-integrity / AI offer-service boundary registry",
+      "status": "failure",
+      "reason": "The validator expected the exact Russian eligibility wording while the registry held an English paraphrase."
+    },
+    {
+      "commit_sha": "e1d352d90be7e3d47c616e11ff873f6032ff23d6",
+      "gate": "repo-integrity and AI response/document naming",
+      "status": "success",
+      "resolution": "Stored the exact Russian offer wording; boundary registry validation and all 7 boundary regression tests passed, as did both required workflows."
     }
   ]
 }
