@@ -1,0 +1,63 @@
+{
+  "schema": "megabrain/ai-discoverability-run-plan/1",
+  "run_id": "2026-11-21-legacy-geo-answer-provenance",
+  "scope": "repository_only_static_output_provenance_and_discovery_surface_audit",
+  "base_ref": "ai-discoverability/service-route-evidence-audit-20261121",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Read mandatory repository, brand, release, expert-knowledge, problem-first, distribution and open-source standards from main.",
+      "result": "completed"
+    },
+    {
+      "step": 2,
+      "action": "Compare all current answer directories with the literal hardcoded page routes and EXTRA_ANSWERS slugs in build_geo_site.py.",
+      "result": "completed"
+    },
+    {
+      "step": 3,
+      "action": "Use GitHub file history and commit file lists to identify first and last recorded commits for each unmanaged page.",
+      "result": "completed"
+    },
+    {
+      "step": 4,
+      "action": "Compare answer index links, geo/llms.txt entries, sitemap URLs, canonical targets and sitemap lastmod dates.",
+      "result": "completed"
+    },
+    {
+      "step": 5,
+      "action": "Create a machine-readable provenance register, report, offline validator and regression tests; do not modify GEO outputs.",
+      "result": "completed"
+    },
+    {
+      "step": 6,
+      "action": "Add the validator to repo-integrity CI and open a draft PR stacked on the current AI Discoverability branch.",
+      "result": "completed_draft_pr_opened_ci_passed"
+    }
+  ],
+  "outputs": [
+    "ops/ai-discoverability/LEGACY_ANSWER_PROVENANCE.json",
+    "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_PROVENANCE_2026-11-21.md",
+    "tools/legacy_geo_answer_provenance.py",
+    "tools/tests/test_legacy_geo_answer_provenance.py",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-geo-answer-provenance/assessment.json",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-geo-answer-provenance/plan.json",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-geo-answer-provenance/test-report.json",
+    "ops/ai-discoverability/runs/2026-11-21-legacy-geo-answer-provenance/decision-log.json",
+    ".github/workflows/repo-integrity.yml",
+    "research/README.md",
+    "ops/ai-discoverability/WORK_QUEUE.json"
+  ],
+  "final_pr": {
+    "number": 78,
+    "url": "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/78",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "head_sha": "c35e1aa9e9d9545c599aeff30be98fc2ba33ac12"
+  },
+  "final_ci": {
+    "repo_integrity_run": 44858238396,
+    "naming_gate_run": 44858238464
+  }
+}
