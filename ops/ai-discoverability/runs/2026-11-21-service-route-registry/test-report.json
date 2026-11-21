@@ -1,17 +1,17 @@
 {
   "schema": "megabrain/ai-discoverability-run-test-report/1",
   "run_id": "2026-11-21-service-route-registry",
-  "status": "local_checks_pass_ci_pending",
+  "status": "passed_on_audited_content_commit",
   "checks": [
     {
       "name": "Service-route registry validation",
       "status": "pass",
-      "detail": "9 route entries (including 6 professional service destinations) map to exact URLs in the listed buyer-guide files."
+      "detail": "9 route entries, including 6 professional services, map to exact URLs in the listed buyer-guide source files."
     },
     {
       "name": "Service-route registry regression tests",
       "status": "pass",
-      "detail": "8 regression tests: registry validity, duplicate IDs, canonical host, Audio+ exclusion, link presence, presentation/video route distinction, offer freshness and read-only/no-deploy guard."
+      "detail": "8 regression tests passed: registry validity, duplicate IDs, canonical host, Audio+ exclusion, source-guide link presence, presentation/video route distinction, offer freshness and read-only/no-deploy guard."
     },
     {
       "name": "Python syntax/import check",
@@ -20,8 +20,12 @@
     },
     {
       "name": "Repository CI",
-      "status": "pending",
-      "detail": "The presentation-route addition requires a fresh CI run on the updated PR head."
+      "status": "pass",
+      "detail": "Both required workflows succeeded on the audited content commit.",
+      "evidence": [
+        "repo-integrity run 44854163215: SUCCESS",
+        "AI response and document naming gate run 44854163177: SUCCESS"
+      ]
     },
     {
       "name": "Live destination checks",
@@ -40,5 +44,18 @@
     "No claim that the present Audio+ offer still matches the saved 2026-11-20 snapshot.",
     "No claim of leads, conversions, AI citations or ranking improvements.",
     "No claim that the indexed presentation service HTML was freshly retrieved; direct retrieval returned a cache miss."
-  ]
+  ],
+  "audited_content_commit_sha": "640faa788b86b12071fc50d002f25c261dd6ac26",
+  "workflow_summary": {
+    "audited_content_commit_sha": "640faa788b86b12071fc50d002f25c261dd6ac26",
+    "repo_integrity": {
+      "run_id": 44854163215,
+      "status": "success"
+    },
+    "ai_response_document_naming": {
+      "run_id": 44854163177,
+      "status": "success"
+    },
+    "note": "The only subsequent commit records this test result. GitHub Actions re-runs on the final PR head."
+  }
 }
