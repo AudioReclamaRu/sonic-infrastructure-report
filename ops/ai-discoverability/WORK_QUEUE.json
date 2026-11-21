@@ -453,8 +453,9 @@
         "research/AI_DISCOVERABILITY_LEGACY_GEO_ANSWER_DISPOSITION_2026-11-21.md",
         "tools/legacy_geo_answer_disposition.py",
         "tools/tests/test_legacy_geo_answer_disposition.py",
-        "repo-integrity workflow (awaiting pull-request CI)",
-        "AI response and document naming gate (awaiting pull-request CI)"
+        "repo-integrity workflow run 44858872844 (run 1136): SUCCESS at 2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4",
+        "AI response and document naming gate run 44858872728 (run 774): SUCCESS at 2af9ee00dabe3ba4a5dac68ca4a9ba1ae46fcba4",
+        "draft PR #79: https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/79"
       ]
     }
   ]
