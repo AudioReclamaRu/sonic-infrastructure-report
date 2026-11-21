@@ -1,0 +1,405 @@
+{
+  "schema": "studio/service-route-evidence-matrix/1",
+  "observed_on": "2026-11-21",
+  "status": "repository_only_official_source_snapshot_audit",
+  "purpose": "Preserve what the inspected official service-page snapshots support, their reported crawl age and the boundaries that must not be inferred.",
+  "policy": {
+    "official_site_is_read_only": true,
+    "external_publication_authorized": false,
+    "github_pages_deployment_authorized": false,
+    "route_links_live_checked": false,
+    "live_http_status_checked": false,
+    "current_service_scope_confirmed": false,
+    "current_commercial_terms_confirmed": false,
+    "current_rights_terms_confirmed": false
+  },
+  "method": {
+    "source_set": "The ten professional_service destinations in ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json.",
+    "retrieval": "Read-only page opening and indexed search excerpts on 2026-11-21.",
+    "crawl_age_rule": "Crawl ages are approximate ages reported by the retrieval layer. They are not source publication dates, direct HTTP status, a live availability check or proof that page contents changed at that time.",
+    "cache_miss_rule": "A cache miss records only that the page body was not returned by the read path. It is not a 404, outage or proof of unavailability.",
+    "claim_rule": "Observed page wording supports only that a claim appears in the inspected snapshot. It does not establish current contract scope, price, SLA, service capacity, rights or inclusion in every project.",
+    "exclusions": [
+      "No forms were submitted.",
+      "No live HTTP status, redirect chain, robots/indexing state or form workflow was tested.",
+      "No current legal terms, prices, project contracts or rights grants were authenticated."
+    ]
+  },
+  "coverage": {
+    "professional_service_routes_expected": 10,
+    "professional_service_routes_observed": 10,
+    "voice_discovery_general_intake_and_case_reference_excluded": true
+  },
+  "routes": [
+    {
+      "route_registry_id": "radio_advertising_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+      "page_title": "Запись аудиороликов",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 4 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot; the retrieval layer reports an approximate four-month crawl age."
+        }
+      ],
+      "freshness_class": "aged_snapshot_only",
+      "observed_scope": [
+        "The page lists advertising scripts, voice casting, sound design and licensed music.",
+        "The page also lists transfer of author's and exclusive rights among the service elements."
+      ],
+      "rights_observation": "The page-level rights-transfer wording is observed; the exact rights grant for a specific project, media, territory, term and sublicensing is not established.",
+      "scope_limits": [
+        "A page-level list is not a project-specific specification or signed agreement.",
+        "The rights bullet must not be rewritten as a universal guarantee for every project."
+      ],
+      "refresh_priority": "high",
+      "recommended_refresh": "Refresh the page and verify the current brief and contract template; clarify the exact rights variables before any buyer-facing rights promise.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "scriptwriting",
+      "destination_url": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+      "page_title": "Пишем рекламные сценарии",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 8 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot; the retrieval layer reports an approximate eight-month crawl age."
+        }
+      ],
+      "freshness_class": "old_snapshot_only",
+      "observed_scope": [
+        "The page describes scriptwriting for radio advertising, video and telephone answering/auto-attendant scenarios.",
+        "Examples of scripts and advertising materials are shown."
+      ],
+      "rights_observation": "Current script ownership, licence, revision and acceptance terms are not established by the inspected snapshot.",
+      "scope_limits": [
+        "The old page snapshot does not verify the current workflow, revisions, turnaround, price or rights.",
+        "Scriptwriting is a distinct task from recording or full production."
+      ],
+      "refresh_priority": "high",
+      "recommended_refresh": "Re-read the current page and brief; confirm whether scriptwriting is a standalone deliverable and document revision, approval and rights boundaries.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "jingle_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+      "page_title": "Креативные джинглы для рекламы на радио",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 4 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot with jingle categories and examples."
+        },
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+          "retrieval_mode": "search_index_result",
+          "retrieval_result": "indexed_excerpt",
+          "reported_crawl_age": "about 1 month",
+          "captured_on": "2026-11-21",
+          "note": "A separate search-index result repeated the jingle page title and visible portfolio examples; this is an index observation, not a fresh contract check."
+        }
+      ],
+      "freshness_class": "mixed_age_observations",
+      "observed_scope": [
+        "The page describes creative radio jingles, musical motifs, jingles for programmes and advertising vocal phrases.",
+        "A call-to-action to order is visible in the older page snapshot."
+      ],
+      "rights_observation": "Music composition, source-library licensing, performer rights and the resulting usage grant are not established by the inspected snapshots.",
+      "scope_limits": [
+        "Do not infer that every jingle includes an original composition or a specific licence.",
+        "Do not infer an exclusive or perpetual rights transfer from the word «creative» or from a portfolio."
+      ],
+      "refresh_priority": "high",
+      "recommended_refresh": "Verify original-music versus licensed-library options, voice/performance permissions, permitted media and usage term in current project documentation.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "video_production",
+      "destination_url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+      "page_title": "Видеоролики",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cache_miss",
+          "reported_crawl_age": null,
+          "captured_on": "2026-11-21",
+          "note": "Direct page opening returned a cache miss. This is not an HTTP status and does not establish that the URL is unavailable."
+        },
+        {
+          "source_url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+          "retrieval_mode": "search_index_result",
+          "retrieval_result": "indexed_excerpt",
+          "reported_crawl_age": "last week",
+          "captured_on": "2026-11-21",
+          "note": "The official page's indexed excerpt lists video advertising, shooting, character animation, logo animation, YouTube editing and subtitles."
+        }
+      ],
+      "freshness_class": "recent_index_with_direct_cache_miss",
+      "observed_scope": [
+        "A recent indexed excerpt distinguishes full video production from audio-only voice-over and lists video creation, shooting, animation, editing and subtitle-related categories."
+      ],
+      "rights_observation": "Current footage, music, actor, animation and final-video usage rights are not established by the inspected indexed excerpt.",
+      "scope_limits": [
+        "Direct page body, current form behaviour, deliverables and contract terms were not retrieved.",
+        "An indexed excerpt is insufficient to guarantee every listed production component is included in every project."
+      ],
+      "refresh_priority": "high",
+      "recommended_refresh": "Obtain a current read-only page snapshot and verify the exact production package, excluded work, source materials, edit rounds and rights before making any detailed production promise.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "video_voiceover_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+      "page_title": "Озвучка видео",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 4 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot with service bullets, portfolio and order form."
+        },
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+          "retrieval_mode": "search_index_result",
+          "retrieval_result": "indexed_excerpt",
+          "reported_crawl_age": "about 1 month",
+          "captured_on": "2026-11-21",
+          "note": "A separate indexed result repeated the voice-over scope and form fields."
+        }
+      ],
+      "freshness_class": "mixed_age_observations",
+      "observed_scope": [
+        "The page lists casting of voice actors and dubbing actors, ambience and sound effects, original music, sound design, voice-over and lip-sync.",
+        "The captured form asks for video type, voice, text and files."
+      ],
+      "rights_observation": "Voice, music, dubbing, synchronisation and final-delivery rights for a specific project are not established by the inspected page snapshots.",
+      "scope_limits": [
+        "The page supports an audio/voice-over production route; it does not establish that full picture editing, video production or every post-production task is included.",
+        "The page's listed elements are not a universal bundle for all orders."
+      ],
+      "refresh_priority": "medium",
+      "recommended_refresh": "Confirm which audio elements can be selected per brief, what video/picture work is excluded, and how voice/music usage rights are recorded.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "presentation_voiceover_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+      "page_title": "Озвучка презентаций",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cache_miss",
+          "reported_crawl_age": null,
+          "captured_on": "2026-11-21",
+          "note": "Direct page opening returned a cache miss; this is not an HTTP response code or proof of outage."
+        },
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+          "retrieval_mode": "search_index_result",
+          "retrieval_result": "indexed_excerpt",
+          "reported_crawl_age": "about 4 months",
+          "captured_on": "2026-11-21",
+          "note": "The official indexed excerpt describes script creation, business-film narration, sound mastering, audio/video editing, portfolio examples and an order form."
+        }
+      ],
+      "freshness_class": "aged_index_with_direct_cache_miss",
+      "observed_scope": [
+        "The indexed excerpt lists presentation voice-over, script creation, sound-track mastering and editing of audio/video materials.",
+        "Portfolio examples and a presentation-specific order form are visible in the indexed excerpt."
+      ],
+      "rights_observation": "Current rights for narration, music, presentation source files and edited deliverables are not established by the inspected indexed excerpt.",
+      "scope_limits": [
+        "Direct page body was not retrieved.",
+        "The broad editing wording must not be treated as a current blanket promise of video editing or full video production."
+      ],
+      "refresh_priority": "high",
+      "recommended_refresh": "Refresh the page directly and clarify the distinction between presentation audio production, file assembly and any video-editing component included in a specific brief.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "ivr_voice_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "page_title": "Приветствия для АТС / IVR-меню / Автоответчики / Автоинформаторы",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 3 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot with service categories, language claim, project examples and form."
+        }
+      ],
+      "freshness_class": "aged_snapshot_only",
+      "observed_scope": [
+        "The page lists greetings for telephone systems, IVR menus, auto attendants and auto-informers.",
+        "The captured wording says that files can be prepared for upload into a system.",
+        "A 62-language claim appears in the snapshot."
+      ],
+      "rights_observation": "Current voice, music and multilingual-version rights are not established by the inspected snapshot.",
+      "scope_limits": [
+        "File preparation for upload does not establish PBX configuration, live routing, telephony integration or post-upload testing.",
+        "The language count is a dated page claim and must not be repeated as current without refresh."
+      ],
+      "refresh_priority": "medium",
+      "recommended_refresh": "Confirm current supported language availability, exact audio-file specifications, responsibility for upload and whether any telephony configuration is separately contracted.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "multilingual_localization",
+      "destination_url": "https://www.audio-reclama.ru/perevodchiki/",
+      "page_title": "Перевод и озвучивание текста носителем языка",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/perevodchiki/",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 5 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot with translation and localization categories and project examples."
+        }
+      ],
+      "freshness_class": "aged_snapshot_only",
+      "observed_scope": [
+        "The page describes translation and localization of text and multimedia, with examples of video localization for different language regions.",
+        "The page snapshot advertises more than 60 languages and dialects."
+      ],
+      "rights_observation": "Current translation, voice, music, software and adapted-content rights are not established by the inspected snapshot.",
+      "scope_limits": [
+        "The advertised language count is a dated page claim and must not be treated as a current inventory.",
+        "Global language coverage does not imply local offices, legal representation or native-language reviewers in every market."
+      ],
+      "refresh_priority": "medium",
+      "recommended_refresh": "Refresh the available language/locale list and confirm the project-level chain of translation, linguistic review, casting, adaptation, approvals and rights.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "audiobook_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+      "page_title": "Озвучка аудиокниг",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 3 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot with production description, formats and samples."
+        }
+      ],
+      "freshness_class": "aged_snapshot_only",
+      "observed_scope": [
+        "The page describes audiobook recording, audio processing and original musical arrangement.",
+        "The snapshot lists single-voice narration, role-based acting, audio-play format, course narration and summaries."
+      ],
+      "rights_observation": "Current text/audio adaptation, performer, music and distribution rights are not established by the inspected snapshot.",
+      "scope_limits": [
+        "Do not infer a universal price, production deadline, number of voices, editing depth or distribution-rights package.",
+        "The page's listed format options do not guarantee that every format is available on the same terms."
+      ],
+      "refresh_priority": "medium",
+      "recommended_refresh": "Confirm current text-volume and format variables, performer options, technical deliverables, proof-listening process and rights by project.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    },
+    {
+      "route_registry_id": "corporate_song_anthem_production",
+      "destination_url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+      "page_title": "Авторские корпоративные гимны и песни",
+      "source_observations": [
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+          "retrieval_mode": "opened_page_snapshot",
+          "retrieval_result": "cached_snapshot",
+          "reported_crawl_age": "about 7 months",
+          "captured_on": "2026-11-21",
+          "note": "Opened official page snapshot with portfolio and corporate-order form."
+        },
+        {
+          "source_url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+          "retrieval_mode": "search_index_result",
+          "retrieval_result": "indexed_excerpt",
+          "reported_crawl_age": "last week",
+          "captured_on": "2026-11-21",
+          "note": "A separate recent indexed excerpt repeats the page heading, corporate anthem/song categories and order form."
+        }
+      ],
+      "freshness_class": "mixed_recent_and_aged_observations",
+      "observed_scope": [
+        "The page describes original corporate anthems and songs, including adaptations of songs for corporate events and holidays.",
+        "The snapshot contains portfolio examples and a project form."
+      ],
+      "rights_observation": "Rights to underlying compositions, lyrics, arrangements, recordings, performer contributions and permitted public/commercial use are not established by the inspected snapshots.",
+      "scope_limits": [
+        "A recent indexed excerpt does not verify current contract terms or permissions for adapting third-party songs.",
+        "Do not promise rights clearance or exclusive ownership without project-specific documentation."
+      ],
+      "refresh_priority": "high",
+      "recommended_refresh": "Verify original composition versus adaptation, source-work permissions, arrangement/recording ownership and exact rights transfer/licence with current project documentation.",
+      "service_presence_status": "observed_in_source_snapshot",
+      "current_service_scope_confirmed": false,
+      "current_commercial_terms_confirmed": false,
+      "current_rights_terms_confirmed": false,
+      "live_http_status": "not_tested",
+      "form_submission_status": "not_tested"
+    }
+  ]
+}
