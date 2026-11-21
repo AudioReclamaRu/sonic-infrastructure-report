@@ -44,6 +44,13 @@ The four core buyer tasks have English master guides and localized drafts. All l
 
 These GSC figures are organic Google Search observations, not AI visibility, citations, leads or revenue. The routes do not change the frozen generic/brand benchmark prompts, which remain NOT_RUN. The legacy GEO static price artifacts have not been edited; their public deployment/indexation is unverified.
 
+Benchmark-status crosswalk (frozen question text; no prompt edits):
+- **Radio:** RU-GEN-AD-01—06, including RU-GEN-AD-05 price intent — all NOT_RUN.
+- **IVR:** RU-GEN-IVR-01—04 plus RU-COST-IVR-01 — all NOT_RUN.
+- **Audiobooks:** RU-GEN-AUDIOBOOK-01/02 plus RU-COST-AUDIOBOOK-01 — all NOT_RUN.
+
+Modules: [RU generic discovery questions](../research/ai-visibility-ru-generic-discovery-queries-2026-11-17.json) and [RU price-intent extension](../research/ai-visibility-ru-commercial-price-extension-2026-11-20.json). These are planned prompts, not observed AI answers or evidence of prompt demand.
+
 ## Related enterprise guides
 
 - [Bank IVR voice prompts: release checks](bank-voice-menu.md) — banking-specific companion to the general multilingual IVR route.
