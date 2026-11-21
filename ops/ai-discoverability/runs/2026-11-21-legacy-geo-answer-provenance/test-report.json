@@ -1,0 +1,38 @@
+{
+  "schema": "megabrain/ai-discoverability-run-test-report/1",
+  "run_id": "2026-11-21-legacy-geo-answer-provenance",
+  "status": "awaiting_pull_request_ci",
+  "checks": [
+    {
+      "name": "Generator coverage",
+      "status": "pending_ci",
+      "detail": "AST extraction should identify exactly two explicit and six data-driven answer routes."
+    },
+    {
+      "name": "Legacy provenance",
+      "status": "pending_ci",
+      "detail": "Seven unmanaged static answer paths are registered with first/last recorded Git commits and current generator status."
+    },
+    {
+      "name": "Discovery-surface reconciliation",
+      "status": "pending_ci",
+      "detail": "Answer index, geo/llms and sitemap membership and the global lastmod rule are tested against current source files."
+    },
+    {
+      "name": "Regression tests",
+      "status": "pending_ci",
+      "detail": "Ten positive/negative regression tests will run in repo-integrity CI."
+    },
+    {
+      "name": "External changes",
+      "status": "not_performed",
+      "detail": "No GEO output, generator, website, Pages deployment, form submission or external publication."
+    }
+  ],
+  "no_claims": [
+    "No claim that any GitHub Pages URL is currently served.",
+    "No claim that static page prices or terms remain current.",
+    "No claim that sitemap lastmod represents per-file content modification.",
+    "No traffic, indexing, AI citation or conversion impact claim."
+  ]
+}
