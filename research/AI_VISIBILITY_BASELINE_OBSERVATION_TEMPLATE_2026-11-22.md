@@ -63,7 +63,7 @@ related:
 | `evidence_notes` | string | Да | Путь к скриншоту/экспорту, ограничения, аномалии, причина статуса |
 | `observer` | string | Да | Идентификатор наблюдателя/команды (без персональных данных, если не нужно) |
 | `run_id` | string | Нет | Идентификатор среза/кампании |
-| `domain_scope` | string | Нет | `main_b2b` (`audio-reclama.ru`) или `audio_plus_b2c` (`audio.plus`) |
+| `domain_scope` | string | Нет | `main_b2b` (канонический домен `https://www.audio-reclama.ru`) или `audio_plus_b2c` (канонический домен `https://audio.plus`) |
 
 `*` Для `ANSWERED` и `NO_ANSWER` поле должно отражать фактический текст/его отсутствие максимально полно.
 
@@ -125,6 +125,6 @@ observation_id,observed_at,country,language_locale,platform,product,model_or_ver
 ## 7. Границы использования
 
 - Не использовать этот шаблон для публикации неподтверждённых результатов.
-- Не смешивать домены `audio-reclama.ru` и `audio.plus` в одном знаменателе.
+- Не смешивать домены `https://www.audio-reclama.ru` и `https://audio.plus` в одном знаменателе; в `domain_scope` использовать идентификаторы `main_b2b` / `audio_plus_b2c`, не URL.
 - Не делать вывод о «видимости бренда» по одному наблюдению, одному провайдеру или только API-срезу.
 - Не включать PII, секреты, cookies, токены или приватные данные аккаунтов в evidence.
