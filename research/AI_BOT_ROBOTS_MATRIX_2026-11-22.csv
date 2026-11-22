@@ -1,0 +1,601 @@
+﻿agent,group,domain_file,url_class,url,result,matched_rule
+OAI-SearchBot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+OAI-SearchBot,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+OAI-SearchBot,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+ChatGPT-User,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+ChatGPT-User,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+ChatGPT-User,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+ChatGPT-User,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+ChatGPT-User,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+ChatGPT-User,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Claude-SearchBot,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Claude-SearchBot,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Claude-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Claude-User,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Claude-User,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Claude-User,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Claude-User,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Claude-User,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Claude-User,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Claude-User,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Claude-User,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Claude-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Claude-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Claude-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Claude-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Claude-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Claude-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+PerplexityBot,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+PerplexityBot,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+PerplexityBot,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+PerplexityBot,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+PerplexityBot,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+PerplexityBot,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Perplexity-User,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Perplexity-User,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Perplexity-User,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Perplexity-User,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Perplexity-User,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Perplexity-User,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+MistralAI-Index,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+MistralAI-Index,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+MistralAI-Index,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+MistralAI-Index,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+MistralAI-Index,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+MistralAI-Index,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+MistralAI-User,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+MistralAI-User,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+MistralAI-User,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+MistralAI-User,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+MistralAI-User,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+MistralAI-User,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Googlebot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Googlebot,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Googlebot,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Googlebot,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Googlebot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Googlebot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot-Image,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Googlebot-Image,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot-Image,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot-Image,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Googlebot-Image,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot-Image,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot-Video,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Googlebot-Video,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot-Video,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot-Video,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Googlebot-Video,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot-Video,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Googlebot-News,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Googlebot-News,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Googlebot-News,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Googlebot-News,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Googlebot-News,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Googlebot-News,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Google-InspectionTool,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Google-InspectionTool,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Bingbot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Bingbot,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Bingbot,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Bingbot,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Bingbot,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Bingbot,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Bingbot,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Bingbot,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Bingbot,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Bingbot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Bingbot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Bingbot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Bingbot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Bingbot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Bingbot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Yandex,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Yandex,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Yandex,search/user (group1),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Yandex,search/user (group1),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Yandex,search/user (group1),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Yandex,search/user (group1),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Yandex,search/user (group1),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Yandex,search/user (group1),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Yandex,search/user (group1),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Yandex,search/user (group1),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,ALLOWED,allow
+Yandex,search/user (group1),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Yandex,search/user (group1),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Yandex,search/user (group1),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Yandex,search/user (group1),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Yandex,search/user (group1),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Yandex,search/user (group1),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Yandex,search/user (group1),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Yandex,search/user (group1),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Yandex,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Yandex,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Yandex,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Yandex,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Yandex,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Yandex,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Applebot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Applebot,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Applebot,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Applebot,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Applebot,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Applebot,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Applebot,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Applebot,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Applebot,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Applebot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Applebot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Applebot-Extended,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+GPTBot,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+GPTBot,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+GPTBot,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+GPTBot,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+GPTBot,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+ClaudeBot,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+MistralAI-Training,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Google-Extended,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Google-Extended,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Google-Extended,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Google-Extended,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Google-Extended,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+Google-Agent,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+Google-Agent,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+Google-Agent,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+Google-Agent,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+Google-Agent,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+DeepSeekBot,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+UnknownCrawler,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+*,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+*,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
+*,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
+*,baseline/no group (*),main:CANDIDATE(v2),main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,-
+*,baseline/no group (*),main:LIVE,main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+*,baseline/no group (*),main:CANDIDATE(v2),main:service page,https://www.audio-reclama.ru/audio/radioroliki-zakaz.html,ALLOWED,-
+*,baseline/no group (*),main:LIVE,main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+*,baseline/no group (*),main:CANDIDATE(v2),main:voice filter,https://www.audio-reclama.ru/diktoryi/filter/language-english/,ALLOWED,-
+*,baseline/no group (*),main:LIVE,main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+*,baseline/no group (*),main:CANDIDATE(v2),main:demo MP3,https://www.audio-reclama.ru/uploads/demos/demo.mp3,BLOCKED,disallow
+*,baseline/no group (*),main:LIVE,main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+*,baseline/no group (*),main:CANDIDATE(v2),main:photo,https://www.audio-reclama.ru/uploads/photos/x.jpg,ALLOWED,allow
+*,baseline/no group (*),main:LIVE,main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,ALLOWED,-
+*,baseline/no group (*),main:CANDIDATE(v2),main:calculator OLD,https://www.audio-reclama.ru/kalkulyator-tsen.html,BLOCKED,disallow
+*,baseline/no group (*),main:LIVE,main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+*,baseline/no group (*),main:CANDIDATE(v2),main:calculator NEW,https://www.audio-reclama.ru/kalkulyator-tsen-new.html,BLOCKED,disallow
+*,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+*,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
+*,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+*,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
+*,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
+*,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
+*,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+*,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow

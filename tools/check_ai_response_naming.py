@@ -29,6 +29,10 @@ EXEMPT_PATHS = {
     "research/sitemap-full-url-audit.csv",
     "research/sitemap-full-url-audit.json",
     "research/v3-qualified-profiles.json",
+    # The robots-behavior matrix uses the live homepage URL (with trailing slash)
+    # as a test-data value in every row; the slash here is the tested form, not
+    # brand prose.
+    "research/AI_BOT_ROBOTS_MATRIX_2026-11-22.csv",
 }
 
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
