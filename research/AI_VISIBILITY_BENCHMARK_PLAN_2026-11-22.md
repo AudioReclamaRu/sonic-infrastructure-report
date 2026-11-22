@@ -1,3 +1,11 @@
+---
+type: benchmark_plan
+date: 2026-11-22
+lang: ru
+status: protocol_only_not_run
+related:
+  - research/AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md
+  - research/AI_VISIBILITY_AUDIO_PLUS_B2C_PROMPT_MODULE_DRAFT_2026-11-22.md
 # AI_VISIBILITY_BENCHMARK_PLAN_2026-11-22
 
 Подготовлено: ZCode, независимый read-only спринт. Статус измерений: **все платформы NOT_RUN из среды аудита** — принципиально: замеры требуют настоящих consumer-UI сессий (по возможности из РФ для Яндекс Алисы/GigaChat), которых у данной среды нет. ТЗ запрещает симуляцию — этот документ фиксирует протокол, а не результаты.
