@@ -21,7 +21,8 @@ TEXT_SUFFIXES = {
 EXEMPT_PATHS = {
     "standards/BRAND_AND_SITE_NAMING.md",
     "tools/check_ai_response_naming.py",
-    # The validator intentionally contains negative hostname test strings.
+    "tools/check_brand_naming.py",
+    # Naming validators intentionally contain negative test strings.
     "tools/validate_ai_discovery_assets.py",
     # Raw scraped datasets preserve verbatim on-site page titles; the incorrect
     # on-site brand spelling (without the bullet) is the audit finding itself.
