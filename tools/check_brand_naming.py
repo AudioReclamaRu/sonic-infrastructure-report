@@ -8,8 +8,15 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".md", ".txt", ".html", ".json", ".yml", ".yaml"}
 
-# This one file intentionally documents forbidden spellings as negative examples.
-EXEMPT_PATHS = {"standards/BRAND_AND_SITE_NAMING.md"}
+# These files intentionally document forbidden spellings as negative examples,
+# or preserve verbatim production crawl evidence where the source-site spelling
+# is the audit finding rather than an authored repository claim.
+EXEMPT_PATHS = {
+    "standards/BRAND_AND_SITE_NAMING.md",
+    "research/sitemap-full-url-audit.csv",
+    "research/sitemap-full-url-audit.json",
+    "research/v3-qualified-profiles.json",
+}
 
 RULES = (
     (
