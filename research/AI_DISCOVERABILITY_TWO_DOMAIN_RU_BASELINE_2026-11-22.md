@@ -156,7 +156,7 @@ URL Inspection на 22.11:
 
 ## 6. Сквозная аналитика: GA4 сейчас не даёт надёжного слоя результата
 
-Подключён GA4 property `properties/564827393` (display name `audio-reclama.ru`). В нём создан web stream `G-HK65BQZPR0` 17.11.2026, с default URI `https://audio-reclama.ru` (apex). В property зарегистрированы key events `qualify_lead`, `close_convert_lead`, `purchase`.
+Подключён GA4 property `properties/564827393` (display name `audio-reclama.ru`). В нём создан web stream `G-HK65BQZPR0` 17.11.2026, с default URI записан для apex-host без `www`. В property зарегистрированы key events `qualify_lead`, `close_convert_lead`, `purchase`.
 
 Однако:
 - GA4 Organic Search landing-page report за 19.08–19.11 вернул 0 rows;
