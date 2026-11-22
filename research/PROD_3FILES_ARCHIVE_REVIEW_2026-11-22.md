@@ -1,3 +1,11 @@
+---
+type: release_archive_review
+date: 2026-11-22
+lang: ru
+status: read_only_archive_integrity_verified
+related:
+  - research/AI_DISCOVERABILITY_NEXT_SPRINT_2026-11-22.md
+  - research/NEXT_ACTIONS_OWNER_DECISIONS_2026-11-22.md
 # PROD_3FILES_ARCHIVE_REVIEW_2026-11-22
 
 Проверка деплой-архива `AUDIO_RECLAMA_PROD_3FILES_2026-11-22.zip` (актуальная версия — sitemap с PRODUCTION-заголовком). Выполнил: ZCode, независимый read-only спринт. VERIFIED, если не оговорено иное.
