@@ -1,5 +1,14 @@
 # NEXT_ACTIONS_OWNER_DECISIONS — 2026-11-22
 
+## P0 — Audio+ privacy, rights and current product facts (before any AI/public rollout)
+
+1. **NDA/client media containment.** The owner has confirmed an active confidentiality/access issue in the Audio+ client-media area. Close anonymous access server-side, remove public references, check origin/CDN/caches/old URLs, preserve and review access logs, and assess search-index removals only after containment. Exact incident evidence and asset inventory remain in the restricted private deployment record; do not copy client filenames, URLs, hashes, audio or identities into this public research repository.
+2. **Demo media rights review.** A subset of demo assets has unverified provenance/licensing. Treat every uncleared asset as `RIGHTS_UNVERIFIED`; keep it out of public demos, transcripts, AudioObject and machine-readable feeds until written, use-specific clearance is recorded. Filename similarities are review flags, not proof of infringement.
+3. **Current Audio+ offer/product reconciliation.** The accessible offer snapshot is stale and conflicts with the product-page snapshot about buyer eligibility, changes/corrections and rework. Owner must confirm the current legal text and actual ordering workflow before price, buyer eligibility, revision policy or rights claims appear in llms/schema/FAQ/AI answers.
+4. **Separate Audio+ measurement.** The connected Search Console property currently covers only the main www host; Audio+ is not a selected property. Decide whether to add and verify a dedicated Audio+ GSC/GA4 measurement setup. Do not infer Audio+ performance from the studio property.
+5. **GA4 stream validation.** The connected GA4 property has a web stream created 17.11.2026, but the read-only reports returned no page/organic rows for the checked intervals. Verify that the measurement ID is actually firing on the live www and apex paths, that consent/tag triggers work, and that key events arrive in DebugView/realtime before using sessionKeyEventRate as a business-value score.
+
+
 Только вопросы, требующие решения/действий владельца. Группировка по impact/risk. Не-blocking для утреннего деплоя трёх файлов (кроме п.1 — он определяет следующий релиз sitemap).
 
 ## P1 — сразу после публикации (до следующего релиза sitemap)
