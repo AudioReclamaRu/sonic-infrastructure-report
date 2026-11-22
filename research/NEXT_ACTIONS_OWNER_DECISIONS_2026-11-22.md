@@ -1,3 +1,11 @@
+---
+type: owner_decision_register
+date: 2026-11-22
+lang: ru
+status: awaiting_owner_and_operator_actions
+related:
+  - research/AI_DISCOVERABILITY_TWO_DOMAIN_RU_BASELINE_2026-11-22.md
+  - research/AUDIO_PLUS_AI_DISCOVERABILITY_PLAYBOOK_2026-11-22.md
 # NEXT_ACTIONS_OWNER_DECISIONS — 2026-11-22
 
 ## P0 — Audio+ privacy, rights and current product facts (before any AI/public rollout)
