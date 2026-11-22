@@ -21,7 +21,7 @@ OAI-SearchBot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audi
 OAI-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 OAI-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 ChatGPT-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -45,7 +45,7 @@ ChatGPT-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio
 ChatGPT-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 ChatGPT-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Claude-SearchBot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -69,7 +69,7 @@ Claude-SearchBot,search/user (group1),main:LIVE,main:/tools/login/,https://www.a
 Claude-SearchBot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Claude-SearchBot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Claude-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Claude-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -93,7 +93,7 @@ Claude-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-
 Claude-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Claude-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Claude-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Claude-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Claude-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Claude-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 PerplexityBot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -117,7 +117,7 @@ PerplexityBot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audi
 PerplexityBot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 PerplexityBot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Perplexity-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -141,7 +141,7 @@ Perplexity-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.au
 Perplexity-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Perplexity-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 MistralAI-Index,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -165,7 +165,7 @@ MistralAI-Index,search/user (group1),main:LIVE,main:/tools/login/,https://www.au
 MistralAI-Index,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 MistralAI-Index,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 MistralAI-User,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -189,7 +189,7 @@ MistralAI-User,search/user (group1),main:LIVE,main:/tools/login/,https://www.aud
 MistralAI-User,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 MistralAI-User,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Googlebot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Googlebot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -213,7 +213,7 @@ Googlebot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-re
 Googlebot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Googlebot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Googlebot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Googlebot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Googlebot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Googlebot-Image,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -237,7 +237,7 @@ Googlebot-Image,search/user (group1),main:LIVE,main:/tools/login/,https://www.au
 Googlebot-Image,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 Googlebot-Image,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Googlebot-Video,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -261,7 +261,7 @@ Googlebot-Video,search/user (group1),main:LIVE,main:/tools/login/,https://www.au
 Googlebot-Video,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 Googlebot-Video,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Googlebot-News,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -285,7 +285,7 @@ Googlebot-News,search/user (group1),main:LIVE,main:/tools/login/,https://www.aud
 Googlebot-News,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 Googlebot-News,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Google-InspectionTool,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -309,7 +309,7 @@ Google-InspectionTool,search/user (group1),main:LIVE,main:/tools/login/,https://
 Google-InspectionTool,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 Google-InspectionTool,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Bingbot,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Bingbot,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -333,7 +333,7 @@ Bingbot,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-recl
 Bingbot,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Bingbot,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Bingbot,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Bingbot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Bingbot,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Bingbot,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Yandex,search/user (group1),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Yandex,search/user (group1),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -357,7 +357,7 @@ Yandex,search/user (group1),main:LIVE,main:/tools/login/,https://www.audio-recla
 Yandex,search/user (group1),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Yandex,search/user (group1),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Yandex,search/user (group1),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Yandex,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Yandex,search/user (group1),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Yandex,search/user (group1),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Applebot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Applebot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -381,7 +381,7 @@ Applebot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-re
 Applebot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,allow
 Applebot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Applebot-Extended,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -405,7 +405,7 @@ Applebot-Extended,baseline/no group (*),main:LIVE,main:/tools/login/,https://www
 Applebot-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 Applebot-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 GPTBot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -429,7 +429,7 @@ GPTBot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-recl
 GPTBot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 GPTBot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 ClaudeBot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -453,7 +453,7 @@ ClaudeBot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-r
 ClaudeBot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 ClaudeBot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 MistralAI-Training,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -477,7 +477,7 @@ MistralAI-Training,baseline/no group (*),main:LIVE,main:/tools/login/,https://ww
 MistralAI-Training,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 MistralAI-Training,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Google-Extended,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -501,7 +501,7 @@ Google-Extended,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.a
 Google-Extended,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 Google-Extended,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 Google-Agent,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -523,10 +523,10 @@ Google-Agent,baseline/no group (*),main:LIVE,main:query URL,https://www.audio-re
 Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:query URL,https://www.audio-reclama.ru/blog/?page=2,BLOCKED,disallow
 Google-Agent,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 Google-Agent,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
-Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
-Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
-Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,NOT_APPLICABLE,user-triggered-fetcher-outside-REP
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,NOT_APPLICABLE,user-triggered-fetcher-outside-REP
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,NOT_APPLICABLE,user-triggered-fetcher-outside-REP
+Google-Agent,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,NOT_APPLICABLE,user-triggered-fetcher-outside-REP
 DeepSeekBot,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 DeepSeekBot,baseline/no group (*),main:LIVE,main:/en/,https://www.audio-reclama.ru/en/,ALLOWED,allow
@@ -549,7 +549,7 @@ DeepSeekBot,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.audio
 DeepSeekBot,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 DeepSeekBot,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 UnknownCrawler,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -573,7 +573,7 @@ UnknownCrawler,baseline/no group (*),main:LIVE,main:/tools/login/,https://www.au
 UnknownCrawler,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
 *,baseline/no group (*),main:LIVE,main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
 *,baseline/no group (*),main:CANDIDATE(v2),main:/ (home),https://www.audio-reclama.ru/,ALLOWED,-
@@ -597,5 +597,5 @@ UnknownCrawler,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),ht
 *,baseline/no group (*),main:CANDIDATE(v2),main:/tools/login/,https://www.audio-reclama.ru/tools/login/,BLOCKED,disallow
 *,baseline/no group (*),audio.plus:PACKAGE,plus:/ (home),https://audio.plus/,ALLOWED,-
 *,baseline/no group (*),audio.plus:PACKAGE,plus:/offer.html,https://audio.plus/offer.html,ALLOWED,-
-*,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,ALLOWED,-
+*,baseline/no group (*),audio.plus:PACKAGE,plus:demo MP3,https://audio.plus/tools/media/demo/01_IVR.mp3,BLOCKED,disallow
 *,baseline/no group (*),audio.plus:PACKAGE,plus:client MP3 (NDA),https://audio.plus/tools/media/client/x.mp3,BLOCKED,disallow
