@@ -75,6 +75,13 @@ related:
 
 - READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный live-аудит sitemap, коммерческих страниц и каталога дикторов. Зафиксированы 1 186 уникальных URL, 2 подтверждённых 404-профиля в sitemap, один redirecting URL и несогласованные публичные счётчики каталога; это не полный crawl и не отчёт Search Console/Яндекс Вебмастера.
 
+## Публикация и baseline-наблюдения AI-видимости
+
+- P0_PUBLICATION_VALIDATION_CHECKLIST_2026-11-22.md — read-only P0 чеклист валидации публикации: реестр 6 опубликованных файлов (URL, ожидаемый/фактический SHA-256, статус, проверка содержимого), 2 `<head>`-вставки, связность Organization/WebSite/Brand/canonical/@id, проверка robots для AI/поисковых ботов, sitemap/canonical/доступность, итоговый статус `SENT_TO_PUBLISH` или `LIVE_VALIDATED`. HTTP 200 недостаточен; требуется хеш/эталон.
+- AI_VISIBILITY_BASELINE_OBSERVATION_TEMPLATE_2026-11-22.md — шаблон наблюдений AI-видимости (RU-first, consumer UI vs model API раздельно, без платных запусков): обязательные поля, таксономия статусов, JSON/CSV шаблоны, правила интерпретации (нет упоминания бренда = наблюдение; отсутствие ответа != нулевая видимость).
+- ai-visibility-baseline-observation.schema.json — JSON Schema для машинной валидации записей наблюдения.
+- ai-visibility-baseline-observation-template.csv — CSV-заголовок шаблона наблюдений.
+
 ## Правила использования
 
 - Не превращать исследовательскую гипотезу в факт.
