@@ -1,3 +1,12 @@
+---
+type: research_report
+date: 2026-11-22
+lang: ru
+status: read_only_sprint_report
+related:
+  - research/AI_DISCOVERABILITY_SERVICE_ROUTE_EVIDENCE_AUDIT_2026-11-21.md
+  - research/AI_VISIBILITY_BENCHMARK_PLAN_2026-11-22.md
+  - research/NEXT_ACTIONS_OWNER_DECISIONS_2026-11-22.md
 # AI_DISCOVERABILITY_NEXT_SPRINT — отчёт 2026-11-22
 
 Исполнитель: ZCode (независимый read-only спринт вместо/до передачи в OpenCode). Режим: только чтение; production, CMS, DNS, CDN/WAF, репозитории не менялись. Все артефакты: `research/` (+ сырые данные `research/raw-data (local)`).
