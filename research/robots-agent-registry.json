@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "generated": "2026-11-22",
+    "generator": "ZCode independent sprint (read-only)",
+    "verification_note": "Token classification verified against vendor documentation where a public primary source exists. Google-Agent classification: absent from the Google crawlers overview list at the time of check (2026-11-22); a newer Google page describing a user-triggered 'Google-Agent' fetcher was reported by a parallel audit - treat category as user-triggered-fetcher pending re-verification of https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent. User-triggered fetchers are outside robots.txt (REP) scope per Google's specification.",
+    "groups_in_production_robots_txt": {
+      "group1_documented_search_and_user_retrieval": "gets /uploads/demos/ exception",
+      "baseline_star_and_apple": "no demo access; public HTML crawlable"
+    },
+    "last_full_matrix_run": "2026-11-22, 432/432 PASS (release-v2/.../robots-policy-test.py)"
+  },
+  "agents": [
+    {"token": "OAI-SearchBot", "vendor": "OpenAI", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers (vendor: https://openai.com/searchbot)", "purpose": "crawl for ChatGPT search index", "last_verified": "2026-11-22"},
+    {"token": "ChatGPT-User", "vendor": "OpenAI", "category": "user_triggered_fetcher", "robots_group": "group1", "docs": "https://openai.com/bot", "purpose": "fetch pages on user request in ChatGPT", "last_verified": "2026-11-22"},
+    {"token": "GPTBot", "vendor": "OpenAI", "category": "training_data_collection", "robots_group": "baseline", "docs": "https://openai.com/gptbot", "purpose": "collect content for model training", "last_verified": "2026-11-22"},
+    {"token": "Claude-SearchBot", "vendor": "Anthropic", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://www.anthropic.com/claude-searchbot", "purpose": "crawl for Claude search results", "last_verified": "2026-11-22"},
+    {"token": "Claude-User", "vendor": "Anthropic", "category": "user_triggered_fetcher", "robots_group": "group1", "docs": "https://www.anthropic.com/claude-user", "purpose": "fetch pages on user request in Claude", "last_verified": "2026-11-22"},
+    {"token": "ClaudeBot", "vendor": "Anthropic", "category": "crawler_training", "robots_group": "baseline", "docs": "https://www.anthropic.com/claudebot", "purpose": "general crawling incl. model improvement", "last_verified": "2026-11-22"},
+    {"token": "PerplexityBot", "vendor": "Perplexity", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://perplexity.ai/perplexitybot", "purpose": "crawl for Perplexity search index", "last_verified": "2026-11-22"},
+    {"token": "Perplexity-User", "vendor": "Perplexity", "category": "user_triggered_fetcher", "robots_group": "group1", "docs": "https://perplexity.ai/perplexity-user", "purpose": "fetch pages on user request", "last_verified": "2026-11-22"},
+    {"token": "MistralAI-Index", "vendor": "Mistral AI", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://docs.mistral.ai/robots", "purpose": "Mistral search index crawler", "last_verified": "2026-11-22", "verified_source": "docs.mistral.ai/robots confirmed tokens 2026-11-22"},
+    {"token": "MistralAI-User", "vendor": "Mistral AI", "category": "user_triggered_fetcher", "robots_group": "group1", "docs": "https://docs.mistral.ai/robots", "purpose": "Le Chat user-initiated fetch", "last_verified": "2026-11-22"},
+    {"token": "MistralAI-Training", "vendor": "Mistral AI", "category": "training_data_collection", "robots_group": "baseline", "docs": "https://docs.mistral.ai/robots", "purpose": "collect pages for training", "last_verified": "2026-11-22"},
+    {"token": "Googlebot", "vendor": "Google", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers", "purpose": "Google search crawl", "last_verified": "2026-11-22"},
+    {"token": "Googlebot-Image", "vendor": "Google", "category": "special_image_crawler", "robots_group": "group1", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers", "purpose": "Google Images crawl", "last_verified": "2026-11-22"},
+    {"token": "Googlebot-Video", "vendor": "Google", "category": "special_video_crawler", "robots_group": "group1", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers", "purpose": "Google Video crawl", "last_verified": "2026-11-22"},
+    {"token": "Googlebot-News", "vendor": "Google", "category": "special_news_crawler", "robots_group": "group1", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers", "purpose": "Google News crawl", "last_verified": "2026-11-22"},
+    {"token": "Google-InspectionTool", "vendor": "Google", "category": "special_verification_crawler", "robots_group": "group1", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers", "purpose": "Search Console diagnostic crawls", "last_verified": "2026-11-22"},
+    {"token": "GoogleOther", "vendor": "Google", "category": "other_crawler", "robots_group": "baseline_implicit_absent", "docs": "https://developers.google.com/search/docs/crawling-indexer/overview-of-crawlers", "purpose": "generic non-search fetching; NOT in group1 intentionally", "last_verified": "2026-11-22"},
+    {"token": "Google-Extended", "vendor": "Google", "category": "non_crawler_control_token", "robots_group": "baseline", "docs": "https://developers.google.com/search/docs/crawling-indexer/control-crawl-index", "purpose": "control use of content for Gemini training; controls Gemini application fetches", "last_verified": "2026-11-22"},
+    {"token": "Google-Agent", "vendor": "Google", "category": "user_triggered_fetcher_pending_reverification", "robots_group": "baseline", "docs": "https://developers.google.com/crawling/docs/crawlers-fetchers/allow-google-agent", "purpose": "user-initiated web navigation agent; REP/robots.txt does not apply to Google crawlers controlled by users - allow-listing (if desired) happens at CDN/WAF via official IP ranges / Web Bot Auth, not robots.txt", "last_verified": "2026-11-22", "note": "absent from the documented crawler list at first check; parallel audit reports a newer official page. Do NOT add a robots directive for it: user-triggered fetchers are outside REP scope."},
+    {"token": "Bingbot", "vendor": "Microsoft", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0", "purpose": "Bing search crawl", "last_verified": "2026-11-22"},
+    {"token": "Yandex", "vendor": "Yandex", "category": "automatic_search_crawler", "robots_group": "group1", "docs": "https://yandex.com/support/webmaster/robot-workings/robot.html", "purpose": "Yandex search crawl (subtokens YandexBot/YandexImages match the Yandex prefix)", "last_verified": "2026-11-22"},
+    {"token": "Applebot", "vendor": "Apple", "category": "automatic_crawler", "robots_group": "baseline", "docs": "https://support.apple.com/en-us/HT204683", "purpose": "Apple Spotlight/Siri crawl; deliberately separate baseline per owner policy", "last_verified": "2026-11-22"},
+    {"token": "Applebot-Extended", "vendor": "Apple", "category": "non_crawler_control_token", "robots_group": "baseline", "docs": "https://support.apple.com/en-us/HT204683", "purpose": "opt-out control for Apple AI training use; not an independent crawler", "last_verified": "2026-11-22"},
+    {"token": "CCBot", "vendor": "Common Crawl", "category": "training_corpus_crawler", "robots_group": "baseline_implicit_absent", "docs": "https://commoncrawl.org/ccbot", "purpose": "open web corpus; falls to '*' group (no demo access)", "last_verified": "2026-11-22"},
+    {"token": "Bytespider", "vendor": "ByteDance", "category": "crawler_training_unverified_purpose", "robots_group": "baseline_implicit_absent", "docs": "NO_PUBLIC_TOKEN_CONFIRMED (vendor page unstable)", "purpose": "community-reported; falls to '*' group", "last_verified": "2026-11-22"},
+    {"token": "DeepSeekBot", "vendor": "DeepSeek", "category": "NO_PUBLIC_TOKEN_CONFIRMED", "robots_group": "baseline_test_only", "docs": "no vendor primary source found 2026-11-22", "purpose": "community-reported token; present only as a baseline TEST agent in robots-policy-test.py, not in production robots.txt", "last_verified": "2026-11-22"}
+  ],
+  "waf_verification": {
+    "status": "NOT_TESTED",
+    "reason": "no CDN/WAF console or server log access from the audit environment; UA strings are spoofable - authenticity checks require official IP ranges / reverse DNS / Web Bot Auth",
+    "plan_ref": "AI_DISCOVERABILITY_NEXT_SPRINT report, section 10"
+  }
+}

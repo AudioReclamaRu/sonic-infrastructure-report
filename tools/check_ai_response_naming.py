@@ -23,6 +23,11 @@ EXEMPT_PATHS = {
     "tools/check_ai_response_naming.py",
     # The validator intentionally contains negative hostname test strings.
     "tools/validate_ai_discovery_assets.py",
+    # Raw scraped datasets preserve verbatim on-site page titles; the incorrect
+    # on-site brand spelling (without the bullet) is the audit finding itself.
+    "research/sitemap-full-url-audit.csv",
+    "research/sitemap-full-url-audit.json",
+    "research/v3-qualified-profiles.json",
 }
 
 BRAND_PATTERN = re.compile(r"(?i)Аудио[-‐‑‒–— ]Реклама(?:•ru|\.ru)?")
