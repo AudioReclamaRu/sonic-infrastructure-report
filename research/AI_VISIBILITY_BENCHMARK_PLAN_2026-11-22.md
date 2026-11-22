@@ -37,6 +37,17 @@ exact prompt; платформа/product surface/model label; дата-врем�
 - Реферальные хиты ≠ лиды; crawl бота ≠ цитирование.
 - Все сырые выгрузки ответов сохраняются (screenshot/copy) с timestamp.
 
+## 5A. Два домена — два отдельных prompt scope
+
+| Scope | Сущность | Prompt class | Status |
+|---|---|---|---|
+| Main site | «Аудио-Реклама•ru» — профессиональная студия | RU B2B discovery / service / procurement | Frozen RU sets remain NOT_RUN |
+| Audio+ | Отдельный короткий self-service продукт | RU B2C product discovery / terms / rights / route choice | Separate draft module: `AI_VISIBILITY_AUDIO_PLUS_B2C_PROMPT_MODULE_DRAFT_2026-11-22.md`; 8 prompts, NOT FROZEN, NOT RUN |
+
+Do not merge the Audio+ module into the studio's B2B denominators. The module is not frozen because the accessible offer snapshot and product-page snapshot disagree about buyer eligibility and post-payment revisions, and current terms require owner confirmation. It contains no NDA asset URLs or client material.
+
+The connected OpenSEO tracker for the studio is configured for US/en but `configured=false` and has no runs. A Russian OpenSEO/DataForSEO market project was rejected because the provider does not support the Russian location code. No US/en or Netherlands observation is a substitute for RU. The connected GSC property is the main `www` site only; no Audio+ property is connected. No paid tracker or prompt-research call has been run.
+
 ## 6. Что уже VERIFIED (вход, не результаты бенчмарка)
 
 - Техническая досягаемость агентов: 22 UA → 200 на HTML; MP3 демо качается всеми проверенными агентами (CDN/WAF-проба 22.11) — precondition для цитирования, не самоцитирование.
