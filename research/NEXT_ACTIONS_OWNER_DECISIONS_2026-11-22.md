@@ -8,6 +8,14 @@ related:
   - research/AUDIO_PLUS_AI_DISCOVERABILITY_PLAYBOOK_2026-11-22.md
 # NEXT_ACTIONS_OWNER_DECISIONS — 2026-11-22
 
+## Owner-approved AI demo-use decision — 22.11.2026
+
+- AI search and user-requested retrieval remain allowed for Audio+ demo media through the explicit allow-list in the candidate `robots.txt`.
+- AI model-training and broad corpus collection from `/tools/media/demo/` are disallowed until written, file-specific rights clearance. The default wildcard policy also denies the demo path to unclassified crawlers.
+- `Google-Extended` combines Gemini training and grounding controls. Disallowing the demo path excludes those audio files from both uses, while ordinary Google Search remains accessible via `Googlebot`.
+- `Google-Agent` is a user-triggered fetcher outside robots.txt/REP control; its matrix status is `NOT_APPLICABLE`. robots.txt is not access control and does not guarantee behavior by unknown or non-compliant fetchers.
+- Search/retrieval permission does not convert `RIGHTS_UNVERIFIED` into `PUBLIC_CLEARED`, and does not authorize model training, transcripts, or republication.
+
 ## P0 — Audio+ privacy, rights and current product facts (before any AI/public rollout)
 
 1. **NDA/client media containment.** The owner has confirmed an active confidentiality/access issue in the Audio+ client-media area. Close anonymous access server-side, remove public references, check origin/CDN/caches/old URLs, preserve and review access logs, and assess search-index removals only after containment. Exact incident evidence and asset inventory remain in the restricted private deployment record; do not copy client filenames, URLs, hashes, audio or identities into this public research repository.
