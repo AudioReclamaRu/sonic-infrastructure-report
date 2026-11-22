@@ -1,3 +1,11 @@
+---
+type: technical_semantic_audit
+date: 2026-11-22
+lang: ru
+status: read_only_audit_verified_with_exceptions
+related:
+  - research/AI_DISCOVERABILITY_NEXT_SPRINT_2026-11-22.md
+  - research/NEXT_ACTIONS_OWNER_DECISIONS_2026-11-22.md
 # ENTITY_SCHEMA_CANONICAL_HREFLANG_AUDIT — 2026-11-22
 
 Скоуп: все 874 URL прод-sitemap (повторный GET с расширенным парсингом: canonical, html lang, hreflang, JSON-LD, meta robots) + discovery-данные по /en/ и каталогу. VERIFIED, если не оговорено.
