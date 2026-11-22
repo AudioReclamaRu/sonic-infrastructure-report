@@ -25,6 +25,16 @@ related:
 2. **Canonical-шаблон (0/874).** Self-canonical + canonical для алиасов форматов (filter .html ↔ без .html, slash/no-slash). Шаблонная правка в CMS.
 3. **Деиндексация калькуляторов** (одобрено): снять внутренние ссылки на `/kalkulyator-tsen.html` и `-new.html`, затем «Удаление страниц из поиска» в Яндекс.Вебмастере и Removals в GSC.
 
+## P1 — коммерческая видимость и измерение двух доменов
+
+1. **Три существующих RU buyer guides (не создавать новые дубли).** Согласовать owner/editorial review для `guides/audio-advertising-production.ru.md`, `guides/multilingual-ivr-voice-production.ru.md` и `guides/audiobook-production.ru.md`. Уточнить состав услуг, права, цены, сроки, языковые claims и scope integration; после правок обновить freshness/related sources. Ни один guide пока не опубликован на сайте.
+2. **Радиоролики — сниппет и первый экран.** RU GSC за 19.08–19.11: 857 impressions, 3 clicks, average position 10.5; отдельные коммерческие запросы («заказать радиоролик», «заказать аудиоролик») показываются около первой страницы, но CTR низкий. Решить, допускается ли owner-approved title/meta/first-screen diff; не добавлять цену, SLA, размещение или медиаплан без доказательств.
+3. **IVR — намерение и граница услуги.** RU GSC: 580 impressions, 4 clicks, average position 27.5; запросы смешивают приветствия, запись меню, цены и телефонию. Подтвердить, что guide/страница чётко отделяют производство файлов от PBX/SIP/CRM/call-routing setup. Любые технические интеграции отражать только при наличии отдельного scope.
+4. **Аудиокниги — ценовые вопросы.** RU GSC: 1,012 impressions, 30 clicks, average position 30.2; заметен устойчивый cluster «цена/стоимость». Согласовать подробное объяснение факторов сметы (формат, текст, роли, музыка, права, структура файлов) без превращения информационных примеров старой страницы в универсальный тариф.
+5. **GA4 instrumentation health.** За проверенные периоды connected property вернул 0 organic landing-page rows и 0 all-channel page-performance rows. Это не означает ноль посетителей. Назначить технического владельца для теста Measurement ID `G-HK65BQZPR0` на реальных страницах, consent/tag firing, DebugView/realtime и доменных переходов; затем повторить read-only отчёт.
+6. **Отдельная аналитика Audio+.** Подтвердить необходимость и подключить отдельный Search Console property и GA4 stream/property для `audio.plus`; не использовать показатели основного B2B-домена как данные Audio+.
+7. **RU AI visibility benchmark.** Все фиксированные RU consumer prompts остаются NOT_RUN; OpenSEO не принимает российский market code, и US/en tracker не является заменой. Требуется валидная, аттестованная российская consumer-UI среда. Не запускать платные проверки и не публиковать mention/citation rates до измерений.
+
 ## P2 — редакционные/шаблонные решения
 
 4. **x-default язык**: сейчас EN на всех 16 hreflang-страницах (включая главную). Для RU-первого бизнеса рассмотреть x-default → RU. Решение редакционное.
