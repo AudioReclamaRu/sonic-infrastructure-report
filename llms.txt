@@ -105,3 +105,13 @@
 - [Immutable observation record schema](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json): preserves full answers, exact prompts, market/surface metadata and source evidence before CSV aggregation.
 
 - [Offline AI observation evidence validator](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ai_visibility_evidence.py): validates full JSON records and enforces one-to-one CSV evidence linkage without network calls.
+
+
+## Canonical Brand & Business Profile — research snapshot
+
+- [Detailed owner-confirmed research profile v1.5](research/brand-profile/CANONICAL_BRAND_BUSINESS_PROFILE_v1.5.md) — temporal identity, legal entities, addresses, hours, service scope, portfolio and source limitations.
+- [Machine-readable profile](research/brand-profile/CANONICAL_BRAND_BUSINESS_PROFILE_v1.5.json), [source register](research/brand-profile/SOURCE_REGISTER_v1.5.csv), and [entity evidence map](research/brand-profile/ENTITY_EVIDENCE_MAP_2026-11-23.json).
+- [Owner-confirmed official social URLs](research/brand-profile/OWNER_CONFIRMED_SOCIAL_URLS_2026-11-23.md): primary YouTube https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw; Dzen https://dzen.ru/audioreclamaru; Telegram https://t.me/audioreclama_ru.
+- [External presence audit](research/brand-profile/EXTERNAL_PRESENCE_AUDIT_2026-11-23.md), [presence matrix](research/brand-profile/EXTERNAL_PRESENCE_MATRIX_2026-11-23.csv), and [remediation backlog](research/brand-profile/AI_DISCOVERABILITY_REMEDIATION_BACKLOG_2026-11-23.csv).
+- [Public profile copy pack v1.1](research/brand-profile/PUBLIC_PROFILE_COPY_PACK_v1.1.md) contains drafts only; it is not proof that any profile or channel has been updated.
+- The package is a research memory and evidence map. It does not authorize website edits, external-directory changes, Dzen publication, Telegram publication or deployment. Historical facts remain time-scoped rather than being overwritten by current values.
