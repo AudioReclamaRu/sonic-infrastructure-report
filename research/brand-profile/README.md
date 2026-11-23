@@ -3,7 +3,7 @@ type: index
 date: 2026-11-23
 lang: ru
 status: canonical_research_index
-related: [llms.txt, research/README.md]
+related: [llms.txt, research/README.md, research/brand-profile/BRANDBOOK_BASELINE_STATUS_2026-11-23.md]
 ---
 
 # Канонический профиль бренда и бизнеса — Аудио-Реклама•ru
@@ -21,6 +21,7 @@ related: [llms.txt, research/README.md]
 6. [External Presence Audit](EXTERNAL_PRESENCE_AUDIT_2026-11-23.md), [Presence Matrix](EXTERNAL_PRESENCE_MATRIX_2026-11-23.csv) и [External Source Register](EXTERNAL_PRESENCE_SOURCE_REGISTER_2026-11-23.csv) — внешние поверхности и доказательства.
 7. [AI Discoverability Remediation Backlog](AI_DISCOVERABILITY_REMEDIATION_BACKLOG_2026-11-23.csv) — приоритеты и действия.
 8. [Public Profile Copy Pack v1.1](PUBLIC_PROFILE_COPY_PACK_v1.1.md) — черновики, не опубликованные тексты.
+9. [BRANDBOOK baseline v1.0](BRANDBOOK_BASELINE_STATUS_2026-11-23.md) — назначенная владельцем базовая визуальная система студии и официального сайта; хранение оригиналов — в приватном репозитории и MEGABRAIN.
 
 ## Owner-confirmed facts — 23.11.2026
 
@@ -34,6 +35,17 @@ related: [llms.txt, research/README.md]
 - Официальный Telegram: https://t.me/audioreclama_ru.
 
 Эти подтверждения не заменяют договоры, выписки или операционные записи там, где вопрос требует такого вида доказательства. Приблизительная датировка переезда должна оставаться приблизительной.
+
+## BRANDBOOK — базовый статус 23.11.2026
+
+Владелец прямо назначил архив «Лого, вывеска, стикеры, конверты» фирменным BRANDBOOK и базой визуальной идентичности для студии и официального сайта. Это отдельная базовая дизайн-система; она не подменяет бизнес-профиль v1.5.
+
+- Полный оригинальный архив локально скопирован владельцем в закрытое хранилище MEGABRAIN.
+- Полная ревизия: 261 файл / 166 544 638 байт после распаковки.
+- Владелец назначил BRANDBOOK статусом `CANONICAL BASELINE / OWNER-DESIGNATED`.
+- Приватный пакет исходников и спецификации: [audio-reclama-site-deployment — BRANDBOOK PR #2](https://github.com/AudioReclamaRu/audio-reclama-site-deployment/pull/2).
+- BRANDBOOK не разрешает автоматически менять или публиковать официальный сайт; папка brandbook не является deploy root.
+- Шрифтовые бинарники, финансовые/договорные документы и PDF 2017 года с чувствительными страницами 9–11 не включаются в GitHub assets.
 
 ## Историческая модель — не унифицировать механически
 
@@ -58,6 +70,7 @@ related: [llms.txt, research/README.md]
 ## Версионирование и правила использования
 
 - Текущая рабочая версия профиля: **v1.5 (2026-11-23)**.
+- BRANDBOOK v1.0 — назначенная владельцем базовая визуальная система; будущие правки оформлять новыми версиями, не затирать оригиналы.
 - Обновления делать новой версией или отдельным dated snapshot; сохранять предыдущую историю Git.
 - Не задавать владельцу повторно вопросы, уже закрытые прямыми подтверждениями выше и в основном профиле.
 - Перед ответом о компании открыть этот README и профиль v1.5; для конкретного факта открыть соответствующую строку Source Register и/или первоисточник.
