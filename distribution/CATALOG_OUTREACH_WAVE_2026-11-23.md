@@ -11,327 +11,460 @@ related:
   - research/brand-profile/CANONICAL_BRAND_BUSINESS_PROFILE_v1.5.md
 ---
 
-# Каталожная outreach-волна 2026-11-23 — бесплатное редакционное включение и исправление пропусков
+# Каталожная outreach-волна 2026-11-23 — редакционное включение, бесплатная карточка и переговоры о комплиментарном размещении
 
 **Статус:** исследование и персонализированные черновики подготовлены; ни одно обращение не отправлено, ни одна форма не подана, ни одна карточка не изменена.  
 **Канонический бренд:** Аудио-Реклама•ru  
 **Официальный сайт:** https://www.audio-reclama.ru  
-**Контакт:** start@audio-reclama.ru · 8 800 700-46-52  
-**Рабочая цель:** получить точную, тематически подходящую карточку в профессиональных каталогах без оплаты рекламного размещения, платного бейджа или гарантированного продвижения.
+**Контакт:** start@audio-reclama.ru · 8 800 700-46-52
 
-## 1. Почему это направление стоит развивать
+## 1. Главная стратегия: не отсеивать каталоги по прайсу
 
-### AllAdvertising: полезный прецедент, но не универсальная гарантия
+### Прецедент AllAdvertising
 
-Публичная карточка Аудио-Реклама•ru в AllAdvertising:
+Публичная карточка Аудио-Реклама•ru:
 https://alladvertising.ru/info/audio_reclama_ru.html
 
-По прямому сообщению владельца, история началась после того, как компания рассматривала, куда направить 5 000 рублей, и обратилась в AllAdvertising. Площадка исправила собственный пропуск, включила компанию без оплаты за размещение, после чего профиль оказался заметно представлен в категории «Аудио-продакшн» и в материалах РРАР-2026. Это owner-reported account of the interaction; не выводить из него, что другие каталоги обязаны бесплатно включить компанию или дать рейтинг.
+По прямому рассказу владельца, первоначальная ситуация возникла во время поиска, куда направить бюджет порядка 5 000 рублей. Вместо покупки рекламной интеграции владелец обратился в AllAdvertising напрямую; редакция закрыла пропуск компании в своём каталоге, добавила профиль без оплаты за размещение, а карточка получила заметное позиционирование в рубрике «Аудио-продакшн» и в материалах РРАР-2026. Это owner-reported account of the interaction; факт видимого профиля и категории отдельно подтверждается публичной страницей каталога.
 
-AllAdvertising определяет свою категорию «Аудио-продакшн» как каталог рекламных агентств и продакшнов, производящих звуковую рекламу для радио, интернета, indoor и внутреннего вещания. Компания тематически подходит к этой категории по фактическим услугам. См.:
-- https://alladvertising.ru/info/audio_reclama_ru.html
-- https://alladvertising.ru/tags/?tag=378
-- https://alladvertising.ru/top/audio-production/
+**Вывод для кампании:** наличие тарифа, платной интеграции, рекламного пакета или платного бейджа — не причина исключать площадку из переговоров. Прайс показывает коммерческий продукт, но не отменяет возможности:
+- редакционного включения;
+- бесплатной базовой карточки;
+- комплиментарного стандартного размещения;
+- waiver / courtesy listing по решению редакции;
+- включения в профильную категорию после проверки фактической специализации;
+- обновления уже существующей карточки без платы;
+- отдельного редакционного представления или отраслевого упоминания.
 
-### Принцип следующей волны
+В обращении не требовать «поставить в топ» и не утверждать, что площадка допустила ошибку. Сначала показать релевантность компании, проекты и уже существующее признание профильной площадкой; затем попросить рассмотреть обычное или комплиментарное включение. Если бесплатный вариант невозможен, запросить точные условия и стоимость — решение о платном размещении остаётся отдельным.
 
-Не просить «поставить нас в топ» и не покупать присутствие. Задача — проверить, положена ли компании обычная справочная карточка или редакционное включение по факту её деятельности, можно ли обновить уже существующую карточку, и каковы условия.
+**Нулевая сумма не является условием прекращения переговоров.** Это исходная просьба, а не основание не обращаться. Платную опцию можно обсуждать, но нельзя покупать, оплачивать, принимать договорные условия или обещать бюджет без отдельного согласования владельца.
 
-**Нулевой бюджет по умолчанию.** Если площадка предлагает платную опцию:
-- не оформлять заказ;
-- не вводить платёжные данные;
-- не соглашаться на платный бейдж, приоритет, продвижение, подписку или рекламный пакет;
-- запросить отдельное описание цены и состава, но считать такой вариант вне текущей бесплатной волны.
+### Почему у компании есть основания для рассмотрения
 
-Ссылка может быть полезной для посетителей даже с nofollow или sponsored; dofollow не требовать. Не соглашаться на скрытый бартер или встречные ссылки.
+1. AllAdvertising уже относит Аудио-Реклама•ru к категории «Аудио-продакшн»; в описании категории прямо фигурируют аудиореклама, звуковое производство, радио, Интернет и indoor.
+2. В каталоге Sostav в Production присутствуют компании с услугами озвучения, то есть голосовое производство не чуждо его классификации.
+3. RUWARD уже содержит профиль компании с портфолио и направлением «Аудио-производство».
+4. Публичные кейсы Внуково, ABBYY и РЖД дают конкретные примеры делового аудиопроизводства, включая многоязычные проекты и подготовку аудиофайлов.
+5. Международная производственная модель подтверждена владельцем; это не означает наличие физических офисов в каждом регионе или стране.
 
-## 2. Подтверждённый профиль для заявок
+## 2. Единая доказательная основа для всех обращений
 
-Использовать только эту фактическую основу; не расширять состав услуг:
+Использовать только эту фактическую основу:
 - **Бренд:** Аудио-Реклама•ru.
 - **Головной офис и юридический адрес:** Россия, Нижний Новгород, улица Варварская, 32, помещение П11, 5-й этаж.
-- **Сайт:** https://www.audio-reclama.ru
+- **Официальный сайт:** https://www.audio-reclama.ru
 - **Почта:** start@audio-reclama.ru.
 - **Телефон:** 8 800 700-46-52.
 - **Позиционирование:** студия делового аудиопроизводства.
 - **Публично представленные направления:** аудиореклама и радиоролики; голосовые приветствия, автоответчики и IVR-аудио; автоинформаторы и сообщения ожидания; озвучивание видео и презентаций; многоязычное аудиопроизводство и локализация; аудиокниги, джинглы и корпоративное аудио.
-- **Производственный процесс:** при необходимости — подготовка/редактура сценарных текстов в согласованном объёме, подбор голоса, запись, монтаж и обработка, подготовка файлов под спецификацию принимающей системы.
+- **Производственный процесс:** при необходимости — подготовка/редактура текстов в согласованном объёме, подбор голоса, запись, монтаж и обработка, подготовка аудиофайлов под спецификацию принимающей системы.
 - **Многоязычная модель:** производство можно организовать для любой языковой группы через международную сеть профессиональных исполнителей/партнёров; это не означает физические офисы во всех странах.
 - **Договорная модель:** используются ООО и ИП; конкретное договорное лицо выбирается по запросу клиента, без фиксированной схемы «услуга → юридическое лицо».
+- **Кейсы:**  
+  https://www.audio-reclama.ru/project/vnukovo.html  
+  https://www.audio-reclama.ru/project/abbyy.html  
+  https://www.audio-reclama.ru/project/rzhd.html
+- **Доказательство отраслевого присутствия:** AllAdvertising, карточка в категории «Аудио-продакшн»: https://alladvertising.ru/info/audio_reclama_ru.html
 
 **Не заявлять:** конфигурирование PBX/IP-PBX, Asterisk/FreePBX/3CX, SIP/SIP trunk, DTMF, call routing, очереди, CRM/CTI, технический deployment, end-to-end интеграцию или «IVR под ключ». Подготовка аудио по технической спецификации не равна настройке телефонной системы. Следовать IVR Owner Decisions 002A–005B.
 
-**Не использовать как постоянные показатели:** точное количество дикторов, число отзывов или динамические счётчики с внешних площадок. База дикторов меняется; дополнительно исполнители привлекаются по запросу.
+**Не использовать как постоянные показатели:** точное количество дикторов, число отзывов и динамические счётчики внешних площадок. База дикторов меняется; дополнительно исполнители привлекаются по запросу.
 
-## 3. Приоритетная карта адресатов
+## 3. Полный пул адресатов первой волны
 
-| ID | Площадка | Fit | Условия / риск | Действие | Статус |
-|---|---|---|---|---|---|
-| DIR-08 | AdIndex | Высокий: каталог рекламных агентств и компаний; форма «Добавить компанию» | Публичная форма есть; бесплатность обычной карточки явно не установлена | Сначала запросить условия и цену; не отправлять форму до подтверждения нулевой стоимости | DRAFT_READY_NOT_SENT |
-| DIR-09 | Sostav | Высокий/средний: каталог компаний рекламного рынка, раздел Production | Стоимость/право бесплатного редакционного включения не установлены | Адресовать редакции короткий запрос о справочной карточке; не покупать рекламный пакет | DRAFT_READY_NOT_SENT |
-| DIR-03 | RUWARD | Высокий, но карточка уже существует | Нужны подключение существующего профиля и понимание условий редактирования | Не создавать дубль; запросить процедуру привязки профиля владельца и корректировки текущих данных | DRAFT_READY_NOT_SENT |
-| DIR-06 | Voice Over Resource Guide (VORG) | Высокий: voice-over и audio-production, категория Global/Remote | Стандартный листинг прямо заявлен бесплатным; рассмотрение и принятие не гарантированы | Проверить существующую карточку; при отсутствии подать стандартный бесплатный профиль, не покупать enhanced listing | DRAFT_READY_NOT_SENT |
-| DIR-07 | Enterprise League | Высокий/средний: отдельная категория Audio Production | Обычный профиль заявлен бесплатным; платная подписка нужна для расширенного бейджа/видимости в поиске | Проверить авто-созданную карточку и claim-путь; только free profile, никаких подписок/бейджей | DRAFT_READY_NOT_SENT |
-| DIR-05 | The VoiceOver Community Resource Directory | Средний/высокий по тематике voice/production | Стандартный листинг заявлен бесплатным, enhanced listing платный; удалённая/международная карточка и географический формат неясны | Сначала спросить, допускается ли remote business-audio production в Production Services без фиктивного локального адреса | DRAFT_READY_NOT_SENT |
-| DIR-10 | UpSound — каталог студий звукозаписи | Условный: текущий каталог ориентирован на музыкальную запись, вокал, барабаны и сведение | B2B voiceover/audio-production может не входить в редакционную задачу каталога | Только короткий квалификационный вопрос; не подавать карточку, если это не полезно аудитории музыкантов | DRAFT_READY_NOT_SENT |
+Все площадки ниже включены в outreach-пул независимо от того, есть ли у них платные продукты. Различаются не желание обратиться, а подход и ожидаемая тематическая релевантность.
 
-### Отложено или исключено
+| ID | Площадка | Причина обращения | Что просим | Канал / статус |
+|---|---|---|---|---|
+| DIR-03 | RUWARD | Уже есть профиль; в нём остались исторические сведения и старое описание | Привязать существующую карточку, актуализировать профиль; рассмотреть бесплатную корректировку/комплиментарное обновление | info@ruward.ru · DRAFT_READY_NOT_SENT |
+| DIR-05 | The VoiceOver Community Resource Directory | Международный справочник voice-over ресурсов, бесплатная базовая карточка заявлена открыто | Рассмотреть бесплатную карточку в релевантной production-категории; уточнить remote/international eligibility | Add Listing / Contact · DRAFT_READY_NOT_SENT |
+| DIR-06 | Voice Over Resource Guide (VORG) | Справочник для актёров голоса, продюсеров, кастинга, агентств и студий; стандартный листинг прямо бесплатен, Global/Remote поддерживается | Подать стандартную бесплатную карточку и запросить редакционную проверку/VORG Verified без покупки рекламы | Free Listing Form; info@voiceoverresourceguide.com · DRAFT_READY_NOT_SENT |
+| DIR-07 | Enterprise League | Глобальная категория Audio Production; Free Plan включает видимость профиля и использование каталога | Получить бесплатный company profile/claim; отдельно спросить о бесплатном отраслевом editorial feature/award, если применимо | Free Plan / company profile · DRAFT_READY_NOT_SENT |
+| DIR-08 | AdIndex | Каталог рекламных агентств; публичная форма добавления, проверка заявки и отдельный канал по вопросам каталога | Рассмотреть включение в подходящую категорию; попросить бесплатное/комплиментарное стандартное включение либо редакционное рассмотрение | info@adindex.ru, help@adindex.ru / форма · DRAFT_READY_NOT_SENT |
+| DIR-09 | Sostav | Каталог компаний и отдельная категория Production; у одного из профилей Production указано «озвучение» | Рассмотреть включение как отдельной студии делового аудиопроизводства; попросить справочную/редакционную карточку без покупки рекламного пакета либо комплиментарное включение | news@sostav.ru, info@sostav.ru · DRAFT_READY_NOT_SENT |
+| DIR-10 | UpSound | Каталог студий звукозаписи; редакция прямо приглашает добавлять студии и сообщает о бесплатной проверке/обновлении | Рассмотреть деловую voice/audio production студию как полезную отдельную специализацию; не позиционировать её как музыкальную студию аренды, если это не соответствует критериям | we@upsound.org · DRAFT_READY_NOT_SENT |
+| DIR-11 | Рейтинг Рунета | Участие в рейтингах 2026 заявлено бесплатным; текущая таксономия не содержит отдельной категории аудиопроизводства | Запросить, может ли студия участвовать в релевантной категории по реальным услугам, или можно ли учесть аудиопродакшн в методологии/будущей категории | info@ratingruneta.ru / форма · DRAFT_READY_NOT_SENT |
+| DIR-12 | Cataloxy | Общий каталог компаний с бесплатным добавлением карточки | Проверить существующую карточку; при отсутствии — предложить полное корректное включение в подходящую категорию услуг | Форма «Добавить компанию» · DRAFT_READY_NOT_SENT |
+| DIR-13 | Trafstat — каталог агентств | Открытый каталог с источниками и возможностью дополнять/исправлять записи; есть категории производства контента и видео, но отдельная audio category не подтверждена | Попросить редакцию проверить компанию для включения по источникам и подсказать точную категорию; предложить добавить специализацию audio production, если это соответствует модели каталога | info@trafstat.ru · DRAFT_READY_NOT_SENT |
+| DIR-14 | Клерк — рейтинг компаний | Есть создание карточки и категория «Рекламные агентства»; рейтинг характеризует активность/репутацию на платформе, а не качество рекламного подрядчика | Запросить, допускается ли студия делового аудиопроизводства в подходящую категорию; не трактовать Клерк.Рейтинг как отраслевой рейтинг продакшна | Форма «Добавить компанию» / общий контакт · DRAFT_READY_NOT_SENT |
+| DIR-15 | 3Клик | Бесплатный бизнес-справочник; есть категория «Рекламные агентства» и возможность запросить новую категорию | Добавить или подтвердить базовую карточку компании; использовать только корректную категорию и действующие сведения | Бесплатная регистрационная форма · DRAFT_READY_NOT_SENT |
+| DIR-16 | Да-Клиент.ру | Каталог компаний по рекламным услугам; поисковый результат сообщает о бесплатном добавлении сайта | Проверить существующую карточку и возможность бесплатного справочного включения; использовать только если нативная форма и условия актуальны | Страница каталога / форма · DRAFT_READY_NOT_SENT |
+
+### 3.1. Что не является основанием для отказа от обращения
+
+- наличие rate card или рекламной страницы;
+- продажа платных премиум-профилей;
+- коммерческая модель основной версии каталога;
+- платные бейджи и рекламные спецпроекты;
+- отсутствие очевидной категории audio production в текущем интерфейсе.
+
+В этих случаях задаём корректный вопрос о редакционном исключении, бесплатном базовом включении, waiver или подходящей категории. Если площадка отказывает, фиксируем ответ и уже потом решаем, стоит ли платить.
+
+### 3.2. Кого не включаем в эту волну и почему
 
 | Площадка | Решение | Причина |
 |---|---|---|
-| Rating Runeta | Не включать в первую волну | Критерии рейтинга ориентированы на digital/маркетинговые/IT услуги; чистое аудиопроизводство неочевидно подходит. Не раскрывать клиентские данные, выручку или проекты без подтверждения eligibility и отдельного решения |
-| Cataloxy | Не приоритет | Общий каталог; сам по себе бесплатный листинг не доказывает тематическую аудиторию или редакционную ценность. Сначала нужна отдельная проверка качества каталога, индексации и реальных referral-переходов |
-| GidPartner | Не приоритет | Общий бизнес-каталог; тематический охват и качество карточек не установлены |
-| EVENT.AGENCY | Не подавать в эту волну | Каталог ориентирован на организаторов событий, площадки, артистов и event-поставщиков; специализация студии не совпадает с ядром каталога |
-| ИМИ — каталог студий | Не подавать в эту волну | Справочник заявлен как каталог музыкальных студий для музыкантов и подкастеров; AudioReclamaRu не следует представлять как музыкальную репетиционную/трековую студию |
-| Reklamnay | Не подавать | На странице прямо указана плата 3 000 ₽ за размещение; не соответствует нулевому бюджету |
-| Parsic — база студий | Не покупать | Это продаваемая база контактов, а не редакционный каталог для включения компании |
-| Любые каталоги с обязательной оплатой, гарантированным SEO-эффектом или скрытым link exchange | Исключить | Не соответствуют стратегии бесплатного валидного присутствия |
+| «Все поставщики» | Не включать | Каталог ориентирован на производителей и оптовиков, а не на услуги аудиопроизводства |
+| EVENT.AGENCY / eventagentstva.ru | Не включать | Каталог ограничен Москвой и Московской областью и ориентирован на event-подрядчиков; текущая бизнес-география компании — Нижний Новгород |
+| Parsic — база студий | Не покупать | Продаваемая база контактов, а не редакционная карточка для заказчиков |
+| Каталоги без доступного редактора/администратора, только с сомнительными пакетами обратных ссылок | Не отправлять до дополнительной проверки | Нет подтверждённого реального пользовательского маршрута и качества аудитории |
 
-## 4. Адресные обращения и готовые тексты
+## 4. Адресные обращения
 
-Все тексты ниже — DRAFT_READY_NOT_SENT. Перед отправкой владелец самостоятельно проверяет актуальность контакта и условий. Сообщения не отправлялись.
+Все тексты ниже — DRAFT_READY_NOT_SENT. Они подготовлены для копирования и персональной отправки. В письмах не используется массовый шаблон: каждый адресат получает аргумент, связанный с его каталогом.
 
-### 4.1. AdIndex — запрос условий обычной карточки
+### 4.1. AdIndex — включение в каталог рекламных компаний
 
-**Канал:** публичный контакт каталога / форма добавления компании  
-**Email:** info@adindex.ru  
-**Каталог:** https://adindex.ru/catalogue/  
-**Статус цены:** не установлено; сначала спросить.
-
-**Тема:** Возможность бесплатной справочной карточки в каталоге AdIndex — «Аудио-Реклама•ru»
+**Канал:** info@adindex.ru; help@adindex.ru; https://adindex.ru/catalogue/  
+**Тема:** Рассмотрение профиля «Аудио-Реклама•ru» для каталога AdIndex
 
 Здравствуйте!
 
-Изучаем каталог AdIndex и раздел компаний рекламного рынка. Хотели бы уточнить, можно ли добавить в каталог справочный профиль студии «Аудио-Реклама•ru» в подходящую категорию Production / аудиопроизводство.
+Просим редакцию рассмотреть возможность включения «Аудио-Реклама•ru» в каталог рекламных компаний AdIndex в подходящую категорию аудиопроизводства / production.
 
-«Аудио-Реклама•ru» — студия делового аудиопроизводства из Нижнего Новгорода. Основные направления: рекламные аудиоролики и радиореклама, голосовые приветствия и IVR-аудио, автоинформаторы, озвучивание видео и презентаций, многоязычное аудиопроизводство и локализация, аудиокниги и корпоративное аудио.
+«Аудио-Реклама•ru» — студия делового аудиопроизводства из Нижнего Новгорода. Работаем с рекламными аудиороликами и радиорекламой, голосовыми приветствиями и IVR-аудио, автоинформаторами, многоязычными объявлениями, озвучиванием видео и презентаций, аудиокнигами и корпоративным аудио.
 
-Официальный сайт: https://www.audio-reclama.ru  
-Портфолио:  
-— https://www.audio-reclama.ru/project/vnukovo.html  
-— https://www.audio-reclama.ru/project/abbyy.html  
-— https://www.audio-reclama.ru/project/rzhd.html
+У компании есть отдельная публичная страница в отраслевой категории «Аудио-продакшн» каталога AllAdvertising:
+https://alladvertising.ru/info/audio_reclama_ru.html
 
-Подскажите, пожалуйста:
-1. Подходит ли такая специализация для вашего каталога и какая категория корректна?
-2. Возможна ли обычная справочная карточка без рекламного пакета и без платного продвижения?
-3. Если включение платное, есть ли отдельная бесплатная редакционная/базовая карточка, или размещение возможно только на коммерческих условиях?
-
-До уточнения условий мы не хотим подавать заявку как на платное размещение.
-
-Спасибо!  
-«Аудио-Реклама•ru»  
-start@audio-reclama.ru  
-8 800 700-46-52
-
-### 4.2. Sostav — редакционный запрос о включении в Production
-
-**Канал:** редакционный контакт  
-**Email:** news@sostav.ru  
-**Каталог:** https://www.sostav.ru/map/companies  
-**Статус цены:** не установлено; спрашиваем о бесплатном редакционном/справочном включении.
-
-**Тема:** Справочный профиль студии делового аудиопроизводства в каталоге Sostav / Production
-
-Здравствуйте!
-
-Подскажите, пожалуйста, рассматривает ли редакция Sostav включение профильных студий делового аудиопроизводства в каталог компаний, в частности в раздел Production.
-
-«Аудио-Реклама•ru» — студия из Нижнего Новгорода, работающая с деловой звукозаписью: аудиореклама и радиоролики, голосовые приветствия и IVR-аудиоматериалы, автоинформаторы, озвучивание видео и презентаций, многоязычное аудиопроизводство и локализация, аудиокниги и корпоративное аудио.
-
-Примеры опубликованных проектов:
-— Внуково: https://www.audio-reclama.ru/project/vnukovo.html  
-— ABBYY: https://www.audio-reclama.ru/project/abbyy.html  
+Публичные примеры работ:
+— Внуково: https://www.audio-reclama.ru/project/vnukovo.html
+— ABBYY: https://www.audio-reclama.ru/project/abbyy.html
 — РЖД: https://www.audio-reclama.ru/project/rzhd.html
 
 Официальный сайт: https://www.audio-reclama.ru
 
-Хотели бы понять, существует ли возможность редакционного или обычного справочного включения без покупки рекламного пакета. Если каталог формируется только на коммерческих условиях, будем признательны за прямое указание этого правила — платное размещение в рамках текущего обращения не планируем.
+Будем признательны, если вы проверите, соответствует ли компания тематике вашего каталога и может ли быть включена в него в стандартном справочном или редакционном порядке. В первую очередь просим рассмотреть бесплатное или комплиментарное включение без покупки рекламного пакета. Если для этого предусмотрены только платные условия, пришлите, пожалуйста, действующий формат и стоимость — мы рассмотрим их отдельно.
 
-Спасибо за ориентир и за рассмотрение!
+Спасибо за рассмотрение!
 
 «Аудио-Реклама•ru»  
 start@audio-reclama.ru  
 8 800 700-46-52
 
-### 4.3. RUWARD — привязка существующей карточки и обновление сведений
+### 4.2. Sostav — профиль в каталоге Production
 
-**Канал:** info@ruward.ru / официальный FAQ https://ruward.ru/faq/  
-**Существующий профиль:** https://ruward.ru/catalog/audio-reclama-ru/  
-**Важно:** не создавать новую карточку.
-
-**Тема:** Подключение существующего профиля «Аудио-Реклама•ru» к кабинету компании
+**Канал:** news@sostav.ru; info@sostav.ru  
+**Тема:** «Аудио-Реклама•ru» — предложение профиля в каталоге компаний / Production
 
 Здравствуйте!
 
-В каталоге RUWARD уже существует профиль «Аудио-Реклама•ru»:  
-https://ruward.ru/catalog/audio-reclama-ru/
+Хотели бы предложить редакции рассмотреть «Аудио-Реклама•ru» для каталога компаний Sostav, прежде всего для категории Production.
 
-Хотим корректно подключить существующую карточку к кабинету представителя компании и проверить возможность актуализации сведений. Новую карточку создавать не нужно.
+В каталоге уже представлены продакшны, чьи направления включают озвучение. Поэтому хотим уточнить, может ли отдельная студия делового аудиопроизводства быть полезна вашей аудитории как самостоятельная компания, а не только как часть видеопродакшна.
 
-В профиле сохранился адрес на Белинского — это более ранний адресный период компании. Текущий головной офис и юридический адрес: Россия, Нижний Новгород, улица Варварская, 32, помещение П11, 5-й этаж.
+«Аудио-Реклама•ru» занимается производством рекламного аудио, радиороликов, голосовых приветствий и IVR-аудиоматериалов, автоинформаторов, многоязычных объявлений, озвучиванием видео и презентаций, аудиокнигами и корпоративным аудио.
 
-Просим подсказать:
-1. Как подтвердить право представителя компании на существующий профиль и привязать его к личному кабинету?
-2. Можно ли обновить текущий адрес и контактные сведения, сохранив историческое упоминание прежнего адреса там, где оно уместно?
-3. Можно ли актуализировать описание специализации и портфолио без платного рекламного пакета?
-4. Если обновление или верификация имеют платные условия, просьба сообщить их до любых действий.
+Публичные кейсы:
+— Внуково: 11 языков и более 7 000 аудиотреков — https://www.audio-reclama.ru/project/vnukovo.html
+— ABBYY: многоязычные IVR-материалы — https://www.audio-reclama.ru/project/abbyy.html
+— РЖД: голосовые материалы для скоростных поездов — https://www.audio-reclama.ru/project/rzhd.html
 
-Официальный сайт: https://www.audio-reclama.ru  
-Контакт: start@audio-reclama.ru
+Профиль компании уже включён в отраслевой каталог AllAdvertising в рубрике «Аудио-продакшн»:
+https://alladvertising.ru/info/audio_reclama_ru.html
+
+Просим рассмотреть возможность справочного или редакционного включения в каталог Sostav, желательно без покупки рекламного пакета либо на комплиментарных условиях. Если карточки каталога формируются только на коммерческой основе, будем признательны за точное описание вариантов и условий — решение о платном размещении примем отдельно.
 
 Спасибо!
 
-### 4.4. UpSound — сначала проверить тематическое соответствие
+«Аудио-Реклама•ru»  
+start@audio-reclama.ru  
+8 800 700-46-52
 
-**Канал:** we@upsound.org  
-**Справочник:** https://upsound.org/spravochniki/studii/  
-**Статус:** только квалификационный вопрос; не заявка.
+### 4.3. RUWARD — подключить и обновить существующую карточку
 
-**Тема:** Подходит ли студия делового аудиопроизводства для вашего справочника?
+**Канал:** info@ruward.ru  
+**Тема:** Подключение существующего профиля «Аудио-Реклама•ru» и актуализация сведений
 
 Здравствуйте!
 
-Увидели ваш справочник студий звукозаписи и хотим уточнить его редакционные границы.
+В каталоге RUWARD уже существует профиль «Аудио-Реклама•ru»:
+https://ruward.ru/catalog/audio-reclama-ru/
 
-«Аудио-Реклама•ru» — студия делового аудиопроизводства из Нижнего Новгорода. Наша основная работа — запись рекламных аудиороликов, голосовых приветствий и IVR-аудиоматериалов, автоинформаторов, многоязычных объявлений, озвучивание видео и презентаций. Мы не позиционируем себя как музыкальная студия для записи групп, трекинга барабанов или сведения музыкальных релизов.
+Мы не хотим создавать дубль. Просим подсказать, как подключить существующую карточку к кабинету представителя компании и актуализировать описание, услуги, проекты и контакты.
 
-Есть ли у справочника категория или редакционный формат для студий коммерческого voice-over / business audio production, чтобы такая карточка была полезна аудитории UpSound? Если справочник предназначен именно для музыкальных студий, не будем подавать нерелевантную заявку.
+В карточке остался адрес Белинского — он относится к более раннему периоду компании. Текущий головной офис и юридический адрес: Нижний Новгород, Варварская, 32, помещение П11, 5-й этаж. Исторический адрес желательно сохранить как прежний, а не трактовать как ошибку.
 
-Сайт: https://www.audio-reclama.ru  
-Портфолио: https://www.audio-reclama.ru/project/
+Также просим рассмотреть возможность бесплатной или комплиментарной актуализации профиля после подтверждения представителя компании. Если редактирование, верификация или дополнительные поля имеют платную стоимость, пожалуйста, сообщите условия до каких-либо действий.
 
-Спасибо за уточнение!
+Официальный сайт: https://www.audio-reclama.ru  
+Почта: start@audio-reclama.ru
 
-«Аудио-Реклама•ru»  
-start@audio-reclama.ru
+Спасибо!
 
-### 4.5. VORG — бесплатный стандартный Global/Remote listing
+### 4.4. Voice Over Resource Guide — бесплатная карточка и проверка профиля
 
-**Канал:** native listing form https://voiceoverresourceguide.com/get-your-free-listing/  
-**Опубликованный контакт:** info@voiceoverresourceguide.com  
-**Условие:** использовать только стандартный free listing; не покупать enhanced listing. Перед подачей проверить exact match по бренду и домену.
+**Канал:** https://voiceoverresourceguide.com/get-your-free-listing/  
+**Контакт:** info@voiceoverresourceguide.com  
+**Форма:** использовать стандартный free listing; не покупать Listing+ или рекламный пакет на этапе подачи.
 
 **Profile name:** Аудио-Реклама•ru
 
-**Suggested category:** Audio Production / Recording Studio — только если текущее определение категории включает commercial voice-over and business audio production.
-
-**Location:** Global / Remote, если эта опция доступна в действующей форме. Не указывать фиктивный адрес в США или другом регионе.
+**Location:** Global / Remote; base: Nizhny Novgorod, Russia.
 
 **Short description:**
 
-Business audio-production studio based in Nizhny Novgorod, Russia. Advertising audio, radio spots, IVR and telephone greetings, automated announcements, multilingual voice production, video voice-over, audiobooks and corporate audio.
+Business audio-production studio based in Nizhny Novgorod, Russia. Advertising audio, radio spots, IVR and telephone greetings, automated announcements, multilingual business audio, video voice-over, audiobooks and corporate audio.
 
 **Long description:**
 
-Аудио-Реклама•ru is a business audio-production studio based in Nizhny Novgorod, Russia. The studio produces advertising and radio audio, IVR and telephone greetings, automated announcements, multilingual public-address and business announcements, video and presentation voice-over, audiobooks, jingles and corporate audio.
+Аудио-Реклама•ru is a business audio-production studio based in Nizhny Novgorod, Russia. The studio produces advertising and radio audio, IVR and telephone greetings, automated announcements, multilingual business announcements, video and presentation voice-over, audiobooks, jingles and corporate audio.
 
-Depending on the project, production can include script preparation or adaptation, voice casting, language coordination, recording, editing, sound processing and delivery of audio files to the client's technical specification. Production can be organized for any language group worldwide through a network of professional collaborators. Each project defines the required locale, voice, script, usage rights, technical delivery and approval process.
+Depending on the project, production may include script preparation or adaptation, voice casting, language coordination, recording, editing, sound processing and delivery of files to the client's technical specification. Production for any language group can be organized worldwide through a network of professional collaborators. Each project defines the language and regional variant, voice profile, usage rights, technical specification and approval process.
 
-**Website:** https://www.audio-reclama.ru  
-**Enquiry email:** start@audio-reclama.ru  
-**Location note:** Nizhny Novgorod, Russia; remote/international production. Do not imply a physical office outside Russia.
-
-### 4.6. Enterprise League — бесплатный Audio Production profile
-
-**Канал:** https://enterpriseleague.com/directory/audio-production  
-**Действие:** сначала проверить, не создана ли карточка автоматически; использовать claim-existing-profile, если она есть. Публично заявлен бесплатный базовый профиль; подписка/платный бейдж для дополнительной видимости не приобретаются.
-
-**Company name:** Аудио-Реклама•ru  
-**Category:** Audio Production  
 **Website:** https://www.audio-reclama.ru  
 **Contact:** start@audio-reclama.ru  
-**Location:** Nizhny Novgorod, Russia; remote/global production.
+**Location:** Nizhny Novgorod, Russia; remote/global production. No physical office outside Russia is implied.
 
-**Short description:**
+**Request to editor:** Please consider the standard free listing and let us know whether a short verification interview can be arranged under the VORG Verified process without an advertising purchase.
 
-Business audio-production studio creating advertising audio, radio spots, IVR and telephone greetings, automated announcements, multilingual voice content, video voice-over and corporate audio.
+### 4.5. The VoiceOver Community — бесплатная ресурсная карточка
 
-**Company description:**
-
-Аудио-Реклама•ru is a business audio-production studio based in Nizhny Novgorod, Russia. The studio produces advertising and radio audio, voice greetings and IVR audio materials, automated announcements, multilingual business audio, video and presentation voice-over, audiobooks, jingles and corporate audio. Project scope can include script preparation or editing, voice casting, localization, recording, editing and preparation of deliverable audio files to the client's technical specification. Production for different language groups can be organized worldwide through professional collaborators.
-
-**Services to select if available:** Audio Production; Advertising Audio; Radio Commercials; IVR Audio; Telephone Greetings; Automated Announcements; Voice-over; Multilingual Audio; Localization; Audiobooks; Corporate Audio.
-
-**Do not select or purchase:** paid verification badge, promoted listing, subscription, sponsored placement or search-visibility upgrade.
-
-### 4.7. The VoiceOver Community — qualification before free listing
-
-**Канал:** native Resource Directory form  
-**Directory:** https://www.thevoiceovercommunity.com/resource-directory/  
-**Условие:** стандартный листинг заявлен бесплатным; enhanced listing — платный. Remote/global eligibility not established.
-
-**Message for the listing form or editor:**
+**Канал:** Resource Directory → Add Listing  
+**Страница:** https://www.thevoiceovercommunity.com/resource-directory/  
+**Тема/описание для формы:**
 
 Hello,
 
-We would like to check whether your Resource Directory accepts an international business-audio production studio in the Production Services category.
+We would like to submit Аудио-Реклама•ru for consideration in the VoiceOver Industry Resource Directory.
 
-Аудио-Реклама•ru is based in Nizhny Novgorod, Russia, and produces business audio such as advertising spots, IVR/telephone greetings, automated announcements, multilingual voice content, video voice-over, audiobooks and corporate audio. We are a production studio rather than a talent agency, and we do not want to use a category or address that would misrepresent the business.
+Аудио-Реклама•ru is a business audio-production studio based in Nizhny Novgorod, Russia. Our work includes advertising audio, radio spots, IVR and telephone greetings, automated announcements, multilingual business audio, video voice-over, audiobooks and corporate audio.
 
-Does the standard free listing allow a remote/international business-audio production company? If so, which category and location format would be accurate? If the directory is intended only for local physical recording studios or individual voice professionals, please let us know and we will not submit an unsuitable listing.
+We are a production studio rather than a talent agency or an individual voice actor. We coordinate voice casting, language production, recording, editing and delivery of finished audio materials. International language production can be arranged through professional collaborators.
+
+Would the standard free resource listing be appropriate for a business-audio production studio, and which category would represent it accurately? We would appreciate consideration for the ordinary listing; an enhanced paid placement is not required for this submission.
 
 Website: https://www.audio-reclama.ru  
 Contact: start@audio-reclama.ru
 
 Thank you.
 
-## 5. Очерёдность выполнения
+### 4.6. UpSound — добавление студии в справочник
 
-1. **RUWARD:** восстановить контроль над уже существующей карточкой — наиболее прямой и малозатратный шаг.
-2. **VORG:** подготовить бесплатный стандартный профиль после native-search; категория Global/Remote соответствует международной модели.
-3. **Enterprise League:** проверить существующую карточку/claim и использовать только бесплатный профиль в Audio Production.
-4. **AdIndex:** получить ответ о бесплатности обычной карточки до подачи формы.
-5. **Sostav:** получить ответ редакции об обычном/бесплатном включении в Production.
-6. **The VoiceOver Community:** получить подтверждение, что remote business-audio production допустим.
-7. **UpSound:** только если редакция считает коммерческое voice/audio production релевантным своим читателям.
+**Канал:** we@upsound.org  
+**Тема:** Добавление студии делового аудиопроизводства в справочник UpSound
 
-Одна волна, один адресат на площадку. Не делать повторных сообщений, пока нет ответа или разумного срока follow-up. Не отправлять массово одинаковый текст.
+Здравствуйте!
 
-## 6. Фиксация результата
+Увидели ваш справочник студий звукозаписи и предложение редакции добавлять новые студии и исправлять сведения бесплатно.
 
-Для каждой площадки после фактического действия хранить:
+Просим рассмотреть «Аудио-Реклама•ru» для включения в справочник как студию делового аудиопроизводства, если такая специализация соответствует вашей модели каталога.
 
-- дату;
-- использованный публичный канал связи;
-- точный статус: DRAFT_READY_NOT_SENT, SENT, REPLIED, ACCEPTED_FREE, REJECTED, PAID_ONLY, LISTED, PROFILE_CLAIMED, NO_FIT;
-- ответ редакции (без приватных персональных данных);
-- подтверждённую стоимость;
-- точную публичную URL карточки;
-- категорию и описание;
-- видимость и работоспособность ссылки;
-- nofollow / sponsored / иной атрибут, если проверен;
-- скриншот/источник результата;
+Наша работа — рекламная аудиозапись, радиоролики, голосовые приветствия и IVR-аудиоматериалы, автоинформаторы, многоязычные объявления и voice-over для деловых задач. Это отличается от музыкальной студии, ориентированной на аренду репетиционных помещений, запись барабанов или сведение музыкальных релизов. Не хотим вводить пользователя в заблуждение неверным описанием оборудования или аренды.
+
+Подскажите, пожалуйста, может ли ваш каталог выделять commercial voice-over / business audio production как отдельную специализацию и какие данные нужны редакции для проверки. Если формат справочника ориентирован исключительно на музыкальные студии, сообщите об этом — мы не будем подавать нерелевантную карточку.
+
+Официальный сайт: https://www.audio-reclama.ru  
+Примеры работ: https://www.audio-reclama.ru/project/
+
+Спасибо!
+
+### 4.7. Enterprise League — бесплатный международный Audio Production профиль
+
+**Канал:** company profile / Free Plan  
+**Категория:** Audio Production  
+**Текст для профиля:**
+
+**Company name:** Аудио-Реклама•ru
+
+**Short description:**
+
+Business audio-production studio creating advertising audio, radio spots, IVR and telephone greetings, automated announcements, multilingual voice content, video voice-over, audiobooks and corporate audio.
+
+**Company description:**
+
+Аудио-Реклама•ru is a business audio-production studio based in Nizhny Novgorod, Russia. Its public service areas include advertising and radio audio, IVR and telephone greetings, automated announcements, multilingual business audio, video and presentation voice-over, audiobooks, jingles and corporate audio.
+
+Project scope may include script preparation or editing within an agreed brief, voice casting, localization, recording, editing and preparation of deliverable audio files to the client's technical specification. Production for different language groups can be arranged worldwide through professional collaborators.
+
+**Website:** https://www.audio-reclama.ru  
+**Contact:** start@audio-reclama.ru  
+**Location:** Nizhny Novgorod, Russia; remote/global production.
+
+**Request:** Please confirm whether the Free Plan includes a standard profile in the Audio Production directory and whether the company can be reviewed for any complimentary editorial feature or award category. No paid plan, badge or boosted placement is being selected at this stage.
+
+### 4.8. Рейтинг Рунета — проверка категории и допустимости участия
+
+**Канал:** info@ratingruneta.ru или официальная форма регистрации/контактов  
+**Тема:** Возможность участия студии аудиопроизводства в рейтингах 2026
+
+Здравствуйте!
+
+Изучили методологию и категории «Рейтинга Рунета» на 2026 год. Не нашли отдельной категории аудиопроизводства, поэтому не хотим заявляться в неподходящий рейтинг или искусственно переименовывать реальные услуги.
+
+«Аудио-Реклама•ru» — студия делового аудиопроизводства: рекламное аудио, радиоролики, голосовые приветствия и IVR-аудиоматериалы, автоинформаторы, многоязычная озвучка, voice-over для видео и презентаций, аудиокниги и корпоративное аудио.
+
+Подскажите, пожалуйста:
+1. Может ли компания с такой специализацией участвовать в каком-либо из действующих рейтингов 2026 года на основании реально оказанных услуг и проектов?
+2. Если нет, рассматриваете ли вы добавление отдельной категории Audio Production / аудиопроизводство в будущую методологию?
+3. Можно ли включить компанию в общий каталог участников или другой справочный раздел без некорректного отнесения к digital/video/advertising agency?
+
+Знаем, что участие в рейтингах заявлено бесплатным; вопрос именно в корректности категории и методологии. Готовы предоставить ссылки на публичные кейсы и подтвердить фактическую роль студии в проектах.
+
+Официальный сайт: https://www.audio-reclama.ru  
+Контакт: start@audio-reclama.ru
+
+Спасибо!
+
+### 4.9. Cataloxy — бесплатная карточка компании
+
+**Канал:** форма «Добавить компанию» на https://www.cataloxy.ru/  
+**Текст для описания:**
+
+**Название:** Аудио-Реклама•ru  
+**Категория:** рекламные услуги / аудиопроизводство / студия звукозаписи — выбрать точный доступный вариант, не дублируя неподходящие рубрики.
+
+**Краткое описание:**
+
+Студия делового аудиопроизводства из Нижнего Новгорода. Запись рекламных аудиороликов и радиорекламы, голосовых приветствий и IVR-аудиоматериалов, автоинформаторов, многоязычных объявлений, озвучивание видео и презентаций, аудиокниги и корпоративное аудио.
+
+**Подробное описание:**
+
+«Аудио-Реклама•ru» организует производство аудиоматериалов для бизнеса: рекламные ролики, голосовые приветствия и IVR, автоматические объявления, многоязычное аудио, озвучивание видео и презентаций, аудиокниги и корпоративные аудиоматериалы. В зависимости от задания работа включает согласованную подготовку текста, подбор исполнителя, запись, монтаж, обработку и передачу файлов по технической спецификации заказчика. Производство для разных языковых групп организуется через сеть профессиональных исполнителей.
+
+**Адрес:** Россия, Нижний Новгород, улица Варварская, 32, помещение П11, 5-й этаж.  
+**Сайт:** https://www.audio-reclama.ru  
+**Телефон:** 8 800 700-46-52  
+**Email:** start@audio-reclama.ru
+
+**Перед отправкой формы:** проверить существующую карточку по бренду, домену и телефону; не создавать дубль.
+
+### 4.10. Trafstat — редакционное включение в открытый каталог
+
+**Канал:** info@trafstat.ru  
+**Тема:** Предложение добавить «Аудио-Реклама•ru» в каталог агентств с подтверждёнными источниками
+
+Здравствуйте!
+
+Изучили ваш открытый каталог агентств и подход с указанием источников для описания компаний. Хотели бы предложить редакции проверить возможность включения «Аудио-Реклама•ru» как специализированной студии делового аудиопроизводства.
+
+Компания производит рекламные аудиоролики и радиорекламу, голосовые приветствия и IVR-аудиоматериалы, автоинформаторы, многоязычные деловые объявления, озвучивание видео и презентаций, аудиокниги и корпоративное аудио.
+
+Публичные источники:
+— Официальный сайт: https://www.audio-reclama.ru
+— IVR: https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html
+— Внуково: https://www.audio-reclama.ru/project/vnukovo.html
+— ABBYY: https://www.audio-reclama.ru/project/abbyy.html
+— РЖД: https://www.audio-reclama.ru/project/rzhd.html
+— Публичная отраслeвая карточка AllAdvertising: https://alladvertising.ru/info/audio_reclama_ru.html
+
+В каталоге мы не нашли отдельной категории Audio Production. Подскажите, пожалуйста, возможна ли карточка в близкой категории производства контента с явным указанием аудиоспециализации либо рассмотрение новой категории. Просим рассмотреть включение без оплаты рекламного продвижения; если для карточки предусмотрены другие условия, сообщите их отдельно.
+
+Спасибо!
+
+«Аудио-Реклама•ru»  
+start@audio-reclama.ru
+
+### 4.11. Клерк — проверка корректной бизнес-категории
+
+**Канал:** кнопка «Добавить компанию» на https://www.klerk.ru/company/  
+**Тема обращения/текст для формы:**
+
+Здравствуйте!
+
+Хотели бы добавить «Аудио-Реклама•ru» в каталог компаний Клерка. Перед созданием профиля просим уточнить, подходит ли категория «Рекламные агентства» для студии делового аудиопроизводства, которая производит аудиорекламу, радиоролики, голосовые приветствия, IVR-аудио, автоинформаторы, многоязычные объявления и озвучивание видео.
+
+Понимаем, что Клерк.Рейтинг отражает активность и репутацию компании внутри площадки, а не отраслевое качество аудиопродакшна. Поэтому не хотим представлять его как рейтинг лучших студий звукозаписи. Нас интересует корректная карточка компании и возможность участвовать в экосистеме Клерка на соответствующих условиях.
+
+Официальный сайт: https://www.audio-reclama.ru  
+Контакт: start@audio-reclama.ru
+
+### 4.12. 3Клик — бесплатная карточка
+
+**Канал:** https://www.3klik.ru/registration/  
+**Действие:** проверить существующую карточку, затем использовать бесплатную регистрацию; категория «Рекламные агентства» либо создать более точную категорию, если такая возможность действительно поддерживается.
+
+**Краткое описание:**
+
+Студия делового аудиопроизводства. Рекламные аудиоролики и радиореклама, голосовые приветствия и IVR-аудио, автоинформаторы, многоязычные объявления, озвучивание видео и презентаций, аудиокниги и корпоративное аудио.
+
+**Подробное описание:**
+
+«Аудио-Реклама•ru» — студия делового аудиопроизводства из Нижнего Новгорода. Выполняет запись рекламного аудио, радиороликов, голосовых приветствий, IVR-аудиоматериалов и автоинформаторов, многоязычных объявлений, озвучивание видео и презентаций, аудиокниг и корпоративного аудио. Подбор голоса, согласованная работа с текстом, запись, монтаж, обработка и подготовка файлов выполняются в рамках конкретного проекта.
+
+**Контактные данные:**
+- Адрес: Нижний Новгород, улица Варварская, 32, помещение П11, 5-й этаж.
+- Сайт: https://www.audio-reclama.ru
+- Телефон: 8 800 700-46-52
+- Email: start@audio-reclama.ru
+- Дзен: https://dzen.ru/audioreclamaru
+- Telegram: https://t.me/audioreclama_ru
+- YouTube: https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw
+
+График: обслуживание заявляется круглосуточным; формальный график 09:00–21:00. Не интерпретировать это как круглосуточное присутствие в офисе.
+
+### 4.13. Да-Клиент.ру — бесплатный справочный профиль, если нативная форма подтверждена
+
+**Канал:** https://da-client.ru/ru/reklamnye-uslugi/  
+**Статус:** ссылка и бесплатное добавление видны в поисковом результате, но актуальность формы и условия нужно проверить непосредственно на сайте перед подачей.
+
+**Краткое описание:**
+
+«Аудио-Реклама•ru» — студия делового аудиопроизводства: аудиореклама, радиоролики, голосовые приветствия и IVR, автоинформаторы, многоязычные объявления, озвучивание видео и презентаций, аудиокниги и корпоративное аудио.
+
+**Действие:** искать существующую карточку по бренду и официальному домену; при отсутствии проверить бесплатное добавление в категорию рекламных услуг. Не заполнять форму, если условия изменились или предлагается платный тариф без отдельного согласования.
+
+## 5. Отдельный подход по платным каталогам и рейтингам
+
+### Платная интеграция / рекламный пакет
+
+Для площадки, где обычное размещение стоит денег, использовать такой отдельный абзац:
+
+«Мы понимаем, что на площадке существуют коммерческие форматы продвижения и платные профили. Одновременно хотели бы попросить редакцию рассмотреть возможность комплиментарного включения компании в стандартный отраслевой каталог: профиль Аудио-Реклама•ru соответствует тематике аудиопроизводства и подтверждается публичными проектами и присутствием в профильной категории другого отраслевого каталога. Будем признательны, если вы сможете рассмотреть редакционное исключение, бесплатную базовую карточку или освобождение стандартного размещения от платы. Если такой возможности нет, пришлите, пожалуйста, тариф и состав услуг; решение о покупке будет приниматься отдельно».
+
+Это не обещание оплаты и не требование бесплатной услуги. Это корректный запрос на решение редакции.
+
+### Редакционный рейтинг
+
+Если рейтинг рассчитывается по методике, спросить об eligibility и необходимых данных; не просить изменить место вручную. Если участие бесплатное, предоставить доказательства по правилам рейтинга; если нет подходящей категории, просить разъяснить или предложить будущую категорию.
+
+## 6. Очерёдность отправки
+
+Рекомендуемый порядок:
+1. Sostav — сильная редакционная близость к Production и наличие категории с озвучением.
+2. AdIndex — отраслевой каталог, где задача прямого включения понятна.
+3. RUWARD — существующий профиль, который не нужно создавать заново.
+4. UpSound — редакция прямо приглашает добавить студии бесплатно; требуется уточнить бизнес-аудио fit.
+5. VORG — бесплатный Global/Remote listing точно соответствует международной модели.
+6. The VoiceOver Community — бесплатный профиль для voice-over industry resources.
+7. Enterprise League — бесплатный глобальный Audio Production profile.
+8. Рейтинг Рунета — бесплатное участие, но сначала нужна проверка категории.
+9. Trafstat — открытый каталог с редакционными исправлениями и источниками.
+10. Клерк — проверить релевантность карточки, не смешивать с отраслевым рейтингом.
+11. Cataloxy — общая бесплатная карточка с низшей ожидаемой отраслевой ценностью.
+12. 3Клик — общая бесплатная карточка.
+13. Да-Клиент.ру — после повторной проверки нативной формы.
+
+Все сообщения адресные. Не отправлять все письма в один день одной одинаковой рассылкой; сохранять отдельный статус и ответ для каждого адресата. Один корректный follow-up допустим после разумного срока, если площадка не ответила.
+
+## 7. Учёт переговоров
+
+Для каждой площадки фиксировать:
+- дату и канал обращения;
+- точную тему и версию текста;
+- статус: DRAFT_READY_NOT_SENT, SENT, REPLIED, FREE_INCLUDED, COMPLIMENTARY_INCLUDED, PAID_ONLY, EDITORIAL_REVIEW, REJECTED, NO_FIT, LISTED;
+- есть ли платный прайс и что именно входит;
+- предложили ли редакционное исключение, бесплатную стандартную карточку или waiver;
+- ответ редакции и обещанный срок;
+- точный публичный URL карточки после публикации;
+- категорию, текст, ссылку и доказательства размещения;
+- кто проверил страницу и когда;
 - следующий шаг.
 
-**Нельзя отмечать площадку как SENT, ACCEPTED_FREE или LISTED, пока это фактически не произошло.** Сам факт подготовки этого пакета не создаёт внешнего размещения.
+**Не отмечать SENT, FREE_INCLUDED, COMPLIMENTARY_INCLUDED или LISTED без фактического подтверждения.**
 
-## 7. Источники и проверенные условия
+## 8. Контрольные ограничения
 
-| Площадка | Официальный источник | Что установлено |
-|---|---|---|
-| AllAdvertising | https://alladvertising.ru/info/audio_reclama_ru.html ; https://alladvertising.ru/tags/?tag=378 | Уже есть профиль в аудио-продакшне; текущая карточка обновлена 19.11.2026; результат прежнего бесплатного включения — по сообщению владельца |
-| AdIndex | https://adindex.ru/catalogue/ | Есть каталог рекламных агентств и форма «Добавить компанию»; форма предусматривает проверку заявки. Нулевая стоимость стандартной карточки не установлена; контакты info@adindex.ru / help@adindex.ru показаны на официальных страницах |
-| Sostav | https://www.sostav.ru/map/companies ; https://www.sostav.ru/about/contacts | Есть карта каталога компаний и раздел Production; контакты редакции news@sostav.ru и общий info@sostav.ru опубликованы; бесплатность карточки не подтверждена |
-| RUWARD | https://ruward.ru/catalog/audio-reclama-ru/ ; https://ruward.ru/faq/ | Существующая карточка найдена; FAQ объясняет подключение агентства к профилю через личный кабинет; стоимость актуализации не подтверждена |
-| VORG | https://voiceoverresourceguide.com/get-your-free-listing/ ; https://voiceoverresourceguide.com/contact/ | Стандартный листинг заявлен бесплатным; доступны Global/Remote варианты; решение о принятии остаётся за редактором |
-| Enterprise League | https://enterpriseleague.com/directory/audio-production | Есть Audio Production directory; бесплатный стандартный профиль, платная подписка/бейдж для дополнительной видимости; использовать только free tier |
-| The VoiceOver Community | https://www.thevoiceovercommunity.com/resource-directory/ | Стандартный листинг заявлен бесплатным, enhanced listing платный; дистанционная/международная карточка требует уточнения |
-| UpSound | https://upsound.org/spravochniki/studii/ | Справочник студий записи с музыкальной специализацией; редакционный контакт we@upsound.org опубликован; соответствие B2B audio production пока не установлено |
-| Rating Runeta | https://ratingruneta.ru/ | Eligibility для студии чистого аудиопроизводства не установлена; не включать без предварительной квалификации |
+- Не отправлять массовые одинаковые сообщения и не использовать автоматические комментарии.
+- Не покупать рекламу, платные бейджи, подписки, рейтинговые пакеты или продвижение без отдельного согласования владельца.
+- Не принимать договорные условия, exclusivity, barter or reciprocal-link commitments без отдельного согласования.
+- Не создавать дубликат существующей карточки.
+- Не требовать dofollow и не обещать SEO-эффект.
+- Не называть карточку независимой рекомендацией или наградой без фактического редакционного/рейтингового решения.
+- Не использовать фиктивные адреса, офисы, часы, цифры и клиентские материалы.
+- Не заявлять неподтверждённую интеграцию PBX/SIP/DTMF/CRM или IVR под ключ.
+- Не использовать логотипы и клиентские записи без соответствующих прав.
+- Не изменять официальный сайт, Дзен, Telegram или существующие внешние карточки в рамках этой подготовки.
 
-## 8. Контрольные запреты
-
-- Не отправлять сообщения автоматически и не заполнять внешние формы.
-- Не создавать дубликат уже существующего профиля.
-- Не платить за стандартное включение, платный бейдж, подписку, продвижение или рекламу.
-- Не просить гарантировать место в рейтинге, независимую рекомендацию или dofollow.
-- Не делать массовую рассылку одинакового текста.
-- Не размещать фиктивные офисы, локальные адреса, рейтинги, отзывы и показатели.
-- Не обещать настройку АТС, SIP, DTMF, CRM, очередей или IVR «под ключ».
-- Не использовать клиентские логотипы/аудио вне прав и разрешений.
-- Не менять официальный сайт, Дзен, Telegram или внешние карточки в рамках кампании.
-- Не считать коммит в Git публикацией.
-
-**Итог:** адресная первая волна подготовлена. Все сообщения и карточки остаются DRAFT_READY_NOT_SENT. Внешние площадки не изменялись и никто не контактировался.
+**Итог:** 13 адресатов в одной контролируемой волне; все черновики адресные; платные каталоги не исключены, а включены в переговорную стратегию. На момент подготовки ничего не отправлено и не опубликовано.
