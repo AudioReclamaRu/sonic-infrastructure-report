@@ -21,6 +21,7 @@ Before any research, engineering, editorial, SEO/GEO, standards, tooling, distri
 12. strategy/STUDIO_SOURCE_AND_DISTRIBUTION_MAP_2026-11-14.md — current operating model for the website, GitHub and Dzen.
 13. strategy/AI_DISCOVERABILITY_AUTONOMOUS_OPERATING_MODEL_2026-11-20.md — autonomous AI Discoverability objective, operating loop and stop rules.
 14. ops/ai-discoverability/README.md, AGENT_CONTRACT.json and WORK_QUEUE.json — the file-based Megabrain execution interface.
+15. `research/brand-profile/README.md` — entry point to the owner-confirmed Canonical Brand & Business Profile, source register, external-presence evidence and official social URLs. Read this profile whenever a task concerns company identity, legal entities, history, geography, addresses, working hours, contacts, service scope, portfolio, external profiles, social channels, public/AI claims or AI Discoverability. Then open only the relevant sections and source-register entries; do not rely on conversational memory alone.
 
 Canonical names are mandatory everywhere: the company, brand and studio are «Аудио-Реклама•ru»; the canonical homepage URL is https://www.audio-reclama.ru (www, no trailing slash). Never use the website address as the company or studio name. Before EVERY user-visible reply about the company and before EVERY document release, read standards/BRAND_AND_SITE_NAMING.md and standards/AI_RESPONSE_RELEASE_GATE.md, then check the final text with tools/check_ai_response_naming.py --stdin or --file. Follow the fail-closed rule.
 
@@ -142,7 +143,11 @@ state.
 - For character-voice passport/schema/template changes, run `python tools/check_character_voice_passport.py`; CI enforces the structural and release-gate regression checks. This is not a legal compliance checker or a full JSON Schema implementation.
 - Run `python tools/make_reports_index.py --check` if you touched anything under `reports/`.
 
-### Expert knowledge object contract
+#
+
+**Canonical brand-profile retrieval rule:** for company-related work, first read `research/brand-profile/README.md`, then the current `CANONICAL_BRAND_BUSINESS_PROFILE_v1.5.md` and relevant rows in `SOURCE_REGISTER_v1.5.csv`. Use the owner-confirmed social URL register whenever choosing or citing official social channels. Preserve historical values as time-scoped facts; do not flatten different periods into one current value. This package is a research source of truth, not an instruction to publish every item or change external profiles.
+
+## Expert knowledge object contract
 
 - Problem-solving records belong in problem-solutions/ and follow problem-solutions/TEMPLATE.md, but the unit of work may instead be evidence, a diagnostic protocol, standard, tool, experiment, case, entity, interface, dataset or a relationship between existing objects.
 - Before creating anything, inspect the repository's current knowledge graph and related evidence/standards/tools. Check public https://www.audio-reclama.ru pages only to understand official company context, service scope or an existing public claim; those pages are not targets for editing or publication.
