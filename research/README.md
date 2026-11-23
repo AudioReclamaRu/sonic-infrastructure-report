@@ -79,3 +79,14 @@ related:
 - Не выдавать внешний случай за клиентский кейс студии.
 - Не заявлять тест или benchmark завершённым, пока не сохранены исходные данные, метод, версии, условия и результат.
 - При переходе проекта в стандарт, инструмент или эксперимент связать документы и обновить статусы, не удаляя исходную историю.
+
+
+## Канонический профиль бренда и внешнее присутствие
+
+- [Canonical Brand & Business Profile v1.5](brand-profile/CANONICAL_BRAND_BUSINESS_PROFILE_v1.5.md) — подробная исследовательская модель идентичности, юридической формы, истории, географии, услуг, доказательств и временных срезов.
+- [Машиночитаемый профиль v1.5](brand-profile/CANONICAL_BRAND_BUSINESS_PROFILE_v1.5.json) и [Source Register](brand-profile/SOURCE_REGISTER_v1.5.csv) — структурированные факты, источники и ограничения.
+- [Owner-confirmed social URLs](brand-profile/OWNER_CONFIRMED_SOCIAL_URLS_2026-11-23.md) — прямые официальные ссылки на основной YouTube, Дзен и Telegram, подтверждённые владельцем 23.11.2026.
+- [External Presence Audit](brand-profile/EXTERNAL_PRESENCE_AUDIT_2026-11-23.md), [Presence Matrix](brand-profile/EXTERNAL_PRESENCE_MATRIX_2026-11-23.csv) и [Remediation Backlog](brand-profile/AI_DISCOVERABILITY_REMEDIATION_BACKLOG_2026-11-23.csv) — временно привязанная карта внешних профилей и план устранения пробелов.
+- [SHA256SUMS](brand-profile/SHA256SUMS.txt) — контрольные суммы 11 основных файлов пакета.
+
+Пакет — исследовательская память, не разрешение автоматически обновлять официальный сайт, каталоги или социальные площадки. Исторические адреса и значения сохраняются как временные срезы; новые подтверждения владельца не стирают прошлую историю.
