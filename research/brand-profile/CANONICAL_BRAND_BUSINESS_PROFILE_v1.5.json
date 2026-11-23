@@ -1,0 +1,911 @@
+{
+  "profile_name": "Canonical Brand & Business Profile — Аудио-Реклама•ru",
+  "version": "1.5",
+  "as_of": "2026-11-23",
+  "status": "research canonical profile; owner-confirmed Dzen and Telegram direct URLs incorporated; no external platform changes authorized",
+  "method": "Temporal evidence model; preserve historical records with separate valid-time and observed-time context; do not normalize different periods into a single unqualified value. Five owner clarifications were recorded on 2026-11-23; historical snapshots are preserved. Two additional owner-provided official social URLs were recorded on 2026-11-23: Dzen and Telegram. Their exact destinations are owner-confirmed; live content, account administration and current posting cadence were not independently re-audited in this update.",
+  "brand": {
+    "canonical_name_ru": "Аудио-Реклама•ru",
+    "canonical_name_latin": "Аудио-Реклама•ru",
+    "display_variant": "Аудио-Реклама•ru",
+    "domain": "https://www.audio-reclama.ru/",
+    "aliases": [
+      "Аудио-Реклама•ru",
+      "Аудио-Реклама•ru",
+      "Аудио-Реклама•ru"
+    ],
+    "founded_or_brand_relaunch_year": {
+      "value": 2010,
+      "status": "HISTORICAL_PRIMARY_INTERVIEW + CURRENT_EXTERNAL",
+      "note": "Brand name/renewed studio project dating to 2010; not the registration date of ООО ЛАМА МЕДИА. Founder interview separately describes earlier sound-work history around 2000/2001."
+    },
+    "organization_type": [
+      "audio production studio",
+      "recording studio",
+      "audio and video production agency"
+    ],
+    "headquarters_city": {
+      "value": "Нижний Новгород, Россия",
+      "status": "CURRENT_EXTERNAL + HISTORICAL_PRIMARY_INTERVIEW",
+      "note": "Head office/audio production studio described in Nizhny Novgorod in historical 2018 interview; 2026 external profile lists main office at Varvarskaya 32. Owner confirmed on 2026-11-23 that Varvarskaya 32 is the head office and legal address."
+    },
+    "short_description_ru": "Аудио-Реклама•ru (Аудио-Реклама•ru) — аудио- и видеопродакшн-студия из Нижнего Новгорода, развивающая бренд с 2010 года. Создаёт рекламные аудиоролики, голосовые приветствия для АТС, сообщения для автоответчиков и IVR-меню, автоинформаторы, озвучивание видео и презентаций, аудиокниги и другие голосовые материалы. Работает с динамически обновляемой базой дикторов на 62 языках; дополнительные исполнители вне базы привлекаются по запросу. Для IVR подготавливает аудиофайлы с учётом технической спецификации принимающей системы; написание и редактура сценарных текстов выполняются в согласованном объёме проекта. Заявляется круглосуточное обслуживание; формальный график работы — 09:00–21:00. Настройка АТС, SIP, DTMF, маршрутизации, очередей и CRM не является автоматически включённой услугой аудиопроизводства."
+  },
+  "legal_entities": [
+    {
+      "name": "ООО «ЛАМА МЕДИА»",
+      "inn": "5262296876",
+      "kpp": "526001001",
+      "ogrn": "1145262001158",
+      "registered": "2014-02-07",
+      "registered_address": "603006, Нижегородская область, г. Нижний Новгород, ул. Варварская, д. 32, помещ. П11",
+      "director_in_public_registry_profiles": "Табаков Игорь Васильевич",
+      "main_okved": "73.11 — деятельность рекламных агентств",
+      "sources": [
+        "S01",
+        "S06",
+        "S12",
+        "S14"
+      ],
+      "status": "PUBLICLY_LISTED_LEGAL_ENTITY",
+      "owner_confirmation_required": "Для каждого заказа указывать фактического контрагента по соответствующему договору/счёту; не выводить единое постоянное распределение по типам услуг.",
+      "owner_confirmation": "Владелец подтвердил 23.11.2026, что для договоров используются и ООО «ЛАМА МЕДИА», и ИП Табаков И.В.; конкретное договорное лицо выбирается по запросу клиента, без фиксированного распределения отдельных услуг между ООО и ИП."
+    },
+    {
+      "name": "ИП Табаков Игорь Васильевич",
+      "inn": "526017922508",
+      "ogrnip": "310526005600017",
+      "registered": "2010-02-25",
+      "region": "Нижегородская область",
+      "main_okved": "59.20 — деятельность в области звукозаписи и издания музыкальных произведений",
+      "sources": [
+        "S01",
+        "S13"
+      ],
+      "status": "PUBLICLY_LISTED_INDIVIDUAL_ENTREPRENEUR",
+      "owner_confirmation_required": "Для каждого заказа указывать фактического контрагента по соответствующему договору/счёту; не выводить единое постоянное распределение по типам услуг.",
+      "owner_confirmation": "Владелец подтвердил 23.11.2026, что для договоров используются и ООО «ЛАМА МЕДИА», и ИП Табаков И.В.; конкретное договорное лицо выбирается по запросу клиента, без фиксированного распределения отдельных услуг между ООО и ИП."
+    }
+  ],
+  "contacts": {
+    "website": "https://www.audio-reclama.ru/",
+    "main_phone": "8 800 700-46-52",
+    "phone_description": "Бесплатный звонок по России (as stated on official site)",
+    "email": "start@audio-reclama.ru",
+    "online_order": "https://www.audio-reclama.ru/online-zakaz.html",
+    "ivr_order": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+    "official_site_hours": {
+      "value": "Пн–пт, 09:00–18:00 МСК",
+      "status": "SOURCE_SPECIFIC_SNAPSHOT",
+      "source": "S01/S05",
+      "note": "Снимок опубликованного отображения сайта; не заменяет прямое уточнение владельца о формальном графике 09:00–21:00."
+    },
+    "yandex_card_hours": {
+      "value": "Карточка показывает «открыто до 21:00»",
+      "status": "SOURCE_SPECIFIC_SNAPSHOT",
+      "source": "S07",
+      "note": "Согласуется с концом формального диапазона 09:00–21:00, но само по себе не доказывает круглосуточное обслуживание."
+    },
+    "service_availability_claim": {
+      "value": "Круглосуточное обслуживание",
+      "status": "OWNER_CONFIRMATION",
+      "source": "S21",
+      "interpretation_limit": "Заявленная доступность обслуживания; не трактовать автоматически как круглосуточное присутствие сотрудников или непрерывную телефонную поддержку."
+    },
+    "formal_working_hours": {
+      "value": "09:00–21:00",
+      "status": "OWNER_CONFIRMATION",
+      "source": "S21",
+      "timezone": "Не повторён отдельно в owner confirmation; официальный сайт в источниковом снимке указывает МСК."
+    }
+  },
+  "geography": {
+    "current_main_office_record": {
+      "address": "Нижний Новгород, ул. Варварская, 32, помещение П11, 5-й этаж",
+      "source": "S06/S07/S12/S14/S21",
+      "source_update_date": "2026-11-19 to 2026-11-23",
+      "status": "OWNER_CONFIRMED + CURRENT_EXTERNAL",
+      "owner_confirmation": "Владелец подтвердил 23.11.2026: Варварская, 32 — головной офис и юридический адрес; помещение П11 точно соответствует 5-му этажу."
+    },
+    "legal_address_ooo": {
+      "address": "Нижний Новгород, ул. Варварская, д. 32, помещ. П11; 5-й этаж",
+      "source": "S12/S14/S21",
+      "status": "OWNER_CONFIRMED + LEGAL_REGISTER_ADDRESS",
+      "owner_confirmation": "П11 точно соответствует 5-му этажу по подтверждению владельца от 23.11.2026."
+    },
+    "yandex_navigation_address": {
+      "address": "Нижний Новгород, ул. Варварская, 32, 5-й этаж / помещение П11",
+      "source": "S07/S21",
+      "status": "OWNER_CONFIRMED_ADDRESS_MAPPING + SOURCE_SPECIFIC_SNAPSHOT",
+      "note": "Владелец подтвердил точное соответствие П11 и 5-го этажа."
+    },
+    "historical_records": [
+      {
+        "period": "с 2010 года; ранний адресный период до переезда ориентировочно в 2013–2015 годах",
+        "location": "Нижний Новгород, ул. Невзоровых, 38, офис 6, 2-й этаж",
+        "presence_type": "ранний адресный этап; позднее сменился адресом ул. Белинского, 9Б",
+        "source": "S18 + S20",
+        "status": "OWNER_CONFIRMED_HISTORICAL_SEQUENCE_WITH_APPROXIMATE_TRANSITION",
+        "date_limitation": "Переезд на Белинского владелец датирует приблизительно 2013–2015 годами; точную дату/год не помнит."
+      },
+      {
+        "period": "начало ориентировочно в 2013–2015 годах; точная дата перехода не установлена",
+        "location": "Нижний Новгород, ул. Белинского, 9Б",
+        "presence_type": "более поздний адресный этап после ул. Невзоровых и до последующего адреса Варварская, 32",
+        "source": "S08/S15 + S20",
+        "status": "OWNER_CONFIRMED_HISTORICAL_SEQUENCE_WITH_APPROXIMATE_TRANSITION",
+        "date_limitation": "Владелец оценивает переезд с Невзоровых на Белинского примерно 2013–2015 годами; точная дата не установлена."
+      },
+      {
+        "period": "2016",
+        "location": "Москва и Санкт-Петербург",
+        "presence_type": "virtual offices / local phone numbers answered remotely from Nizhny Novgorod",
+        "source": "S09",
+        "status": "HISTORICAL_PRIMARY_INTERVIEW"
+      },
+      {
+        "period": "2018 historical interview",
+        "location": "Нижний Новгород",
+        "presence_type": "head office and audio production studio",
+        "source": "S10",
+        "status": "HISTORICAL_PRIMARY_INTERVIEW"
+      }
+    ],
+    "service_area": "Remote work for customers in Russia and international projects; current physical offices outside Nizhny Novgorod are not established by reviewed sources.",
+    "owner_confirmation": {
+      "date": "2026-11-23",
+      "varvarskaya_32": "head office and legal address; premises P11 exactly corresponds to 5th floor",
+      "address_sequence": [
+        "Невзоровых, 38 (ранний период с 2010 года)",
+        "Белинского, 9Б (переезд ориентировочно в 2013–2015 годах; более поздний период)",
+        "Варварская, 32, помещение П11, 5-й этаж (головной офис и юридический адрес)"
+      ],
+      "date_precision": "Transition Nevzorovykh → Belinskogo is approximate, remembered as around 2013–2015; not an exact date."
+    },
+    "historical_transition_estimate": {
+      "from": "Невзоровых, 38",
+      "to": "Белинского, 9Б",
+      "approximate_window": "2013–2015",
+      "precision": "Approximate owner recollection; exact date not remembered",
+      "source": "S21"
+    }
+  },
+  "services": {
+    "confirmed_public_directions": [
+      "рекламные аудиоролики и радиореклама",
+      "дикторская запись и кастинг голосов",
+      "голосовые приветствия для АТС",
+      "автоответчики и IVR-меню",
+      "автоинформаторы и сообщения для телефонии",
+      "перевод и локализация голосовых материалов",
+      "озвучивание видео и презентаций",
+      "аудиокниги, джинглы, корпоративные песни",
+      "видеопродакшн"
+    ],
+    "languages": 62,
+    "ivr_scope": {
+      "public_claim": "Озвучивание IVR/автоответчиков и подготовка файлов для загрузки в систему заказчика.",
+      "internal_owner_decisions": [
+        "002A",
+        "004A",
+        "004B",
+        "005A",
+        "005B"
+      ],
+      "not_default_services": [
+        "PBX/IP-PBX setup",
+        "SIP/SIP trunk configuration",
+        "DTMF configuration",
+        "call routing",
+        "queues",
+        "CRM/CTI integration",
+        "production deployment",
+        "system acceptance",
+        "end-to-end turnkey IVR"
+      ],
+      "safe_claim": "Подготавливаем голосовые материалы и аудиофайлы для IVR/АТС по согласованному сценарию и технической спецификации принимающей системы."
+    },
+    "audio_plus": {
+      "exists_as_separate_offering": true,
+      "description": "Отдельный автоматизированный сервис для типовых аудиоматериалов; не доказательство PBX/SIP/CRM integration.",
+      "sources": [
+        "S01",
+        "S09",
+        "S10"
+      ]
+    }
+  },
+  "portfolio_examples": [
+    {
+      "client_or_project": "ABBYY",
+      "project": "голосовое меню на 4 языках",
+      "source": "S01"
+    },
+    {
+      "client_or_project": "Ренессанс Кредит",
+      "project": "сложное голосовое меню для банка",
+      "source": "S01"
+    },
+    {
+      "client_or_project": "Внуково",
+      "project": "информационные объявления аэропорта на 11 языках",
+      "source": "S01"
+    },
+    {
+      "client_or_project": "Сбербанк России",
+      "project": "автоинформатор для Волго-Вятского банка",
+      "source": "S01"
+    },
+    {
+      "client_or_project": "РЖД",
+      "project": "оповещения в поездах «Стриж» и «Сапсан»",
+      "source": "S01"
+    },
+    {
+      "client_or_project": "Hankook / Ростех / НПФ Лукойл-Гарант / Bulgari / Ассоциация ПН РТС",
+      "project": "примеры голосовых приветствий, показанные на IVR-странице",
+      "source": "S02"
+    }
+  ],
+  "reputation_and_awards": {
+    "award": "Золото WOW Awards 2018 за проект «Квартиры от Глобус Групп» в категории «Радиореклама»",
+    "industry_listing": "AllAdvertising profile states RRAR-2026 participation and 6th place; page last updated 2026-11-19",
+    "reviews": {
+      "official_site": "Yandex 5.0 / 314 reviews; Google 4.4 / 13 reviews",
+      "yandex_card": "5.0 / 301 ratings / 321 reviews",
+      "safe_short_claim": "более 300 отзывов",
+      "status": "MULTI_SNAPSHOT_METRIC"
+    }
+  },
+  "metrics_requiring_definition": {
+    "voice_talent_counts": {
+      "observed_page_snapshots": [
+        {
+          "value": 622,
+          "label": "диктора в базе",
+          "source": "S01"
+        },
+        {
+          "value": 620,
+          "label": "дикторов со всего мира",
+          "source": "S01"
+        },
+        {
+          "value": 794,
+          "label": "разноплановых диктора",
+          "source": "S03"
+        }
+      ],
+      "owner_confirmation_date": "2026-11-23",
+      "owner_statement_ru": "Количество дикторов в базе меняется непрерывно, поэтому точно зафиксировать одно число не представляется возможным. Также по запросу используются дикторы, не включённые в базу.",
+      "counting_policy": "The database count changes continuously and cannot be fixed precisely. Retain page values 620/622/794 only as separate page snapshots with their own labels, contexts and source dates; additional voice talents outside the database may be used on request.",
+      "additional_voice_talent": "Voice talents outside the database may be engaged/used on request.",
+      "safe_public_description_ru": "Динамически обновляемая база дикторов; дополнительные исполнители вне базы привлекаются по запросу.",
+      "source": "S20",
+      "database_status": "continuously changing; not suitable for one exact fixed public count"
+    },
+    "recorded_projects": {
+      "value": 10533,
+      "label": "проекта, получивших запись диктора",
+      "source": "S03",
+      "period_and_definition": "not stated"
+    },
+    "audio_plus_users": [
+      {
+        "value": 4616,
+        "source": "S01 parsed page"
+      },
+      {
+        "value": 4619,
+        "source": "S01 search result snapshot"
+      }
+    ],
+    "rule": "Voice database size changes continuously; never present one exact voice-talent count as a fixed stable total. Keep historic page values as source-specific snapshots. Additional voice talents outside the database may be used on request. Other counters retain their own definitions and timestamps.",
+    "separate_counters_policy": "Do not merge counts with different definitions (voice database, Audio+ users, project totals, ratings/reviews). Preserve each number as its own metric with exact label, source page, observed/published date and scope.",
+    "owner_confirmation_followup": {
+      "date": "2026-11-23",
+      "voice_database": "Continuously changing; no precise fixed count should be represented as stable.",
+      "additional_talent": "Voice talents outside the database may be used on request."
+    }
+  },
+  "external_profiles": [
+    {
+      "platform": "AllAdvertising",
+      "url": "https://alladvertising.ru/info/audio_reclama_ru.html",
+      "status": "CURRENT_EXTERNAL",
+      "note": "page updated 2026-11-19"
+    },
+    {
+      "platform": "Yandex Maps",
+      "url": "https://yandex.com/maps/org/audio_reklama_ru/9918435070/",
+      "status": "SOURCE_SPECIFIC_SNAPSHOT"
+    },
+    {
+      "platform": "Ruward",
+      "url": "https://ruward.ru/catalog/Аудио-Реклама•ru-ru/",
+      "status": "EXTERNAL_PROFILE_WITH_LEGACY_ADDRESS"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/company/Аудио-Реклама•ru-ru",
+      "status": "EXTERNAL_PROFILE"
+    },
+    {
+      "platform": "YouTube — primary official channel",
+      "url": "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+      "status": "OWNER_CONFIRMED_PRIMARY_CHANNEL_WITH_VERIFIED_HANDLE_ALIAS",
+      "owner_confirmation_date": "2026-11-23",
+      "note": "Owner-designated primary channel; @audioreclama is the same channel handle, not a second channel.",
+      "handle": "https://www.youtube.com/@audioreclama"
+    },
+    {
+      "platform": "YouTube — primary channel handle alias",
+      "url": "https://www.youtube.com/@audioreclama",
+      "status": "ALIAS_OF_OWNER_CONFIRMED_PRIMARY_CHANNEL",
+      "note": "The indexed primary channel page for UCxTNs2bLhmUNsx2rz_txNBw links to @audioreclama; treat as the handle of the same channel, not a separate channel."
+    },
+    {
+      "platform": "YouTube Говорим и показываем",
+      "url": "https://www.youtube.com/channel/UCWrrqfL2BnOe4Mc_gCY3KSw",
+      "status": "ADDITIONAL_BRANDED_CHANNEL_NOT_PRIMARY",
+      "note": "Not the primary channel according to owner confirmation dated 2026-11-23; its precise continuing role is not otherwise specified."
+    },
+    {
+      "platform": "VK",
+      "url": "https://vk.com/top1reklama",
+      "status": "LEGACY_LINK_INVENTORY",
+      "source": "S22",
+      "note": "Found in historical website link inventory; retain as a discovered brand link, but do not claim current activity without a fresh platform check."
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/audioReclamaru",
+      "status": "LEGACY_LINK_INVENTORY",
+      "source": "S22",
+      "note": "Found in historical website link inventory; retain as a discovered brand link, but do not claim current activity without a fresh platform check."
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/audio.reclama.ru/",
+      "status": "LEGACY_LINK_INVENTORY",
+      "source": "S22",
+      "note": "Found in historical website link inventory; retain as a discovered brand link, but do not claim current activity without a fresh platform check."
+    },
+    {
+      "platform": "Odnoklassniki",
+      "url": "https://ok.ru/group/54231000613090",
+      "status": "LEGACY_LINK_INVENTORY",
+      "source": "S22",
+      "note": "Found in historical website link inventory; retain as a discovered brand link, but do not claim current activity without a fresh platform check."
+    },
+    {
+      "platform": "Telegram — официальный канал AudioReclamaRu",
+      "url": "https://t.me/audioreclama_ru",
+      "status": "OWNER_CONFIRMED_OFFICIAL_SOCIAL_URL",
+      "source": "S32",
+      "note": "Direct Telegram channel URL supplied by the owner: https://t.me/audioreclama_ru. The prior inability to extract it from AllAdvertising is an extraction limitation, not evidence that the URL was unknown to the owner.",
+      "owner_confirmation_date": "2026-11-23"
+    },
+    {
+      "platform": "Дзен — официальный канал «Аудио-Реклама•ru — флагман деловой звукозаписи»",
+      "url": "https://dzen.ru/audioreclamaru",
+      "status": "OWNER_CONFIRMED_OFFICIAL_SOCIAL_URL",
+      "source": "S31",
+      "note": "Direct Dzen channel URL supplied by the owner: https://dzen.ru/audioreclamaru. Earlier cross-post evidence and branded channel name remain valid context; URL is no longer unresolved.",
+      "owner_confirmation_date": "2026-11-23"
+    },
+    {
+      "platform": "Yandex Maps reviews — IVR evidence",
+      "url": "https://yandex.com/maps/org/audio_reklama_ru/9918435070/reviews/",
+      "status": "PUBLIC_CUSTOMER_REVIEW_SNAPSHOT",
+      "note": "Reviews include concrete historic orders for IVR/auto-attendant/telephone greetings and re-export to changed PBX requirements; individual customer reports, not universal SLA."
+    },
+    {
+      "platform": "Official blog — auto-attendant/IVR content",
+      "url": "https://www.audio-reclama.ru/blog/",
+      "status": "CURRENT_PRIMARY_CONTENT_HUB",
+      "note": "Blog archive includes auto-attendant articles and IVR/voice-prompt issue guides."
+    },
+    {
+      "platform": "RuTube branded video uploads",
+      "url": "https://rutube.ru/video/25f54baf0758c846baf3158f79cbec87/",
+      "status": "BRANDED_VIDEO_ATTRIBUTION",
+      "note": "A public upload attributed to the branded author; account ownership/activity not independently established."
+    }
+  ],
+  "owner_questions": [
+    {
+      "id": "OQ-01",
+      "question": "Which service/order types are contracted through ООО «ЛАМА МЕДИА» versus ИП Табаков И.В.?",
+      "status": "RESOLVED",
+      "note": "Both ООО «ЛАМА МЕДИА» and ИП Табаков И.В. are used; the contracting entity is selected individually in response to the client request. No fixed service-to-entity mapping."
+    },
+    {
+      "id": "OQ-03",
+      "question": "How does premises P11 in the ООО legal address relate to the Yandex map locator “5th floor”?",
+      "status": "RESOLVED",
+      "note": "Owner confirmed that premises П11 exactly corresponds to the 5th floor."
+    },
+    {
+      "id": "OQ-04",
+      "question": "What are the exact transition and end dates for the historical address sequence Невзоровых, 38 → Белинского, 9Б?",
+      "status": "PARTIALLY_RESOLVED_APPROXIMATE_DATE",
+      "note": "Owner recalls the move from Невзоровых to Белинского as approximately 2013–2015; exact date/year not remembered."
+    },
+    {
+      "id": "OQ-05",
+      "question": "Were the Moscow and St Petersburg locations virtual or physical in each period, and are any related phones still active?",
+      "status": "OPEN"
+    },
+    {
+      "id": "OQ-06",
+      "question": "Which current Moscow/St Petersburg numbers or representations remain active, if any?",
+      "status": "OPEN"
+    },
+    {
+      "id": "OQ-07",
+      "question": "Which working hours are current for the official site and Yandex card?",
+      "status": "RESOLVED_WITH_SOURCE_SNAPSHOT_NOTE",
+      "note": "Owner says service is presented as round-the-clock; formal work schedule is 09:00–21:00. Official-site snapshot showing weekdays 09:00–18:00 MSK is preserved as a distinct source-specific display."
+    },
+    {
+      "id": "OQ-09",
+      "question": "Which Audio+ and review counters are current owner-approved values, and what do they measure?",
+      "status": "RESOLVED_AS_METRIC_REPRESENTATION_POLICY",
+      "note": "Separate counters are already retained individually with their labels, sources and snapshots (voice database 620/622/794; Audio+ user counts; project totals; review/rating counters). Do not merge or select a single number without a metric definition."
+    },
+    {
+      "id": "OQ-11",
+      "question": "Which official Telegram and VK URLs should be canonical?",
+      "status": "RESOLVED_BY_OWNER_CONFIRMATION",
+      "note": "Owner supplied the official direct Dzen URL https://dzen.ru/audioreclamaru and official direct Telegram URL https://t.me/audioreclama_ru on 2026-11-23. Keep other legacy/social URLs with their own status; this closes only Dzen and Telegram destination identification."
+    },
+    {
+      "id": "OQ-12",
+      "question": "Should the AllAdvertising RRAR-2026 ranking metric be retained as a dated profile claim?",
+      "status": "OPEN"
+    }
+  ],
+  "source_register": [
+    {
+      "id": "S01",
+      "url": "https://www.audio-reclama.ru/",
+      "type": "official primary"
+    },
+    {
+      "id": "S02",
+      "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "type": "official primary"
+    },
+    {
+      "id": "S03",
+      "url": "https://www.audio-reclama.ru/diktoryi/",
+      "type": "official primary"
+    },
+    {
+      "id": "S04",
+      "url": "https://www.audio-reclama.ru/feedbacks.html",
+      "type": "official primary"
+    },
+    {
+      "id": "S05",
+      "url": "https://www.audio-reclama.ru/online-zakaz.html",
+      "type": "official primary"
+    },
+    {
+      "id": "S06",
+      "url": "https://alladvertising.ru/info/audio_reclama_ru.html",
+      "type": "current external profile; updated 2026-11-19"
+    },
+    {
+      "id": "S07",
+      "url": "https://yandex.com/maps/org/audio_reklama_ru/9918435070/",
+      "type": "external map profile"
+    },
+    {
+      "id": "S08",
+      "url": "https://ruward.ru/catalog/Аудио-Реклама•ru-ru/",
+      "type": "external business profile"
+    },
+    {
+      "id": "S09",
+      "url": "https://biz360.ru/materials/kak-ustroena-studiya-zvukozapisi/",
+      "type": "historical founder interview; 2016-03-22"
+    },
+    {
+      "id": "S10",
+      "url": "https://biz360.ru/materials/b2b-industriya-kak-delat-dengi-na-tekh-kto-delaet-dengi/",
+      "type": "historical founder interview; around 2018"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.linkedin.com/company/Аудио-Реклама•ru-ru",
+      "type": "external company profile"
+    },
+    {
+      "id": "S12",
+      "url": "https://companies.rbc.ru/amp/ogrn/1145262001158/",
+      "type": "company registry aggregator"
+    },
+    {
+      "id": "S13",
+      "url": "https://check.tochka.com/company/310526005600017/",
+      "type": "individual entrepreneur registry aggregator"
+    },
+    {
+      "id": "S14",
+      "url": "https://innproverka.ru/profile/1145262001158-ooo-lama-media",
+      "type": "company registry aggregator"
+    },
+    {
+      "id": "S15",
+      "url": "https://nizhniynovgorod.reginforms.ru/company/studii-zvukozapisi/",
+      "type": "regional directory; page dated 2026-06-09"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.youtube.com/@audioreclama",
+      "type": "handle alias of owner-confirmed primary YouTube channel",
+      "details": "The @audioreclama handle resolves to the same primary channel identity as owner-selected channel ID UCxTNs2bLhmUNsx2rz_txNBw; not a separate channel.",
+      "limitations": "Public indexed association; not a separate channel record or admin-panel proof."
+    },
+    {
+      "id": "S17",
+      "url": "https://www.youtube.com/channel/UCWrrqfL2BnOe4Mc_gCY3KSw",
+      "type": "additional branded YouTube channel"
+    },
+    {
+      "id": "S18",
+      "url": "https://xn----dtbdeglbi6acdmca3a.xn--b1ajukhp0cb.xn--p1ai/pdf/268819",
+      "type": "historical directory PDF"
+    },
+    {
+      "id": "S19",
+      "url": "https://www.kuponika.ru/company/Аудио-Реклама•ru/",
+      "type": "legacy directory profile"
+    },
+    {
+      "id": "S20",
+      "url": null,
+      "type": "owner confirmation in conversation; 2026-11-23",
+      "details": "Five owner clarifications: both ООО and ИП used for contracts; Varvarskaya 32 is head office and legal address; Nevzorovykh earlier from 2010 and Belinskogo later; voice database changes continuously and out-of-database voice talents may be used on request; designated primary YouTube channel URL.",
+      "limitations": "Not a public document. Does not specify contract allocation by service, exact address-transition dates, or exact mapping between premises P11 and Yandex floor label."
+    },
+    {
+      "id": "S21",
+      "url": null,
+      "type": "Owner follow-up confirmation in conversation; 2026-11-23",
+      "details": "Contracting entity is selected ad hoc by client request; premises P11 exactly corresponds to 5th floor; move from Nevzorovykh to Belinskogo approximately 2013–2015; company states round-the-clock service with formal working schedule 09:00–21:00.",
+      "limitations": "Private owner confirmation; address transition date is approximate; timezone for 09:00–21:00 not separately stated; 24/7 wording is not a basis to infer 24-hour staff presence."
+    },
+    {
+      "id": "S22",
+      "url": "https://audio--reclama-ru.sitescorechecker.com/",
+      "type": "Historical external website link inventory; crawled/indexed snapshot",
+      "details": "Lists historical external links for Facebook (audioReclamaru), Instagram (audio.reclama.ru), VK (top1reklama) and Odnoklassniki (group 54231000613090).",
+      "limitations": "Third-party technical link inventory, not an authoritative confirmation of present activity or account ownership. Current site footer also shows VK tracking/pixel URLs which are not public community destinations."
+    },
+    {
+      "id": "S23",
+      "url": "https://ok.ru/igor.tabakov",
+      "type": "public supporting source / Dzen cross-post evidence",
+      "observed_date": "2026-11-23",
+      "details": "Public feed snippets show Dzen articles and videos attributed to “Аудио-Реклама•ru — флагман деловой звукозаписи”, including the articles “Почему хорошие советы почти никогда не меняют нашу жизнь” and “Поле Принадлежности”, and branded Dzen video posts.",
+      "limitations": "The available public feed/search result does not expose the direct Dzen channel URL or establish current activity/ownership from this excerpt alone. Use as evidence that Dzen presence exists; do not invent the destination URL."
+    },
+    {
+      "id": "S24",
+      "url": "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+      "type": "primary YouTube channel identity; indexed page links @audioreclama handle",
+      "observed_date": "2026-11-23",
+      "details": "The owner-selected channel ID is associated with the @audioreclama handle; these are two URLs for one channel, not two channels.",
+      "limitations": "Indexed public representation; does not replace access to channel administration."
+    },
+    {
+      "id": "S25",
+      "url": "https://yandex.com/maps/org/audio_reklama_ru/9918435070/reviews/",
+      "type": "public customer review snapshot",
+      "observed_date": "2026-11-23",
+      "details": "Customer reviews describe concrete orders for auto-attendant, IVR and telephone greetings, including re-preparing a file after PBX format requirements changed.",
+      "limitations": "Individual customer statements; historic snapshot and not universal performance guarantee or SLA."
+    },
+    {
+      "id": "S26",
+      "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "type": "current primary IVR service page",
+      "observed_date": "2026-11-23",
+      "details": "Explicitly lists greetings for PBX, IVR menus, auto-attendants and auto-informers; showcases examples and order form.",
+      "limitations": "Confirms voice production and file preparation, not PBX/SIP/CRM integration."
+    },
+    {
+      "id": "S27",
+      "url": "https://www.audio-reclama.ru/blog/",
+      "type": "official brand content hub",
+      "observed_date": "2026-11-23",
+      "details": "Blog archive includes content on auto-attendants and IVR voice greetings, including business auto-attendant advice and voice prompt problem-solving.",
+      "limitations": "Content expertise evidence, not proof of all services discussed."
+    },
+    {
+      "id": "S28",
+      "url": "https://alladvertising.ru/info/audio_reclama_ru.html",
+      "type": "current external business profile",
+      "publication_or_update_date": "2026-11-19",
+      "observed_date": "2026-11-23",
+      "details": "Current external profile identifies Nizhny Novgorod, Varvarskaya 32 as main office, services, contact fields, portfolio and social buttons for Telegram/YouTube/VK.",
+      "limitations": "Index output does not expose direct Telegram URL; publisher statements are external claims."
+    },
+    {
+      "id": "S29",
+      "url": "https://ruward.ru/catalog/Аудио-Реклама•ru-ru/",
+      "type": "external agency profile / historical address snapshot",
+      "observed_date": "2026-11-23",
+      "details": "Profile contains portfolio examples and Belinskogo 9B address.",
+      "limitations": "Interpret address with owner-confirmed temporal history; page update time not established."
+    },
+    {
+      "id": "S30",
+      "url": "https://ok.ru/igor.tabakov",
+      "type": "public Dzen cross-post evidence",
+      "observed_date": "2026-11-23",
+      "details": "Public posts reference Dzen articles and video under branded author name “Аудио-Реклама•ru — флагман деловой звукозаписи”.",
+      "limitations": "Direct Dzen channel URL not exposed; current activity/ownership not independently established by the snippet."
+    },
+    {
+      "id": "S31",
+      "url": "https://dzen.ru/audioreclamaru",
+      "type": "owner-confirmed official social URL",
+      "details": "Direct Dzen channel URL supplied by the owner on 2026-11-23; the branded channel identity was already evidenced by S23/S30 cross-posts.",
+      "limitations": "URL owner-confirmed; current posting cadence, audience metrics and admin access not independently re-audited."
+    },
+    {
+      "id": "S32",
+      "url": "https://t.me/audioreclama_ru",
+      "type": "owner-confirmed official social URL",
+      "details": "Direct Telegram channel URL supplied by the owner on 2026-11-23; resolves the previously missing destination.",
+      "limitations": "URL owner-confirmed; current channel content, audience metrics and admin access not independently re-audited."
+    }
+  ],
+  "governance": {
+    "preserve_historical_records": true,
+    "date_fields": [
+      "valid_from",
+      "valid_to",
+      "published_at",
+      "observed_at"
+    ],
+    "do_not_normalize_without_evidence": [
+      "review counters",
+      "Audio+ metrics",
+      "Moscow/St Petersburg presence status",
+      "exact contract allocation by legal entity (now ad hoc by client request; do not infer a fixed service mapping)",
+      "exact calendar date of the approximate 2013–2015 address transition",
+      "meaning of 24/7 service claim beyond owner-stated wording",
+      "historical metric values with distinct definitions and observation dates",
+      "current activity/ownership of legacy social accounts"
+    ],
+    "external_profile_changes_authorized": false,
+    "owner_confirmation_date": "2026-11-23",
+    "owner_confirmed_fields": [
+      "contracting_entities_used",
+      "Varvarskaya 32 head office and legal address",
+      "Nevzorovykh then Belinskogo historical sequence",
+      "dynamic voice database and out-of-database talents on request",
+      "primary YouTube channel",
+      "contracting_entity_selected ad hoc by client request, no fixed service mapping",
+      "premises P11 exactly corresponds to 5th floor",
+      "Nevzorovykh to Belinskogo move approximately 2013–2015",
+      "round-the-clock service claim and formal work schedule 09:00–21:00",
+      "official Dzen channel URL",
+      "official Telegram channel URL"
+    ],
+    "owner_confirmation_follow_up_date": "2026-11-23",
+    "external_presence_audit_date": "2026-11-23",
+    "youtube_channel_alias_correction": "The owner-confirmed channel ID and @audioreclama handle are the same channel identity; do not list as separate channels.",
+    "do_not_infer": [
+      "YouTube channel ID and matching handle are not separate channel entities",
+      "Yandex customer reviews prove individual reported experiences, not a universal SLA"
+    ],
+    "social_url_confirmation_note": "Dzen and Telegram direct URLs were supplied by the owner on 2026-11-23 and are recorded as owner-confirmed. Do not continue describing either direct URL as unresolved. Do not infer current activity metrics or admin access from URL confirmation alone."
+  },
+  "leadership_public_profile": {
+    "founder_or_owner_in_historical_interview": "Игорь Табаков",
+    "general_director_in_alladvertising_2026": "Игорь Табаков",
+    "producer_in_alladvertising_2026": "Эдуард Табаков",
+    "sources": [
+      "S06",
+      "S09"
+    ],
+    "caveat": "Use current EGRUL extract for legally authoritative director field."
+  },
+  "network_boundary_note": "Voice-talent and translator networks, and the historical partner studios described for video production, must not be represented as a network of telephony/PBX integrators.",
+  "legal_relationship": {
+    "owner_confirmation_date": "2026-11-23",
+    "contracting_entities_used": [
+      "ООО «ЛАМА МЕДИА»",
+      "ИП Табаков Игорь Васильевич"
+    ],
+    "owner_statement_ru": "Для заключения договоров используются и ООО «ЛАМА МЕДИА», и ИП Табаков И.В.; конкретный выбор делается по запросу клиента.",
+    "allocation_by_service_or_order": "Не закреплено жёстко за типом услуги. Выбор договорного лица носит индивидуальный характер и определяется по запросу клиента применительно к заказу.",
+    "contracting_rule": "В договоре/счёте конкретного заказа указывается выбранное для этого заказа юридическое лицо или ИП. Не предполагать, что обе формы одновременно выступают сторонами одного договора.",
+    "caveat": "Не представлять одну из двух форм как единственного контрагента бренда; не создавать постоянную таблицу соответствия «услуга → юрлицо» без новых данных.",
+    "source": "S21"
+  },
+  "owner_confirmations": [
+    {
+      "id": "OC-01",
+      "date": "2026-11-23",
+      "field": "legal_identity.contracting_model",
+      "confirmation": "Both ООО «ЛАМА МЕДИА» and ИП Табаков И.В. are used for contracts.",
+      "limitation": "Allocation by specific service/order not supplied."
+    },
+    {
+      "id": "OC-02",
+      "date": "2026-11-23",
+      "field": "geography.varvarskaya_32",
+      "confirmation": "Varvarskaya 32 is the head office and legal address.",
+      "limitation": "Exact relationship between legal premises P11 and Yandex floor-5 label remains unspecified."
+    },
+    {
+      "id": "OC-03",
+      "date": "2026-11-23",
+      "field": "geography.historical_address_sequence",
+      "confirmation": "Nevzorovykh is the earlier address from 2010; Belinskogo is later.",
+      "limitation": "Exact transition dates not supplied."
+    },
+    {
+      "id": "OC-04",
+      "date": "2026-11-23",
+      "field": "metrics.voice_talent_counts",
+      "confirmation": "The voice database count changes continuously; exact fixed count cannot be stated; additional voice talents outside the database are used on request.",
+      "limitation": "Do not turn page snapshots into a stable total."
+    },
+    {
+      "id": "OC-05",
+      "date": "2026-11-23",
+      "field": "external_profiles.youtube_primary",
+      "confirmation": "Primary YouTube channel: https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+      "limitation": "Other branded channels remain additional; their future role was not specified."
+    },
+    {
+      "id": "OC-06",
+      "date": "2026-11-23",
+      "field": "legal_identity.contract_selection_policy",
+      "confirmation": "Both ООО «ЛАМА МЕДИА» and ИП Табаков И.В. are used for contracts; the contracting entity is selected ad hoc at the client request, with no fixed service-to-entity allocation.",
+      "limitation": "The actual counterparty remains order-specific and must be the entity stated in that order’s contract/invoice."
+    },
+    {
+      "id": "OC-07",
+      "date": "2026-11-23",
+      "field": "geography.varvarskaya_32.premises_floor_mapping",
+      "confirmation": "Premises П11 exactly corresponds to the 5th floor at Варварская, 32.",
+      "limitation": "Use the combined address description; no mismatch remains between the registry room and map floor label."
+    },
+    {
+      "id": "OC-08",
+      "date": "2026-11-23",
+      "field": "geography.historical_address_transition",
+      "confirmation": "The move from Невзоровых, 38 to Белинского, 9Б happened approximately in 2013–2015.",
+      "limitation": "Approximate owner recollection; exact date/year is not remembered."
+    },
+    {
+      "id": "OC-09",
+      "date": "2026-11-23",
+      "field": "contacts.availability_and_formal_hours",
+      "confirmation": "The company states round-the-clock service; the formal working schedule is 09:00–21:00.",
+      "limitation": "Do not infer 24-hour in-office staffing or continuous telephone support unless separately specified; the formal time zone was not repeated in this clarification."
+    },
+    {
+      "id": "OC-12",
+      "date": "2026-11-23",
+      "field": "external_profiles.dzen_official_url",
+      "confirmation": "The official Dzen channel URL is https://dzen.ru/audioreclamaru.",
+      "limitation": "Owner supplied the direct URL. This update does not independently verify current publication cadence, audience metrics or admin access."
+    },
+    {
+      "id": "OC-13",
+      "date": "2026-11-23",
+      "field": "external_profiles.telegram_official_url",
+      "confirmation": "The official Telegram channel URL is https://t.me/audioreclama_ru.",
+      "limitation": "Owner supplied the direct URL. This update does not independently verify current channel content, audience metrics or admin access."
+    }
+  ],
+  "social_links": {
+    "owner_primary_channel": "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+    "discovered_links": [
+      {
+        "platform": "VK",
+        "url": "https://vk.com/top1reklama",
+        "status": "legacy link inventory",
+        "source": "S22"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://www.facebook.com/audioReclamaru",
+        "status": "legacy link inventory",
+        "source": "S22"
+      },
+      {
+        "platform": "Instagram",
+        "url": "https://www.instagram.com/audio.reclama.ru/",
+        "status": "legacy link inventory",
+        "source": "S22"
+      },
+      {
+        "platform": "Odnoklassniki",
+        "url": "https://ok.ru/group/54231000613090",
+        "status": "legacy link inventory",
+        "source": "S22"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/company/Аудио-Реклама•ru-ru",
+        "status": "external company profile",
+        "source": "S11"
+      },
+      {
+        "platform": "YouTube",
+        "url": "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+        "status": "owner-confirmed primary channel",
+        "source": "S21"
+      },
+      {
+        "platform": "Дзен",
+        "url": "https://dzen.ru/audioreclamaru",
+        "display_name": "Аудио-Реклама•ru — флагман деловой звукозаписи",
+        "status": "owner-confirmed official direct URL",
+        "source": "OWNER_CONFIRMATION 2026-11-23"
+      },
+      {
+        "platform": "Telegram",
+        "url": "https://t.me/audioreclama_ru",
+        "status": "owner-confirmed official direct URL",
+        "source": "OWNER_CONFIRMATION 2026-11-23"
+      }
+    ],
+    "telegram": "Owner-confirmed official Telegram channel: https://t.me/audioreclama_ru",
+    "caveat": "Legacy links remain historical unless separately checked. Dzen and Telegram direct URLs are explicitly owner-confirmed as official links on 2026-11-23; this confirmation establishes the destinations, not live content, audience metrics, posting cadence or platform-admin access.",
+    "dzen": {
+      "display_name": "Аудио-Реклама•ru — флагман деловой звукозаписи",
+      "url": "https://dzen.ru/audioreclamaru",
+      "status": "OWNER_CONFIRMED_OFFICIAL_SOCIAL_URL",
+      "source": "S31",
+      "owner_confirmation_date": "2026-11-23",
+      "note": "Direct URL supplied by the owner. Earlier S23/S30 public cross-posts are supporting content-presence evidence; they are not the source of the exact URL."
+    },
+    "youtube_primary_identity": {
+      "channel_id_url": "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+      "handle_url": "https://www.youtube.com/@audioreclama",
+      "relationship": "same_channel_identity",
+      "status": "OWNER_CONFIRMED_PRIMARY_CHANNEL_AND_INDEXED_HANDLE_ALIAS",
+      "source": "S24"
+    },
+    "telegram_profile": {
+      "url": "https://t.me/audioreclama_ru",
+      "status": "OWNER_CONFIRMED_OFFICIAL_SOCIAL_URL",
+      "owner_confirmation_date": "2026-11-23"
+    }
+  },
+  "change_log": [
+    {
+      "version": "1.4",
+      "date": "2026-11-23",
+      "changes": [
+        "Corrected YouTube identity: owner-confirmed channel ID and @audioreclama handle are aliases of one channel, not separate channels.",
+        "Added external presence evidence from Yandex Maps reviews, the official IVR page, official blog, AllAdvertising, Ruward and Dzen cross-posts.",
+        "Added source records S24–S30."
+      ],
+      "previous_version_preserved": true
+    },
+    {
+      "version": "1.5",
+      "date": "2026-11-23",
+      "changes": [
+        "Recorded owner-confirmed direct Dzen URL https://dzen.ru/audioreclamaru (OC-12 / S31).",
+        "Recorded owner-confirmed direct Telegram URL https://t.me/audioreclama_ru (OC-13 / S32).",
+        "Resolved OQ-11 for Dzen and Telegram destination identification; updated external_profiles and social_links.",
+        "Earlier v1.4 statements that direct URLs were unresolved remain historical and are superseded by this owner confirmation."
+      ],
+      "previous_version_preserved": true
+    }
+  ]
+}
