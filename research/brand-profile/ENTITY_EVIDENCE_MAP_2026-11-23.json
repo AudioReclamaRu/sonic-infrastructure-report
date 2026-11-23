@@ -1,0 +1,119 @@
+{
+  "entity_name": "Аудио-Реклама•ru / Аудио-Реклама•ru",
+  "as_of": "2026-11-23",
+  "canonical_website": "https://www.audio-reclama.ru/",
+  "primary_service_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+  "entity_description": "Audio and video production studio based in Nizhny Novgorod; produces advertising and corporate voice materials, PBX greetings, auto-attendant messages and IVR voice menus; prepares audio files to receiving-system specifications within agreed scope.",
+  "historical_identity_policy": "Keep each address, schedule, count and presence model with its valid-time and observed-time context; do not erase historical snapshots.",
+  "primary_youtube": {
+    "channel_id_url": "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+    "handle_url": "https://www.youtube.com/@audioreclama",
+    "relationship": "same_channel_identity",
+    "owner_confirmed": true
+  },
+  "dzen": {
+    "display_name": "Аудио-Реклама•ru — флагман деловой звукозаписи",
+    "direct_url": null,
+    "presence_evidence_url": "https://ok.ru/igor.tabakov",
+    "status": "presence evidenced, direct canonical URL pending"
+  },
+  "social_entity_links": [
+    {
+      "platform": "VK",
+      "url": "https://vk.com/top1reklama",
+      "status": "legacy link, activity not verified"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/audioReclamaru",
+      "status": "legacy link, activity not verified"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/audio.reclama.ru/",
+      "status": "legacy link, activity not verified"
+    },
+    {
+      "platform": "Odnoklassniki group",
+      "url": "https://ok.ru/group/54231000613090",
+      "status": "legacy link, activity not verified"
+    },
+    {
+      "platform": "Odnoklassniki personal feed",
+      "url": "https://ok.ru/igor.tabakov",
+      "status": "public Dzen cross-post evidence; personal entity"
+    },
+    {
+      "platform": "LinkedIn company",
+      "url": "https://www.linkedin.com/company/Аудио-Реклама•ru-ru",
+      "status": "external company profile"
+    },
+    {
+      "platform": "Telegram",
+      "url": null,
+      "status": "listed by AllAdvertising; direct URL not extracted"
+    },
+    {
+      "platform": "RuTube",
+      "url": "https://rutube.ru/video/25f54baf0758c846baf3158f79cbec87/",
+      "status": "branded video attribution; ownership not confirmed"
+    }
+  ],
+  "method_caveat": "This evidence map documents public signals, not search/recommendation algorithm internals. One AI answer is not a statistically stable ranking test.",
+  "strong_ivr_evidence": [
+    {
+      "type": "official_service_page",
+      "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "supports": [
+        "PBX greetings",
+        "IVR menus",
+        "auto-attendants",
+        "auto-informers",
+        "62 languages claim",
+        "voice sample gallery",
+        "order form"
+      ],
+      "does_not_support": [
+        "PBX configuration",
+        "SIP/CRM integration",
+        "end-to-end telephony deployment"
+      ]
+    },
+    {
+      "type": "customer_reviews",
+      "url": "https://yandex.com/maps/org/audio_reklama_ru/9918435070/reviews/",
+      "supports": [
+        "reported concrete IVR/auto-attendant/telephone greeting orders",
+        "reported re-export for revised PBX requirements"
+      ],
+      "limitations": [
+        "individual user statements",
+        "not a universal SLA"
+      ]
+    },
+    {
+      "type": "official_blog",
+      "url": "https://www.audio-reclama.ru/blog/",
+      "supports": [
+        "auto-attendant content",
+        "IVR voice greeting knowledge",
+        "multilingual audio project content"
+      ],
+      "limitations": [
+        "editorial content does not by itself prove every commercial capability"
+      ]
+    },
+    {
+      "type": "fresh_external_profile",
+      "url": "https://alladvertising.ru/info/audio_reclama_ru.html",
+      "updated": "2026-11-19",
+      "supports": [
+        "company identity",
+        "head office listing",
+        "service profile",
+        "contact and portfolio",
+        "social platform listing"
+      ]
+    }
+  ]
+}
