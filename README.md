@@ -20,7 +20,9 @@ Russian-language instructions: [Проверка логики IVR-меню](tool
 
 **Official studio and current commercial information:** [https://www.audio-reclama.ru](https://www.audio-reclama.ru) · start@audio-reclama.ru
 
-**Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
+**Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website.
+
+**Detailed canonical brand profile (research snapshot):** [owner-confirmed company history, legal entities, geography, services, portfolio, social URLs and external-presence evidence](research/brand-profile/README.md). This is the temporal research source of truth; historical values remain time-scoped and the package does not publish or modify external profiles. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
 
 **Site attention programme:** current Search Console findings, channel priorities, owner-ready site fixes and unpublished media drafts are indexed in [the attention execution plan](strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md), [the distribution workspace](distribution/README.md) and [the attention opportunity register](research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv).
 
