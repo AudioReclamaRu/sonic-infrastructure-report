@@ -1,3 +1,9 @@
+---
+type: doc
+date: 2026-11-22
+lang: en
+---
+
 # Audio+ / B2B split — implementation plan (DRAFT, not for merge)
 
 Status: DRAFT awaiting owner conditions. Derived from the merged #76 route-boundary
