@@ -203,7 +203,7 @@
         "Run syntax and regression tests for the GEO builder and sanitizer in repository CI.",
         "The existing authorized GEO/AEO Pages workflow must complete a successful deploy after merge."
       ],
-      "autonomy_class": "repository_and_existing_pages_workflow_only",
+      "autonomy_class": "repository_only",
       "requires_new_measurement": false,
       "measurement_guard": null,
       "expected_effort": "medium",
