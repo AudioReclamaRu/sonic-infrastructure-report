@@ -1,7 +1,7 @@
 {
   "schema": "knowledge-pricing/1",
   "entity_id": "audio-reclama-ru",
-  "observed_at": "2026-11-06",
+  "observed_at": "2026-11-25",
   "purpose": "Machine-readable price facts for commercial queries ('сколько стоит озвучка', 'цена IVR').",
   "disclaimer": "Информационный характер, не публичная оферта. Для услуг с индивидуальным расчётом ориентируйтесь на официальную страницу.",
   "currency": "RUB",
@@ -9,55 +9,97 @@
     {
       "id": "P-AUDIOPLUS-ORDER",
       "name": "Аудио+ — один заказ",
-      "price": 1990,
+      "price": null,
       "unit": "заказ",
-      "scope": "один заказ — один файл, текст не более 90 слов",
+      "scope": "один заказ — один файл, текст не более 90 слов Current price/availability is not live-verified; see source observation metadata.",
       "source": "https://www.audio-reclama.ru/audioplus/",
       "observed_at": "2026-10-20",
-      "status": "ok"
+      "status": "verify",
+      "observed_price_snapshot": {
+        "amount": 1990,
+        "currency": "RUB",
+        "observed_at": "2026-11-25",
+        "source": "https://audio.plus/",
+        "status": "indexed_snapshot_observed_not_live_verified",
+        "note": "UI banner observed in indexed snapshot; not a current quote or offer."
+      },
+      "not_a_current_offer": true
     },
     {
       "id": "P-AUDIOPLUS-PACK10",
       "name": "Аудио+ — пакет 10",
-      "price": 18990,
+      "price": null,
       "unit": "пакет",
-      "per_order": 1899,
-      "scope": "бессрочно",
+      "scope": "бессрочно Current price/availability is not live-verified; see source observation metadata.",
       "source": "https://www.audio-reclama.ru/audioplus/",
       "observed_at": "2026-10-20",
-      "status": "ok"
+      "status": "verify",
+      "observed_price_snapshot": {
+        "amount": 18990,
+        "currency": "RUB",
+        "observed_at": "2026-10-20",
+        "source": "https://www.audio-reclama.ru/audioplus/",
+        "status": "historical_snapshot_not_live_reverified",
+        "note": "Package price carried from October 20 snapshot; no November live confirmation."
+      },
+      "not_a_current_offer": true
     },
     {
       "id": "P-AUDIOPLUS-PACK20",
       "name": "Аудио+ — пакет 20",
-      "price": 35990,
+      "price": null,
       "unit": "пакет",
-      "per_order": 1799,
-      "scope": "бессрочно",
+      "scope": "бессрочно Current price/availability is not live-verified; see source observation metadata.",
       "source": "https://www.audio-reclama.ru/audioplus/",
       "observed_at": "2026-10-20",
-      "status": "ok"
+      "status": "verify",
+      "observed_price_snapshot": {
+        "amount": 35990,
+        "currency": "RUB",
+        "observed_at": "2026-10-20",
+        "source": "https://www.audio-reclama.ru/audioplus/",
+        "status": "historical_snapshot_not_live_reverified",
+        "note": "Package price carried from October 20 snapshot; no November live confirmation."
+      },
+      "not_a_current_offer": true
     },
     {
       "id": "P-AUDIOPLUS-PACK30",
       "name": "Аудио+ — пакет 30",
-      "price": 49990,
+      "price": null,
       "unit": "пакет",
-      "per_order": 1667,
-      "scope": "бессрочно",
+      "scope": "бессрочно Current price/availability is not live-verified; see source observation metadata.",
       "source": "https://www.audio-reclama.ru/audioplus/",
       "observed_at": "2026-10-20",
-      "status": "ok"
+      "status": "verify",
+      "observed_price_snapshot": {
+        "amount": 49990,
+        "currency": "RUB",
+        "observed_at": "2026-10-20",
+        "source": "https://www.audio-reclama.ru/audioplus/",
+        "status": "historical_snapshot_not_live_reverified",
+        "note": "Package price carried from October 20 snapshot; no November live confirmation."
+      },
+      "not_a_current_offer": true
     },
     {
       "id": "P-AUDIOPLUS-EDIT",
       "name": "Аудио+ — правка",
-      "price": 790,
+      "price": null,
       "unit": "правка",
-      "scope": "изменения/коррекция/добавление звуков",
+      "scope": "изменения/коррекция/добавление звуков Current price/availability is not live-verified; see source observation metadata.",
       "source": "https://www.audio-reclama.ru/audioplus/",
       "observed_at": "2026-10-20",
-      "status": "ok"
+      "status": "hold",
+      "observed_price_snapshot": {
+        "amount": 790,
+        "currency": "RUB",
+        "observed_at": "2026-11-25",
+        "source": "https://audio.plus/",
+        "status": "indexed_snapshot_offer_conflict",
+        "note": "UI change option observed; relationship to offer clauses 3.4, 3.5, 3.8.1 and 3.11 unresolved."
+      },
+      "not_a_current_offer": true
     },
     {
       "id": "P-IVR-INDIVIDUAL",
@@ -70,5 +112,8 @@
       "observed_at": "2026-11-06",
       "status": "verify"
     }
-  ]
+  ],
+  "current_prices_verified": false,
+  "current_prices_status": "NO_LIVE_VERIFIED_AUDIO_PLUS_PRICES",
+  "observation_note": "Audio+ amounts shown below are retained only as dated source observations. The product interface was observed in an indexed snapshot on 2026-11-25, not live-fetched; freshness metadata conflicts. Offer revision clauses and the UI edit option are unresolved. Entries with status verify/hold must not be rendered as current prices or Schema.org Offer."
 }
