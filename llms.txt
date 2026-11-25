@@ -11,6 +11,10 @@
 - [Шлюз проверки ответов и документов](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/standards/AI_RESPONSE_RELEASE_GATE.md).
 
 
+- [Audio+ product entity](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-plus.ru.md) and [Audio+ Service JSON-LD](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-plus.jsonld): separate individual short-order product, not the corporate project route; the indexed UI and dated offer have unresolved scope/revision differences. Values are not current price or legal advice.
+- [Business audio production semantic ontology (JSON-LD)](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/audio-production-semantic-ontology.jsonld) and [Russian specification](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/entity/AUDIO_PRODUCTION_SEMANTIC_ONTOLOGY_2026-11-25.md): graph of entities, buyer tasks, services, product, routes, evidence and inference boundaries.
+
+
 ## English-language entity profile
 
 - [English entity profile](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/entity): international-facing description, service map, first-party portfolio references, and language/routing limitations.
