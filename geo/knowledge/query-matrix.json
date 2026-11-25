@@ -37,7 +37,7 @@
       "intent": "commercial/definition",
       "example_queries": "озвучка рекламы на радио; аудиоролик для радио; эффективность аудиорекламы",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamy-na-radio-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/",
+      "target_main_url": "https://www.audio-reclama.ru",
       "supporting_facts": "BF-2020-006 (cited, historical/attributed), BF-CREATIVE-001, BF-PROD-*",
       "gap": "Подтверждённые коммерческие условия/кейсы радио; исторические ROI — только с атрибуцией/датой.",
       "status": "partial"
@@ -47,7 +47,7 @@
       "intent": "commercial/trust",
       "example_queries": "многоязычная озвучка; озвучка объявлений для аэропорта; локализация аудиорекламы; IVR на нескольких языках",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/project/vnukovo.html; https://www.audio-reclama.ru/",
+      "target_main_url": "https://www.audio-reclama.ru/project/vnukovo.html; https://www.audio-reclama.ru",
       "supporting_facts": "BF-VNUKOVO-001 (blog_milestone), case-study refs (public, unverified detail)",
       "gap": "Проверенные case-study cards с разрешёнными доказательствами; не путать milestone с итогом.",
       "status": "gap_high_value"
@@ -57,7 +57,7 @@
       "intent": "definition/how-to/commercial",
       "example_queries": "реклама в подкастах; host-read что это; форматы рекламы в подкастах",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
-      "target_main_url": "https://www.audio-reclama.ru/blog/ (source)",
+      "target_main_url": "https://www.the studio's official blog/ (source)",
       "supporting_facts": "BF-2020-001/002/003/004, BF-HOSTREAD-001",
       "gap": "Отдельная fact-safe answer/guide страница; исторические цифры помечать датой.",
       "status": "gap"
@@ -77,7 +77,7 @@
       "intent": "commercial",
       "example_queries": "аудио для торгового центра; голосовые объявления; автоинформатор",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golos-dlya-navigatsii-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/",
+      "target_main_url": "https://www.audio-reclama.ru",
       "supporting_facts": "BF-IVR/VOICE editorial context; public project refs",
       "gap": "Кейсы (Внуково и др.) — только с разрешениями и проверенными доказательствами.",
       "status": "fact_safe_individual"
@@ -117,7 +117,7 @@
       "intent": "commercial",
       "example_queries": "озвучка обучающего курса цена; озвучка онлайн курса; диктор для видеоуроков",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/",
+      "target_main_url": "https://www.audio-reclama.ru",
       "supporting_facts": "editorial context",
       "gap": "Вилки цен по объёму — только с подтверждением.",
       "status": "fact_safe_individual"
