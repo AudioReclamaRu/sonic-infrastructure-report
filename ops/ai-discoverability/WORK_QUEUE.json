@@ -169,7 +169,7 @@
     {
       "id": "AI-DISC-2026-005",
       "title": "Prevent unverified Audio+ commercial terms from entering GEO/AEO answers and structured data",
-      "work_type": "source_conflict_and_public_answer_safeguard",
+      "work_type": "improve_existing_asset",
       "priority": "P0",
       "status": "in_progress",
       "market": "RU and Global",
