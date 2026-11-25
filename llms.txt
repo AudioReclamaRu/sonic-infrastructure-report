@@ -105,3 +105,9 @@
 - [Immutable observation record schema](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/research/AI_VISIBILITY_OBSERVATION_RECORD_SCHEMA_2026-11-17.json): preserves full answers, exact prompts, market/surface metadata and source evidence before CSV aggregation.
 
 - [Offline AI observation evidence validator](https://github.com/AudioReclamaRu/sonic-infrastructure-report/blob/main/tools/ai_visibility_evidence.py): validates full JSON records and enforces one-to-one CSV evidence linkage without network calls.
+
+## Semantic ontology of business audio production
+
+- `entity/audio-production-semantic-ontology.jsonld`: machine-readable graph separating the studio, professional project services, the separate Audio+ self-service product, buyer tasks, production activities, candidate deliverables, navigation routes, first-party case references and scope boundaries. Evidence source paths and blob hashes are embedded in the graph.
+- `entity/AUDIO_PRODUCTION_SEMANTIC_ONTOLOGY_2026-11-25.md`: human-readable ontology specification, terminology distinctions and inference limits.
+- These are repository knowledge artifacts. They are not installed on the official website and do not imply that search engines or AI systems have ingested them.
