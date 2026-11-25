@@ -1,0 +1,771 @@
+{
+  "schema": "audio-reclama-geo/semantic-ontology/1",
+  "updated": "2026-11-25",
+  "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
+  "site": "https://www.audio-reclama.ru",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Аудио-Реклама•ru",
+    "url": "https://www.audio-reclama.ru"
+  },
+  "purpose": "Машиночитаемый смысловой слой для корректного понимания услуг и границ: сущности, понятия, различения, связи и запрещённые выводы.",
+  "public_scope": "Опубликована только смысловая часть. Внутренние идентификаторы аналитики, данные GSC, идентификаторы property и служебные пути в публичный слой не включены.",
+  "status_vocabulary": [
+    "VERIFIED",
+    "DRAFT",
+    "OWNER_CONFIRMATION_REQUIRED",
+    "WAITING_FOR_PUBLIC_UPDATE",
+    "NOT_VERIFIED",
+    "HOLD",
+    "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT"
+  ],
+  "entities": [
+    {
+      "id": "E01",
+      "label": "Аудио-Реклама•ru",
+      "kind": "company_brand_studio",
+      "definition": "Единственное каноническое название компании, бренда и студии.",
+      "status": "VERIFIED",
+      "source": "standards/BRAND_AND_SITE_NAMING.md; entity/audio%2Dreclama-studio.md"
+    },
+    {
+      "id": "E02",
+      "label": "https://www.audio-reclama.ru",
+      "kind": "official_website",
+      "definition": "Канонический адрес официального сайта: с www, без завершающего слеша в корне.",
+      "status": "VERIFIED",
+      "source": "standards/BRAND_AND_SITE_NAMING.md"
+    },
+    {
+      "id": "E03",
+      "label": "Audio+",
+      "kind": "separate_online_product",
+      "definition": "Отдельный онлайн-продукт студии с собственным доменом и интерфейсом заказа; не второе название студии.",
+      "status": "VERIFIED",
+      "source": "entity/audio-plus.ru.md"
+    },
+    {
+      "id": "E04",
+      "label": "AudioReclamaRu/sonic-infrastructure-report",
+      "kind": "technical_repository",
+      "definition": "Технический идентификатор версионируемой базы знаний, не бренд и не сайт.",
+      "status": "VERIFIED",
+      "source": "standards/BRAND_AND_SITE_NAMING.md"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "C01",
+      "label": "Рекламный аудиоролик и аудиореклама",
+      "domain": "service",
+      "definition": "Произведённый аудиоролик для рекламной коммуникации: сценарная поддержка, подбор голоса, запись, звуковой дизайн и работа с музыкой по конкретному брифу.",
+      "necessary": "Рекламное сообщение, голосовой или звуковой результат, права на используемые материалы.",
+      "example": "Радиоролик, аудио-спот для онлайн-площадки.",
+      "not_example": "Размещение ролика в эфире, закупка медиа, гарантия ROI.",
+      "status": "VERIFIED",
+      "source": "service page audio/radioroliki-zakaz.html; entity/audio%2Dreclama-studio.md"
+    },
+    {
+      "id": "C02",
+      "label": "IVR, голосовое приветствие, автоответчик, автоинформатор",
+      "domain": "service",
+      "definition": "Записанные сообщения для приветствия звонящего и маршрутизации вызова; результатом служит набор поименованных аудиофайлов для загрузки в телефонную систему заказчика.",
+      "necessary": "Сценарий сообщений, голос, совместимые аудиофайлы; инженерная часть — сторона заказчика или отдельно согласованный объём.",
+      "example": "Приветствие, меню с выбором пункта, информационное сообщение.",
+      "not_example": "Установка, настройка и администрирование АТС, логика маршрутизации, хостинг телефонии.",
+      "status": "VERIFIED",
+      "source": "service page IVR; BF-IVR-001/002/003; entity/audio%2Dreclama-studio.en.md"
+    },
+    {
+      "id": "C03",
+      "label": "Озвучка видео",
+      "domain": "service",
+      "definition": "Создание голосовой дорожки и сценарной аудиочасти для видео, ролика, презентации или объясняющего материала с подбором голоса и аудиопродакшном.",
+      "necessary": "Видеоматериал или тайминг, текст, голос, синхронизация, технические требования к файлу.",
+      "example": "Закадровый голос для объясняющего ролика, озвучка презентации.",
+      "not_example": "Съёмка, монтаж и полный видеопродакшн как одна услуга.",
+      "status": "VERIFIED",
+      "source": "service page audio/ozvuchka-video.html; entity/audio%2Dreclama-studio.md; nav separation"
+    },
+    {
+      "id": "C04",
+      "label": "Аудиокнига",
+      "domain": "service",
+      "definition": "Запись и подготовка аудиокниги как продукта с дикторским чтением и аудиопродакшном.",
+      "necessary": "Текст, диктор, формат файлов, объём и условия использования.",
+      "example": "Запись книги или сокращённой версии по брифу.",
+      "not_example": "Издательские права на текст, продажа книг, литературная редактура как отдельное обещание.",
+      "status": "VERIFIED",
+      "source": "service page audio/sozdanie-audioknig.html"
+    },
+    {
+      "id": "C05",
+      "label": "Письменная локализация и перевод текста",
+      "domain": "service",
+      "definition": "Адаптация текста на другой язык или рынок; результат — подготовленный текст, в том числе для последующей записи.",
+      "necessary": "Исходный текст, целевой язык и рынок, требование к терминологии.",
+      "example": "Перевод сценария и адаптация под локального слушателя.",
+      "not_example": "Автоматическое получение озвученного файла.",
+      "status": "DRAFT",
+      "source": "service page perevodchiki (H1); entity/audio%2Dreclama-studio.md; owner fact sheet without supplied path"
+    },
+    {
+      "id": "C06",
+      "label": "Голосовая локализация и озвучка на иностранном языке",
+      "domain": "service",
+      "definition": "Запись голоса носителем языка для другого рынка; может сочетаться с письменной локализацией, но не тождественна ей.",
+      "necessary": "Целевой язык, регионализм или акцент по брифу, диктор-носитель, технические требования.",
+      "example": "Озвучка переведённого сценария носителем языка.",
+      "not_example": "Только письменный перевод без голосового результата.",
+      "status": "DRAFT",
+      "source": "hidden subject quick-order subject=Ozvuchka na inostrannom; owner fact sheet without supplied path"
+    },
+    {
+      "id": "C07",
+      "label": "Глобальная производственная возможность",
+      "domain": "capability",
+      "definition": "Подтверждённая владельцем способность организовать производство для любой языковой группы в любой точке мира через международную сеть профессиональных партнёров.",
+      "necessary": "Конкретный бриф: язык, локаль, диалект, голос, права, форматы, сроки.",
+      "example": "Многоязычный проект для другой страны через сеть партнёров.",
+      "not_example": "Фиксированный список языков интерфейса Audio+, гарантия любого диалекта без уточнения.",
+      "status": "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT",
+      "source": "entity/audio%2Dreclama-studio.en.md owner confirmation 19.11.2026; entity/audio-plus.ru.md"
+    },
+    {
+      "id": "C08",
+      "label": "Каталог дикторов",
+      "domain": "resource",
+      "definition": "Публично представленный выбор голосовых исполнителей для подбора под задачу.",
+      "necessary": "Наличие каталога и критериев выбора; точное количество — изменяемая и несогласованная величина.",
+      "example": "Выбор голоса по полу, характеру и задаче.",
+      "not_example": "620, 622 или 618 как подтверждённое текущее число; международная партнёрская сеть как тот же каталог.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.md; evidence ledger CF-MAIN-INCONSISTENCY-DICTORS"
+    },
+    {
+      "id": "C09",
+      "label": "Audio+ self-service заказ",
+      "domain": "product_route",
+      "definition": "Стандартный небольшой онлайн-заказ через интерфейс Audio+ на условиях публичной оферты.",
+      "necessary": "Физическое лицо, стандартный объём, условия оферты, один вариант результата, предоплата.",
+      "example": "Небольшой ролик или автоответчик через форму продукта.",
+      "not_example": "Корпоративный проект, несколько языков, индивидуальные права, юридическое лицо или ИП.",
+      "status": "VERIFIED",
+      "source": "entity/audio-plus.ru.md; offer page"
+    },
+    {
+      "id": "C10",
+      "label": "Индивидуальный маршрут для организаций",
+      "domain": "product_route",
+      "definition": "Обращение в студию для нестандартного или корпоративного проекта: организации, ИП, несколько файлов или языков, индивидуальные права и техническое задание.",
+      "necessary": "Бриф, согласование объёма, прав, форматов и сроков.",
+      "example": "Многоязычная локализация с индивидуальными условиями использования.",
+      "not_example": "Автоматическая отправка в форму Audio+.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.md; entity/audio-plus.ru.md"
+    },
+    {
+      "id": "C11",
+      "label": "Сценарий",
+      "domain": "process_stage",
+      "definition": "Подготовка текста и структуры сообщения как этап проекта, а не обещание, что каждый проект включает его в полном объёме.",
+      "necessary": "Задача, аудитория, сообщение, ограничения длительности.",
+      "example": "Сценарий ролика или меню автоответчика.",
+      "not_example": "Рекламная стратегия и медиапланирование как отдельная услуга.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.md; site navigation"
+    },
+    {
+      "id": "C12",
+      "label": "Джингл и музыкальный бренд-элемент",
+      "domain": "service",
+      "definition": "Короткий музыкальный или звуковой элемент, идентифицирующий бренд.",
+      "necessary": "Музыкальная идея, проект, права на материал.",
+      "example": "Звуковой логотип или джингл для радио.",
+      "not_example": "Полная запись корпоративного гимна как та же услуга.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.md; service page audio/zvuk-media.html"
+    },
+    {
+      "id": "C13",
+      "label": "Озвучка презентации",
+      "domain": "service",
+      "definition": "Голосовое сопровождение презентации или слайд-материала как отдельное направление навигации.",
+      "necessary": "Материал, текст, тайминг, голос.",
+      "example": "Закадровый текст для деловой презентации.",
+      "not_example": "Дизайн и сборка самой презентации.",
+      "status": "VERIFIED",
+      "source": "site navigation; entity/audio%2Dreclama-studio.md"
+    },
+    {
+      "id": "C14",
+      "label": "Видеопродакшн",
+      "domain": "service",
+      "definition": "Полный цикл производства видео как отдельное направление навигации.",
+      "necessary": "Съёмка или визуальный ряд, монтаж, постпроизводство по брифу.",
+      "example": "Промо-видео в полном цикле.",
+      "not_example": "Только озвучка готового видео.",
+      "status": "VERIFIED",
+      "source": "site navigation; entity/audio%2Dreclama-studio.md"
+    },
+    {
+      "id": "C15",
+      "label": "Права и лицензия на результат",
+      "domain": "legal_boundary",
+      "definition": "Объём использования результата зависит от услуги и договора; для Audio+ оферта описывает отдельный режим лицензии.",
+      "necessary": "Договор или оферта, назначение использования, территория и срок по брифу.",
+      "example": "Простая лицензия покупателю по оферте Audio+.",
+      "not_example": "Передача исключительных прав по умолчанию для всех услуг.",
+      "status": "VERIFIED",
+      "source": "entity/audio-plus.ru.md offer paraphrase, not legal opinion"
+    },
+    {
+      "id": "C16",
+      "label": "Публичное проектное упоминание",
+      "domain": "evidence_object",
+      "definition": "Название проекта или клиента, размещённое на собственном сайте студии как иллюстративный материал.",
+      "necessary": "Факт публикации на первом источнике.",
+      "example": "Названия и описания проектов на официальном сайте.",
+      "not_example": "Независимое подтверждение рекомендации, текущих отношений, ROI или права повторно использовать знаки и аудио.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.md; geo/knowledge/case-studies.json"
+    },
+    {
+      "id": "C17",
+      "label": "Идентификатор измерительной системы",
+      "domain": "measurement_identity",
+      "definition": "Идентификатор property или потока в аналитике; объявление «наш property» не означает, что сайт автоматически отправляет туда данные.",
+      "necessary": "Фактическая ссылка в HTML или контейнере и наблюдаемый collect-запрос с этим идентификатором.",
+      "example": "Наблюдаемые идентификаторы в запросах collect.",
+      "not_example": "Объявление property владельцем как доказательство получения хитов.",
+      "status": "VERIFIED",
+      "source": "stage4_self_verification package; owner-supplied GA4 context"
+    }
+  ],
+  "disambiguations": [
+    {
+      "id": "X01",
+      "left": "C02",
+      "right": "настройка АТС",
+      "boundary": "Студия поставляет аудиофайлы; конфигурация телефонной системы — отдельная инженерная область.",
+      "forbidden": "Не утверждать, что студия настраивает или администрирует АТС без прямого подтверждения объёма работ.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.en.md; BF-IVR-002"
+    },
+    {
+      "id": "X02",
+      "left": "C03",
+      "right": "C14",
+      "boundary": "Озвучка готового видео и полный видеопродакшн — разные пункты навигации и разные результаты.",
+      "forbidden": "Не склеивать озвучку и съёмку с монтажом в одну услугу по умолчанию.",
+      "status": "VERIFIED",
+      "source": "site navigation; entity/audio%2Dreclama-studio.md"
+    },
+    {
+      "id": "X03",
+      "left": "C05",
+      "right": "C06",
+      "boundary": "Текстовая адаптация и голосовая запись могут сочетаться, но одна не влечёт другую автоматически.",
+      "forbidden": "Не обещать готовую озвучку из факта перевода и наоборот.",
+      "status": "DRAFT",
+      "source": "H1 localization page; owner fact sheet without supplied path"
+    },
+    {
+      "id": "X04",
+      "left": "C09",
+      "right": "C10",
+      "boundary": "Оферта Audio+ ограничивает покупателя физическими лицами; корпоративные и нестандартные задачи идут в студию.",
+      "forbidden": "Не направлять организацию или ИП в self-checkout как универсальный маршрут.",
+      "status": "VERIFIED",
+      "source": "entity/audio-plus.ru.md; offer page"
+    },
+    {
+      "id": "X05",
+      "left": "C08",
+      "right": "C07",
+      "boundary": "Каталог исполнителей и международная сеть партнёров — разные ресурсы с разной областью применения.",
+      "forbidden": "Не переносить глобальную возможность на фиксированный интерфейс Audio+ и не называть 620 или 622 подтверждённым числом.",
+      "status": "VERIFIED",
+      "source": "entity/audio-plus.ru.md; evidence ledger inconsistency"
+    },
+    {
+      "id": "X06",
+      "left": "C01",
+      "right": "размещение медиа",
+      "boundary": "Производство ролика не включает размещение в эфире или закупку медиа.",
+      "forbidden": "Не обещать охват, конверсию или ROI как свойство аудиопроизводства.",
+      "status": "VERIFIED",
+      "source": "service page; BF-2020-006 attributed historical"
+    },
+    {
+      "id": "X07",
+      "left": "C16",
+      "right": "проверенное доказательство",
+      "boundary": "Публикация названия на своём сайте — факт публикации, не независимое доказательство.",
+      "forbidden": "Не превращать логотип в отзыв, кейс с метриками или подтверждение текущего контракта.",
+      "status": "VERIFIED",
+      "source": "entity/audio%2Dreclama-studio.md; case-studies.json"
+    },
+    {
+      "id": "X08",
+      "left": "BF-VNUKOVO-001",
+      "right": "финальный результат кейса",
+      "boundary": "Блог описывает промежуточный этап: проект на момент публикации не завершён.",
+      "forbidden": "Не выдавать более 2000 файлов и 9 языков за финальный подтверждённый итог.",
+      "status": "VERIFIED",
+      "source": "evidence ledger BF-VNUKOVO-001"
+    },
+    {
+      "id": "X11",
+      "left": "цена 1990 в Audio+",
+      "right": "цена 790 в старой статье",
+      "boundary": "Коммерческие числа изменяемы и относятся к разным снимкам и условиям.",
+      "forbidden": "Не хранить цену или лимит как постоянный факт онтологии.",
+      "status": "VERIFIED",
+      "source": "entity/audio-plus.ru.md; CF-AUDIOPLUS-ORDER and PACKS"
+    },
+    {
+      "id": "X12",
+      "left": "E01",
+      "right": "E02 или E04",
+      "boundary": "Название компании, адрес сайта и технический репозиторий — разные сущности.",
+      "forbidden": "Не выводить имя бренда из домена, логина или юридического лица.",
+      "status": "VERIFIED",
+      "source": "standards/BRAND_AND_SITE_NAMING.md"
+    },
+    {
+      "id": "X13",
+      "left": "C04",
+      "right": "издательская деятельность",
+      "boundary": "Запись аудиокниги — аудиопроизводство, не передача издательских прав.",
+      "forbidden": "Не обещать права на текст или публикацию без отдельного подтверждения.",
+      "status": "DRAFT",
+      "source": "service page; general scope limit"
+    }
+  ],
+  "relations": [
+    {
+      "id": "R01",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C01",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R02",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C02",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R03",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C03",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R04",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C04",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R05",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C05",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R06",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C06",
+      "status": "DRAFT"
+    },
+    {
+      "id": "R07",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C12",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R08",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C13",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R09",
+      "subject": "E01",
+      "predicate": "offersService",
+      "object": "C14",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R10",
+      "subject": "E01",
+      "predicate": "providesCapability",
+      "object": "C07",
+      "status": "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT"
+    },
+    {
+      "id": "R11",
+      "subject": "E01",
+      "predicate": "maintainsResource",
+      "object": "C08",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R12",
+      "subject": "E03",
+      "predicate": "productOf",
+      "object": "E01",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R13",
+      "subject": "E03",
+      "predicate": "implementsRoute",
+      "object": "C09",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R14",
+      "subject": "E01",
+      "predicate": "implementsRoute",
+      "object": "C10",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R15",
+      "subject": "E04",
+      "predicate": "technicalIdentifierFor",
+      "object": "E01",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R16",
+      "subject": "C02",
+      "predicate": "delivers",
+      "object": "audio_files_for_upload",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R17",
+      "subject": "C02",
+      "predicate": "excludes",
+      "object": "PBX_configuration",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R18",
+      "subject": "C03",
+      "predicate": "distinctFrom",
+      "object": "C14",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R19",
+      "subject": "C05",
+      "predicate": "mayCombineWith",
+      "object": "C06",
+      "status": "DRAFT"
+    },
+    {
+      "id": "R20",
+      "subject": "C05",
+      "predicate": "doesNotImply",
+      "object": "C06",
+      "status": "DRAFT"
+    },
+    {
+      "id": "R21",
+      "subject": "C07",
+      "predicate": "appliesTo",
+      "object": "C10",
+      "status": "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT"
+    },
+    {
+      "id": "R22",
+      "subject": "C07",
+      "predicate": "notAppliesToByDefault",
+      "object": "C09",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R23",
+      "subject": "C08",
+      "predicate": "notIdenticalTo",
+      "object": "C07",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R24",
+      "subject": "C09",
+      "predicate": "audienceRestriction",
+      "object": "physical_person_only",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R25",
+      "subject": "C10",
+      "predicate": "audience",
+      "object": "organization_or_individual_entrepreneur",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R26",
+      "subject": "C11",
+      "predicate": "optionalStageOf",
+      "object": "C01",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R27",
+      "subject": "C11",
+      "predicate": "optionalStageOf",
+      "object": "C02",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R28",
+      "subject": "C15",
+      "predicate": "dependsOn",
+      "object": "contract_or_offer",
+      "status": "VERIFIED"
+    },
+    {
+      "id": "R29",
+      "subject": "C16",
+      "predicate": "evidenceWeight",
+      "object": "published_not_independent",
+      "status": "VERIFIED"
+    }
+  ],
+  "query_to_concept": [
+    {
+      "cluster": "Коммерческий: цена озвучки",
+      "intent": "commercial/price",
+      "concept_ids": [
+        "C09",
+        "C01",
+        "C02"
+      ],
+      "status": "DRAFT",
+      "note": "Цены изменяемы; не экстраполировать из оферты."
+    },
+    {
+      "cluster": "IVR цена и настройка",
+      "intent": "commercial/how-to",
+      "concept_ids": [
+        "C02"
+      ],
+      "status": "DRAFT",
+      "note": "Разделить аудиофайлы и инженерию АТС."
+    },
+    {
+      "cluster": "Озвучка видеоролика и презентации",
+      "intent": "commercial",
+      "concept_ids": [
+        "C03",
+        "C13"
+      ],
+      "status": "DRAFT",
+      "note": "Самая слабая точка входа по данным владельца."
+    },
+    {
+      "cluster": "Радио и аудиореклама",
+      "intent": "commercial/definition",
+      "concept_ids": [
+        "C01"
+      ],
+      "status": "DRAFT",
+      "note": "Исторические ROI только с атрибуцией и датой."
+    },
+    {
+      "cluster": "Многоязычная локализация и аэропорт",
+      "intent": "commercial/trust",
+      "concept_ids": [
+        "C05",
+        "C06",
+        "C07"
+      ],
+      "status": "DRAFT",
+      "note": "Не путать промежуточный этап с финальным кейсом."
+    },
+    {
+      "cluster": "Подкасты и host-read",
+      "intent": "definition/how-to",
+      "concept_ids": [
+        "C01",
+        "C16"
+      ],
+      "status": "DRAFT",
+      "note": "Таксономия из блога, не отдельная услуга по умолчанию."
+    },
+    {
+      "cluster": "Аудиокниги",
+      "intent": "commercial",
+      "concept_ids": [
+        "C04"
+      ],
+      "status": "VERIFIED",
+      "note": "Маршрут уже конвертит; не перестраивать."
+    },
+    {
+      "cluster": "Корпоративные голосовые коммуникации",
+      "intent": "commercial",
+      "concept_ids": [
+        "C02",
+        "C13"
+      ],
+      "status": "DRAFT",
+      "note": "Нужны факт-безопасные ответы и текущие условия."
+    }
+  ],
+  "forbidden_inferences": [
+    {
+      "id": "F01",
+      "claim": "Основана в 2010 году",
+      "reason": "Копирайт в подвале не доказывает дату основания.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F02",
+      "claim": "Конкретное юридическое лицо как контрагент",
+      "reason": "В подвале более одного обозначения; нужен договор.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F03",
+      "claim": "620, 622 или 618 дикторов как факт",
+      "reason": "Счётчики внутренне противоречат друг другу.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F04",
+      "claim": "LocalBusiness, адрес, год основания, aggregateRating в структурированных данных",
+      "reason": "Нет подтверждённых полей; draft ограничен Organization.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F05",
+      "claim": "ROI, охват, рост конверсии клиентов",
+      "reason": "Исторические атрибутивные цифры не являются результатами студии.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F06",
+      "claim": "Текущие цены и лимиты Audio+ как константа",
+      "reason": "Разные снимки: 790 и 1990, 60 и 90 слов; нужна сверка.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F07",
+      "claim": "Пустой отчёт аналитики как отсутствие заявок",
+      "reason": "Объявленное property не совпадает с наблюдаемыми идентификаторами сайта.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F08",
+      "claim": "Глобальная сеть как все языки Audio+",
+      "reason": "Разные контуры: индивидуальный проект и self-service.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F09",
+      "claim": "IVR как настройка АТС",
+      "reason": "Разные предметы: аудиофайлы и телефонная инженерия.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F10",
+      "claim": "Озвучка видео как видеопродакшн",
+      "reason": "Раздельные направления навигации.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F11",
+      "claim": "Перевод как дубляж",
+      "reason": "Текст и голос не тождественны.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F12",
+      "claim": "Имя компании из домена, логина или логотипа",
+      "reason": "Нарушает обязательный стандарт имени.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F13",
+      "claim": "Клиентский логотип как рекомендация и разрешение",
+      "reason": "Публикация на своём сайте не даёт прав на повторное использование.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F14",
+      "claim": "Блог-милайн как финальный кейс",
+      "reason": "Материал о Внуково явно помечен как незавершённый этап.",
+      "status": "HOLD"
+    }
+  ],
+  "provenance": [
+    {
+      "id": "P01",
+      "artifact": "standards/BRAND_AND_SITE_NAMING.md",
+      "locator": "canonical identity",
+      "grade": "first_party_standard",
+      "note": "Имя бренда и адрес сайта."
+    },
+    {
+      "id": "P02",
+      "artifact": "entity/audio%2Dreclama-studio.md",
+      "locator": "service map and limits",
+      "grade": "first_party_entity",
+      "note": "Опубликованные направления и границы."
+    },
+    {
+      "id": "P03",
+      "artifact": "entity/audio%2Dreclama-studio.en.md",
+      "locator": "IVR boundary and worldwide capability",
+      "grade": "first_party_entity plus owner confirmation",
+      "note": "Часть подтверждена владельцем."
+    },
+    {
+      "id": "P04",
+      "artifact": "entity/audio-plus.ru.md",
+      "locator": "product and offer boundary",
+      "grade": "first_party_product_observation",
+      "note": "Условия оферты пересказаны, не юридическое заключение."
+    },
+    {
+      "id": "P05",
+      "artifact": "geo/knowledge/evidence-ledger.csv",
+      "locator": "BF-IVR and BF-VNUKOVO and CF-AUDIOPLUS",
+      "grade": "evidence_registry",
+      "note": "Редакционные определения и наблюдения."
+    },
+    {
+      "id": "P06",
+      "artifact": "geo/knowledge/query-matrix.csv",
+      "locator": "intent clusters",
+      "grade": "first_party_registry",
+      "note": "Карта запросов и пробелы."
+    }
+  ],
+  "counts": {
+    "entities": 4,
+    "concepts": 17,
+    "disambiguations": 11,
+    "relations": 29,
+    "query_maps": 8,
+    "forbidden_inferences": 14,
+    "provenance": 6
+  }
+}

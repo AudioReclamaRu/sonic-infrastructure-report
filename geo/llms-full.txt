@@ -2,7 +2,7 @@
 
 > Студия озвучки и звукозаписи для бизнеса: реклама, IVR, видео, аудиокниги.
 > Цены/условия носят информационный характер (не оферта). Актуальные условия подтверждать на https://www.audio-reclama.ru.
-> Состояние коммерческих данных в GEO-слое: 2026-11-15. Официальный сайт: https://www.audio-reclama.ru
+> Состояние коммерческих данных в GEO-слое: 2026-11-25. Официальный сайт: https://www.audio-reclama.ru
 
 ## Prices (informational, not a public offer)
 
@@ -40,6 +40,8 @@
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/evidence-ledger.json
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/case-studies/ — публичные ссылки на кейсы (требуют верификации/разрешений)
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/query-matrix/ — матрица запросов (факт-безопасно)
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology/ — смысловой слой: сущности, понятия, различения, запрещённые выводы
+- https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology.json
 - https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/combined.json
 
 ## Contacts

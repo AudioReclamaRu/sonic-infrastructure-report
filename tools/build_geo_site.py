@@ -773,7 +773,7 @@ def _discover_urls():
     # ensure critical non-index knowledge pages are represented by their directory pages only;
     # machine files (json/csv/md in reports) are discoverable via llms/links, not all need sitemap.
     # keep explicit anchors that matter for AEO
-    for extra in ["knowledge/blog-facts/", "knowledge/evidence-ledger/", "knowledge/case-studies/", "knowledge/query-matrix/"]:
+    for extra in ["knowledge/blog-facts/", "knowledge/evidence-ledger/", "knowledge/case-studies/", "knowledge/query-matrix/", "knowledge/semantic-ontology/"]:
         if (OUT / extra / "index.html").exists():
             urls.add(extra)
     return sorted(urls, key=lambda u: (u != "", u))
@@ -810,7 +810,7 @@ def _sync_machine():
                     existing = {}
             comb = {"schema":"audio-reclama-geo/combined/1","updated":UPDATED,"base":BASE,"site":SITE,"prices":pr,"faq":fq}
             # preserve enriched, non-generated blocks (provenance/knowledge layers)
-            for k in ("blog_facts", "evidence_ledger", "case_studies", "query_matrix"):
+            for k in ("blog_facts", "evidence_ledger", "case_studies", "query_matrix", "semantic_ontology"):
                 if k in existing and k not in comb:
                     comb[k] = existing[k]
             (OUT/"knowledge").mkdir(parents=True,exist_ok=True)
@@ -860,6 +860,8 @@ def _write_llms():
 - {BASE}knowledge/evidence-ledger.json
 - {BASE}knowledge/case-studies/ — публичные ссылки на кейсы (требуют верификации/разрешений)
 - {BASE}knowledge/query-matrix/ — матрица запросов (факт-безопасно)
+- {BASE}knowledge/semantic-ontology/ — смысловой слой: сущности, понятия, различения, запрещённые выводы
+- {BASE}knowledge/semantic-ontology.json
 - {BASE}knowledge/combined.json
 
 ## Contacts
@@ -941,6 +943,11 @@ def _check_consistency():
             errs.append("combined.json missing blog_facts block (run --safe to preserve/repair)")
         if (OUT/"knowledge/evidence-ledger.json").exists() and "evidence_ledger" not in d:
             errs.append("combined.json missing evidence_ledger block (run --safe to preserve/repair)")
+    so = OUT/"knowledge/semantic-ontology.json"
+    if so.exists():
+        cd = json.loads(cp.read_text(encoding="utf-8")) if cp.exists() else {}
+        if "semantic_ontology" not in cd:
+            errs.append("combined.json missing semantic_ontology block (run --safe)")
     if errs:
         print("CHECK FAILED:")
         for e in errs: print(" -", e)

@@ -1,6 +1,6 @@
 {
   "schema": "audio-reclama-geo/combined/1",
-  "updated": "2026-11-15",
+  "updated": "2026-11-25",
   "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
   "site": "https://www.audio-reclama.ru",
   "prices": {
@@ -1236,5 +1236,20 @@
       "unavailable": "Evidence could not be accessed in this pass.",
       "editorial_definition": "Editorial/practical definition; not an empirical third-party statistic."
     }
+  },
+  "semantic_ontology": {
+    "url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology.json",
+    "page": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology/",
+    "updated": "2026-11-25",
+    "counts": {
+      "entities": 4,
+      "concepts": 17,
+      "disambiguations": 11,
+      "relations": 29,
+      "query_maps": 8,
+      "forbidden_inferences": 14,
+      "provenance": 6
+    },
+    "public_scope": "Опубликована только смысловая часть. Внутренние идентификаторы аналитики, данные GSC, идентификаторы property и служебные пути в публичный слой не включены."
   }
 }
