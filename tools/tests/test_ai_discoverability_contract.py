@@ -22,10 +22,28 @@ class TestMegabrainDiscoverabilityContract(unittest.TestCase):
     def test_owner_is_not_required_to_collect_data(self):
         self.assertTrue(self.contract["execution_policy"]["must_not_require_owner_to_collect_or_upload_data"])
 
-    def test_main_merge_and_website_writes_are_gated(self):
-        approvals = set(self.contract["autonomy"]["requires_explicit_owner_approval"])
-        self.assertIn("merge_into_main", approvals)
+    def test_repository_merge_is_authorized_only_after_quality_gates(self):
+        autonomy = self.contract["autonomy"]
+        allowed = set(autonomy["allowed_without_case_by_case_owner_input"])
+        approvals = set(autonomy["requires_explicit_owner_approval"])
+        self.assertIn("publish_to_authorized_github_gitlab_repositories", allowed)
+        self.assertIn("merge_quality_gated_pull_or_merge_request_to_default_branch", allowed)
+        self.assertNotIn("merge_into_main", approvals)
         self.assertIn("write_to_official_website", approvals)
+        self.assertIn("write_to_or_deploy_the_official_website", autonomy["forbidden"])
+
+    def test_repository_publication_scope_is_exact_and_sites_remain_read_only(self):
+        scope = self.contract["autonomy"]["repository_publication"]
+        self.assertEqual(scope["authorized_platforms"], ["GitHub", "GitLab"])
+        self.assertTrue(scope["merge_to_default_branch_after_required_checks"])
+        self.assertFalse(scope["force_push"])
+        self.assertFalse(scope["branch_protection_bypass"])
+        self.assertEqual(scope["official_websites_read_only"], [
+            "https://www.audio-reclama.ru", "https://audio.plus/"
+        ])
+        self.assertFalse(scope["direct_website_write_or_deploy"])
+        self.assertFalse(scope["github_pages_or_automatic_website_mirrors"])
+        self.assertFalse(scope["non_repository_external_surfaces_authorized"])
 
     def test_measurement_without_stop_guard_fails(self):
         queue = json.loads(json.dumps(self.queue))
@@ -53,3 +71,4 @@ class TestMegabrainDiscoverabilityContract(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
