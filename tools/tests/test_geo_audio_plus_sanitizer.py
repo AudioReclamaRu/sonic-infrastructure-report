@@ -24,6 +24,7 @@ class GeoAudioPlusSanitizerTests(unittest.TestCase):
         once, _ = sanitize_html(source)
         twice, _ = sanitize_html(once)
         self.assertEqual(once, twice)
+
     def test_audio_plus_offer_is_removed_from_jsonld(self):
         schema = {
             "@context": "https://schema.org",
