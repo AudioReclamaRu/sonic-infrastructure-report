@@ -1,6 +1,7 @@
 import json
 import unittest
 
+from tools import build_geo_site
 from tools.sanitize_geo_audio_plus import inspect_html, sanitize_html
 
 
@@ -82,6 +83,70 @@ class GeoAudioPlusSanitizerTests(unittest.TestCase):
         self.assertIn("не подтверждены live", text)
         self.assertEqual(inspect_html(result), [])
 
+    def test_builder_omits_unverified_prices_and_offers(self):
+        original = build_geo_site.PRICES
+        build_geo_site.PRICES = {
+            "entries": [
+                {
+                    "id": "P-AUDIOPLUS-ORDER",
+                    "name": "Audio+ order",
+                    "price": None,
+                    "status": "verify",
+                    "observed_price_snapshot": {"amount": 1990, "currency": "RUB"},
+                    "source": "https://audio.plus/",
+                    "scope": "Indexed observation only.",
+                },
+                {
+                    "id": "P-AUDIOPLUS-EDIT",
+                    "name": "Audio+ edit option",
+                    "price": None,
+                    "status": "hold",
+                    "observed_price_snapshot": {"amount": 790, "currency": "RUB"},
+                    "source": "https://audio.plus/",
+                    "scope": "Unresolved UI/offer conflict.",
+                },
+            ]
+        }
+        try:
+            rows = build_geo_site.price_rows()
+            offers = build_geo_site.offer_items()
+            self.assertIn("Текущие цены не подтверждены live", rows)
+            self.assertNotIn("1 990", rows)
+            self.assertNotIn("790", rows)
+            self.assertEqual(offers, [])
+        finally:
+            build_geo_site.PRICES = original
+
+    def test_builder_keeps_only_live_verified_offers(self):
+        original = build_geo_site.PRICES
+        build_geo_site.PRICES = {
+            "entries": [
+                {
+                    "id": "P-VERIFIED-TEST",
+                    "name": "Verified test service",
+                    "price": 1234,
+                    "status": "ok",
+                    "source": "https://www.audio-reclama.ru/example.html",
+                    "scope": "Explicitly live verified fixture.",
+                },
+                {
+                    "id": "P-AUDIOPLUS-ORDER",
+                    "name": "Audio+ order",
+                    "price": None,
+                    "status": "verify",
+                    "observed_price_snapshot": {"amount": 1990, "currency": "RUB"},
+                    "source": "https://audio.plus/",
+                    "scope": "Indexed observation only.",
+                },
+            ]
+        }
+        try:
+            offers = build_geo_site.offer_items()
+            self.assertEqual(len(offers), 1)
+            self.assertEqual(offers[0]["price"], 1234)
+            self.assertEqual(offers[0]["name"], "Verified test service")
+        finally:
+            build_geo_site.PRICES = original
     def test_non_audio_plus_page_is_unchanged(self):
         source = "<html><body><h1>IVR стоимость</h1><p>Расчёт индивидуальный.</p></body></html>"
         result, changes = sanitize_html(source)
