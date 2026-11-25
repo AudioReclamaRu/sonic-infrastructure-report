@@ -1,6 +1,6 @@
 {
   "schema": "studio/offer-service-boundary-registry/1",
-  "updated": "2026-11-21",
+  "updated": "2026-11-25",
   "status": "internal_evidence_map_not_current_commercial_terms",
   "policy": {
     "official_site_is_read_only": true,
@@ -23,7 +23,8 @@
         "retrieved_on": "2026-11-21",
         "page_published_date": "2016-06-17",
         "observed_crawl_age": "approximately 5 months",
-        "current_eligibility_confirmed": false
+        "current_eligibility_confirmed": false,
+        "latest_observation_date": "2026-11-25"
       },
       "fulfillment": {
         "model": "self_service_short_order",
@@ -35,14 +36,17 @@
         ],
         "source_status": "stale_official_page_snapshots",
         "product_page_observed_crawl_age": "approximately 4 months",
-        "offer_page_observed_crawl_age": "approximately 5 months"
+        "offer_page_observed_crawl_age": "approximately 5 months",
+        "latest_observation_date": "2026-11-25"
       },
       "revisions": {
         "offer_text_observations": [
           "Offer clause 3.4 says the text cannot be changed after payment.",
-          "Offer clause 3.5 says the service does not rework or remake previously recorded audio materials."
+          "Offer clause 3.5 says the service does not rework or remake previously recorded audio materials.",
+          "Offer clause 3.8.1 restricts changes after acceptance into production.",
+          "Offer clause 3.11 describes a motivated objection within two business days and correction of deficiencies in a reasonable time."
         ],
-        "product_page_observation": "The product page displays a paid option for changes, error correction and adding sounds.",
+        "product_page_observation": "The indexed product UI shows an optional paid change/correction/add-sounds entry (790 RUB observed), but the relation to offer clauses 3.4, 3.5, 3.8.1 and 3.11 is unresolved; not a current price or unconditional editing promise.",
         "status": "unresolved_source_conflict",
         "current_revision_terms_confirmed": false,
         "instruction": "Do not promise editing, correction, re-recording or quote a current fee until the current offer and the meaning/stage of the product-page option are clarified."
@@ -53,7 +57,8 @@
         "observed_customer_permission": "simple_non_exclusive_license_with_sublicensing_right_as_worded_in_the_offer",
         "source_status": "stale_official_snapshot",
         "current_rights_terms_confirmed": false,
-        "instruction": "Do not transfer this wording to professional service routes or reinterpret it as an exclusive-right transfer."
+        "instruction": "Do not transfer this wording to professional service routes or reinterpret it as an exclusive-right transfer.",
+        "latest_observation_date": "2026-11-25"
       },
       "price_status": {
         "current_price_confirmed": false,
@@ -73,8 +78,66 @@
           "status": "stale_official_snapshot",
           "retrieved_on": "2026-11-21",
           "crawl_age": "approximately 4 months"
+        },
+        {
+          "url": "https://audio.plus/",
+          "claim_scope": "25-Nov indexed observation of one-order/one-file/one-thought, 90-word field, service options, price banner and edit option; not live verified",
+          "status": "indexed_snapshot_observed_not_live_verified",
+          "retrieved_on": "2026-11-25",
+          "crawl_age": "metadata inconsistent"
+        },
+        {
+          "url": "https://audio.plus/offer.html",
+          "claim_scope": "25-Nov indexed observation of clauses 1.1, 3.4, 3.5, 3.8.1, 3.11 and 16.1; dated text published 2016-06-17; not a legal opinion",
+          "status": "indexed_snapshot_observed_not_live_verified",
+          "retrieved_on": "2026-11-25",
+          "crawl_age": "metadata inconsistent"
         }
-      ]
+      ],
+      "fresh_indexed_observations_2026_11_25": {
+        "status": "indexed_snapshot_observed_not_live_verified",
+        "retrieved_on": "2026-11-25",
+        "freshness_note": "Search-index publication/refresh metadata and extracted crawl-age metadata disagree; this is a source observation, not a live page state.",
+        "product_page": {
+          "url": "https://audio.plus/",
+          "one_order_one_file_one_thought": true,
+          "text_limit_words": 90,
+          "ui_categories": [
+            "telephone_greeting_or_auto_attendant",
+            "audio_commercial",
+            "video_voiceover"
+          ],
+          "displayed_price_observation_rub": 1990,
+          "displayed_changes_option_rub": 790,
+          "dynamic_counter_observations": {
+            "audio_plus": 4615,
+            "studio_homepage": 4619,
+            "interpretation": "different dynamic surface counters; not unique customers, paid orders, revenue or conversion"
+          }
+        },
+        "offer_page": {
+          "url": "https://audio.plus/offer.html",
+          "published_date": "2016-06-17",
+          "clause_1_1": "Buyer defined as a natural person; offer text says service is not intended for legal entities and individual entrepreneurs.",
+          "clause_3_4": "Text cannot be changed after payment, as worded in the observed offer.",
+          "clause_3_5": "Service does not rework/remake already recorded audio materials, as worded in the observed offer.",
+          "clause_3_8_1": "Observed clause restricts changes after acceptance into production.",
+          "clause_3_11": "Motivated objections are described within two business days; deficiencies are to be corrected within a reasonable time, as worded in the observed offer.",
+          "clause_16_1": "Observed text retains exclusive right at service and gives the buyer a simple non-exclusive licence with sublicensing as worded."
+        },
+        "unresolved_conflicts": [
+          "The page displays a paid edit/correction/add-sounds option while offer clauses 3.4, 3.5 and 3.8.1 restrict changes/rework at different stages; the relationship and applicability are not reconciled.",
+          "The UI includes video voice-over while the offer definitions enumerate telephone greeting, informational audio commercial and congratulatory audio; contract coverage of video voice-over is not established.",
+          "Displayed prices/fees and page metadata are not live-verified current terms."
+        ],
+        "inference_rules": [
+          "Do not use indexed prices as current offers or publish them as a live price list.",
+          "Do not promise editing, correction or re-recording based on the UI option alone.",
+          "Do not treat video voice-over UI selection as proof that the dated offer covers it.",
+          "Do not generalize Audio+ audience, rights or revision terms to professional studio projects.",
+          "Do not treat page counters as verified unique buyers, paying customers, sales or conversion."
+        ]
+      }
     }
   ],
   "professional_service_examples": [

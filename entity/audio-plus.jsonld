@@ -4,7 +4,7 @@
   "@id": "https://audio.plus/#service",
   "name": "Audio+",
   "url": "https://audio.plus/",
-  "description": "A separate online self-service route associated with the Аудио-Реклама•ru studio for selected standard audio orders. The published offer defines the buyer as an individual and states that the service is not intended for legal entities or individual entrepreneurs. Check the live offer for current terms, prices, timing, rights and eligibility.",
+  "description": "Отдельный self-service продукт для стандартных коротких аудиозаказов. Наблюдаемая редакция публичной оферты определяет покупателя как физическое лицо и не предназначает сервис для юридических лиц и ИП. Состав интерфейса и условия оферты имеют зафиксированные расхождения; текущие цены, сроки, изменения, видео-категория и права не считаются подтверждёнными без live-проверки.",
   "serviceType": [
     "Online audio order",
     "Telephone greeting recording",
@@ -21,13 +21,69 @@
   "subjectOf": [
     {
       "@type": "WebPage",
-      "name": "Audio+ product page",
+      "name": "Audio+ product interface",
       "url": "https://audio.plus/"
     },
     {
       "@type": "WebPage",
       "name": "Audio+ public offer",
       "url": "https://audio.plus/offer.html"
+    }
+  ],
+  "disambiguatingDescription": "Separate self-service product. Not the studio's corporate project service and not the default route for legal entities or individual entrepreneurs.",
+  "dateModified": "2026-11-25",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Физические лица (наблюдаемое определение пункта 1.1 публичной оферты; редакция от 17.06.2016, текущая юридическая применимость не подтверждена)."
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Единица заказа (наблюдение интерфейса)",
+      "value": "Один заказ — один файл / одна законченная мысль; индексированный снимок страницы, не live-проверка.",
+      "description": "https://audio.plus/ — наблюдение 25.11.2026; freshness metadata inconsistent."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Ограничение текста (наблюдение интерфейса)",
+      "value": "До 90 слов; не подтверждено live.",
+      "description": "https://audio.plus/ — изменяемое значение интерфейса, не переносить на проектные услуги."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Отображённая цена (не актуальный прайс)",
+      "value": "В индексированном интерфейсе наблюдалась надпись 1 990 ₽ для отдельных вариантов заказа; текущая цена не подтверждена.",
+      "description": "https://audio.plus/ — snapshot observation only; deliberately not encoded as schema.org Offer."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Опция изменений (не подтверждённое обещание)",
+      "value": "Интерфейс показывал отдельную опцию изменений/исправлений за 790 ₽; совместимость с действующими условиями оферты не установлена.",
+      "description": "https://audio.plus/ and https://audio.plus/offer.html — unresolved source conflict."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Аудитория по наблюдаемой оферте",
+      "value": "Пункт 1.1 определяет покупателя как физическое лицо и исключает юридические лица и ИП; текст опубликован 17.06.2016, актуальность не подтверждена.",
+      "description": "https://audio.plus/offer.html — not a legal opinion."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Изменения и исправления",
+      "value": "Пункты 3.4, 3.5 и 3.8.1 ограничивают изменение текста и переделку после оплаты/перехода в производство; пункт 3.11 предусматривает мотивированное возражение в течение двух рабочих дней и исправление недостатков в разумный срок.",
+      "description": "https://audio.plus/offer.html — observed wording; conflict with UI edit option remains unresolved."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Права по наблюдаемой оферте",
+      "value": "Пункт 16.1 описывает исключительное право у сервиса и простую неисключительную лицензию покупателю; не интерпретировать как передачу исключительных прав.",
+      "description": "https://audio.plus/offer.html — wording from dated public offer snapshot; no legal opinion."
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Несовпадение категорий",
+      "value": "Интерфейс предлагает видео-озвучивание, но определения в наблюдаемой оферте перечисляют телефонные приветствия, информационные и поздравительные аудиоролики; договорный scope для видео не подтверждён этими материалами.",
+      "description": "https://audio.plus/ and https://audio.plus/offer.html — unresolved UI/offer scope mismatch."
     }
   ]
 }

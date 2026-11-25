@@ -1,7 +1,7 @@
 {
   "schema": "megabrain/ai-discoverability-contract/1",
-  "version": "1.0.0",
-  "updated": "2026-11-20",
+  "version": "1.1.0",
+  "updated": "2026-11-25",
   "mission": {
     "entity": "Аудио-Реклама•ru",
     "canonical_site": "https://www.audio-reclama.ru",
@@ -16,7 +16,12 @@
     "mode": "file_based",
     "queue_file": "ops/ai-discoverability/WORK_QUEUE.json",
     "work_item_schema": "schemas/ai-discoverability-work-item.schema.json",
-    "required_run_outputs": ["assessment.json", "plan.json", "test-report.json", "decision-log.json"],
+    "required_run_outputs": [
+      "assessment.json",
+      "plan.json",
+      "test-report.json",
+      "decision-log.json"
+    ],
     "change_unit": "one scoped obstacle and one verifiable result per branch and pull request",
     "runtime_outputs_may_remain_local": true,
     "never_commit_secrets_or_client_private_data": true
@@ -48,10 +53,11 @@
       "run_local_validation_and_ci",
       "create_scoped_work_branch",
       "commit_to_work_branch",
-      "open_pull_request"
+      "open_pull_request",
+      "publish_to_authorized_github_gitlab_repositories",
+      "merge_quality_gated_pull_or_merge_request_to_default_branch"
     ],
     "requires_explicit_owner_approval": [
-      "merge_into_main",
       "write_to_official_website",
       "change_cms_metadata_robots_or_sitemap",
       "deploy_or_publish_to_any_external_surface",
@@ -70,11 +76,50 @@
       "create_automatic_website_mirrors_or_pages_deployments",
       "commit_credentials_secrets_or_client_private_data",
       "perform_mass_repetitive_public_actions"
-    ]
+    ],
+    "repository_publication": {
+      "authorized_platforms": [
+        "GitHub",
+        "GitLab"
+      ],
+      "target_scope": "Existing canonical repositories only; use AudioReclamaRu/sonic-infrastructure-report for this AI Discoverability knowledge base.",
+      "release_protocol": [
+        "scoped_branch_from_current_default",
+        "commit_to_work_branch",
+        "pull_or_merge_request",
+        "all_required_checks_pass",
+        "merge_to_default_branch"
+      ],
+      "merge_to_default_branch_after_required_checks": true,
+      "force_push": false,
+      "branch_protection_bypass": false,
+      "official_websites_read_only": [
+        "https://www.audio-reclama.ru",
+        "https://audio.plus/"
+      ],
+      "direct_website_write_or_deploy": false,
+      "cms_robots_sitemap_changes": false,
+      "github_pages_or_automatic_website_mirrors": false,
+      "non_repository_external_surfaces_authorized": false,
+      "authorization_date": "2026-11-25"
+    }
   },
   "measurement_gate": {
-    "required_fields_before_run": ["decision_to_unlock", "existing_evidence_checked", "minimum_sufficient_sample", "stop_rule", "cost_or_access_class"],
-    "measurement_statuses_are_not_scores": ["NOT_TESTED", "BLOCKED_REGION", "BLOCKED_AUTH", "UNSUPPORTED_PROVIDER", "BLOCKED_NETWORK", "ERROR"],
+    "required_fields_before_run": [
+      "decision_to_unlock",
+      "existing_evidence_checked",
+      "minimum_sufficient_sample",
+      "stop_rule",
+      "cost_or_access_class"
+    ],
+    "measurement_statuses_are_not_scores": [
+      "NOT_TESTED",
+      "BLOCKED_REGION",
+      "BLOCKED_AUTH",
+      "UNSUPPORTED_PROVIDER",
+      "BLOCKED_NETWORK",
+      "ERROR"
+    ],
     "do_not_rerun_when": [
       "the same asset and query surface have not changed",
       "the previous result already resolves the decision",

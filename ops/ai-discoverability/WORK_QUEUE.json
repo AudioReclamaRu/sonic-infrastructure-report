@@ -120,6 +120,50 @@
       "blocker": "No authorized machine-readable Bing Webmaster Tools session or export is available in the current workflow.",
       "unblock_condition": "An approved Megabrain connector or authenticated local browser session is available without new paid spend.",
       "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-004",
+      "title": "Reconcile Audio+ product identity, buyer routing and offer/UI scope",
+      "work_type": "add_proof_or_relationship",
+      "priority": "P0",
+      "status": "done",
+      "market": "RU and Global",
+      "language": "ru",
+      "service": "audio_plus_short_order",
+      "target_surface": "repository_knowledge",
+      "obstacle": "The Audio+ self-service page and its dated offer expose different scope and revision signals; the repository previously lacked a fully linked provenance record for the 25-Nov indexed observations.",
+      "evidence_refs": [
+        "entity/audio-plus.ru.md",
+        "entity/audio-plus.jsonld",
+        "entity/audio-production-semantic-ontology.jsonld",
+        "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+        "ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json",
+        "https://audio.plus/",
+        "https://audio.plus/offer.html"
+      ],
+      "decision_to_unlock": "How AI systems should distinguish the individual short-order product from professional project services and describe uncertain eligibility, deliverables, revisions and rights without making unsupported current promises.",
+      "hypothesis": "A connected entity/route/offer ontology that preserves source disagreements will improve semantic disambiguation and reduce incorrect B2B routing; it does not guarantee citations, ranking or sales.",
+      "success_criteria": [
+        "Preserve the separate Audio+ product node and direct product URL without making it the default professional-service route.",
+        "Connect observed UI fields and offer clauses to dated evidence sources with explicit freshness and conflict statuses.",
+        "Encode one-order/one-file, buyer eligibility, video-category mismatch, revision disagreement and rights boundary without presenting old values as current terms.",
+        "Keep prices, deadlines and edit options out of current Offer claims unless live-verified.",
+        "Link the product entity and ontology from the repository MAP and llms index.",
+        "Pass the naming gate, route registry validation, AI Discoverability contract tests and repository integrity workflow."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": [
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/97",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701731203 — canonical-naming SUCCESS for the PR head before this queue completion commit",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701731020 — repo-integrity SUCCESS for the PR head before this queue completion commit",
+        "Ontology JSON-LD internal graph check: 121 nodes and 0 unresolved object references."
+      ]
     }
   ]
 }

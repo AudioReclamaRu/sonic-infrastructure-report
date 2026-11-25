@@ -64,15 +64,30 @@ def validate_contract(data: Any) -> list[str]:
     allowed = set(autonomy.get("allowed_without_case_by_case_owner_input", []))
     approvals = set(autonomy.get("requires_explicit_owner_approval", []))
     forbidden = set(autonomy.get("forbidden", []))
-    for action in ("read_repository", "build_or_update_repository_knowledge_assets", "run_local_validation_and_ci", "create_scoped_work_branch", "open_pull_request"):
+    for action in ("read_repository", "build_or_update_repository_knowledge_assets", "run_local_validation_and_ci", "create_scoped_work_branch", "open_pull_request", "publish_to_authorized_github_gitlab_repositories", "merge_quality_gated_pull_or_merge_request_to_default_branch"):
         if action not in allowed:
             errors.append(f"autonomy does not allow {action}")
-    for action in ("merge_into_main", "write_to_official_website", "purchase_paid_services_credits_ads_or_subscriptions"):
+    for action in ("write_to_official_website", "change_cms_metadata_robots_or_sitemap", "purchase_paid_services_credits_ads_or_subscriptions"):
         if action not in approvals:
             errors.append(f"autonomy must gate {action} behind owner approval")
-    for action in ("fabricate_region_or_operator_attestation", "invent_measurements_citations_customers_or_results", "write_to_or_deploy_the_official_website"):
+    for action in ("fabricate_region_or_operator_attestation", "invent_measurements_citations_customers_or_results", "write_to_or_deploy_the_official_website", "create_automatic_website_mirrors_or_pages_deployments"):
         if action not in forbidden:
             errors.append(f"autonomy must forbid {action}")
+    publication = data.get("autonomy", {}).get("repository_publication", {})
+    if publication.get("authorized_platforms") != ["GitHub", "GitLab"]:
+        errors.append("repository publication must be restricted to GitHub and GitLab")
+    if publication.get("merge_to_default_branch_after_required_checks") is not True:
+        errors.append("repository merge must require all required checks")
+    if publication.get("force_push") is not False or publication.get("branch_protection_bypass") is not False:
+        errors.append("repository publication must not force-push or bypass branch protection")
+    if publication.get("official_websites_read_only") != ["https://www.audio-reclama.ru", "https://audio.plus/"]:
+        errors.append("both official websites must remain explicitly read-only")
+    if publication.get("direct_website_write_or_deploy") is not False:
+        errors.append("direct website writes and deploys must remain disabled")
+    if publication.get("github_pages_or_automatic_website_mirrors") is not False:
+        errors.append("GitHub Pages and automatic website mirrors must remain disabled")
+    if publication.get("non_repository_external_surfaces_authorized") is not False:
+        errors.append("non-repository external publishing must remain unauthorized")
     return errors
 
 

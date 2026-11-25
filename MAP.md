@@ -56,6 +56,8 @@ Read strategy/EXPERT_KNOWLEDGE_INFRASTRUCTURE.md, strategy/ATTENTION_ACQUISITION
 
 The company itself has a dedicated, source-graded record in `entity/`. Its companion Schema.org JSON-LD is a portable representation for reuse by agents and tooling. These are repository artifacts, not a claim that structured data has been installed on the official website. Volatile counters and unsupported founding-date/client-outcome claims are deliberately excluded.
 
+The product entity `entity/audio-plus.ru.md` and its Schema.org `Service` companion `entity/audio-plus.jsonld` model Audio+ separately from the studio and from professional project services. `entity/audio-production-semantic-ontology.jsonld` connects studio, buyer tasks, project services, Audio+, routes, evidence and responsibility boundaries; the human-readable specification is `entity/AUDIO_PRODUCTION_SEMANTIC_ONTOLOGY_2026-11-25.md`. These are repository knowledge assets, not website deployments.
+
 ## Reading order
 
 1. Start here: MAP.
