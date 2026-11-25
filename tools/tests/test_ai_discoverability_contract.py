@@ -42,7 +42,12 @@ class TestMegabrainDiscoverabilityContract(unittest.TestCase):
             "https://www.audio-reclama.ru", "https://audio.plus/"
         ])
         self.assertFalse(scope["direct_website_write_or_deploy"])
-        self.assertFalse(scope["github_pages_or_automatic_website_mirrors"])
+        self.assertTrue(scope["existing_github_pages_workflow_deployment_allowed"])
+        self.assertEqual(scope["authorized_pages_workflow_path"], ".github/workflows/pages.yml")
+        self.assertIn("geo/", scope["authorized_pages_scope"])
+        self.assertIn("no custom domain", scope["authorized_pages_scope"])
+        self.assertIn("no writes to either official site", scope["authorized_pages_scope"])
+        self.assertFalse(scope["additional_pages_workflows_or_website_mirrors_authorized"])
         self.assertFalse(scope["non_repository_external_surfaces_authorized"])
 
     def test_measurement_without_stop_guard_fails(self):
