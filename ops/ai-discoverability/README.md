@@ -35,7 +35,7 @@ related:
 
 ## Публикация и выпуск
 
-Действующие полномочия зафиксированы в [PUBLISHING_AUTHORITY_2026-11-25.md](PUBLISHING_AUTHORITY_2026-11-25.md). Разрешены только существующие канонические репозитории GitHub/GitLab. Для текущей базы знаний целевой проект — `AudioReclamaRu/sonic-infrastructure-report`. Сайты https://www.audio-reclama.ru и https://audio.plus/ read-only; GitHub Pages, автозеркала и любые CMS/серверные изменения запрещены.
+Действующие полномочия зафиксированы в [PUBLISHING_AUTHORITY_2026-11-25.md](PUBLISHING_AUTHORITY_2026-11-25.md). Разрешены только существующие канонические репозитории GitHub/GitLab. Для текущей базы знаний целевой проект — `AudioReclamaRu/sonic-infrastructure-report`. Сайты https://www.audio-reclama.ru и https://audio.plus/ read-only; прямые CMS/серверные изменения запрещены. Разрешён только уже существующий `.github/workflows/pages.yml`, публикующий статический GEO/AEO-слой из `geo/` на GitHub Pages; custom domain, новые Pages-workflows и автоматические зеркала официальных сайтов запрещены.
 
 ## Проверки
 
