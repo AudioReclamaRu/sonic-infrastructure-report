@@ -772,9 +772,6 @@
       "observedActivities": [
         {
           "@id": "urn:audio-reclama:ontology:activity:sound-design"
-        },
-        {
-          "@id": "urn:audio-reclama:ontology:activity:recording"
         }
       ],
       "possibleDeliverables": [
@@ -825,9 +822,6 @@
         },
         {
           "@id": "urn:audio-reclama:ontology:activity:sound-design"
-        },
-        {
-          "@id": "urn:audio-reclama:ontology:activity:audio-post"
         }
       ],
       "possibleDeliverables": [
@@ -847,7 +841,12 @@
         }
       ],
       "evidenceStatus": "aged_official_page_snapshot",
-      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant.",
+      "notEquivalentTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-production"
+        }
+      ]
     },
     {
       "@id": "urn:audio-reclama:ontology:service:video-production",
@@ -888,7 +887,12 @@
         }
       ],
       "evidenceStatus": "indexed_excerpt_only_direct_body_cache_miss",
-      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant.",
+      "notEquivalentTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        }
+      ]
     },
     {
       "@id": "urn:audio-reclama:ontology:service:presentation-voiceover",
@@ -1000,12 +1004,6 @@
         },
         {
           "@id": "urn:audio-reclama:ontology:activity:localization"
-        },
-        {
-          "@id": "urn:audio-reclama:ontology:activity:voice-casting"
-        },
-        {
-          "@id": "urn:audio-reclama:ontology:activity:recording"
         }
       ],
       "possibleDeliverables": [
@@ -1047,9 +1045,6 @@
       "observedActivities": [
         {
           "@id": "urn:audio-reclama:ontology:activity:recording"
-        },
-        {
-          "@id": "urn:audio-reclama:ontology:activity:audio-post"
         }
       ],
       "possibleDeliverables": [
