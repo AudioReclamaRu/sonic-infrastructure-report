@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.audio-reclama.ru/research/ai-visibility-baseline-observation.schema.json",
+  "title": "AI Visibility Baseline Observation",
+  "description": "Read-only observation record template for AI visibility baseline. No automatic external checks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "observed_at",
+    "country",
+    "language_locale",
+    "platform",
+    "product",
+    "model_or_version",
+    "access_mode",
+    "interface",
+    "auth_state",
+    "search_grounding_mode",
+    "prompt_exact",
+    "answer_full_original",
+    "sources_urls",
+    "brand_mentioned",
+    "official_site_linked",
+    "competitors",
+    "observation_status",
+    "evidence_notes",
+    "observer"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "country": {
+      "type": "string",
+      "minLength": 2
+    },
+    "language_locale": {
+      "type": "string",
+      "minLength": 2
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "product": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_or_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "access_mode": {
+      "type": "string",
+      "enum": [
+        "consumer_ui",
+        "model_api"
+      ]
+    },
+    "interface": {
+      "type": "string",
+      "minLength": 1
+    },
+    "auth_state": {
+      "type": "string",
+      "enum": [
+        "anonymous",
+        "logged_in",
+        "subscription",
+        "enterprise",
+        "unknown"
+      ]
+    },
+    "search_grounding_mode": {
+      "type": "string",
+      "enum": [
+        "on",
+        "off",
+        "auto",
+        "unknown",
+        "not_applicable"
+      ]
+    },
+    "prompt_exact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "answer_full_original": {
+      "type": "string"
+    },
+    "sources_urls": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1
+          },
+          {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "url"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": "string"
+              },
+              "publisher": {
+                "type": "string"
+              },
+              "citation_type": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "brand_mentioned": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "official_site_linked": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mentioned_as": {
+            "type": "string"
+          },
+          "sources_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "observation_status": {
+      "type": "string",
+      "enum": [
+        "ANSWERED",
+        "NO_ANSWER",
+        "BLOCKED_REGION",
+        "BLOCKED_AUTH",
+        "UNSUPPORTED_PROVIDER",
+        "ERROR",
+        "NOT_TESTED"
+      ]
+    },
+    "evidence_notes": {
+      "type": "string"
+    },
+    "observer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "domain_scope": {
+      "type": "string",
+      "enum": [
+        "main_b2b",
+        "audio_plus_b2c"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "observation_status": {
+            "const": "ANSWERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "brand_mentioned": {
+            "type": "boolean"
+          },
+          "official_site_linked": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "observation_status": {
+            "enum": [
+              "NO_ANSWER",
+              "BLOCKED_REGION",
+              "BLOCKED_AUTH",
+              "UNSUPPORTED_PROVIDER",
+              "ERROR",
+              "NOT_TESTED"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "brand_mentioned": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "official_site_linked": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

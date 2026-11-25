@@ -41,6 +41,8 @@ related:
 ## Видимость в ответах ИИ
 
 - AI_VISIBILITY_BENCHMARK_PROTOCOL_2026-11-17.md — протокол повторяемого теста идентичности бренда, корректности услуг, экспертного retrieval и качества цитирования в ChatGPT Search, Google AI Overviews/AI Mode, Copilot, Gemini и Perplexity. Контрольный набор создан, результаты ещё не прогнаны.
+- AI_DISCOVERABILITY_TWO_DOMAIN_RU_BASELINE_2026-11-22.md — read-only GSC RU срез по главной, радио, IVR, аудиокнигам и редакционным входам; отдельно фиксирует AI tracker NOT_RUN, отсутствие Audio+ Search Console property и пустые GA4 отчёты, не приравнивая органический поиск к AI-цитированию.
+- AI_VISIBILITY_AUDIO_PLUS_B2C_PROMPT_MODULE_DRAFT_2026-11-22.md — восемь отдельных draft prompts для Audio+ (B2C product/terms/rights/route); не frozen и не run, не смешивать с B2B baseline до подтверждения оферты и валидного RU consumer-UI.
 - ai-visibility-benchmark-queries-2026-11-17.json — фиксированный RU-набор из 20 запросов с ожидаемыми фактами, источниками и запретами на неподтверждённые утверждения.
 - ai-visibility-benchmark-template.csv — журнал «запрос × платформа × запуск».
 - AI_VISIBILITY_SCORING_RUBRIC_2026-11-17.md — единые проверяемые критерии оценки 0/1/2/null по восьми осям, generic discovery и критическим ошибкам.
@@ -53,7 +55,9 @@ related:
 - ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — приоритетный реестр каналов, публичных присутствий, каталогов и редакционных возможностей; статусы не подразумевают, что профили уже заявлены или изменены.
 - OWNER_READY_SITE_ATTENTION_FIXES_2026-11-19.md — подготовленные задания по усилению сайта на случай отдельного разрешения; официальный сайт не редактировался.
 
-- SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md — новые P0/P1 находки по самостоятельному домену Audio+, GSC URL Inspection англоязычных кейсов, видеоархиву YouTube и карточке AllAdvertising; зафиксированы статусы, ограничения свежести и безопасный план действий.\n- AI_DISCOVERABILITY_EN_INDEXABILITY_P0_EXECUTION_BRIEF_2026-11-21.md — точечная проверка EN URL Inspection, коммерческих GSC сигналов и owner-ready последовательность устранения robots/sitemap/canonical/hreflang барьеров. Состояния Google привязаны к датам последнего обхода; live-изменения сайта не выполнялись.
+- SITE_ATTENTION_BREAKTHROUGHS_2026-11-20.md — исторический read-only срез по Audio+, GSC URL Inspection англоязычных кейсов, видеоархиву YouTube и карточке AllAdvertising; выводы о текущих условиях продукта проверять по свежим источникам.
+- AUDIO_PLUS_AI_DISCOVERABILITY_PLAYBOOK_2026-11-22.md — отдельная стратегия Audio+ с обязательными P0-гейтами NDA, серверной конфиденциальности, demo rights и сверки актуальной оферты; не считать прежние crawl snapshots текущими условиями.
+- AI_DISCOVERABILITY_EN_INDEXABILITY_P0_EXECUTION_BRIEF_2026-11-21.md — точечная проверка EN URL Inspection, коммерческих GSC сигналов и owner-ready последовательность устранения robots/sitemap/canonical/hreflang барьеров. Состояния Google привязаны к датам последнего обхода; live-изменения сайта не выполнялись.
 - ATTENTION_EXECUTION_REGISTER_2026-11-19.csv — обновлён 20.11.2026 новыми точками привлечения внимания и статусами Audio+, YouTube, RUTUBE, AllAdvertising и EN URL Inspection.
 - EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.md — мастер-реестр внешних профилей и реальных/предполагаемых прав редактирования; разделяет Metricool, owner-confirmed Dzen/VC.ru, публичные площадки и кандидатов.
 - EXTERNAL_PLATFORM_EDITABILITY_REGISTER_2026-11-20.csv — машинно-читаемая таблица тех же поверхностей. Это единственная каноническая CSV-версия.
@@ -72,6 +76,13 @@ related:
 ## Поисковая видимость и качество обхода
 
 - READ_ONLY_SEARCH_SIGNAL_AUDIT_2026-11-14.md — выборочный live-аудит sitemap, коммерческих страниц и каталога дикторов. Зафиксированы 1 186 уникальных URL, 2 подтверждённых 404-профиля в sitemap, один redirecting URL и несогласованные публичные счётчики каталога; это не полный crawl и не отчёт Search Console/Яндекс Вебмастера.
+
+## Публикация и baseline-наблюдения AI-видимости
+
+- P0_PUBLICATION_VALIDATION_CHECKLIST_2026-11-22.md — read-only P0 чеклист валидации публикации: реестр 6 опубликованных файлов (URL, ожидаемый/фактический SHA-256, статус, проверка содержимого), 2 `<head>`-вставки, связность Organization/WebSite/Brand/canonical/@id, проверка robots для AI/поисковых ботов, sitemap/canonical/доступность, итоговый статус `SENT_TO_PUBLISH` или `LIVE_VALIDATED`. HTTP 200 недостаточен; требуется хеш/эталон.
+- AI_VISIBILITY_BASELINE_OBSERVATION_TEMPLATE_2026-11-22.md — шаблон наблюдений AI-видимости (RU-first, consumer UI vs model API раздельно, без платных запусков): обязательные поля, таксономия статусов, JSON/CSV шаблоны, правила интерпретации (нет упоминания бренда = наблюдение; отсутствие ответа != нулевая видимость).
+- ai-visibility-baseline-observation.schema.json — JSON Schema для машинной валидации записей наблюдения.
+- ai-visibility-baseline-observation-template.csv — CSV-заголовок шаблона наблюдений.
 
 ## Правила использования
 

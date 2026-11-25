@@ -1,0 +1,1 @@
+observation_id,observed_at,country,language_locale,platform,product,model_or_version,access_mode,interface,auth_state,search_grounding_mode,prompt_exact,answer_full_original,sources_urls,brand_mentioned,official_site_linked,competitors,observation_status,evidence_notes,observer,run_id,domain_scope

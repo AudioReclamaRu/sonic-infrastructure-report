@@ -1,6 +1,6 @@
 {
   "schema": "studio/offer-service-boundary-registry/1",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "status": "internal_evidence_map_not_current_commercial_terms",
   "policy": {
     "official_site_is_read_only": true,
@@ -19,62 +19,84 @@
       "official_offer_url": "https://audio.plus/offer.html",
       "audience": {
         "observed_statement": "Покупатель — физическое лицо (данный сервис не предназначен для юридических лиц и ИП).",
-        "source_status": "stale_official_snapshot",
-        "retrieved_on": "2026-11-21",
+        "source_status": "official_public_offer_published_2016_crawled_within_previous_month",
+        "retrieved_on": "2026-11-22",
         "page_published_date": "2016-06-17",
-        "observed_crawl_age": "approximately 5 months",
-        "current_eligibility_confirmed": false
+        "observed_crawl_age": "search snapshot crawled within the previous month as of 2026-11-22; underlying offer text appears published in 2016",
+        "current_eligibility_confirmed": false,
+        "instruction": "Treat this as the currently published offer wording until the owner/legal reviewer confirms or replaces it; do not generalise it to professional B2B project routes."
       },
       "fulfillment": {
         "model": "self_service_short_order",
         "observed_scope": [
-          "Choose from the product page's audio-purpose options.",
-          "One order produces one file / one finished thought.",
-          "Product page displays a text limit of 90 words.",
-          "The offer text describes prepayment and a telephone greeting delivered in one version without alternate takes."
+          "Product page snapshot shows a text limit of 90 words.",
+          "Product page snapshot states one order produces one file / one finished thought.",
+          "Offer text describes 100 percent prepayment.",
+          "Offer text describes one delivered version for a telephone greeting, without alternate takes.",
+          "Offer text says the result is delivered as an audio file/link to the buyer's email."
         ],
-        "source_status": "stale_official_page_snapshots",
-        "product_page_observed_crawl_age": "approximately 4 months",
-        "offer_page_observed_crawl_age": "approximately 5 months"
+        "source_status": "mixed_freshness_official_public_snapshots",
+        "product_page_observed_crawl_age": "approximately 4 months as of 2026-11-22",
+        "offer_page_observed_crawl_age": "within the previous month as of 2026-11-22; underlying text appears published in 2016"
       },
       "revisions": {
         "offer_text_observations": [
           "Offer clause 3.4 says the text cannot be changed after payment.",
-          "Offer clause 3.5 says the service does not rework or remake previously recorded audio materials."
+          "Offer clause 3.5 says the service does not rework or remake previously recorded audio materials.",
+          "Offer clause 3.8.1 says changes are not possible after the order has been accepted for work."
         ],
-        "product_page_observation": "The product page displays a paid option for changes, error correction and adding sounds.",
+        "product_page_observation": "Product page snapshot displays an option for changes, error correction and adding sounds for 790 RUB.",
+        "product_page_observed_crawl_age": "approximately 4 months as of 2026-11-22",
         "status": "unresolved_source_conflict",
         "current_revision_terms_confirmed": false,
-        "instruction": "Do not promise editing, correction, re-recording or quote a current fee until the current offer and the meaning/stage of the product-page option are clarified."
+        "instruction": "Do not promise editing, correction, re-recording or quote the 790 RUB UI fee until the currently published offer and the exact stage/scope of the product-page option are reconciled. Update both the order UI and offer text together."
       },
       "rights": {
         "offer_clause": "16.1",
         "observed_exclusive_right_holder": "service",
         "observed_customer_permission": "simple_non_exclusive_license_with_sublicensing_right_as_worded_in_the_offer",
-        "source_status": "stale_official_snapshot",
+        "source_status": "official_public_offer_published_2016_crawled_within_previous_month",
+        "retrieved_on": "2026-11-22",
         "current_rights_terms_confirmed": false,
         "instruction": "Do not transfer this wording to professional service routes or reinterpret it as an exclusive-right transfer."
       },
       "price_status": {
         "current_price_confirmed": false,
-        "historical_price_observations_are_not_publishable_as_current": true
+        "product_page_observation": "The product page snapshot shows a base reference price of 1,990 RUB and package tiers; the snapshot is approximately 4 months old.",
+        "historical_price_observations_are_not_publishable_as_current": true,
+        "instruction": "Do not publish current Product/Offer price claims until the live checkout amount and what it includes are verified."
       },
       "evidence_sources": [
         {
           "url": "https://audio.plus/offer.html",
-          "claim_scope": "buyer definition, advance payment, no post-payment text change, no rework/remake clause, one version for telephone greeting, rights section 16.1",
-          "status": "stale_official_snapshot",
-          "retrieved_on": "2026-11-21",
-          "crawl_age": "approximately 5 months"
+          "claim_scope": "buyer definition (individual only; no legal entities/IP), 100 percent advance payment, one version/no alternate takes, no post-payment text changes, no rework/remake, delivery by email link, publication clause 3.14 (unless opt-out), rights section 16.1",
+          "status": "official_public_offer_currently_available_but_underlying_text_appears_published_2016",
+          "retrieved_on": "2026-11-22",
+          "crawl_age": "search snapshot crawled within the previous month; underlying page appears published 2016"
         },
         {
           "url": "https://audio.plus/",
-          "claim_scope": "self-service options, one-file/one-thought limit, 90-word input limit and product-page edit option",
-          "status": "stale_official_snapshot",
-          "retrieved_on": "2026-11-21",
+          "claim_scope": "short self-service options, 90-word input limit, one-file/one-complete-thought, base reference price 1,990 RUB, package tiers and 790 RUB correction/change option",
+          "status": "official_product_page_snapshot_not_revalidated_in_checkout",
+          "retrieved_on": "2026-11-22",
           "crawl_age": "approximately 4 months"
         }
-      ]
+      ],
+      "publication": {
+        "offer_clause": "3.14",
+        "observed_statement": "The service reserves the right to publish the result of the service on the service page unless the buyer expressly prohibited publication by unchecking the corresponding option when placing the order.",
+        "source_status": "official_public_offer_published_2016_crawled_within_previous_month",
+        "retrieved_on": "2026-11-22",
+        "underlying_offer_published_date": "2016-06-17",
+        "current_publication_workflow_confirmed": false,
+        "nda_rule": "NDA_RESTRICTED material must never be published. A general offer clause or default opt-out cannot override a specific NDA or confidentiality obligation.",
+        "required_owner_checks": [
+          "Verify the exact wording and state of the publication checkbox in the live order flow.",
+          "Verify whether checkbox state is persisted and auditable per order.",
+          "Reconcile the generic publication clause with NDAs and individual order contracts.",
+          "Enforce a per-order publication prohibition for NDA_RESTRICTED material across portfolio pages, feeds, structured data, transcripts and AI/ASR outputs."
+        ]
+      }
     }
   ],
   "professional_service_examples": [
@@ -165,7 +187,10 @@
     "A non-exclusive licence model must not be replaced by an exclusive-right transfer statement; the reverse transfer is also prohibited without source evidence.",
     "A project page's list of service elements does not prove every item is included in every quote.",
     "Do not infer PBX configuration, telephony routing or live system integration from a statement that audio files are prepared for upload.",
-    "The product-page edit option and offer restrictions on changes/rework remain an unresolved source conflict."
+    "The product-page edit option and offer restrictions on changes/rework remain an unresolved source conflict.",
+    "Offer clause 3.14's general publication-by-default wording must never be treated as permission to disclose an NDA_RESTRICTED order; specific NDA/confidentiality restrictions must be enforced per order.",
+    "Do not treat a homepage edit/correction option as overriding offer clauses 3.4, 3.5 or 3.8.1 until the product UI and published offer are reconciled in writing.",
+    "A publicly displayed price is not a verified current checkout price until the live order flow is tested and its scope is confirmed."
   ],
   "linked_registry": "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json"
 }
