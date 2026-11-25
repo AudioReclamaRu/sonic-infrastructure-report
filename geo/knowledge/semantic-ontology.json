@@ -1,5 +1,5 @@
 {
-  "schema": "audio-reclama-geo/semantic-ontology/1",
+  "schema": "ar-geo/semantic-ontology/1",
   "updated": "2026-11-25",
   "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
   "site": "https://www.audio-reclama.ru",
