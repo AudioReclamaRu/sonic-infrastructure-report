@@ -43,14 +43,14 @@ machine_readable: entity/audio-production-semantic-ontology.jsonld
 | Услуга | Задача | Основной маршрут |
 |---|---|---|
 | Рекламные аудиоролики | Создать рекламный аудиоролик | [Рекламные ролики](https://www.audio-reclama.ru/audio/radioroliki-zakaz.html) |
-| Сценарии | Заказать текст для рекламы или приветствия | [Сценарии](https://www.audio-reclama.ru/zakaz-sценariya.html) |
+| Сценарии | Заказать текст для рекламы или приветствия | [Сценарии](https://www.audio-reclama.ru/zakaz-scenariya.html) |
 | Джинглы | Создать музыкальную звуковую подпись | [Джинглы](https://www.audio-reclama.ru/audio/zvuk-media.html) |
 | Озвучивание видео | Записать голос для видеоматериала | [Озвучивание видео](https://www.audio-reclama.ru/audio/ozvuchka-video.html) |
 | Видеопродакшн | Произвести сам видеоролик | [Видеоролики](https://www.audio-reclama.ru/video/videoroliki-zakaz.html) |
 | Озвучивание презентаций | Записать речь для презентации | [Презентации](https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html) |
 | IVR и приветствия | Записать меню и голосовые подсказки | [IVR](https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html) |
 | Перевод и локализация | Адаптировать материал под язык и локаль | [Переводчики](https://www.audio-reclama.ru/perevodchiki/) |
-| Аудиокниги | Записать аудиокнигу | [Аудиокниги](https://www.audio-reclama.ru/audio/sozdanie-audiokниg.html) |
+| Аудиокниги | Записать аудиокнигу | [Аудиокниги](https://www.audio-reclama.ru/audio/sozdanie-audioknig.html) |
 | Корпоративные песни и гимны | Создать песню или гимн | [Корпоративные песни](https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html) |
 
 Маршрут позволяет классифицировать публично представленное направление, но не доказывает цену, срок, SLA, полный состав работ, права или гарантированный результат.
