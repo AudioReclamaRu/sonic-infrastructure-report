@@ -160,8 +160,9 @@
       "unblock_condition": null,
       "validation_refs": [
         "https://github.com/AudioReclamaRu/sonic-infrastructure-report/pull/97",
-        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701731203 — canonical-naming SUCCESS for the PR head before this queue completion commit",
-        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701731020 — repo-integrity SUCCESS for the PR head before this queue completion commit",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701822082 — canonical-naming SUCCESS for final PR head  f2301369dd4df69d8f1cdaea40e739a42f48217d",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701821798 — repo-integrity SUCCESS for final PR head f2301369dd4df69d8f1cdaea40e739a42f48217d",
+        "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701960107 — repo-integrity SUCCESS on merged main commit 58c3eb4a907e985e7b86d07431ce2c339811aff9",
         "Ontology JSON-LD internal graph check: 121 nodes and 0 unresolved object references."
       ]
     }
