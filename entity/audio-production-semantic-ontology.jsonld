@@ -1,0 +1,2250 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ar": "urn:audio-reclama:ontology:",
+    "@vocab": "urn:audio-reclama:ontology:",
+    "name": "schema:name",
+    "alternateName": "schema:alternateName",
+    "description": "schema:description",
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "servesTask": {
+      "@id": "ar:servesTask",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasService": {
+      "@id": "ar:hasService",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasProduct": {
+      "@id": "ar:hasProduct",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasRoute": {
+      "@id": "ar:hasRoute",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "hasCapability": {
+      "@id": "ar:hasCapability",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "routesToService": {
+      "@id": "ar:routesToService",
+      "@type": "@id"
+    },
+    "routesToProduct": {
+      "@id": "ar:routesToProduct",
+      "@type": "@id"
+    },
+    "routesToTask": {
+      "@id": "ar:routesToTask",
+      "@type": "@id"
+    },
+    "routesToCase": {
+      "@id": "ar:routesToCase",
+      "@type": "@id"
+    },
+    "observedActivities": {
+      "@id": "ar:observedActivities",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "possibleDeliverables": {
+      "@id": "ar:possibleDeliverables",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "appliesTo": {
+      "@id": "ar:appliesTo",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "supportedBy": {
+      "@id": "ar:supportedBy",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "separateFrom": {
+      "@id": "ar:separateFrom",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "sourceUrl": {
+      "@id": "ar:sourceUrl",
+      "@type": "@id"
+    },
+    "observationDate": "ar:observationDate",
+    "observationStatus": "ar:observationStatus",
+    "clauseReference": "ar:clauseReference",
+    "commercialValue": "ar:commercialValue",
+    "notInterpretedAs": "ar:notInterpretedAs",
+    "freshnessNote": "ar:freshnessNote",
+    "publishedDate": "ar:publishedDate"
+  },
+  "@graph": [
+    {
+      "@id": "urn:audio-reclama:ontology:ontology:audio-production",
+      "@type": "owl:Ontology",
+      "name": "Аудио-Реклама•ru — онтология делового аудиопроизводства",
+      "alternateName": "Audio-Reclama business audio production semantic ontology",
+      "description": "Provenance-aware graph separating studio, professional services, the separate Audio+ product, buyer tasks, production activities, candidate deliverables, routes, cases, source observations and inference boundaries.",
+      "versionInfo": "0.2.0",
+      "dateModified": "2026-11-25",
+      "status": "repository_draft_not_published_to_official_website",
+      "note": "Repository model only; not installed on the official website and not evidence of indexing or AI recognition."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:Studio",
+      "@type": "owl:Class",
+      "name": "Studio",
+      "subClassOf": "schema:Organization",
+      "rdfs:comment": "The studio as an organization."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:SelfServiceProduct",
+      "@type": "owl:Class",
+      "name": "SelfServiceProduct",
+      "subClassOf": "schema:Product",
+      "rdfs:comment": "A separately bounded self-service product."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:ProfessionalProjectService",
+      "@type": "owl:Class",
+      "name": "ProfessionalProjectService",
+      "subClassOf": "schema:Service",
+      "rdfs:comment": "A professional service commissioned through a project brief."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:BuyerTask",
+      "@type": "owl:Class",
+      "name": "BuyerTask",
+      "subClassOf": "owl:Thing",
+      "rdfs:comment": "Buyer intent, distinct from a service, operation or route."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:ProductionActivity",
+      "@type": "owl:Class",
+      "name": "ProductionActivity",
+      "subClassOf": "owl:Thing",
+      "rdfs:comment": "A production operation, not an automatic package inclusion."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:Deliverable",
+      "@type": "owl:Class",
+      "name": "Deliverable",
+      "subClassOf": "schema:CreativeWork",
+      "rdfs:comment": "A possible output class, not a contractual guarantee."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:NavigationRoute",
+      "@type": "owl:Class",
+      "name": "NavigationRoute",
+      "subClassOf": "owl:Thing",
+      "rdfs:comment": "A discovery, enquiry, checkout or case-reference destination."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:ResponsibilityBoundary",
+      "@type": "owl:Class",
+      "name": "ResponsibilityBoundary",
+      "subClassOf": "owl:Thing",
+      "rdfs:comment": "A semantic non-equivalence or scope constraint."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:EvidenceSource",
+      "@type": "owl:Class",
+      "name": "EvidenceSource",
+      "subClassOf": "schema:CreativeWork",
+      "rdfs:comment": "A provenance record with observation date and limits."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:CaseReference",
+      "@type": "owl:Class",
+      "name": "CaseReference",
+      "subClassOf": "schema:CreativeWork",
+      "rdfs:comment": "A first-party public project reference."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:ProductionCapability",
+      "@type": "owl:Class",
+      "name": "ProductionCapability",
+      "subClassOf": "owl:Thing",
+      "rdfs:comment": "A cross-cutting production capability with provenance."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:entity-ru",
+      "@type": "ar:EvidenceSource",
+      "name": "entity/audio-reclama-studio.md",
+      "sourcePath": "entity/audio-reclama-studio.md",
+      "evidenceStatus": "official_source_observed",
+      "observedOn": "2026-11-17",
+      "githubBlobSha": "15a1034ba315b90b8a69672d914c1f54fdd5cfca",
+      "description": "Canonical Russian studio identity and public service profile."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:entity-en",
+      "@type": "ar:EvidenceSource",
+      "name": "entity/audio-reclama-studio.en.md",
+      "sourcePath": "entity/audio-reclama-studio.en.md",
+      "evidenceStatus": "draft_requires_editorial_review",
+      "observedOn": "2026-11-19",
+      "githubBlobSha": "0b462ff1664535e4b25baafed444fc424738a904",
+      "description": "International service map and owner-confirmed worldwide language-group coordination."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:routes",
+      "@type": "ar:EvidenceSource",
+      "name": "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+      "sourcePath": "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+      "evidenceStatus": "repository_only_source_guide_link_inventory",
+      "observedOn": "2026-11-21",
+      "githubBlobSha": "12b9e58c903890d194ca4a747f3f31a2074256ba",
+      "description": "Buyer tasks and destination inventory; links not live-checked."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:service-matrix",
+      "@type": "ar:EvidenceSource",
+      "name": "ops/ai-discoverability/SERVICE_ROUTE_EVIDENCE_MATRIX.json",
+      "sourcePath": "ops/ai-discoverability/SERVICE_ROUTE_EVIDENCE_MATRIX.json",
+      "evidenceStatus": "repository_only_official_source_snapshot_audit",
+      "observedOn": "2026-11-21",
+      "githubBlobSha": "dbd7ef7e8d7aaa60abf7cce0ca32ad46951ff96f",
+      "description": "Ten professional route snapshots/index excerpts; no live HTTP, form, current contract or rights check."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:offer-boundaries",
+      "@type": "ar:EvidenceSource",
+      "name": "ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json",
+      "sourcePath": "ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json",
+      "evidenceStatus": "internal_evidence_map_not_current_commercial_terms",
+      "observedOn": "2026-11-21",
+      "githubBlobSha": "09a783f77aee1ad88e28d69127f4d26686b532f3",
+      "description": "Audio+ separation, stale offer terms and unresolved revision conflict."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:cases",
+      "@type": "ar:EvidenceSource",
+      "name": "geo/knowledge/case-studies.json",
+      "sourcePath": "geo/knowledge/case-studies.json",
+      "evidenceStatus": "public_reference_observed_details_require_confirmation",
+      "observedOn": "2026-11-06",
+      "githubBlobSha": "74cf752ece1915785538bb27adf38c57f0fd21d8",
+      "description": "First-party public case references; details and reuse permissions require confirmation."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:studio:studio",
+      "@type": [
+        "ar:Studio",
+        "schema:Organization"
+      ],
+      "name": "Аудио-Реклама•ru",
+      "alternateName": "Audio-Reclama.ru",
+      "url": "https://www.audio-reclama.ru",
+      "identityStatus": "canonical_brand_name",
+      "legalContractingEntityStatus": "unknown_until_project_agreement_or_current_confirmation",
+      "hasService": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:radio-advertising"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:scriptwriting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:jingles"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-production"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:presentation-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:ivr-recording"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:localization"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:audiobook-production"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:corporate-song"
+        }
+      ],
+      "hasProduct": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:voice-catalogue"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:general-intake"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:radio-advertising"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:scriptwriting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:jingle-production"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:video-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:video-production"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:presentation-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:ivr-recording"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:localization"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:audiobook-production"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:corporate-song-production"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:route:vnukovo-case"
+        }
+      ],
+      "hasCapability": [
+        {
+          "@id": "urn:audio-reclama:ontology:capability:worldwide-language-production"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:product:audio-plus",
+      "@type": [
+        "ar:SelfServiceProduct",
+        "schema:Product"
+      ],
+      "name": "Audio+",
+      "url": "https://audio.plus/",
+      "description": "Separate individual short-order product. The indexed UI and dated public offer contain unresolved differences in categories and revision scope; current prices, revisions, rights and eligibility are not live-verified.",
+      "separateFrom": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        }
+      ],
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:audio-plus-order"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:audio-plus-checkout"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-entity-profile-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-service-jsonld-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:route-registry-2026-11-25"
+        }
+      ],
+      "evidenceStatus": "separate_product_observed_interface_offer_scope_and_revision_conflicts_not_live_verified",
+      "hasBoundary": [
+        {
+          "@id": "urn:audio-reclama:ontology:boundary:audio-plus-b2c-offer-boundary"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:boundary:audio-plus-ui-offer-video-mismatch"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:boundary:audio-plus-edit-option-unresolved"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:boundary:audio-plus-indexed-price-not-current"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:boundary:audio-plus-license-not-exclusive-transfer"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:boundary:audio-plus-counters-not-client-kpi"
+        }
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:radio-commercial",
+      "@type": "ar:BuyerTask",
+      "name": "Заказать рекламный аудиоролик",
+      "alternateName": "commission a radio commercial",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:script",
+      "@type": "ar:BuyerTask",
+      "name": "Заказать рекламный сценарий",
+      "alternateName": "commission an advertising or telephone script",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:jingle",
+      "@type": "ar:BuyerTask",
+      "name": "Создать джингл или звуковую подпись",
+      "alternateName": "create a jingle or audio signature",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:video-voiceover",
+      "@type": "ar:BuyerTask",
+      "name": "Озвучить видео",
+      "alternateName": "commission video voice-over or dubbing-related audio",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:video-production",
+      "@type": "ar:BuyerTask",
+      "name": "Заказать производство видеоролика",
+      "alternateName": "commission production of the video itself",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:presentation",
+      "@type": "ar:BuyerTask",
+      "name": "Озвучить презентацию",
+      "alternateName": "commission presentation narration",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:ivr",
+      "@type": "ar:BuyerTask",
+      "name": "Записать IVR и телефонные приветствия",
+      "alternateName": "commission IVR prompts and telephone greetings",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:localization",
+      "@type": "ar:BuyerTask",
+      "name": "Адаптировать материал для другого языка",
+      "alternateName": "commission translation and multimedia localization",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:audiobook",
+      "@type": "ar:BuyerTask",
+      "name": "Записать аудиокнигу",
+      "alternateName": "commission audiobook narration",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:corporate-song",
+      "@type": "ar:BuyerTask",
+      "name": "Создать корпоративную песню или гимн",
+      "alternateName": "commission a corporate song or anthem",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:airport-announcements",
+      "@type": "ar:BuyerTask",
+      "name": "Подготовить объявления для аэропорта",
+      "alternateName": "scope airport public-address announcements",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:choose-voice",
+      "@type": "ar:BuyerTask",
+      "name": "Подобрать и прослушать диктора",
+      "alternateName": "discover and audition professional voice talent",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:general-brief",
+      "@type": "ar:BuyerTask",
+      "name": "Начать общий бриф по озвучиванию",
+      "alternateName": "start an enquiry before the service is classified",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:task:audio-plus-order",
+      "@type": "ar:BuyerTask",
+      "name": "Оформить стандартный короткий аудиозаказ",
+      "alternateName": "place a standard short audio order through Audio+",
+      "inLanguage": [
+        "ru",
+        "en"
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:scriptwriting",
+      "@type": "ar:ProductionActivity",
+      "name": "Разработка сценария",
+      "alternateName": "scriptwriting",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:voice-casting",
+      "@type": "ar:ProductionActivity",
+      "name": "Подбор голоса",
+      "alternateName": "voice casting",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:recording",
+      "@type": "ar:ProductionActivity",
+      "name": "Студийная запись",
+      "alternateName": "studio recording",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:translation",
+      "@type": "ar:ProductionActivity",
+      "name": "Перевод",
+      "alternateName": "translation",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:localization",
+      "@type": "ar:ProductionActivity",
+      "name": "Языковая адаптация",
+      "alternateName": "localization",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:sound-design",
+      "@type": "ar:ProductionActivity",
+      "name": "Звуковой дизайн",
+      "alternateName": "sound design",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:music-licensing",
+      "@type": "ar:ProductionActivity",
+      "name": "Лицензирование музыки",
+      "alternateName": "music licensing",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:dubbing",
+      "@type": "ar:ProductionActivity",
+      "name": "Дубляж и синхронизация",
+      "alternateName": "dubbing and lip-sync",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:audio-post",
+      "@type": "ar:ProductionActivity",
+      "name": "Монтаж и постобработка аудио",
+      "alternateName": "audio editing and post-production",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:activity:video-work",
+      "@type": "ar:ProductionActivity",
+      "name": "Съёмка, анимация и монтаж",
+      "alternateName": "shooting, animation and editing",
+      "description": "Production operation; not automatically included in every project."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:radio-master",
+      "@type": "ar:Deliverable",
+      "name": "Финальный рекламный аудиоролик",
+      "alternateName": "radio or advertising audio master",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:script-text",
+      "@type": "ar:Deliverable",
+      "name": "Текст сценария",
+      "alternateName": "approved written script",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:jingle-master",
+      "@type": "ar:Deliverable",
+      "name": "Финальная запись джингла",
+      "alternateName": "finished jingle audio",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:video-track",
+      "@type": "ar:Deliverable",
+      "name": "Голосовая дорожка для видео",
+      "alternateName": "video narration or voice track",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:finished-video",
+      "@type": "ar:Deliverable",
+      "name": "Готовый видеоролик",
+      "alternateName": "finished video output; package to be scoped",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:presentation-track",
+      "@type": "ar:Deliverable",
+      "name": "Голосовая дорожка презентации",
+      "alternateName": "presentation narration track",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:ivr-files",
+      "@type": "ar:Deliverable",
+      "name": "Файлы IVR и голосовых меню",
+      "alternateName": "recorded prompts prepared for system upload",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:localized-text",
+      "@type": "ar:Deliverable",
+      "name": "Переведённый или адаптированный текст",
+      "alternateName": "translated or localized text",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:audiobook-audio",
+      "@type": "ar:Deliverable",
+      "name": "Аудиоматериалы аудиокниги",
+      "alternateName": "recorded audiobook audio",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:deliverable:corporate-song-audio",
+      "@type": "ar:Deliverable",
+      "name": "Запись корпоративной песни",
+      "alternateName": "recorded corporate song or anthem",
+      "description": "Candidate output class only; format, revisions, rights and acceptance are project-specific."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:radio-advertising",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Производство рекламных аудиороликов",
+      "alternateName": "radio advertising and audio spot production",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "The page snapshot lists script support, casting, sound design, licensed music and rights wording; not a universal package or project-specific rights grant.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:radio-commercial"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:radio-advertising"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:scriptwriting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:voice-casting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:recording"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:sound-design"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:music-licensing"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:radio-master"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        }
+      ],
+      "evidenceStatus": "aged_official_page_snapshot",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:scriptwriting",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Разработка рекламных сценариев",
+      "alternateName": "advertising scriptwriting",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "A distinct scriptwriting route is documented; recording is a separate activity.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:script"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:scriptwriting"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:scriptwriting"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:script-text"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "evidenceStatus": "old_official_page_snapshot",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:jingles",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Производство джинглов",
+      "alternateName": "jingle production",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "Creative jingles and musical motifs are described; original composition and rights are not established.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:jingle"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:jingle-production"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:sound-design"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:jingle-master"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "evidenceStatus": "snapshot_and_index_observed",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:video-voiceover",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Озвучивание видео",
+      "alternateName": "video voice-over and dubbing-related audio",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "Audio for picture is distinct from full video production.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:video-voiceover"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:video-voiceover"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:voice-casting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:recording"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:dubbing"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:sound-design"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:video-track"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "evidenceStatus": "aged_official_page_snapshot",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant.",
+      "notEquivalentTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-production"
+        }
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:video-production",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Производство видеороликов",
+      "alternateName": "video production",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "Separate route and indexed excerpt exist; direct page body, package and terms remain unverified.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:video-production"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:video-production"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:video-work"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:finished-video"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "evidenceStatus": "indexed_excerpt_only_direct_body_cache_miss",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant.",
+      "notEquivalentTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        }
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:presentation-voiceover",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Озвучивание презентаций",
+      "alternateName": "presentation voice-over",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "A distinct destination is listed; detailed stages and standard package are not inferred.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:presentation"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:presentation-voiceover"
+        }
+      ],
+      "observedActivities": [],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:presentation-track"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        }
+      ],
+      "evidenceStatus": "distinct_route_scope_not_fully_verified",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:ivr-recording",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Запись IVR и телефонных приветствий",
+      "alternateName": "IVR and telephone greeting recording",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "Recorded files prepared for upload; PBX installation, call routing and live integration are not implied.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:ivr"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:ivr-recording"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:voice-casting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:recording"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:ivr-files"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "evidenceStatus": "aged_official_page_snapshot",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:localization",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Перевод и мультимедийная локализация",
+      "alternateName": "translation and multimedia localization",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "Worldwide language-group coordination is owner-confirmed in the English profile; not offices everywhere or Audio+ selector coverage.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:localization"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:localization"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:translation"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:activity:localization"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:localized-text"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "evidenceStatus": "route_and_owner_confirmed_global_capability",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:audiobook-production",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Производство аудиокниг",
+      "alternateName": "audiobook production",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "Volume, performers, chapters, edits, formats and rights are defined by the project brief.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:audiobook"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:audiobook-production"
+        }
+      ],
+      "observedActivities": [
+        {
+          "@id": "urn:audio-reclama:ontology:activity:recording"
+        }
+      ],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:audiobook-audio"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "evidenceStatus": "route_observed_brief_defined",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:service:corporate-song",
+      "@type": "ar:ProfessionalProjectService",
+      "name": "Корпоративные песни и гимны",
+      "alternateName": "corporate song and anthem production",
+      "inLanguage": [
+        "ru",
+        "en"
+      ],
+      "description": "A distinct route is listed; composition method, rights and delivery terms are not inferred.",
+      "servesTask": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:corporate-song"
+        }
+      ],
+      "hasRoute": [
+        {
+          "@id": "urn:audio-reclama:ontology:route:corporate-song-production"
+        }
+      ],
+      "observedActivities": [],
+      "possibleDeliverables": [
+        {
+          "@id": "urn:audio-reclama:ontology:deliverable:corporate-song-audio"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        }
+      ],
+      "evidenceStatus": "distinct_route_scope_not_fully_verified",
+      "scopeRule": "Semantic classification only; not a fixed quote, package, SLA or rights grant."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:voice-catalogue",
+      "@type": "ar:NavigationRoute",
+      "name": "Каталог дикторов",
+      "alternateName": "Voice catalogue and audition",
+      "url": "https://www.audio-reclama.ru/diktoryi/",
+      "routeKind": "voice_discovery",
+      "linkRole": "catalogue_not_checkout",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:choose-voice"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:general-intake",
+      "@type": "ar:NavigationRoute",
+      "name": "Общий заказ озвучивания",
+      "alternateName": "General voice-production intake",
+      "url": "https://www.audio-reclama.ru/online-zakaz.html",
+      "routeKind": "general_intake",
+      "linkRole": "fallback_only",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:general-brief"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:radio-advertising",
+      "@type": "ar:NavigationRoute",
+      "name": "Рекламные ролики",
+      "alternateName": "Radio advertising production",
+      "url": "https://www.audio-reclama.ru/audio/radioroliki-zakaz.html",
+      "routeKind": "professional_service",
+      "linkRole": "professional_project",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:radio-commercial"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:radio-advertising"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:scriptwriting",
+      "@type": "ar:NavigationRoute",
+      "name": "Сценарии",
+      "alternateName": "Scriptwriting",
+      "url": "https://www.audio-reclama.ru/zakaz-scenariya.html",
+      "routeKind": "professional_service",
+      "linkRole": "standalone_service_route",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:script"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:scriptwriting"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:jingle-production",
+      "@type": "ar:NavigationRoute",
+      "name": "Джинглы",
+      "alternateName": "Jingle production",
+      "url": "https://www.audio-reclama.ru/audio/zvuk-media.html",
+      "routeKind": "professional_service",
+      "linkRole": "professional_project",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:jingle"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:jingles"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:video-voiceover",
+      "@type": "ar:NavigationRoute",
+      "name": "Озвучивание видео",
+      "alternateName": "Video voice-over",
+      "url": "https://www.audio-reclama.ru/audio/ozvuchka-video.html",
+      "routeKind": "professional_service",
+      "linkRole": "audio_for_picture",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:video-voiceover"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:video-production",
+      "@type": "ar:NavigationRoute",
+      "name": "Видеопродакшн",
+      "alternateName": "Video production",
+      "url": "https://www.audio-reclama.ru/video/videoroliki-zakaz.html",
+      "routeKind": "professional_service",
+      "linkRole": "direct_body_cache_miss",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:video-production"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:video-production"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:presentation-voiceover",
+      "@type": "ar:NavigationRoute",
+      "name": "Озвучивание презентаций",
+      "alternateName": "Presentation voice-over",
+      "url": "https://www.audio-reclama.ru/audio/ozvuchivanie-prezentatsii.html",
+      "routeKind": "professional_service",
+      "linkRole": "scope_to_confirm",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:presentation"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:presentation-voiceover"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:ivr-recording",
+      "@type": "ar:NavigationRoute",
+      "name": "IVR и приветствия",
+      "alternateName": "IVR and telephone greetings",
+      "url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+      "routeKind": "professional_service",
+      "linkRole": "audio_not_pbx",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:ivr"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:ivr-recording"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:localization",
+      "@type": "ar:NavigationRoute",
+      "name": "Перевод и локализация",
+      "alternateName": "Translation and localization",
+      "url": "https://www.audio-reclama.ru/perevodchiki/",
+      "routeKind": "professional_service",
+      "linkRole": "per_project",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:localization"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:localization"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:audiobook-production",
+      "@type": "ar:NavigationRoute",
+      "name": "Аудиокниги",
+      "alternateName": "Audiobook production",
+      "url": "https://www.audio-reclama.ru/audio/sozdanie-audioknig.html",
+      "routeKind": "professional_service",
+      "linkRole": "project_brief",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:audiobook"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:audiobook-production"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:corporate-song-production",
+      "@type": "ar:NavigationRoute",
+      "name": "Корпоративные песни",
+      "alternateName": "Corporate songs and anthems",
+      "url": "https://www.audio-reclama.ru/audio/korporativnye-gimny-i-pesni.html",
+      "routeKind": "professional_service",
+      "linkRole": "scope_to_confirm",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:corporate-song"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToService": {
+        "@id": "urn:audio-reclama:ontology:service:corporate-song"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:vnukovo-case",
+      "@type": "ar:NavigationRoute",
+      "name": "Кейс Внуково",
+      "alternateName": "Vnukovo case reference",
+      "url": "https://www.audio-reclama.ru/project/vnukovo.html",
+      "routeKind": "case_reference",
+      "linkRole": "reference_not_checkout",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:airport-announcements"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToCase": {
+        "@id": "urn:audio-reclama:ontology:case:vnukovo"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:route:audio-plus-checkout",
+      "@type": "ar:NavigationRoute",
+      "name": "Audio+",
+      "alternateName": "Audio+ short-order route",
+      "url": "https://audio.plus/",
+      "routeKind": "separate_self_service_product",
+      "linkRole": "separate_product",
+      "routesToTask": {
+        "@id": "urn:audio-reclama:ontology:task:audio-plus-order"
+      },
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries"
+        }
+      ],
+      "liveLinkChecked": false,
+      "routesToProduct": {
+        "@id": "urn:audio-reclama:ontology:product:audio-plus"
+      }
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:capability:worldwide-language-production",
+      "@type": "ar:ProductionCapability",
+      "name": "Организация производства для любой языковой группы по всему миру",
+      "alternateName": "Worldwide language-group production coordination",
+      "description": "The English entity profile records owner confirmation dated 2026-11-19 that production can be organized worldwide through professional collaborators.",
+      "confirmationSourceDate": "2026-11-19",
+      "evidenceStatus": "owner_confirmed_in_repository_entity_profile",
+      "exclusions": [
+        "does_not_assert_offices_in_every_country",
+        "does_not_assert_audio_plus_selector_coverage",
+        "does_not_fix_project_scope_rights_price_or_schedule"
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:case:vnukovo",
+      "@type": "ar:CaseReference",
+      "name": "Международный аэропорт Внуково — информационные объявления",
+      "alternateName": "Vnukovo Airport — airport announcements",
+      "url": "https://www.audio-reclama.ru/project/vnukovo.html",
+      "publicSummaryObserved": "The first-party public card describes airport information announcements in 11 languages.",
+      "evidenceStatus": "public_reference_observed_details_require_confirmation",
+      "notEstablished": [
+        "exact_studio_role",
+        "final_deliverable_volume_by_stage",
+        "dates",
+        "rights_permissions_for_audio_examples",
+        "KPI_or_business_outcomes"
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:cases"
+        }
+      ]
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-separate",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Audio+ — отдельный продукт, а не другое название студии",
+      "alternateName": "Audio+ is a separate product, not an alias for the studio.",
+      "description": "Do not merge product and studio identity.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-not-project-default",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Audio+ не является маршрутом по умолчанию для B2B-проектов",
+      "alternateName": "Audio+ is not the default route or price basis for professional projects.",
+      "description": "Use the direct professional route for business, multi-file, multilingual or negotiated scopes.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:radio-advertising"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:ivr-recording"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:localization"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-eligibility-stale",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Допуск покупателя в Audio+ основан на устаревшем снимке",
+      "alternateName": "Audio+ eligibility comes from a stale offer snapshot.",
+      "description": "Do not present this as a freshly verified current term.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-revision-conflict",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Условия изменений Audio+ содержат неразрешённый конфликт",
+      "alternateName": "Audio+ revision terms contain an unresolved source conflict.",
+      "description": "Do not promise editing or quote a fee until sources are reconciled.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:ivr-not-pbx",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Запись IVR-файлов не равна настройке АТС",
+      "alternateName": "IVR audio recording is not PBX configuration or call routing.",
+      "description": "Treat audio files and telephony engineering as separate scopes.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:ivr-recording"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:voiceover-not-video-production",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Озвучивание видео не равно полному видеопродакшну",
+      "alternateName": "Video voice-over is not full video production.",
+      "description": "Classify the need as audio for picture or production of picture itself.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-production"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:video-production-scope-unverified",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "URL видеопродакшна не подтверждает полный состав работ",
+      "alternateName": "The video-production URL does not prove a complete package.",
+      "description": "Direct page body was a cache miss; indexed excerpt only.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-production"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:catalogue-not-order",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Каталог дикторов не равен коммерческому заказу",
+      "alternateName": "Voice catalogue discovery is not a submitted order.",
+      "description": "Do not infer a completed enquiry from audition or catalogue visit.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:choose-voice"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:general-intake-fallback",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Общая форма — запасной, а не профильный маршрут",
+      "alternateName": "General intake is a fallback, not a specialist route.",
+      "description": "Use the task-specific destination when the task is known.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:task:general-brief"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:page-elements-not-package",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Перечень элементов страницы не равен составу каждого проекта",
+      "alternateName": "Page-listed elements are not a universal project package.",
+      "description": "The brief and agreement define actual stages.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:radio-advertising"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:jingles"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:rights-not-contract",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Права на странице не заменяют условия конкретного договора",
+      "alternateName": "Page-level rights wording is not a project-specific rights grant.",
+      "description": "Do not infer territory, term, media, exclusivity or sublicensing.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:radio-advertising"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:jingles"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:video-voiceover"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:network-not-offices",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Глобальная сеть производства не означает офисы во всех странах",
+      "alternateName": "Worldwide coordination does not imply offices in every country.",
+      "description": "The profile describes a collaborator network.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:localization"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:capability-not-audio-plus",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Глобальная языковая возможность студии не доказывает покрытие Audio+",
+      "alternateName": "Studio-wide language capability does not establish Audio+ selector coverage.",
+      "description": "Keep collaborator network and self-service selector separate.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:localization"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:portfolio-not-endorsement",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Публичный кейс не является независимым отзывом или KPI",
+      "alternateName": "A first-party case reference is not independent endorsement or KPI proof.",
+      "description": "Do not infer current relationship, ROI, endorsement or reuse permissions.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:case:vnukovo"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:cases"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:case-not-checkout",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Кейс Внуково — справочный пример, не маршрут заказа",
+      "alternateName": "Vnukovo case is a reference, not an order route.",
+      "description": "New work requires a new project brief.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:case:vnukovo"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:routes"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:script-not-recording",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Сценарий не равен готовой записи",
+      "alternateName": "Scriptwriting is not the same as recording.",
+      "description": "Do not assume standalone scriptwriting includes recording.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:scriptwriting"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:service:radio-advertising"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:brand-not-legal-entity",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Бренд не определяет юридическое лицо — сторону договора",
+      "alternateName": "The brand does not identify the contracting legal entity.",
+      "description": "Verify the counterparty from the agreement or current confirmation.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-ru"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:snapshot-not-current-terms",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Архивный снимок не подтверждает текущие цены, сроки или права",
+      "alternateName": "A saved snapshot does not establish current price, timing or rights.",
+      "description": "Refresh primary sources before customer-facing claims.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:studio:studio"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:service-matrix"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:localization-per-project",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Параметры локализации уточняются для каждого проекта",
+      "alternateName": "Localization variables are project-specific.",
+      "description": "Language, locale, dialect, script, rights and acceptance must be specified.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:service:localization"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:entity-en"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:audio-plus-entity-profile-2026-11-25",
+      "@type": "ar:EvidenceSource",
+      "key": "audio-plus-entity-profile-2026-11-25",
+      "name": "Audio+ source-graded product entity profile",
+      "sourcePath": "entity/audio-plus.ru.md",
+      "githubBlobSha": "5a2772c9fdece2b066d965f0755af7a0ccc823af",
+      "sourceKind": "repository_entity_profile",
+      "evidenceStatus": "profile_updated_from_indexed_source_observations",
+      "description": "Separate product identity, buyer boundary and unresolved source conflicts; not a current price or legal opinion."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:audio-plus-service-jsonld-2026-11-25",
+      "@type": "ar:EvidenceSource",
+      "key": "audio-plus-service-jsonld-2026-11-25",
+      "name": "Audio+ Schema.org Service entity",
+      "sourcePath": "entity/audio-plus.jsonld",
+      "githubBlobSha": "3423ff26cf0aac7a704ce1075da4bcfbc54b6257",
+      "sourceKind": "repository_schema_org_record",
+      "evidenceStatus": "repository_representation_not_deployed",
+      "description": "Product Service record with provenance-labelled UI/offer observations and no current Offer price."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:offer-boundaries-2026-11-25",
+      "@type": "ar:EvidenceSource",
+      "key": "offer-boundaries-2026-11-25",
+      "name": "Updated offer/service boundary registry",
+      "sourcePath": "ops/ai-discoverability/OFFER_SERVICE_BOUNDARIES.json",
+      "githubBlobSha": "09a783f77aee1ad88e28d69127f4d26686b532f3",
+      "sourceKind": "repository_offer_boundary_registry",
+      "evidenceStatus": "repository_evidence_map_not_current_terms",
+      "description": "Preserves dated offer clauses, indexed product page observations and unresolved UI/offer conflicts."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:route-registry-2026-11-25",
+      "@type": "ar:EvidenceSource",
+      "key": "route-registry-2026-11-25",
+      "name": "Updated service route registry",
+      "sourcePath": "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
+      "githubBlobSha": "12b9e58c903890d194ca4a747f3f31a2074256ba",
+      "sourceKind": "repository_route_inventory",
+      "evidenceStatus": "repository_route_inventory_not_live_checked",
+      "description": "Separates the Audio+ individual short-order product from professional service routes."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25",
+      "@type": "ar:EvidenceSource",
+      "key": "audio-plus-page-index-2026-11-25",
+      "name": "Audio+ product page — indexed observation 2026-11-25",
+      "sourceUrl": "https://audio.plus/",
+      "sourceKind": "indexed_product_page_observation",
+      "observedOn": "2026-11-25",
+      "evidenceStatus": "indexed_snapshot_observed_not_live_verified",
+      "freshnessNote": "Search-index publication/refresh metadata and extracted crawl-age metadata disagree; not a live page state.",
+      "description": "Indexed page displayed one-order/one-file, 90-word text field, phone greeting/audio commercial/video voice-over choices, 1,990 RUB price banner and a 790 RUB changes option. Those are observations, not current commercial terms."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25",
+      "@type": "ar:EvidenceSource",
+      "key": "audio-plus-offer-index-2026-11-25",
+      "name": "Audio+ public offer — indexed observation 2026-11-25",
+      "sourceUrl": "https://audio.plus/offer.html",
+      "sourceKind": "indexed_public_offer_observation",
+      "observedOn": "2026-11-25",
+      "publishedDate": "2016-06-17",
+      "evidenceStatus": "indexed_snapshot_observed_not_live_verified",
+      "freshnessNote": "The offer text is dated 2016-06-17; current legal status/applicability is not independently assessed.",
+      "description": "Observed wording of clauses 1.1, 3.4, 3.5, 3.8.1, 3.11 and 16.1. Summary of source text, not legal advice."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:class:CommercialObservation",
+      "@type": "owl:Class",
+      "name": "CommercialObservation",
+      "subClassOf": "owl:Thing",
+      "rdfs:comment": "Dated observation of mutable product UI or offer wording; not equivalent to a live or current commercial term."
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-order-unit",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ order unit",
+      "commercialValue": "The indexed interface states one order produces one file / one finished thought.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "indexed_snapshot_observed_not_live_verified",
+      "notInterpretedAs": "current price, current contract term, unconditional promise or verified business KPI"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-90-word-limit",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ text input limit",
+      "commercialValue": "The indexed interface displays a 90-word text limit.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "indexed_snapshot_observed_not_live_verified",
+      "notInterpretedAs": "current price, current contract term, unconditional promise or verified business KPI"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-price-banner",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ displayed price observation",
+      "commercialValue": "1,990 RUB displayed; not verified current",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "indexed_snapshot_observed_not_live_verified",
+      "notInterpretedAs": "current price, current contract term, unconditional promise or verified business KPI"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-change-option",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ displayed changes option",
+      "commercialValue": "790 RUB displayed; not verified current",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "indexed_snapshot_observed_not_live_verified",
+      "notInterpretedAs": "guaranteed edit/re-recording service or current fee"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-buyer-eligibility",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ buyer definition in offer",
+      "commercialValue": "Clause 1.1 defines a natural-person buyer and says the service is not intended for legal entities or individual entrepreneurs.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "dated_offer_text_observed_current_legal_applicability_not_verified",
+      "notInterpretedAs": "legal advice or proof of current enforceability",
+      "clauseReference": "1.1"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-revision-rules",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ changes and correction wording",
+      "commercialValue": "Clauses 3.4, 3.5 and 3.8.1 restrict text changes/rework after payment or production entry; clause 3.11 describes a motivated objection within two business days and correction of deficiencies in a reasonable time.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "dated_offer_text_and_indexed_UI_conflict_unresolved",
+      "notInterpretedAs": "unconditional right to revise or guaranteed paid editing",
+      "clauseReference": "3.4; 3.5; 3.8.1; 3.11"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-rights-wording",
+      "@type": "ar:CommercialObservation",
+      "name": "Audio+ rights wording in offer",
+      "commercialValue": "Clause 16.1 describes exclusive right at the service and a simple non-exclusive licence to the buyer, with sublicensing as worded.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "dated_offer_text_observed_current_legal_applicability_not_verified",
+      "notInterpretedAs": "transfer of exclusive rights to customer or legal advice",
+      "clauseReference": "16.1"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-video-option-mismatch",
+      "@type": "ar:CommercialObservation",
+      "name": "Video voice-over UI option versus offer definitions",
+      "commercialValue": "The product UI offers video voice-over, while the observed offer definitions enumerate telephone greetings, informational audio commercials and congratulatory audio; contract coverage for video voice-over is not established.",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "interface_offer_scope_conflict_unresolved",
+      "notInterpretedAs": "current price, current contract term, unconditional promise or verified business KPI"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:observation:audio-plus-dynamic-counters",
+      "@type": "ar:CommercialObservation",
+      "name": "Separate page counter observations",
+      "commercialValue": "different dynamic surface counters observed; no aggregation",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "observationDate": "2026-11-25",
+      "observationStatus": "indexed_snapshot_observed_not_live_verified",
+      "notInterpretedAs": "unique buyers, paying customers, orders, revenue, conversion or KPI"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-b2c-offer-boundary",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Audio+ — individual short-order route, not universal corporate checkout",
+      "description": "The observed offer defines a natural-person buyer and excludes legal entities and individual entrepreneurs; current legal applicability is not reverified.",
+      "alternateName": "Audio+ — individual short-order route, not universal corporate checkout",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:offer-boundaries-2026-11-25"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-ui-offer-video-mismatch",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "A UI video option does not prove video coverage in the offer",
+      "description": "Keep the product interface category and dated offer definitions separate until current contract evidence reconciles them.",
+      "alternateName": "A UI video option does not prove video coverage in the offer",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-edit-option-unresolved",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "A displayed paid edit option does not override staged offer clauses",
+      "description": "Do not promise editing, correction or re-recording, or quote a current fee, based on the indexed UI alone.",
+      "alternateName": "A displayed paid edit option does not override staged offer clauses",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        },
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-indexed-price-not-current",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "An indexed price banner is not a current price statement",
+      "description": "Do not encode the observed 1,990/790 RUB values as current Offer prices.",
+      "alternateName": "An indexed price banner is not a current price statement",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-license-not-exclusive-transfer",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Observed non-exclusive buyer licence is not an exclusive-right transfer",
+      "description": "Do not generalize this product-specific rights model to project services or rewrite it as assignment of exclusive rights.",
+      "alternateName": "Observed non-exclusive buyer licence is not an exclusive-right transfer",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-offer-index-2026-11-25"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    },
+    {
+      "@id": "urn:audio-reclama:ontology:boundary:audio-plus-counters-not-client-kpi",
+      "@type": "ar:ResponsibilityBoundary",
+      "name": "Different dynamic page counters are not a common client KPI",
+      "description": "Do not sum, compare as customer counts, or use as sales, revenue or conversion proof.",
+      "alternateName": "Different dynamic page counters are not a common client KPI",
+      "appliesTo": [
+        {
+          "@id": "urn:audio-reclama:ontology:product:audio-plus"
+        }
+      ],
+      "supportedBy": [
+        {
+          "@id": "urn:audio-reclama:ontology:source:audio-plus-page-index-2026-11-25"
+        }
+      ],
+      "boundaryStatus": "active_inference_guard"
+    }
+  ]
+}
