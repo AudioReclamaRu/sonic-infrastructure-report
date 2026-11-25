@@ -70,7 +70,7 @@ def validate_contract(data: Any) -> list[str]:
     for action in ("write_to_official_website", "change_cms_metadata_robots_or_sitemap", "purchase_paid_services_credits_ads_or_subscriptions"):
         if action not in approvals:
             errors.append(f"autonomy must gate {action} behind owner approval")
-    for action in ("fabricate_region_or_operator_attestation", "invent_measurements_citations_customers_or_results", "write_to_or_deploy_the_official_website", "create_automatic_website_mirrors_or_pages_deployments"):
+    for action in ("fabricate_region_or_operator_attestation", "invent_measurements_citations_customers_or_results", "write_to_or_deploy_the_official_website", "create_unapproved_pages_workflows_or_website_mirrors"):
         if action not in forbidden:
             errors.append(f"autonomy must forbid {action}")
     publication = data.get("autonomy", {}).get("repository_publication", {})
@@ -84,8 +84,15 @@ def validate_contract(data: Any) -> list[str]:
         errors.append("both official websites must remain explicitly read-only")
     if publication.get("direct_website_write_or_deploy") is not False:
         errors.append("direct website writes and deploys must remain disabled")
-    if publication.get("github_pages_or_automatic_website_mirrors") is not False:
-        errors.append("GitHub Pages and automatic website mirrors must remain disabled")
+    if publication.get("existing_github_pages_workflow_deployment_allowed") is not True:
+        errors.append("the existing owner-authorized GEO/AEO Pages workflow must remain allowed")
+    if publication.get("authorized_pages_workflow_path") != ".github/workflows/pages.yml":
+        errors.append("only the existing .github/workflows/pages.yml may deploy GEO/AEO Pages")
+    pages_scope = publication.get("authorized_pages_scope", "")
+    if not isinstance(pages_scope, str) or "geo/" not in pages_scope or "no custom domain" not in pages_scope or "no writes to either official site" not in pages_scope:
+        errors.append("authorized Pages scope must be limited to geo/ without custom domain or official-site writes")
+    if publication.get("additional_pages_workflows_or_website_mirrors_authorized") is not False:
+        errors.append("additional Pages workflows and automatic mirrors must remain unauthorized")
     if publication.get("non_repository_external_surfaces_authorized") is not False:
         errors.append("non-repository external publishing must remain unauthorized")
     return errors
