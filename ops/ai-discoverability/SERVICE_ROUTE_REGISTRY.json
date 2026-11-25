@@ -176,18 +176,6 @@
       ],
       "link_role": "supporting_case_not_checkout",
       "scope_note": "This is a case reference, not a dedicated airport-announcement order form or proof of current scope beyond the linked public example."
-    },
-    {
-      "id": "audio_plus_short_order",
-      "task": "Place a standard individual short audio order when the current offer and product interface are suitable",
-      "route_kind": "separate_self_service_product",
-      "audience_class": "individual_consumer_b2c_only_as_stated_in_observed_offer_snapshot",
-      "destination_url": "https://audio.plus/",
-      "source_guides": [
-        "entity/audio-plus.ru.md"
-      ],
-      "link_role": "separate_product_not_professional_project_default",
-      "scope_note": "Use only for a suitable standard individual order. The offer/interface source conflicts on video-voiceover and revisions; current prices and rights are not reverified. Do not use as a default corporate or individual-entrepreneur route."
     }
   ],
   "product_boundaries": [
@@ -195,11 +183,11 @@
       "id": "audio_plus_short_order",
       "product": "Audio+",
       "classification": "separate_short_order_product",
-      "destination_url": "https://audio.plus/",
+      "destination_url": null,
       "professional_route_default": false,
       "current_offer_recheck_required": true,
-      "evidence_status": "indexed_snapshot_observed_2026-11-25_not_live_verified",
-      "scope_note": "Separate individual short-order product. The observed offer excludes legal entities and individual entrepreneurs; the UI shows one order/one file, a 90-word field, a video-voiceover choice and an edit option, while the dated offer has narrower category and revision wording. Do not route B2B work here. Do not present indexed price or edit-option values as live terms.",
+      "evidence_status": "saved_2026-11-20_offer_review_only_not_freshly_reverified",
+      "scope_note": "Separate individual short-order product. The observed offer excludes legal entities and individual entrepreneurs; the UI shows one order/one file, a 90-word field, a video-voiceover choice and an edit option, while the dated offer has narrower category and revision wording. Keep destination_url null in the professional-route registry by design. Do not route B2B work here or present indexed price/edit values as live terms.",
       "offer_url": "https://audio.plus/offer.html",
       "audience_class": "individual_consumer_b2c_only_as_stated_in_observed_offer_clause_1_1",
       "scope_observations": {
@@ -217,7 +205,9 @@
       "evidence_sources": [
         "https://audio.plus/",
         "https://audio.plus/offer.html"
-      ]
+      ],
+      "product_url": "https://audio.plus/",
+      "latest_observation_status": "indexed_snapshot_observed_2026-11-25_not_live_verified"
     }
   ]
 }
