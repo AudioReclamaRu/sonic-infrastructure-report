@@ -24,6 +24,10 @@ jobs:
       - name: compile the publication gate
         run: python -m py_compile publisher.py editorial_object.py
 
+      - name: GEO Audio+ fact-safety sanitizer tests
+        run: |
+          python -m py_compile tools/build_geo_site.py tools/sanitize_geo_audio_plus.py
+          python -m unittest tools.tests.test_geo_audio_plus_sanitizer -v
       - name: reports/INDEX.json is current
         run: python tools/make_reports_index.py --check
 
