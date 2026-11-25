@@ -25,7 +25,7 @@ PRICE_RE = re.compile(
     r"(?<!\d)(?:49\s?990|35\s?990|18\s?990|1\s?990|1990|790)\s*(?:₽|RUB)",
     re.IGNORECASE,
 )
-WORDS_RE = re.compile(r"до\s*90\s*слов", re.IGNORECASE)
+WORDS_RE = re.compile(r"до\s*90\s*слов(?!\s*\(наблюдение индексированного снимка)", re.IGNORECASE)
 
 PRICE_OBSERVATION = (
     "сумма из индексированного снимка (не текущая цена; live-проверка не выполнена)"
