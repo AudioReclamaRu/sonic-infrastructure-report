@@ -19,6 +19,11 @@ class GeoAudioPlusSanitizerTests(unittest.TestCase):
         self.assertIn("audio-plus-source-status", result)
         self.assertEqual(inspect_html(result), [])
 
+    def test_sanitization_is_idempotent(self):
+        source = "<html><body><h1>Audio+ заказ</h1><p>до 90 слов, 1 990 ₽.</p></body></html>"
+        once, _ = sanitize_html(source)
+        twice, _ = sanitize_html(once)
+        self.assertEqual(once, twice)
     def test_audio_plus_offer_is_removed_from_jsonld(self):
         schema = {
             "@context": "https://schema.org",
