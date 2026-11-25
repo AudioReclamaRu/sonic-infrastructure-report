@@ -27,7 +27,7 @@
       "intent": "commercial",
       "example_queries": "озвучка ролика цена; озвучка презентации; голос для видео",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-rolika-cena/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-prezentacii-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/ (service pages)",
+      "target_main_url": "https://www.audio-reclama.ru (service pages)",
       "supporting_facts": "CF-AUDIOPLUS-ORDER (context)",
       "gap": "Отдельные подтверждённые цены/условия по услугам видео/презентации; не экстраполировать из Аудио+ без подтверждения.",
       "status": "partial"
@@ -67,7 +67,7 @@
       "intent": "commercial",
       "example_queries": "запись аудиокниги; диктор для аудиокниги цена",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/",
-      "target_main_url": "https://www.audio-reclama.ru/ (service)",
+      "target_main_url": "https://www.audio-reclama.ru (service)",
       "supporting_facts": "",
       "gap": "Индивидуальный расчёт отражён; конкретные вилки цен только с подтверждением владельца.",
       "status": "fact_safe_individual"
