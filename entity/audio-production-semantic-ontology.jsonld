@@ -99,7 +99,7 @@
       "@id": "urn:audio-reclama:ontology:ontology:audio-production",
       "@type": "owl:Ontology",
       "name": "Аудио-Реклама•ru — онтология делового аудиопроизводства",
-      "alternateName": "Audio-Reclama business audio production semantic ontology",
+      "alternateName": "Business audio production semantic ontology for Аудио-Реклама•ru",
       "description": "Provenance-aware graph separating studio, professional services, the separate Audio+ product, buyer tasks, production activities, candidate deliverables, routes, cases, source observations and inference boundaries.",
       "versionInfo": "0.2.0",
       "dateModified": "2026-11-25",
@@ -210,7 +210,7 @@
       "sourcePath": "ops/ai-discoverability/SERVICE_ROUTE_REGISTRY.json",
       "evidenceStatus": "repository_only_source_guide_link_inventory",
       "observedOn": "2026-11-21",
-      "githubBlobSha": "12b9e58c903890d194ca4a747f3f31a2074256ba",
+      "githubBlobSha": "59a516374b85db3e10a0ab751eb5f6b26c9d1d5e",
       "description": "Buyer tasks and destination inventory; links not live-checked."
     },
     {
@@ -250,7 +250,7 @@
         "schema:Organization"
       ],
       "name": "Аудио-Реклама•ru",
-      "alternateName": "Audio-Reclama.ru",
+      "alternateName": "Аудио-Реклама•ru",
       "url": "https://www.audio-reclama.ru",
       "identityStatus": "canonical_brand_name",
       "legalContractingEntityStatus": "unknown_until_project_agreement_or_current_confirmation",
