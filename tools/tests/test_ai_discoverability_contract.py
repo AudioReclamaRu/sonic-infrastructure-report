@@ -35,6 +35,9 @@ class TestMegabrainDiscoverabilityContract(unittest.TestCase):
     def test_done_without_validation_fails(self):
         queue = json.loads(json.dumps(self.queue))
         queue["items"][0]["status"] = "done"
+        # Build the negative case locally: a closed queue item may legitimately
+        # carry validation references, so the fixture must clear them itself.
+        queue["items"][0]["validation_refs"] = []
         self.assertTrue(any("done requires validation_refs" in e for e in validate_queue(queue)))
 
     def test_duplicate_work_id_fails(self):

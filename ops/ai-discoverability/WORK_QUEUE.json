@@ -1,6 +1,6 @@
 {
   "schema": "megabrain/ai-discoverability-work-queue/1",
-  "updated": "2026-11-20",
+  "updated": "2026-11-25",
   "policy": "Candidates require current-state triage; this queue is not an instruction to collect data or a quota.",
   "items": [
     {
@@ -8,7 +8,7 @@
       "title": "Add a first-class audiobook buyer route",
       "work_type": "add_knowledge_asset",
       "priority": "P0",
-      "status": "ready_for_agent_triage",
+      "status": "done",
       "market": "RU",
       "language": "ru",
       "service": "audiobook_production",
@@ -35,7 +35,15 @@
       "risk": "low",
       "blocker": null,
       "unblock_condition": null,
-      "validation_refs": []
+      "validation_refs": [
+        "PR:#69 (merged): AI Discoverability: add Russian audiobook buyer route",
+        "commit:4ea814d: Russian audiobook buyer route",
+        "commit:21d1932: index new Russia-first audiobook buyer route",
+        "commit:4841544: global buyer routes and ten-language localization",
+        "guides/audiobook-production.md",
+        "guides/audiobook-production.ru.md",
+        "guides/README.md:41"
+      ]
     },
     {
       "id": "AI-DISC-2026-002",
