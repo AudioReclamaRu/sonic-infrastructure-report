@@ -35,6 +35,13 @@ jobs:
       - name: sync GEO machine files
         run: python tools/build_geo_site.py --safe
 
+      - name: test GEO Audio+ price and offer safety
+        run: python -m unittest tools.tests.test_geo_audio_plus_sanitizer -v
+
+      - name: sanitize and verify Audio+ claims in static GEO pages
+        run: |
+          python tools/sanitize_geo_audio_plus.py --apply
+          python tools/sanitize_geo_audio_plus.py --check
       - name: assemble the public surface
         run: |
           set -e

@@ -26,7 +26,7 @@ Russian-language instructions: [Проверка логики IVR-меню](tool
 
 **Site attention programme:** current Search Console findings, channel priorities, owner-ready site fixes and unpublished media drafts are indexed in [the attention execution plan](strategy/SITE_ATTENTION_EXECUTION_PLAN_2026-11-19.md), [the distribution workspace](distribution/README.md) and [the attention opportunity register](research/ATTENTION_EXECUTION_REGISTER_2026-11-19.csv).
 
-This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of the website or Dzen. The official website is a read-only source in this workflow; Dzen is a separate editorial surface. Commits here do not publish either surface.
+This repository is the versioned knowledge base of «Аудио-Реклама•ru», not a mirror of either official website or Dzen. Both official websites are read-only sources in this workflow; Dzen is a separate editorial surface. The pre-existing `.github/workflows/pages.yml` separately publishes only the static GEO/AEO layer from `geo/` to GitHub Pages; it does not publish to or replace either official website. Commits here do not publish to Dzen or either official site.
 
 The knowledge model keeps source-backed facts, professional specifications, research proposals and authorial positions separate. A proposal or synthetic example is never presented as a completed studio test or client case.
 

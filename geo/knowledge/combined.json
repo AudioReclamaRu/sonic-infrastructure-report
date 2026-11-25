@@ -1,12 +1,12 @@
 {
-  "schema": "audio-reclama-geo/combined/1",
+  "schema": "ar-geo/combined/1",
   "updated": "2026-11-25",
   "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
   "site": "https://www.audio-reclama.ru",
   "prices": {
     "schema": "knowledge-pricing/1",
     "entity_id": "audio-reclama-ru",
-    "observed_at": "2026-11-06",
+    "observed_at": "2026-11-25",
     "purpose": "Machine-readable price facts for commercial queries ('сколько стоит озвучка', 'цена IVR').",
     "disclaimer": "Информационный характер, не публичная оферта. Для услуг с индивидуальным расчётом ориентируйтесь на официальную страницу.",
     "currency": "RUB",
@@ -14,55 +14,97 @@
       {
         "id": "P-AUDIOPLUS-ORDER",
         "name": "Аудио+ — один заказ",
-        "price": 1990,
+        "price": null,
         "unit": "заказ",
-        "scope": "один заказ — один файл, текст не более 90 слов",
+        "scope": "один заказ — один файл, текст не более 90 слов Current price/availability is not live-verified; see source observation metadata.",
         "source": "https://www.audio-reclama.ru/audioplus/",
         "observed_at": "2026-10-20",
-        "status": "ok"
+        "status": "verify",
+        "observed_price_snapshot": {
+          "amount": 1990,
+          "currency": "RUB",
+          "observed_at": "2026-11-25",
+          "source": "https://audio.plus/",
+          "status": "indexed_snapshot_observed_not_live_verified",
+          "note": "UI banner observed in indexed snapshot; not a current quote or offer."
+        },
+        "not_a_current_offer": true
       },
       {
         "id": "P-AUDIOPLUS-PACK10",
         "name": "Аудио+ — пакет 10",
-        "price": 18990,
+        "price": null,
         "unit": "пакет",
-        "per_order": 1899,
-        "scope": "бессрочно",
+        "scope": "бессрочно Current price/availability is not live-verified; see source observation metadata.",
         "source": "https://www.audio-reclama.ru/audioplus/",
         "observed_at": "2026-10-20",
-        "status": "ok"
+        "status": "verify",
+        "observed_price_snapshot": {
+          "amount": 18990,
+          "currency": "RUB",
+          "observed_at": "2026-10-20",
+          "source": "https://www.audio-reclama.ru/audioplus/",
+          "status": "historical_snapshot_not_live_reverified",
+          "note": "Package price carried from October 20 snapshot; no November live confirmation."
+        },
+        "not_a_current_offer": true
       },
       {
         "id": "P-AUDIOPLUS-PACK20",
         "name": "Аудио+ — пакет 20",
-        "price": 35990,
+        "price": null,
         "unit": "пакет",
-        "per_order": 1799,
-        "scope": "бессрочно",
+        "scope": "бессрочно Current price/availability is not live-verified; see source observation metadata.",
         "source": "https://www.audio-reclama.ru/audioplus/",
         "observed_at": "2026-10-20",
-        "status": "ok"
+        "status": "verify",
+        "observed_price_snapshot": {
+          "amount": 35990,
+          "currency": "RUB",
+          "observed_at": "2026-10-20",
+          "source": "https://www.audio-reclama.ru/audioplus/",
+          "status": "historical_snapshot_not_live_reverified",
+          "note": "Package price carried from October 20 snapshot; no November live confirmation."
+        },
+        "not_a_current_offer": true
       },
       {
         "id": "P-AUDIOPLUS-PACK30",
         "name": "Аудио+ — пакет 30",
-        "price": 49990,
+        "price": null,
         "unit": "пакет",
-        "per_order": 1667,
-        "scope": "бессрочно",
+        "scope": "бессрочно Current price/availability is not live-verified; see source observation metadata.",
         "source": "https://www.audio-reclama.ru/audioplus/",
         "observed_at": "2026-10-20",
-        "status": "ok"
+        "status": "verify",
+        "observed_price_snapshot": {
+          "amount": 49990,
+          "currency": "RUB",
+          "observed_at": "2026-10-20",
+          "source": "https://www.audio-reclama.ru/audioplus/",
+          "status": "historical_snapshot_not_live_reverified",
+          "note": "Package price carried from October 20 snapshot; no November live confirmation."
+        },
+        "not_a_current_offer": true
       },
       {
         "id": "P-AUDIOPLUS-EDIT",
         "name": "Аудио+ — правка",
-        "price": 790,
+        "price": null,
         "unit": "правка",
-        "scope": "изменения/коррекция/добавление звуков",
+        "scope": "изменения/коррекция/добавление звуков Current price/availability is not live-verified; see source observation metadata.",
         "source": "https://www.audio-reclama.ru/audioplus/",
         "observed_at": "2026-10-20",
-        "status": "ok"
+        "status": "hold",
+        "observed_price_snapshot": {
+          "amount": 790,
+          "currency": "RUB",
+          "observed_at": "2026-11-25",
+          "source": "https://audio.plus/",
+          "status": "indexed_snapshot_offer_conflict",
+          "note": "UI change option observed; relationship to offer clauses 3.4, 3.5, 3.8.1 and 3.11 unresolved."
+        },
+        "not_a_current_offer": true
       },
       {
         "id": "P-IVR-INDIVIDUAL",
@@ -75,21 +117,25 @@
         "observed_at": "2026-11-06",
         "status": "verify"
       }
-    ]
+    ],
+    "current_prices_verified": false,
+    "current_prices_status": "NO_LIVE_VERIFIED_AUDIO_PLUS_PRICES",
+    "observation_note": "Audio+ amounts shown below are retained only as dated source observations. The product interface was observed in an indexed snapshot on 2026-11-25, not live-fetched; freshness metadata conflicts. Offer revision clauses and the UI edit option are unresolved. Entries with status verify/hold must not be rendered as current prices or Schema.org Offer."
   },
   "faq": {
     "schema": "knowledge-faq/1",
     "entity_id": "audio-reclama-ru",
-    "observed_at": "2026-11-06",
+    "observed_at": "2026-11-25",
     "lang": "ru",
-    "disclaimer": "Цены/условия носят информационный характер и не являются публичной офертой. Финальные условия — по расчёту/на официальном сайте.",
+    "disclaimer": "Цены и условия Audio+ описываются только как датированные наблюдения, если прямо не указана live-проверка. Индексированная страница и оферта содержат неразрешённое расхождение по изменениям и video voice-over; текущие суммы и коммерческие условия не подтверждены. Это не публичная оферта и не юридическое заключение.",
     "items": [
       {
         "id": "F1",
         "q": "Сколько стоит озвучка в Аудио+?",
-        "a": "1990 ₽ за один заказ. Один заказ — один файл, не более 90 слов. Пакеты: 10 — 18990 ₽ (1899 ₽), 20 — 35990 ₽ (1799 ₽), 30 — 49990 ₽ (1667 ₽), бессрочно. Правки — 790 ₽.",
-        "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20"
+        "a": "В индексированном снимке страницы Audio+ от 25.11.2026 наблюдалась сумма 1 990 ₽ за выбранный вариант заказа и отдельная опция изменений около 790 ₽. Это не live-проверка и не подтверждение текущего прайса: свежесть индекса расходится с возрастом извлечённого снимка. Оферта от 17.06.2016 ограничивает изменения после оплаты/начала производства; связь с UI-опцией не разрешена. Текущую стоимость и доступность изменений нужно сверять по актуальной странице продукта и действующей редакции оферты.",
+        "source": "https://audio.plus/; https://audio.plus/offer.html",
+        "observed_at": "2026-11-25",
+        "status": "indexed_snapshot_observed_not_live_verified_with_offer_conflict"
       },
       {
         "id": "F2",
@@ -102,15 +148,16 @@
       {
         "id": "F3",
         "q": "Сколько слов в заказе Аудио+?",
-        "a": "Не более 90 слов. Один заказ — одна законченная мысль. Дополнительный файл — новый заказ.",
-        "source": "https://www.audio-reclama.ru/audioplus/",
-        "observed_at": "2026-10-20"
+        "a": "Индексированный снимок страницы продукта от 25.11.2026 отображает поле до 90 слов и модель один заказ — один файл / одна законченная мысль. Live-проверка интерфейса не выполнена; воспринимайте это как наблюдение страницы, а не гарантированное текущее условие.",
+        "source": "https://audio.plus/",
+        "observed_at": "2026-11-25",
+        "status": "indexed_snapshot_observed_not_live_verified"
       },
       {
         "id": "F4",
         "q": "Это оферта?",
         "a": "Нет. Цены информационные и не являются публичной офертой.",
-        "source": "https://www.audio-reclama.ru/",
+        "source": "https://www.audio-reclama.ru",
         "observed_at": "2026-10-20"
       },
       {
@@ -123,8 +170,8 @@
     ]
   },
   "blog_facts": {
-    "registry": "audio-reclama.ru blog facts (GEO knowledge layer)",
-    "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Audio-Reclama.ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
+    "registry": "the studio's official blog facts (GEO knowledge layer)",
+    "purpose": "Machine-readable extraction of verifiable or source-attributed facts from Аудио-Реклама•ru blog articles. Facts are atomic; third-party statistics are attributed to sources cited in the blog post and marked for verification status.",
     "registry_updated": "2026-11-07",
     "method_notes": [
       "Do not present third-party statistics as original research by the «Аудио-Реклама•ru» studio unless explicitly stated.",
@@ -141,7 +188,7 @@
           "podcasts",
           "market-size"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [],
@@ -158,7 +205,7 @@
           "forecast",
           "us"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -180,7 +227,7 @@
           "ad-formats",
           "host-read"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -209,7 +256,7 @@
           "russia",
           "audience"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -233,7 +280,7 @@
           "market-size",
           "forecast"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
         "blog_date": null,
         "cited_primary_sources": [
@@ -244,7 +291,7 @@
           }
         ],
         "verification_status": "cited_in_blog",
-        "limitations": "Частично подтверждено (scope-limited): оценка IAB Russia 465,3 млн руб. за 2018 год (vs 155 млн в 2017) подтверждается обзором Sostav от 12.03.2019 со ссылкой на IAB Russia и указанием источников/методологии. Прогнозные цифры 2019/2022 из той же блог-формулировки требуют отдельной первичной проверки. Исторический контекст; не состояние рынка 2026; не оригинальное исследование Audio-Reclama.ru.",
+        "limitations": "Частично подтверждено (scope-limited): оценка IAB Russia 465,3 млн руб. за 2018 год (vs 155 млн в 2017) подтверждается обзором Sostav от 12.03.2019 со ссылкой на IAB Russia и указанием источников/методологии. Прогнозные цифры 2019/2022 из той же блог-формулировки требуют отдельной первичной проверки. Исторический контекст; не состояние рынка 2026; не оригинальное исследование Аудио-Реклама•ru.",
         "business_priority": 3,
         "phase3_classification": "partially_verified",
         "primary_source_name": "IAB Russia estimate (as reported by Sostav, 2019-03-12)",
@@ -259,7 +306,7 @@
           "russia",
           "ad-effectiveness"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
         "blog_date": null,
         "cited_primary_sources": [
@@ -289,7 +336,7 @@
           "us",
           "uk"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
         "blog_date": null,
         "cited_primary_sources": [
@@ -305,18 +352,18 @@
       },
       {
         "id": "BF-VNUKOVO-001",
-        "claim": "В кейсе блога Audio-Reclama.ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
+        "claim": "В кейсе блога Аудио-Реклама•ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
         "topic": [
           "airport-audio",
           "transport",
           "case-study"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html",
+        "blog_url": "https://www.the studio's official blog/devyat-yazikov-dlya-vnukovo.html",
         "blog_title": "Кейс: Девять языков для Внуково",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "first-party blog case"
           }
         ],
@@ -333,7 +380,7 @@
           "russia",
           "forecast"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "blog_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "blog_title": "10 тенденций 2020 года в аудиорекламе",
         "blog_date": "2020-02-18",
         "cited_primary_sources": [
@@ -356,7 +403,7 @@
           "roi",
           "research"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "blog_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "blog_title": "10 тенденций 2020 года в аудиорекламе",
         "blog_date": "2020-02-18",
         "cited_primary_sources": [
@@ -382,7 +429,7 @@
           "russia",
           "audience"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -405,7 +452,7 @@
           "russia",
           "platform-reach"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -427,7 +474,7 @@
           "ad-effectiveness",
           "russia"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -449,12 +496,12 @@
           "definitions",
           "customer-experience"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/who-is-who.html",
+        "blog_url": "https://www.the studio's official blog/who-is-who.html",
         "blog_title": "Who is who: почему голосовое приветствие и меню – это не одно и то же",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial explanation"
           }
         ],
@@ -471,7 +518,7 @@
           "host-read",
           "ad-formats"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -496,12 +543,12 @@
           "production",
           "process"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "blog_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
         "blog_title": "Кто разговаривает с вами через голосовое меню IVR и как оно создается?",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial explanation"
           }
         ],
@@ -518,12 +565,12 @@
           "voice-selection",
           "customer-experience"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "blog_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
         "blog_title": "Кто разговаривает с вами через голосовое меню IVR и как оно создается?",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial recommendation"
           }
         ],
@@ -540,12 +587,12 @@
           "voice-selection",
           "telephony"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
+        "blog_url": "https://www.the studio's official blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
         "blog_title": "Женский или мужской голос для автоответчика: как определиться с выбором?",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial explanation"
           }
         ],
@@ -562,7 +609,7 @@
           "russia",
           "platform-reach"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "blog_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "blog_title": "Аудиореклама в интернете: как она работает?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -589,12 +636,12 @@
           "ad-formats",
           "targeting"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "blog_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "blog_title": "Аудиореклама в интернете: как она работает?",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial explanation"
           }
         ],
@@ -611,12 +658,12 @@
           "voiceover",
           "quality"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "blog_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
         "blog_title": "Озвучивание рекламных роликов: особенности и основные ошибки",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial explanation"
           }
         ],
@@ -634,12 +681,12 @@
           "quality",
           "script"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "blog_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
         "blog_title": "Озвучивание рекламных роликов: особенности и основные ошибки",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial explanation"
           }
         ],
@@ -650,18 +697,18 @@
       },
       {
         "id": "BF-CREATIVE-001",
-        "claim": "В блоге Audio-Reclama.ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
+        "claim": "В блоге Аудио-Реклама•ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
         "topic": [
           "audio-advertising",
           "creative",
           "ad-effectiveness"
         ],
-        "blog_url": "https://www.audio-reclama.ru/blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
+        "blog_url": "https://www.the studio's official blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
         "blog_title": "Как сделать вашу аудиорекламу эффективнее: 9 профессиональных секретов",
         "blog_date": null,
         "cited_primary_sources": [
           {
-            "name": "Audio-Reclama.ru",
+            "name": "Аудио-Реклама•ru",
             "type": "editorial advice"
           }
         ],
@@ -673,12 +720,12 @@
     ]
   },
   "evidence_ledger": {
-    "schema": "audio-reclama-geo/evidence-ledger/1",
-    "updated": "2026-11-07",
+    "schema": "ar-geo/evidence-ledger/1",
+    "updated": "2026-11-25",
     "purpose": "Provenance ledger for claims used in GEO/AEO layer. No claim is promoted to verified without primary confirmation. Phase 3 adds verification classification, evidence notes, and applicability limits.",
     "status_rules": {
       "verified": "Primary source independently confirmed.",
-      "cited_in_blog": "Claim reported in audio-reclama.ru blog with named source; primary not independently re-verified in this pass.",
+      "cited_in_blog": "Claim reported in the studio's official blog with named source; primary not independently re-verified in this pass.",
       "blog_milestone": "Progress/milestone reported in blog case; not canonical final proof.",
       "editorial_definition": "Definitional/practical explanation from editorial content.",
       "observed_verify_on_source": "Observed on a source page; requires re-verification before commercial reliance.",
@@ -690,15 +737,15 @@
         "id": "BF-2020-001",
         "claim": "К началу 2020 года в мире насчитывалось порядка 850 000 подкастов и более 30 млн выпущенных передач (по данным, приведённым в статье).",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "",
         "source_date": "2020-05-15",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Конкретный первоисточник цифр в тексте статьи не указан; требуется подтверждение. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog () → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog () → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog URL fetched 2026-11-07; article states 850,000 podcasts / 30M episodes but does not name a primary source in the cited passage.",
@@ -709,15 +756,15 @@
         "id": "BF-2020-002",
         "claim": "По прогнозу Bridge Ratings, в 2020 году рекламодатели в США могли потратить на рекламу в подкастах не менее $500 млн (прогноз, приведённый в статье).",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "Bridge Ratings",
         "source_date": "2020-05-15",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Прогнозная оценка; для verified нужен первичный отчёт/публикация. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (Bridge Ratings) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (Bridge Ratings) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog URL fetched 2026-11-07; article attributes $500M US podcast ad forecast to Bridge Ratings. Primary report not independently re-verified.",
@@ -728,15 +775,15 @@
         "id": "BF-2020-003",
         "claim": "PwC совместно с IAB USA выделяли три основных формата рекламы в подкастах: заранее записанный диктором текст, текст, читаемый ведущим в эфире, и готовый рекламный ролик.",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "PricewaterhouseCoopers (PwC); IAB USA",
         "source_date": "2020-07",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Нужна ссылка на конкретный отчёт PwC/IAB USA для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (PricewaterhouseCoopers (PwC); IAB USA) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (PricewaterhouseCoopers (PwC); IAB USA) → cited in the studio's official blog → GEO registry",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "IAB/PwC U.S. Podcast Advertising Revenue Study (FY 2019, published 2020; accessible summaries/snippets and report title confirm methodology and ad-type reporting) reports ad types including host-read ads and announcer-read/pre-produced ads: host-read ads contributed 66% of podcast advertising revenues in 2019, announcer-read/pre-produced 27%, supplied 6% (per IAB/PwC FY2019 study summaries). Blog phrasing (\"ведущий озвучивает текст / текст диктора / история хоста\") is a simplified Russian description; taxonomy mapping is not exact (e.g., branded content/product placement treated separately in later IAB/PwC definitions). Primary PDF URL observed in search results: https://www.iab.com/wp-content/uploads/2020/07/Full-Year-2019-IAB-Podcast-Ad-Rev-Study_v20200710-FINAL-IAB_v2.pdf (direct fetch blocked in this environment).",
@@ -749,15 +796,15 @@
         "id": "BF-2020-004",
         "claim": "По данным Mediascope, 51% слушателей аудиоконтента в России слушают также и подкасты (данные, приведённые в статье).",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "Mediascope",
         "source_date": "2020-05-15",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Дата/волна исследования в статье не детализирована. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (Mediascope) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (Mediascope) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog URL fetched 2026-11-07 attributes 51% RU digital audio listeners also listen to podcasts to Mediascope. Accessible IAB Russia/Mediascope summaries found (e.g., Sostav 2019-03-12; Adindex/Mediascope 2018-11-15) did not confirm this exact 51% figure/wave in this pass.",
@@ -768,15 +815,15 @@
         "id": "BF-2019-001",
         "claim": "По информации IAB Russia, в 2018 году объём рынка онлайн-аудиорекламы в России составил 465 млн руб. (рост втрое к предыдущему году), в 2019 прогнозировался рост до 1,5 млрд руб. (в 3,2 раза), к 2022 году — до 6,1 млрд руб.",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "supporting_source": "IAB Russia",
         "source_date": "2019-03-12",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Часть значений — прогнозы на момент публикации статьи. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (IAB Russia) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "Sostav (2019-03-12) reports IAB Russia estimate: Russian digital audio ad market 465.3M RUB in 2018 vs 155M RUB in 2017; states data sources (Digital Box, IMHO, Unisound, Digital Audio Mail.Ru Group, Yandex, EMG) and methodology (funds received from advertisers/agencies to sellers/publishers). URL: https://www.sostav.ru/publication/digital-audio-36115.html. Primary IAB Russia report PDF not independently retrieved in this pass. Blog also includes forecasts (1.5B 2019, 6.1B 2022) that require separate primary verification.",
@@ -789,15 +836,15 @@
         "id": "BF-2019-002",
         "claim": "По данным исследования Mediascope для IAB Russia (онлайн-опрос, Россия 100k+, МЖ 18-45, слушатели онлайн, 2018), 72% слушателей аудиоконтента обращают внимание на размещённую в нём аудиорекламу, а 85% готовы согласиться на рекламу в обмен на доступ к бесплатному контенту.",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "supporting_source": "Mediascope; IAB Russia",
         "source_date": "2018-11-15",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Методология приведена в статье; для verified желательна ссылка на полный отчёт. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (Mediascope; IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (Mediascope; IAB Russia) → cited in the studio's official blog → GEO registry",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "Mediascope EN news (2018-11-15, initiative of IAB Russia) reports: 72% of listeners of online audio content pay attention to digital audio ads; target group: citizens of Russian cities with population >100k, listening to audio content online without paid subscriptions/ad blockers; 85% of those who notice ads agree to listen in exchange for free content; 68% accept discount/sales info; 53% accept ads ≤15s; 60% notice banners near player, 53% over content; 56% take action after hearing ads. URLs: https://mediascope.net/en/news/1066607/ ; https://adindex.ru/news/researches/2018/11/15/206761.phtml . Blog claim states \"18-45, смешанная выборка, 2018\" — Mediascope page text does not explicitly state 18-45; scope detail requires primary report confirmation.",
@@ -810,15 +857,15 @@
         "id": "BF-2019-003",
         "claim": "По данным Voices.com, в США объём рынка аудиорекламы в сети в 2018 году вырос до $2,3 млрд (+23% к 2017). В Великобритании 22,3 млн человек слушали цифровую аудиорекламу каждую неделю (рост более 40% с 2014 года).",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "supporting_source": "Voices.com",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Требуется первичный источник для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (Voices.com) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (Voices.com) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -827,20 +874,20 @@
       },
       {
         "id": "BF-VNUKOVO-001",
-        "claim": "В кейсе блога Audio-Reclama.ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
+        "claim": "В кейсе блога Аудио-Реклама•ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
         "claim_type": "blog_milestone",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/devyat-yazikov-dlya-vnukovo.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "blog_milestone",
         "limitations": "Промежуточный этап блога. Канонические/более поздние подтверждённые показатели могут отличаться; приоритет у актуального proof-слоя.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog case (milestone/progress) → GEO registry; canonical proof may differ",
+        "provenance": "the studio's official blog case (milestone/progress) → GEO registry; canonical proof may differ",
         "business_priority": 1,
         "phase3_classification": "partially_verified_milestone",
-        "phase3_evidence": "Blog case https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html fetched 2026-11-07 confirms milestone framing: project not completed at publication; >2000 audio files in 9 languages (excluding Russian/English).",
+        "phase3_evidence": "Blog case https://www.the studio's official blog/devyat-yazikov-dlya-vnukovo.html fetched 2026-11-07 confirms milestone framing: project not completed at publication; >2000 audio files in 9 languages (excluding Russian/English).",
         "applicability_scope": "Verified as blog-reported milestone only, not as canonical final project proof. Later confirmed metrics may differ.",
         "last_reviewed": "2026-11-07"
       },
@@ -848,15 +895,15 @@
         "id": "BF-2020-005",
         "claim": "По прогнозам IAB Russia (приведённым в статье от 18.02.2020), в 2020 году рынок онлайн-аудиорекламы в России мог вырасти в 2,5 раза по сравнению с 2019 годом до 3,7 млрд руб., а в 2021 году — ещё в 1,6 раза, превысив 6 млрд руб.",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "supporting_source": "IAB Russia",
         "source_date": "2020-02-18",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Прогноз на момент публикации; фактические значения могли отличаться. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (IAB Russia) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -867,15 +914,15 @@
         "id": "BF-2020-006",
         "claim": "В статье со ссылкой на исследование продаж 60 интернет-магазинов (Data Insight и People&Screens, представленное на Национальном рекламном форуме в ноябре) приводится оценка: 1 млрд руб. расходов на радиорекламу дал 17 млрд руб. роста онлайн-продаж (ROI радиорекламы уступал только онлайн-видео).",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "supporting_source": "Data Insight; People&Screens",
         "source_date": "2020-02-18",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Нужен первичный отчёт/методология исследования для независимой проверки. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (Data Insight; People&Screens) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (Data Insight; People&Screens) → cited in the studio's official blog → GEO registry",
         "business_priority": 2,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -886,15 +933,15 @@
         "id": "BF-2018-001",
         "claim": "По данным IAB Russia (исследование воздействия онлайн-аудиорекламы, 2017, как приведено в статье), аудитория онлайн-аудиорекламы составляла около 65 млн уникальных слушателей в месяц и ~23 млн в неделю; слушатели проводили на площадках с аудиорекламой примерно 3,5 часа в неделю.",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "supporting_source": "IAB Russia",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Данные датированы периодом исследования; требуется первичный отчёт IAB Russia. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (IAB Russia) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -905,15 +952,15 @@
         "id": "BF-2018-002",
         "claim": "По аналитике Яндекса (весна 2018, как приведено в статье), сервис «Яндекс.Музыка» охватывал рекламой до 8,2 млн человек ежемесячно.",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "supporting_source": "Яндекс",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Показатель относится к периоду публикации аналитики; может меняться со временем. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (Яндекс) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (Яндекс) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -924,15 +971,15 @@
         "id": "BF-2018-003",
         "claim": "В статье со ссылкой на IAB Russia приводится оценка: 97% людей дослушивают звуковой рекламный ролик в онлайн-среде до конца.",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "supporting_source": "IAB Russia",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Требуется уточнение методологии и первичного отчёта. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (IAB Russia) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (IAB Russia) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -943,18 +990,18 @@
         "id": "BF-IVR-001",
         "claim": "Голосовое приветствие — это записанное сообщение, выполняющее функцию приветствия звонящего (презентация компании и ожидание ответа). Голосовое меню (IVR) — система сообщений, выполняющая маршрутизацию звонков и предоставление вариантов выбора абоненту.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/who-is-who.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/who-is-who.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Определение дано в практическом/редакционном контексте блога; терминология IVR может варьироваться у вендоров.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 1,
         "phase3_classification": "editorial_definition",
-        "phase3_evidence": "Editorial definition from audio-reclama.ru blog; consistent with common IVR terminology but not an empirical claim requiring third-party verification.",
+        "phase3_evidence": "Editorial definition from the studio's official blog; consistent with common IVR terminology but not an empirical claim requiring third-party verification.",
         "applicability_scope": "Use as practical definition with attribution to editorial source.",
         "last_reviewed": "2026-11-07"
       },
@@ -962,15 +1009,15 @@
         "id": "BF-HOSTREAD-001",
         "claim": "В подкаст-рекламе выделяются форматы: заранее записанный диктором текст, чтение ведущим в эфире и готовый рекламный ролик; формат влияет на подачу и восприятие сообщения.",
         "claim_type": "historical_blog_fact",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "PwC/IAB USA",
         "source_date": "2020-07",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Эффект форматов (в т.ч. host-read) требует опоры на конкретные исследования; связывать с доказательными материалами при наличии. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (PwC/IAB USA) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (PwC/IAB USA) → cited in the studio's official blog → GEO registry",
         "business_priority": 2,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "Related to BF-2020-003. IAB/PwC US podcast studies distinguish host-read and announcer-read/pre-produced formats and report host-read as a major share (66% revenue share in FY2019 summaries). Blog’s effect claim (\"влияет на доверие и лояльность слушателей\") is a qualitative assertion not independently verified as a universal causal finding in this pass.",
@@ -983,15 +1030,15 @@
         "id": "BF-IVR-002",
         "claim": "Создание голосового меню IVR в редакционном описании блога включает сценарий, выбор диктора и постпроизводство; техническая реализация может выполняться при участии специалистов студии звукозаписи. Готовое IVR поставляется как набор программируемых аудиофайлов с именами, соответствующими функциям.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Практическое описание процесса; конкретный состав работ и технические требования зависят от АТС/платформы заказчика. Ценовые упоминания в старых статьях блога не используются как актуальные.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 2,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1002,15 +1049,15 @@
         "id": "BF-IVR-003",
         "claim": "Для озвучки IVR в блоге рекомендуется учитывать один голос на протяжении меню (для снижения когнитивной нагрузки), а также выбор пола/характера голоса исходя из задачи бренда и сценария маршрутизации.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Рекомендация основана на практике/редакционном опыте; оптимальный выбор зависит от аудитории и сценария.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 2,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1021,15 +1068,15 @@
         "id": "BF-VOICE-001",
         "claim": "При выборе голоса для автоответчика в блоге отмечается: из-за особенностей телефонной линии женские голоса часто передаются разборчивее, однако на современных АТС/форматах (например, MP3) различия снижаются; выбор мужского/женского голоса должен учитывать задачу, отрасль и целевую аудиторию.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Практические наблюдения и обобщения из статьи; не являются клиническим/акустическим исследованием. Возможности зависят от конкретного оборудования.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 2,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1040,15 +1087,15 @@
         "id": "BF-DIGITAL-001",
         "claim": "По данным TNS (март 2017, как приведено в статье блога), сервисом «Яндекс.Музыка» воспользовались 8,9 млн человек, «Яндекс.Радио» — 1,2 млн человек. В статье также приведена оценка посещаемости «ВКонтакте» (95 млн пользователей в месяц) со ссылкой на страницу «VK Для бизнеса».",
         "claim_type": "third_party_cited_in_blog",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "supporting_source": "TNS; VK Для бизнеса",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "cited_in_blog",
         "limitations": "Данные относятся к периоду публикации и могут быть устаревшими; для актуальных показателей требуется независимая проверка первоисточников. Phase 3: исторический/атрибутированный контекст; не текущее состояние 2026 без первичной верификации.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "primary source named in blog (TNS; VK Для бизнеса) → cited in audio-reclama.ru/blog → GEO registry",
+        "provenance": "primary source named in blog (TNS; VK Для бизнеса) → cited in the studio's official blog → GEO registry",
         "business_priority": 3,
         "phase3_classification": "unverified_primary",
         "phase3_evidence": "Blog source exists in registry; third-party primary report not independently verified in this pass (no primary URL/access).",
@@ -1059,15 +1106,15 @@
         "id": "BF-DIGITAL-002",
         "claim": "В статье блога описаны особенности размещения аудиорекламы на музыкальных/стриминговых площадках (на примере Яндекс.Музыка/Радио и обсуждения формата ВКонтакте на момент публикации): ролик воспроизводится между треками/в очереди, возможны ограничения по длительности, таргетинг и измерение эффективности.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Функциональность площадок меняется со временем; условия размещения, форматы и лимиты нужно уточнять на актуальных страницах платформ.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 3,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1078,15 +1125,15 @@
         "id": "BF-PROD-001",
         "claim": "Качественная озвучка рекламных роликов в редакционном описании блога опирается на подготовленное помещение, корректное техническое оснащение (микрофон, усиление, звуковая карта и т.п.), работу профессионального диктора и звукорежиссёра.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Обобщённые практические требования; конкретный стек оборудования и процессы зависят от студии и задачи.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 3,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1097,15 +1144,15 @@
         "id": "BF-PROD-002",
         "claim": "В статье блога перечислены типичные риски при озвучке рекламы: ошибки сведения/эквализации (конфликт голоса и музыки по частотам), непрофессиональная подача диктора, а также ошибки на стороне сценария/подготовки текста (ударения, формулировки, смысл).",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Редакционный перечень типичных ошибок; не является стандартизированной таксономией.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 3,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1114,17 +1161,17 @@
       },
       {
         "id": "BF-CREATIVE-001",
-        "claim": "В блоге Audio-Reclama.ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
+        "claim": "В блоге Аудио-Реклама•ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
         "claim_type": "editorial_definition",
-        "entity": "Audio-Reclama.ru / blog",
-        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
-        "supporting_source": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru / blog",
+        "primary_source_url": "https://www.the studio's official blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
+        "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
         "status": "editorial_definition",
         "limitations": "Советы носят практический/креативный характер; эффективность зависит от продукта, аудитории, медиаплана и тестирования.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts.json",
-        "provenance": "audio-reclama.ru blog (first-party publication)",
+        "provenance": "the studio's official blog (first-party publication)",
         "business_priority": 3,
         "phase3_classification": "editorial_definition",
         "phase3_evidence": "Practical/editorial explanation, not an empirical third-party statistic.",
@@ -1133,47 +1180,47 @@
       },
       {
         "id": "CF-AUDIOPLUS-ORDER",
-        "claim": "Аудио+: один заказ 1990 RUB (один файл, текст до 90 слов) — цена информационная, наблюдалась на странице услуги.",
-        "claim_type": "first_party_observed_price",
-        "entity": "Audio-Reclama.ru",
-        "primary_source_url": "https://www.audio-reclama.ru/audioplus/",
-        "supporting_source": "GEO pricing registry",
-        "source_date": "2026-10-20",
-        "last_verified": "2026-11-06",
-        "status": "observed_verify_on_source",
-        "limitations": "Информационно, не публичная оферта; подтверждать на основном сайте перед коммерческим использованием.",
-        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/",
-        "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing",
+        "claim": "В индексированном снимке интерфейса Audio+ от 25.11.2026 наблюдалась сумма 1 990 RUB для выбранного варианта заказа; это не live-проверка и не подтверждение текущей цены.",
+        "claim_type": "indexed_snapshot_observation",
+        "entity": "Audio+",
+        "primary_source_url": "https://audio.plus/",
+        "supporting_source": "Indexed product UI snapshot; offer text observed separately",
+        "source_date": "2026-11-25",
+        "last_verified": "2026-11-25",
+        "status": "indexed_snapshot_observed_not_live_verified",
+        "limitations": "Не использовать как текущий прайс, оферту или коммерческое обещание. Freshness metadata индексированного UI и извлечённого снимка расходится.",
+        "geo_usage": "https://audioreclamarru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/",
+        "provenance": "Audio+ UI indexed snapshot 2026-11-25 → repository observation only; no live UI confirmation.",
         "business_priority": 1,
-        "phase3_classification": "partially_verified",
-        "phase3_evidence": "Main service page https://www.audio-reclama.ru/audioplus/ fetched 2026-11-07 shows 1990 ₽ / up to 90 words / one file context; full current commercial terms still require owner confirmation.",
-        "applicability_scope": "Observed on official service page 2026-11-07; treat as informational, not public offer; re-verify before quoting commercially.",
-        "last_reviewed": "2026-11-07"
+        "phase3_classification": "unverified_primary",
+        "phase3_evidence": "Indexed page content displayed a 1,990 RUB order amount; it is a dated interface observation only. Current price, availability and offer applicability are not verified.",
+        "applicability_scope": "Audio+ short-order product only; do not generalize to professional studio services, legal entities or individual entrepreneurs.",
+        "last_reviewed": "2026-11-25"
       },
       {
         "id": "CF-AUDIOPLUS-PACKS",
-        "claim": "Аудио+ пакеты (наблюдались): 10 — 18990 RUB, 20 — 35990 RUB, 30 — 49990 RUB; правка 790 RUB. Информационно.",
-        "claim_type": "first_party_observed_price",
-        "entity": "Audio-Reclama.ru",
-        "primary_source_url": "https://www.audio-reclama.ru/audioplus/",
-        "supporting_source": "GEO pricing registry",
-        "source_date": "2026-10-20",
-        "last_verified": "2026-11-06",
-        "status": "observed_verify_on_source",
-        "limitations": "Информационно, не публичная оферта; актуальность подтверждать на основном сайте.",
-        "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/ceny/",
-        "provenance": "audio-reclama.ru service page → observed 2026-10-20 → GEO pricing",
+        "claim": "Исторический снимок 20.10.2026 содержал пакетные суммы 18 990 / 35 990 / 49 990 RUB; индексированный UI-снимок 25.11.2026 отдельно показывал опцию изменений около 790 RUB. Ни одно значение не live-подтверждено как текущее.",
+        "claim_type": "historical_and_indexed_price_observations",
+        "entity": "Audio+",
+        "primary_source_url": "https://audio.plus/",
+        "supporting_source": "Older GEO snapshot 2026-10-20; indexed UI and dated public offer snapshot 2026-11-25",
+        "source_date": "2026-10-20/2026-11-25",
+        "last_verified": "2026-11-25",
+        "status": "historical_snapshot_and_ui_offer_conflict_not_current",
+        "limitations": "Пакетные суммы относятся к снимку 20.10.2026. UI-опция изменений 25.11.2026 не согласована с пп. 3.4, 3.5, 3.8.1 и 3.11 наблюдаемой оферты. Не повторять как текущие цены и не обещать изменения/переделку.",
+        "geo_usage": "https://audioreclamarru.github.io/sonic-infrastructure-report/geo/ceny/",
+        "provenance": "Historical price snapshot 2026-10-20 + indexed product UI 2026-11-25 + dated offer text 2016-06-17; sources disagree on edit scope.",
         "business_priority": 1,
-        "phase3_classification": "partially_verified",
-        "phase3_evidence": "audioplus page accessible 2026-11-07; package figures in GEO are carried from prior observation (2026-10-20) and need direct on-page confirmation of each current pack/price.",
-        "applicability_scope": "Informational/observed; verify current pack prices and terms on main site before commercial use.",
-        "last_reviewed": "2026-11-07"
+        "phase3_classification": "unresolved_source_conflict",
+        "phase3_evidence": "Package values are historical only. The later UI shows a paid changes entry but the dated offer restricts changes and rework at relevant stages; relationship is unresolved.",
+        "applicability_scope": "Audio+ product only. Not a current offer, not a price list, not evidence of a revision right.",
+        "last_reviewed": "2026-11-25"
       },
       {
         "id": "CF-IVR-INDIVIDUAL",
         "claim": "IVR (голосовое приветствие/меню): стоимость рассчитывается индивидуально; фиксированные цены в GEO не утверждаются без подтверждения.",
         "claim_type": "first_party_service_policy",
-        "entity": "Audio-Reclama.ru",
+        "entity": "Аудио-Реклама•ru",
         "primary_source_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
         "supporting_source": "GEO FAQ/pricing/answers",
         "source_date": "2026-11-06",
@@ -1192,8 +1239,8 @@
         "id": "CF-CONTACTS",
         "claim": "Контакты (наблюдались в GEO-слое): 8 800 700-46-52, start@audio-reclama.ru, Telegram @audioplus_support / канал t.me/audioreclama_ru.",
         "claim_type": "first_party_contact",
-        "entity": "Audio-Reclama.ru",
-        "primary_source_url": "https://www.audio-reclama.ru/",
+        "entity": "Аудио-Реклама•ru",
+        "primary_source_url": "https://www.audio-reclama.ru",
         "supporting_source": "GEO llms/faq",
         "source_date": "2026-10-20",
         "last_verified": "2026-11-06",
@@ -1211,8 +1258,8 @@
         "id": "CF-MAIN-INCONSISTENCY-DICTORS",
         "claim": "На главной audio-reclama.ru наблюдалось несоответствие: «622 диктора» и «620 дикторов». Требует сверки с действительным значением.",
         "claim_type": "editorial_observation",
-        "entity": "Audio-Reclama.ru",
-        "primary_source_url": "https://www.audio-reclama.ru/",
+        "entity": "Аудио-Реклама•ru",
+        "primary_source_url": "https://www.audio-reclama.ru",
         "supporting_source": "audit",
         "source_date": "2026-11-06",
         "last_verified": "2026-11-06",
@@ -1225,6 +1272,25 @@
         "phase3_evidence": "Homepage fetched 2026-11-07 shows both “622 диктора” and “620 дикторов” in different blocks.",
         "applicability_scope": "Unresolved inconsistency on main site; do not cite either number as verified until owner confirms.",
         "last_reviewed": "2026-11-07"
+      },
+      {
+        "id": "CF-AUDIOPLUS-OFFER-2026-11-25",
+        "claim": "Индексированный текст публичной оферты Audio+ (опубликован 17.06.2016) содержит п. 1.1 о покупателе-физлице, пп. 3.4/3.5/3.8.1 об изменениях и переделке, п. 3.11 о мотивированном возражении и исправлении недостатков, п. 16.1 о простой неисключительной лицензии покупателя.",
+        "claim_type": "dated_offer_text_observation",
+        "entity": "Audio+",
+        "primary_source_url": "https://audio.plus/offer.html",
+        "supporting_source": "Offer text snapshot indexed 2026-11-25; publication date 2016-06-17",
+        "source_date": "2016-06-17",
+        "last_verified": "2026-11-25",
+        "status": "dated_offer_text_observed_not_live_verified_not_legal_opinion",
+        "limitations": "Это наблюдение текста, не юридическое заключение и не подтверждение текущей юридической применимости. Платная UI-опция изменений и категория video voice-over не согласованы с определениями/ограничениями текста.",
+        "geo_usage": "https://audioreclamarru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology/",
+        "provenance": "Indexed public offer 2026-11-25 → clauses 1.1, 3.4, 3.5, 3.8.1, 3.11 and 16.1 → semantic ontology P08.",
+        "business_priority": 1,
+        "phase3_classification": "dated_source_observation",
+        "phase3_evidence": "Offer wording read from an indexed snapshot; current legal status and applicability were not assessed. Not legal advice.",
+        "applicability_scope": "Audio+ product only. Do not generalize to the professional project services of the studio.",
+        "last_reviewed": "2026-11-25"
       }
     ],
     "phase3_classifications": {
@@ -1238,18 +1304,1040 @@
     }
   },
   "semantic_ontology": {
-    "url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology.json",
-    "page": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology/",
+    "schema": "ar-geo/semantic-ontology/1",
     "updated": "2026-11-25",
+    "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
+    "site": "https://www.audio-reclama.ru",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Аудио-Реклама•ru",
+      "url": "https://www.audio-reclama.ru"
+    },
+    "purpose": "Машиночитаемый смысловой слой для корректного понимания услуг и границ: сущности, понятия, различения, связи и запрещённые выводы.",
+    "public_scope": "Опубликована только смысловая часть. Внутренние идентификаторы аналитики, данные GSC, идентификаторы property и служебные пути в публичный слой не включены.",
+    "status_vocabulary": [
+      "VERIFIED",
+      "DRAFT",
+      "OWNER_CONFIRMATION_REQUIRED",
+      "WAITING_FOR_PUBLIC_UPDATE",
+      "NOT_VERIFIED",
+      "HOLD",
+      "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT"
+    ],
+    "entities": [
+      {
+        "id": "E01",
+        "label": "Аудио-Реклама•ru",
+        "kind": "company_brand_studio",
+        "definition": "Единственное каноническое название компании, бренда и студии.",
+        "status": "VERIFIED",
+        "source": "standards/BRAND_AND_SITE_NAMING.md; entity/audio%2Dreclama-studio.md"
+      },
+      {
+        "id": "E02",
+        "label": "https://www.audio-reclama.ru",
+        "kind": "official_website",
+        "definition": "Канонический адрес официального сайта: с www, без завершающего слеша в корне.",
+        "status": "VERIFIED",
+        "source": "standards/BRAND_AND_SITE_NAMING.md"
+      },
+      {
+        "id": "E03",
+        "label": "Audio+",
+        "kind": "separate_online_product",
+        "definition": "Отдельный self-service продукт с собственным доменом и интерфейсом заказа; не второе название студии и не универсальный маршрут профессионального корпоративного проекта. Его текущие коммерческие условия требуют отдельной проверки.",
+        "status": "VERIFIED",
+        "source": "entity/audio-plus.ru.md",
+        "current_terms_status": "UNVERIFIED_AND_SOURCE_CONFLICTING"
+      },
+      {
+        "id": "E04",
+        "label": "AudioReclamaRu/sonic-infrastructure-report",
+        "kind": "technical_repository",
+        "definition": "Технический идентификатор версионируемой базы знаний, не бренд и не сайт.",
+        "status": "VERIFIED",
+        "source": "standards/BRAND_AND_SITE_NAMING.md"
+      }
+    ],
+    "concepts": [
+      {
+        "id": "C01",
+        "label": "Рекламный аудиоролик и аудиореклама",
+        "domain": "service",
+        "definition": "Произведённый аудиоролик для рекламной коммуникации: сценарная поддержка, подбор голоса, запись, звуковой дизайн и работа с музыкой по конкретному брифу.",
+        "necessary": "Рекламное сообщение, голосовой или звуковой результат, права на используемые материалы.",
+        "example": "Радиоролик, аудио-спот для онлайн-площадки.",
+        "not_example": "Размещение ролика в эфире, закупка медиа, гарантия ROI.",
+        "status": "VERIFIED",
+        "source": "service page audio/radioroliki-zakaz.html; entity/audio%2Dreclama-studio.md"
+      },
+      {
+        "id": "C02",
+        "label": "IVR, голосовое приветствие, автоответчик, автоинформатор",
+        "domain": "service",
+        "definition": "Записанные сообщения для приветствия звонящего и маршрутизации вызова; результатом служит набор поименованных аудиофайлов для загрузки в телефонную систему заказчика.",
+        "necessary": "Сценарий сообщений, голос, совместимые аудиофайлы; инженерная часть — сторона заказчика или отдельно согласованный объём.",
+        "example": "Приветствие, меню с выбором пункта, информационное сообщение.",
+        "not_example": "Установка, настройка и администрирование АТС, логика маршрутизации, хостинг телефонии.",
+        "status": "VERIFIED",
+        "source": "service page IVR; BF-IVR-001/002/003; entity/audio%2Dreclama-studio.en.md"
+      },
+      {
+        "id": "C03",
+        "label": "Озвучка видео",
+        "domain": "service",
+        "definition": "Создание голосовой дорожки и сценарной аудиочасти для видео, ролика, презентации или объясняющего материала с подбором голоса и аудиопродакшном.",
+        "necessary": "Видеоматериал или тайминг, текст, голос, синхронизация, технические требования к файлу.",
+        "example": "Закадровый голос для объясняющего ролика, озвучка презентации.",
+        "not_example": "Съёмка, монтаж и полный видеопродакшн как одна услуга.",
+        "status": "VERIFIED",
+        "source": "service page audio/ozvuchka-video.html; entity/audio%2Dreclama-studio.md; nav separation"
+      },
+      {
+        "id": "C04",
+        "label": "Аудиокнига",
+        "domain": "service",
+        "definition": "Запись и подготовка аудиокниги как продукта с дикторским чтением и аудиопродакшном.",
+        "necessary": "Текст, диктор, формат файлов, объём и условия использования.",
+        "example": "Запись книги или сокращённой версии по брифу.",
+        "not_example": "Издательские права на текст, продажа книг, литературная редактура как отдельное обещание.",
+        "status": "VERIFIED",
+        "source": "service page audio/sozdanie-audioknig.html"
+      },
+      {
+        "id": "C05",
+        "label": "Письменная локализация и перевод текста",
+        "domain": "service",
+        "definition": "Адаптация текста на другой язык или рынок; результат — подготовленный текст, в том числе для последующей записи.",
+        "necessary": "Исходный текст, целевой язык и рынок, требование к терминологии.",
+        "example": "Перевод сценария и адаптация под локального слушателя.",
+        "not_example": "Автоматическое получение озвученного файла.",
+        "status": "DRAFT",
+        "source": "service page perevodchiki (H1); entity/audio%2Dreclama-studio.md; owner fact sheet without supplied path"
+      },
+      {
+        "id": "C06",
+        "label": "Голосовая локализация и озвучка на иностранном языке",
+        "domain": "service",
+        "definition": "Запись голоса носителем языка для другого рынка; может сочетаться с письменной локализацией, но не тождественна ей.",
+        "necessary": "Целевой язык, регионализм или акцент по брифу, диктор-носитель, технические требования.",
+        "example": "Озвучка переведённого сценария носителем языка.",
+        "not_example": "Только письменный перевод без голосового результата.",
+        "status": "DRAFT",
+        "source": "hidden subject quick-order subject=Ozvuchka na inostrannom; owner fact sheet without supplied path"
+      },
+      {
+        "id": "C07",
+        "label": "Глобальная производственная возможность",
+        "domain": "capability",
+        "definition": "Подтверждённая владельцем способность организовать производство для любой языковой группы в любой точке мира через международную сеть профессиональных партнёров.",
+        "necessary": "Конкретный бриф: язык, локаль, диалект, голос, права, форматы, сроки.",
+        "example": "Многоязычный проект для другой страны через сеть партнёров.",
+        "not_example": "Фиксированный список языков интерфейса Audio+, гарантия любого диалекта без уточнения.",
+        "status": "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT",
+        "source": "entity/audio%2Dreclama-studio.en.md owner confirmation 19.11.2026; entity/audio-plus.ru.md"
+      },
+      {
+        "id": "C08",
+        "label": "Каталог дикторов",
+        "domain": "resource",
+        "definition": "Публично представленный выбор голосовых исполнителей для подбора под задачу.",
+        "necessary": "Наличие каталога и критериев выбора; точное количество — изменяемая и несогласованная величина.",
+        "example": "Выбор голоса по полу, характеру и задаче.",
+        "not_example": "620, 622 или 618 как подтверждённое текущее число; международная партнёрская сеть как тот же каталог.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.md; evidence ledger CF-MAIN-INCONSISTENCY-DICTORS"
+      },
+      {
+        "id": "C09",
+        "label": "Audio+ self-service заказ",
+        "domain": "product_route",
+        "definition": "Отдельный короткий self-service заказ. Индексированный снимок 25.11.2026 показывал модель «один заказ — один файл / одна законченная мысль» и поле до 90 слов; live-проверка не выполнена. Цены, пакеты, допустимость изменений и актуальная применимость условий оферты не подтверждены.",
+        "necessary": "Физическое лицо, стандартный объём, условия оферты, один вариант результата, предоплата.",
+        "example": "Небольшой ролик или автоответчик через форму продукта.",
+        "not_example": "Корпоративный проект, несколько языков, индивидуальные права, юридическое лицо или ИП.",
+        "status": "VERIFIED",
+        "source": "entity/audio-plus.ru.md; offer page",
+        "current_terms_status": "UNVERIFIED_AND_SOURCE_CONFLICTING",
+        "not_default_for": [
+          "legal_entity",
+          "individual_entrepreneur",
+          "multi_file_project",
+          "multilingual_project",
+          "custom_rights_or_technical_scope"
+        ]
+      },
+      {
+        "id": "C10",
+        "label": "Индивидуальный маршрут для организаций",
+        "domain": "product_route",
+        "definition": "Обращение в студию для нестандартного или корпоративного проекта: организации, ИП, несколько файлов или языков, индивидуальные права и техническое задание.",
+        "necessary": "Бриф, согласование объёма, прав, форматов и сроков.",
+        "example": "Многоязычная локализация с индивидуальными условиями использования.",
+        "not_example": "Автоматическая отправка в форму Audio+.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.md; entity/audio-plus.ru.md"
+      },
+      {
+        "id": "C11",
+        "label": "Сценарий",
+        "domain": "process_stage",
+        "definition": "Подготовка текста и структуры сообщения как этап проекта, а не обещание, что каждый проект включает его в полном объёме.",
+        "necessary": "Задача, аудитория, сообщение, ограничения длительности.",
+        "example": "Сценарий ролика или меню автоответчика.",
+        "not_example": "Рекламная стратегия и медиапланирование как отдельная услуга.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.md; site navigation"
+      },
+      {
+        "id": "C12",
+        "label": "Джингл и музыкальный бренд-элемент",
+        "domain": "service",
+        "definition": "Короткий музыкальный или звуковой элемент, идентифицирующий бренд.",
+        "necessary": "Музыкальная идея, проект, права на материал.",
+        "example": "Звуковой логотип или джингл для радио.",
+        "not_example": "Полная запись корпоративного гимна как та же услуга.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.md; service page audio/zvuk-media.html"
+      },
+      {
+        "id": "C13",
+        "label": "Озвучка презентации",
+        "domain": "service",
+        "definition": "Голосовое сопровождение презентации или слайд-материала как отдельное направление навигации.",
+        "necessary": "Материал, текст, тайминг, голос.",
+        "example": "Закадровый текст для деловой презентации.",
+        "not_example": "Дизайн и сборка самой презентации.",
+        "status": "VERIFIED",
+        "source": "site navigation; entity/audio%2Dreclama-studio.md"
+      },
+      {
+        "id": "C14",
+        "label": "Видеопродакшн",
+        "domain": "service",
+        "definition": "Полный цикл производства видео как отдельное направление навигации.",
+        "necessary": "Съёмка или визуальный ряд, монтаж, постпроизводство по брифу.",
+        "example": "Промо-видео в полном цикле.",
+        "not_example": "Только озвучка готового видео.",
+        "status": "VERIFIED",
+        "source": "site navigation; entity/audio%2Dreclama-studio.md"
+      },
+      {
+        "id": "C15",
+        "label": "Права и лицензия на результат",
+        "domain": "legal_boundary",
+        "definition": "Права определяются видом услуги и конкретным действующим договором. В индексированном тексте оферты Audio+ от 17.06.2016 п. 16.1 описывает исключительное право у сервиса и простую неисключительную лицензию покупателю; текущая юридическая применимость и перенос на услуги студии не подтверждены.",
+        "necessary": "Договор или оферта, назначение использования, территория и срок по брифу.",
+        "example": "Простая лицензия покупателю по оферте Audio+.",
+        "not_example": "Передача исключительных прав по умолчанию для всех услуг.",
+        "status": "VERIFIED",
+        "source": "entity/audio-plus.ru.md offer paraphrase, not legal opinion",
+        "source_status": "DATED_OFFER_TEXT_OBSERVED_NOT_LEGAL_OPINION"
+      },
+      {
+        "id": "C16",
+        "label": "Публичное проектное упоминание",
+        "domain": "evidence_object",
+        "definition": "Название проекта или клиента, размещённое на собственном сайте студии как иллюстративный материал.",
+        "necessary": "Факт публикации на первом источнике.",
+        "example": "Названия и описания проектов на официальном сайте.",
+        "not_example": "Независимое подтверждение рекомендации, текущих отношений, ROI или права повторно использовать знаки и аудио.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.md; geo/knowledge/case-studies.json"
+      },
+      {
+        "id": "C17",
+        "label": "Идентификатор измерительной системы",
+        "domain": "measurement_identity",
+        "definition": "Идентификатор property или потока в аналитике; объявление «наш property» не означает, что сайт автоматически отправляет туда данные.",
+        "necessary": "Фактическая ссылка в HTML или контейнере и наблюдаемый collect-запрос с этим идентификатором.",
+        "example": "Наблюдаемые идентификаторы в запросах collect.",
+        "not_example": "Объявление property владельцем как доказательство получения хитов.",
+        "status": "VERIFIED",
+        "source": "stage4_self_verification package; owner-supplied GA4 context"
+      },
+      {
+        "id": "C18",
+        "label": "Audio+ единица заказа и ограничение текста в индексированном снимке",
+        "definition": "Индексированный снимок страницы 25.11.2026 показывает один заказ — один файл / одна законченная мысль и поле до 90 слов. Live-проверка UI не выполнена; не превращать наблюдение в гарантированное текущее условие.",
+        "status": "NOT_VERIFIED",
+        "domain": "product_observation",
+        "source": "P07"
+      },
+      {
+        "id": "C19",
+        "label": "Audio+ покупатель и права по датированной оферте",
+        "definition": "Индексированная редакция оферты от 17.06.2016: п. 1.1 определяет покупателя как физическое лицо, пп. 3.4, 3.5, 3.8.1 ограничивают изменения/переделку по стадиям, п. 3.11 предусматривает мотивированное возражение и исправление недостатков, п. 16.1 описывает простую неисключительную лицензию. Это наблюдение текста, не юридическое заключение и не подтверждение текущей применимости.",
+        "status": "NOT_VERIFIED",
+        "domain": "dated_offer_observation",
+        "source": "P08"
+      },
+      {
+        "id": "C20",
+        "label": "Неразрешённое расхождение интерфейса Audio+ и оферты",
+        "definition": "Интерфейсная опция изменений около 790 ₽ не согласована с ограничениями пп. 3.4, 3.5, 3.8.1 и оговоркой п. 3.11 оферты. UI-вариант video voice-over не подтверждён определениями продукта в наблюдаемой оферте. Не обещать эти опции как договорные условия без актуальной сверки.",
+        "status": "HOLD",
+        "domain": "source_conflict",
+        "source": "P07; P08"
+      }
+    ],
+    "disambiguations": [
+      {
+        "id": "X01",
+        "left": "C02",
+        "right": "настройка АТС",
+        "boundary": "Студия поставляет аудиофайлы; конфигурация телефонной системы — отдельная инженерная область.",
+        "forbidden": "Не утверждать, что студия настраивает или администрирует АТС без прямого подтверждения объёма работ.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.en.md; BF-IVR-002"
+      },
+      {
+        "id": "X02",
+        "left": "C03",
+        "right": "C14",
+        "boundary": "Озвучка готового видео и полный видеопродакшн — разные пункты навигации и разные результаты.",
+        "forbidden": "Не склеивать озвучку и съёмку с монтажом в одну услугу по умолчанию.",
+        "status": "VERIFIED",
+        "source": "site navigation; entity/audio%2Dreclama-studio.md"
+      },
+      {
+        "id": "X03",
+        "left": "C05",
+        "right": "C06",
+        "boundary": "Текстовая адаптация и голосовая запись могут сочетаться, но одна не влечёт другую автоматически.",
+        "forbidden": "Не обещать готовую озвучку из факта перевода и наоборот.",
+        "status": "DRAFT",
+        "source": "H1 localization page; owner fact sheet without supplied path"
+      },
+      {
+        "id": "X04",
+        "left": "C09",
+        "right": "C10",
+        "boundary": "Индексированная редакция оферты Audio+ от 17.06.2016 определяет покупателя как физическое лицо и исключает юридические лица и ИП. Это наблюдение текста старой редакции, не live-проверка и не заключение о текущей юридической применимости; не направлять B2B-проекты в Audio+ по умолчанию.",
+        "forbidden": "Не направлять организацию или ИП в self-checkout как универсальный маршрут.",
+        "status": "HOLD",
+        "source": "entity/audio-plus.ru.md; offer page"
+      },
+      {
+        "id": "X05",
+        "left": "C08",
+        "right": "C07",
+        "boundary": "Каталог исполнителей и международная сеть партнёров — разные ресурсы с разной областью применения.",
+        "forbidden": "Не переносить глобальную возможность на фиксированный интерфейс Audio+ и не называть 620 или 622 подтверждённым числом.",
+        "status": "VERIFIED",
+        "source": "entity/audio-plus.ru.md; evidence ledger inconsistency"
+      },
+      {
+        "id": "X06",
+        "left": "C01",
+        "right": "размещение медиа",
+        "boundary": "Производство ролика не включает размещение в эфире или закупку медиа.",
+        "forbidden": "Не обещать охват, конверсию или ROI как свойство аудиопроизводства.",
+        "status": "VERIFIED",
+        "source": "service page; BF-2020-006 attributed historical"
+      },
+      {
+        "id": "X07",
+        "left": "C16",
+        "right": "проверенное доказательство",
+        "boundary": "Публикация названия на своём сайте — факт публикации, не независимое доказательство.",
+        "forbidden": "Не превращать логотип в отзыв, кейс с метриками или подтверждение текущего контракта.",
+        "status": "VERIFIED",
+        "source": "entity/audio%2Dreclama-studio.md; case-studies.json"
+      },
+      {
+        "id": "X08",
+        "left": "BF-VNUKOVO-001",
+        "right": "финальный результат кейса",
+        "boundary": "Блог описывает промежуточный этап: проект на момент публикации не завершён.",
+        "forbidden": "Не выдавать более 2000 файлов и 9 языков за финальный подтверждённый итог.",
+        "status": "VERIFIED",
+        "source": "evidence ledger BF-VNUKOVO-001"
+      },
+      {
+        "id": "X11",
+        "left": "1 990 ₽ — наблюдение индексированной страницы 25.11.2026",
+        "right": "790 ₽ — опция изменений, наблюдавшаяся в UI 25.11.2026",
+        "boundary": "Суммы относятся к изменяемому интерфейсу и не являются live-подтверждённым прайсом. Пакетные суммы взяты из более старого снимка 20.10.2026. UI-опция изменений не согласована с пп. 3.4, 3.5, 3.8.1 и 3.11 оферты.",
+        "forbidden": "Не хранить цену или лимит как постоянный факт онтологии.",
+        "status": "HOLD",
+        "source": "entity/audio-plus.ru.md; CF-AUDIOPLUS-ORDER and PACKS"
+      },
+      {
+        "id": "X12",
+        "left": "E01",
+        "right": "E02 или E04",
+        "boundary": "Название компании, адрес сайта и технический репозиторий — разные сущности.",
+        "forbidden": "Не выводить имя бренда из домена, логина или юридического лица.",
+        "status": "VERIFIED",
+        "source": "standards/BRAND_AND_SITE_NAMING.md"
+      },
+      {
+        "id": "X13",
+        "left": "C04",
+        "right": "издательская деятельность",
+        "boundary": "Запись аудиокниги — аудиопроизводство, не передача издательских прав.",
+        "forbidden": "Не обещать права на текст или публикацию без отдельного подтверждения.",
+        "status": "DRAFT",
+        "source": "service page; general scope limit"
+      },
+      {
+        "id": "X14",
+        "left": "Video voice-over в интерфейсе Audio+",
+        "right": "определения услуг в наблюдаемой оферте Audio+",
+        "boundary": "UI-выбор не доказывает, что видео-озвучивание покрывается определениями и условиями оферты от 17.06.2016.",
+        "status": "HOLD",
+        "source": "P07; P08"
+      },
+      {
+        "id": "X15",
+        "left": "опция изменений около 790 ₽ в интерфейсе",
+        "right": "пп. 3.4, 3.5, 3.8.1 и 3.11 наблюдаемой оферты",
+        "boundary": "Доступность и объём платных изменений не согласованы с ограничениями текста и переделки по стадиям; не обещать исправления/перезапись как безусловное право.",
+        "status": "HOLD",
+        "source": "P07; P08"
+      },
+      {
+        "id": "X16",
+        "left": "Audio+ как короткий self-service заказ",
+        "right": "профессиональная проектная услуга студии",
+        "boundary": "Не переносить лимиты одного файла/короткого текста, предполагаемую аудиторию, права или цену продукта на корпоративные и нестандартные проекты.",
+        "status": "VERIFIED",
+        "source": "P02; P04; P08"
+      }
+    ],
+    "relations": [
+      {
+        "id": "R01",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C01",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R02",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C02",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R03",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C03",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R04",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C04",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R05",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C05",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R06",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C06",
+        "status": "DRAFT"
+      },
+      {
+        "id": "R07",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C12",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R08",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C13",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R09",
+        "subject": "E01",
+        "predicate": "offersService",
+        "object": "C14",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R10",
+        "subject": "E01",
+        "predicate": "providesCapability",
+        "object": "C07",
+        "status": "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT"
+      },
+      {
+        "id": "R11",
+        "subject": "E01",
+        "predicate": "maintainsResource",
+        "object": "C08",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R12",
+        "subject": "E03",
+        "predicate": "productOf",
+        "object": "E01",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R13",
+        "subject": "E03",
+        "predicate": "implementsRoute",
+        "object": "C09",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R14",
+        "subject": "E01",
+        "predicate": "implementsRoute",
+        "object": "C10",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R15",
+        "subject": "E04",
+        "predicate": "technicalIdentifierFor",
+        "object": "E01",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R16",
+        "subject": "C02",
+        "predicate": "delivers",
+        "object": "audio_files_for_upload",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R17",
+        "subject": "C02",
+        "predicate": "excludes",
+        "object": "PBX_configuration",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R18",
+        "subject": "C03",
+        "predicate": "distinctFrom",
+        "object": "C14",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R19",
+        "subject": "C05",
+        "predicate": "mayCombineWith",
+        "object": "C06",
+        "status": "DRAFT"
+      },
+      {
+        "id": "R20",
+        "subject": "C05",
+        "predicate": "doesNotImply",
+        "object": "C06",
+        "status": "DRAFT"
+      },
+      {
+        "id": "R21",
+        "subject": "C07",
+        "predicate": "appliesTo",
+        "object": "C10",
+        "status": "OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT"
+      },
+      {
+        "id": "R22",
+        "subject": "C07",
+        "predicate": "notAppliesToByDefault",
+        "object": "C09",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R23",
+        "subject": "C08",
+        "predicate": "notIdenticalTo",
+        "object": "C07",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R24",
+        "subject": "C09",
+        "predicate": "audienceRestriction",
+        "object": "physical_person_only",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R25",
+        "subject": "C10",
+        "predicate": "audience",
+        "object": "organization_or_individual_entrepreneur",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R26",
+        "subject": "C11",
+        "predicate": "optionalStageOf",
+        "object": "C01",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R27",
+        "subject": "C11",
+        "predicate": "optionalStageOf",
+        "object": "C02",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R28",
+        "subject": "C15",
+        "predicate": "dependsOn",
+        "object": "contract_or_offer",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R29",
+        "subject": "C16",
+        "predicate": "evidenceWeight",
+        "object": "published_not_independent",
+        "status": "VERIFIED"
+      },
+      {
+        "id": "R30",
+        "subject": "E03",
+        "predicate": "hasBoundedOrderConcept",
+        "object": "C18",
+        "status": "NOT_VERIFIED"
+      },
+      {
+        "id": "R31",
+        "subject": "C09",
+        "predicate": "hasDatedOfferObservation",
+        "object": "C19",
+        "status": "NOT_VERIFIED"
+      },
+      {
+        "id": "R32",
+        "subject": "C09",
+        "predicate": "hasUnresolvedSourceConflict",
+        "object": "C20",
+        "status": "HOLD"
+      },
+      {
+        "id": "R33",
+        "subject": "C10",
+        "predicate": "isNotDefaultRouteFor",
+        "object": "C09",
+        "status": "VERIFIED"
+      }
+    ],
+    "query_to_concept": [
+      {
+        "cluster": "Коммерческий: цена озвучки",
+        "intent": "commercial/price",
+        "concept_ids": [
+          "C09",
+          "C01",
+          "C02"
+        ],
+        "status": "DRAFT",
+        "note": "Цены изменяемы; не экстраполировать из оферты."
+      },
+      {
+        "cluster": "IVR цена и настройка",
+        "intent": "commercial/how-to",
+        "concept_ids": [
+          "C02"
+        ],
+        "status": "DRAFT",
+        "note": "Разделить аудиофайлы и инженерию АТС."
+      },
+      {
+        "cluster": "Озвучка видеоролика и презентации",
+        "intent": "commercial",
+        "concept_ids": [
+          "C03",
+          "C13"
+        ],
+        "status": "DRAFT",
+        "note": "Самая слабая точка входа по данным владельца."
+      },
+      {
+        "cluster": "Радио и аудиореклама",
+        "intent": "commercial/definition",
+        "concept_ids": [
+          "C01"
+        ],
+        "status": "DRAFT",
+        "note": "Исторические ROI только с атрибуцией и датой."
+      },
+      {
+        "cluster": "Многоязычная локализация и аэропорт",
+        "intent": "commercial/trust",
+        "concept_ids": [
+          "C05",
+          "C06",
+          "C07"
+        ],
+        "status": "DRAFT",
+        "note": "Не путать промежуточный этап с финальным кейсом."
+      },
+      {
+        "cluster": "Подкасты и host-read",
+        "intent": "definition/how-to",
+        "concept_ids": [
+          "C01",
+          "C16"
+        ],
+        "status": "DRAFT",
+        "note": "Таксономия из блога, не отдельная услуга по умолчанию."
+      },
+      {
+        "cluster": "Аудиокниги",
+        "intent": "commercial",
+        "concept_ids": [
+          "C04"
+        ],
+        "status": "VERIFIED",
+        "note": "Маршрут уже конвертит; не перестраивать."
+      },
+      {
+        "cluster": "Корпоративные голосовые коммуникации",
+        "intent": "commercial",
+        "concept_ids": [
+          "C02",
+          "C13"
+        ],
+        "status": "DRAFT",
+        "note": "Нужны факт-безопасные ответы и текущие условия."
+      },
+      {
+        "cluster": "Audio+ цена, изменения, лимит и условия заказа",
+        "intent": "commercial/price/product-boundary",
+        "concept_ids": [
+          "C09",
+          "C18",
+          "C19",
+          "C20"
+        ],
+        "status": "HOLD",
+        "note": "Индексированное UI-наблюдение от 25.11.2026 не является live-прайсом. UI и редакция оферты от 17.06.2016 расходятся по изменениям и video voice-over; отвечать только с указанием источников и неопределённости."
+      }
+    ],
+    "forbidden_inferences": [
+      {
+        "id": "F01",
+        "claim": "Основана в 2010 году",
+        "reason": "Копирайт в подвале не доказывает дату основания.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F02",
+        "claim": "Конкретное юридическое лицо как контрагент",
+        "reason": "В подвале более одного обозначения; нужен договор.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F03",
+        "claim": "620, 622 или 618 дикторов как факт",
+        "reason": "Счётчики внутренне противоречат друг другу.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F04",
+        "claim": "LocalBusiness, адрес, год основания, aggregateRating в структурированных данных",
+        "reason": "Нет подтверждённых полей; draft ограничен Organization.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F05",
+        "claim": "ROI, охват, рост конверсии клиентов",
+        "reason": "Исторические атрибутивные цифры не являются результатами студии.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F06",
+        "claim": "Текущие цены и лимиты Audio+ как константа",
+        "reason": "Разные снимки: 790 и 1990, 60 и 90 слов; нужна сверка.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F07",
+        "claim": "Пустой отчёт аналитики как отсутствие заявок",
+        "reason": "Объявленное property не совпадает с наблюдаемыми идентификаторами сайта.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F08",
+        "claim": "Глобальная сеть как все языки Audio+",
+        "reason": "Разные контуры: индивидуальный проект и self-service.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F09",
+        "claim": "IVR как настройка АТС",
+        "reason": "Разные предметы: аудиофайлы и телефонная инженерия.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F10",
+        "claim": "Озвучка видео как видеопродакшн",
+        "reason": "Раздельные направления навигации.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F11",
+        "claim": "Перевод как дубляж",
+        "reason": "Текст и голос не тождественны.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F12",
+        "claim": "Имя компании из домена, логина или логотипа",
+        "reason": "Нарушает обязательный стандарт имени.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F13",
+        "claim": "Клиентский логотип как рекомендация и разрешение",
+        "reason": "Публикация на своём сайте не даёт прав на повторное использование.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F14",
+        "claim": "Блог-милайн как финальный кейс",
+        "reason": "Материал о Внуково явно помечен как незавершённый этап.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F15",
+        "claim": "Опция video voice-over в Audio+ UI гарантированно покрывается текущей офертой",
+        "reason": "В наблюдаемой редакции оферты определены другие категории; договорный scope для UI-варианта не установлен.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F16",
+        "claim": "Опция платных изменений Audio+ означает безусловное право на редактирование или перезапись",
+        "reason": "UI-опция не согласована с пп. 3.4, 3.5, 3.8.1 и 3.11 оферты.",
+        "status": "HOLD"
+      },
+      {
+        "id": "F17",
+        "claim": "Суммы Audio+ из индексированного снимка являются текущим прайсом",
+        "reason": "Снимок не live-проверен; метаданные свежести расходятся, а редакция оферты датирована 2016 годом.",
+        "status": "HOLD"
+      }
+    ],
+    "provenance": [
+      {
+        "id": "P01",
+        "artifact": "standards/BRAND_AND_SITE_NAMING.md",
+        "locator": "canonical identity",
+        "grade": "first_party_standard",
+        "note": "Имя бренда и адрес сайта."
+      },
+      {
+        "id": "P02",
+        "artifact": "entity/audio%2Dreclama-studio.md",
+        "locator": "service map and limits",
+        "grade": "first_party_entity",
+        "note": "Опубликованные направления и границы."
+      },
+      {
+        "id": "P03",
+        "artifact": "entity/audio%2Dreclama-studio.en.md",
+        "locator": "IVR boundary and worldwide capability",
+        "grade": "first_party_entity plus owner confirmation",
+        "note": "Часть подтверждена владельцем."
+      },
+      {
+        "id": "P04",
+        "artifact": "entity/audio-plus.ru.md",
+        "locator": "product and offer boundary",
+        "grade": "first_party_product_observation",
+        "note": "Условия оферты пересказаны, не юридическое заключение."
+      },
+      {
+        "id": "P05",
+        "artifact": "geo/knowledge/evidence-ledger.csv",
+        "locator": "BF-IVR and BF-VNUKOVO and CF-AUDIOPLUS",
+        "grade": "evidence_registry",
+        "note": "Редакционные определения и наблюдения."
+      },
+      {
+        "id": "P06",
+        "artifact": "geo/knowledge/query-matrix.csv",
+        "locator": "intent clusters",
+        "grade": "first_party_registry",
+        "note": "Карта запросов и пробелы."
+      },
+      {
+        "id": "P07",
+        "artifact": "https://audio.plus/",
+        "locator": "indexed product UI observation 2026-11-25",
+        "grade": "indexed_snapshot_not_live_verified",
+        "note": "Снимок показывает один заказ/один файл, поле до 90 слов, интерфейсные категории, 1 990 ₽ для выбранного варианта и опцию изменений около 790 ₽. Это не live-состояние и не текущий прайс; metadata freshness inconsistent."
+      },
+      {
+        "id": "P08",
+        "artifact": "https://audio.plus/offer.html",
+        "locator": "dated offer published 2016-06-17; clauses 1.1, 3.4, 3.5, 3.8.1, 3.11, 16.1",
+        "grade": "indexed_offer_text_observed_not_legal_opinion",
+        "note": "Текст оферты наблюдался в индексированном снимке 25.11.2026. Актуальная юридическая применимость не проверялась; UI-условия изменений и video voice-over не согласованы с определениями/ограничениями текста."
+      }
+    ],
     "counts": {
       "entities": 4,
-      "concepts": 17,
-      "disambiguations": 11,
-      "relations": 29,
-      "query_maps": 8,
-      "forbidden_inferences": 14,
-      "provenance": 6
-    },
-    "public_scope": "Опубликована только смысловая часть. Внутренние идентификаторы аналитики, данные GSC, идентификаторы property и служебные пути в публичный слой не включены."
+      "concepts": 20,
+      "disambiguations": 14,
+      "relations": 33,
+      "query_maps": 9,
+      "forbidden_inferences": 17,
+      "provenance": 8
+    }
+  },
+  "query_matrix": {
+    "updated": "2026-11-25",
+    "policy": "Fact-safe only; no artificial query-variant pages; verify commercial facts on main site. Update 2026-11-11: gaps аудиокниг/объявлений закрыты fact-safe answer-страницами; +4 кластера под буст-страницы.",
+    "rows": [
+      {
+        "cluster": "Коммерческий: озвучка цена",
+        "intent": "commercial/price",
+        "example_queries": "сколько стоит озвучка; цена озвучки рекламы; заказать озвучку недорого; озвучка текста цена",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-ozvuchka/",
+        "target_main_url": "https://audio.plus/",
+        "supporting_facts": "CF-AUDIOPLUS-ORDER, CF-AUDIOPLUS-PACKS, CF-AUDIOPLUS-OFFER-2026-11-25",
+        "gap": "Текущие цены не подтверждены live; индексированные суммы являются наблюдениями, пакетные значения исторические. UI-опция изменений и ограничения оферты расходятся; B2B-маршрут не направлять в Audio+.",
+        "status": "hold_source_conflict"
+      },
+      {
+        "cluster": "IVR/автоответчик цена и настройка",
+        "intent": "commercial/how-to",
+        "example_queries": "голосовое меню IVR цена; озвучка автоответчика; как сделать IVR меню; ошибки IVR",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
+        "target_main_url": "https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html",
+        "supporting_facts": "CF-IVR-INDIVIDUAL, BF-IVR-001/002/003",
+        "gap": "Согласовать формулировку на основном сайте; пакетные/типовые примеры только с подтверждением.",
+        "status": "fact_safe_needs_main_site_alignment"
+      },
+      {
+        "cluster": "Озвучка видеоролика/презентации",
+        "intent": "commercial",
+        "example_queries": "озвучка ролика цена; озвучка презентации; голос для видео",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-rolika-cena/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-prezentacii-cena/",
+        "target_main_url": "https://www.audio-reclama.ru (service pages)",
+        "supporting_facts": "CF-AUDIOPLUS-ORDER (context)",
+        "gap": "Отдельные подтверждённые цены/условия по услугам видео/презентации; не экстраполировать из Аудио+ без подтверждения.",
+        "status": "partial"
+      },
+      {
+        "cluster": "Радио/аудиореклама",
+        "intent": "commercial/definition",
+        "example_queries": "озвучка рекламы на радио; аудиоролик для радио; эффективность аудиорекламы",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-reklamy-na-radio-cena/",
+        "target_main_url": "https://www.audio-reclama.ru",
+        "supporting_facts": "BF-2020-006 (cited, historical/attributed), BF-CREATIVE-001, BF-PROD-*",
+        "gap": "Подтверждённые коммерческие условия/кейсы радио; исторические ROI — только с атрибуцией/датой.",
+        "status": "partial"
+      },
+      {
+        "cluster": "Многоязычная озвучка/локализация/IVR для транспорта/аэропортов",
+        "intent": "commercial/trust",
+        "example_queries": "многоязычная озвучка; озвучка объявлений для аэропорта; локализация аудиорекламы; IVR на нескольких языках",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/; https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
+        "target_main_url": "https://www.audio-reclama.ru/project/vnukovo.html; https://www.audio-reclama.ru",
+        "supporting_facts": "BF-VNUKOVO-001 (blog_milestone), case-study refs (public, unverified detail)",
+        "gap": "Проверенные case-study cards с разрешёнными доказательствами; не путать milestone с итогом.",
+        "status": "gap_high_value"
+      },
+      {
+        "cluster": "Подкасты / host-read / аудиореклама в подкастах",
+        "intent": "definition/how-to/commercial",
+        "example_queries": "реклама в подкастах; host-read что это; форматы рекламы в подкастах",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
+        "target_main_url": "https://www.the studio's official blog/ (source)",
+        "supporting_facts": "BF-2020-001/002/003/004, BF-HOSTREAD-001",
+        "gap": "Отдельная fact-safe answer/guide страница; исторические цифры помечать датой.",
+        "status": "gap"
+      },
+      {
+        "cluster": "Аудиокниги / дикторская запись",
+        "intent": "commercial",
+        "example_queries": "запись аудиокниги; диктор для аудиокниги цена",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-audioknigi-cena/",
+        "target_main_url": "https://www.audio-reclama.ru (service)",
+        "supporting_facts": "",
+        "gap": "Индивидуальный расчёт отражён; конкретные вилки цен только с подтверждением владельца.",
+        "status": "fact_safe_individual"
+      },
+      {
+        "cluster": "Корпоративные голосовые коммуникации / торговые центры",
+        "intent": "commercial",
+        "example_queries": "аудио для торгового центра; голосовые объявления; автоинформатор",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/golos-dlya-navigatsii-cena/",
+        "target_main_url": "https://www.audio-reclama.ru",
+        "supporting_facts": "BF-IVR/VOICE editorial context; public project refs",
+        "gap": "Кейсы (Внуково и др.) — только с разрешениями и проверенными доказательствами.",
+        "status": "fact_safe_individual"
+      },
+      {
+        "cluster": "Озвучка поздравления",
+        "intent": "commercial/price",
+        "example_queries": "озвучка поздравления цена; аудио поздравление на заказ; голосовое поздравление корпоративу",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-pozdravleniya-cena/",
+        "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+        "supporting_facts": "CF-AUDIOPLUS-ORDER, CF-AUDIOPLUS-EDIT",
+        "gap": "",
+        "status": "fact_safe"
+      },
+      {
+        "cluster": "Озвучка для соцсетей (Reels/Shorts)",
+        "intent": "commercial/price",
+        "example_queries": "озвучка reels цена; озвучка для тиктока; голос для shorts; диктор для соцсетей",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-dlya-socsetey-cena/",
+        "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+        "supporting_facts": "CF-AUDIOPLUS-ORDER/PACKS",
+        "gap": "",
+        "status": "fact_safe"
+      },
+      {
+        "cluster": "Минута озвучки (unit-вопрос)",
+        "intent": "commercial/price",
+        "example_queries": "сколько стоит минута озвучки; цена минуты дикторской записи",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/skolko-stoit-minuta-ozvuchki/",
+        "target_main_url": "https://www.audio-reclama.ru/audioplus/",
+        "supporting_facts": "CF-AUDIOPLUS-ORDER",
+        "gap": "Честная переформулировка единицы: задачи, не минуты.",
+        "status": "fact_safe"
+      },
+      {
+        "cluster": "Обучающие курсы / e-learning",
+        "intent": "commercial",
+        "example_queries": "озвучка обучающего курса цена; озвучка онлайн курса; диктор для видеоуроков",
+        "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ozvuchka-obuchayushchego-kursa-cena/",
+        "target_main_url": "https://www.audio-reclama.ru",
+        "supporting_facts": "editorial context",
+        "gap": "Вилки цен по объёму — только с подтверждением.",
+        "status": "fact_safe_individual"
+      },
+      {
+        "cluster": "Audio+ изменения, права и категория video voice-over",
+        "intent": "commercial/product-boundary",
+        "example_queries": "правка аудио плюс; можно ли изменить заказ Audio+; Audio+ видео озвучка; кому доступен Audio+; права на аудио Audio+",
+        "target_geo_url": "https://audioreclamarru.github.io/sonic-infrastructure-report/geo/knowledge/semantic-ontology/",
+        "target_main_url": "https://audio.plus/offer.html",
+        "supporting_facts": "CF-AUDIOPLUS-OFFER-2026-11-25; CF-AUDIOPLUS-PACKS",
+        "gap": "UI-опция изменений и категория video voice-over не согласованы с наблюдаемой офертой; не обещать изменение/перезапись или video scope без актуальной проверки.",
+        "status": "hold_source_conflict"
+      }
+    ]
   }
 }

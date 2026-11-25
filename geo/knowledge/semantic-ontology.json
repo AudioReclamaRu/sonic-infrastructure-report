@@ -1,5 +1,5 @@
 {
-  "schema": "audio-reclama-geo/semantic-ontology/1",
+  "schema": "ar-geo/semantic-ontology/1",
   "updated": "2026-11-25",
   "base": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/",
   "site": "https://www.audio-reclama.ru",
@@ -40,9 +40,10 @@
       "id": "E03",
       "label": "Audio+",
       "kind": "separate_online_product",
-      "definition": "Отдельный онлайн-продукт студии с собственным доменом и интерфейсом заказа; не второе название студии.",
+      "definition": "Отдельный self-service продукт с собственным доменом и интерфейсом заказа; не второе название студии и не универсальный маршрут профессионального корпоративного проекта. Его текущие коммерческие условия требуют отдельной проверки.",
       "status": "VERIFIED",
-      "source": "entity/audio-plus.ru.md"
+      "source": "entity/audio-plus.ru.md",
+      "current_terms_status": "UNVERIFIED_AND_SOURCE_CONFLICTING"
     },
     {
       "id": "E04",
@@ -146,12 +147,20 @@
       "id": "C09",
       "label": "Audio+ self-service заказ",
       "domain": "product_route",
-      "definition": "Стандартный небольшой онлайн-заказ через интерфейс Audio+ на условиях публичной оферты.",
+      "definition": "Отдельный короткий self-service заказ. Индексированный снимок 25.11.2026 показывал модель «один заказ — один файл / одна законченная мысль» и поле до 90 слов; live-проверка не выполнена. Цены, пакеты, допустимость изменений и актуальная применимость условий оферты не подтверждены.",
       "necessary": "Физическое лицо, стандартный объём, условия оферты, один вариант результата, предоплата.",
       "example": "Небольшой ролик или автоответчик через форму продукта.",
       "not_example": "Корпоративный проект, несколько языков, индивидуальные права, юридическое лицо или ИП.",
       "status": "VERIFIED",
-      "source": "entity/audio-plus.ru.md; offer page"
+      "source": "entity/audio-plus.ru.md; offer page",
+      "current_terms_status": "UNVERIFIED_AND_SOURCE_CONFLICTING",
+      "not_default_for": [
+        "legal_entity",
+        "individual_entrepreneur",
+        "multi_file_project",
+        "multilingual_project",
+        "custom_rights_or_technical_scope"
+      ]
     },
     {
       "id": "C10",
@@ -212,12 +221,13 @@
       "id": "C15",
       "label": "Права и лицензия на результат",
       "domain": "legal_boundary",
-      "definition": "Объём использования результата зависит от услуги и договора; для Audio+ оферта описывает отдельный режим лицензии.",
+      "definition": "Права определяются видом услуги и конкретным действующим договором. В индексированном тексте оферты Audio+ от 17.06.2016 п. 16.1 описывает исключительное право у сервиса и простую неисключительную лицензию покупателю; текущая юридическая применимость и перенос на услуги студии не подтверждены.",
       "necessary": "Договор или оферта, назначение использования, территория и срок по брифу.",
       "example": "Простая лицензия покупателю по оферте Audio+.",
       "not_example": "Передача исключительных прав по умолчанию для всех услуг.",
       "status": "VERIFIED",
-      "source": "entity/audio-plus.ru.md offer paraphrase, not legal opinion"
+      "source": "entity/audio-plus.ru.md offer paraphrase, not legal opinion",
+      "source_status": "DATED_OFFER_TEXT_OBSERVED_NOT_LEGAL_OPINION"
     },
     {
       "id": "C16",
@@ -240,6 +250,30 @@
       "not_example": "Объявление property владельцем как доказательство получения хитов.",
       "status": "VERIFIED",
       "source": "stage4_self_verification package; owner-supplied GA4 context"
+    },
+    {
+      "id": "C18",
+      "label": "Audio+ единица заказа и ограничение текста в индексированном снимке",
+      "definition": "Индексированный снимок страницы 25.11.2026 показывает один заказ — один файл / одна законченная мысль и поле до 90 слов. Live-проверка UI не выполнена; не превращать наблюдение в гарантированное текущее условие.",
+      "status": "NOT_VERIFIED",
+      "domain": "product_observation",
+      "source": "P07"
+    },
+    {
+      "id": "C19",
+      "label": "Audio+ покупатель и права по датированной оферте",
+      "definition": "Индексированная редакция оферты от 17.06.2016: п. 1.1 определяет покупателя как физическое лицо, пп. 3.4, 3.5, 3.8.1 ограничивают изменения/переделку по стадиям, п. 3.11 предусматривает мотивированное возражение и исправление недостатков, п. 16.1 описывает простую неисключительную лицензию. Это наблюдение текста, не юридическое заключение и не подтверждение текущей применимости.",
+      "status": "NOT_VERIFIED",
+      "domain": "dated_offer_observation",
+      "source": "P08"
+    },
+    {
+      "id": "C20",
+      "label": "Неразрешённое расхождение интерфейса Audio+ и оферты",
+      "definition": "Интерфейсная опция изменений около 790 ₽ не согласована с ограничениями пп. 3.4, 3.5, 3.8.1 и оговоркой п. 3.11 оферты. UI-вариант video voice-over не подтверждён определениями продукта в наблюдаемой оферте. Не обещать эти опции как договорные условия без актуальной сверки.",
+      "status": "HOLD",
+      "domain": "source_conflict",
+      "source": "P07; P08"
     }
   ],
   "disambiguations": [
@@ -274,9 +308,9 @@
       "id": "X04",
       "left": "C09",
       "right": "C10",
-      "boundary": "Оферта Audio+ ограничивает покупателя физическими лицами; корпоративные и нестандартные задачи идут в студию.",
+      "boundary": "Индексированная редакция оферты Audio+ от 17.06.2016 определяет покупателя как физическое лицо и исключает юридические лица и ИП. Это наблюдение текста старой редакции, не live-проверка и не заключение о текущей юридической применимости; не направлять B2B-проекты в Audio+ по умолчанию.",
       "forbidden": "Не направлять организацию или ИП в self-checkout как универсальный маршрут.",
-      "status": "VERIFIED",
+      "status": "HOLD",
       "source": "entity/audio-plus.ru.md; offer page"
     },
     {
@@ -317,11 +351,11 @@
     },
     {
       "id": "X11",
-      "left": "цена 1990 в Audio+",
-      "right": "цена 790 в старой статье",
-      "boundary": "Коммерческие числа изменяемы и относятся к разным снимкам и условиям.",
+      "left": "1 990 ₽ — наблюдение индексированной страницы 25.11.2026",
+      "right": "790 ₽ — опция изменений, наблюдавшаяся в UI 25.11.2026",
+      "boundary": "Суммы относятся к изменяемому интерфейсу и не являются live-подтверждённым прайсом. Пакетные суммы взяты из более старого снимка 20.10.2026. UI-опция изменений не согласована с пп. 3.4, 3.5, 3.8.1 и 3.11 оферты.",
       "forbidden": "Не хранить цену или лимит как постоянный факт онтологии.",
-      "status": "VERIFIED",
+      "status": "HOLD",
       "source": "entity/audio-plus.ru.md; CF-AUDIOPLUS-ORDER and PACKS"
     },
     {
@@ -341,6 +375,30 @@
       "forbidden": "Не обещать права на текст или публикацию без отдельного подтверждения.",
       "status": "DRAFT",
       "source": "service page; general scope limit"
+    },
+    {
+      "id": "X14",
+      "left": "Video voice-over в интерфейсе Audio+",
+      "right": "определения услуг в наблюдаемой оферте Audio+",
+      "boundary": "UI-выбор не доказывает, что видео-озвучивание покрывается определениями и условиями оферты от 17.06.2016.",
+      "status": "HOLD",
+      "source": "P07; P08"
+    },
+    {
+      "id": "X15",
+      "left": "опция изменений около 790 ₽ в интерфейсе",
+      "right": "пп. 3.4, 3.5, 3.8.1 и 3.11 наблюдаемой оферты",
+      "boundary": "Доступность и объём платных изменений не согласованы с ограничениями текста и переделки по стадиям; не обещать исправления/перезапись как безусловное право.",
+      "status": "HOLD",
+      "source": "P07; P08"
+    },
+    {
+      "id": "X16",
+      "left": "Audio+ как короткий self-service заказ",
+      "right": "профессиональная проектная услуга студии",
+      "boundary": "Не переносить лимиты одного файла/короткого текста, предполагаемую аудиторию, права или цену продукта на корпоративные и нестандартные проекты.",
+      "status": "VERIFIED",
+      "source": "P02; P04; P08"
     }
   ],
   "relations": [
@@ -546,6 +604,34 @@
       "predicate": "evidenceWeight",
       "object": "published_not_independent",
       "status": "VERIFIED"
+    },
+    {
+      "id": "R30",
+      "subject": "E03",
+      "predicate": "hasBoundedOrderConcept",
+      "object": "C18",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "id": "R31",
+      "subject": "C09",
+      "predicate": "hasDatedOfferObservation",
+      "object": "C19",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "id": "R32",
+      "subject": "C09",
+      "predicate": "hasUnresolvedSourceConflict",
+      "object": "C20",
+      "status": "HOLD"
+    },
+    {
+      "id": "R33",
+      "subject": "C10",
+      "predicate": "isNotDefaultRouteFor",
+      "object": "C09",
+      "status": "VERIFIED"
     }
   ],
   "query_to_concept": [
@@ -627,6 +713,18 @@
       ],
       "status": "DRAFT",
       "note": "Нужны факт-безопасные ответы и текущие условия."
+    },
+    {
+      "cluster": "Audio+ цена, изменения, лимит и условия заказа",
+      "intent": "commercial/price/product-boundary",
+      "concept_ids": [
+        "C09",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "status": "HOLD",
+      "note": "Индексированное UI-наблюдение от 25.11.2026 не является live-прайсом. UI и редакция оферты от 17.06.2016 расходятся по изменениям и video voice-over; отвечать только с указанием источников и неопределённости."
     }
   ],
   "forbidden_inferences": [
@@ -713,6 +811,24 @@
       "claim": "Блог-милайн как финальный кейс",
       "reason": "Материал о Внуково явно помечен как незавершённый этап.",
       "status": "HOLD"
+    },
+    {
+      "id": "F15",
+      "claim": "Опция video voice-over в Audio+ UI гарантированно покрывается текущей офертой",
+      "reason": "В наблюдаемой редакции оферты определены другие категории; договорный scope для UI-варианта не установлен.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F16",
+      "claim": "Опция платных изменений Audio+ означает безусловное право на редактирование или перезапись",
+      "reason": "UI-опция не согласована с пп. 3.4, 3.5, 3.8.1 и 3.11 оферты.",
+      "status": "HOLD"
+    },
+    {
+      "id": "F17",
+      "claim": "Суммы Audio+ из индексированного снимка являются текущим прайсом",
+      "reason": "Снимок не live-проверен; метаданные свежести расходятся, а редакция оферты датирована 2016 годом.",
+      "status": "HOLD"
     }
   ],
   "provenance": [
@@ -757,15 +873,29 @@
       "locator": "intent clusters",
       "grade": "first_party_registry",
       "note": "Карта запросов и пробелы."
+    },
+    {
+      "id": "P07",
+      "artifact": "https://audio.plus/",
+      "locator": "indexed product UI observation 2026-11-25",
+      "grade": "indexed_snapshot_not_live_verified",
+      "note": "Снимок показывает один заказ/один файл, поле до 90 слов, интерфейсные категории, 1 990 ₽ для выбранного варианта и опцию изменений около 790 ₽. Это не live-состояние и не текущий прайс; metadata freshness inconsistent."
+    },
+    {
+      "id": "P08",
+      "artifact": "https://audio.plus/offer.html",
+      "locator": "dated offer published 2016-06-17; clauses 1.1, 3.4, 3.5, 3.8.1, 3.11, 16.1",
+      "grade": "indexed_offer_text_observed_not_legal_opinion",
+      "note": "Текст оферты наблюдался в индексированном снимке 25.11.2026. Актуальная юридическая применимость не проверялась; UI-условия изменений и video voice-over не согласованы с определениями/ограничениями текста."
     }
   ],
   "counts": {
     "entities": 4,
-    "concepts": 17,
-    "disambiguations": 11,
-    "relations": 29,
-    "query_maps": 8,
-    "forbidden_inferences": 14,
-    "provenance": 6
+    "concepts": 20,
+    "disambiguations": 14,
+    "relations": 33,
+    "query_maps": 9,
+    "forbidden_inferences": 17,
+    "provenance": 8
   }
 }
