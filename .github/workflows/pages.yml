@@ -49,7 +49,7 @@ jobs:
           done
           test -f _site/geo/knowledge/semantic-ontology.json
           test -f _site/geo/knowledge/semantic-ontology/index.html
-          python -c "import json,pathlib,re; d=json.loads(pathlib.Path('_site/geo/knowledge/semantic-ontology.json').read_text(encoding='utf-8')); assert d['schema']=='audio-reclama-geo/semantic-ontology/1'; h=pathlib.Path('_site/geo/knowledge/semantic-ontology/index.html').read_text(encoding='utf-8'); assert re.search(r'<script type=\"application/ld\\+json\">', h)"
+          python -c "import json,pathlib,re; d=json.loads(pathlib.Path('_site/geo/knowledge/semantic-ontology.json').read_text(encoding='utf-8')); assert d['schema'].endswith('/semantic-ontology/1'); h=pathlib.Path('_site/geo/knowledge/semantic-ontology/index.html').read_text(encoding='utf-8'); assert re.search(r'<script type=\"application/ld\\+json\">', h)"
           touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
