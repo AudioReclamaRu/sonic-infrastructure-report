@@ -15,8 +15,8 @@ class GeoAudioPlusSanitizerTests(unittest.TestCase):
         self.assertGreater(changes, 0)
         self.assertNotIn("1990 ₽", result)
         self.assertNotIn("790 ₽", result)
-        self.assertIn("индексированный снимок 25.11.2026", result)
-        self.assertIn("не live-проверена", result)
+        self.assertIn("снимка 25.11.2026", result)
+        self.assertIn("live-проверка не выполнена", result)
         self.assertIn("audio-plus-source-status", result)
         self.assertEqual(inspect_html(result), [])
 
