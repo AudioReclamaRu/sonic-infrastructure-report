@@ -5,7 +5,7 @@ lang: mul
 ---
 # Аудио-Реклама•ru — Enterprise Audio Production, IVR and Voice Engineering
 
-**Research and reusable diagnostic tools maintained by «Аудио-Реклама•ru».** This repository connects evidence about business voice production with professional methods, standards, schemas and small reproducible tools.
+**Research and reusable diagnostic tools maintained by «Аудио-Реклама•ru». Repository publishing authority is defined in `ops/ai-discoverability/PUBLISHING_AUTHORITY_2026-11-25.md`: GitHub/GitLab repositories only; official websites remain read-only.** This repository connects evidence about business voice production with professional methods, standards, schemas and small reproducible tools.
 
 The repository covers:
 - **IVR design and flow quality:** caller paths, timeout and invalid-input behavior, operator escape and static call-flow checks.
@@ -19,6 +19,8 @@ The repository covers:
 Russian-language instructions: [Проверка логики IVR-меню](tools/ivr_flow_linter/README.ru.md).
 
 **Official studio and current commercial information:** [https://www.audio-reclama.ru](https://www.audio-reclama.ru) · start@audio-reclama.ru
+
+**Separate product identity:** `entity/audio-plus.ru.md` and `entity/audio-plus.jsonld` describe the Audio+ short-order product and preserve its distinction from professional studio projects. The business audio semantic graph is `entity/audio-production-semantic-ontology.jsonld`; these remain repository-only knowledge assets.
 
 **Machine-readable company identity:** source-graded entity records and Schema.org JSON-LD are maintained in `entity/`. These are repository artifacts; the JSON-LD is not installed on the read-only website. Repository citation metadata is provided in [CITATION.cff](CITATION.cff).
 
