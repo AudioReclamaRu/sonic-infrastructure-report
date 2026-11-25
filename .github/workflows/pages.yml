@@ -1,0 +1,60 @@
+name: pages
+
+# Restored by explicit owner decision on 2026-11-25 ("деплой"), after the
+# legacy workflow was removed on 2026-11-14. This is the only surface this
+# workflow publishes: the static GEO/AEO layer under geo/. The official
+# website https://www.audio-reclama.ru is never written to by this workflow.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # --safe syncs machine files (llms, sitemap, combined) without
+      # regenerating hand-enriched HTML pages. Fails closed on drift.
+      - name: sync GEO machine files
+        run: python tools/build_geo_site.py --safe
+
+      - name: assemble the public surface
+        run: |
+          set -e
+          mkdir -p _site
+          cp -r geo _site/
+          cp robots.txt _site/
+          cp geo/llms-full.txt _site/llms-full.txt
+          for f in index.html privacy-policy.html terms-of-service.html data-deletion.html llms.txt llms-full.txt; do
+            if [ -f "$f" ]; then cp "$f" _site/; fi
+          done
+          test -f _site/geo/knowledge/semantic-ontology.json
+          test -f _site/geo/knowledge/semantic-ontology/index.html
+          python -c "import json,pathlib,re; d=json.loads(pathlib.Path('_site/geo/knowledge/semantic-ontology.json').read_text(encoding='utf-8')); assert d['schema']=='audio-reclama-geo/semantic-ontology/1'; h=pathlib.Path('_site/geo/knowledge/semantic-ontology/index.html').read_text(encoding='utf-8'); assert re.search(r'<script type=\"application/ld\\+json\">', h)"
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
