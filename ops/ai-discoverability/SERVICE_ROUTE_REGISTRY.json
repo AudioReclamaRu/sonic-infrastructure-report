@@ -1,13 +1,22 @@
 {
   "schema": "studio/service-route-registry/1",
-  "updated": "2026-11-21",
+  "updated": "2026-11-25",
   "status": "repository_only_source_guide_link_inventory",
   "policy": {
     "official_site_is_read_only": true,
     "external_publication_authorized": false,
     "github_pages_deployment_authorized": false,
     "route_links_are_live_checked": false,
-    "purpose": "Map existing buyer-guide intents to their documented official destinations and prevent professional project routes from defaulting to the separate short-order Audio+ product."
+    "purpose": "Map existing buyer-guide intents to their documented official destinations and prevent professional project routes from defaulting to the separate short-order Audio+ product.",
+    "repository_publication_authorized": true,
+    "authorized_repository_platforms": [
+      "GitHub",
+      "GitLab"
+    ],
+    "repository_merge_requires_all_required_checks": true,
+    "direct_website_publication_authorized": false,
+    "official_product_site_is_read_only": true,
+    "official_product_url": "https://audio.plus/"
   },
   "routes": [
     {
@@ -167,6 +176,18 @@
       ],
       "link_role": "supporting_case_not_checkout",
       "scope_note": "This is a case reference, not a dedicated airport-announcement order form or proof of current scope beyond the linked public example."
+    },
+    {
+      "id": "audio_plus_short_order",
+      "task": "Place a standard individual short audio order when the current offer and product interface are suitable",
+      "route_kind": "separate_self_service_product",
+      "audience_class": "individual_consumer_b2c_only_as_stated_in_observed_offer_snapshot",
+      "destination_url": "https://audio.plus/",
+      "source_guides": [
+        "entity/audio-plus.ru.md"
+      ],
+      "link_role": "separate_product_not_professional_project_default",
+      "scope_note": "Use only for a suitable standard individual order. The offer/interface source conflicts on video-voiceover and revisions; current prices and rights are not reverified. Do not use as a default corporate or individual-entrepreneur route."
     }
   ],
   "product_boundaries": [
@@ -174,11 +195,29 @@
       "id": "audio_plus_short_order",
       "product": "Audio+",
       "classification": "separate_short_order_product",
-      "destination_url": null,
+      "destination_url": "https://audio.plus/",
       "professional_route_default": false,
       "current_offer_recheck_required": true,
-      "evidence_status": "saved_2026-11-20_offer_review_only_not_freshly_reverified",
-      "scope_note": "Do not use the short-order product as the default destination or price basis for professional project routes. Confirm the current primary offer and audience before changing any commercial wording."
+      "evidence_status": "indexed_snapshot_observed_2026-11-25_not_live_verified",
+      "scope_note": "Separate individual short-order product. The observed offer excludes legal entities and individual entrepreneurs; the UI shows one order/one file, a 90-word field, a video-voiceover choice and an edit option, while the dated offer has narrower category and revision wording. Do not route B2B work here. Do not present indexed price or edit-option values as live terms.",
+      "offer_url": "https://audio.plus/offer.html",
+      "audience_class": "individual_consumer_b2c_only_as_stated_in_observed_offer_clause_1_1",
+      "scope_observations": {
+        "one_order_one_file": true,
+        "one_finished_thought": true,
+        "ui_text_limit_words": 90,
+        "ui_video_voiceover_option_observed": true,
+        "ui_edit_option_observed": true,
+        "offer_defines_video_voiceover": false
+      },
+      "current_price_confirmed": false,
+      "current_offer_terms_confirmed": false,
+      "revision_scope_status": "unresolved_interface_offer_conflict",
+      "rights_scope_status": "observed_non_exclusive_customer_license_under_offer_clause_16_1_current_terms_not_reverified",
+      "evidence_sources": [
+        "https://audio.plus/",
+        "https://audio.plus/offer.html"
+      ]
     }
   ]
 }
