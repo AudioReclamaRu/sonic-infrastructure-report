@@ -98,3 +98,7 @@ Footer
 Аудио-Реклама•ru
 https://www.audio-reclama.ru
 start@audio-reclama.ru
+
+## Semantic ontology
+
+`entity/audio-production-semantic-ontology.jsonld` is the machine-readable, provenance-aware graph for the studio, project services, Audio+ product, buyer tasks, production activities, candidate deliverables, routes, case references and responsibility boundaries. Its human-readable specification is `entity/AUDIO_PRODUCTION_SEMANTIC_ONTOLOGY_2026-11-25.md`. Both are repository drafts; neither is evidence of deployment on the official website or AI-system ingestion.
