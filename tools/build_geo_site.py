@@ -803,7 +803,7 @@ def _sync_machine():
                     existing = json.loads(comb_path.read_text(encoding="utf-8"))
                 except Exception:
                     existing = {}
-            comb = {"schema":"audio-reclama-geo/combined/1","updated":UPDATED,"base":BASE,"site":SITE,"prices":pr,"faq":fq}
+            comb = {"schema":"ar-geo/combined/1","updated":UPDATED,"base":BASE,"site":SITE,"prices":pr,"faq":fq}
             # preserve enriched, non-generated blocks (provenance/knowledge layers)
             for k in ("blog_facts", "evidence_ledger", "case_studies", "query_matrix", "semantic_ontology"):
                 if k in existing and k not in comb:
