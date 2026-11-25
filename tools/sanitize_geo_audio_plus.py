@@ -20,7 +20,7 @@ JSON_LD_RE = re.compile(
     r'(<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>)(.*?)(</script>)',
     re.IGNORECASE | re.DOTALL,
 )
-AUDIO_PLUS_MARKER_RE = re.compile(r"audio\s*\+|аудио\s*\+", re.IGNORECASE)
+AUDIO_PLUS_MARKER_RE = re.compile(r"audio\s*\+|аудио\s*\+|audioplus|аудиоплюс|audio\.plus|/audioplus", re.IGNORECASE)
 PRICE_RE = re.compile(
     r"(?<!\d)(?:49\s?990|35\s?990|18\s?990|1\s?990|1990|790)\s*(?:₽|RUB)",
     re.IGNORECASE,
