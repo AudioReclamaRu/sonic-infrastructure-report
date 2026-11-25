@@ -165,6 +165,52 @@
         "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701960107 — repo-integrity SUCCESS on merged main commit 58c3eb4a907e985e7b86d07431ce2c339811aff9",
         "Ontology JSON-LD internal graph check: 121 nodes and 0 unresolved object references."
       ]
+    },
+    {
+      "id": "AI-DISC-2026-005",
+      "title": "Prevent unverified Audio+ commercial terms from entering GEO/AEO answers and structured data",
+      "work_type": "source_conflict_and_public_answer_safeguard",
+      "priority": "P0",
+      "status": "in_progress",
+      "market": "RU and Global",
+      "language": "ru",
+      "service": "audio_plus_short_order",
+      "target_surface": "authorized_existing_github_pages_geo_aeo_layer",
+      "obstacle": "The GEO repository carried old Audio+ package values as partially verified, and the existing builder could publish prices into answer pages and Schema.org Offer even when source freshness and offer/UI scope conflicted.",
+      "evidence_refs": [
+        "knowledge/pricing/prices.json",
+        "knowledge/faq/faq.json",
+        "geo/knowledge/evidence-ledger.csv",
+        "geo/knowledge/evidence-ledger.json",
+        "geo/knowledge/query-matrix.csv",
+        "geo/knowledge/query-matrix.json",
+        "geo/knowledge/semantic-ontology.json",
+        "geo/knowledge/semantic-ontology/index.html",
+        "tools/build_geo_site.py",
+        "tools/sanitize_geo_audio_plus.py",
+        ".github/workflows/pages.yml",
+        "https://audio.plus/",
+        "https://audio.plus/offer.html"
+      ],
+      "decision_to_unlock": "Ensure AI-crawlable GEO/AEO answers distinguish live-confirmed prices from historical/indexed observations and do not promise disputed revisions, video voice-over coverage, eligibility or rights.",
+      "hypothesis": "A source-dated ontology, evidence registry, query map, schema-offer suppression and repeatable page sanitizer will reduce hallucinated commercial terms and incorrect routing without making unsupported claims.",
+      "success_criteria": [
+        "Reclassify Audio+ order and package amounts as dated observations, not current prices.",
+        "Preserve the dated public offer clauses and unresolved UI/offer differences in provenance records.",
+        "Keep Audio+ separate from professional project service routes.",
+        "Do not emit Schema.org Offer for entries whose price is not live-verified.",
+        "Sanitize all static GEO HTML containing Audio+ references before Pages upload; remove unverified amounts from current-price claims and suppress Audio+ Offers in JSON-LD.",
+        "Run syntax and regression tests for the GEO builder and sanitizer in repository CI.",
+        "The existing authorized GEO/AEO Pages workflow must complete a successful deploy after merge."
+      ],
+      "autonomy_class": "repository_and_existing_pages_workflow_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": []
     }
   ]
 }
