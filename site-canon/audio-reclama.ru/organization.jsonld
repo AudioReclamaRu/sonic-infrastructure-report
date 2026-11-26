@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.audio-reclama.ru/#organization",
+  "name": "Аудио-Реклама•ru",
+  "url": "https://www.audio-reclama.ru",
+  "description": "Студия деловой звукозаписи и аудиопроизводства. Профессиональные аудиопроекты для бизнеса: рекламные аудиоролики, телефонные приветствия и IVR, озвучивание видео и презентаций, аудиокниги, джинглы, корпоративные песни, сценарии, дикторские голоса, перевод и локализация, а также видеопродакшн.",
+  "email": "start@audio-reclama.ru",
+  "telephone": "+78007004652",
+  "sameAs": [
+    "https://www.facebook.com/audioReclamaru",
+    "https://vk.com/top1reklama",
+    "https://www.instagram.com/audio.reclama.ru/",
+    "https://www.youtube.com/channel/UCxTNs2bLhmUNsx2rz_txNBw",
+    "https://www.youtube.com/channel/UCWrrqfL2BnOe4Mc_gCY3KSw"
+  ]
+}
