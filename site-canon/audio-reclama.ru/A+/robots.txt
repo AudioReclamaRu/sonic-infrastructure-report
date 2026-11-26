@@ -1,66 +1,66 @@
 # audio.plus — AI-search allowed; model-training access to demo media withheld pending written rights clearance.
 # Public demo files remain accessible to visitors and allow-listed search / user-requested retrieval agents.
-# NDA client files are excluded for every group below. robots.txt is a crawl/use preference, NOT access control.
+# Owner confirms NDA/private objects are independently blocked by server/storage ACL. Search crawlers may request the client-media path; only server-authorized public objects should return media. robots.txt is not access control.
 
-# Search and user-requested retrieval: demo path allowed; NDA client path remains disallowed.
+# Search/retrieval agents: public demo and approved public client media may be crawled. NDA files remain protected by server/storage ACL.
 User-agent: OAI-SearchBot
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: ChatGPT-User
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Claude-SearchBot
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Claude-User
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: PerplexityBot
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Perplexity-User
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: MistralAI-Index
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: MistralAI-User
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Googlebot
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Applebot
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Bingbot
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Yandex
 Allow: /tools/media/demo/
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 # Training/data-collection agents: demo and NDA client media are disallowed.
@@ -108,3 +108,4 @@ Disallow: /login
 Clean-param: utm_source&utm_keyword&utm_campaign&utm_medium&utm_term&utm_content
 
 Sitemap: https://audio.plus/sitemap.xml
+Sitemap: https://audio.plus/audio-samples.xml
