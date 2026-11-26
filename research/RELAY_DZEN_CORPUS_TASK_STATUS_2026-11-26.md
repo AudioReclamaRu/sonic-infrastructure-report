@@ -81,3 +81,20 @@ Interpretation: a local Agent Mesh message and a coordinator-owned task record *
 4. Make the result readable here through GitHub; then verify completeness, duplicates, provenance and checksums before reading articles or building the editorial map.
 
 No second task, queue, bypass route or manual relay is to be created. If the existing route did not process the message, that route is corrected first. If no exact-zero free executor exists, the state is `BLOCKED` with no paid fallback. The assistant still does not copy Dzen materials.
+
+## Continuation read-only receipt (2026-11-26, second check)
+
+Owner-supplied: a continuation of the **same** task was published in `opencode-bridge-control` issue `#504` as comment `7192563995`. It requires only read-only reconciliation of Agent Mesh import, Relay cursor, existing task and free-OpenCode admission; no new task ID and no new attempt were created. The owner's later check reports **598 comments**, no executor response after the continuation, and no export branch or corpus. Dzen texts were neither copied nor analysed by the owner in this step. These statements are `OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT`.
+
+Assistant-verified through `prime-lad-mesh` MCP read tools (`mesh_board`, `mesh_context_search`) at board `updated_at` `2026-11-26T12:57:10+00:00`:
+
+| Check | Result |
+|---|---|
+| Continuation import | `mesh_context_search("7192563995")` returned **no rows**; no message containing that comment ID was visible in canonical history at retrieval |
+| Latest visible messages | `13156`—`13161` are coordinator retry-window messages for unrelated task IDs; no new Dzen directive or OpenCode result message appeared |
+| Coordinator intake | `cursor=13161`, `processed=0`, `created=0`, `continuations=0`, `reused=[]` |
+| Existing task records | `PL-C650D4EE41`: `completed`, coordination-only result; `PL-D9805126FE`: `blocked`, `WAITING_RESOURCE:reviewer — no_eligible_worker` |
+| Free-OpenCode admission | Dispatcher state `waiting_for_verified_free_model`; no task claimed and no model request sent |
+| Assistant side effects | None: no task, attempt, message, claim or export was created; no Dzen material was read or copied |
+
+Interpretation: import of comment `7192563995` is **`NOT_VERIFIED_AT_RETRIEVAL`**, not proven absent and not proven failed. The Mesh read tools expose a message cursor but **not the Relay GitHub comment cursor**, so the Relay cursor itself cannot be confirmed from this evidence. Absence of a new message at one retrieval time is not proof that the route permanently failed; the existing-route correction remains the owner's decision. State stays `BLOCKED` for export while no exact-zero eligible executor and no accepted result exist. No paid fallback was used.
