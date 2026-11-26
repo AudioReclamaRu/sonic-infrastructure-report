@@ -199,6 +199,50 @@
       "blocker": "No owner authorization for the Alice skill catalog, Yandex Dialogs or IndexNow external surface; no confirmed brand rights; no authorized access to the order backend.",
       "unblock_condition": "The owner issues a specific written authorization naming the external surface, brand-rights basis and execution path, and supplies an authorized adapter or backend contact; PUBLISHING_AUTHORITY and AGENT_CONTRACT are updated accordingly.",
       "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-006",
+      "title": "Connect PR-CY MCP as a permanent read-only analytics source",
+      "work_type": "measurement_integration",
+      "priority": "P2",
+      "status": "done",
+      "market": "RU",
+      "language": "ru",
+      "service": "cross_service_discovery",
+      "target_surface": "analytics_connector",
+      "obstacle": "PR-CY was available as a tariffed external analytics account but was not a persistent read-only MCP source in the active OpenCode configuration, so its project metadata and report views could not be used with a fixed provenance record.",
+      "evidence_refs": [
+        "research/PR_CY_MCP_READONLY_CONNECTION_2026-11-26.md",
+        "ops/ai-discoverability/AGENT_CONTRACT.json",
+        "ops/ai-discoverability/PUBLISHING_AUTHORITY_2026-11-25.md"
+      ],
+      "decision_to_unlock": "Whether existing PR-CY project metadata and connected GSC/Metrica report views add a usable read-only signal without writes, paid checks or new AI requests.",
+      "hypothesis": "A persistent read-only MCP connection can add dated secondary analytics evidence, but empty views and traffic sessions must not be interpreted as AI visibility, leads or zero demand.",
+      "success_criteria": [
+        "Keep the remote MCP server in user-scope config with env-based authorization and no literal key.",
+        "Verify the server remains connected after a background-service restart.",
+        "Call only read tools; do not run position/prompt checks, mutations, exports or paid reports.",
+        "Record retrieval date, reporting period, source, engine, region and device for every dataset.",
+        "Record project, limits, keyword state, GSC views and Metrica views with explicit empty/not-verified states.",
+        "Keep AI/lead effects unknown and official-site state unchanged."
+      ],
+      "autonomy_class": "authorized_external_read_only",
+      "requires_new_measurement": true,
+      "measurement_guard": {
+        "decision_to_unlock": "Prioritize follow-up repository or owner-ready tasks from dated search and session evidence without conflating it with AI answer share.",
+        "minimum_sufficient_sample": "One initial snapshot of limits, project metadata, keyword state, connected GSC views and default Metrica report views.",
+        "stop_rule": "Stop before any paid, mutating or external-publication operation; record tariff or permission blockers instead of guessing.",
+        "cost_or_access_class": "free_existing_read_only_account_access_only"
+      },
+      "expected_effort": "medium",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": [
+        "research/PR_CY_MCP_READONLY_CONNECTION_2026-11-26.md",
+        "opencode mcp list after restart: pr-cy connected",
+        "PR-CY MCP read tools only; checks.used_amount=0 at retrieval"
+      ]
     }
   ]
 }
