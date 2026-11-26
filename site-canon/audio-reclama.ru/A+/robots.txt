@@ -1,126 +1,66 @@
 # audio.plus — AI-search allowed; model-training access to demo media withheld pending written rights clearance.
 # Public demo files remain accessible to visitors and allow-listed search / user-requested retrieval agents.
-# Public latest-order audio samples are allow-listed by exact URL only for search/retrieval agents; the rest of /tools/media/client/ remains disallowed. robots.txt is a crawl preference, NOT access control.
+# Owner confirms NDA/private objects are independently blocked by server/storage ACL. Search crawlers may request the client-media path; only server-authorized public objects should return media. robots.txt is not access control.
 
-# Search/retrieval: demo path and five currently public latest-order audio URLs allowed; all other client media remains disallowed.
+# Search/retrieval agents: public demo and approved public client media may be crawled. NDA files remain protected by server/storage ACL.
 User-agent: OAI-SearchBot
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: ChatGPT-User
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Claude-SearchBot
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Claude-User
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: PerplexityBot
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Perplexity-User
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: MistralAI-Index
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: MistralAI-User
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Googlebot
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Applebot
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Bingbot
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 User-agent: Yandex
 Allow: /tools/media/demo/
-Allow: /tools/media/client/audioplus_f108d51f9b.mp3
-Allow: /tools/media/client/audioplus_21148d7454.mp3
-Allow: /tools/media/client/audioplus_922b92dfc3.mp3
-Allow: /tools/media/client/audioplus_0f45a5bf59.mp3
-Allow: /tools/media/client/audioplus_96aeeb2883.mp3
-Disallow: /tools/media/client/
+Allow: /tools/media/client/
 Disallow: /login
 
 # Training/data-collection agents: demo and NDA client media are disallowed.
@@ -168,3 +108,4 @@ Disallow: /login
 Clean-param: utm_source&utm_keyword&utm_campaign&utm_medium&utm_term&utm_content
 
 Sitemap: https://audio.plus/sitemap.xml
+Sitemap: https://audio.plus/audio-samples.xml
