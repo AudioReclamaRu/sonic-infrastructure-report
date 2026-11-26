@@ -323,6 +323,45 @@
       "blocker": "No Relay import proof for comment 7191878601, no canonical task resolution (canonical_task=NONE), no eligible exact-zero OpenCode worker (dispatcher waiting_for_verified_free_model), no worker claim/execution, no commit SHA or completeness report; review lane blocked with no eligible reviewer.",
       "unblock_condition": "Existing Relay/Mesh receipt confirms import and canonical task binding; a live exact-zero OpenCode session with available quota continues the same task and reports a commit SHA plus completeness report. No paid fallback.",
       "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-009",
+      "title": "Record owner-checked informational demand to existing cartoon-voiceover service route",
+      "work_type": "add_knowledge_asset",
+      "priority": "P2",
+      "status": "done",
+      "market": "RU",
+      "language": "ru",
+      "service": "cross_service_discovery",
+      "target_surface": "official_website",
+      "obstacle": "An informational article about cartoon voiceover shows owner-reported Google demand, but without a documented routing check it could be misread as a reason to create a duplicate landing page or another link, even though the existing service page already covers animation.",
+      "evidence_refs": [
+        "research/GSC_CARTOON_VOICEOVER_SERVICE_ROUTE_2026-11-26.md",
+        "owner-supplied Google reporting snapshot for 2026-08-23—2026-11-23",
+        "ops/ai-discoverability/AGENT_CONTRACT.json"
+      ],
+      "decision_to_unlock": "Whether the measured informational demand is already routed to a relevant existing service page without a new landing page or extra link.",
+      "hypothesis": "An article with contextual link to the video voiceover service page, where the target page already names animation, does not need a duplicate landing page solely because the article has search demand.",
+      "success_criteria": [
+        "Record impressions, clicks, average position, period and engine exactly as owner-supplied.",
+        "Keep the metrics labelled OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT and do not mix periods, engines or devices.",
+        "Record the existing contextual link and the «Мультипликация» mention on the target page as owner-checked content.",
+        "Do not create a duplicate landing page or add another link on the basis of this snapshot.",
+        "Do not treat search clicks or average position as AI citations, leads, conversions or revenue.",
+        "Leave the official site UNCHANGED and AI/lead effects unknown."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "low",
+      "risk": "low",
+      "blocker": null,
+      "unblock_condition": null,
+      "validation_refs": [
+        "research/GSC_CARTOON_VOICEOVER_SERVICE_ROUTE_2026-11-26.md",
+        "owner-checked Google snapshot: 14398 impressions, 347 clicks, average position 8.2, 2026-08-23—2026-11-23",
+        "assistant verification of Google metrics and live page content: NOT_PERFORMED"
+      ]
     }
   ]
 }
