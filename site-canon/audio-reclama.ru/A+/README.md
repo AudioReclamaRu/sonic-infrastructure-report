@@ -14,7 +14,7 @@ site: https://audio.plus/
 
 | Файл | Содержание | Статус |
 |---|---|---|
-| [llms.txt](llms.txt) | Live-снимок 26.11.2026: продукт, ценовые контексты, пять публично связанных client-аудио и расхождение маршрута оферты | UPDATED 2026-11-26 — юридическая актуальность оферты и HEAD пяти MP3 не подтверждены |
+| [llms.txt](llms.txt) | Live-снимок 26.11.2026, навигация по Audio+ и условия обнаружения публичного архива | UPDATED 2026-11-26 — архивный `public=true` требует проверки из-за checkbox по умолчанию |
 | [robots.txt](robots.txt) | Search/retrieval agents allowed across client-media route; training agents and default crawlers remain denied | REVIEW-ONLY — owner confirms server/storage ACL independently blocks NDA files; robots is not ACL |
 | [sitemap.xml](sitemap.xml) | Две URL-записи: главная страница и публичная страница оферты | REVIEW-ONLY — две записи были отмечены как HTTP 200 в аудите 2026-11-22; свежий live GET не подтверждён |
 
@@ -31,7 +31,7 @@ site: https://audio.plus/
 - Все три исходных файла находятся в этом каталоге в GitHub по состоянию на 2026-11-26.
 - Этот индекс фиксирует наличие файлов и их назначение. Он не приписывает им неподтверждённое происхождение и не подтверждает, что они установлены на production-сайте.
 - Содержимое исходных файлов сохранено отдельно; эта правка обновляет только индекс README.
-- Live-проверка 26.11.2026: главная показывает 165 demo-ссылок и пять client MP3-ссылок; каталог demo/client при открытии корня отвечает 403. Главная рендерит максимум 10 последних заказов и не подгружает архив. Backend MR !18 добавляет динамический sitemap только для завершённых MP3 с public=true и hidden=false. Владелец подтвердил независимую server/storage ACL для NDA-файлов. Путь client-media разрешается search/retrieval агентам целиком, training/default группы остаются закрытыми. Live llms.txt, robots.txt и sitemap.xml пока отвечают 404; audio-samples.xml ещё не выпущен. Текущая цена, лимиты, правки и eligibility покупателей остаются NOT_VERIFIED до сверки интерфейса с действующей офертой.
+- Live-проверка 26.11.2026: главная показывает 165 demo-ссылок и пять client MP3-ссылок; каталог demo/client при открытии корня отвечает 403. Главная рендерит максимум 10 последних заказов и не подгружает архив. Backend MR !18 готовит динамический sitemap для завершённых MP3 с public=true и hidden=false; выпуск исторических записей заблокирован до проверки флага public, поскольку checkbox формы предварительно отмечен. Владелец подтвердил независимую server/storage ACL для NDA-файлов. Путь client-media разрешается search/retrieval агентам целиком, training/default группы остаются закрытыми. Live llms.txt, robots.txt и sitemap.xml пока отвечают 404; audio-samples.xml ещё не выпущен. Текущая цена, лимиты, правки и eligibility покупателей остаются NOT_VERIFIED до сверки интерфейса с действующей офертой.
 
 ## Граница публикации
 
