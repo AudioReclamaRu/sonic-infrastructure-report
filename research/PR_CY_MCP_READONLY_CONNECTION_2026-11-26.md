@@ -129,7 +129,7 @@ Report totals: `5974` visits, `5414` users, `33.66253766`% bounce, `1.54753934` 
 
 | Start URL | Users | Visits |
 |---|---:|---:|
-| `https://audio-reclama.ru/` | 701 | 739 |
+| canonical homepage (`https://www.audio-reclama.ru`; Metrica startURL was recorded without `www`) | 701 | 739 |
 | `/blog/audioreklama-v-internete-kak-ona-rabotaet.html` | 398 | 400 |
 | `/blog/top-8-studiy-ozvuchivaniya-filmov-i-serialov-18.html` | 302 | 311 |
 | `/diktoryi/muzhskie-diktor-golosa/russian-diktor-sergey-chonishvili.html` | 284 | 286 |
@@ -140,7 +140,7 @@ Report totals: `5974` visits, `5414` users, `33.66253766`% bounce, `1.54753934` 
 | `/blog/business-sound/teoriya-u-obraznogo-dvizheniya.html` | 126 | 126 |
 | `/diktoryi/filter/izvestnye-golosa.html` | 126 | 133 |
 
-Report totals: `5473` users, `6034` visits; `total_rows=403`, `sampled=false`, `data_lag=0`. URLs in the table after the home page are paths under `https://audio-reclama.ru`.
+Report totals: `5473` users, `6034` visits; `total_rows=403`, `sampled=false`, `data_lag=0`. URLs in the table after the home page are paths under the canonical site `https://www.audio-reclama.ru`.
 
 ## Boundaries and next checks
 
