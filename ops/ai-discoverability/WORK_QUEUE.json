@@ -243,6 +243,47 @@
         "opencode mcp list after restart: pr-cy connected",
         "PR-CY MCP read tools only; checks.used_amount=0 at retrieval"
       ]
+    },
+    {
+      "id": "AI-DISC-2026-007",
+      "title": "Track owner-reported source/CMS text fixes and production release gap",
+      "work_type": "add_knowledge_asset",
+      "priority": "P1",
+      "status": "waiting_for_public_update",
+      "market": "RU",
+      "language": "ru",
+      "service": "cross_service_discovery",
+      "target_surface": "official_website",
+      "obstacle": "Owner reports that eight orthographic fixes are merged in the GitLab site master, while production still serves older text; additional typos are likely CMS/database content, and production release awaits an agreed system-engineer window. The assistant has not verified the merge requests, work items, CMS state or live pages.",
+      "evidence_refs": [
+        "research/OFFICIAL_SITE_TEXT_FIX_STATUS_2026-11-26.md",
+        "owner-supplied GitLab site MR !47 and !48 references",
+        "owner-supplied GitLab site work item #8 and #9 references",
+        "ops/ai-discoverability/AGENT_CONTRACT.json"
+      ],
+      "decision_to_unlock": "Whether the owner-reported source fixes have actually reached production and whether CMS/database text still diverges after the planned release.",
+      "hypothesis": "Separating source-level fixes from CMS/published text prevents a false claim that the official site has been corrected; user-visible effects require a production release and live re-check.",
+      "success_criteria": [
+        "Keep all owner-reported facts labelled OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT until independently checked.",
+        "Do not perform or request unofficial CMS, DNS, CDN or WAF changes.",
+        "After the agreed release, re-check the exact corrected strings on live pages and record retrieval date, URLs and before/after status.",
+        "Investigate the audiobook source/production divergence without modifying production.",
+        "Verify name spellings against the biography source before changing the Chonishvili profile.",
+        "Keep CTA, GA4 and generative-AI permission issues open until separately closed."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": true,
+      "measurement_guard": {
+        "decision_to_unlock": "Confirm whether high-traffic pages still expose stale or incorrect text after the production release.",
+        "minimum_sufficient_sample": "The pages named in the owner report: TOP-8 studios, IVR, video voiceover, audiobooks and Sergey Chonishvili profile.",
+        "stop_rule": "Stop at read-only public checks; no CMS edit, release action or external message without a new owner/system-engineer instruction.",
+        "cost_or_access_class": "authorized_existing_public_read_only"
+      },
+      "expected_effort": "low",
+      "risk": "low",
+      "blocker": "Production release of current master awaits an agreed system-engineer window; CMS/DB corrections and several P1 issues remain open.",
+      "unblock_condition": "Owner or system engineer confirms the production release, then exact live-page strings can be re-checked read-only.",
+      "validation_refs": []
     }
   ]
 }
