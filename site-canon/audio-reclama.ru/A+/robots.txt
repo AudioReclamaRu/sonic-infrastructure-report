@@ -1,0 +1,110 @@
+# audio.plus — AI-search allowed; model-training access to demo media withheld pending written rights clearance.
+# Public demo files remain accessible to visitors and allow-listed search / user-requested retrieval agents.
+# NDA client files are excluded for every group below. robots.txt is a crawl/use preference, NOT access control.
+
+# Search and user-requested retrieval: demo path allowed; NDA client path remains disallowed.
+User-agent: OAI-SearchBot
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: ChatGPT-User
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Claude-SearchBot
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Claude-User
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: PerplexityBot
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Perplexity-User
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: MistralAI-Index
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: MistralAI-User
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Googlebot
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Applebot
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Bingbot
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Yandex
+Allow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+# Training/data-collection agents: demo and NDA client media are disallowed.
+User-agent: GPTBot
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: ClaudeBot
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: MistralAI-Training
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Google-Extended
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: Applebot-Extended
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: CCBot
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+User-agent: __usage_ai-training
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+# Default deny for unclassified/unknown crawlers. Known search agents are explicitly allow-listed above.
+User-agent: *
+Disallow: /tools/media/demo/
+Disallow: /tools/media/client/
+Disallow: /login
+
+Clean-param: utm_source&utm_keyword&utm_campaign&utm_medium&utm_term&utm_content
+
+Sitemap: https://audio.plus/sitemap.xml
