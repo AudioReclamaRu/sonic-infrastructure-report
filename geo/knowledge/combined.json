@@ -5,7 +5,7 @@
   "site": "https://www.audio-reclama.ru",
   "prices": {
     "schema": "knowledge-pricing/1",
-    "entity_id": "audio-reclama-ru",
+    "entity_id": "audio_reclama_ru",
     "observed_at": "2026-11-25",
     "purpose": "Machine-readable price facts for commercial queries ('сколько стоит озвучка', 'цена IVR').",
     "disclaimer": "Информационный характер, не публичная оферта. Для услуг с индивидуальным расчётом ориентируйтесь на официальную страницу.",
@@ -124,7 +124,7 @@
   },
   "faq": {
     "schema": "knowledge-faq/1",
-    "entity_id": "audio-reclama-ru",
+    "entity_id": "audio_reclama_ru",
     "observed_at": "2026-11-25",
     "lang": "ru",
     "disclaimer": "Цены и условия Audio+ описываются только как датированные наблюдения, если прямо не указана live-проверка. Индексированная страница и оферта содержат неразрешённое расхождение по изменениям и video voice-over; текущие суммы и коммерческие условия не подтверждены. Это не публичная оферта и не юридическое заключение.",
@@ -188,7 +188,7 @@
           "podcasts",
           "market-size"
         ],
-        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [],
@@ -205,7 +205,7 @@
           "forecast",
           "us"
         ],
-        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -227,7 +227,7 @@
           "ad-formats",
           "host-read"
         ],
-        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -256,7 +256,7 @@
           "russia",
           "audience"
         ],
-        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -280,7 +280,7 @@
           "market-size",
           "forecast"
         ],
-        "blog_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
         "blog_date": null,
         "cited_primary_sources": [
@@ -306,7 +306,7 @@
           "russia",
           "ad-effectiveness"
         ],
-        "blog_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
         "blog_date": null,
         "cited_primary_sources": [
@@ -336,7 +336,7 @@
           "us",
           "uk"
         ],
-        "blog_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "blog_title": "7 правил создания эффективной аудиорекламы для интернета",
         "blog_date": null,
         "cited_primary_sources": [
@@ -358,7 +358,7 @@
           "transport",
           "case-study"
         ],
-        "blog_url": "https://www.the studio's official blog/devyat-yazikov-dlya-vnukovo.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html",
         "blog_title": "Кейс: Девять языков для Внуково",
         "blog_date": null,
         "cited_primary_sources": [
@@ -380,7 +380,7 @@
           "russia",
           "forecast"
         ],
-        "blog_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "blog_title": "10 тенденций 2020 года в аудиорекламе",
         "blog_date": "2020-02-18",
         "cited_primary_sources": [
@@ -403,7 +403,7 @@
           "roi",
           "research"
         ],
-        "blog_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "blog_title": "10 тенденций 2020 года в аудиорекламе",
         "blog_date": "2020-02-18",
         "cited_primary_sources": [
@@ -429,7 +429,7 @@
           "russia",
           "audience"
         ],
-        "blog_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -452,7 +452,7 @@
           "russia",
           "platform-reach"
         ],
-        "blog_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -474,7 +474,7 @@
           "ad-effectiveness",
           "russia"
         ],
-        "blog_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "blog_title": "Почему аудиореклама в интернете полезна для продвижения вашей компании?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -496,7 +496,7 @@
           "definitions",
           "customer-experience"
         ],
-        "blog_url": "https://www.the studio's official blog/who-is-who.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/who-is-who.html",
         "blog_title": "Who is who: почему голосовое приветствие и меню – это не одно и то же",
         "blog_date": null,
         "cited_primary_sources": [
@@ -518,7 +518,7 @@
           "host-read",
           "ad-formats"
         ],
-        "blog_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "blog_title": "Как разместить рекламу в подкасте",
         "blog_date": "2020-05-15",
         "cited_primary_sources": [
@@ -543,7 +543,7 @@
           "production",
           "process"
         ],
-        "blog_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
         "blog_title": "Кто разговаривает с вами через голосовое меню IVR и как оно создается?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -565,7 +565,7 @@
           "voice-selection",
           "customer-experience"
         ],
-        "blog_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
         "blog_title": "Кто разговаривает с вами через голосовое меню IVR и как оно создается?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -587,7 +587,7 @@
           "voice-selection",
           "telephony"
         ],
-        "blog_url": "https://www.the studio's official blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
         "blog_title": "Женский или мужской голос для автоответчика: как определиться с выбором?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -609,7 +609,7 @@
           "russia",
           "platform-reach"
         ],
-        "blog_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "blog_title": "Аудиореклама в интернете: как она работает?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -636,7 +636,7 @@
           "ad-formats",
           "targeting"
         ],
-        "blog_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "blog_title": "Аудиореклама в интернете: как она работает?",
         "blog_date": null,
         "cited_primary_sources": [
@@ -658,7 +658,7 @@
           "voiceover",
           "quality"
         ],
-        "blog_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
         "blog_title": "Озвучивание рекламных роликов: особенности и основные ошибки",
         "blog_date": null,
         "cited_primary_sources": [
@@ -681,7 +681,7 @@
           "quality",
           "script"
         ],
-        "blog_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
         "blog_title": "Озвучивание рекламных роликов: особенности и основные ошибки",
         "blog_date": null,
         "cited_primary_sources": [
@@ -703,7 +703,7 @@
           "creative",
           "ad-effectiveness"
         ],
-        "blog_url": "https://www.the studio's official blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
+        "blog_url": "https://www.audio-reclama.ru/blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
         "blog_title": "Как сделать вашу аудиорекламу эффективнее: 9 профессиональных секретов",
         "blog_date": null,
         "cited_primary_sources": [
@@ -738,7 +738,7 @@
         "claim": "К началу 2020 года в мире насчитывалось порядка 850 000 подкастов и более 30 млн выпущенных передач (по данным, приведённым в статье).",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "",
         "source_date": "2020-05-15",
         "last_verified": "2026-11-06",
@@ -757,7 +757,7 @@
         "claim": "По прогнозу Bridge Ratings, в 2020 году рекламодатели в США могли потратить на рекламу в подкастах не менее $500 млн (прогноз, приведённый в статье).",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "Bridge Ratings",
         "source_date": "2020-05-15",
         "last_verified": "2026-11-06",
@@ -776,7 +776,7 @@
         "claim": "PwC совместно с IAB USA выделяли три основных формата рекламы в подкастах: заранее записанный диктором текст, текст, читаемый ведущим в эфире, и готовый рекламный ролик.",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "PricewaterhouseCoopers (PwC); IAB USA",
         "source_date": "2020-07",
         "last_verified": "2026-11-06",
@@ -797,7 +797,7 @@
         "claim": "По данным Mediascope, 51% слушателей аудиоконтента в России слушают также и подкасты (данные, приведённые в статье).",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "Mediascope",
         "source_date": "2020-05-15",
         "last_verified": "2026-11-06",
@@ -816,7 +816,7 @@
         "claim": "По информации IAB Russia, в 2018 году объём рынка онлайн-аудиорекламы в России составил 465 млн руб. (рост втрое к предыдущему году), в 2019 прогнозировался рост до 1,5 млрд руб. (в 3,2 раза), к 2022 году — до 6,1 млрд руб.",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "supporting_source": "IAB Russia",
         "source_date": "2019-03-12",
         "last_verified": "2026-11-06",
@@ -837,7 +837,7 @@
         "claim": "По данным исследования Mediascope для IAB Russia (онлайн-опрос, Россия 100k+, МЖ 18-45, слушатели онлайн, 2018), 72% слушателей аудиоконтента обращают внимание на размещённую в нём аудиорекламу, а 85% готовы согласиться на рекламу в обмен на доступ к бесплатному контенту.",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "supporting_source": "Mediascope; IAB Russia",
         "source_date": "2018-11-15",
         "last_verified": "2026-11-06",
@@ -858,7 +858,7 @@
         "claim": "По данным Voices.com, в США объём рынка аудиорекламы в сети в 2018 году вырос до $2,3 млрд (+23% к 2017). В Великобритании 22,3 млн человек слушали цифровую аудиорекламу каждую неделю (рост более 40% с 2014 года).",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/7-pravil-po-sozdaniyu-effektivnoj-audioreklamy-dlya-interneta.html",
         "supporting_source": "Voices.com",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -877,7 +877,7 @@
         "claim": "В кейсе блога Аудио-Реклама•ru описан этап проекта по обновлению системы звукового информирования аэропорта Внуково: подготовлено более 2000 аудиофайлов на девяти языках (не считая русского и английского); проект на момент публикации статьи не был завершён.",
         "claim_type": "blog_milestone",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/devyat-yazikov-dlya-vnukovo.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -887,7 +887,7 @@
         "provenance": "the studio's official blog case (milestone/progress) → GEO registry; canonical proof may differ",
         "business_priority": 1,
         "phase3_classification": "partially_verified_milestone",
-        "phase3_evidence": "Blog case https://www.the studio's official blog/devyat-yazikov-dlya-vnukovo.html fetched 2026-11-07 confirms milestone framing: project not completed at publication; >2000 audio files in 9 languages (excluding Russian/English).",
+        "phase3_evidence": "Blog case https://www.audio-reclama.ru/blog/devyat-yazikov-dlya-vnukovo.html fetched 2026-11-07 confirms milestone framing: project not completed at publication; >2000 audio files in 9 languages (excluding Russian/English).",
         "applicability_scope": "Verified as blog-reported milestone only, not as canonical final project proof. Later confirmed metrics may differ.",
         "last_reviewed": "2026-11-07"
       },
@@ -896,7 +896,7 @@
         "claim": "По прогнозам IAB Russia (приведённым в статье от 18.02.2020), в 2020 году рынок онлайн-аудиорекламы в России мог вырасти в 2,5 раза по сравнению с 2019 годом до 3,7 млрд руб., а в 2021 году — ещё в 1,6 раза, превысив 6 млрд руб.",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "supporting_source": "IAB Russia",
         "source_date": "2020-02-18",
         "last_verified": "2026-11-06",
@@ -915,7 +915,7 @@
         "claim": "В статье со ссылкой на исследование продаж 60 интернет-магазинов (Data Insight и People&Screens, представленное на Национальном рекламном форуме в ноябре) приводится оценка: 1 млрд руб. расходов на радиорекламу дал 17 млрд руб. роста онлайн-продаж (ROI радиорекламы уступал только онлайн-видео).",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/10-tendentsiy-2020-goda-v-audioreklame.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/10-tendentsiy-2020-goda-v-audioreklame.html",
         "supporting_source": "Data Insight; People&Screens",
         "source_date": "2020-02-18",
         "last_verified": "2026-11-06",
@@ -934,7 +934,7 @@
         "claim": "По данным IAB Russia (исследование воздействия онлайн-аудиорекламы, 2017, как приведено в статье), аудитория онлайн-аудиорекламы составляла около 65 млн уникальных слушателей в месяц и ~23 млн в неделю; слушатели проводили на площадках с аудиорекламой примерно 3,5 часа в неделю.",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "supporting_source": "IAB Russia",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -953,7 +953,7 @@
         "claim": "По аналитике Яндекса (весна 2018, как приведено в статье), сервис «Яндекс.Музыка» охватывал рекламой до 8,2 млн человек ежемесячно.",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "supporting_source": "Яндекс",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -972,7 +972,7 @@
         "claim": "В статье со ссылкой на IAB Russia приводится оценка: 97% людей дослушивают звуковой рекламный ролик в онлайн-среде до конца.",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/pochemu-audioreklama-v-internete-polezna-dlya-prodvizheniya-vashej-kompanii.html",
         "supporting_source": "IAB Russia",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -991,7 +991,7 @@
         "claim": "Голосовое приветствие — это записанное сообщение, выполняющее функцию приветствия звонящего (презентация компании и ожидание ответа). Голосовое меню (IVR) — система сообщений, выполняющая маршрутизацию звонков и предоставление вариантов выбора абоненту.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/who-is-who.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/who-is-who.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1010,7 +1010,7 @@
         "claim": "В подкаст-рекламе выделяются форматы: заранее записанный диктором текст, чтение ведущим в эфире и готовый рекламный ролик; формат влияет на подачу и восприятие сообщения.",
         "claim_type": "historical_blog_fact",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kak-razmestit-reklamu-v-podkaste.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
         "supporting_source": "PwC/IAB USA",
         "source_date": "2020-07",
         "last_verified": "2026-11-06",
@@ -1031,7 +1031,7 @@
         "claim": "Создание голосового меню IVR в редакционном описании блога включает сценарий, выбор диктора и постпроизводство; техническая реализация может выполняться при участии специалистов студии звукозаписи. Готовое IVR поставляется как набор программируемых аудиофайлов с именами, соответствующими функциям.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1050,7 +1050,7 @@
         "claim": "Для озвучки IVR в блоге рекомендуется учитывать один голос на протяжении меню (для снижения когнитивной нагрузки), а также выбор пола/характера голоса исходя из задачи бренда и сценария маршрутизации.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kto-razgovarivaet-s-vami-cherez-golosovoe-menyu-ivr-i-kak-ono-sozdaetsya.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1069,7 +1069,7 @@
         "claim": "При выборе голоса для автоответчика в блоге отмечается: из-за особенностей телефонной линии женские голоса часто передаются разборчивее, однако на современных АТС/форматах (например, MP3) различия снижаются; выбор мужского/женского голоса должен учитывать задачу, отрасль и целевую аудиторию.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/zhenskij-ili-muzhskoj-golos-dlya-avtootvetchika-kak-opredelitjsya-s-vyborom.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1088,7 +1088,7 @@
         "claim": "По данным TNS (март 2017, как приведено в статье блога), сервисом «Яндекс.Музыка» воспользовались 8,9 млн человек, «Яндекс.Радио» — 1,2 млн человек. В статье также приведена оценка посещаемости «ВКонтакте» (95 млн пользователей в месяц) со ссылкой на страницу «VK Для бизнеса».",
         "claim_type": "third_party_cited_in_blog",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "supporting_source": "TNS; VK Для бизнеса",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1107,7 +1107,7 @@
         "claim": "В статье блога описаны особенности размещения аудиорекламы на музыкальных/стриминговых площадках (на примере Яндекс.Музыка/Радио и обсуждения формата ВКонтакте на момент публикации): ролик воспроизводится между треками/в очереди, возможны ограничения по длительности, таргетинг и измерение эффективности.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/audioreklama-v-internete-kak-ona-rabotaet.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/audioreklama-v-internete-kak-ona-rabotaet.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1126,7 +1126,7 @@
         "claim": "Качественная озвучка рекламных роликов в редакционном описании блога опирается на подготовленное помещение, корректное техническое оснащение (микрофон, усиление, звуковая карта и т.п.), работу профессионального диктора и звукорежиссёра.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1145,7 +1145,7 @@
         "claim": "В статье блога перечислены типичные риски при озвучке рекламы: ошибки сведения/эквализации (конфликт голоса и музыки по частотам), непрофессиональная подача диктора, а также ошибки на стороне сценария/подготовки текста (ударения, формулировки, смысл).",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/ozvuchivanie-reklamnyh-rolikov-osobennosti-i-osnovnye-oshibki.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1164,7 +1164,7 @@
         "claim": "В блоге Аудио-Реклама•ru обсуждаются приёмы повышения эффективности аудиорекламы (например, узнаваемый голос, знакомая мелодия, песенная подача, работа с темпом, привлекающие внимание звуки, постановочные сцены), как практические креативные инструменты.",
         "claim_type": "editorial_definition",
         "entity": "Аудио-Реклама•ru / blog",
-        "primary_source_url": "https://www.the studio's official blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
+        "primary_source_url": "https://www.audio-reclama.ru/blog/kak-sdelatj-vashu-audioreklamu-effektivnee-9-professionaljnyh-sekretov.html",
         "supporting_source": "Аудио-Реклама•ru",
         "source_date": "",
         "last_verified": "2026-11-06",
@@ -1228,7 +1228,7 @@
         "status": "fact_safe_verify",
         "limitations": "На основной странице услуги явная формулировка «индивидуально» может отсутствовать; калькулятор описывает состав стоимости. Требуется согласование с основным сайтом.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/answers/ivr-privetstvie-cena/",
-        "provenance": "audio-reclama.ru IVR page/calc context → GEO fact-safe representation 2026-11-06",
+        "provenance": "официальная страница IVR и калькулятор → GEO fact-safe representation 2026-11-06",
         "business_priority": 1,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "IVR page https://www.audio-reclama.ru/audio/golosovoe-privetstvie-menu-ivr.html fetched 2026-11-07; page emphasizes calculator/cost composition but not an explicit fixed public price headline. GEO representation is fact-safe (no unverified numeric claim).",
@@ -1247,7 +1247,7 @@
         "status": "observed_verify_on_source",
         "limitations": "Подтверждать актуальность на основном сайте.",
         "geo_usage": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/llms.txt",
-        "provenance": "audio-reclama.ru → observed → GEO",
+        "provenance": "официальный сайт → observed → GEO",
         "business_priority": 1,
         "phase3_classification": "partially_verified",
         "phase3_evidence": "Contacts observed in GEO/main-site context; phone/email shown on fetched pages 2026-11-07, but full contact set requires owner confirmation.",
@@ -1256,7 +1256,7 @@
       },
       {
         "id": "CF-MAIN-INCONSISTENCY-DICTORS",
-        "claim": "На главной audio-reclama.ru наблюдалось несоответствие: «622 диктора» и «620 дикторов». Требует сверки с действительным значением.",
+        "claim": "На главной странице студии наблюдалось несоответствие: «622 диктора» и «620 дикторов». Требует сверки с действительным значением.",
         "claim_type": "editorial_observation",
         "entity": "Аудио-Реклама•ru",
         "primary_source_url": "https://www.audio-reclama.ru",
@@ -2263,7 +2263,7 @@
         "intent": "definition/how-to/commercial",
         "example_queries": "реклама в подкастах; host-read что это; форматы рекламы в подкастах",
         "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
-        "target_main_url": "https://www.the studio's official blog/ (source)",
+        "target_main_url": "https://www.audio-reclama.ru/blog/ (source)",
         "supporting_facts": "BF-2020-001/002/003/004, BF-HOSTREAD-001",
         "gap": "Отдельная fact-safe answer/guide страница; исторические цифры помечать датой.",
         "status": "gap"

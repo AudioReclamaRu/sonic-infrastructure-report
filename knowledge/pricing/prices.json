@@ -1,6 +1,6 @@
 {
   "schema": "knowledge-pricing/1",
-  "entity_id": "audio-reclama-ru",
+  "entity_id": "audio_reclama_ru",
   "observed_at": "2026-11-25",
   "purpose": "Machine-readable price facts for commercial queries ('сколько стоит озвучка', 'цена IVR').",
   "disclaimer": "Информационный характер, не публичная оферта. Для услуг с индивидуальным расчётом ориентируйтесь на официальную страницу.",

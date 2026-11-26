@@ -57,7 +57,7 @@
       "intent": "definition/how-to/commercial",
       "example_queries": "реклама в подкастах; host-read что это; форматы рекламы в подкастах",
       "target_geo_url": "https://audioreclamaru.github.io/sonic-infrastructure-report/geo/knowledge/blog-facts/",
-      "target_main_url": "https://www.the studio's official blog/ (source)",
+      "target_main_url": "https://www.audio-reclama.ru/blog/kak-razmestit-reklamu-v-podkaste.html",
       "supporting_facts": "BF-2020-001/002/003/004, BF-HOSTREAD-001",
       "gap": "Отдельная fact-safe answer/guide страница; исторические цифры помечать датой.",
       "status": "gap"
