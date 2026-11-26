@@ -284,6 +284,41 @@
       "blocker": "Production release of current master awaits an agreed system-engineer window; CMS/DB corrections and several P1 issues remain open.",
       "unblock_condition": "Owner or system engineer confirms the production release, then exact live-page strings can be re-checked read-only.",
       "validation_refs": []
+    },
+    {
+      "id": "AI-DISC-2026-008",
+      "title": "Track owner-reported Relay task for public Dzen corpus export",
+      "work_type": "add_knowledge_asset",
+      "priority": "P2",
+      "status": "waiting_for_public_update",
+      "market": "RU",
+      "language": "ru",
+      "service": "cross_service_discovery",
+      "target_surface": "repository_knowledge",
+      "obstacle": "Owner reports that a corpus-export task was published through the existing OpenCode Relay, but explicitly states that there is no host ACK, no executor response, no commit SHA and no completeness report. No exported corpus has been supplied for verification or analysis.",
+      "evidence_refs": [
+        "research/RELAY_DZEN_CORPUS_TASK_STATUS_2026-11-26.md",
+        "https://github.com/AudioReclamaRu/opencode-bridge-control/issues/504",
+        "https://github.com/AudioReclamaRu/prime-lad-planetary-digital-twin/issues/16",
+        "ops/ai-discoverability/AGENT_CONTRACT.json"
+      ],
+      "decision_to_unlock": "Whether the existing agent has produced a complete, provenance-checked public corpus export suitable for owner reading and analysis.",
+      "hypothesis": "A Relay-exported repository corpus with completeness and provenance evidence would enable source analysis without placing ordinary copying work on the assistant; publication of the task alone is not such evidence.",
+      "success_criteria": [
+        "Record the task as OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT until an executor response arrives.",
+        "Do not copy Dzen materials, bypass access restrictions, make paid requests or publish to the official site.",
+        "Wait for a commit SHA and completeness report before treating the export as delivered.",
+        "Verify archive completeness, provenance, checksums, indexes and unavailable-material manifest before any analysis.",
+        "Keep the standing handoff rule: unavailable material → existing agent exports to repository → verify completeness and provenance → owner reads and analyses."
+      ],
+      "autonomy_class": "repository_only",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "low",
+      "risk": "low",
+      "blocker": "No OpenCode ACK, executor response, commit SHA or completeness report for the Relay task.",
+      "unblock_condition": "Executor reports a commit SHA and completeness report; repository-side provenance and completeness checks then become possible.",
+      "validation_refs": []
     }
   ]
 }
