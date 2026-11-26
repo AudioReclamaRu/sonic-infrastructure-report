@@ -1,0 +1,248 @@
+# Аудио-Реклама•ru — proposed crawl policy
+# Canonical host: https://www.audio-reclama.ru
+# Public service pages and public English pages remain crawlable.
+# Selected search and user-requested retrieval agents may also fetch public voice demos.
+# This file does NOT globally opt the site in or out of AI model training.
+
+# Search engines and documented AI search / user-requested retrieval agents.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: MistralAI-Index
+User-agent: MistralAI-User
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+User-agent: Googlebot-News
+User-agent: Google-InspectionTool
+User-agent: Bingbot
+User-agent: Yandex
+
+Disallow: /audioplus/*/*
+Disallow: /invoices/*
+Disallow: /chat/*
+Disallow: /audioplus/promo/*
+Disallow: /audioplus/order/*
+Disallow: /perevod.html
+Disallow: /cashback.html
+Disallow: /cashback/
+Disallow: /chatroom/*
+Disallow: /images/
+Disallow: /ext/
+Disallow: /framework/
+Disallow: /protected/
+Disallow: /themes/classic/views/
+Disallow: /themes/classic/img/pdf/*.pdf
+Disallow: /diktoryi/muzhskie-diktor-golosa-new.html
+Disallow: /oplata-all.html
+Disallow: /sposobi-oplati.html
+Disallow: /shablon.html
+Disallow: /kalkulyator-tsen.html
+Disallow: /kalkulyator-tsen-new.html
+Disallow: /audioplus-offer.html
+Disallow: /uploads/
+Disallow: /playerOk/
+Disallow: /feedback.html
+Disallow: /partner/accounts/
+Disallow: /*?
+Disallow: /promo/1bddac60/
+Disallow: /get/files/*
+Disallow: /files/*
+Disallow: /online-zakaz-success.html
+Disallow: /online-zakaz-fail.html
+Disallow: /themes/classic/img/doc/pravila-akcii-cashback.pdf
+Disallow: /online-zakaz.html?diktor*
+Disallow: /login?*
+Disallow: /diktoryi?*
+Disallow: /tools/login/
+Allow: /assets/nls/
+Allow: /themes/classic/img/
+Allow: /themes/classic/css/
+Allow: /js/
+Allow: /themes/classic/js/
+Allow: /playerOk/*.css$
+Allow: /playerOk/*.js$
+Allow: /playerOk/themes/blue/
+Allow: /playerOk/getList.php$
+Allow: /tools/static/themes/classic/img/
+Allow: /tools/static/js/
+Allow: /tools/static/css/
+Allow: /assets/*
+Allow: /uploads/photos/*
+Allow: /uploads/demos/
+
+# Applebot follows a deliberately separate baseline policy. Apple has a distinct
+# Applebot-Extended content-use control; do not accidentally inherit the demo exception.
+User-agent: Applebot
+
+Disallow: /audioplus/*/*
+Disallow: /invoices/*
+Disallow: /chat/*
+Disallow: /audioplus/promo/*
+Disallow: /audioplus/order/*
+Disallow: /perevod.html
+Disallow: /cashback.html
+Disallow: /cashback/
+Disallow: /chatroom/*
+Disallow: /images/
+Disallow: /ext/
+Disallow: /framework/
+Disallow: /protected/
+Disallow: /themes/classic/views/
+Disallow: /themes/classic/img/pdf/*.pdf
+Disallow: /diktoryi/muzhskie-diktor-golosa-new.html
+Disallow: /oplata-all.html
+Disallow: /sposobi-oplati.html
+Disallow: /shablon.html
+Disallow: /kalkulyator-tsen.html
+Disallow: /kalkulyator-tsen-new.html
+Disallow: /audioplus-offer.html
+Disallow: /uploads/
+Disallow: /playerOk/
+Disallow: /feedback.html
+Disallow: /partner/accounts/
+Disallow: /*?
+Disallow: /promo/1bddac60/
+Disallow: /get/files/*
+Disallow: /files/*
+Disallow: /online-zakaz-success.html
+Disallow: /online-zakaz-fail.html
+Disallow: /themes/classic/img/doc/pravila-akcii-cashback.pdf
+Disallow: /online-zakaz.html?diktor*
+Disallow: /login?*
+Disallow: /diktoryi?*
+Disallow: /tools/login/
+Allow: /assets/nls/
+Allow: /themes/classic/img/
+Allow: /themes/classic/css/
+Allow: /js/
+Allow: /themes/classic/js/
+Allow: /playerOk/*.css$
+Allow: /playerOk/*.js$
+Allow: /playerOk/themes/blue/
+Allow: /playerOk/getList.php$
+Allow: /tools/static/themes/classic/img/
+Allow: /tools/static/js/
+Allow: /tools/static/css/
+Allow: /assets/*
+Allow: /uploads/photos/*
+
+# Applebot-Extended is a secondary content-use control, not a page crawler.
+# Mirror the former wildcard path policy only: no broad training opt-out is added,
+# and uploaded audio demos remain excluded just as they were under /uploads/.
+User-agent: Applebot-Extended
+
+Disallow: /audioplus/*/*
+Disallow: /invoices/*
+Disallow: /chat/*
+Disallow: /audioplus/promo/*
+Disallow: /audioplus/order/*
+Disallow: /perevod.html
+Disallow: /cashback.html
+Disallow: /cashback/
+Disallow: /chatroom/*
+Disallow: /images/
+Disallow: /ext/
+Disallow: /framework/
+Disallow: /protected/
+Disallow: /themes/classic/views/
+Disallow: /themes/classic/img/pdf/*.pdf
+Disallow: /diktoryi/muzhskie-diktor-golosa-new.html
+Disallow: /oplata-all.html
+Disallow: /sposobi-oplati.html
+Disallow: /shablon.html
+Disallow: /kalkulyator-tsen.html
+Disallow: /kalkulyator-tsen-new.html
+Disallow: /audioplus-offer.html
+Disallow: /uploads/
+Disallow: /playerOk/
+Disallow: /feedback.html
+Disallow: /partner/accounts/
+Disallow: /*?
+Disallow: /promo/1bddac60/
+Disallow: /get/files/*
+Disallow: /files/*
+Disallow: /online-zakaz-success.html
+Disallow: /online-zakaz-fail.html
+Disallow: /themes/classic/img/doc/pravila-akcii-cashback.pdf
+Disallow: /online-zakaz.html?diktor*
+Disallow: /login?*
+Disallow: /diktoryi?*
+Disallow: /tools/login/
+Allow: /assets/nls/
+Allow: /themes/classic/img/
+Allow: /themes/classic/css/
+Allow: /js/
+Allow: /themes/classic/js/
+Allow: /playerOk/*.css$
+Allow: /playerOk/*.js$
+Allow: /playerOk/themes/blue/
+Allow: /playerOk/getList.php$
+Allow: /tools/static/themes/classic/img/
+Allow: /tools/static/js/
+Allow: /tools/static/css/
+Allow: /assets/*
+Allow: /uploads/photos/*
+
+# All other agents, including training agents without a dedicated search role.
+# This retains the existing exclusions for private/system routes and /uploads/.
+# Public Russian and English HTML pages remain crawlable; this is NOT a site-wide
+# opt-out from model training. That requires a separate owner decision.
+User-agent: *
+
+Disallow: /audioplus/*/*
+Disallow: /invoices/*
+Disallow: /chat/*
+Disallow: /audioplus/promo/*
+Disallow: /audioplus/order/*
+Disallow: /perevod.html
+Disallow: /cashback.html
+Disallow: /cashback/
+Disallow: /chatroom/*
+Disallow: /images/
+Disallow: /ext/
+Disallow: /framework/
+Disallow: /protected/
+Disallow: /themes/classic/views/
+Disallow: /themes/classic/img/pdf/*.pdf
+Disallow: /diktoryi/muzhskie-diktor-golosa-new.html
+Disallow: /oplata-all.html
+Disallow: /sposobi-oplati.html
+Disallow: /shablon.html
+Disallow: /kalkulyator-tsen.html
+Disallow: /kalkulyator-tsen-new.html
+Disallow: /audioplus-offer.html
+Disallow: /uploads/
+Disallow: /playerOk/
+Disallow: /feedback.html
+Disallow: /partner/accounts/
+Disallow: /*?
+Disallow: /promo/1bddac60/
+Disallow: /get/files/*
+Disallow: /files/*
+Disallow: /online-zakaz-success.html
+Disallow: /online-zakaz-fail.html
+Disallow: /themes/classic/img/doc/pravila-akcii-cashback.pdf
+Disallow: /online-zakaz.html?diktor*
+Disallow: /login?*
+Disallow: /diktoryi?*
+Disallow: /tools/login/
+Allow: /assets/nls/
+Allow: /themes/classic/img/
+Allow: /themes/classic/css/
+Allow: /js/
+Allow: /themes/classic/js/
+Allow: /playerOk/*.css$
+Allow: /playerOk/*.js$
+Allow: /playerOk/themes/blue/
+Allow: /playerOk/getList.php$
+Allow: /tools/static/themes/classic/img/
+Allow: /tools/static/js/
+Allow: /tools/static/css/
+Allow: /assets/*
+Allow: /uploads/photos/*
+
+Sitemap: https://www.audio-reclama.ru/sitemap.xml
