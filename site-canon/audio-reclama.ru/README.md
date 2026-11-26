@@ -22,7 +22,7 @@ site: https://www.audio-reclama.ru
 
 ## Происхождение и контроль
 
-- Репозиторий исходного сайта: [audioreclama/audio-reclama-ru-site](https://gitlab.com/audioreclama/audio-reclama-ru-site).
+- Источник файлов — приватный проект GitLab, ID `29409891`, пространство имён `audioreclama`.
 - Проверенный GitLab `master` на 26.11.2026: `85ff9df6ec298d896ec988bdb6b2a53864da0421`.
 - Текущий Organization JSON-LD извлечён из `themes/classic/views/layouts/skeleton.php`; исходная версия шаблона в GitLab — `01485d7aee4b710d5b8730837029b6667ed8aa2f`. Сам блок уже находится в шаблоне GitLab. Отдельный JSON здесь — удобный review/handoff companion, а не вторая автоматическая разметка сайта.
 - `llms.txt` основан на загруженном владельцем файле. В него добавлена одна ссылка на `/ai-faq.md`, потому что этот публичный FAQ уже существует в GitLab master и MR !39. Остальное содержание загруженного текста сохранено.
