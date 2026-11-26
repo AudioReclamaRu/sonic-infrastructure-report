@@ -296,12 +296,13 @@
       "language": "ru",
       "service": "cross_service_discovery",
       "target_surface": "repository_knowledge",
-      "obstacle": "Owner reports that a corpus-export task was published through the existing Relay and later re-checked Relay #504: 597 comments, all from the owner account, with no later ACK, executor result or archive SHA; Control Room #16 has no executor confirmation and no target branch, export README or task-ID commit was found. Assistant read-only Agent Mesh check found the owner directive message 13116 and coordinator task PL-C650D4EE41, but lineage says canonical_task=NONE, no eligible worker, review task PL-D9805126FE blocked and dispatcher waiting_for_verified_free_model; comment-to-message import is NOT_VERIFIED. No exported corpus has been supplied for verification or analysis.",
+      "obstacle": "Owner reports that a corpus-export task was published through the existing Relay and later re-checked Relay #504: 597 comments, all from the owner account, with no later ACK, executor result or archive SHA; Control Room #16 has no executor confirmation and no target branch, export README or task-ID commit was found. Assistant read-only Agent Mesh check found the owner directive message 13116 and coordinator task PL-C650D4EE41, but lineage says canonical_task=NONE, no eligible worker, review task PL-D9805126FE blocked and dispatcher waiting_for_verified_free_model; comment-to-message import is NOT_VERIFIED. A second read-only check found no message containing the later continuation comment 7192563995 at board time 2026-11-26T12:57:10+00:00, intake cursor 13161 with processed/created/continuations all 0; the Relay cursor is not exposed by these tools. No exported corpus has been supplied for verification or analysis.",
       "evidence_refs": [
         "research/RELAY_DZEN_CORPUS_TASK_STATUS_2026-11-26.md",
         "https://github.com/AudioReclamaRu/opencode-bridge-control/issues/504",
         "https://github.com/AudioReclamaRu/prime-lad-planetary-digital-twin/issues/16",
         "prime-lad-mesh MCP read-only receipt 2026-11-26: mesh message 13116, coordinator task PL-C650D4EE41, blocked review task PL-D9805126FE",
+        "prime-lad-mesh MCP second read-only receipt 2026-11-26T12:57:10Z: no message with 7192563995, intake cursor 13161, dispatcher waiting_for_verified_free_model",
         "ops/ai-discoverability/AGENT_CONTRACT.json"
       ],
       "decision_to_unlock": "Whether the existing agent has produced a complete, provenance-checked public corpus export suitable for owner reading and analysis.",
@@ -320,7 +321,7 @@
       "measurement_guard": null,
       "expected_effort": "low",
       "risk": "low",
-      "blocker": "No Relay import proof for comment 7191878601, no canonical task resolution (canonical_task=NONE), no eligible exact-zero OpenCode worker (dispatcher waiting_for_verified_free_model), no worker claim/execution, no commit SHA or completeness report; review lane blocked with no eligible reviewer.",
+      "blocker": "No Relay import proof for comment 7191878601; later continuation comment 7192563995 not visible in Mesh history at 2026-11-26T12:57:10Z (NOT_VERIFIED_AT_RETRIEVAL, not proven failed); no canonical task resolution (canonical_task=NONE), no eligible exact-zero OpenCode worker (dispatcher waiting_for_verified_free_model), no worker claim/execution, no commit SHA or completeness report; review lane blocked with no eligible reviewer.",
       "unblock_condition": "Existing Relay/Mesh receipt confirms import and canonical task binding; a live exact-zero OpenCode session with available quota continues the same task and reports a commit SHA plus completeness report. No paid fallback.",
       "validation_refs": []
     },
