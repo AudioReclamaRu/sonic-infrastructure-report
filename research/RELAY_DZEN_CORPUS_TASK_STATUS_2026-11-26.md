@@ -49,3 +49,35 @@ The task asks the existing agent to export into a repository:
 This repository records only the task status. It contains no exported corpus, no Dzen texts, no images, no completeness report and no claim of export completion.
 
 A future status change requires an executor response with a **commit SHA and completeness report**, followed by independent verification of completeness and provenance. Only after that can analysis begin. Until then AI/lead effects remain `unknown` and the official site remains `UNCHANGED`.
+
+## Later owner re-check (2026-11-26)
+
+The owner re-checked Relay `#504` and reports **597 comments, all from the owner account**, with no new messages after the export task and no later ACK or result. Control Room `#16` contains the coordination record but no executor confirmation. The target branch and expected export `README.md` were not found, and no commit carrying the task identifier exists. All these statements are `OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT`; the assistant did not call the GitHub API.
+
+The owner explicitly notes that the absence of a published result **does not prove the local task is absent from Agent Mesh**.
+
+## Agent Mesh read-only receipt (assistant-verified, 2026-11-26)
+
+Source: `prime-lad-mesh` MCP read tools `mesh_board` and `mesh_context_search`; board `updated_at` `2026-11-26T12:52:31+00:00`. No writes, no task creation, no claim, no LLM call and no Dzen access were performed.
+
+| Observation | Value |
+|---|---|
+| Owner directive message | Agent Mesh message `13116` at `2026-11-26T12:21:03+00:00`, containing the exact `DZEN-AUDIO-RECLAMA-RU-CORPUS-20261126-001` identifier |
+| Local canonical task record | `PL-C650D4EE41`, created `2026-11-26T12:21:04+00:00`, assigned to `prime-lad-coordinator` |
+| Coordinator disposition | Message `13124`: coordinator SUCCEEDED, explicitly **not** VERIFIED/ACCEPTED; result text says coordination and decomposition only, no new subtask created |
+| External-ID lineage | Messages `13117` and `13155`: `LINEAGE_RECORDED_NO_REOPEN`, `canonical_task=NONE` |
+| Worker eligibility | Message `13120`: `no_eligible_worker`; coordinator failover path, not an OpenCode execution |
+| Review lane | `PL-D9805126FE` status `blocked`; `WAITING_RESOURCE:reviewer — no_eligible_worker`, retry `2026-11-26T13:21:17+00:00` |
+| Dispatcher | State `waiting_for_verified_free_model`; last error reports no active enabled free model passed the prompt probe; **no task claimed and no model request sent** |
+| Later owner directive | Message `13154` at `2026-11-26T12:52:13+00:00`, receipt/admission reconciliation only, referencing Relay comment `7191878601` and Control Room comment `7192513013` |
+
+Interpretation: a local Agent Mesh message and a coordinator-owned task record **do exist** for this exact task identifier, so the owner's caution is justified. They are **not** evidence of an OpenCode worker claim, execution, export or accepted result. Whether Relay comment `7191878601` was actually imported into message `13116` is **`NOT_VERIFIED`** by these read tools: the board does not expose that comment-to-message mapping, and the owner's later directive only references it.
+
+## Ordered next steps recorded from the owner
+
+1. Confirm import: Relay must show whether comment `7191878601` was processed, and Agent Mesh must resolve the exact `TASK_ID` to a canonical task rather than `canonical_task=NONE`.
+2. Confirm executor: a real OpenCode session and its identifier, plus exact-zero cost and available unreserved quota **before** inference.
+3. Export the archive only under the existing task contract into the target branch: texts, metadata, media, indexes, completeness report and SHA-256.
+4. Make the result readable here through GitHub; then verify completeness, duplicates, provenance and checksums before reading articles or building the editorial map.
+
+No second task, queue, bypass route or manual relay is to be created. If the existing route did not process the message, that route is corrected first. If no exact-zero free executor exists, the state is `BLOCKED` with no paid fallback. The assistant still does not copy Dzen materials.
