@@ -2,8 +2,8 @@
 type: research
 date: 2026-11-26
 lang: ru
-status: OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT
-source: owner-supplied status report
+status: OWNER_CONFIRMATION_REQUIRED / OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT
+source: owner-supplied status report and later owner re-check (conflicting merge accounts)
 related:
   - ops/ai-discoverability/AGENT_CONTRACT.json
   - ops/ai-discoverability/PUBLISHING_AUTHORITY_2026-11-25.md
@@ -14,11 +14,13 @@ related:
 
 ## epistemic status
 
-All statements below are **owner-supplied** as of **2026-11-26** and are **not verified by the assistant**. The GitLab merge requests, work items, current `master` commit, CMS state and live production pages were not independently checked in this session. No official-site, CMS, DNS, CDN, WAF or analytics write was performed. `UNCHANGED` remains `UNCHANGED`: source fixes are in `master`, but production still shows old text.
+All statements below are **owner-supplied** as of **2026-11-26** and are **not verified by the assistant**. The GitLab merge requests, work items, current `master` commit, CMS state and live production pages were not independently checked in this session. No official-site, CMS, DNS, CDN, WAF or analytics write was performed. `UNCHANGED` remains `UNCHANGED`.
 
-Do not present these fixes as published, as verified live, or as evidence of changed AI visibility, rankings, leads or revenue.
+The owner later re-checked the GitLab side and stated that **all listed changes remain in branches under review, no MR is merged or published, and there is no pipeline or live-site check yet**. That contradicts the earlier owner statement that MR `!47` and `!48` were merged into `master`. Both accounts are preserved below; the merge state is `OWNER_CONFIRMATION_REQUIRED`, not `VERIFIED`.
 
-## Owner-reported source fixes merged to GitLab `master`
+Do not present any fix as merged, published, verified live, or as evidence of changed AI visibility, rankings, leads or revenue.
+
+## Earlier owner report: fixes claimed merged to GitLab `master` (disputed by later re-check)
 
 The owner reports two merge requests in the GitLab site repository (links were supplied in the owner report and are not copied into this repository artifact):
 
@@ -42,7 +44,7 @@ Eight owner-reported textual corrections:
 | ошибку легче обнаружить издайте | ошибку легче обнаружить, издайте |
 | Использование фрагментов, разрешается | Использование фрагментов разрешается |
 
-Status: `OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT` for the MR contents and `master` state. Production release status: **`WAITING_FOR_PUBLIC_UPDATE` / not published**.
+Status of this earlier account: `OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT`. It is **disputed** by the later owner re-check recorded below; do not treat `!47`/`!48` as merged or `f7f877d6310576a2e6a41e18427d883a247557cf` as the confirmed current `master`. Production release status: **`WAITING_FOR_PUBLIC_UPDATE` / not published** in both accounts.
 
 ## Owner-reported CMS/DB issues still pending
 
@@ -84,9 +86,19 @@ The owner also reports four P2 items: blog categories, Bing AI Performance, audi
 
 ## Safe next steps recorded from the owner report
 
-1. Include MR `!47` and `!48` in the planned production release, then re-check the corrected strings on live pages.
-2. Fix the video-page typos through the normal CMS workflow and investigate the audiobook source/production divergence.
-3. Close the TOP-8 CTA overclaim issue.
-4. Continue GA4 diagnostics.
+1. Resolve the conflicting owner accounts of the GitLab merge state before any release planning.
+2. Only after a confirmed merge and release, re-check the corrected strings on live pages.
+3. Fix the video-page typos through the normal CMS workflow and investigate the audiobook source/production divergence.
+4. Close the TOP-8 CTA overclaim issue and continue GA4 diagnostics.
 
 Do not claim the site has been fully proofread: the owner reports checks only on major high-traffic pages, not a complete orthographic audit of all pages. AI/lead effects remain `unknown`.
+
+## Later owner re-check (2026-11-26, addendum)
+
+The owner subsequently re-checked the GitLab side and reported: **all listed changes remain in branches under review; no MR is merged or published; pipeline and a check on the working site are still absent.** No assistant verification of the branches was performed.
+
+- Status: `OWNER_CONFIRMATION_REQUIRED / OWNER_SUPPLIED / NOT_VERIFIED_BY_ASSISTANT` for the merge/publication state.
+- This contradicts the earlier owner statement that MR `!47` and `!48` were merged into `master`. Both accounts are preserved above; neither is independently verified.
+- Working state to use until clarified: **nothing treated as merged, nothing published, `UNCHANGED` on production**, pipeline and live-site check absent.
+- Additional owner-supplied SEO proposals: metadata for cartoon voiceover in MR `!71` and a service description in JSON-LD in MR `!68`. Both remain branch proposals, **not published to production**. Their contents were not checked here.
+- No CMS, release, pipeline or website action was taken by the assistant. Pipeline absence and live-site absence are owner-reported, not assistant-measured.
