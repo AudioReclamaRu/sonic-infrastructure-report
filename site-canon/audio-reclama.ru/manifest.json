@@ -1,26 +1,32 @@
 {
   "schema_version": "1.0.0",
   "site": "https://www.audio-reclama.ru",
-  "bundle_status": "CANONICAL_REVIEW_BUNDLE",
-  "production_status": "NOT_DEPLOYED",
+  "bundle_status": "CANONICAL_MANUAL_RELEASE_BUNDLE",
+  "production_status": "PARTIALLY_DEPLOYED_OUT_OF_SYNC",
   "publication_mode": "manual_webmaster_only",
   "source_default_branch": "master",
-  "source_master_commit": "85ff9df6ec298d896ec988bdb6b2a53864da0421",
+  "source_master_commit": "50d1c12aa925fc9a03dbf53c296544c6bce56432",
   "captured_at": "2026-11-26",
   "files": {
     "llms.txt": {
-      "status": "OWNER_SUPPLIED_WITH_EXISTING_FAQ_LINK",
+      "status": "SOURCE_AHEAD_OF_LIVE",
       "origin": "owner-uploaded file; existing GitLab master FAQ link added",
       "faq_source_project_id": "29409891",
-      "faq_source_path": "ai-faq.md"
+      "faq_source_path": "ai-faq.md",
+      "live_difference": {
+        "stale_root_trailing_slash_references": 5,
+        "missing_faq_link": true
+      }
     },
     "robots.txt": {
-      "status": "PROPOSED",
+      "status": "LIVE_VERIFIED",
       "origin": "owner-supplied crawl policy",
-      "production_activation_confirmed": false
+      "production_activation_confirmed": false,
+      "live_last_modified": "2026-11-25T23:10:55Z",
+      "semantic_match_with_gitlab_master": true
     },
     "sitemap.xml": {
-      "status": "REVIEW_ONLY",
+      "status": "LIVE_VERIFIED_URL_SET",
       "origin": "owner-uploaded candidate; original review-only comment retained",
       "url_count": 874,
       "unique_url_count": 874,
@@ -29,13 +35,24 @@
       "audited_http_200": 876,
       "audited_http_404": 310,
       "audited_redirects": 2,
-      "approved_for_production": false
+      "approved_for_production": false,
+      "live_url_count": 874,
+      "live_url_set_matches_gitlab_master": true,
+      "per_url_recrawl": "NOT_PERFORMED"
     },
     "organization.jsonld": {
       "status": "SOURCE_SNAPSHOT",
       "origin": "extracted from themes/classic/views/layouts/skeleton.php",
       "source_template_commit": "01485d7aee4b710d5b8730837029b6667ed8aa2f",
       "organization_id": "https://www.audio-reclama.ru/#organization"
+    },
+    "ai-faq.md": {
+      "status": "SOURCE_PRESENT_LIVE_404",
+      "origin": "copied from GitLab master ai-faq.md",
+      "source_gitlab_project_id": "29409891",
+      "source_gitlab_path": "ai-faq.md",
+      "source_question_count": 21,
+      "public_deployment_confirmed": false
     }
   },
   "safeguards": {
@@ -45,5 +62,34 @@
     "automatic_sync": false
   },
   "source_gitlab_project_id": "29409891",
-  "source_gitlab_namespace": "audioreclama"
+  "source_gitlab_namespace": "audioreclama",
+  "live_observed": {
+    "verified_at": "2026-11-26",
+    "common_last_modified": "2026-11-25T23:10:55Z",
+    "robots": {
+      "status": "HTTP_RESPONSE_CONFIRMED",
+      "semantic_match_with_gitlab_master": true,
+      "scope_note": "Disallow: /*? blocks query-string URLs; no site-wide Disallow: /* directive."
+    },
+    "sitemap": {
+      "status": "HTTP_RESPONSE_CONFIRMED",
+      "live_url_count": 874,
+      "source_url_count": 874,
+      "url_sets_match": true,
+      "duplicate_count": 0,
+      "per_url_status_recrawl": "NOT_PERFORMED"
+    },
+    "llms": {
+      "status": "HTTP_RESPONSE_CONFIRMED_STALE",
+      "stale_root_trailing_slash_references": 5,
+      "missing_faq_link": true,
+      "manual_sync_required": true
+    },
+    "faq": {
+      "source_present": true,
+      "source_question_count": 21,
+      "public_status": "HTTP_404",
+      "manual_deploy_required": true
+    }
+  }
 }
