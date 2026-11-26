@@ -1,6 +1,6 @@
 {
   "schema": "megabrain/ai-discoverability-work-queue/1",
-  "updated": "2026-11-25",
+  "updated": "2026-11-26",
   "policy": "Candidates require current-state triage; this queue is not an instruction to collect data or a quota.",
   "items": [
     {
@@ -165,6 +165,40 @@
         "https://github.com/AudioReclamaRu/sonic-infrastructure-report/actions/runs/45701960107 — repo-integrity SUCCESS on merged main commit 58c3eb4a907e985e7b86d07431ce2c339811aff9",
         "Ontology JSON-LD internal graph check: 121 nodes and 0 unresolved object references."
       ]
+    },
+    {
+      "id": "AI-DISC-2026-005",
+      "title": "Evaluate an Alice skill order channel for Audio+",
+      "work_type": "add_knowledge_asset",
+      "priority": "P1",
+      "status": "blocked_by_owner_approval",
+      "market": "RU",
+      "language": "ru",
+      "service": "audio_plus_short_order",
+      "target_surface": "alice_skill_catalog",
+      "obstacle": "The owner proposed a non-generative Alice skill that collects a short Audio+ order in dialogue and passes it to the existing backend. External publication to the Alice catalog, Yandex Dialogs or IndexNow distribution is outside the authorized contour: the 25-Nov-2026 owner order permits autonomous publication only in GitHub/GitLab repositories and forbids non-repository external surfaces. Brand rights, the execution path and order-backend access are unconfirmed.",
+      "evidence_refs": [
+        "research/ALICE_SKILL_ORDER_CHANNEL_TRIAGE_2026-11-26.md",
+        "ops/ai-discoverability/PUBLISHING_AUTHORITY_2026-11-25.md",
+        "ops/ai-discoverability/AGENT_CONTRACT.json"
+      ],
+      "decision_to_unlock": "Whether Audio+ may publish a useful dialog skill in the Alice catalog and deliver a confirmed order to the existing backend while payment stays on the existing checkout page.",
+      "hypothesis": "A non-generative dialog skill can collect an order inside the catalog without paid LLM tokens. This is an owner-supplied hypothesis, not a verified platform or commercial result; any order or revenue effect still requires attribution.",
+      "success_criteria": [
+        "Record an explicit owner decision naming the permitted external surface and the brand-rights basis before any external action.",
+        "Specify the dialog utility that helps the user inside the conversation instead of redirecting traffic to the website.",
+        "Define the safe adapter boundary toward the existing order backend; change no backend without authorized access.",
+        "Keep payment on the existing checkout page and do not invent an in-dialog payment flow.",
+        "Keep the Alice skill catalog surface separate from Alice AI SoV and from search markup."
+      ],
+      "autonomy_class": "requires_owner_approval",
+      "requires_new_measurement": false,
+      "measurement_guard": null,
+      "expected_effort": "medium",
+      "risk": "medium",
+      "blocker": "No owner authorization for the Alice skill catalog, Yandex Dialogs or IndexNow external surface; no confirmed brand rights; no authorized access to the order backend.",
+      "unblock_condition": "The owner issues a specific written authorization naming the external surface, brand-rights basis and execution path, and supplies an authorized adapter or backend contact; PUBLISHING_AUTHORITY and AGENT_CONTRACT are updated accordingly.",
+      "validation_refs": []
     }
   ]
 }
