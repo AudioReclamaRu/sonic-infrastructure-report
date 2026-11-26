@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- audio.plus: обе публичные HTML-страницы, проверены HTTP 200 2026-11-22.
-     Остальные ссылки навигации (blog, clients, online-zakaz, perevodchiki,
-     vacancy, chronomer-stranitcemer) отвечают 404 и не включены. -->
+<!-- audio.plus sitemap candidate — REVIEW-ONLY.
+     The two URLs below were recorded as HTTP 200 in a dated audit on 2026-11-22.
+     A fresh live GET and a complete route/redirect check were not confirmed on 2026-11-26.
+     Revalidate before any production installation. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://audio.plus/</loc></url>
   <url><loc>https://audio.plus/offer.html</loc></url>
