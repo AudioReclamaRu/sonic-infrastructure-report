@@ -4,7 +4,6 @@
   "bundle_status": "CANONICAL_REVIEW_BUNDLE",
   "production_status": "NOT_DEPLOYED",
   "publication_mode": "manual_webmaster_only",
-  "source_repository": "https://gitlab.com/audioreclama/audio-reclama-ru-site",
   "source_default_branch": "master",
   "source_master_commit": "85ff9df6ec298d896ec988bdb6b2a53864da0421",
   "captured_at": "2026-11-26",
@@ -43,5 +42,7 @@
     "production_deploy_from_github": false,
     "github_pages_artifact_includes_site_canon": false,
     "automatic_sync": false
-  }
+  },
+  "source_gitlab_project_id": "29409891",
+  "source_gitlab_namespace": "audioreclama"
 }
