@@ -10,7 +10,7 @@ lang: ru
 
 ## Разделение сайтов
 
-- [Аудио-Реклама•ru — audio-reclama.ru](audio-reclama.ru/README.md): комплект основной студии.
+- [Комплект официального сайта студии](https://github.com/AudioReclamaRu/sonic-infrastructure-report/tree/main/site-canon): отдельная папка с файлами основной студии.
 - `audio.plus/`: отдельный комплект Audio+. Каталог зарезервирован; файлы Audio+ будут добавлены отдельно и не смешиваются с материалами основной студии.
 
 ## Статус публикации
