@@ -11,7 +11,8 @@
     "llms.txt": {
       "status": "OWNER_SUPPLIED_WITH_EXISTING_FAQ_LINK",
       "origin": "owner-uploaded file; existing GitLab master FAQ link added",
-      "faq_source": "https://gitlab.com/audioreclama/audio-reclama-ru-site/-/blob/master/ai-faq.md"
+      "faq_source_project_id": "29409891",
+      "faq_source_path": "ai-faq.md"
     },
     "robots.txt": {
       "status": "PROPOSED",
