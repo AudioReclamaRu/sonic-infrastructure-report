@@ -182,3 +182,6 @@ related: [corpus/edison-blind-test.md]   # back-links, when they exist
 - Enforce with `python tools/add_frontmatter.py --check`; add new files through
   the same tool (`--apply`) so the shape stays uniform.
 
+## Обязательное правило внимания человека
+
+Перед выполнением задач и выпуском результатов соблюдай [HUMAN_ATTENTION_PRINCIPLE.md](HUMAN_ATTENTION_PRINCIPLE.md): **«Мы не распоряжаемся вниманием гостя — мы заслуживаем его».** Проверяй ценность каждого вопроса, уведомления, элемента, байта, ручного шага и визуального решения. Не создавай лишнюю нагрузку, не манипулируй вниманием; подтверждай улучшение конкретными проверками.
